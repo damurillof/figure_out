@@ -1,9 +1,11 @@
 ---
-title: "About Me"
+title: "A cerca de mi"
 ---
 
-- __Name:__ Nick
-- __Ocupation:__ "Student"
-- __Hobbies:__ Learning software development instead of studying for exams. 
+- __Name:__ Didier
+- __Ocupation:__ "Estudiante"
+- __Hobbies:__ Aprender nuevas cosas sobre estadística, me apasiona la visualización de datos. 
 
 Here is a super cool photo of me doing one of my favorite things, yawning. 
+
+![](/datos/DirectorioR/mypic.jpg) 
