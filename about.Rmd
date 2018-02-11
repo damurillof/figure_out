@@ -4,4 +4,3 @@ title: "A cerca de mi"
 
 Hola, mi nombre es Didier Murillo, soy de Ibagué-Colombia, actualmente vivo en Mayaguez-Puerto Rico. Entre mis hobbies esta aprender nuevas cosas de estadística, computación, me apasiona la visualización de datos. Soy fan de RStudio. 
 
-%![](/datos/DirectorioR/mypic.jpg) 
