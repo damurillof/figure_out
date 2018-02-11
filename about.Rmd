@@ -2,5 +2,5 @@
 title: "Acerca de mi"
 ---
 
-Hola, mi nombre es Didier Murillo, soy de Ibagué-Colombia, actualmente vivo en Mayaguez-Puerto Rico. Entre mis hobbies esta viajar, ver futbol, aprender cosas nuevas de estadística y computación. Soy fan de RStudio. 
+Hola, mi nombre es Didier Murillo, soy de Ibagué-Colombia, actualmente vivo en Mayaguez-Puerto Rico. Entre mis hobbies esta viajar, ver fútbol, aprender cosas nuevas de estadística y computación. Soy fan de RStudio. 
 
