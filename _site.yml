@@ -5,8 +5,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "ESMA3101"     ##### the new
-      href: ESMA3101.html  ##### stuff
+    - text: "Teaching"     ##### the new
+      href: Teaching.html  ##### stuff
     - text: "About Me"
       href: about.html
 output:

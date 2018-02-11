@@ -1,13 +1,15 @@
 ---
-title: "Personal Website"
+title: "Estadística, análisis de datos y RStudio."
 ---
 
 
-__Look at how cool this plot is!__
+__Bienvenidos!__
+
+La distribución Normal es quizas de lejos la más importante en estadística, a continuacón encontramos algunas gráficas de la densidad para distintos valores de la media $\mu$ y la desviación estandar $\sigma$.
 
 $$f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}}, -\infty<x<\infty$$
 
-```{r, echo = FALSE, fig.align='center',fig.width=6}
+```{r, echo = FALSE, fig.align='center',fig.width=7,fig.height=4}
 library(ggplot2)
 n <- seq(-15,15,0.01)
 mean_param <-c(0, 3)
@@ -25,5 +27,4 @@ for(i in 1:nrow(params)){
 }
 ```
 
-
-### #0B6C8C
+Lindas gráficas cierto? en R `ggplot2` hace eso y mucho más!
