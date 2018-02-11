@@ -27,4 +27,4 @@ for(i in 1:nrow(params)){
 }
 ```
 
-Lindas gráficas cierto?. RStudio y  `ggplot2` hace eso y mucho más!
+Lindas gráficas cierto?. RStudio y  `ggplot2` hacen eso y mucho más!

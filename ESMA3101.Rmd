@@ -20,6 +20,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Algunas ideas básicas y conceptos
 
+> ¿Que es la estadística?.
+
+* Primera Idea: Estadística es la ciencia de los datos o de la información. Respecto a esto la estadística resulve las siguientes preguntas:
+
+    + ¿Como recolectar los datos? 
+    + ¿Como analizar los datos?
+    + ¿Como presentar los resultados?
+
+* Segunda Idea: Estadística es la ciencia de la incertidumbre.
+    + ¿De donde proviene esa incertidumbre?
+    + ¿Que tipos de incertidumbre?
+    + ¿Como tratarla?
+
+
 ### Introducción a ESMA3101
 
 ### Recolección de datos
