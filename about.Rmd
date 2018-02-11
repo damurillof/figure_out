@@ -2,10 +2,6 @@
 title: "A cerca de mi"
 ---
 
-- __Name:__ Didier
-- __Ocupation:__ "Estudiante"
-- __Hobbies:__ Aprender nuevas cosas sobre estadística, me apasiona la visualización de datos. 
+Hola, mi nombre es Didier Murillo, soy de Ibagué-Colombia, actualmente vivo en Mayaguez-Puerto Rico. Entre mis hobbies esta aprender nuevas cosas de estadística, computación, me apasiona la visualización de datos. Soy fan de RStudio. 
 
-Here is a super cool photo of me doing one of my favorite things, yawning. 
-
-![](/datos/DirectorioR/mypic.jpg) 
+%![](/datos/DirectorioR/mypic.jpg) 

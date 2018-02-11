@@ -1,5 +1,5 @@
 ---
-title: "ESMA3101"
+title: "ESMA3101: Estadística Aplicada I"
 author: 'Didier Murillo'
 date: "February 10, 2018"
 output:
@@ -14,24 +14,20 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-### R Markdown
+## Prontuario
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+<http://math.uprm.edu/syllabus/profesores/Wolfgang_Rolke-Esma3102.pdf>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Algunas ideas básicas y conceptos
 
-```{r cars}
-summary(cars)
-```
-## Hola 
-hola hola hola 
+### Introducción a ESMA3101
 
-### Including Plots
+### Recolección de datos
 
-You can also embed plots, for example:
+## Computación y RStudio
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+### Uso de la computadora y RStudio
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+### Escribiendo código y Funciones importantes en R
+
+## Estadística descriptiva

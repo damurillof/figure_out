@@ -2,11 +2,7 @@
 title: "Teaching"
 ---
 
-Sometimes I like to do projects and then post them on the internet for the whole world to benefit!
-here's some examples. 
 
 ## [ESMA3101: Estadística Aplicada I](https://didier-murillo.netlify.com/ESMA3101/)
 
-- An RMarkdown presentation on the common mistakes made in visualization and how to fix them.
-- Includes a GitHub repo for access to all the code.
-- Look at how high quality my work is, hire and or collaborate with me. 
+
