@@ -211,14 +211,12 @@ $(document).ready(function () {
 <ul>
 <li><a href="#prontuario">Prontuario</a></li>
 <li><a href="#algunas-ideas-basicas-y-conceptos">Algunas ideas básicas y conceptos</a><ul>
-<li><a href="#introduccion-a-esma3101">Introducción a ESMA3101</a></li>
-<li><a href="#recoleccion-de-datos">Recolección de datos</a></li>
+<li><a href="#motivacion-para-aprender-estadistica">Motivación para aprender Estadística</a></li>
+<li><a href="#conceptos-basicos-en-estadistica.">Conceptos básicos en Estadística.</a></li>
+<li><a href="#division-de-la-estadistica">División de la estadística</a></li>
+<li><a href="#tipos-de-datos">Tipos de Datos</a></li>
+<li><a href="#tecnicas-de-muestreo">Técnicas de Muestreo</a></li>
 </ul></li>
-<li><a href="#computacion-y-rstudio">Computación y RStudio</a><ul>
-<li><a href="#uso-de-la-computadora-y-rstudio">Uso de la computadora y RStudio</a></li>
-<li><a href="#escribiendo-codigo-y-funciones-importantes-en-r">Escribiendo código y Funciones importantes en R</a></li>
-</ul></li>
-<li><a href="#estadistica-descriptiva">Estadística descriptiva</a></li>
 </ul>
 </div>
 
@@ -228,6 +226,19 @@ $(document).ready(function () {
 </div>
 <div id="algunas-ideas-basicas-y-conceptos" class="section level2">
 <h2>Algunas ideas básicas y conceptos</h2>
+<div id="motivacion-para-aprender-estadistica" class="section level3">
+<h3>Motivación para aprender Estadística</h3>
+<p>Actualmente la estadística esta presente en la mayoria de problemas en distintas areas del conocimiento, como lo son la medicina, economía, Biología, Ciencias sociales, psicología etc. En todos estas disciplinas siempre es posible usar técnicas de estadística para resolver alguna o varias preguntas usando los datos del del problema en cuestion. Veamos algunos ejemplos:</p>
+<ul>
+<li>¿La aspirina reduce el riesgo de ataques cardíacos? (Investigación médica)</li>
+<li>¿Hay menos especies de aves despues del huracán María? (Biología)</li>
+<li>¿Una cierta marca de gasolina realmente limpia el motor? (Química e Ingeniería Mecánica)</li>
+<li>Evaluación costo beneficio de la vacunación en un pais (Politica Economica y Gobierno)</li>
+<li>¿Funciona la capacitación para el manejo de la ira? (Psicología y Derecho)</li>
+<li>¿Los programas de viajero frecuente aumentan la venta de boletos aéreos? (Negocio)</li>
+<li>¿Realmente el asistencialismo reduce la pobreza? (Ciencias Sociales y Economía)</li>
+</ul>
+<p>La estadística puede resolver todas las preguntas anteriores, quizas todas con el mismo método.</p>
 <blockquote>
 <p>¿Que es la estadística?.</p>
 </blockquote>
@@ -238,31 +249,86 @@ $(document).ready(function () {
 <li>¿Como analizar los datos?</li>
 <li>¿Como presentar los resultados?</li>
 </ul></li>
-<li>Segunda Idea: Estadística es la ciencia de la incertidumbre.
+<li><p>Segunda Idea: Estadística es la ciencia de la incertidumbre.</p>
 <ul>
 <li>¿De donde proviene esa incertidumbre?</li>
 <li>¿Que tipos de incertidumbre?</li>
 <li>¿Como tratarla?</li>
 </ul></li>
 </ul>
-<div id="introduccion-a-esma3101" class="section level3">
-<h3>Introducción a ESMA3101</h3>
+<p>La Estadística comprende los métodos usados para recolectar los datos, la organización y presentación de la información recolectada y la extracción de conclusiones mediante la aplicación de técnicas adecuadas a los datos de la muestra.</p>
 </div>
-<div id="recoleccion-de-datos" class="section level3">
-<h3>Recolección de datos</h3>
+<div id="conceptos-basicos-en-estadistica." class="section level3">
+<h3>Conceptos básicos en Estadística.</h3>
+<p>Para entender gran parte del curso se deben tener presente los siguientes conceptos:</p>
+<blockquote>
+<p>Población</p>
+</blockquote>
+<p>En Estadística se refiere a población como el conjunto de individuos u objetos que poseen la característica o características que se desea estudiar. En un sentido más estadístico, una población es el conjunto de mediciones de una cierta característica en todos los individuos u objetos de estudio. Entiendase por individuos u objetos a personas, plantas, animales, maquinas, etc.</p>
+<blockquote>
+<p>Muestra</p>
+</blockquote>
+<p>Es una parte de la población y es el conjunto de mediciones que han sido realmente recolectados o seleccionados. La extracción de la muestra es un paso importante porque es a partir de ella que se sacan conclusiones acerca de la población. El tamaño de la muestra depende del esquema que se usa para su selección.</p>
+<blockquote>
+<p>Muestra Aleatoria</p>
+</blockquote>
+<p>Es una muestra bien representativa de la población. Se considera que cada elemento de la población ha tenido la misma oportunidad de formar parte de la muestra. Las conclusiones basadas en una muestra aleatoria son confiables.</p>
+<blockquote>
+<p>Variable</p>
+</blockquote>
+<p>Es la característica que se desea estudiar. Por ejemplo, si estamos interesados en saber ¿Qué música escuchan los colegiales?, ¿Cúal es la variable en este ejemplo?</p>
+<blockquote>
+<p>Dato</p>
+</blockquote>
+<p>Es un valor particular de la variable.</p>
+<blockquote>
+<p>Parámetro</p>
+</blockquote>
+<p>Es un valor que caracteriza a una población. El valor del parámetro se considera constante y por lo general es desconocido.</p>
+<blockquote>
+<p>Estadístico</p>
+</blockquote>
+<p>Es un valor que se calcula con base a los datos que se toman en la muestra y el cual es usado para estimar el valor del parámetro. El valor del estadístico es conocido y varía con la muestra tomada.</p>
+<blockquote>
+<p>Censo</p>
+</blockquote>
+<p>Es un listado de una o más características de todos los elementos de una población. Los censos poblacionales se hacen cada 10 años a nivel mundial.</p>
+<blockquote>
+<p>Encuesta</p>
+</blockquote>
+<p>Es un listado de una o más características de todos los elementos de una muestra.</p>
 </div>
+<div id="division-de-la-estadistica" class="section level3">
+<h3>División de la estadística</h3>
+<ul>
+<li><p>Estadistica Descriptiva: Conjunto de técnicas y métodos que son usados para recolectar la información a ser evaluada, organizarla, y presentarla en forma de tablas y gráficas. También se incluyen aquí el cálculo de medidas estadísticas de centralidad y de variabilidad.</p></li>
+<li><p>Estadistica Inferencial: Conjunto de técnicas y métodos que son usados para sacar conclusiones generales acerca de una población usando datos de una muestra tomada de ella.</p></li>
+</ul>
 </div>
-<div id="computacion-y-rstudio" class="section level2">
-<h2>Computación y RStudio</h2>
-<div id="uso-de-la-computadora-y-rstudio" class="section level3">
-<h3>Uso de la computadora y RStudio</h3>
+<div id="tipos-de-datos" class="section level3">
+<h3>Tipos de Datos</h3>
+<ul>
+<li><p>Datos Cuantitativos. Son aquellos que resultan de hacer mediciones o conteos. Se clasifican a su vez en dos subtipos:</p>
+<ul>
+<li>Datos Discretos: Son los que resultan de hacer conteos y por lo general son números enteros.</li>
+<li>Datos Continuos. Son los que resultan de hacer mediciones y pueden asumir cualquier valor de la recta real.</li>
+</ul></li>
+<li><p>Datos Cualitativos o Categóricos. Son aquellos que expresan atributos o categorías. Para facilitar el análisis estadístico de este tipo de datos frecuentemente se codifican a números, esta codificación da lugar a dos subtipos de datos categóricos:</p>
+<ul>
+<li><p>Datos Nominales. Son aquellos datos categóricos que pueden ser codificados numéricamente pero donde hay una relación arbitraria entre los números asignados y el valor de la variable.</p></li>
+<li><p>Datos Ordinales. Son aquellos que al ser codificados numéricamente deben guardar una correspondencia entre los números asignados y el verdadero valor de la variable.</p></li>
+</ul></li>
+</ul>
 </div>
-<div id="escribiendo-codigo-y-funciones-importantes-en-r" class="section level3">
-<h3>Escribiendo código y Funciones importantes en R</h3>
+<div id="tecnicas-de-muestreo" class="section level3">
+<h3>Técnicas de Muestreo</h3>
+<ol style="list-style-type: decimal">
+<li><p>Muestreo Aleatorio. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.</p></li>
+<li><p>Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.</p></li>
+<li><p>Muestreo por conglomerados (“Clusters”). En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.</p></li>
+<li><p>Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si.</p></li>
+</ol>
 </div>
-</div>
-<div id="estadistica-descriptiva" class="section level2">
-<h2>Estadística descriptiva</h2>
 </div>
 
 

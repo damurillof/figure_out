@@ -20,6 +20,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Algunas ideas básicas y conceptos
 
+### Motivación para aprender Estadística 
+
+Actualmente la estadística esta presente en la mayoria de problemas en distintas areas del conocimiento, como lo son la  medicina, economía, Biología, Ciencias sociales, psicología etc. En todos estas disciplinas siempre es posible usar técnicas de estadística para resolver alguna o varias preguntas usando los datos del del problema en cuestion. Veamos algunos ejemplos:
+
+*  ¿La aspirina reduce el riesgo de ataques cardíacos? (Investigación médica)
+*  ¿Hay menos especies de aves despues del huracán María? (Biología)
+*  ¿Una cierta marca de gasolina realmente limpia el motor? (Química e Ingeniería Mecánica)
+*  Evaluación costo beneficio de la vacunación en un pais (Politica Economica y Gobierno)
+*  ¿Funciona la capacitación para el manejo de la ira? (Psicología y Derecho)
+*  ¿Los programas de viajero frecuente aumentan la venta de boletos aéreos? (Negocio)
+*  ¿Realmente el asistencialismo reduce la pobreza? (Ciencias Sociales y Economía)
+
+La estadística puede resolver todas las preguntas anteriores, quizas todas con el mismo método. 
+
 > ¿Que es la estadística?.
 
 * Primera Idea: Estadística es la ciencia de los datos o de la información. Respecto a esto la estadística resulve las siguientes preguntas:
@@ -27,21 +41,88 @@ knitr::opts_chunk$set(echo = TRUE)
     + ¿Como recolectar los datos? 
     + ¿Como analizar los datos?
     + ¿Como presentar los resultados?
+    
 
 * Segunda Idea: Estadística es la ciencia de la incertidumbre.
+
     + ¿De donde proviene esa incertidumbre?
     + ¿Que tipos de incertidumbre?
     + ¿Como tratarla?
 
 
-### Introducción a ESMA3101
+La Estadística comprende los métodos usados para recolectar los datos, la organización y presentación de la información recolectada y la extracción de conclusiones mediante la aplicación de técnicas adecuadas a los datos de la muestra. 
 
-### Recolección de datos
 
-## Computación y RStudio
+### Conceptos básicos en Estadística.
 
-### Uso de la computadora y RStudio
+Para entender gran parte del curso se deben tener presente los siguientes conceptos:
 
-### Escribiendo código y Funciones importantes en R
+> Población
 
-## Estadística descriptiva
+En Estadística se refiere a población como el conjunto de individuos u objetos que poseen la característica o características que se desea estudiar. En un sentido más estadístico, una población es el conjunto de mediciones de una cierta característica en todos los individuos u objetos de estudio. Entiendase por individuos u objetos a personas, plantas, animales, maquinas, etc.
+
+
+> Muestra
+
+Es una parte de la población y es el conjunto de mediciones que han sido realmente recolectados o seleccionados. La extracción de la muestra es un paso  importante porque es a partir de ella que se sacan conclusiones acerca de la población. El tamaño de la muestra depende del esquema que se usa para su selección. 
+
+
+> Muestra Aleatoria
+
+Es una muestra bien representativa de la población. Se considera que cada elemento de la población ha tenido la misma oportunidad de formar parte de la muestra. Las conclusiones basadas en una muestra aleatoria son confiables.
+
+> Variable
+
+Es la característica que se desea estudiar. Por ejemplo, si estamos interesados en saber ¿Qué música escuchan los colegiales?, ¿Cúal es la variable en este ejemplo?
+
+> Dato
+
+Es un valor particular de la variable.
+
+> Parámetro
+
+Es un valor que caracteriza a una población. El valor del parámetro se considera constante y por lo general es desconocido.
+
+> Estadístico
+
+Es un valor que se calcula con base a los datos que se toman en la muestra y el cual es usado para estimar el valor del parámetro. El valor del estadístico es conocido y varía con la muestra tomada.
+
+> Censo
+
+Es un listado de una o más características de todos los elementos de una población. Los censos poblacionales se hacen cada 10 años a nivel mundial.
+
+> Encuesta
+
+Es un listado de una o más características de todos los elementos de una muestra.
+
+### División de la estadística
+
+* Estadistica Descriptiva: Conjunto de técnicas y métodos que son usados para recolectar la información a ser evaluada, organizarla, y presentarla en forma de tablas y gráficas. También se incluyen aquí el cálculo de medidas estadísticas de centralidad y de variabilidad.
+
+* Estadistica Inferencial: Conjunto de técnicas y métodos que son usados para sacar conclusiones generales acerca de una población usando datos de una muestra tomada de ella.
+
+### Tipos de Datos
+
+* Datos Cuantitativos. Son aquellos que resultan de hacer mediciones o conteos. Se clasifican a su vez en dos subtipos:
+
+    + Datos Discretos: Son los que resultan de hacer conteos y por lo general son números enteros.
+    + Datos Continuos. Son los que resultan de hacer mediciones y pueden asumir cualquier valor de la recta real.
+  
+* Datos Cualitativos o Categóricos. Son aquellos que expresan atributos o categorías. Para facilitar el análisis estadístico de este tipo de datos frecuentemente se codifican a números, esta codificación da lugar a dos subtipos de datos categóricos:
+
+    + Datos Nominales. Son aquellos datos categóricos que pueden ser codificados numéricamente pero donde hay una relación arbitraria entre los números asignados y el valor de la variable.
+   
+    + Datos Ordinales. Son aquellos que al ser codificados numéricamente deben guardar una correspondencia entre los números asignados y el verdadero valor de la variable.
+  
+  
+### Técnicas de Muestreo
+
+1. Muestreo Aleatorio. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.
+
+2. Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.
+
+3. Muestreo por conglomerados (“Clusters”). En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.
+
+4. Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si. 
+
+
