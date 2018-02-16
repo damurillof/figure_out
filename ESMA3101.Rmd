@@ -106,21 +106,62 @@ Es un listado de una o más características de todos los elementos de una muest
     + Datos Discretos: Son los que resultan de hacer conteos y por lo general son números enteros.
     + Datos Continuos. Son los que resultan de hacer mediciones y pueden asumir cualquier valor de la recta real.
   
+Ejemplos: Como datos discretos podemos tener: Número de hijos, Años de estudio, Número de empleados en una empresa, Número de cigarrillos que una persona fuma al día, etc. Para datos continuos tenemos por ejemplo el Peso de una persona en lb, estatura, temperatura del ambiente, etc.
+
+
 * Datos Cualitativos o Categóricos. Son aquellos que expresan atributos o categorías. Para facilitar el análisis estadístico de este tipo de datos frecuentemente se codifican a números, esta codificación da lugar a dos subtipos de datos categóricos:
 
-    + Datos Nominales. Son aquellos datos categóricos que pueden ser codificados numéricamente pero donde hay una relación arbitraria entre los números asignados y el valor de la variable.
+    + Datos Nominales. Son caracteristicas o cualidades cuyas categorías no tienen un orden establecido. Pueden ser numéricos o no numéricos.
    
-    + Datos Ordinales. Son aquellos que al ser codificados numéricamente deben guardar una correspondencia entre los números asignados y el verdadero valor de la variable.
+    + Datos Ordinales. Son caracteristicas o cualidades cuyas categorías  tienen un orden prestablecido. Pueden ser numéricos o no numéricos. 
+    
+Ejemplos: El género de una persona es un dato nominal no numérico, también lo es deporte favorito, música favorita, etc. El número de seguro social de una persona es un dato nominal numérico. El grado de interes por un tema (Bajo, Alto), calificaciones durante el semestre (F, D, C, B, A). Entre los ejemplos de variables ordinales se incluyen escalas de actitud que representan el grado de satisfacción o confianza y las puntuaciones de evaluación de las preferencias.
+
+![](var.png)
+
+En la imagen arriba se puede aprecial los tipos de datos o variables. 
   
   
 ### Técnicas de Muestreo
 
-1. Muestreo Aleatorio. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.
+> Muestreo
 
-2. Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.
+Muestreo se define como el proceso de pasos y técnicas para llevar a cabo la extracción de la muestra. El muestreo se debe realizar garantizando que la muestra seleccionada sea aleatoria. Existen varias técnicas para hacer muestreo, a continuación se enumeran las cuatro principales.
+
+
+1. Muestreo Aleatorio simple. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.
+
+Despues de fijar el tamaño de la muestra $n$,  los elementos que la compongan se deben elegir aleatoriamente entre los $N$ de la población. Para hacer que el proceso sea aleatorio los individuos se deben etiquetar (números por ejemplo), y luego serán seleccionados usando computadora u otro método adecuado. 
+
+2. Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato. 
+
+Este tipo de muestreo consiste en considerar categorías típicas diferentes entre sí (estratos) que poseen gran homogeneidad respecto a alguna característica (se puede estratificar, por ejemplo, según la profesión, el municipio de residencia, el sexo, el estado civil, etc.). Lo que se pretende con este tipo de muestreo es asegurarse de que todos los estratos de interés estarán representados adecuadamente en la muestra. Cada estrato funciona independientemente, pudiendo aplicarse dentro de ellos el muestreo aleatorio simple o el estratificado para elegir los elementos concretos que formarán parte de la muestra.
+
 
 3. Muestreo por conglomerados (“Clusters”). En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.
 
-4. Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si. 
+En el muestreo por conglomerados la unidad muestral es un grupo de elementos de la población que forman una unidad, a la que llamamos conglomerado. Las unidades hospitalarias,  los departamentos universitarios, una caja de determinado producto, etc., son conglomerados naturales. En otras ocasiones se pueden utilizar conglomerados no naturales como, por ejemplo, las urnas electorales. Cuando los conglomerados son áreas geográficas suele hablarse de "muestreo por áreas". El muestreo por conglomerados consiste en seleccionar aleatoriamente un cierto numero
+de conglomerados (el necesario para alcanzar el tamaño muestral establecido) y en investigar después todos los elementos pertenecientes a los conglomerados elegidos. 
+
+
+
+4. Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si.  Este procedimiento exige, numerar todos los elementos de la población, pero en lugar de extraer n números aleatorios sólo se extrae uno. Se parte de ese número aleatorio i, que es un número elegido al azar, y los elementos que integran la muestra son los que ocupa los lugares i, i+k, i+2k, i+3k,...,i+(n-1)k, es decir se toman los individuos de k en k, siendo k el resultado de dividir el tamaño de la población entre el tamaño de la muestra: k= N/n. El número i que empleamos como punto de partida será un número al azar entre 1 y k.
+
+### Formas de recolección de datos
+
+1. Haciendo entrevistas personales. Puede ser el método más efectivo en muchas ocasiones pero es costoso y requiere bastante tiempo para ser ejecutado.
+
+2. Haciendo entrevistas por teléfono. Tiene la desventaja de que el entrevistado puede no ser sincero en sus contestaciones.
+
+3. Mediante cuestionarios emitidos por correo. Es costoso y por lo general no más del 30% de los entrevistados retornan el cuestionario.
+
+4. Por observación directa.
+
+5. A través de  Internet.
+
+6. Usando simulación por computadoras.
+
+## Introducción a RStudio
+
 
 

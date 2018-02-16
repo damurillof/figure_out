@@ -216,7 +216,9 @@ $(document).ready(function () {
 <li><a href="#division-de-la-estadistica">División de la estadística</a></li>
 <li><a href="#tipos-de-datos">Tipos de Datos</a></li>
 <li><a href="#tecnicas-de-muestreo">Técnicas de Muestreo</a></li>
+<li><a href="#formas-de-recoleccion-de-datos">Formas de recolección de datos</a></li>
 </ul></li>
+<li><a href="#introduccion-a-rstudio">Introducción a RStudio</a></li>
 </ul>
 </div>
 
@@ -312,22 +314,58 @@ $(document).ready(function () {
 <li>Datos Discretos: Son los que resultan de hacer conteos y por lo general son números enteros.</li>
 <li>Datos Continuos. Son los que resultan de hacer mediciones y pueden asumir cualquier valor de la recta real.</li>
 </ul></li>
+</ul>
+<p>Ejemplos: Como datos discretos podemos tener: Número de hijos, Años de estudio, Número de empleados en una empresa, Número de cigarrillos que una persona fuma al día, etc. Para datos continuos tenemos por ejemplo el Peso de una persona en lb, estatura, temperatura del ambiente, etc.</p>
+<ul>
 <li><p>Datos Cualitativos o Categóricos. Son aquellos que expresan atributos o categorías. Para facilitar el análisis estadístico de este tipo de datos frecuentemente se codifican a números, esta codificación da lugar a dos subtipos de datos categóricos:</p>
 <ul>
-<li><p>Datos Nominales. Son aquellos datos categóricos que pueden ser codificados numéricamente pero donde hay una relación arbitraria entre los números asignados y el valor de la variable.</p></li>
-<li><p>Datos Ordinales. Son aquellos que al ser codificados numéricamente deben guardar una correspondencia entre los números asignados y el verdadero valor de la variable.</p></li>
+<li><p>Datos Nominales. Son caracteristicas o cualidades cuyas categorías no tienen un orden establecido. Pueden ser numéricos o no numéricos.</p></li>
+<li><p>Datos Ordinales. Son caracteristicas o cualidades cuyas categorías tienen un orden prestablecido. Pueden ser numéricos o no numéricos.</p></li>
 </ul></li>
 </ul>
+<p>Ejemplos: El género de una persona es un dato nominal no numérico, también lo es deporte favorito, música favorita, etc. El número de seguro social de una persona es un dato nominal numérico. El grado de interes por un tema (Bajo, Alto), calificaciones durante el semestre (F, D, C, B, A). Entre los ejemplos de variables ordinales se incluyen escalas de actitud que representan el grado de satisfacción o confianza y las puntuaciones de evaluación de las preferencias.</p>
+<div class="figure">
+<img src="var.png" />
+
+</div>
+<p>En la imagen arriba se puede aprecial los tipos de datos o variables.</p>
 </div>
 <div id="tecnicas-de-muestreo" class="section level3">
 <h3>Técnicas de Muestreo</h3>
+<blockquote>
+<p>Muestreo</p>
+</blockquote>
+<p>Muestreo se define como el proceso de pasos y técnicas para llevar a cabo la extracción de la muestra. El muestreo se debe realizar garantizando que la muestra seleccionada sea aleatoria. Existen varias técnicas para hacer muestreo, a continuación se enumeran las cuatro principales.</p>
 <ol style="list-style-type: decimal">
-<li><p>Muestreo Aleatorio. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.</p></li>
-<li><p>Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.</p></li>
-<li><p>Muestreo por conglomerados (“Clusters”). En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.</p></li>
-<li><p>Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si.</p></li>
+<li>Muestreo Aleatorio simple. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.</li>
+</ol>
+<p>Despues de fijar el tamaño de la muestra <span class="math inline">\(n\)</span>, los elementos que la compongan se deben elegir aleatoriamente entre los <span class="math inline">\(N\)</span> de la población. Para hacer que el proceso sea aleatorio los individuos se deben etiquetar (números por ejemplo), y luego serán seleccionados usando computadora u otro método adecuado.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.</li>
+</ol>
+<p>Este tipo de muestreo consiste en considerar categorías típicas diferentes entre sí (estratos) que poseen gran homogeneidad respecto a alguna característica (se puede estratificar, por ejemplo, según la profesión, el municipio de residencia, el sexo, el estado civil, etc.). Lo que se pretende con este tipo de muestreo es asegurarse de que todos los estratos de interés estarán representados adecuadamente en la muestra. Cada estrato funciona independientemente, pudiendo aplicarse dentro de ellos el muestreo aleatorio simple o el estratificado para elegir los elementos concretos que formarán parte de la muestra.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Muestreo por conglomerados (“Clusters”). En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.</li>
+</ol>
+<p>En el muestreo por conglomerados la unidad muestral es un grupo de elementos de la población que forman una unidad, a la que llamamos conglomerado. Las unidades hospitalarias, los departamentos universitarios, una caja de determinado producto, etc., son conglomerados naturales. En otras ocasiones se pueden utilizar conglomerados no naturales como, por ejemplo, las urnas electorales. Cuando los conglomerados son áreas geográficas suele hablarse de “muestreo por áreas”. El muestreo por conglomerados consiste en seleccionar aleatoriamente un cierto numero de conglomerados (el necesario para alcanzar el tamaño muestral establecido) y en investigar después todos los elementos pertenecientes a los conglomerados elegidos.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si. Este procedimiento exige, numerar todos los elementos de la población, pero en lugar de extraer n números aleatorios sólo se extrae uno. Se parte de ese número aleatorio i, que es un número elegido al azar, y los elementos que integran la muestra son los que ocupa los lugares i, i+k, i+2k, i+3k,…,i+(n-1)k, es decir se toman los individuos de k en k, siendo k el resultado de dividir el tamaño de la población entre el tamaño de la muestra: k= N/n. El número i que empleamos como punto de partida será un número al azar entre 1 y k.</li>
 </ol>
 </div>
+<div id="formas-de-recoleccion-de-datos" class="section level3">
+<h3>Formas de recolección de datos</h3>
+<ol style="list-style-type: decimal">
+<li><p>Haciendo entrevistas personales. Puede ser el método más efectivo en muchas ocasiones pero es costoso y requiere bastante tiempo para ser ejecutado.</p></li>
+<li><p>Haciendo entrevistas por teléfono. Tiene la desventaja de que el entrevistado puede no ser sincero en sus contestaciones.</p></li>
+<li><p>Mediante cuestionarios emitidos por correo. Es costoso y por lo general no más del 30% de los entrevistados retornan el cuestionario.</p></li>
+<li><p>Por observación directa.</p></li>
+<li><p>A través de Internet.</p></li>
+<li><p>Usando simulación por computadoras.</p></li>
+</ol>
+</div>
+</div>
+<div id="introduccion-a-rstudio" class="section level2">
+<h2>Introducción a RStudio</h2>
 </div>
 
 
