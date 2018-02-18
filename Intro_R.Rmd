@@ -1,7 +1,5 @@
 ---
 title: "Introducción a R"
-author: 'Instructor: Didier Murillo'
-date: "February 18, 2018"
 output:
   html_document:
     toc: true

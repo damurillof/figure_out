@@ -1,7 +1,5 @@
 ---
-title: "ESMA3101: Estadística Aplicada I"
-author: 'Didier Murillo'
-date: "February 10, 2018"
+title: "Introducción a ESMA3101"
 output:
   html_document:
     toc: true
@@ -12,9 +10,6 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
-## Prontuario
 
 ## Algunas ideas básicas y conceptos
 

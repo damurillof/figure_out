@@ -6,7 +6,7 @@ output: html_document
 
 ## [Prontuario](http://math.uprm.edu/syllabus/profesores/Wolfgang_Rolke-Esma3102.pdf)
 
-## [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/ESMA3101/)
+## [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/Intro_Esma3101/)
 
 ## [Introducción a R](https://didier-murillo.netlify.com/Intro_R/)
 

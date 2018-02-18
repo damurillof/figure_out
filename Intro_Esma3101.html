@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Introducción a ESMA3101</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introducción a ESMA3101</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#algunas-ideas-basicas-y-conceptos">Algunas ideas básicas y conceptos</a><ul>
+<li><a href="#motivacion-para-aprender-estadistica">Motivación para aprender Estadística</a></li>
+<li><a href="#conceptos-basicos-en-estadistica.">Conceptos básicos en Estadística.</a></li>
+<li><a href="#division-de-la-estadistica">División de la estadística</a></li>
+<li><a href="#tipos-de-datos">Tipos de Datos</a></li>
+<li><a href="#tecnicas-de-muestreo">Técnicas de Muestreo</a></li>
+<li><a href="#formas-de-recoleccion-de-datos">Formas de recolección de datos</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="algunas-ideas-basicas-y-conceptos" class="section level2">
+<h2>Algunas ideas básicas y conceptos</h2>
+<div id="motivacion-para-aprender-estadistica" class="section level3">
+<h3>Motivación para aprender Estadística</h3>
+<p>Actualmente la estadística esta presente en la mayoría de problemas en distintas areas del conocimiento, como lo son la Medicina, Economía, Biología, Ciencias sociales, Psicología etc. En todos estas disciplinas siempre es posible usar técnicas de estadística para resolver alguna o varias preguntas usando los datos del del problema en cuestion. Veamos algunos ejemplos:</p>
+<ul>
+<li>¿La aspirina reduce el riesgo de ataques cardíacos? (Investigación médica)</li>
+<li>¿Hay menos especies de aves en Puerto Rico después del huracán María? (Biología)</li>
+<li>¿Una cierta marca de gasolina realmente limpia el motor? (Química e Ingeniería Mecánica)</li>
+<li>Evaluación costo-beneficio de la vacunación en un pais (Politica Economica y Gobierno)</li>
+<li>¿Funciona la capacitación para el manejo de la ira? (Psicología y Derecho)</li>
+<li>¿Los programas de viajero frecuente aumentan la venta de boletos aéreos? (Negocio)</li>
+<li>¿Realmente el asistencialismo reduce la pobreza? (Ciencias Sociales y Economía)</li>
+</ul>
+<p>La estadística puede resolver todas las preguntas anteriores, quizas todas con el mismo método.</p>
+<blockquote>
+<p>¿Que es la estadística?.</p>
+</blockquote>
+<ul>
+<li><p>Primera Idea: Estadística es la ciencia de los datos o de la información. Respecto a esto la estadística resulve las siguientes preguntas:</p>
+<ul>
+<li>¿Como recolectar los datos?</li>
+<li>¿Como analizar los datos?</li>
+<li>¿Como presentar los resultados?</li>
+</ul></li>
+<li><p>Segunda Idea: Estadística es la ciencia de la incertidumbre.</p>
+<ul>
+<li>¿De donde proviene esa incertidumbre?</li>
+<li>¿Que tipos de incertidumbre?</li>
+<li>¿Como tratarla?</li>
+</ul></li>
+</ul>
+<p>La Estadística comprende los métodos usados para recolectar los datos, la organización y presentación de la información recolectada y la extracción de conclusiones mediante la aplicación de técnicas adecuadas a los datos de la muestra.</p>
+</div>
+<div id="conceptos-basicos-en-estadistica." class="section level3">
+<h3>Conceptos básicos en Estadística.</h3>
+<p>Para entender gran parte del curso se deben tener presente los siguientes conceptos:</p>
+<blockquote>
+<p>Población</p>
+</blockquote>
+<p>En Estadística se refiere a población como el conjunto de individuos u objetos que poseen la característica o características que se desea estudiar. En un sentido más estadístico, una población es el conjunto de mediciones de una cierta característica en todos los individuos u objetos de estudio. Entiendase por individuos u objetos a personas, plantas, animales, maquinas, etc.</p>
+<blockquote>
+<p>Muestra</p>
+</blockquote>
+<p>Es una parte de la población y es el conjunto de mediciones que han sido realmente recolectados o seleccionados. La extracción de la muestra es un paso importante porque es a partir de ella que se sacan conclusiones acerca de la población. El tamaño de la muestra depende del esquema que se usa para su selección.</p>
+<blockquote>
+<p>Muestra Aleatoria</p>
+</blockquote>
+<p>Es una muestra bien representativa de la población. Se considera que cada elemento de la población ha tenido la misma oportunidad de formar parte de la muestra. Las conclusiones basadas en una muestra aleatoria son confiables.</p>
+<blockquote>
+<p>Variable</p>
+</blockquote>
+<p>Es la característica que se desea estudiar. Por ejemplo, si estamos interesados en saber ¿Qué música escuchan los colegiales?, ¿Cúal es la variable en este ejemplo?</p>
+<blockquote>
+<p>Dato</p>
+</blockquote>
+<p>Es un valor particular de la variable.</p>
+<blockquote>
+<p>Parámetro</p>
+</blockquote>
+<p>Es un valor que caracteriza a una población. El valor del parámetro se considera constante y por lo general es desconocido.</p>
+<blockquote>
+<p>Estadístico</p>
+</blockquote>
+<p>Es un valor que se calcula con base a los datos que se toman en la muestra y el cual es usado para estimar el valor del parámetro. El valor del estadístico es conocido y varía con la muestra tomada.</p>
+<blockquote>
+<p>Censo</p>
+</blockquote>
+<p>Es un listado de una o más características de todos los elementos de una población. Los censos poblacionales se hacen cada 10 años a nivel mundial.</p>
+<blockquote>
+<p>Encuesta</p>
+</blockquote>
+<p>Es un listado de una o más características de todos los elementos de una muestra.</p>
+</div>
+<div id="division-de-la-estadistica" class="section level3">
+<h3>División de la estadística</h3>
+<ul>
+<li><p>Estadistica Descriptiva: Conjunto de técnicas y métodos que son usados para recolectar la información a ser evaluada, organizarla, y presentarla en forma de tablas y gráficas. También se incluyen aquí el cálculo de medidas estadísticas de centralidad y de variabilidad.</p></li>
+<li><p>Estadistica Inferencial: Conjunto de técnicas y métodos que son usados para sacar conclusiones generales acerca de una población usando datos de una muestra tomada de ella.</p></li>
+</ul>
+</div>
+<div id="tipos-de-datos" class="section level3">
+<h3>Tipos de Datos</h3>
+<ul>
+<li><p>Datos Cuantitativos. Son aquellos que resultan de hacer mediciones o conteos. Se clasifican a su vez en dos subtipos:</p>
+<ul>
+<li>Datos Discretos: Son los que resultan de hacer conteos y por lo general son números enteros.</li>
+<li>Datos Continuos. Son los que resultan de hacer mediciones y pueden asumir cualquier valor de la recta real.</li>
+</ul></li>
+</ul>
+<p>Ejemplos: Como datos discretos podemos tener: Número de hijos, Años de estudio, Número de empleados en una empresa, Número de cigarrillos que una persona fuma al día, etc. Para datos continuos tenemos por ejemplo el Peso de una persona en lb, estatura, temperatura del ambiente, etc.</p>
+<ul>
+<li><p>Datos Cualitativos o Categóricos. Son aquellos que expresan atributos o categorías. Para facilitar el análisis estadístico de este tipo de datos frecuentemente se codifican a números, esta codificación da lugar a dos subtipos de datos categóricos:</p>
+<ul>
+<li><p>Datos Nominales. Son caracteristicas o cualidades cuyas categorías no tienen un orden establecido. Pueden ser numéricos o no numéricos.</p></li>
+<li><p>Datos Ordinales. Son caracteristicas o cualidades cuyas categorías tienen un orden prestablecido. Pueden ser numéricos o no numéricos.</p></li>
+</ul></li>
+</ul>
+<p>Ejemplos: El género de una persona es un dato nominal no numérico, también lo es deporte favorito, música favorita, etc. El número de seguro social de una persona es un dato nominal numérico. El grado de interes por un tema (Bajo, Alto), calificaciones durante el semestre (F, D, C, B, A). Entre los ejemplos de variables ordinales se incluyen escalas de actitud que representan el grado de satisfacción o confianza y las puntuaciones de evaluación de las preferencias.</p>
+<div class="figure">
+<img src="var.png" />
+
+</div>
+<p>En la imagen arriba se puede aprecial los tipos de datos o variables.</p>
+</div>
+<div id="tecnicas-de-muestreo" class="section level3">
+<h3>Técnicas de Muestreo</h3>
+<blockquote>
+<p>Muestreo</p>
+</blockquote>
+<p>Muestreo se define como el proceso de pasos y técnicas para llevar a cabo la extracción de la muestra. El muestreo se debe realizar garantizando que la muestra seleccionada sea aleatoria. Existen varias técnicas para hacer muestreo, a continuación se enumeran las cuatro principales.</p>
+<ol style="list-style-type: decimal">
+<li>Muestreo Aleatorio simple. Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.</li>
+</ol>
+<p>Despues de fijar el tamaño de la muestra <span class="math inline">\(n\)</span>, los elementos que la compongan se deben elegir aleatoriamente entre los <span class="math inline">\(N\)</span> de la población. Para hacer que el proceso sea aleatorio los individuos se deben etiquetar (números por ejemplo), y luego serán seleccionados usando computadora u otro método adecuado.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Muestreo Estratificado. Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.</li>
+</ol>
+<p>Este tipo de muestreo consiste en considerar categorías típicas diferentes entre sí (estratos) que poseen gran homogeneidad respecto a alguna característica (se puede estratificar, por ejemplo, según la profesión, el municipio de residencia, el sexo, el estado civil, etc.). Lo que se pretende con este tipo de muestreo es asegurarse de que todos los estratos de interés estarán representados adecuadamente en la muestra. Cada estrato funciona independientemente, pudiendo aplicarse dentro de ellos el muestreo aleatorio simple o el estratificado para elegir los elementos concretos que formarán parte de la muestra.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Muestreo por conglomerados (“Clusters”). En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.</li>
+</ol>
+<p>En el muestreo por conglomerados la unidad muestral es un grupo de elementos de la población que forman una unidad, a la que llamamos conglomerado. Las unidades hospitalarias, los departamentos universitarios, una caja de determinado producto, etc., son conglomerados naturales. En otras ocasiones se pueden utilizar conglomerados no naturales como, por ejemplo, las urnas electorales. Cuando los conglomerados son áreas geográficas suele hablarse de “muestreo por áreas”. El muestreo por conglomerados consiste en seleccionar aleatoriamente un cierto numero de conglomerados (el necesario para alcanzar el tamaño muestral establecido) y en investigar después todos los elementos pertenecientes a los conglomerados elegidos.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Muestreo Sistemático. Se usa cuando los datos de la población están ordenados en forma numérica. La primera observación es elegida al azar de entre los primeros elementos de la población y las siguientes observaciones son elegidas guardando la misma distancia entre si. Este procedimiento exige, numerar todos los elementos de la población, pero en lugar de extraer n números aleatorios sólo se extrae uno. Se parte de ese número aleatorio i, que es un número elegido al azar, y los elementos que integran la muestra son los que ocupa los lugares i, i+k, i+2k, i+3k,…,i+(n-1)k, es decir se toman los individuos de k en k, siendo k el resultado de dividir el tamaño de la población entre el tamaño de la muestra: k= N/n. El número i que empleamos como punto de partida será un número al azar entre 1 y k.</li>
+</ol>
+</div>
+<div id="formas-de-recoleccion-de-datos" class="section level3">
+<h3>Formas de recolección de datos</h3>
+<ol style="list-style-type: decimal">
+<li><p>Haciendo entrevistas personales. Puede ser el método más efectivo en muchas ocasiones pero es costoso y requiere bastante tiempo para ser ejecutado.</p></li>
+<li><p>Haciendo entrevistas por teléfono. Tiene la desventaja de que el entrevistado puede no ser sincero en sus contestaciones.</p></li>
+<li><p>Mediante cuestionarios emitidos por correo. Es costoso y por lo general no más del 30% de los entrevistados retornan el cuestionario.</p></li>
+<li><p>Por observación directa.</p></li>
+<li><p>A través de Internet.</p></li>
+<li><p>Usando simulación por computadoras.</p></li>
+</ol>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
