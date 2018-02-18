@@ -1,0 +1,10 @@
+---
+title: "Contents"
+author: 'Instructor: Didier Murillo'
+output: html_document
+---
+
+## [Prontuario](http://math.uprm.edu/syllabus/profesores/Wolfgang_Rolke-Esma3102.pdf)
+
+## [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/ESMA3101/)
+
