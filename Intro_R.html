@@ -209,7 +209,7 @@ $(document).ready(function () {
 <li><a href="#que-es-r">¿Qué es R?</a></li>
 <li><a href="#por-que-deberia-usar-r">¿Por qué debería usar R?</a></li>
 <li><a href="#que-puede-hacer-r">¿Qué puede hacer R?</a></li>
-<li><a href="#como-empiezo">¿Cómo empiezo?</a></li>
+<li><a href="#como-empiezo-a-usar-r">¿Cómo empiezo a usar R?</a></li>
 <li><a href="#rstudio-un-entorno-de-desarrollo-integrado-ide-para-r">RStudio: Un entorno de desarrollo integrado (IDE) para R</a></li>
 <li><a href="#tips-basicos-para-usar-r-adecuadamente">Tips básicos para usar R adecuadamente</a></li>
 <li><a href="#operaciones-y-funciones-basicas-en-r">Operaciones y funciones básicas en R</a></li>
@@ -225,7 +225,7 @@ $(document).ready(function () {
 </div>
 <div id="por-que-deberia-usar-r" class="section level3">
 <h3>¿Por qué debería usar R?</h3>
-<p>Puede haber muchas razones particulares para usar uno u otro programa de computación. Aquí tratare de resumir algunas razones generales de porque usar R.</p>
+<p>Puede haber muchas razones particulares para usar uno u otro programa de computación estadística. Aquí tratare de resumir algunas razones generales del porque usar R.</p>
 <ol style="list-style-type: decimal">
 <li><p>Es gratuito, esto implica muchas ventajas y más si eres estudiante!</p></li>
 <li><p>R funciona en cualquier lugar: R esta disponible para diferentes tipos de hardware y software. Esto significa que R está disponible para Windows, sistemas Unix (como Linux), y Mac.</p></li>
@@ -238,8 +238,9 @@ $(document).ready(function () {
 <h3>¿Qué puede hacer R?</h3>
 <p>Con R se pueden hacer muchas cosas relacionadas con el análisis y visualización de datos. Puedes contruir tus propias funciones, paquetes, y hacer las graficas con un estilo propio.</p>
 <ul>
-<li>Gráficos descriptivos</li>
+<li>Gráficos descriptivos.</li>
 </ul>
+<p>Puedes crear gráficas personalizadas para ver el comportamiento de los datos y sacar conclusiones.</p>
 <div class="figure">
 <img src="descrip.png" />
 
@@ -247,6 +248,7 @@ $(document).ready(function () {
 <ul>
 <li>Mapas</li>
 </ul>
+<p>Se pueden contruir mapas para mostrar la prevalencia por ejemplo de alguna enfermedad. En este caso tenemos un mapa elaborado en R que muestra los índices de terrorismo mundial.</p>
 <div class="figure">
 <img src="map.png" />
 
@@ -254,9 +256,14 @@ $(document).ready(function () {
 <ul>
 <li>Crear tus propios documentos e informes desde Rmarkdown.</li>
 </ul>
+<p>Desde R es posible exportar los trabajos y proyectos elaborados dentro de R, esto en varios tipos de formatos como html, PDF, word, etc. Para más información sobre Rmarkdown puede visitar los siguientes enlaces:</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><a href="https://rmarkdown.rstudio.com/authoring_basics.html">rmarkdown-basics</a>.</p></li>
+<li><p><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">rmarkdown-reference</a></p></li>
+</ol>
 </div>
-<div id="como-empiezo" class="section level3">
-<h3>¿Cómo empiezo?</h3>
+<div id="como-empiezo-a-usar-r" class="section level3">
+<h3>¿Cómo empiezo a usar R?</h3>
 <ol style="list-style-type: decimal">
 <li><p>Lo primero es instalar R, a continuación esta el enlace de descarga <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a> para usuarios de Windows, Linux o Mac.</p></li>
 <li><p>Descargar e Instalar RStudio, se puede descargar en <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> para usuarios de Windows, Linux o Mac.</p></li>
@@ -273,11 +280,11 @@ $(document).ready(function () {
 <div id="tips-basicos-para-usar-r-adecuadamente" class="section level3">
 <h3>Tips básicos para usar R adecuadamente</h3>
 <ul>
-<li><p>R es ejecutado mediante una o más lineas de comandos. Esto requiere que escriba o copie y pegue comandos después de un símbolo del sistema (&gt;) que aparece cuando abre R. Después de escribir un comando en la consola R y presionar Enter en su teclado, se ejecutará el comando. Si su comando no está completo, R emite una solicitud de continuación (significada por un signo más: +). Alternativamente, puede escribir un script en la ventana del script, seleccionar un comando y hacer clic en el botón Run.</p></li>
+<li><p>R es ejecutado mediante una o más lineas de código. Esto requiere que escriba o copie y pegue comandos después de un símbolo del sistema (&gt;) que aparece cuando abre R. Después de escribir un comando en la consola R y presionar Enter en su teclado, se ejecutará el comando. Si su comando no está completo, R emite una solicitud de continuación (identificada por un signo más: +). Alternativamente, puede escribir un script en la ventana del script, seleccionar un comando y hacer clic en el botón Run.</p></li>
 <li><p>R es sensible a las mayúsculas. Asegúrese de que la ortografía y el uso de mayúsculas y minúsculas sean correctos.</p></li>
 <li><p>Los comandos en R también se llaman funciones. El formato básico de una función en R es: nombre.función (argumento, opciones).</p></li>
 <li><p>La flecha hacia arriba (^) en su teclado se puede utilizar para mostrar los comandos anteriores que ha escrito en la consola R.</p></li>
-<li><p>El símbolo <span class="math inline">\(\$\)</span> se usa para seleccionar una columna particular dentro de la tabla (por ejemplo, tabla$columna).</p></li>
+<li><p>El símbolo <span class="math inline">\(\$\)</span> se usa para seleccionar una columna particular dentro de una tabla de datos (por ejemplo, tabla$columna).</p></li>
 <li><p>Cualquier texto sobre el que no desee que actúe R (como comentarios, notas o instrucciones) debe ir precedido del símbolo #.</p></li>
 </ul>
 </div>
@@ -329,7 +336,7 @@ print(x)</code></pre>
 <blockquote>
 <p>Funcion <code>paste()</code></p>
 </blockquote>
-<p>La función <code>paste()</code> se usa para concatenar dos o mas objetos en R, veamos unejemplo en conjunto con la función <code>print()</code>.</p>
+<p>La función <code>paste()</code> se usa para concatenar dos o mas objetos en R, veamos un ejemplo en conjunto con la función <code>print()</code>.</p>
 <pre class="r"><code>## Imprimiendo un mensaje 
 est &lt;- 31
 print(paste(&quot;Hola a todos los&quot;,est,&quot;estudiantes de mi clase ESMA3101&quot;))</code></pre>
@@ -337,7 +344,7 @@ print(paste(&quot;Hola a todos los&quot;,est,&quot;estudiantes de mi clase ESMA3
 <blockquote>
 <p>Vectores numéricos</p>
 </blockquote>
-<p>En R un vector numérico es un objeto que contiene valores numéricos. Siempre se contruye con la <code>c()</code> y dentro del parentesis van los valores del vector separados por comas.</p>
+<p>En R un vector numérico es un objeto que contiene valores numéricos. Siempre se contruye con la <code>c()</code> y dentro del parentesis van los valores del vector, separados por comas.</p>
 <p>Ejemplo: Suponga que conoce el GPA de 20 estudiantes del colegio, 12 mujeres y 8 hombres:</p>
 <p>Mujeres: 3.25 3.78 3.78 2.47 3.24 2.89 2.41 3.61 2.59 2.99 2.56 2.44.</p>
 <p>Hombres: 3.22 2.75 3.17 3.38 3.85 2.18 3.68 2.10.</p>
@@ -349,7 +356,7 @@ print(GPA)</code></pre>
 <blockquote>
 <p>Vectores de caracteres</p>
 </blockquote>
-<p>A diferencia de los vectores numéricos, los vectores de caracteres contienen categorias. Ejemplos:</p>
+<p>A diferencia de los vectores numéricos, los vectores de caracteres contienen categorías. Ejemplos:</p>
 <pre class="r"><code>## Grado de satisfacción sobre algun tema
 Grado_satisfaccion &lt;- c(&quot;Bueno&quot;, &quot;Regular&quot;, &quot;Malo&quot;)
 print(Grado_satisfaccion)</code></pre>
@@ -361,12 +368,12 @@ print(Estatus)</code></pre>
 <blockquote>
 <p>Función <code>rep()</code></p>
 </blockquote>
-<p>La función <code>rep()</code> sirve para repetir un objeto una cantidad determinado numero de veces. Esta función crea un vector automaticamente sin la necesidad de usar el comando <code>c()</code>.</p>
-<p>Ejemplo: Repita el número 5 diez veces. Asigne el resultado a un objeto <code>x</code></p>
+<p>La función <code>rep()</code> sirve para repetir un objeto una cantidad determinada de veces. Esta función crea un vector automaticamente sin la necesidad de usar el comando <code>c()</code>, solo si se usa un solo <code>rep()</code>, si utiliza más de un <code>rep()</code> debe hacerlo con <code>c()</code>.</p>
+<p>Ejemplo: Repita el número 5 diez veces. Asigne el resultado a un objeto <code>x</code>, luego imprima x usando <code>print()</code></p>
 <pre class="r"><code>x &lt;- rep(5,10)
 print(x)</code></pre>
 <pre><code> [1] 5 5 5 5 5 5 5 5 5 5</code></pre>
-<p>Ejemplo: Repetir el mensaje “Soy Colegial” 10 veces y asignelo a un objeto llamado Colegio, luego imprima usando <code>`print</code>.</p>
+<p>Ejemplo: Repetir el mensaje “Soy Colegial” 10 veces y asignelo a un objeto llamado Colegio, luego imprima usando <code>print()</code>.</p>
 <pre class="r"><code>## Repetir 10 veces &quot;Soy Colegial&quot;
 Colegio &lt;- rep(&quot;Soy Colegial&quot;,10)
 print(Colegio)</code></pre>
@@ -387,7 +394,7 @@ print(Concentracion)</code></pre>
 <blockquote>
 <p>Data frames en R</p>
 </blockquote>
-<p>Un data frame en R se usa para almacenar tablas de datos. Es una lista de vectores de igual longitud. Por ejemplo, vamos a contruir un data frame con los vectores que construimos anteriormente: <code>GPA</code>, <code>Genero</code> y <code>Concentracion</code>, y le asignaremos el nombre <code>Etudiantes</code>. La función para crear un data frame es <code>data.frame</code></p>
+<p>Un data frame en R se usa para almacenar tablas de datos. Para crear el data frame los vectores deben tener la misma longitud. Por ejemplo, vamos a contruir un data frame con los vectores que construimos anteriormente: <code>GPA</code>, <code>Genero</code> y <code>Concentracion</code>, y le asignaremos el nombre <code>Students</code>. La función para crear un data frame es <code>data.frame</code></p>
 <pre class="r"><code>Students &lt;- data.frame(GPA,Genero,Concentracion)
 print(Students)</code></pre>
 <pre><code>    GPA Genero Concentracion
@@ -413,6 +420,26 @@ print(Students)</code></pre>
 20 2.10 Hombre          PSIC</code></pre>
 <p>Ahora como vemos, tenemos un tabla de datos con la información de los 20 estudiantes.</p>
 <p>Puede usar el comando <code>View(Students)</code> para mostrar la tabla de datos en una nueva pestaña de R.</p>
+<p>Si quiere usar solo la variable <code>Genero</code> debe tener en cuenta el simbolo <span class="math inline">\(\$\)</span>, es decir <code>Students$Genero</code>,</p>
+<pre class="r"><code>Students$Genero</code></pre>
+<pre><code> [1] Mujer  Mujer  Mujer  Mujer  Mujer  Mujer  Mujer  Mujer  Mujer  Mujer 
+[11] Mujer  Mujer  Hombre Hombre Hombre Hombre Hombre Hombre Hombre Hombre
+Levels: Hombre Mujer</code></pre>
+<blockquote>
+<p>La Función <code>table</code>.</p>
+</blockquote>
+<p>En R la función <code>table</code> se utiliza para conocer la frecuencia de los datos, supongamos que necesitamos saber cuantos son mujeres y cuantos son hombres de los 20 estudiantes, para esto se puede usar <code>table</code></p>
+<pre class="r"><code>table(Students$Genero)</code></pre>
+<pre><code>
+Hombre  Mujer 
+     8     12 </code></pre>
+<p>¿Cuantos son de ECON?</p>
+<pre class="r"><code>table(Students$Concentracion)</code></pre>
+<pre><code>
+BIOL ECON PSIC QUIM 
+   3    8    4    5 </code></pre>
+<hr />
+<p><em>FIN</em></p>
 </div>
 </div>
 

@@ -17,7 +17,7 @@ R es un software gratuito y un lenguaje de programación de código abierto desa
 
 ### ¿Por qué debería usar R?
 
-Puede haber muchas razones particulares para usar uno u otro programa de computación. Aquí tratare de resumir algunas razones generales de porque usar R.
+Puede haber muchas razones particulares para usar uno u otro programa de computación estadística. Aquí tratare de resumir algunas razones generales del porque usar R.
 
 1. Es gratuito, esto implica muchas ventajas y más si eres estudiante!
 
@@ -33,19 +33,28 @@ Puede haber muchas razones particulares para usar uno u otro programa de computa
 
 Con R se pueden hacer muchas cosas relacionadas con el análisis  y visualización de datos. Puedes contruir tus propias funciones, paquetes, y hacer las graficas con un estilo propio. 
 
-*  Gráficos descriptivos 
+*  Gráficos descriptivos.
+
+Puedes crear gráficas personalizadas para ver el comportamiento de los datos y sacar conclusiones. 
 
 ![](descrip.png)
 
 *  Mapas
 
+Se pueden contruir mapas para mostrar la prevalencia por ejemplo de alguna enfermedad. En este caso tenemos un mapa elaborado en R que muestra los índices de terrorismo mundial. 
+
 ![](map.png)
 
 *  Crear tus propios documentos e informes  desde Rmarkdown.
 
+Desde R es posible exportar los trabajos y proyectos elaborados dentro de R, esto en varios tipos de formatos como html, PDF, word, etc. Para más información sobre Rmarkdown puede visitar los siguientes enlaces:
+
+2. [rmarkdown-basics](https://rmarkdown.rstudio.com/authoring_basics.html).
+
+1. [rmarkdown-reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 
 
-### ¿Cómo empiezo?
+### ¿Cómo empiezo a usar R?
 
 1. Lo primero es instalar R, a continuación esta el enlace de descarga <https://cran.r-project.org/> para usuarios de Windows, Linux o Mac.
 
@@ -61,7 +70,7 @@ RStudio es un entorno de desarrollo integrado (IDE) que le permite interactuar c
 ### Tips básicos para usar R adecuadamente
 
 
-* R es ejecutado mediante una o más lineas de comandos. Esto requiere que escriba o copie y pegue comandos después de un símbolo del sistema (>) que aparece cuando abre R. Después de escribir un comando en la consola R y presionar Enter en su teclado, se ejecutará el comando. Si su comando no está completo, R emite una solicitud de continuación (significada por un signo más: +). Alternativamente, puede escribir un script en la ventana del script, seleccionar un comando y hacer clic en el botón Run.
+* R es ejecutado mediante una o más lineas de código. Esto requiere que escriba o copie y pegue comandos después de un símbolo del sistema (>) que aparece cuando abre R. Después de escribir un comando en la consola R y presionar Enter en su teclado, se ejecutará el comando. Si su comando no está completo, R emite una solicitud de continuación (identificada por un signo más: +). Alternativamente, puede escribir un script en la ventana del script, seleccionar un comando y hacer clic en el botón Run.
 
 * R es sensible a las mayúsculas. Asegúrese de que la ortografía y el uso de mayúsculas y minúsculas sean correctos.
 
@@ -69,7 +78,7 @@ RStudio es un entorno de desarrollo integrado (IDE) que le permite interactuar c
 
 * La flecha hacia arriba (^) en su teclado se puede utilizar para mostrar los comandos anteriores que ha escrito en la consola R.
 
-* El símbolo $\$$ se usa para seleccionar una columna particular dentro de la tabla (por ejemplo, tabla$columna).
+* El símbolo $\$$ se usa para seleccionar una columna particular dentro de una tabla de datos (por ejemplo, tabla$columna).
 
 * Cualquier texto sobre el que no desee que actúe R (como comentarios, notas o instrucciones) debe ir precedido del símbolo #. 
 
@@ -122,7 +131,7 @@ print(x)
 
 > Funcion `paste()`
 
-La función `paste()`  se usa para concatenar dos o mas objetos en R, veamos unejemplo en conjunto con la función `print()`.
+La función `paste()`  se usa para concatenar dos o mas objetos en R, veamos un ejemplo en conjunto con la función `print()`.
 
 ```{r,comment=NA}
 ## Imprimiendo un mensaje 
@@ -132,7 +141,7 @@ print(paste("Hola a todos los",est,"estudiantes de mi clase ESMA3101"))
 
 > Vectores numéricos
 
-En R un vector numérico  es un objeto que contiene valores numéricos. Siempre se contruye con la `c()` y dentro del parentesis van los valores del vector separados por comas. 
+En R un vector numérico  es un objeto que contiene valores numéricos. Siempre se contruye con la `c()` y dentro del parentesis van los valores del vector, separados por comas. 
 
 Ejemplo: Suponga que conoce el GPA de 20 estudiantes del colegio, 12 mujeres y 8 hombres:
 
@@ -149,7 +158,7 @@ print(GPA)
 
 > Vectores de caracteres
 
-A diferencia de los vectores numéricos, los vectores de caracteres contienen categorias. Ejemplos:
+A diferencia de los vectores numéricos, los vectores de caracteres contienen categorías. Ejemplos:
 
 ```{r,comment=NA}
 ## Grado de satisfacción sobre algun tema
@@ -163,9 +172,9 @@ print(Estatus)
 
 > Función `rep()`
 
-La función `rep()` sirve para repetir un objeto una cantidad determinado numero de veces. Esta función crea un vector automaticamente sin la necesidad de usar el comando `c()`.
+La función `rep()` sirve para repetir un objeto una cantidad determinada de veces. Esta función crea un vector automaticamente sin la necesidad de usar el comando `c()`, solo si se usa un solo `rep()`, si utiliza más de un `rep()` debe hacerlo con `c()`.
 
-Ejemplo: Repita el número 5 diez veces. Asigne el resultado a un objeto `x`
+Ejemplo: Repita el número 5 diez veces. Asigne el resultado a un objeto `x`, luego imprima x usando `print()`
 
 ```{r,comment=NA}
 x <- rep(5,10)
@@ -173,7 +182,7 @@ print(x)
 ```
 
 
-Ejemplo: Repetir el mensaje "Soy Colegial" 10 veces y asignelo a un objeto llamado Colegio, luego imprima usando ` `print`.
+Ejemplo: Repetir el mensaje "Soy Colegial" 10 veces y asignelo a un objeto llamado Colegio, luego imprima usando  `print()`.
 
 
 ```{r,comment=NA}
@@ -181,6 +190,7 @@ Ejemplo: Repetir el mensaje "Soy Colegial" 10 veces y asignelo a un objeto llama
 Colegio <- rep("Soy Colegial",10)
 print(Colegio)
 ```
+
 Ejemplo: Crear un objeto llamado `Genero` con los datos de los 20 estudiantes (12 mujeres y 8 hombres). Usar la función  `rep()`, luego use `print()` para imprimir el vector de caracteres.
 
 
@@ -198,7 +208,7 @@ print(Concentracion)
 
 > Data frames en R
 
-Un data frame en R se usa para almacenar tablas de datos. Es una lista de vectores de igual longitud. Por ejemplo, vamos a contruir un data frame  con los vectores que construimos anteriormente: `GPA`, `Genero` y `Concentracion`, y le asignaremos el nombre `Etudiantes`. La función para crear un data frame es `data.frame`
+Un data frame en R se usa para almacenar tablas de datos. Para crear el data frame los vectores deben tener la misma longitud. Por ejemplo, vamos a contruir un data frame  con los vectores que construimos anteriormente: `GPA`, `Genero` y `Concentracion`, y le asignaremos el nombre `Students`. La función para crear un data frame es `data.frame`
 
 ```{r,comment=NA}
 Students <- data.frame(GPA,Genero,Concentracion)
@@ -208,3 +218,31 @@ print(Students)
 Ahora como vemos, tenemos un tabla de datos con la información de los 20 estudiantes. 
 
 Puede usar el comando `View(Students)` para mostrar la tabla de datos en una nueva pestaña de R. 
+
+Si quiere usar solo la variable `Genero` debe tener en cuenta el simbolo $\$$, es decir `Students$Genero`, 
+
+```{r,comment=NA}
+Students$Genero
+```
+
+> La Función `table`.
+
+En R la función `table` se utiliza para conocer la frecuencia de los datos, supongamos que necesitamos saber cuantos son mujeres y cuantos son hombres de los 20 estudiantes, para esto se puede usar `table`
+
+```{r,comment=NA}
+table(Students$Genero)
+```
+
+¿Cuantos son de ECON?
+
+
+```{r,comment=NA}
+table(Students$Concentracion)
+```
+
+------
+*FIN*
+
+
+
+
