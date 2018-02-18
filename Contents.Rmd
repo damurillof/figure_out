@@ -4,9 +4,9 @@ output: html_document
 ---
 
 
-## [Prontuario]()
+### [Prontuario]()
 
-## [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/Intro_Esma3101/)
+### [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/Intro_Esma3101/)
 
-## [Introducción a R](https://didier-murillo.netlify.com/Intro_R/)
+### [Introducción a R](https://didier-murillo.netlify.com/Intro_R/)
 
