@@ -215,7 +215,7 @@ $(document).ready(function () {
 <li><a href="#operaciones-y-funciones-basicas-en-r">Operaciones y funciones básicas en R</a></li>
 <li><a href="#como-instalar-paquetes-en-rstudio">Como instalar paquetes en RStudio</a></li>
 <li><a href="#leer-datos-externos-en-rstudio">Leer datos externos en RStudio</a></li>
-<li><a href="#leer-datos-interno-en-rstudio">Leer datos interno en RStudio</a></li>
+<li><a href="#leer-datos-internos-de-rstudio">Leer datos internos de RStudio</a></li>
 </ul></li>
 </ul>
 </div>
@@ -477,9 +477,9 @@ dataset &lt;- read.table(&quot;ubicación archivo&quot;)</code></pre>
 <pre class="r"><code>library(data.table)
 dataset&lt;-fread(&quot;link o URL&quot;,opciones)</code></pre>
 </div>
-<div id="leer-datos-interno-en-rstudio" class="section level3">
-<h3>Leer datos interno en RStudio</h3>
-<p>RStudio tiene muchos datos que se utilizan para ilustrar los métodos y análisis estadísticos. Estos datos por lo general vienen incorporados en los paquetes, y la forma correcta de usarlos es con la función <code>data(&quot;dataset&quot;)</code>, dataset se refiere al nombre de los datos. Ejemplo, vamos a cargar los datos <code>iris</code>.</p>
+<div id="leer-datos-internos-de-rstudio" class="section level3">
+<h3>Leer datos internos de RStudio</h3>
+<p>RStudio tiene muchos conjuntos de datos que se utilizan para ilustrar los métodos y análisis estadísticos. Estos datos por lo general vienen incorporados en los paquetes, y la forma correcta de usarlos es con la función <code>data(&quot;dataset&quot;)</code>, dataset se refiere al nombre de los datos. Ejemplo, vamos a cargar los datos <code>iris</code>.</p>
 <ul>
 <li>Descripción: Edgar Anderson’s Iris Data</li>
 </ul>
@@ -535,6 +535,7 @@ table(iris$Species)</code></pre>
 <pre><code>
     setosa versicolor  virginica 
         50         50         50 </code></pre>
+<p>50 datos para cada especie.</p>
 <hr />
 <p><strong>FIN</strong></p>
 </div>

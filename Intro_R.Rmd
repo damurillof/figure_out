@@ -289,9 +289,9 @@ library(data.table)
 dataset<-fread("link o URL",opciones)
 ```
 
-### Leer datos interno en RStudio
+### Leer datos internos de RStudio
 
-RStudio tiene muchos datos que se utilizan para ilustrar los métodos y análisis estadísticos. Estos datos por lo general vienen incorporados en los paquetes, y la forma correcta de usarlos es con la función `data("dataset")`, dataset se refiere al nombre de los datos. Ejemplo, vamos a cargar los datos `iris`.
+RStudio tiene muchos conjuntos de datos que se utilizan para ilustrar los métodos y análisis estadísticos. Estos datos por lo general vienen incorporados en los paquetes, y la forma correcta de usarlos es con la función `data("dataset")`, dataset se refiere al nombre de los datos. Ejemplo, vamos a cargar los datos `iris`.
 
 *  Descripción: Edgar Anderson's Iris Data
 
@@ -340,7 +340,7 @@ head(iris$Species,20)
 table(iris$Species)
 ```
 
-
+50 datos para cada especie. 
 
 ------
 **FIN**
