@@ -6,10 +6,6 @@ Aquí esta el enlace para la página web del curso:
 
 ## [ESMA3101: Estadística Aplicada I](https://didier-murillo.netlify.com/Contents/)
 
-> Datos 
-
-### 1. [Iris](https://didier-murillo.netlify.com/Iris.xlsx/)
-
 
 > Tareas
 

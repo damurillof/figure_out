@@ -215,6 +215,7 @@ $(document).ready(function () {
 <li><a href="#operaciones-y-funciones-basicas-en-r">Operaciones y funciones básicas en R</a></li>
 <li><a href="#como-instalar-paquetes-en-rstudio">Como instalar paquetes en RStudio</a></li>
 <li><a href="#leer-datos-externos-en-rstudio">Leer datos externos en RStudio</a></li>
+<li><a href="#leer-datos-interno-en-rstudio">Leer datos interno en RStudio</a></li>
 </ul></li>
 </ul>
 </div>
@@ -472,9 +473,70 @@ dataset &lt;- read.table(&quot;ubicación archivo&quot;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Importando datos desde internet</li>
 </ol>
-<p>Se debe usar el paquete <code>data.table</code> y lafunción <code>fread</code> que es bastante rapida.</p>
+<p>Se debe usar el paquete <code>data.table</code> y la función <code>fread</code> que es bastante rapida.</p>
 <pre class="r"><code>library(data.table)
 dataset&lt;-fread(&quot;link o URL&quot;,opciones)</code></pre>
+</div>
+<div id="leer-datos-interno-en-rstudio" class="section level3">
+<h3>Leer datos interno en RStudio</h3>
+<p>RStudio tiene muchos datos que se utilizan para ilustrar los métodos y análisis estadísticos. Estos datos por lo general vienen incorporados en los paquetes, y la forma correcta de usarlos es con la función <code>data(&quot;dataset&quot;)</code>, dataset se refiere al nombre de los datos. Ejemplo, vamos a cargar los datos <code>iris</code>.</p>
+<ul>
+<li>Descripción: Edgar Anderson’s Iris Data</li>
+</ul>
+<p>Este famoso conjunto de datos (Fisher o Anderson) proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho del pétalo, respectivamente, para 50 flores de cada una de las 3 especies de iris. Las especies de iris son setosa, versicolor y virginica. Iris tiene 5 variables y 150 registros o renglones.</p>
+<div class="figure">
+<img src="iris.jpeg" alt="Iris" />
+<p class="caption">Iris</p>
+</div>
+<p>La forma correcta de cargar los datos para <code>iris</code> es:</p>
+<pre class="r"><code># Leer los datos iris
+data(&quot;iris&quot;)
+# Dimesión de iris
+dim(iris)</code></pre>
+<pre><code>[1] 150   5</code></pre>
+<p>Vemos que iris tiene 150 registros (renglones) y 5 variables (columnas).</p>
+<p>Ahora usando la función <code>head()</code> vamos a imprimir los primeros 10 renglores o registros de <code>iris</code>.</p>
+<pre class="r"><code># Imprimir los 10 primeros registros de iris
+head(iris,10)</code></pre>
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1           5.1         3.5          1.4         0.2  setosa
+2           4.9         3.0          1.4         0.2  setosa
+3           4.7         3.2          1.3         0.2  setosa
+4           4.6         3.1          1.5         0.2  setosa
+5           5.0         3.6          1.4         0.2  setosa
+6           5.4         3.9          1.7         0.4  setosa
+7           4.6         3.4          1.4         0.3  setosa
+8           5.0         3.4          1.5         0.2  setosa
+9           4.4         2.9          1.4         0.2  setosa
+10          4.9         3.1          1.5         0.1  setosa</code></pre>
+<p>La función <code>tail()</code> imprime los ultimos registros, veamos con <code>iris</code>.</p>
+<pre class="r"><code># Imprimir los 10 ultimos registros 
+tail(iris,10)</code></pre>
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+141          6.7         3.1          5.6         2.4 virginica
+142          6.9         3.1          5.1         2.3 virginica
+143          5.8         2.7          5.1         1.9 virginica
+144          6.8         3.2          5.9         2.3 virginica
+145          6.7         3.3          5.7         2.5 virginica
+146          6.7         3.0          5.2         2.3 virginica
+147          6.3         2.5          5.0         1.9 virginica
+148          6.5         3.0          5.2         2.0 virginica
+149          6.2         3.4          5.4         2.3 virginica
+150          5.9         3.0          5.1         1.8 virginica</code></pre>
+<p>Quieres usar solo la variable <code>Species</code>, recuerda usar el símbolo <span class="math inline">\(\$\)</span>, primero va el nombre de los datos, luego el símbolo <span class="math inline">\(\$\)</span> y enseguida la variable de interes, es decir <code>iris$Species</code>.</p>
+<pre class="r"><code># Imprimir los 10 ultimos registros de la variable Species
+head(iris$Species,20)</code></pre>
+<pre><code> [1] setosa setosa setosa setosa setosa setosa setosa setosa setosa setosa
+[11] setosa setosa setosa setosa setosa setosa setosa setosa setosa setosa
+Levels: setosa versicolor virginica</code></pre>
+<p>¿Cuantos datos hay de setosa, versicolor y virginica? recuerda que la función <code>table</code> resuelve esta pregunta.</p>
+<pre class="r"><code># Frecuencia  para Species
+table(iris$Species)</code></pre>
+<pre><code>
+    setosa versicolor  virginica 
+        50         50         50 </code></pre>
+<hr />
+<p><strong>FIN</strong></p>
 </div>
 </div>
 

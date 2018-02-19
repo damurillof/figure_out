@@ -282,10 +282,65 @@ dataset <- read.table("ubicación archivo")
 
 2.  Importando datos desde internet
 
-Se debe usar el paquete `data.table` y lafunción `fread` que es bastante rapida.
+Se debe usar el paquete `data.table` y la función `fread` que es bastante rapida.
 
 ```{r, comment=NA,echo=T,eval=FALSE}
 library(data.table)
 dataset<-fread("link o URL",opciones)
 ```
 
+### Leer datos interno en RStudio
+
+RStudio tiene muchos datos que se utilizan para ilustrar los métodos y análisis estadísticos. Estos datos por lo general vienen incorporados en los paquetes, y la forma correcta de usarlos es con la función `data("dataset")`, dataset se refiere al nombre de los datos. Ejemplo, vamos a cargar los datos `iris`.
+
+*  Descripción: Edgar Anderson's Iris Data
+
+Este famoso conjunto de datos  (Fisher o Anderson) proporciona las  medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho del pétalo, respectivamente, para 50 flores de cada una de las 3 especies de iris. Las especies de iris son setosa, versicolor y virginica. Iris tiene 5 variables y 150 registros o renglones. 
+
+![Iris](iris.jpeg) 
+
+La forma correcta de cargar los datos para `iris` es:
+
+```{r, comment=NA,echo=T,eval=T}
+# Leer los datos iris
+data("iris")
+# Dimesión de iris
+dim(iris)
+```
+
+Vemos que iris tiene 150 registros (renglones) y 5 variables (columnas).
+
+Ahora usando la función `head()` vamos a imprimir los primeros 10 renglores o registros de `iris`.
+
+```{r, comment=NA,echo=T,eval=T}
+# Imprimir los 10 primeros registros de iris
+head(iris,10)
+```
+
+La función `tail()` imprime los ultimos registros, veamos con `iris`.
+
+
+```{r, comment=NA,echo=T,eval=T}
+# Imprimir los 10 ultimos registros 
+tail(iris,10)
+```
+
+
+Quieres usar solo la variable `Species`, recuerda usar el símbolo $\$$, primero va el nombre de los datos, luego el símbolo $\$$ y enseguida la variable de interes, es decir `iris$Species`.
+
+```{r, comment=NA,echo=T,eval=T}
+# Imprimir los 10 ultimos registros de la variable Species
+head(iris$Species,20)
+```
+
+¿Cuantos datos hay de  setosa, versicolor y virginica? recuerda que la función `table` resuelve esta pregunta.
+
+```{r, comment=NA,echo=T,eval=T}
+# Frecuencia  para Species
+table(iris$Species)
+```
+
+
+
+------
+**FIN**
