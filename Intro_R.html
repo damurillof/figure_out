@@ -213,6 +213,8 @@ $(document).ready(function () {
 <li><a href="#rstudio-un-entorno-de-desarrollo-integrado-ide-para-r">RStudio: Un entorno de desarrollo integrado (IDE) para R</a></li>
 <li><a href="#tips-basicos-para-usar-r-adecuadamente">Tips básicos para usar R adecuadamente</a></li>
 <li><a href="#operaciones-y-funciones-basicas-en-r">Operaciones y funciones básicas en R</a></li>
+<li><a href="#como-instalar-paquetes-en-rstudio">Como instalar paquetes en RStudio</a></li>
+<li><a href="#leer-datos-externos-en-rstudio">Leer datos externos en RStudio</a></li>
 </ul></li>
 </ul>
 </div>
@@ -438,8 +440,41 @@ Hombre  Mujer
 <pre><code>
 BIOL ECON PSIC QUIM 
    3    8    4    5 </code></pre>
-<hr />
-<p><em>FIN</em></p>
+</div>
+<div id="como-instalar-paquetes-en-rstudio" class="section level3">
+<h3>Como instalar paquetes en RStudio</h3>
+<p>En <strong>R</strong> se conocen por paquetes a un conjunto de funciones organizadas para realizar un trabajo especializado. Por ejemplo el paquete <code>ggplot2</code> es un paquete con funciones especializadas para crear gráficas elegantes y atrsctivas.</p>
+<p>Para instalar un paquete en <strong>RStudio</strong> debe ir al menu: <strong>Herramientas(Tools)</strong> &gt; <strong>Instalar paquetes(Install packages)</strong>, luego escriba el nombre del paquete que desea y por ultimo haga clic en <strong>Instalar</strong>. Los paquetes se deben instalar solo una vez, despues de instalados, para poder usarlos es necesario llamarlos o cargarlos para que esten disponibles en su espacio de trabajo, para esto se usa la función <code>library()</code>. Ejemplo: carguemos el paquete <code>ggplot2</code>.</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+</div>
+<div id="leer-datos-externos-en-rstudio" class="section level3">
+<h3>Leer datos externos en RStudio</h3>
+<p>La mayoría de las personas usan Microsoft Excel para organizar y recolectar sus datos, pero luego deben ser importados desde <strong>R</strong> para analizarlos. A continuación enumerare algunas formas de importar datos en <strong>R</strong></p>
+<ol style="list-style-type: decimal">
+<li>Importando datos en formatos <code>Excel</code>, <code>CSV</code> y <code>txt</code></li>
+</ol>
+<ul>
+<li>En formato <code>Excel</code></li>
+</ul>
+<pre class="r"><code># Importando datos en formato Excel
+library(readxl)
+dataset &lt;- read_excel(&quot;ubicación archivo&quot;)</code></pre>
+<ul>
+<li>En formato <code>CSV</code></li>
+</ul>
+<pre class="r"><code># Importando datos en formato CSV
+dataset &lt;- read.csv(&quot;ubicación archivo&quot;)</code></pre>
+<ul>
+<li>En formato plano <code>txt</code></li>
+</ul>
+<pre class="r"><code># Importando datos en formato plano txt
+dataset &lt;- read.table(&quot;ubicación archivo&quot;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Importando datos desde internet</li>
+</ol>
+<p>Se debe usar el paquete <code>data.table</code> y lafunción <code>fread</code> que es bastante rapida.</p>
+<pre class="r"><code>library(data.table)
+dataset&lt;-fread(&quot;link o URL&quot;,opciones)</code></pre>
 </div>
 </div>
 

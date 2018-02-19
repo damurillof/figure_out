@@ -240,10 +240,52 @@ table(Students$Genero)
 table(Students$Concentracion)
 ```
 
-
-------
-*FIN*
+### Como instalar paquetes en RStudio
 
 
+En **R** se conocen por paquetes a un conjunto de funciones organizadas para realizar un trabajo especializado. Por ejemplo el paquete `ggplot2` es un paquete con funciones especializadas para crear gráficas elegantes y atrsctivas.
 
+Para instalar un paquete en **RStudio** debe ir al menu:  **Herramientas(Tools)** > **Instalar paquetes(Install packages)**, luego escriba el nombre del paquete que desea y por ultimo haga clic en **Instalar**. Los paquetes se deben instalar solo una vez, despues de instalados, para poder usarlos es necesario llamarlos o cargarlos para que esten disponibles en su espacio de trabajo, para esto se usa la función `library()`. Ejemplo: carguemos el paquete `ggplot2`.
+
+```{r, comment=NA}
+library(ggplot2)
+```
+
+### Leer datos externos en RStudio
+
+La mayoría de las personas usan Microsoft Excel para organizar y recolectar sus datos, pero luego deben ser importados desde **R** para analizarlos. A continuación enumerare algunas formas de importar datos en **R**
+
+1.  Importando datos en formatos `Excel`, `CSV` y `txt`
+
+  +   En formato `Excel`
+
+```{r, comment=NA,echo=T,eval=FALSE}
+# Importando datos en formato Excel
+library(readxl)
+dataset <- read_excel("ubicación archivo")
+```
+
+  +   En formato `CSV`
+  
+```{r, comment=NA,echo=T,eval=FALSE}
+# Importando datos en formato CSV
+dataset <- read.csv("ubicación archivo")
+```
+
+
+  +   En formato plano `txt`
+  
+```{r, comment=NA,echo=T,eval=FALSE}
+# Importando datos en formato plano txt
+dataset <- read.table("ubicación archivo")
+```
+
+2.  Importando datos desde internet
+
+Se debe usar el paquete `data.table` y lafunción `fread` que es bastante rapida.
+
+```{r, comment=NA,echo=T,eval=FALSE}
+library(data.table)
+dataset<-fread("link o URL",opciones)
+```
 

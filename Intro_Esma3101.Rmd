@@ -88,6 +88,14 @@ Es un listado de una o más características de todos los elementos de una pobla
 
 Es un listado de una o más características de todos los elementos de una muestra.
 
+> Error estadístico
+
+Es la incertidumbre en el valor del estadístico en la muestra,  debido al hecho de que solo usamos una parte de la población como muestra.
+
+*  **Ejemplo 1**  Si la edad promedio de los estudiantes en el salón de clases es 21.25 años, ¿qué nos dice esto sobre la edad promedio de todos los estudiantes de bachillerato? ¿Es posible que esto sea mucho más alto, tal vez incluso más de 22 años?.
+
+*  **Ejemplo 2**  Si el 30% de las personas de la muestra dice que compraría cierto  producto, ¿cuál podría ser el porcentaje en todo el país o población?
+
 ### División de la estadística
 
 * Estadistica Descriptiva: Conjunto de técnicas y métodos que son usados para recolectar la información a ser evaluada, organizarla, y presentarla en forma de tablas y gráficas. También se incluyen aquí el cálculo de medidas estadísticas de centralidad y de variabilidad.
