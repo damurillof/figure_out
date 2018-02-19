@@ -8,7 +8,7 @@ Aquí esta el enlace para la página web del curso:
 
 > Datos 
 
-### [Iris](https://didier-murillo.netlify.com/iris.xlsx/)
+### 1. [Iris](https://didier-murillo.netlify.com/iris/)
 
 
 > Tareas
