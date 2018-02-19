@@ -1,0 +1,15 @@
+---
+title: "Estadística descriptiva"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Estadística descriptiva
+
+En este capítulo se verán las técnicas que se usan para la organización y presentación de datos en tablas y gráficas, así como el cálculo de medidas estadísticas de tendencia central y de dispersión. Se considerarán solamente datos univariados y bivariados.
