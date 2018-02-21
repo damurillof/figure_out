@@ -206,8 +206,11 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#estadistica-descriptiva">Estadística descriptiva</a></li>
-<li><a href="#organizacion-de-datos-cuantitativos-discretos.">Organización de datos Cuantitativos Discretos.</a></li>
+<li><a href="#organizacion-de-datos-cuantitativos-discretos.">Organización de datos Cuantitativos Discretos.</a><ul>
+<li><a href="#tablas-de-frecuencias">Tablas de Frecuencias:</a></li>
+</ul></li>
 <li><a href="#el-plot-de-puntos-dotplot">El plot de puntos (“Dotplot”)</a></li>
+<li><a href="#organizacion-de-datos-cuantitativos-continuos.">Organización de datos Cuantitativos Continuos.</a></li>
 </ul>
 </div>
 
@@ -217,14 +220,14 @@ $(document).ready(function () {
 </div>
 <div id="organizacion-de-datos-cuantitativos-discretos." class="section level2">
 <h2>Organización de datos Cuantitativos Discretos.</h2>
-<ul>
-<li><p><strong>Tablas de Frecuencias:</strong> Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:</p>
+<div id="tablas-de-frecuencias" class="section level3">
+<h3>Tablas de Frecuencias:</h3>
+<p>Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:</p>
 <ul>
 <li><p><strong>Frecuencia absoluta:</strong> Indica el número de veces que se repite un valor de la variable.</p></li>
 <li><p><strong>Frecuencia relativa:</strong> Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para trabajar con una Frecuencia relativa porcentual.</p></li>
 <li><p><strong>Frecuencia absoluta acumulada:</strong> Indica el número de valores que son menores o iguales que el valor dado.</p></li>
 <li><p><strong>Frecuencia relativa acumulada:</strong> Indica el porcentaje de datos que son menores o iguales que el valor dado.</p></li>
-</ul></li>
 </ul>
 <p><strong>Ejemplo:</strong> Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano <code>txt</code>, por tanto la forma de leerlos es la siguiente.</p>
 <pre class="r"><code>Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/text.txt&quot;,header = T)
@@ -351,6 +354,7 @@ frecuencias_acum</code></pre>
 <li><p>De la frecuancia relativa acumulada se puede concluir que el numéro de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %.</p></li>
 </ol>
 </div>
+</div>
 <div id="el-plot-de-puntos-dotplot" class="section level2">
 <h2>El plot de puntos (“Dotplot”)</h2>
 <p>La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores anormales (“outliers”).</p>
@@ -358,6 +362,33 @@ frecuencias_acum</code></pre>
 ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
   ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="organizacion-de-datos-cuantitativos-continuos." class="section level2">
+<h2>Organización de datos Cuantitativos Continuos.</h2>
+<p>Cuando los datos son de una variable continua o de una variable discreta que asume muchos valores distintos, ellos se agrupan en clases que son representadas por intervalos y luego se construye una tabla de frecuencias, cada frecuencia absoluta (relativa porcentual) representa el número (porcentaje) de datos que caen en cada intervalo.</p>
+<ul>
+<li><p>Recomendaciones acerca del número de intervalos de clases:</p>
+<ul>
+<li>El número de intervalos de clases debe variar entre 5 y 12.</li>
+<li>Se debe evitar que hayan muchas clases con frecuencia baja o cero, de ocurrir ello es recomendable reducir el número de clases.</li>
+<li>A un mayor número de datos le corresponde un mayor número de clases.</li>
+</ul></li>
+</ul>
+<p>Una regla bien usada es que el número de clases <span class="math inline">\(k\)</span> debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por <span class="math display">\[k = 1+3.3*log(n)\]</span> Donde <span class="math inline">\(n\)</span> es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de cada clase usando la siguiente fórmula: <span class="math display">\[Amplitud=\frac{máximo - mínimo}{k}\]</span> Usualmente la amplitud debe ser redondeada.</p>
+<p>También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.</p>
+<p>3.2.2 Histograma</p>
+<p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos.</p>
+<p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
+<pre class="r"><code>hist(Estudiantes$peso)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
+<pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
+  geom_histogram(binwidth=6,fill=&quot;red&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Para la variable <code>gpa</code></p>
+<pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
+  geom_histogram(binwidth=0.2,fill=&quot;black&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
 
 

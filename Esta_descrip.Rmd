@@ -17,19 +17,21 @@ En este capítulo se verán las técnicas que se usan para la organización y pr
 ## Organización de datos Cuantitativos Discretos.
 
 
-*   **Tablas de Frecuencias:** Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:
+### Tablas de Frecuencias:
+
+Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:
 
 
-    + **Frecuencia absoluta:** Indica el número de veces que se repite un valor de la variable.
+*  **Frecuencia absoluta:** Indica el número de veces que se repite un valor de la variable.
     
-    + **Frecuencia relativa:** Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para
+*  **Frecuencia relativa:** Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para
 trabajar con una Frecuencia relativa porcentual.
 
 
-    + **Frecuencia absoluta acumulada:** Indica el número de valores que son menores o iguales que el valor dado.
+*  **Frecuencia absoluta acumulada:** Indica el número de valores que son menores o iguales que el valor dado.
     
     
-    + **Frecuencia relativa  acumulada:** Indica el porcentaje de datos que son menores o iguales que el valor dado.
+*  **Frecuencia relativa  acumulada:** Indica el porcentaje de datos que son menores o iguales que el valor dado.
     
 **Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano `txt`, por tanto la forma de leerlos es la siguiente.
 
@@ -101,6 +103,56 @@ library(ggplot2)
 ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = "green", color = "black") + 
   ggtitle("Dotplot para Número de hermanos")  + xlab("hermanos") + ylab("conteos")
 ```
+
+
+## Organización de datos Cuantitativos Continuos.
+
+Cuando los datos son de una variable continua o de una variable discreta que asume muchos valores distintos, ellos se agrupan en clases que son representadas por intervalos y luego se construye una tabla de frecuencias, cada frecuencia absoluta (relativa porcentual) representa el número (porcentaje) de datos que caen en cada intervalo.
+
+*   Recomendaciones acerca del número de intervalos de clases:
+
+    + El número de intervalos de clases debe variar entre 5 y 12.
+    + Se debe evitar que hayan muchas clases con frecuencia baja o cero, de ocurrir ello es recomendable reducir el número de clases.
+    + A un mayor número de datos le corresponde un mayor número de clases.
+    
+Una regla bien usada es que el número de clases $k$ debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por 
+$$k = 1+3.3*log(n)$$
+Donde $n$ es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de
+cada clase usando la siguiente fórmula:
+$$Amplitud=\frac{máximo - mínimo}{k}$$
+Usualmente la amplitud debe ser redondeada. 
+
+También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.
+
+3.2.2 Histograma
+
+Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. 
+
+Para hacer un Histograma en R puede usar la función `hist()` veamos,
+
+
+```{r, comment=NA,echo=T,eval=T}
+hist(Estudiantes$peso)
+```
+
+Puede usar el paquete `ggplot2` para hacer una grafica más atractiva.
+
+```{r, comment=NA,echo=T,eval=T}
+ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
+  geom_histogram(binwidth=6,fill="red")
+```
+
+Para la variable `gpa`
+
+```{r, comment=NA,echo=T,eval=T}
+ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
+  geom_histogram(binwidth=0.2,fill="black")
+```
+
+
+
+    
+
 
 
 
