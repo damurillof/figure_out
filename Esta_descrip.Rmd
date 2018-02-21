@@ -124,7 +124,7 @@ Usualmente la amplitud debe ser redondeada.
 
 También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.
 
-3.2.2 Histograma
+### Histograma
 
 Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. 
 

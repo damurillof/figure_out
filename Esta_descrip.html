@@ -210,7 +210,9 @@ $(document).ready(function () {
 <li><a href="#tablas-de-frecuencias">Tablas de Frecuencias:</a></li>
 </ul></li>
 <li><a href="#el-plot-de-puntos-dotplot">El plot de puntos (“Dotplot”)</a></li>
-<li><a href="#organizacion-de-datos-cuantitativos-continuos.">Organización de datos Cuantitativos Continuos.</a></li>
+<li><a href="#organizacion-de-datos-cuantitativos-continuos.">Organización de datos Cuantitativos Continuos.</a><ul>
+<li><a href="#histograma">Histograma</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -376,7 +378,8 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 </ul>
 <p>Una regla bien usada es que el número de clases <span class="math inline">\(k\)</span> debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por <span class="math display">\[k = 1+3.3*log(n)\]</span> Donde <span class="math inline">\(n\)</span> es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de cada clase usando la siguiente fórmula: <span class="math display">\[Amplitud=\frac{máximo - mínimo}{k}\]</span> Usualmente la amplitud debe ser redondeada.</p>
 <p>También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.</p>
-<p>3.2.2 Histograma</p>
+<div id="histograma" class="section level3">
+<h3>Histograma</h3>
 <p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos.</p>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
@@ -389,6 +392,7 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
   geom_histogram(binwidth=0.2,fill=&quot;black&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
 </div>
 
 
