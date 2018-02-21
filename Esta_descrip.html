@@ -206,12 +206,158 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#estadistica-descriptiva">Estadística descriptiva</a></li>
+<li><a href="#organizacion-de-datos-cuantitativos-discretos.">Organización de datos Cuantitativos Discretos.</a></li>
+<li><a href="#el-plot-de-puntos-dotplot">El plot de puntos (“Dotplot”)</a></li>
 </ul>
 </div>
 
 <div id="estadistica-descriptiva" class="section level2">
 <h2>Estadística descriptiva</h2>
 <p>En este capítulo se verán las técnicas que se usan para la organización y presentación de datos en tablas y gráficas, así como el cálculo de medidas estadísticas de tendencia central y de dispersión. Se considerarán solamente datos univariados y bivariados.</p>
+</div>
+<div id="organizacion-de-datos-cuantitativos-discretos." class="section level2">
+<h2>Organización de datos Cuantitativos Discretos.</h2>
+<ul>
+<li><p><strong>Tablas de Frecuencias:</strong> Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:</p>
+<ul>
+<li><p><strong>Frecuencia absoluta:</strong> Indica el número de veces que se repite un valor de la variable.</p></li>
+<li><p><strong>Frecuencia relativa:</strong> Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para trabajar con una Frecuencia relativa porcentual.</p></li>
+<li><p><strong>Frecuencia absoluta acumulada:</strong> Indica el número de valores que son menores o iguales que el valor dado.</p></li>
+<li><p><strong>Frecuencia relativa acumulada:</strong> Indica el porcentaje de datos que son menores o iguales que el valor dado.</p></li>
+</ul></li>
+</ul>
+<p><strong>Ejemplo:</strong> Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano <code>txt</code>, por tanto la forma de leerlos es la siguiente.</p>
+<pre class="r"><code>Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/text.txt&quot;,header = T)
+head(Estudiantes)</code></pre>
+<pre><code>  peso estatura edad sexo hermanos tipo_sangre fuma num_cig h_internet
+1 77.2    178.8   21    M        2           B   si       0         13
+2 74.6    158.6   21    M        0           A   no       0         24
+3 57.8    171.7   31    M        0           O   si       1         33
+4 65.6    170.1   32    F        1           B   no       2         45
+5 56.5    167.8   13    M        5          AB   si       0         22
+6 60.2    169.7   22    F        2           B   si       3         36
+   gpa nota_esma  area trabaja
+1 3.52         I Oeste      si
+2 2.92         D Oeste      no
+3 3.32         F Norte      si
+4 3.17         C  Otra      si
+5 4.20         B   Sur      si
+6 2.99         D Oeste      si</code></pre>
+<p>Vamos a construir una tabla de frecuencias paso a paso para la variable <code>hermanos</code>.</p>
+<ul>
+<li>Paso 1: Encontrar las frecuencias usando la función <code>table</code>.</li>
+</ul>
+<pre class="r"><code>frecuencias &lt;- table(Estudiantes$hermanos)
+frecuencias</code></pre>
+<pre><code>
+ 0  1  2  3  4  5 
+15 12 10  7  3  3 </code></pre>
+<ul>
+<li>Paso 2: Encontrar las frecuencia relativas dividiendo por el número de registros.</li>
+</ul>
+<pre class="r"><code>frec_relativa &lt;- frecuencias/50
+frec_relativa</code></pre>
+<pre><code>
+   0    1    2    3    4    5 
+0.30 0.24 0.20 0.14 0.06 0.06 </code></pre>
+<ul>
+<li>Paso 3: Encontrar las frecuencia absolutas acumuladas. Esto lo hace la función <code>cumsum()</code></li>
+</ul>
+<pre class="r"><code>frecuencias_acum &lt;- cumsum(frecuencias)
+frecuencias_acum</code></pre>
+<pre><code> 0  1  2  3  4  5 
+15 27 37 44 47 50 </code></pre>
+<ul>
+<li>Paso 4: Encontrar la frecuencia relativa acumulada. Esto se hace dividiendo por el numero de registros.</li>
+</ul>
+<pre class="r"><code>frecuencias_acum/50</code></pre>
+<pre><code>   0    1    2    3    4    5 
+0.30 0.54 0.74 0.88 0.94 1.00 </code></pre>
+<p>Resumiendo los resultados en una tabla,</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="16%" />
+<col width="22%" />
+<col width="23%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>hermanos</th>
+<th>Frecuencia Abs</th>
+<th>Frecuencia Relativa</th>
+<th>Frecuencia Acumulada</th>
+<th>Frecuancia Relativa Acumulada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>15</td>
+<td>0.30</td>
+<td>15</td>
+<td>0.30</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>12</td>
+<td>0.24</td>
+<td>27</td>
+<td>0.54</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>10</td>
+<td>0.20</td>
+<td>37</td>
+<td>0.74</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>7</td>
+<td>0.14</td>
+<td>44</td>
+<td>0.88</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>3</td>
+<td>0.06</td>
+<td>47</td>
+<td>0.94</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>3</td>
+<td>0.06</td>
+<td>50</td>
+<td>1.00</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>50</td>
+<td>1.00</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Algunas interpretaciones para esta tabla son:</p>
+<ol style="list-style-type: decimal">
+<li><p>De las frecuencias absolutas se puede interpretar por ejemplo que hay 15 estudiantes que no tienen hermanos o que hay 10 que tienen 2 hermanos.</p></li>
+<li><p>De la frecuencia relativa podemos decir que el 30 % de los estudiantes no tienen hermanos o que el 14 % de los estudiantes tienen tres hermanos.</p></li>
+<li><p>De La frecuencia acumulada se puede decir por ejemplo que hay 44 estudiantes que tienen entre 0 y 3 hermanos o que hay 27 estudiantes que tienen menos de dos hermanos.</p></li>
+<li><p>De la frecuancia relativa acumulada se puede concluir que el numéro de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %.</p></li>
+</ol>
+</div>
+<div id="el-plot-de-puntos-dotplot" class="section level2">
+<h2>El plot de puntos (“Dotplot”)</h2>
+<p>La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores anormales (“outliers”).</p>
+<pre class="r"><code>library(ggplot2)
+ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
+  ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 
 

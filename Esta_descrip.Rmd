@@ -13,3 +13,97 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Estadística descriptiva
 
 En este capítulo se verán las técnicas que se usan para la organización y presentación de datos en tablas y gráficas, así como el cálculo de medidas estadísticas de tendencia central y de dispersión. Se considerarán solamente datos univariados y bivariados.
+
+## Organización de datos Cuantitativos Discretos.
+
+
+*   **Tablas de Frecuencias:** Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:
+
+
+    + **Frecuencia absoluta:** Indica el número de veces que se repite un valor de la variable.
+    
+    + **Frecuencia relativa:** Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para
+trabajar con una Frecuencia relativa porcentual.
+
+
+    + **Frecuencia absoluta acumulada:** Indica el número de valores que son menores o iguales que el valor dado.
+    
+    
+    + **Frecuencia relativa  acumulada:** Indica el porcentaje de datos que son menores o iguales que el valor dado.
+    
+**Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano `txt`, por tanto la forma de leerlos es la siguiente.
+
+```{r, comment=NA,echo=T,eval=T}
+Estudiantes <- read.table("/datos/DirectorioR/figure_out/text.txt",header = T)
+head(Estudiantes)
+```
+
+Vamos a construir una tabla de frecuencias paso a paso para la variable `hermanos`.
+
+*   Paso 1: Encontrar las frecuencias usando la función `table`.
+
+```{r, comment=NA,echo=T,eval=T}
+frecuencias <- table(Estudiantes$hermanos)
+frecuencias
+```
+
+*   Paso 2: Encontrar las frecuencia  relativas dividiendo por el número de registros.
+
+```{r, comment=NA,echo=T,eval=T}
+frec_relativa <- frecuencias/50
+frec_relativa
+```
+
+*   Paso 3: Encontrar las frecuencia  absolutas acumuladas. Esto lo hace la función `cumsum()`
+
+```{r, comment=NA,echo=T,eval=T}
+frecuencias_acum <- cumsum(frecuencias)
+frecuencias_acum
+```
+
+*   Paso 4: Encontrar la frecuencia relativa  acumulada. Esto se hace dividiendo por el numero de registros.
+
+
+```{r, comment=NA,echo=T,eval=T}
+frecuencias_acum/50
+```
+
+Resumiendo los resultados en una tabla, 
+
+
+hermanos | Frecuencia Abs | Frecuencia Relativa | Frecuencia Acumulada | Frecuancia Relativa Acumulada
+-------- | ---------------|---------------------|----------------------|-----------------------------
+0        |    15          |        0.30         |    15                |    0.30
+1        |    12          |        0.24         |    27                |    0.54
+2        |    10          |        0.20         |    37                |    0.74
+3        |    7           |        0.14         |    44                |    0.88
+4        |    3           |        0.06         |    47                |    0.94
+5        |    3           |        0.06         |    50                |    1.00
+Total    |    50          |        1.00         |                      |
+
+Algunas interpretaciones para esta tabla son:
+
+1. De las frecuencias absolutas se puede interpretar por ejemplo que hay 15 estudiantes que no tienen hermanos o que hay 10 que tienen 2 hermanos.
+
+2. De la frecuencia relativa podemos decir que el 30 % de los estudiantes no tienen hermanos o que el 14 % de los estudiantes tienen tres hermanos.
+
+3. De La frecuencia acumulada se puede decir por ejemplo que hay 44 estudiantes que tienen entre 0 y 3 hermanos o que hay 27 estudiantes que tienen menos de dos hermanos. 
+
+4. De la frecuancia relativa acumulada se puede concluir que el numéro de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %. 
+
+
+## El plot de puntos (“Dotplot”)
+
+La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores anormales (“outliers”).
+
+```{r, comment=NA,echo=T,eval=T,message=FALSE,warning=FALSE}
+library(ggplot2)
+ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = "green", color = "black") + 
+  ggtitle("Dotplot para Número de hermanos")  + xlab("hermanos") + ylab("conteos")
+```
+
+
+
+
+
+
