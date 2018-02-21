@@ -1,0 +1,28 @@
+
+---
+title: "Puntos de Bono(NO es obligatorio)"
+author: 'Instructor: Didier Murillo'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Fecha de entrega: Viernes 23 de febrero
+
+###  Los estudiantes que decian hacerlo lo deben entregar al iniciar la clase en una hoja impresa donde aparezca el codigo de R y los resultados. 
+
+#### 1. Use los datos de la clase para crear una tabla de frecuencia tal cual como se hizo durante la clase y como esta en las notas de la pagina del curso. Haga mínimo cuatro conclusiones sobre dicha tabla. 
+
+*   Estudiantes con primer apellido que comienza con la letra **A**  hasta la letra **G** usen la variable `edad`.
+
+*   Estudiantes con primer apellido que comienza con la letra **H** hasta la letra **O** usen la variable `num_cig`.
+
+*   Estudiantes con primer apellido que comienza con la letra **P** hasta la letra **Z** usen la variable `h_internet`.
+
+-----------
+**Éxitos**
+
+
+
