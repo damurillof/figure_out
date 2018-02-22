@@ -275,10 +275,24 @@ frecuencias_acum</code></pre>
 <ul>
 <li>Paso 4: Encontrar la frecuencia relativa acumulada. Esto se hace dividiendo por el numero de registros.</li>
 </ul>
-<pre class="r"><code>frecuencias_acum/50</code></pre>
+<pre class="r"><code>frecuencias_abs_acum &lt;- frecuencias_acum/50
+frecuencias_abs_acum </code></pre>
 <pre><code>   0    1    2    3    4    5 
 0.30 0.54 0.74 0.88 0.94 1.00 </code></pre>
-<p>Resumiendo los resultados en una tabla,</p>
+<p>Mediante un data frame se puede crear la tabla de frecuencias</p>
+<pre class="r"><code>frec_relativa &lt;- as.vector(frec_relativa)
+frecuencias_acum &lt;- as.vector(frecuencias_acum)
+frecuencia_abs_acum &lt;- as.vector(frecuencias_abs_acum)
+table_frec &lt;- data.frame(frecuencias,frec_relativa, frecuencias_acum, frecuencia_abs_acum)
+table_frec</code></pre>
+<pre><code>  Var1 Freq frec_relativa frecuencias_acum frecuencia_abs_acum
+1    0   15          0.30               15                0.30
+2    1   12          0.24               27                0.54
+3    2   10          0.20               37                0.74
+4    3    7          0.14               44                0.88
+5    4    3          0.06               47                0.94
+6    5    3          0.06               50                1.00</code></pre>
+<p>O escrita manualmente con los resultados encontrados, como se ve a continuación:</p>
 <table>
 <colgroup>
 <col width="9%" />
@@ -363,7 +377,7 @@ frecuencias_acum</code></pre>
 <pre class="r"><code>library(ggplot2)
 ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
   ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="organizacion-de-datos-cuantitativos-continuos." class="section level2">
 <h2>Organización de datos Cuantitativos Continuos.</h2>
@@ -383,15 +397,15 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos.</p>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
   geom_histogram(binwidth=6,fill=&quot;red&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
   geom_histogram(binwidth=0.2,fill=&quot;black&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 </div>
 

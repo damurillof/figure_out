@@ -233,13 +233,13 @@ $(document).ready(function () {
 <li><p>Es gratuito, esto implica muchas ventajas y más si eres estudiante!</p></li>
 <li><p>R funciona en cualquier lugar: R esta disponible para diferentes tipos de hardware y software. Esto significa que R está disponible para Windows, sistemas Unix (como Linux), y Mac.</p></li>
 <li><p>Proporciona una plataforma muy competitiva para la programación de nuevos métodos estadísticos de una manera fácil y sencilla.</p></li>
-<li><p>Contiene rutinas estadísticas avanzadas no disponibles en otros paquetes.</p></li>
+<li><p>Contiene rutinas estadísticas avanzadas no disponibles en otros programas.</p></li>
 <li><p>Tiene capacidades gráficas con las cuales se pueden realizar gráficos detallados y muy atractivos.</p></li>
 </ol>
 </div>
 <div id="que-puede-hacer-r" class="section level3">
 <h3>¿Qué puede hacer R?</h3>
-<p>Con R se pueden hacer muchas cosas relacionadas con el análisis y visualización de datos. Puedes contruir tus propias funciones, paquetes, y hacer las graficas con un estilo propio.</p>
+<p>Con R se pueden hacer muchas cosas relacionadas con el análisis y visualización de datos. Puedes construir tus propias funciones, paquetes, y hacer las graficas con un estilo propio.</p>
 <ul>
 <li>Gráficos descriptivos.</li>
 </ul>
@@ -251,7 +251,7 @@ $(document).ready(function () {
 <ul>
 <li>Mapas</li>
 </ul>
-<p>Se pueden contruir mapas para mostrar la prevalencia por ejemplo de alguna enfermedad. En este caso tenemos un mapa elaborado en R que muestra los índices de terrorismo mundial.</p>
+<p>Se pueden construir mapas para mostrar la prevalencia por ejemplo de alguna enfermedad. En este caso tenemos un mapa elaborado en R que muestra los índices de terrorismo mundial.</p>
 <div class="figure">
 <img src="map.png" />
 
@@ -311,7 +311,7 @@ $(document).ready(function () {
 </blockquote>
 <p>Los anteriores resultados los podemos guardar en un objeto, y a la vez hacer operaciones con esos objetos.</p>
 <pre class="r"><code>## suma
-a &lt;- 4+4 ## Guarda en a el resultado de 4+4
+a &lt;- 4 + 4 ## Guarda en a el resultado de 4 + 4
 a # pido que me muestre el valor de a</code></pre>
 <pre><code>[1] 8</code></pre>
 <pre class="r"><code>## multiplicación
@@ -339,15 +339,15 @@ print(x)</code></pre>
 <blockquote>
 <p>Funcion <code>paste()</code></p>
 </blockquote>
-<p>La función <code>paste()</code> se usa para concatenar dos o mas objetos en R, veamos un ejemplo en conjunto con la función <code>print()</code>.</p>
-<pre class="r"><code>## Imprimiendo un mensaje 
+<p>La función <code>paste()</code> se usa para concatenar dos o más objetos en R, veamos un ejemplo en conjunto con la función <code>print()</code>.</p>
+<pre class="r"><code>## Imprimiendo un mensaje y un objeto.
 est &lt;- 31
 print(paste(&quot;Hola a todos los&quot;,est,&quot;estudiantes de mi clase ESMA3101&quot;))</code></pre>
 <pre><code>[1] &quot;Hola a todos los 31 estudiantes de mi clase ESMA3101&quot;</code></pre>
 <blockquote>
 <p>Vectores numéricos</p>
 </blockquote>
-<p>En R un vector numérico es un objeto que contiene valores numéricos. Siempre se contruye con la <code>c()</code> y dentro del parentesis van los valores del vector, separados por comas.</p>
+<p>En R un vector numérico es un objeto que contiene valores numéricos. Siempre se construye con la <code>c()</code> y dentro del parentesis van los valores del vector, separados por comas.</p>
 <p>Ejemplo: Suponga que conoce el GPA de 20 estudiantes del colegio, 12 mujeres y 8 hombres:</p>
 <p>Mujeres: 3.25 3.78 3.78 2.47 3.24 2.89 2.41 3.61 2.59 2.99 2.56 2.44.</p>
 <p>Hombres: 3.22 2.75 3.17 3.38 3.85 2.18 3.68 2.10.</p>
@@ -360,7 +360,7 @@ print(GPA)</code></pre>
 <p>Vectores de caracteres</p>
 </blockquote>
 <p>A diferencia de los vectores numéricos, los vectores de caracteres contienen categorías. Ejemplos:</p>
-<pre class="r"><code>## Grado de satisfacción sobre algun tema
+<pre class="r"><code>## Grado de satisfacción sobre algún tema.
 Grado_satisfaccion &lt;- c(&quot;Bueno&quot;, &quot;Regular&quot;, &quot;Malo&quot;)
 print(Grado_satisfaccion)</code></pre>
 <pre><code>[1] &quot;Bueno&quot;   &quot;Regular&quot; &quot;Malo&quot;   </code></pre>
@@ -397,7 +397,7 @@ print(Concentracion)</code></pre>
 <blockquote>
 <p>Data frames en R</p>
 </blockquote>
-<p>Un data frame en R se usa para almacenar tablas de datos. Para crear el data frame los vectores deben tener la misma longitud. Por ejemplo, vamos a contruir un data frame con los vectores que construimos anteriormente: <code>GPA</code>, <code>Genero</code> y <code>Concentracion</code>, y le asignaremos el nombre <code>Students</code>. La función para crear un data frame es <code>data.frame</code></p>
+<p>Un data frame en R se usa para almacenar tablas de datos. Para crear el data frame los vectores deben tener la misma longitud. Por ejemplo, vamos a construir un data frame con los vectores que construimos anteriormente: <code>GPA</code>, <code>Genero</code> y <code>Concentracion</code>, y le asignaremos el nombre <code>Students</code>. La función para crear un data frame es <code>data.frame</code></p>
 <pre class="r"><code>Students &lt;- data.frame(GPA,Genero,Concentracion)
 print(Students)</code></pre>
 <pre><code>    GPA Genero Concentracion

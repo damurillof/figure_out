@@ -3,7 +3,7 @@ title: "Estadística descriptiva"
 output:
   html_document:
     toc: true
-    theme: flatly
+    theme: flatly 
 ---
 
 ```{r setup, include=FALSE}
@@ -67,10 +67,21 @@ frecuencias_acum
 
 
 ```{r, comment=NA,echo=T,eval=T}
-frecuencias_acum/50
+frecuencias_abs_acum <- frecuencias_acum/50
+frecuencias_abs_acum 
 ```
 
-Resumiendo los resultados en una tabla, 
+Mediante un data frame se puede crear la tabla de frecuencias
+
+```{r, comment=NA,echo=T,eval=T}
+frec_relativa <- as.vector(frec_relativa)
+frecuencias_acum <- as.vector(frecuencias_acum)
+frecuencia_abs_acum <- as.vector(frecuencias_abs_acum)
+table_frec <- data.frame(frecuencias,frec_relativa, frecuencias_acum, frecuencia_abs_acum)
+table_frec
+```
+
+O escrita manualmente con los resultados encontrados, como se ve a continuación:
 
 
 hermanos | Frecuencia Abs | Frecuencia Relativa | Frecuencia Acumulada | Frecuancia Relativa Acumulada
@@ -152,10 +163,3 @@ ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) +
 
 
     
-
-
-
-
-
-
-

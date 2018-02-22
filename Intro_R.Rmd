@@ -25,13 +25,13 @@ Puede haber muchas razones particulares para usar uno u otro programa de computa
 
 3. Proporciona una plataforma muy competitiva para la programación de nuevos métodos estadísticos de una manera fácil y sencilla.
 
-4. Contiene rutinas estadísticas avanzadas no disponibles en otros paquetes.
+4. Contiene rutinas estadísticas avanzadas no disponibles en otros programas.
 
 5. Tiene capacidades gráficas con las cuales se pueden realizar gráficos detallados y muy atractivos.
 
 ### ¿Qué puede hacer R?
 
-Con R se pueden hacer muchas cosas relacionadas con el análisis  y visualización de datos. Puedes contruir tus propias funciones, paquetes, y hacer las graficas con un estilo propio. 
+Con R se pueden hacer muchas cosas relacionadas con el análisis  y visualización de datos. Puedes construir tus propias funciones, paquetes, y hacer las graficas con un estilo propio. 
 
 *  Gráficos descriptivos.
 
@@ -41,7 +41,7 @@ Puedes crear gráficas personalizadas para ver el comportamiento de los datos y 
 
 *  Mapas
 
-Se pueden contruir mapas para mostrar la prevalencia por ejemplo de alguna enfermedad. En este caso tenemos un mapa elaborado en R que muestra los índices de terrorismo mundial. 
+Se pueden construir mapas para mostrar la prevalencia por ejemplo de alguna enfermedad. En este caso tenemos un mapa elaborado en R que muestra los índices de terrorismo mundial. 
 
 ![](map.png)
 
@@ -103,7 +103,7 @@ Los anteriores resultados los podemos guardar en un objeto, y a la vez hacer ope
 
 ```{r,comment=NA}
 ## suma
-a <- 4+4 ## Guarda en a el resultado de 4+4
+a <- 4 + 4 ## Guarda en a el resultado de 4 + 4
 a # pido que me muestre el valor de a
 ## multiplicación
 b <- 3*10  ## Guarda en b el resultado de 3*10
@@ -131,17 +131,17 @@ print(x)
 
 > Funcion `paste()`
 
-La función `paste()`  se usa para concatenar dos o mas objetos en R, veamos un ejemplo en conjunto con la función `print()`.
+La función `paste()`  se usa para concatenar dos o más objetos en R, veamos un ejemplo en conjunto con la función `print()`.
 
 ```{r,comment=NA}
-## Imprimiendo un mensaje 
+## Imprimiendo un mensaje y un objeto.
 est <- 31
 print(paste("Hola a todos los",est,"estudiantes de mi clase ESMA3101"))
 ```
 
 > Vectores numéricos
 
-En R un vector numérico  es un objeto que contiene valores numéricos. Siempre se contruye con la `c()` y dentro del parentesis van los valores del vector, separados por comas. 
+En R un vector numérico  es un objeto que contiene valores numéricos. Siempre se construye con la `c()` y dentro del parentesis van los valores del vector, separados por comas. 
 
 Ejemplo: Suponga que conoce el GPA de 20 estudiantes del colegio, 12 mujeres y 8 hombres:
 
@@ -161,7 +161,7 @@ print(GPA)
 A diferencia de los vectores numéricos, los vectores de caracteres contienen categorías. Ejemplos:
 
 ```{r,comment=NA}
-## Grado de satisfacción sobre algun tema
+## Grado de satisfacción sobre algún tema.
 Grado_satisfaccion <- c("Bueno", "Regular", "Malo")
 print(Grado_satisfaccion)
 ## Estatus marital
@@ -208,7 +208,7 @@ print(Concentracion)
 
 > Data frames en R
 
-Un data frame en R se usa para almacenar tablas de datos. Para crear el data frame los vectores deben tener la misma longitud. Por ejemplo, vamos a contruir un data frame  con los vectores que construimos anteriormente: `GPA`, `Genero` y `Concentracion`, y le asignaremos el nombre `Students`. La función para crear un data frame es `data.frame`
+Un data frame en R se usa para almacenar tablas de datos. Para crear el data frame los vectores deben tener la misma longitud. Por ejemplo, vamos a construir un data frame  con los vectores que construimos anteriormente: `GPA`, `Genero` y `Concentracion`, y le asignaremos el nombre `Students`. La función para crear un data frame es `data.frame`
 
 ```{r,comment=NA}
 Students <- data.frame(GPA,Genero,Concentracion)
