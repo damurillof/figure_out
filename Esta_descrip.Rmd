@@ -36,7 +36,7 @@ trabajar con una Frecuencia relativa porcentual.
 **Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano `txt`, por tanto la forma de leerlos es la siguiente.
 
 ```{r, comment=NA,echo=T,eval=T}
-Estudiantes <- read.table("/datos/DirectorioR/figure_out/text.txt",header = T)
+Estudiantes <- read.table("/datos/DirectorioR/figure_out/text",header = T)
 head(Estudiantes)
 ```
 
