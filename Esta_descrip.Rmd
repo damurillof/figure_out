@@ -119,7 +119,7 @@ En este caso no tenemos presencia de valores anormales ("outliers").
 
 A continuación hacemos un Dotplot para la variable cuantitativa discreta `edad` para ilustrar la presencia de datos anormales.
 
-```{r, comment=NA,echo=F,eval=T}
+```{r, comment=NA,echo=F,eval=T,message=FALSE,warning=FALSE}
 Estudiantes1 <- read.table("/datos/DirectorioR/figure_out/text",header = T)
 library(ggplot2)
 ggplot(Estudiantes1, aes(x = Estudiantes1$edad)) + geom_dotplot(fill = "red", color = "black") + 
@@ -172,7 +172,7 @@ ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) +
   geom_histogram(binwidth=0.2,col="orange",fill="black") + ggtitle("Histograma para GPA")  + xlab("GPA")
 ```
 
-### Histogramas simetricos y asimetricos.
+### Histogramas simétricos y asimétricos.
 
 
 > Histograma Asimétrico a la Izquierda

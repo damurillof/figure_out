@@ -212,7 +212,7 @@ $(document).ready(function () {
 <li><a href="#el-plot-de-puntos-dotplot">El plot de puntos (“Dotplot”)</a></li>
 <li><a href="#organizacion-de-datos-cuantitativos-continuos.">Organización de datos Cuantitativos Continuos.</a><ul>
 <li><a href="#histograma">Histograma</a></li>
-<li><a href="#histogramas-simetricos-y-asimetricos.">Histogramas simetricos y asimetricos.</a></li>
+<li><a href="#histogramas-simetricos-y-asimetricos.">Histogramas simétricos y asimétricos.</a></li>
 </ul></li>
 <li><a href="#presentacion-de-datos-cualitativos">Presentación de datos cualitativos</a><ul>
 <li><a href="#graficos-de-barras">Gráficos de barras</a></li>
@@ -385,7 +385,6 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>En este caso no tenemos presencia de valores anormales (“outliers”).</p>
 <p>A continuación hacemos un Dotplot para la variable cuantitativa discreta <code>edad</code> para ilustrar la presencia de datos anormales.</p>
-<pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Observamos que la edad de los estudiantes se situa entre los 17 y los 26 años aproximadamente, pero vemos la presencia de un dato a la izquierda de la gráfica y otros a la derecha muy alejados del grupo del centro, estos valores se conocen como datos anormales.</p>
 </div>
@@ -418,7 +417,7 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="histogramas-simetricos-y-asimetricos." class="section level3">
-<h3>Histogramas simetricos y asimetricos.</h3>
+<h3>Histogramas simétricos y asimétricos.</h3>
 <blockquote>
 <p>Histograma Asimétrico a la Izquierda</p>
 </blockquote>
