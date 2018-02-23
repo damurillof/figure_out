@@ -217,6 +217,7 @@ $(document).ready(function () {
 <li><a href="#presentacion-de-datos-cualitativos">Presentación de datos cualitativos</a><ul>
 <li><a href="#graficos-de-barras">Gráficos de barras</a></li>
 <li><a href="#graficas-circulares">Gráficas Circulares</a></li>
+<li><a href="#grafica-de-tallo-y-hojas-stemand-leaf">Gráfica de tallo y hojas (“Stemand-Leaf”)</a></li>
 </ul></li>
 </ul>
 </div>
@@ -401,20 +402,62 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 </ul>
 <p>Una regla bien usada es que el número de clases <span class="math inline">\(k\)</span> debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por <span class="math display">\[k = 1+3.3*log(n)\]</span> Donde <span class="math inline">\(n\)</span> es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de cada clase usando la siguiente fórmula: <span class="math display">\[Amplitud=\frac{máximo - mínimo}{k}\]</span> Usualmente la amplitud debe ser redondeada.</p>
 <p>También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.</p>
+<p>La siguiente función construye una tabla de frecuencias para variables continuas. Para usar esta función solo debe copiar el código y ejecutarlo en su computador. frec_relativa, frec_acumu, frecuencia_abs_acum</p>
+<pre class="r"><code>tabla_frecuencia &lt;- function(datos) {
+  k &lt;- nclass.Sturges(datos)
+  intervalos &lt;- cut(datos, breaks = k)
+  tabla2 &lt;- as.data.frame(table(intervalos))
+  tabla2 &lt;- transform(tabla2, frec_relativa = prop.table(Freq),frec_acumu = cumsum(Freq))
+  tabla2 &lt;- transform(tabla2, frecuencia_abs_acum = cumsum(frec_relativa))
+  midpoints &lt;- function(x, dp=2){
+    lower &lt;- as.numeric(gsub(&#39;,.*&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
+    upper &lt;- as.numeric(gsub(&#39;.*,&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
+    return(round(lower+(upper-lower)/2, dp))
+  }
+  tabla2 &lt;- transform(tabla2, MC = midpoints(intervalos))
+  tabla2
+}</code></pre>
+<p>Ejemplo para la variable <code>peso</code></p>
+<pre class="r"><code>tabla_frecuencia(Estudiantes$peso)</code></pre>
+<pre><code>   intervalos Freq frec_relativa frec_acumu frecuencia_abs_acum    MC
+1 (49.3,54.1]    2          0.04          2                0.04 51.70
+2   (54.1,59]    9          0.18         11                0.22 56.55
+3   (59,63.8]    6          0.12         17                0.34 61.40
+4 (63.8,68.7]    9          0.18         26                0.52 66.25
+5 (68.7,73.5]   12          0.24         38                0.76 71.10
+6 (73.5,78.4]    7          0.14         45                0.90 75.95
+7 (78.4,83.2]    5          0.10         50                1.00 80.80</code></pre>
+<p>Ejemplo para la variable <code>estatura</code></p>
+<pre class="r"><code>tabla_frecuencia(Estudiantes$estatura)</code></pre>
+<pre><code>  intervalos Freq frec_relativa frec_acumu frecuencia_abs_acum    MC
+1  (153,157]    7          0.14          7                0.14 155.0
+2  (157,161]   11          0.22         18                0.36 159.0
+3  (161,166]    6          0.12         24                0.48 163.5
+4  (166,170]   12          0.24         36                0.72 168.0
+5  (170,174]    7          0.14         43                0.86 172.0
+6  (174,179]    4          0.08         47                0.94 176.5
+7  (179,183]    3          0.06         50                1.00 181.0</code></pre>
+<p>Algunas interpretaciones de la tabla de frecuencia de <code>estatura</code>.</p>
+<ul>
+<li><p>Hay 11 estudiantes con estatura entre 157 y 161 centimetros</p></li>
+<li><p>El 24 % de los estudiantes tienen una estatura entre 166 y 170 centimetros.</p></li>
+<li><p>Hay 43 estudianete con la estatura entre 153 y 174 centimetros.</p></li>
+<li><p>El 72 % de los estudiantes tienene una estatura entre 153 y 170 centimetros.</p></li>
+</ul>
 <div id="histograma" class="section level3">
 <h3>Histograma</h3>
 <p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos.</p>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
   geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;red&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
   geom_histogram(binwidth=0.2,col=&quot;orange&quot;,fill=&quot;black&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
 <div id="histogramas-simetricos-y-asimetricos." class="section level3">
 <h3>Histogramas simétricos y asimétricos.</h3>
@@ -422,17 +465,17 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <p>Histograma Asimétrico a la Izquierda</p>
 </blockquote>
 <p>Se refiere a un histograma asimétrico a la izquierda cuando hay menos datos al lado izquierdo del histograma.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma Simétrico</p>
 </blockquote>
 <p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma Asimétrico a la Derecha</p>
 </blockquote>
 <p>Se refiere a un histograma asimétrico a la derecha cuando hay menos datos al lado derecho del histograma.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 </div>
 <div id="presentacion-de-datos-cualitativos" class="section level2">
@@ -464,12 +507,12 @@ tabla_frecuencia</code></pre>
 <p>Grafica de barras para la variable <code>area</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <blockquote>
 <p>Grafica de barras para la variable <code>nota_esma</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="graficas-circulares" class="section level3">
 <h3>Gráficas Circulares</h3>
@@ -484,7 +527,44 @@ Centro   Este  Norte  Oeste   Otra    Sur
 num_Area &lt;-c(7, 6, 4, 13, 10, 10 )
 ## Usando la función pie
 pie(num_Area,Area)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
+</div>
+<div id="grafica-de-tallo-y-hojas-stemand-leaf" class="section level3">
+<h3>Gráfica de tallo y hojas (“Stemand-Leaf”)</h3>
+<p>Es una gráfica usada para datos cuantitativos. Es la gráfica más básica de un conjunto de técnicas conocido con el nombre de Análisis Exploratorio de Datos (EDA) introducida por John Tukey a mediados de los años 70. La idea es considerar los primeros dígitos del dato como una rama del tallo (“stem”) y el último dígito como una hoja (“leaf”) de dicha rama. Las ramas son ordenadas en forma creciente.</p>
+<p><strong>Ejemplo</strong>. Los siguientes datos representan pesos de una muestra de 15 varones adultos.</p>
+<p>165 178 185 169 152 180 175 189 195 200 183 191 197 208 179</p>
+<p>Hacer su gráfica de “Stem-and Leaf”.</p>
+<p>Solución: En este caso las ramas la forman los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:</p>
+<p><strong>Interpretación:</strong> El uso del “stem-and-leaf” es exactamente igual al del Histograma, la única diferencia está en que del “stem-and-leaf” se pueden recuperar los datos muestrales, pero de un histograma no se puede hacer. En este ejemplo el “stem-and-leaf” es asimétrico a la izquierda, no tiene mucha variabilidad ni “outliers”.</p>
+<p>Podemos hacer el “stem-and leaf“ directamente en RStudio con la función <code>stem()</code>.</p>
+<p>Debemos crear un vector con los datos y usar la función <code>stem()</code></p>
+<pre class="r"><code>pesos &lt;- c(165, 178, 185, 169, 152, 180, 175, 189, 195, 200, 183, 191, 197, 208, 179)
+stem(pesos,2)</code></pre>
+<pre><code>
+  The decimal point is 1 digit(s) to the right of the |
+
+  15 | 2
+  16 | 59
+  17 | 589
+  18 | 0359
+  19 | 157
+  20 | 08</code></pre>
+<p>Hagamos una grafica de tallos y hojas para la variable <code>estatura</code> de los estudiantes.</p>
+<pre class="r"><code>stem(Estudiantes$estatura)</code></pre>
+<pre><code>
+  The decimal point is 1 digit(s) to the right of the |
+
+  15 | 334
+  15 | 5567888999
+  16 | 00001334
+  16 | 556677788899
+  17 | 0000222244
+  17 | 57789
+  18 | 13</code></pre>
+<hr />
+<p><strong>FIN</strong></p>
 </div>
 </div>
 

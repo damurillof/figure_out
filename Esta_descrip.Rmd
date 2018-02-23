@@ -147,6 +147,50 @@ Usualmente la amplitud debe ser redondeada.
 
 También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.
 
+La siguiente función construye una tabla de frecuencias para variables continuas. Para usar esta función solo debe copiar el código  y ejecutarlo en su computador. 
+frec_relativa, frec_acumu, frecuencia_abs_acum
+
+
+```{r, comment=NA,echo=T,eval=T}
+tabla_frecuencia <- function(datos) {
+  k <- nclass.Sturges(datos)
+  intervalos <- cut(datos, breaks = k)
+  tabla2 <- as.data.frame(table(intervalos))
+  tabla2 <- transform(tabla2, frec_relativa = prop.table(Freq),frec_acumu = cumsum(Freq))
+  tabla2 <- transform(tabla2, frecuencia_abs_acum = cumsum(frec_relativa))
+  midpoints <- function(x, dp=2){
+    lower <- as.numeric(gsub(',.*','',gsub('\\(|\\[|\\)|\\]','', x)))
+    upper <- as.numeric(gsub('.*,','',gsub('\\(|\\[|\\)|\\]','', x)))
+    return(round(lower+(upper-lower)/2, dp))
+  }
+  tabla2 <- transform(tabla2, MC = midpoints(intervalos))
+  tabla2
+}
+```
+
+Ejemplo para la variable `peso`
+
+
+```{r, comment=NA,echo=T,eval=T}
+tabla_frecuencia(Estudiantes$peso)
+```
+
+Ejemplo para la variable `estatura`
+
+```{r, comment=NA,echo=T,eval=T}
+tabla_frecuencia(Estudiantes$estatura)
+```
+
+Algunas interpretaciones de la tabla de frecuencia de `estatura`.
+
+*  Hay 11 estudiantes con estatura entre 157 y 161 centimetros
+
+*  El 24 % de los estudiantes tienen una estatura entre 166 y 170 centimetros. 
+
+*  Hay 43 estudianete con la estatura entre 153 y 174 centimetros. 
+
+*  El 72 % de los estudiantes tienene una estatura entre 153 y 170 centimetros. 
+
 ### Histograma
 
 Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. 
@@ -266,5 +310,45 @@ num_Area <-c(7, 6, 4, 13, 10, 10 )
 pie(num_Area,Area)
 ```
 
+Como resultado obtenemos un diagrama de sectores para la variable cualitativa `area`.
 
 
+### Gráfica de tallo y hojas (“Stemand-Leaf”)
+
+Es una gráfica usada para datos cuantitativos. Es la gráfica más básica de un conjunto de técnicas conocido con el nombre de Análisis Exploratorio de Datos (EDA) introducida por John Tukey a mediados de los años 70. La idea es considerar los primeros dígitos del dato como una rama del tallo (“stem”) y el último dígito como una hoja (“leaf”) de dicha rama. Las ramas son ordenadas en forma creciente.
+
+
+**Ejemplo**. Los siguientes datos representan pesos de una muestra de 15 varones adultos.
+
+ 165 178 185 169 152 180 175 189 195 200 183 191 197 208 179
+ 
+Hacer su gráfica de “Stem-and Leaf”.
+
+Solución: En este caso las ramas la forman los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:
+
+
+
+
+
+**Interpretación:**  El uso del “stem-and-leaf” es exactamente igual al del Histograma, la única diferencia está en que del “stem-and-leaf” se pueden recuperar los datos muestrales, pero de un histograma no se puede hacer. En este ejemplo el “stem-and-leaf” es asimétrico a la izquierda, no tiene mucha variabilidad ni “outliers”.
+
+Podemos hacer el “stem-and leaf“ directamente en RStudio con la función `stem()`. 
+
+Debemos crear un vector con los datos y usar la función `stem()`
+
+```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
+pesos <- c(165, 178, 185, 169, 152, 180, 175, 189, 195, 200, 183, 191, 197, 208, 179)
+stem(pesos,2)
+```
+
+
+Hagamos una grafica de tallos y hojas para la variable `estatura` de los estudiantes.
+
+```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
+stem(Estudiantes$estatura)
+```
+
+
+-------------
+
+**FIN**
