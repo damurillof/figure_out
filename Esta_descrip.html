@@ -212,6 +212,11 @@ $(document).ready(function () {
 <li><a href="#el-plot-de-puntos-dotplot">El plot de puntos (“Dotplot”)</a></li>
 <li><a href="#organizacion-de-datos-cuantitativos-continuos.">Organización de datos Cuantitativos Continuos.</a><ul>
 <li><a href="#histograma">Histograma</a></li>
+<li><a href="#histogramas-simetricos-y-asimetricos.">Histogramas simetricos y asimetricos.</a></li>
+</ul></li>
+<li><a href="#presentacion-de-datos-cualitativos">Presentación de datos cualitativos</a><ul>
+<li><a href="#graficos-de-barras">Gráficos de barras</a></li>
+<li><a href="#graficas-circulares">Gráficas Circulares</a></li>
 </ul></li>
 </ul>
 </div>
@@ -237,9 +242,9 @@ head(Estudiantes)</code></pre>
 <pre><code>  peso estatura edad sexo hermanos tipo_sangre fuma num_cig h_internet
 1 77.2    178.8   21    M        2           B   si       0         13
 2 74.6    158.6   21    M        0           A   no       0         24
-3 57.8    171.7   31    M        0           O   si       1         33
-4 65.6    170.1   32    F        1           B   no       2         45
-5 56.5    167.8   13    M        5          AB   si       0         22
+3 57.8    171.7   22    M        0           O   si       1         33
+4 65.6    170.1   21    F        1           B   no       2         45
+5 56.5    167.8   16    M        5          AB   si       0         22
 6 60.2    169.7   22    F        2           B   si       3         36
    gpa nota_esma  area trabaja
 1 3.52         I Oeste      si
@@ -378,6 +383,11 @@ table_frec</code></pre>
 ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
   ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>En este caso no tenemos presencia de valores anormales (“outliers”).</p>
+<p>A continuación hacemos un Dotplot para la variable cuantitativa discreta <code>edad</code> para ilustrar la presencia de datos anormales.</p>
+<pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Observamos que la edad de los estudiantes se situa entre los 17 y los 26 años aproximadamente, pero vemos la presencia de un dato a la izquierda de la gráfica y otros a la derecha muy alejados del grupo del centro, estos valores se conocen como datos anormales.</p>
 </div>
 <div id="organizacion-de-datos-cuantitativos-continuos." class="section level2">
 <h2>Organización de datos Cuantitativos Continuos.</h2>
@@ -397,15 +407,85 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos.</p>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
-  geom_histogram(binwidth=6,fill=&quot;red&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+  geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;red&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
-  geom_histogram(binwidth=0.2,fill=&quot;black&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+  geom_histogram(binwidth=0.2,col=&quot;orange&quot;,fill=&quot;black&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+</div>
+<div id="histogramas-simetricos-y-asimetricos." class="section level3">
+<h3>Histogramas simetricos y asimetricos.</h3>
+<blockquote>
+<p>Histograma Asimétrico a la Izquierda</p>
+</blockquote>
+<p>Se refiere a un histograma asimétrico a la izquierda cuando hay menos datos al lado izquierdo del histograma.</p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<blockquote>
+<p>Histograma Simétrico</p>
+</blockquote>
+<p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<blockquote>
+<p>Histograma Asimétrico a la Derecha</p>
+</blockquote>
+<p>Se refiere a un histograma asimétrico a la derecha cuando hay menos datos al lado derecho del histograma.</p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+</div>
+<div id="presentacion-de-datos-cualitativos" class="section level2">
+<h2>Presentación de datos cualitativos</h2>
+<p>En este caso los datos también se pueden organizar en tablas de frecuencias, pero las frecuencias acumuladas no tienen mucho significado, excepto cuando la variable es ordinal</p>
+<pre class="r"><code>frecuencia_area &lt;- table(Estudiantes$area)
+frecuencia_area </code></pre>
+<pre><code>
+Centro   Este  Norte  Oeste   Otra    Sur 
+     7      6      4     13     10     10 </code></pre>
+<pre class="r"><code>frecuencia_relativa_area &lt;- frecuencia_area/50
+frecuencia_relativa_area &lt;- as.vector(frecuencia_relativa_area)
+frecuencia_relativa_area </code></pre>
+<pre><code>[1] 0.14 0.12 0.08 0.26 0.20 0.20</code></pre>
+<pre class="r"><code>tabla_frecuencia &lt;- data.frame(frecuencia_area,frecuencia_relativa_area)
+tabla_frecuencia</code></pre>
+<pre><code>    Var1 Freq frecuencia_relativa_area
+1 Centro    7                     0.14
+2   Este    6                     0.12
+3  Norte    4                     0.08
+4  Oeste   13                     0.26
+5   Otra   10                     0.20
+6    Sur   10                     0.20</code></pre>
+<p>Las frecuencias acumuladas no son importantes si la variables es nominal como el caso de la variable <code>area</code></p>
+<div id="graficos-de-barras" class="section level3">
+<h3>Gráficos de barras</h3>
+<p>Las gráficas de barras pueden ser verticales u horizontales. Usando la función <code>ggplot</code> obtenemos:</p>
+<blockquote>
+<p>Grafica de barras para la variable <code>area</code></p>
+</blockquote>
+<pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<blockquote>
+<p>Grafica de barras para la variable <code>nota_esma</code></p>
+</blockquote>
+<pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="graficas-circulares" class="section level3">
+<h3>Gráficas Circulares</h3>
+<p>Este tipo de gráfica se usa cuando se quiere tener una idea de la contribución de cada valor de la variable al total. Aunque es usada más para variables cualitativas, también podría usarse para variables cuantitativas discretas siempre que la variable no asuma muchos valores distintos.</p>
+<pre class="r"><code>frec &lt;- table(Estudiantes$area)
+frec</code></pre>
+<pre><code>
+Centro   Este  Norte  Oeste   Otra    Sur 
+     7      6      4     13     10     10 </code></pre>
+<p>Ahora creamos dos vectores</p>
+<pre class="r"><code>Area &lt;- c(&quot;Centro&quot;,&quot;Este&quot;,  &quot;Norte&quot;,&quot;Oeste&quot;,&quot;Otra&quot;,&quot;Sur&quot; )
+num_Area &lt;-c(7, 6, 4, 13, 10, 10 )
+## Usando la funcio pie
+pie(num_Area,Area)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 </div>
 

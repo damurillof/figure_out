@@ -115,6 +115,18 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = "green"
   ggtitle("Dotplot para Número de hermanos")  + xlab("hermanos") + ylab("conteos")
 ```
 
+En este caso no tenemos presencia de valores anormales ("outliers").
+
+A continuación hacemos un Dotplot para la variable cuantitativa discreta `edad` para ilustrar la presencia de datos anormales.
+
+```{r, comment=NA,echo=F,eval=T}
+Estudiantes1 <- read.table("/datos/DirectorioR/figure_out/text",header = T)
+library(ggplot2)
+ggplot(Estudiantes1, aes(x = Estudiantes1$edad)) + geom_dotplot(fill = "red", color = "black") + 
+  ggtitle("Dotplot para edad")  + xlab("Edad") + ylab("conteos")
+```
+
+Observamos que la edad de los estudiantes se situa entre los 17 y los 26 años aproximadamente, pero vemos la presencia de un dato  a la izquierda de la gráfica y otros a la derecha muy alejados del grupo del centro, estos valores se conocen como datos anormales. 
 
 ## Organización de datos Cuantitativos Continuos.
 
@@ -150,16 +162,109 @@ Puede usar el paquete `ggplot2` para hacer una grafica más atractiva.
 
 ```{r, comment=NA,echo=T,eval=T}
 ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
-  geom_histogram(binwidth=6,fill="red")
+  geom_histogram(binwidth=6,col="black",fill="red") + ggtitle("Histograma para peso")  + xlab("Peso")
 ```
 
 Para la variable `gpa`
 
 ```{r, comment=NA,echo=T,eval=T}
 ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
-  geom_histogram(binwidth=0.2,fill="black")
+  geom_histogram(binwidth=0.2,col="orange",fill="black") + ggtitle("Histograma para GPA")  + xlab("GPA")
+```
+
+### Histogramas simetricos y asimetricos.
+
+
+> Histograma Asimétrico a la Izquierda
+
+Se refiere a un histograma asimétrico a la izquierda cuando hay menos datos al lado izquierdo del histograma.
+
+```{r, comment=NA,echo=F,eval=T}
+
+asimetric1 <- c(runif(25,2,3.3),runif(80,3.2,4))
+asimetric1 <- as.data.frame(asimetric1)
+ggplot(data=asimetric1, aes(x = asimetric1)) + 
+  geom_histogram(binwidth=0.2,col="black",fill="green") + ggtitle("Histograma Asimétrico a la izquierda")  + xlab("GPA")
+```
+
+> Histograma Simétrico
+
+Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho. 
+
+```{r, comment=NA,echo=F,eval=T}
+simetric <- rnorm(1000,3,0.3)
+simetric <- as.data.frame(simetric)
+ggplot(data=simetric, aes(x = simetric)) + 
+  geom_histogram(binwidth=0.2,col="red",fill="black") + ggtitle("Histograma Simétrico")  + xlab("GPA")
+
+```
+
+
+> Histograma Asimétrico a la Derecha
+
+Se refiere a un histograma asimétrico a la derecha cuando hay menos datos al lado derecho del histograma.
+
+```{r, comment=NA,echo=F,eval=T}
+asimetric2 <- c(runif(80,2,2.6),runif(25,2.5,4))
+asimetric2 <- as.data.frame(asimetric2)
+ggplot(data=asimetric2, aes(x = asimetric2)) + 
+  geom_histogram(binwidth=0.2,col="black",fill="orange") + ggtitle("Histograma Asimétrico a la derecha")  + xlab("GPA") 
+```
+
+
+## Presentación de datos cualitativos 
+
+En este caso los datos también se pueden organizar en tablas de frecuencias, pero las frecuencias acumuladas no tienen mucho significado, excepto cuando la variable es ordinal
+
+
+```{r, comment=NA,echo=T,eval=T}
+frecuencia_area <- table(Estudiantes$area)
+frecuencia_area 
+frecuencia_relativa_area <- frecuencia_area/50
+frecuencia_relativa_area <- as.vector(frecuencia_relativa_area)
+frecuencia_relativa_area 
+tabla_frecuencia <- data.frame(frecuencia_area,frecuencia_relativa_area)
+tabla_frecuencia
+```
+
+Las frecuencias acumuladas no son importantes si la variables es nominal como el caso de la variable `area`
+
+
+
+### Gráficos de barras
+
+Las gráficas de barras pueden ser verticales u horizontales. Usando la función `ggplot` obtenemos:
+
+> Grafica de barras para la variable `area`
+
+```{r, comment=NA,echo=T,eval=T}
+ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()
+```
+
+
+> Grafica de barras para la variable `nota_esma`
+
+```{r, comment=NA,echo=T,eval=T}
+ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()
+```
+
+### Gráficas Circulares
+
+Este tipo de gráfica se usa cuando se quiere tener una idea de la contribución de cada valor de la variable al total. Aunque es usada más para variables cualitativas, también podría usarse para variables cuantitativas discretas siempre que la variable no asuma muchos valores distintos.
+
+```{r, comment=NA,echo=T,eval=T}
+frec <- table(Estudiantes$area)
+frec
+```
+
+Ahora creamos dos vectores 
+
+```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
+Area <- c("Centro","Este",  "Norte","Oeste","Otra","Sur" )
+num_Area <-c(7, 6, 4, 13, 10, 10 )
+## Usando la funcio pie
+pie(num_Area,Area)
 ```
 
 
 
-    
