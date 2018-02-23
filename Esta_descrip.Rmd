@@ -262,7 +262,7 @@ Ahora creamos dos vectores
 ```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
 Area <- c("Centro","Este",  "Norte","Oeste","Otra","Sur" )
 num_Area <-c(7, 6, 4, 13, 10, 10 )
-## Usando la funcio pie
+## Usando la función pie
 pie(num_Area,Area)
 ```
 
