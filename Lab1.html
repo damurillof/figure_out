@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Instructor: Didier Murillo" />
 
+<meta name="date" content="2018-02-26" />
 
-<title>Teaching</title>
+<title>Laboratorio 1</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -199,32 +201,60 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Teaching</h1>
+<h1 class="title toc-ignore">Laboratorio 1</h1>
+<h4 class="author"><em>Instructor: Didier Murillo</em></h4>
+<h4 class="date"><em>February 26, 2018</em></h4>
 
 </div>
 
 
-<p>Aquí esta el enlace para la página web del curso:</p>
-<div id="esma3101-estadistica-aplicada-i" class="section level2">
-<h2><a href="https://didier-murillo.netlify.com/Contents/">ESMA3101: Estadística Aplicada I</a></h2>
-<blockquote>
-<p>Bonos</p>
-</blockquote>
-<div id="bono-examen-no-obligatorio" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Bono_Examen/">Bono Examen (NO obligatorio)</a></h3>
-<blockquote>
-<p>Tareas</p>
-</blockquote>
-<blockquote>
-<p>Laboratorios</p>
-</blockquote>
+<div id="puntuacion-7-puntos-bono." class="section level3">
+<h3>Puntuación: 7 puntos Bono.</h3>
 </div>
-<div id="laboratorio-1" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Lab1/">Laboratorio 1</a></h3>
-<blockquote>
-<p>Exámenes</p>
-</blockquote>
-</div>
+<div id="resuelva-los-siguientes-ejercicios-en-rstudio-luego-copie-el-codigo-y-los-resultados-en-un-archivo-word-que-al-final-debe-ser-enviado-en-formato-pdf-al-correo-electronico-del-instructor." class="section level3">
+<h3>Resuelva los siguientes ejercicios en RStudio, luego copie el código y los resultados en un archivo Word que al final debe ser enviado en formato PDF al correo electrónico del instructor.</h3>
+<ol style="list-style-type: decimal">
+<li>Ejecute las siguientes operaciones aritméticas en RStudio</li>
+</ol>
+<ul>
+<li>4x5</li>
+<li>3 + 2 +10</li>
+<li>30/3</li>
+<li>Guarde cada operación aterior en un objeto, luego ejecute la suma de esos tres objetos y guarde el resultado en un objeto <code>K</code>. Muestre el resultado de <code>K</code>.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Use la función <code>print()</code> para imprimir su nombre completo.</p></li>
+<li><p>Asigne a un objeto <code>A</code>, el año actual de su bachillerato, es decir los años que lleva en el Colegio. Por ejemplo <code>A &lt;- 3</code>.</p></li>
+<li><p>Use las funciones <code>print()</code> y <code>paste()</code> para imprimir un mensaje que diga su concentración y el número de años que lleva en el colegio usando el objeto <code>A</code> del ejercicio anterior.</p></li>
+<li>Crear y guardar en objetos los siguientes vectores, luego imprima cada vector usando <code>print()</code></li>
+</ol>
+<ul>
+<li>Un vector numérico con su día, mes y año de nacimiento, por ejemplo <code>born &lt;- c(7,3,1989)</code></li>
+<li>Un vector numérico con los multiplos del número de letras que tiene su primer nombre hasta 40.</li>
+<li>Un vector numérico con los números pares desde 1 hasta su edad.</li>
+<li>Un vector numérico con los números impares desde 1 hasta 21.</li>
+<li>Un vector de caracteres con los meses del año. Cada elemento del vector debe ser un mes.</li>
+<li>Un vector de caracteres con el nombre de los cursos que esta tomando este semestre. Cada elemento debe ser un curso.</li>
+<li>Un vector de caracteres con mínimo tres de sus hobbies.</li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Use la función <code>rep()</code> para repetir su primer apellido 20 veces.</p></li>
+<li><p>Use la siguiente información para crear un data frame. Este debe tener tres columnas, use <code>print()</code> para imprimir su data frame. Recuerde que debe asignarle un nombre a ese data frame.</p></li>
+</ol>
+<pre class="r"><code>EDAD &lt;- c(20,21,20,22,22,23,21,22,24,25,23,25,24,25,21,20,20,24,23,22)
+GENERO &lt;- c(&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;F&quot;,&quot;F&quot;,&quot;M&quot;)
+MUSICA &lt;- c(rep(&quot;ELECTRONICA&quot;,7),rep(&quot;ROCK&quot;,3),rep(&quot;POP&quot;,5),rep(&quot;SALSA&quot;,4),rep(&quot;REGGAE&quot;,1))</code></pre>
+<ul>
+<li><p>Despues de crear el data frame, use la función <code>table()</code> para responder las siguientes preguntas:</p></li>
+<li>¿Cuántas mujeres hay?</li>
+<li>¿Cuántos individuos hay con edad de 20 años?</li>
+<li><p>¿A cuántos individuos les gusta el rock?</p></li>
+<li><p>Use la función <code>table()</code> con las variables <strong>GENERO</strong> y <strong>MUSICA</strong> de su data frame o tabla de datos para responder las siguientes preguntas:</p></li>
+<li>¿A cuántos hombres les gusta la eléctronica?, ¿A cuántas mujeres?</li>
+<li><p>¿A cuántas mujeres NO les gusta la salsa?</p></li>
+</ul>
+<hr />
+<p><strong>Éxitos</strong></p>
 </div>
 
 

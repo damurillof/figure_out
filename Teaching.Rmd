@@ -17,6 +17,8 @@ Aquí esta el enlace para la página web del curso:
 
 > Laboratorios 
 
+### [Laboratorio 1](https://didier-murillo.netlify.com/Lab1/)
+
 
 > Exámenes
 

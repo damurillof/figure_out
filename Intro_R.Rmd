@@ -90,11 +90,11 @@ R también funciona como una calculadora, veamos
 
 ```{r,comment=NA}
 ## suma
-4+4
+4 + 4
 ## multiplicación
 3*10
 # división
-25/4
+25/5
 ```
 
 > Asignando objetos 
@@ -239,6 +239,14 @@ table(Students$Genero)
 ```{r,comment=NA}
 table(Students$Concentracion)
 ```
+
+¿Cuantos hombres hay en Biología?, ¿Cuantas mujeres estudian Quimica?
+
+```{r,comment=NA}
+table(Students$Genero,Students$Concentracion)
+```
+
+Ningún hombre estudia Biología y hay cinco mujeres que estudian Quimica. 
 
 ### Como instalar paquetes en RStudio
 

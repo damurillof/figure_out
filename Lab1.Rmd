@@ -1,0 +1,67 @@
+---
+title: "Laboratorio 1"
+author: 'Instructor: Didier Murillo'
+date: "February 26, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Puntuación: 7 puntos Bono. 
+
+### Resuelva los siguientes ejercicios en RStudio, luego copie el código y los resultados en un archivo Word que al final debe ser enviado en formato PDF al correo electrónico del instructor.
+
+1.  Ejecute las siguientes operaciones aritméticas en RStudio
+
+  +   4x5
+  +   3 + 2 +10
+  +   30/3
+  +   Guarde cada operación aterior en un objeto, luego ejecute la suma de esos tres objetos y guarde el resultado en un objeto `K`. Muestre el resultado de `K`.
+  
+2.  Use la función `print()` para imprimir su nombre completo. 
+
+3.  Asigne a un objeto `A`, el año actual de su bachillerato, es decir los años que lleva en el Colegio. Por ejemplo `A <- 3`.
+
+4.  Use las funciones `print()` y `paste()` para imprimir un mensaje que diga su concentración y el número de años que lleva en el colegio usando el objeto `A` del ejercicio anterior. 
+
+5.  Crear y guardar en objetos los siguientes vectores, luego imprima cada vector usando `print()`
+  + Un vector numérico con su día, mes y año de nacimiento, por ejemplo `born <- c(7,3,1989)`
+  + Un vector numérico con los multiplos del número de letras que tiene su primer nombre hasta 40.
+  + Un vector numérico con los números pares desde 1 hasta su edad.
+  + Un vector numérico con los números impares desde 1 hasta 21.
+  + Un vector de caracteres con los meses del año. Cada elemento del vector debe ser un mes. 
+  + Un vector de caracteres con el nombre de los cursos que esta tomando este semestre. Cada elemento debe ser un curso. 
+  + Un vector de caracteres con mínimo tres de sus hobbies. 
+  
+6.  Use la función `rep()` para repetir su primer apellido 20 veces. 
+
+7.  Use la siguiente información para crear un data frame.  Este debe tener tres columnas, use `print()` para imprimir su data frame. Recuerde que debe asignarle un nombre a ese data frame. 
+
+```{r }
+EDAD <- c(20,21,20,22,22,23,21,22,24,25,23,25,24,25,21,20,20,24,23,22)
+GENERO <- c("M","F","M","F","F","M","F","M","F","F","M","F","M","F","M","F","M","F","F","M")
+MUSICA <- c(rep("ELECTRONICA",7),rep("ROCK",3),rep("POP",5),rep("SALSA",4),rep("REGGAE",1))
+```
+
+  
+*   Despues de crear el data frame, use la función `table()` para responder las siguientes preguntas:
+
+  + ¿Cuántas mujeres hay?
+  + ¿Cuántos individuos hay con edad de 20 años?
+  + ¿A cuántos individuos les gusta el rock?
+  
+*   Use la función `table()` con las  variables **GENERO** y **MUSICA** de su data frame o tabla de datos para responder las siguientes preguntas:
+
+  + ¿A cuántos hombres les gusta la eléctronica?, ¿A cuántas mujeres?
+  + ¿A cuántas mujeres NO les gusta la salsa?
+
+
+---------
+**Éxitos**
+  
+
+
+
+

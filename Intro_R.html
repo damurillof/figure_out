@@ -298,14 +298,14 @@ $(document).ready(function () {
 <p>Aritmetica</p>
 </blockquote>
 <pre class="r"><code>## suma
-4+4</code></pre>
+4 + 4</code></pre>
 <pre><code>[1] 8</code></pre>
 <pre class="r"><code>## multiplicación
 3*10</code></pre>
 <pre><code>[1] 30</code></pre>
 <pre class="r"><code># división
-25/4</code></pre>
-<pre><code>[1] 6.25</code></pre>
+25/5</code></pre>
+<pre><code>[1] 5</code></pre>
 <blockquote>
 <p>Asignando objetos</p>
 </blockquote>
@@ -441,6 +441,13 @@ Hombre  Mujer
 <pre><code>
 BIOL ECON PSIC QUIM 
    3    8    4    5 </code></pre>
+<p>¿Cuantos hombres hay en Biología?, ¿Cuantas mujeres estudian Quimica?</p>
+<pre class="r"><code>table(Students$Genero,Students$Concentracion)</code></pre>
+<pre><code>        
+         BIOL ECON PSIC QUIM
+  Hombre    0    4    4    0
+  Mujer     3    4    0    5</code></pre>
+<p>Ningún hombre estudia Biología y hay cinco mujeres que estudian Quimica.</p>
 </div>
 <div id="como-instalar-paquetes-en-rstudio" class="section level3">
 <h3>Como instalar paquetes en RStudio</h3>
