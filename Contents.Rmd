@@ -12,3 +12,5 @@ output: html_document
 
 ### [Estadística descriptiva](https://didier-murillo.netlify.com/Esta_descrip/)
 
+### [Medidas de tendencia central y variabilidad.](https://didier-murillo.netlify.com/Medidas/)
+
