@@ -203,8 +203,90 @@ $(document).ready(function () {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#calculo-de-medidas-estadisticas">Cálculo de Medidas Estadisticas</a><ul>
+<li><a href="#medidas-de-centralidad">Medidas de Centralidad</a></li>
+<li><a href="#propiedades-de-la-media.">Propiedades de la media.</a></li>
+</ul></li>
+</ul>
+</div>
 
+<div id="calculo-de-medidas-estadisticas" class="section level2">
+<h2>Cálculo de Medidas Estadisticas</h2>
+<p>Hay dos tipos principales de medidas Estadísticas: Medidas de Tendencia Central y medidas de Variabilidad.</p>
+<p><strong>Las medidas de tendencia central</strong> dan una idea del centro de la distribución de los datos. Las principales medidas de este tipo son la media o promedio aritmético, la mediana, la moda y la media podada.</p>
+<p><strong>Las medidas de variabilidad</strong> expresan el grado de concentración o dispersión de los datos con respecto al centro de la distribución. Entre las principales medidas de este tipo están la varianza, la desviación estándar, el rango intercuartílico. Aparte también hay medidas de posición, como son los cuartiles, deciles y percentiles. Además, una medida de asimetría (“skewness”) y una medida de aplanamiento (“kurtosis”).</p>
+<div id="medidas-de-centralidad" class="section level3">
+<h3>Medidas de Centralidad</h3>
+<ul>
+<li><strong>La media o promedio</strong> se obtiene sumando todos los datos y dividiendo entre el número de datos. Es decir, si <span class="math inline">\(x_1, x_2 ,…,x_n\)</span>, representan las observaciones de una variable X en una muestra de tamaño n, entonces la media de la variable X está dada por:</li>
+</ul>
+<p><span class="math display">\[\bar{X}=\frac{\sum_{i=1}^{n}x_i}{n}\]</span> Cuando el conjunto de datos es una <strong>muestra aleatoria</strong> recibe el nombre de media muestral siendo uno de los principales estadísticos muestrales. Se espera que la <strong>media</strong> este ralacionada con el valor que más posibilidades tiene de ocurrir en una variable, por tanto si es así, la media es el centro de la distribución.</p>
+<div class="figure">
+<img src="media.png" />
 
+</div>
+<p><strong>Ejemplo.</strong> Supongamos que los siguientes datos representan el precio de 9 carros de alta gama en miles.</p>
+<p>74, 82, 107, 92, 125, 130, 118, 140, 153.</p>
+<p>Hallar el precio promedio de las casas.</p>
+<p>Para encontrar la media o promedio entonces tenemos que sumar todos los datos y luego dividir el resultado por el número de observaciones en la muestra.</p>
+<p><span class="math display">\[\bar{X}=\frac{74 + 82 + 107 + 92 + 125 + 130 + 118 + 140 + 153}{9}=\frac{1021}{9}=113.44\]</span></p>
+<p>El resultado de la media para este caso se interpreta como que el <strong>valor promedio</strong> de los carros de gama alta es de <span class="math inline">\(113.44\)</span>.</p>
+<p>En RStudio la función para calcular la media o promedio a una muestra de datos es <code>mean()</code>. Usamos esta función para encontrar la media de los datos de los carros de gama alta.</p>
+<pre class="r"><code>carros &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153)
+mean(carros)</code></pre>
+<pre><code>[1] 113.4444</code></pre>
+<p>La media es afectada por la asimetría de la distribución de los datos y por la presencia de “outliers” como se muestra en el siguiente ejemplo.</p>
+<p><strong>Ejemplo.</strong> Supongamos que en el ejemplo anterior se elige adicionalmente un carro cuyo precio es de 500 mil dolares.</p>
+<p>Luego el promedio será:</p>
+<p><span class="math display">\[\bar{X}=\frac{74 + 82 + 107 + 92 + 125 + 130 + 118 + 140 + 153 + 500}{10}=\frac{1521}{10}=152.1\]</span></p>
+<p>En este caso la media da una idea errónea del centro de la distribución, la presencia del “outlier” ha afectado la media y ya no es el centro de la distribución. Sólo dos datos de las 10 observaciones tienen precio promedio mayor a <span class="math inline">\(\$152,100\)</span></p>
+<pre class="r"><code>carros_outlier &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153, 500)
+mean(carros_outlier)</code></pre>
+<pre><code>[1] 152.1</code></pre>
+</div>
+<div id="propiedades-de-la-media." class="section level3">
+<h3>Propiedades de la media.</h3>
+<ol style="list-style-type: decimal">
+<li>La media está influenciada por los valores de cada uno de los datos.</li>
+<li>La media no tiene por qué ser igual a uno de los valores de los datos, ni siquiera de su misma naturaleza: datos enteros pueden tener una media decimal.</li>
+<li>El valor de la media debe estar entre el mayor dato y el menor dato.</li>
+</ol>
+<ul>
+<li><strong>La Mediana:</strong> es un valor que divide a la muestra en <strong>dos partes aproximadamente iguales</strong>. Es decir, como un 50 por ciento de los datos de la muestra serán menores o iguales que la mediana y el restante 50 por ciento son mayores o iguales que ella.</li>
+</ul>
+<p>Para calcular la mediana primero se deben ordenar los datos de <strong>menor a mayor</strong>. Si el número de datos es <strong>impar</strong>, entonces la mediana será el valor central. Si el número de datos es <strong>par</strong> entonces, la mediana se obtiene promediando los dos valores centrales.</p>
+<p><strong>Ejemplo con datos impares:</strong> Calcular la mediana para los datos de el precio de los 9 carros.</p>
+<p>74, 82, 107, 92, 125, 130, 118, 140, 153.</p>
+<p>Debemos ordenar los datos de menor a mayor: 74, 82, 92, 107, <strong>118</strong>, 125, 130, 140, 153. Vemos que el valor central esta en 118, es decir la mediana del precio de los carros es <span class="math inline">\(\$118,000\)</span>.</p>
+<p><strong>Ejemplo con datos pares:</strong> Calcular la mediana para los datos de el precio de los 10 carros donde hay un “outlier”.</p>
+<p>74, 82, 107, 92, 125, 130, 118, 140, 153, 500.</p>
+<p>Debemos ordenar los datos de menor a mayor: 74, 82, 92, 107, <strong>118, 125</strong>, 130, 140, 153, 500. Vemos que hay dos valores centrales que son 118 y 125, por lo tanto se deben promediar estos dos valores, es decir</p>
+<p><span class="math display">\[Mediana = \frac{118 + 125}{2}=121.5\]</span></p>
+<p>Es decir la mediana del precio de los carros es <span class="math inline">\(\$121,500\)</span>.</p>
+<p>A diferencia de la media, la <strong>mediana no es afectada</strong> por la presencia de valores anormales o “outliers”. Asi, la mediana para los datos del ejemplo anterior, donde hay un número par de datos, la mediana resulta ser el promedio de los dos valores centrales y el dato anormal 500 no afecta el valor de la mediana.</p>
+<p>En RStudio la función para calcular la <strong>Mediana</strong> es <code>median()</code>, vamos a calcular la mediana para los datos del precio de los carros:</p>
+<p>Sin presencia de outliers</p>
+<pre class="r"><code>carros &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153)
+median(carros)</code></pre>
+<pre><code>[1] 118</code></pre>
+<p>Con presencia de outliers</p>
+<pre class="r"><code>carros_outlier &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153, 500)
+median(carros_outlier)</code></pre>
+<pre><code>[1] 121.5</code></pre>
+<p><strong>Cuando la distribución es asimétrica hacia la derecha, la mediana es menor que la media. Si hay asimetría hacia la izquierda entonces la mediana es mayor que la media y cuando hay simetría, ambas son iguales.</strong></p>
+<ul>
+<li><strong>La moda</strong> es el valor (o valores) que se repite con mayor frecuencia en la muestra. La Moda puede aplicarse tanto a datos cuantitativos como cualitativos.</li>
+</ul>
+<p><strong>Ejemplo</strong>. Los siguientes datos representan el número de veces que 11 personas van al cine mensualmente: 3, 4, 4, 5, 0, 2, 1, 5, 4, 5 y 4.</p>
+<p>Hallar la moda.</p>
+<p>La Moda es 4. Es decir, que predominan más las personas que asisten 4 veces al mes al cine.</p>
+<p><strong>Ejemplo</strong>. Los siguientes datos representan tipos de sangre de 9 personas A, O, B, O, AB, O, B, O, A</p>
+<p>Hallar la Moda.</p>
+<p>La Moda es el tipo de sangre O. Se repite cuatro veces.</p>
+</div>
+</div>
 
 
 

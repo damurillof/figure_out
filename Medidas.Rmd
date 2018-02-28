@@ -9,3 +9,119 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## Cálculo de Medidas Estadisticas
+
+Hay dos tipos principales de medidas Estadísticas: Medidas de Tendencia Central y medidas de Variabilidad. 
+
+**Las medidas de tendencia central** dan una idea del centro de la distribución de los datos. Las principales medidas de este tipo son la media o promedio aritmético, la mediana, la moda y la media podada.
+
+**Las medidas de variabilidad** expresan el grado de concentración o dispersión de los datos con respecto al centro de la distribución. Entre las principales medidas de este tipo están la varianza, la desviación estándar, el rango intercuartílico. Aparte también hay medidas de posición, como son los cuartiles, deciles y percentiles. Además, una medida de asimetría (“skewness”) y una medida de aplanamiento (“kurtosis”).
+
+### Medidas de Centralidad
+ 
+*   **La media o promedio** se obtiene sumando todos los datos y dividiendo entre el número de datos. Es decir, si $x_1, x_2 ,…,x_n$, representan las observaciones de una variable X en una muestra de tamaño n, entonces la media de la variable X está dada por:
+
+$$\bar{X}=\frac{\sum_{i=1}^{n}x_i}{n}$$ 
+Cuando el conjunto de datos es una **muestra aleatoria** recibe el nombre de media muestral siendo uno de los principales estadísticos muestrales. Se espera que la **media** este ralacionada con el valor que más posibilidades tiene de ocurrir en una variable, por tanto si es así, la media es el centro de la distribución.
+
+![](media.png)
+
+**Ejemplo.** Supongamos que los siguientes datos representan el precio de 9 carros de alta gama en miles.
+
+74, 82, 107, 92, 125, 130, 118, 140, 153.
+
+Hallar el precio promedio de las casas.
+
+Para encontrar la media o promedio entonces tenemos que sumar todos los datos y luego dividir el resultado por el número de observaciones en la muestra. 
+
+$$\bar{X}=\frac{74 + 82 + 107 + 92 + 125 + 130 + 118 + 140 + 153}{9}=\frac{1021}{9}=113.44$$ 
+
+
+El resultado de la media para este caso se interpreta como que el **valor promedio** de los carros de gama alta es de $113.44$.
+
+En RStudio la función para calcular la media o promedio a una muestra de datos es `mean()`. Usamos esta función para encontrar la media de los datos de los carros de gama alta. 
+
+```{r,comment=NA}
+carros <- c(74, 82, 107, 92, 125, 130, 118, 140, 153)
+mean(carros)
+```
+
+La media es afectada por la asimetría de la distribución de los datos y por la presencia de “outliers” como se muestra en el siguiente ejemplo.
+
+**Ejemplo.** Supongamos que en el ejemplo anterior se elige adicionalmente un carro cuyo precio es de 500 mil dolares.
+
+Luego el promedio será:
+
+$$\bar{X}=\frac{74 + 82 + 107 + 92 + 125 + 130 + 118 + 140 + 153 + 500}{10}=\frac{1521}{10}=152.1$$ 
+
+En este caso la media da una idea errónea del centro de la distribución, la presencia del “outlier” ha afectado la media y ya no es el centro de la distribución. Sólo dos datos de las 10 observaciones tienen precio promedio mayor a $\$152,100$
+
+```{r,comment=NA}
+carros_outlier <- c(74, 82, 107, 92, 125, 130, 118, 140, 153, 500)
+mean(carros_outlier)
+```
+
+### Propiedades de la media.
+
+1.  La media está influenciada por los valores de cada uno de los datos.
+2.  La media no tiene por qué ser igual a uno de los valores de los datos, ni siquiera de su misma naturaleza: datos enteros pueden tener una media decimal.
+3.  El valor de la media debe estar entre el mayor dato y el menor dato. 
+
+*   **La Mediana:**  es un valor que divide a la muestra en **dos partes aproximadamente iguales**. Es decir, como un 50 por ciento de los datos de la muestra serán menores o iguales que la mediana y el restante 50 por ciento son mayores o iguales que ella.
+
+Para calcular la mediana primero se deben ordenar los datos de **menor a mayor**. Si el número de datos es **impar**, entonces la mediana será el valor central. Si el número de datos es **par** entonces, la mediana se obtiene promediando los dos valores centrales.
+
+**Ejemplo con datos impares:** Calcular la mediana para los datos de el precio de los 9 carros.
+
+74, 82, 107, 92, 125, 130, 118, 140, 153.
+
+Debemos ordenar los datos de menor a mayor: 74,  82,  92, 107, **118**, 125, 130, 140, 153. Vemos que el valor central esta en 118, es decir la mediana del precio de los carros es $\$118,000$.
+
+**Ejemplo con datos pares:** Calcular la mediana para los datos de el precio de los 10 carros donde hay un "outlier".
+
+74, 82, 107, 92, 125, 130, 118, 140, 153, 500.
+
+Debemos ordenar los datos de menor a mayor: 74,  82,  92, 107, **118, 125**, 130, 140, 153, 500. Vemos que hay dos valores centrales que son 118 y 125, por lo tanto se deben promediar estos dos valores, es decir 
+
+$$Mediana = \frac{118 + 125}{2}=121.5$$
+
+Es decir la mediana del precio de los carros es $\$121,500$.
+
+A diferencia de la media, la **mediana no es afectada** por la presencia de valores anormales o "outliers". Asi, la mediana para los datos del ejemplo anterior, donde hay un número par de datos, la mediana resulta ser el promedio de los dos valores centrales y el dato anormal 500 no afecta el valor de la mediana.
+
+En RStudio la función para calcular la **Mediana** es `median()`, vamos a calcular la mediana para los datos del precio de los carros:
+
+Sin presencia de outliers
+
+```{r,comment=NA}
+carros <- c(74, 82, 107, 92, 125, 130, 118, 140, 153)
+median(carros)
+```
+
+Con presencia de outliers
+
+```{r,comment=NA}
+carros_outlier <- c(74, 82, 107, 92, 125, 130, 118, 140, 153, 500)
+median(carros_outlier)
+```
+
+**Cuando la distribución es asimétrica hacia la derecha, la mediana es menor que la media. Si hay asimetría hacia la izquierda entonces la mediana es mayor que la media y cuando hay simetría, ambas son iguales.**
+
+*   **La moda** es el valor (o valores) que se repite con mayor frecuencia en la muestra. La Moda puede aplicarse tanto a datos cuantitativos como cualitativos.
+
+
+**Ejemplo**. Los siguientes datos representan el número de veces que 11 personas van al cine mensualmente:
+3, 4, 4, 5, 0, 2, 1, 5, 4, 5 y 4.
+
+Hallar la moda.
+
+La Moda es 4. Es decir,  que predominan más las personas que asisten 4 veces al mes al cine.
+
+
+**Ejemplo**. Los siguientes datos representan tipos de sangre de 9 personas A, O, B, O, AB, O, B, O, A
+
+Hallar la Moda.
+
+La Moda es el tipo de sangre O. Se repite cuatro veces. 
+
