@@ -205,9 +205,14 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#calculo-de-medidas-estadisticas">Cálculo de Medidas Estadisticas</a><ul>
-<li><a href="#medidas-de-centralidad">Medidas de Centralidad</a></li>
+<li><a href="#calculo-de-medidas-estadisticas">Cálculo de Medidas Estadisticas</a></li>
+<li><a href="#medidas-de-centralidad">Medidas de Centralidad</a><ul>
 <li><a href="#propiedades-de-la-media.">Propiedades de la media.</a></li>
+</ul></li>
+<li><a href="#medidas-de-variabilidad">Medidas de Variabilidad</a></li>
+<li><a href="#medidas-de-posicion">Medidas de Posición</a><ul>
+<li><a href="#los-cuartiles">Los cuartiles</a></li>
+<li><a href="#rango-intercuartilico">Rango Intercuartilico</a></li>
 </ul></li>
 </ul>
 </div>
@@ -217,8 +222,9 @@ $(document).ready(function () {
 <p>Hay dos tipos principales de medidas Estadísticas: Medidas de Tendencia Central y medidas de Variabilidad.</p>
 <p><strong>Las medidas de tendencia central</strong> dan una idea del centro de la distribución de los datos. Las principales medidas de este tipo son la media o promedio aritmético, la mediana, la moda y la media podada.</p>
 <p><strong>Las medidas de variabilidad</strong> expresan el grado de concentración o dispersión de los datos con respecto al centro de la distribución. Entre las principales medidas de este tipo están la varianza, la desviación estándar, el rango intercuartílico. Aparte también hay medidas de posición, como son los cuartiles, deciles y percentiles. Además, una medida de asimetría (“skewness”) y una medida de aplanamiento (“kurtosis”).</p>
-<div id="medidas-de-centralidad" class="section level3">
-<h3>Medidas de Centralidad</h3>
+</div>
+<div id="medidas-de-centralidad" class="section level2">
+<h2>Medidas de Centralidad</h2>
 <ul>
 <li><strong>La media o promedio</strong> se obtiene sumando todos los datos y dividiendo entre el número de datos. Es decir, si <span class="math inline">\(x_1, x_2 ,…,x_n\)</span>, representan las observaciones de una variable X en una muestra de tamaño n, entonces la media de la variable X está dada por:</li>
 </ul>
@@ -245,7 +251,6 @@ mean(carros)</code></pre>
 <pre class="r"><code>carros_outlier &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153, 500)
 mean(carros_outlier)</code></pre>
 <pre><code>[1] 152.1</code></pre>
-</div>
 <div id="propiedades-de-la-media." class="section level3">
 <h3>Propiedades de la media.</h3>
 <ol style="list-style-type: decimal">
@@ -285,6 +290,97 @@ median(carros_outlier)</code></pre>
 <p><strong>Ejemplo</strong>. Los siguientes datos representan tipos de sangre de 9 personas A, O, B, O, AB, O, B, O, A</p>
 <p>Hallar la Moda.</p>
 <p>La Moda es el tipo de sangre O. Se repite cuatro veces.</p>
+<p>En resumen, las medidas de tendencia central son tres: La Media, la Mediana y la Moda.</p>
+</div>
+</div>
+<div id="medidas-de-variabilidad" class="section level2">
+<h2>Medidas de Variabilidad</h2>
+<p>Las medidas de variabilidad o dispersión nos indican si losdatos están próximos entre sí o si por el contrario están muy dispersos.</p>
+<p><strong>El rango o amplitud</strong> se obtiene restando el valor más bajo de un conjunto de observaciones del valor más alto. Mientras mayor sea el rango existe mayor variabilidad.</p>
+<p>Para calcular en RSudio el rango se debe restar el máximo de los datos menos en mínimo. La función para calcular el máximo es <code>max()</code> y el mínimo es <code>min()</code></p>
+<p><strong>La varianza</strong> es una medida que da una idea del grado de concentración de los datos con respecto a la media. Matematicamente se define de la siguiente manera</p>
+<p><span class="math display">\[S^2=\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}\]</span></p>
+<p>En RStudio la función para la varianza es <code>var()</code></p>
+<p><strong>La desviación estándar</strong> es la raíz cuadrada positiva de la varianza y tiene la ventaja que está en las mismas unidades de medida que los datos. Se representa por <span class="math inline">\(S\)</span>.</p>
+<p>La función para la desviación estandar es <code>sd</code></p>
+<p>De por si sola la desviación estándar no permite concluir si la muestra es muy variable o poco variable. Al igual que la varianza es usada principalmente para comparar la variabilidad entre grupos.</p>
+<p><strong>Ejemplo.</strong> Estudiar la variabilidada de las suguientes dos muestras:</p>
+<p>muestra1: 16 18 25 28 23 42 24 47 38 19 22 34.</p>
+<p>muestra2: 116 118 125 128 123 142 124 147 138 119 120 132</p>
+<p>Vamos a calcular las el rango, la varianza y la desviación para las dos muestras, en la muestra uno tenemos:</p>
+<pre class="r"><code>n1 &lt;- c(16, 18, 25, 28, 23, 42, 24, 47, 38, 19, 22, 34)
+mean_n1 &lt;- mean(n1)
+print(mean_n1)</code></pre>
+<pre><code>[1] 28</code></pre>
+<pre class="r"><code>rango1 &lt;- max(n1) - min(n1)
+print(rango1)</code></pre>
+<pre><code>[1] 31</code></pre>
+<pre class="r"><code>var_n1 &lt;- var(n1)
+print(var_n1)</code></pre>
+<pre><code>[1] 100.3636</code></pre>
+<pre class="r"><code>sd_n1 &lt;- sd(n1)
+print(sd_n1)</code></pre>
+<pre><code>[1] 10.01817</code></pre>
+<p>En la muestra dos tenemos:</p>
+<pre class="r"><code>n2 &lt;- c(116, 118, 125, 128, 123, 142, 124, 147, 138, 119, 120, 132)
+mean_n2 &lt;- mean(n2)
+print(mean_n2)</code></pre>
+<pre><code>[1] 127.6667</code></pre>
+<pre class="r"><code>rango2 &lt;- max(n2) - min(n2)
+print(rango2)</code></pre>
+<pre><code>[1] 31</code></pre>
+<pre class="r"><code>var_n2 &lt;- var(n2)
+print(var_n2)</code></pre>
+<pre><code>[1] 100.9697</code></pre>
+<pre class="r"><code>sd_n2 &lt;- sd(n2)
+print(sd_n2)</code></pre>
+<pre><code>[1] 10.04837</code></pre>
+<p>Las muestras tienen practicamente las mismas varianzas, es decir en términos absolutos tienen la misma variabilidad, pero se debe tener encuenta que en la muestra uno, la varianza esta mucho más alejada de la media, lo que significa que la muestra uno es bastante variable, mientras que la muestra dos es poco variable.</p>
+<p>Otra medida de variabilidad es el coeficiente devariación (CV)</p>
+<p><strong>El Coeficiente de Variación CV</strong> que se define como <span class="math inline">\(CV=\frac{s}{|\bar{x}|}*100 \%\)</span>. Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 % entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra 2 es 7.87. Hagamos los calculos en RStudio</p>
+<pre class="r"><code>## CV para n1
+CV_n1 &lt;- (sd_n1/mean_n1)*100
+print(CV_n1)</code></pre>
+<pre><code>[1] 35.77916</code></pre>
+<pre class="r"><code>## CV para n2
+CV_n2 &lt;- (sd_n2/mean_n2)*100
+print(CV_n2)</code></pre>
+<pre><code>[1] 7.870784</code></pre>
+<p>Según los resultados para el CV, los datos de la muestra uno son mucho más variables con un CV=35.77, mientras que los de la muestra dos tienen poca variabilidad con un CV=7.87.</p>
+</div>
+<div id="medidas-de-posicion" class="section level2">
+<h2>Medidas de Posición</h2>
+<div id="los-cuartiles" class="section level3">
+<h3>Los cuartiles</h3>
+<p><strong>Los Cuartiles:</strong> Son valores que dividen a la muestra en 4 partes aproximadamente iguales. El 25% de los datos son menores o iguales que el cuartil inferior o primer cuartil, representado por <span class="math inline">\(Q_1\)</span>. El siguiente 25 % de datos cae entre el cuartil inferior y la mediana, la cual es equivalente al segundo cuartil <span class="math inline">\(Q_2\)</span> (<span class="math inline">\(Q_2\)</span> coincide con la mediana de los datos.). El 75 % de los datos son menores o iguales que el cuartil superior o tercer cuartil, representado por <span class="math inline">\(Q_3\)</span>, y el restante 25% de datos son mayores o iguales que Q3.</p>
+<p>Existen varios métodos para calcular los cuartiles pero la manera mas simple es ordenar los datos y considerar Q1 como la mediana de la primera mitad, o sea aquella que va desde el menor valor hasta la mediana. Similarmente Q3 es la mediana de la segunda mitad, o sea aquella que va desde la mediana hasta el mayor valor.</p>
+<p><strong>Ejemplo.</strong> Calcular los cuartiles de las siguientes muestras:</p>
+<ol style="list-style-type: lower-alpha">
+<li>6, 8, 4, 12, 15, 17, 23, 18, 25, 11.</li>
+</ol>
+<p>Los datos ordenados serán: 4, 6, 8, 11, 12, 15, 17, 18, 23, 25.</p>
+<p>La primera mitad es: 4, 6, 8, 11, 12, luego Q1 = 8.</p>
+<p>La segunda mitad es: 15, 17, 18, 23, 25, luego Q3 = 18</p>
+<p>En RStudio se pueden calcular los cuartiles con la función <code>summary()</code> la cual me arroja un resumen de los datos.</p>
+<pre class="r"><code>data &lt;- c(6, 8, 4, 12, 15, 17, 23, 18, 25, 11)
+summary(data)</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   4.00    8.75   13.50   13.90   17.75   25.00 </code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44.</li>
+</ol>
+<p>Los datos ordenados serán: 10, 13, 17, 18, 22, 23, 28, 29, 39, 40, 44.</p>
+<p>La primera mitad es: 10, 13, 17, 18, 22, 23, luego Q1 = 17.5</p>
+<p>La segunda mitad es: 23, 28, 29,39, 40, 44, luego Q3 = 34</p>
+<pre class="r"><code>data2 &lt;- c(10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44)
+summary(data2)</code></pre>
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  10.00   17.50   23.00   25.73   34.00   44.00 </code></pre>
+</div>
+<div id="rango-intercuartilico" class="section level3">
+<h3>Rango Intercuartilico</h3>
+<p>A la diferencia de <span class="math inline">\(Q_3\)</span> y <span class="math inline">\(Q_1\)</span> se le llama <strong>Rango Intercuartílico</strong>, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”.</p>
+<p><span class="math display">\[IQR=Q_3-Q_1\]</span></p>
 </div>
 </div>
 
