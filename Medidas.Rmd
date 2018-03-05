@@ -245,4 +245,133 @@ summary(data2)
 
 A la diferencia de $Q_3$ y $Q_1$ se le llama **Rango Intercuartílico**, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”.
 
-$$IQR=Q_3-Q_1$$
+$$RIC=Q_3-Q_1$$
+
+### Los Deciles
+
+Los deciles son los nueve valores que dividen la muestra en diez partes iguales. Los deciles dan los valores correspondientes al 10 %, 20 %,..., 90% de los datos. Los deciles se denotan como $D$, ese decir $D_1,D_2, D_3,...,D_9$ El decil número 5 (D5) coincide con la mediana.
+
+### Percentiles
+
+Los percentiles, es otra de las Medidas de Posición más comunes y empleadas. Técnicamente, son definidos como ciertos valores que dividen en cien partes idénticas porcentualmente hablando los datos que han sido ordenados de forma sucesiva de menor a mayor.  En cuanto a su notación, ésta corresponde a la forma $P_1, P_2,...,P_100$, y se son leen como Percentil 10, Percentil 90, etc.
+
+![](percentil.png)
+
+En la gráfica observamos que el percentil 20 divide la distribución en dos partes, 20 % al lado izquierdo y otro 80 % al lado derecho. Entonces  una definición más formal para percentil es:
+
+El percentil $p$ de un conjunto de datos ordenados es el valor que tiene a lo sumo $P\%$ de los datos debajo de él y como máximo $(100-P)\%$ por encima.
+
+Paso para encontrar el $P^{th}$ percentil
+
+1.  Ordenar el conunto de datos de menor a mayor.
+
+2.  Encuentre la ubicación del percentil $P^{th}$: $np/100$, redondear hacia adelante. 
+
+3.  Encuentra el percentil $P^{th}$ en esa ubicación.
+
+Ejemplo: Encuentre el percentil 67 de los siguientes datos: 46 25 34 35 41 41 46 46  22 47 49 54 54 59 60.
+
+Solución:
+
+1.  Ordenar los datos. 
+
+22 25 34 35 41 41 46 46 46 47 49 54 54 59 60.
+
+2.  Encuentrar la ubicación del percentil,
+
+$$\frac{nP}{100}=\frac{(15)(67)}{100}=10.05$$
+Redondeando al siguiente número, por tanto la ubicación es $11$.
+
+3.  El valor de los datos en la ubicación 11 es $49$, por tanto el percentil 67 es $49$.
+
+Un error muy popular en los estudiantes es pensar que el número encontrado en el paso 2 ya es el percentil. Es la ubicación del percentil en el conjunto de datos ordenado. De nuevo, si cometes ese error la mayor parte del tiempo, ¡tu respuesta no tendrá niungún sentido! En el ejemplo anterior encontramos 11, pero ¿cómo podría ser el percentil 67? Es más pequeño que cualquiera de las observaciones. Eso no puede suceder!
+
+```{r,comment=NA}
+example1 <- c(46, 25, 34, 35, 41, 41, 46, 46,  22, 47, 49, 54, 54, 59, 60)
+quantile(example1,0.67) 
+```
+
+Tenga en cuenta que las respuestas no son exactamente las mismas, R usa una fórmula algo más complicada. La diferencia realmente no importa, sin embargo.
+
+**Ejemplo** Encuenre el percentil $P_{75}$ del siguiente conjunto de datos:
+
+1.2 , 2.2 , 2.4 , 2.4 , 2.8 , 2.9 , 3 , 3.2 , 3.4 , 4 , 4.1 , 4.5 , 4.6
+
+
+1.  Ordenar los datos: 
+
+1.2 , 2.2 , 2.4 , 2.4 , 2.8 , 2.9 , 3 , 3.2 , 3.4 , 4 , 4.1 , 4.5 , 4.6
+
+2.  Encontrar la ubicación del percentil
+
+$$\frac{nP}{100}=\frac{(13)(75)}{100}=9.75$$
+Redondeado a $10$.
+
+3.  En la ubicación 10 el percentil es $4$. Por tanto el percentil 75 es $P_{75}=4$.
+
+```{r,comment=NA}
+example2 <- c(1.2 , 2.2 , 2.4 , 2.4 , 2.8 , 2.9 , 3 , 3.2 , 3.4 , 4 , 4.1 , 4.5 , 4.6)
+quantile(example2,0.75) 
+```
+
+## Diagrama de caja y bigotes (“Boxplot”).
+
+El “Boxplot” , al igual que el histograma y el “stem-and-leaf”, permite tener una idea visual de la distribución de los datos. O sea, determinar si hay simetría, ver el grado de variabilidad existente y finalmente detectar “outliers”. Pero además, el “Boxplot” es bien útil para comparar grupos, es una alternativa gráfica a la prueba estadística t de Student, si se comparan dos grupos o la prueba F del análisis de varianza si se comparan más de dos grupos. Todo lo anterior es posible debido a que se puede hacer múltiples boxplots en una misma gráfica.
+
+![](box.png)
+
+
+**Interpretación:** La línea central de la caja representa la **Mediana** y los lados de la caja representan los cuartiles $Q_1$ y $Q_3$ respectivamente. Si la Mediana está bien al centro de la caja, entonces hay simetria. Si la Mediana está más cerca a Q3 que a Q1 entonces la **asimetría es hacia la izquierda**, de lo contrario la **asimetría es hacia la derecha**. Si la caja no es muy alargada entonces se dice que no hay mucha variabilidad, es decir entre más larga la caja es mayor la variabilidad en los datos.
+
+
+Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas
+laterales llegan hasta los valores adyacentes a las fronteras interiores. Si las lineas laterales son bastantes alargadas entonces significa que los extremos de la distribución de los datos se acercan lentamente al eje X.
+
+Para dibujar un Boxplot en RStudio se puede usar la función `boxplot`. Veamos algunos ejemplos con los datos de la clase.
+
+```{r,comment=NA}
+# Leer los datos
+Estudiantes <- read.table("/datos/DirectorioR/text.txt",header = T)
+# Boxplot para estatura
+boxplot(Estudiantes$estatura,data=Estudiantes,main="Estatura por estudiantes",xlab="", ylab="Estatura")
+```
+
+
+```{r,comment=NA}
+# Boxplot para GPE
+boxplot(Estudiantes$estatura,data=Estudiantes,main="GPA por estudiantes",xlab="Grupo sexo", ylab="GPA")
+```
+
+### Boxplot para grupos 
+
+El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por aparte. Veamos 
+
+```{r,comment=NA}
+# Boxplot para GPE
+boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main="Estatura por estudiantes",xlab="", ylab="GPA")
+```
+
+**Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda**
+
+Usando `ggplot2` para dibujar un boxplot para la variable `GPE` y el grupo sexo.
+
+
+```{r,comment=NA}
+library(ggplot2)
+# Boxplot para GPA
+ggplot(Estudiantes, aes(x=Estudiantes$sexo, y=Estudiantes$gpa, fill=Estudiantes$sexo)) + geom_boxplot() +
+  ggtitle("Boxplot para GPA por grupo sexo") + xlab("Grupo sexo") + ylab("GPA")
+```
+
+¿Tendran mejores notas los estudiantes que trabajan comparado con los que no trabajan?. Veamos
+
+```{r,comment=NA}
+library(ggplot2)
+# Boxplot para GPA por trabaja
+ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiantes$trabaja)) + geom_boxplot() +
+  ggtitle("Boxplot para GPA por grupo trabaja") + xlab("Grupo trabaja") + ylab("GPA")
+```
+
+De la gráfica podemos concluir que hay mayor variabilidad en el grupo de estudiantes que trabajan, es decir la caja es más larga. 
+
+
