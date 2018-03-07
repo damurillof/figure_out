@@ -374,4 +374,88 @@ ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiant
 
 De la gráfica podemos concluir que hay mayor variabilidad en el grupo de estudiantes que trabajan, es decir la caja es más larga. 
 
+## El resumen de los cinco números.
+
+El resumen de cinco números es un conjunto de estadísticas descriptivas que proporcionan información sobre un conjunto de datos. Consiste en los cinco percentiles de muestra más importantes:
+
+1.  El valor o dato mínimo (observación más pequeña)
+2.  El primer cuartil ($Q_1$)
+3.  La mediana
+4.  El tercer cuartil ($Q_3$)
+5.  El valor o dato máximo (observación más grande)
+
+**Ejemplo: Resultados de examenes**
+
+Un maestro quiere examinar los puntajes de los exámenes de los estudiantes. Sus puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.
+
+Encuentre el resumen de los cinco números para esta muestra de datos. 
+
+1.  El mínimo es $74$
+2.  El primer cuartil es $Q_1=80$
+3.  La Mediana es $Md=89$
+4.  El tercer cuartil es $Q_3=90$
+5.  El máximo es $98$
+
+Luego el resumen de los cinco números es: 74, 80, 89, 90, 98.
+
+En RStudio el resumen de los cinco números se puede calcular mediante la función `fivenum()`. Veamos con los datos del ejemplo. 
+
+```{r,comment=NA}
+test <- c(74, 88, 78, 90, 94, 90, 84, 90, 98, 80)
+fivenum(test)
+```
+
+
+## Detección de datos atípicos ("Outliers")
+
+### Método del RIC
+
+Podemos usar el método RIC para identificar valores atípicos  y establecer  un tipo de frontera fuera de Q1 y Q3. Cualquier valor que quede fuera de esta frontera se considera atípico. En resumen se debe encontrar un intervalo de la siguiente manera:
+
+$$(Q_1-1.5RIC, Q_3+1.5RIC)$$
+Calquier dato que quede fuera de este intervalo sera considerado como un dato atipico. 
+
+**Ejemplo: Resultados de examenes**
+
+Los  puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.
+
+El resumen de los cinco números es: 74, 80, 89, 90, 98. como lo encontramos anteriormente.
+
+Necesitamos calcular el RIC,
+
+$RIC=Q_3-Q_1=90-80=10$
+
+Luego,
+
+LI=$Q1-1.5RIC=80-1.5(10)=65$.
+
+LS=$Q3+1.5RIC=90+1.5(10)=105$.
+
+Finalmente el intervalo queda de la siguiente manera: $(65,105)$. Esto quiere decir que no hay presencia de outliers en los datos del ejemplo. 
+
+**Ejemplo: libros**
+
+Se realizó una encuesta a una muestra aleatoria de 20 estudiantes universitarios de segundo año. Se les preguntó "¿Cuántos libros de texto tienen?" Sus respuestas fueron: 0, 0, 2, 5, 8, 8, 8, 9, 9, 10, 10, 10, 11, 12, 12, 12, 14 , 15, 20 y 25.
+
+Verificar si hay presencia de outliers en los datos de la muestra. 
+
+
+Necesitamos calcular el RIC, tenemos que $Q_1=8$, $Q_3=12$, entonces
+
+$RIC=Q_3-Q_1=12-8=4$
+
+Luego los límites inferior y superior son:
+
+LI=$Q1-1.5RIC=8-1.5(4)=2$.
+
+LS=$Q3+1.5RIC=12+1.5(4)=18$.
+
+Finalmente tenemos $(2,18)$, es decir que hay cuatro outliers: 0, 0, 20 y 24.
+
+
+
+
+
+
+
 

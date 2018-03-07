@@ -219,6 +219,10 @@ $(document).ready(function () {
 <li><a href="#diagrama-de-caja-y-bigotes-boxplot.">Diagrama de caja y bigotes (“Boxplot”).</a><ul>
 <li><a href="#boxplot-para-grupos">Boxplot para grupos</a></li>
 </ul></li>
+<li><a href="#el-resumen-de-los-cinco-numeros.">El resumen de los cinco números.</a></li>
+<li><a href="#deteccion-de-datos-atipicos-outliers">Detección de datos atípicos (“Outliers”)</a><ul>
+<li><a href="#metodo-del-ric">Método del RIC</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -482,6 +486,58 @@ ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiant
   ggtitle(&quot;Boxplot para GPA por grupo trabaja&quot;) + xlab(&quot;Grupo trabaja&quot;) + ylab(&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>De la gráfica podemos concluir que hay mayor variabilidad en el grupo de estudiantes que trabajan, es decir la caja es más larga.</p>
+</div>
+</div>
+<div id="el-resumen-de-los-cinco-numeros." class="section level2">
+<h2>El resumen de los cinco números.</h2>
+<p>El resumen de cinco números es un conjunto de estadísticas descriptivas que proporcionan información sobre un conjunto de datos. Consiste en los cinco percentiles de muestra más importantes:</p>
+<ol style="list-style-type: decimal">
+<li>El valor o dato mínimo (observación más pequeña)</li>
+<li>El primer cuartil (<span class="math inline">\(Q_1\)</span>)</li>
+<li>La mediana</li>
+<li>El tercer cuartil (<span class="math inline">\(Q_3\)</span>)</li>
+<li>El valor o dato máximo (observación más grande)</li>
+</ol>
+<p><strong>Ejemplo: Resultados de examenes</strong></p>
+<p>Un maestro quiere examinar los puntajes de los exámenes de los estudiantes. Sus puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.</p>
+<p>Encuentre el resumen de los cinco números para esta muestra de datos.</p>
+<ol style="list-style-type: decimal">
+<li>El mínimo es <span class="math inline">\(74\)</span></li>
+<li>El primer cuartil es <span class="math inline">\(Q_1=80\)</span></li>
+<li>La Mediana es <span class="math inline">\(Md=89\)</span></li>
+<li>El tercer cuartil es <span class="math inline">\(Q_3=90\)</span></li>
+<li>El máximo es <span class="math inline">\(98\)</span></li>
+</ol>
+<p>Luego el resumen de los cinco números es: 74, 80, 89, 90, 98.</p>
+<p>En RStudio el resumen de los cinco números se puede calcular mediante la función <code>fivenum()</code>. Veamos con los datos del ejemplo.</p>
+<pre class="r"><code>test &lt;- c(74, 88, 78, 90, 94, 90, 84, 90, 98, 80)
+fivenum(test)</code></pre>
+<pre><code>[1] 74 80 89 90 98</code></pre>
+</div>
+<div id="deteccion-de-datos-atipicos-outliers" class="section level2">
+<h2>Detección de datos atípicos (“Outliers”)</h2>
+<div id="metodo-del-ric" class="section level3">
+<h3>Método del RIC</h3>
+<p>Podemos usar el método RIC para identificar valores atípicos y establecer un tipo de frontera fuera de Q1 y Q3. Cualquier valor que quede fuera de esta frontera se considera atípico. En resumen se debe encontrar un intervalo de la siguiente manera:</p>
+<p><span class="math display">\[(Q_1-1.5RIC, Q_3+1.5RIC)\]</span> Calquier dato que quede fuera de este intervalo sera considerado como un dato atipico.</p>
+<p><strong>Ejemplo: Resultados de examenes</strong></p>
+<p>Los puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.</p>
+<p>El resumen de los cinco números es: 74, 80, 89, 90, 98. como lo encontramos anteriormente.</p>
+<p>Necesitamos calcular el RIC,</p>
+<p><span class="math inline">\(RIC=Q_3-Q_1=90-80=10\)</span></p>
+<p>Luego,</p>
+<p>LI=<span class="math inline">\(Q1-1.5RIC=80-1.5(10)=65\)</span>.</p>
+<p>LS=<span class="math inline">\(Q3+1.5RIC=90+1.5(10)=105\)</span>.</p>
+<p>Finalmente el intervalo queda de la siguiente manera: <span class="math inline">\((65,105)\)</span>. Esto quiere decir que no hay presencia de outliers en los datos del ejemplo.</p>
+<p><strong>Ejemplo: libros</strong></p>
+<p>Se realizó una encuesta a una muestra aleatoria de 20 estudiantes universitarios de segundo año. Se les preguntó “¿Cuántos libros de texto tienen?” Sus respuestas fueron: 0, 0, 2, 5, 8, 8, 8, 9, 9, 10, 10, 10, 11, 12, 12, 12, 14 , 15, 20 y 25.</p>
+<p>Verificar si hay presencia de outliers en los datos de la muestra.</p>
+<p>Necesitamos calcular el RIC, tenemos que <span class="math inline">\(Q_1=8\)</span>, <span class="math inline">\(Q_3=12\)</span>, entonces</p>
+<p><span class="math inline">\(RIC=Q_3-Q_1=12-8=4\)</span></p>
+<p>Luego los límites inferior y superior son:</p>
+<p>LI=<span class="math inline">\(Q1-1.5RIC=8-1.5(4)=2\)</span>.</p>
+<p>LS=<span class="math inline">\(Q3+1.5RIC=12+1.5(4)=18\)</span>.</p>
+<p>Finalmente tenemos <span class="math inline">\((2,18)\)</span>, es decir que hay cuatro outliers: 0, 0, 20 y 24.</p>
 </div>
 </div>
 
