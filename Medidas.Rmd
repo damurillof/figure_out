@@ -452,7 +452,7 @@ LS=$Q3+1.5RIC=12+1.5(4)=18$.
 
 Finalmente tenemos $(2,18)$, es decir que hay cuatro outliers: 0, 0, 20 y 24.
 
-holaaa
+
 
 
 
