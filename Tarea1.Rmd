@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-1.  (15pts) Los siguientes datos corresponden al peso en libras de 12 personas que ingresan al GYM por primera vez: 131 182 162 153 198 165 170 174 173 182 185 182.
+1.  (15pts) Los siguientes datos corresponden al peso en libras de 12 personas que ingresan al gym por primera vez: 131 182 162 153 198 165 170 174 173 182 185 182.
 
   a. Calcular manualmente los estadísticos descriptivos: Media, Mediana y Moda. Interprete los resultados. Verifique sus cálculos usando R
   b. Use R para encontrar la varianza y desviación estandar de la muestra de datos. ¿Qué significan para usted esos valores?

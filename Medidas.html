@@ -212,7 +212,7 @@ $(document).ready(function () {
 <li><a href="#medidas-de-variabilidad">Medidas de Variabilidad</a></li>
 <li><a href="#medidas-de-posicion">Medidas de Posición</a><ul>
 <li><a href="#los-cuartiles">Los cuartiles</a></li>
-<li><a href="#rango-intercuartilico">Rango Intercuartilico</a></li>
+<li><a href="#rango-intercuartilico">Rango Intercuartílico</a></li>
 <li><a href="#los-deciles">Los Deciles</a></li>
 <li><a href="#percentiles">Percentiles</a></li>
 </ul></li>
@@ -387,7 +387,7 @@ summary(data2)</code></pre>
   10.00   17.50   23.00   25.73   34.00   44.00 </code></pre>
 </div>
 <div id="rango-intercuartilico" class="section level3">
-<h3>Rango Intercuartilico</h3>
+<h3>Rango Intercuartílico</h3>
 <p>A la diferencia de <span class="math inline">\(Q_3\)</span> y <span class="math inline">\(Q_1\)</span> se le llama <strong>Rango Intercuartílico</strong>, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”.</p>
 <p><span class="math display">\[RIC=Q_3-Q_1\]</span></p>
 </div>
@@ -456,7 +456,7 @@ quantile(example2,0.75) </code></pre>
 
 </div>
 <p><strong>Interpretación:</strong> La línea central de la caja representa la <strong>Mediana</strong> y los lados de la caja representan los cuartiles <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_3\)</span> respectivamente. Si la Mediana está bien al centro de la caja, entonces hay simetria. Si la Mediana está más cerca a Q3 que a Q1 entonces la <strong>asimetría es hacia la izquierda</strong>, de lo contrario la <strong>asimetría es hacia la derecha</strong>. Si la caja no es muy alargada entonces se dice que no hay mucha variabilidad, es decir entre más larga la caja es mayor la variabilidad en los datos.</p>
-<p>Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas laterales llegan hasta los valores adyacentes a las fronteras interiores. Si las lineas laterales son bastantes alargadas entonces significa que los extremos de la distribución de los datos se acercan lentamente al eje X.</p>
+<p>Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas laterales llegan hasta los valores adyacentes a las fronteras interiores.</p>
 <p>Para dibujar un Boxplot en RStudio se puede usar la función <code>boxplot</code>. Veamos algunos ejemplos con los datos de la clase.</p>
 <pre class="r"><code># Leer los datos
 Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/text.txt&quot;,header = T)
@@ -468,12 +468,12 @@ boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;GPA por estudiantes&quo
 <p><img src="Medidas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <div id="boxplot-para-grupos" class="section level3">
 <h3>Boxplot para grupos</h3>
-<p>El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por aparte. Veamos</p>
+<p>El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado. Veamos</p>
 <pre class="r"><code># Boxplot para GPE
 boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p><strong>Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda</strong></p>
-<p>Usando <code>ggplot2</code> para dibujar un boxplot para la variable <code>GPE</code> y el grupo sexo.</p>
+<p>Usando <code>ggplot2</code> para dibujar un boxplot para la variable <code>GPA</code> y el grupo sexo.</p>
 <pre class="r"><code>library(ggplot2)
 # Boxplot para GPA
 ggplot(Estudiantes, aes(x=Estudiantes$sexo, y=Estudiantes$gpa, fill=Estudiantes$sexo)) + geom_boxplot() +
@@ -490,7 +490,7 @@ ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiant
 </div>
 <div id="el-resumen-de-los-cinco-numeros." class="section level2">
 <h2>El resumen de los cinco números.</h2>
-<p>El resumen de cinco números es un conjunto de estadísticas descriptivas que proporcionan información sobre un conjunto de datos. Consiste en los cinco percentiles de muestra más importantes:</p>
+<p>El resumen de los cinco números es un conjunto de estadísticas descriptivas que proporcionan información sobre un conjunto de datos. Consiste en los siguientes valores:</p>
 <ol style="list-style-type: decimal">
 <li>El valor o dato mínimo (observación más pequeña)</li>
 <li>El primer cuartil (<span class="math inline">\(Q_1\)</span>)</li>

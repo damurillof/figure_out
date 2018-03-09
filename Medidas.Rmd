@@ -241,7 +241,7 @@ data2 <- c(10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44)
 summary(data2)
 ```
 
-### Rango Intercuartilico
+### Rango Intercuartílico
 
 A la diferencia de $Q_3$ y $Q_1$ se le llama **Rango Intercuartílico**, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”.
 
@@ -325,7 +325,7 @@ El “Boxplot” , al igual que el histograma y el “stem-and-leaf”, permite 
 
 
 Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas
-laterales llegan hasta los valores adyacentes a las fronteras interiores. Si las lineas laterales son bastantes alargadas entonces significa que los extremos de la distribución de los datos se acercan lentamente al eje X.
+laterales llegan hasta los valores adyacentes a las fronteras interiores.
 
 Para dibujar un Boxplot en RStudio se puede usar la función `boxplot`. Veamos algunos ejemplos con los datos de la clase.
 
@@ -344,7 +344,7 @@ boxplot(Estudiantes$estatura,data=Estudiantes,main="GPA por estudiantes",xlab="G
 
 ### Boxplot para grupos 
 
-El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por aparte. Veamos 
+El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado. Veamos 
 
 ```{r,comment=NA}
 # Boxplot para GPE
@@ -353,7 +353,7 @@ boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main="Estatura po
 
 **Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda**
 
-Usando `ggplot2` para dibujar un boxplot para la variable `GPE` y el grupo sexo.
+Usando `ggplot2` para dibujar un boxplot para la variable `GPA` y el grupo sexo.
 
 
 ```{r,comment=NA}
@@ -376,7 +376,7 @@ De la gráfica podemos concluir que hay mayor variabilidad en el grupo de estudi
 
 ## El resumen de los cinco números.
 
-El resumen de cinco números es un conjunto de estadísticas descriptivas que proporcionan información sobre un conjunto de datos. Consiste en los cinco percentiles de muestra más importantes:
+El resumen de los cinco números es un conjunto de estadísticas descriptivas que proporcionan información sobre un conjunto de datos. Consiste en los siguientes valores:
 
 1.  El valor o dato mínimo (observación más pequeña)
 2.  El primer cuartil ($Q_1$)
