@@ -1,0 +1,68 @@
+---
+title: "ESMA3101:Tarea 1"
+output:
+  html_document:
+    theme: flatly 
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **Fecha de entrega:** Viernes 16 de marzo de 2018. Al iniciar la clase. 
+
+#### **Puntaje:** 50 puntos 
+
+### Reglas para todas las tareas: 
+
+
+1. La tarea debe ser entregada de forma impresa a la hora de la clase y en el día señalado.
+2. Se pueden ayudar mutuamente en el uso de las computadoras, pero dos trabajos exactamente iguales recibirán nota CERO.
+3. En su reporte final debe aparecer todo el código de R y los respectivos resultados. En los cálculos manuales debe mostrar su procedimiento detalladamente.
+4. Todas las gráficas deben tener títulos, de lo contrario se descontarán puntos.
+
+
+
+### Para el ejercicio 3 tenga en cuenta lo siguiente:
+
+#### Estudiantes cuyo **primer nombre** empieza con la letra **A** hasta la **H** trabajan el conjunto de datos `class_survey`.
+
+#### Estudiantes cuyo **primer nombre** empieza con la letra **I** hasta la **R** trabajan el conjunto de datos `birthweight`. [Descripción Variables](http://www.statlab.uni-heidelberg.de/data/linmod/birthweight.html)
+
+#### Estudiantes cuyo **primer nombre** empieza con la letra **S** hasta la **Z** trabajan el conjunto de datos `students_info`.
+
+
+
+### Usar `R` y/o `RStudio` para responder las siguientes preguntas:
+
+
+
+1.  (15pts) Los siguientes datos corresponden al peso en libras de 12 personas que ingresan al GYM por primera vez: 131 182 162 153 198 165 170 174 173 182 185 182.
+
+  a. Calcular manualmente los estadísticos descriptivos: Media, Mediana y Moda. Interprete los resultados. Verifique sus cálculos usando R
+  b. Use R para encontrar la varianza y desviación estandar de la muestra de datos. ¿Qué significan para usted esos valores?
+  c. Haga un gráfico de tallos y hojas. Saque conclusiones sobre la simetria y posibles outliers.
+  d. Encuentre manualmente el percentil 45, interprete el resultado. Use R para verificar sus cálculos.
+  e. Encuentre manualmente los cuartiles $Q_1$, $Q_2$ y $Q_3$. Identifique el mínimo y el máximo de los datos.
+  f. Escriba el resumen de los cinco números. Use R para verificar sus resultados.
+  g. Use el criterio del rango intercuartílico (RIC) para detectar la posible presencia de Outliers. Interprete los resultados.
+  
+
+2.  (10pts) Inventarse mínimo 25 datos de una variable continua, ingreselos en R y haga un histograma. Los datos deben ser elegidos convenientemente para que el histograma sea aproximadamente simétrico. Explique en términos de su variable el significado de la simetría en el histograma. Haga una gráfica de tallos y hojas, comente la similaridad con el histograma.
+
+3.  (25pts) Según los  datos que le correspondan, haga un análisis gráfico y descriptivo que incluya lo siguiente:
+
+  a. Seleccione dos  variables discretas. Haga un gráfico `dotplot` para cada una de ellas. Interprete las gráficas.
+  b. Seleccione dos variables categoricas. Haga un `gráfico de barras` para cada una de ellas. Interprete las gráficas.
+  c. Seleccione una variable continua. Use la función `tabla_frecuencia` que esta en las notas de clase para construir una tabla de frecuencias. Interprete un valor de cada columna. Use los puntos medios `MC`(última columna) para construir manualmente un histograma de frecuencias. Interprete el histograma y haga comentarios sobre la simetría o asimetría. 
+  c. Seleccione una variable continua. Calcule usando R todas las medidas o estadisticos de tendencia central y los de dispersión. Haga un histograma y un gráfico de tallos y hojas. Interprete los gráficos y evalue la simetría o asimetría. Calcule un percentil de su elección e interpretelo. Calcule los cuartiles y use el criterio del RIC para evaluar la presencia de outliers. Haga un grafico de caja y bigotes ("Boxplot") e interpretelo.
+  d. Seleccione una variable continua y una culitativa dicotomica(por ejemplo:Si o No, Hombre o Mujer). Haga un gráfico de caja y bigotes ("Boxplot") para grupos e interprete la gráfica. Haga comentarios sobre la variabilidad y presencia de outliers.
+  e. Seleccione una variable continua y una cualitativa con tres o más  categorias. Haga un grafico de caja y bigotes ("Boxplot") para grupos e interprete la gráfica. Haga comentarios sobre la variabilidad y presencia de outliers.
+
+#### Cualquier duda comuníquese con el profesor vía correo electrónico o en las horas de oficina. 
+
+
+-----------------
+**Éxitos**
+
+
+

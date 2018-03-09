@@ -9,16 +9,21 @@ Aquí esta el enlace para la página web del curso:
 
 > Bonos
 
-### [Bono Examen (NO obligatorio)](https://didier-murillo.netlify.com/Bono_Examen/)
+#### 1.   [Bono Examen (NO obligatorio)](https://didier-murillo.netlify.com/Bono_Examen/)
 
 
 > Tareas
 
 
+#### 1.   [Tarea 1](https://didier-murillo.netlify.com/Tarea1/)
+
+
 > Laboratorios 
 
-### [Laboratorio 1](https://didier-murillo.netlify.com/Lab1/)
+#### 1.   [Laboratorio 1](https://didier-murillo.netlify.com/Lab1/)
 
 
 > Exámenes
+
+##### Primer exámen parcial miércoles 21 de marzo de 2018. Horario de la Clase. 
 

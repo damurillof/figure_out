@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>ESMA3101:Tarea 1</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">ESMA3101:Tarea 1</h1>
+
+</div>
+
+
+<div id="fecha-de-entrega-viernes-16-de-marzo-de-2018.-al-iniciar-la-clase." class="section level4">
+<h4><strong>Fecha de entrega:</strong> Viernes 16 de marzo de 2018. Al iniciar la clase.</h4>
+</div>
+<div id="puntaje-50-puntos" class="section level4">
+<h4><strong>Puntaje:</strong> 50 puntos</h4>
+</div>
+<div id="reglas-para-todas-las-tareas" class="section level3">
+<h3>Reglas para todas las tareas:</h3>
+<ol style="list-style-type: decimal">
+<li>La tarea debe ser entregada de forma impresa a la hora de la clase y en el día señalado.</li>
+<li>Se pueden ayudar mutuamente en el uso de las computadoras, pero dos trabajos exactamente iguales recibirán nota CERO.</li>
+<li>En su reporte final debe aparecer todo el código de R y los respectivos resultados. En los cálculos manuales debe mostrar su procedimiento detalladamente.</li>
+<li>Todas las gráficas deben tener títulos, de lo contrario se descontarán puntos.</li>
+</ol>
+</div>
+<div id="para-el-ejercicio-3-tenga-en-cuenta-lo-siguiente" class="section level3">
+<h3>Para el ejercicio 3 tenga en cuenta lo siguiente:</h3>
+<div id="estudiantes-cuyo-primer-nombre-empieza-con-la-letra-a-hasta-la-h-trabajan-el-conjunto-de-datos-class_survey." class="section level4">
+<h4>Estudiantes cuyo <strong>primer nombre</strong> empieza con la letra <strong>A</strong> hasta la <strong>H</strong> trabajan el conjunto de datos <code>class_survey</code>.</h4>
+</div>
+<div id="estudiantes-cuyo-primer-nombre-empieza-con-la-letra-i-hasta-la-r-trabajan-el-conjunto-de-datos-birthweight.-descripcion-variables" class="section level4">
+<h4>Estudiantes cuyo <strong>primer nombre</strong> empieza con la letra <strong>I</strong> hasta la <strong>R</strong> trabajan el conjunto de datos <code>birthweight</code>. <a href="http://www.statlab.uni-heidelberg.de/data/linmod/birthweight.html">Descripción Variables</a></h4>
+</div>
+<div id="estudiantes-cuyo-primer-nombre-empieza-con-la-letra-s-hasta-la-z-trabajan-el-conjunto-de-datos-students_info." class="section level4">
+<h4>Estudiantes cuyo <strong>primer nombre</strong> empieza con la letra <strong>S</strong> hasta la <strong>Z</strong> trabajan el conjunto de datos <code>students_info</code>.</h4>
+</div>
+</div>
+<div id="usar-r-yo-rstudio-para-responder-las-siguientes-preguntas" class="section level3">
+<h3>Usar <code>R</code> y/o <code>RStudio</code> para responder las siguientes preguntas:</h3>
+<ol style="list-style-type: decimal">
+<li>(15pts) Los siguientes datos corresponden al peso en libras de 12 personas que ingresan al GYM por primera vez: 131 182 162 153 198 165 170 174 173 182 185 182.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Calcular manualmente los estadísticos descriptivos: Media, Mediana y Moda. Interprete los resultados. Verifique sus cálculos usando R</li>
+<li>Use R para encontrar la varianza y desviación estandar de la muestra de datos. ¿Qué significan para usted esos valores?</li>
+<li>Haga un gráfico de tallos y hojas. Saque conclusiones sobre la simetria y posibles outliers.</li>
+<li>Encuentre manualmente el percentil 45, interprete el resultado. Use R para verificar sus cálculos.</li>
+<li>Encuentre manualmente los cuartiles <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> y <span class="math inline">\(Q_3\)</span>. Identifique el mínimo y el máximo de los datos.</li>
+<li>Escriba el resumen de los cinco números. Use R para verificar sus resultados.</li>
+<li>Use el criterio del rango intercuartílico (RIC) para detectar la posible presencia de Outliers. Interprete los resultados.</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li><p>(10pts) Inventarse mínimo 25 datos de una variable continua, ingreselos en R y haga un histograma. Los datos deben ser elegidos convenientemente para que el histograma sea aproximadamente simétrico. Explique en términos de su variable el significado de la simetría en el histograma. Haga una gráfica de tallos y hojas, comente la similaridad con el histograma.</p></li>
+<li><p>(25pts) Según los datos que le correspondan, haga un análisis gráfico y descriptivo que incluya lo siguiente:</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Seleccione dos variables discretas. Haga un gráfico <code>dotplot</code> para cada una de ellas. Interprete las gráficas.</li>
+<li>Seleccione dos variables categoricas. Haga un <code>gráfico de barras</code> para cada una de ellas. Interprete las gráficas.</li>
+<li>Seleccione una variable continua. Use la función <code>tabla_frecuencia</code> que esta en las notas de clase para construir una tabla de frecuencias. Interprete un valor de cada columna. Use los puntos medios <code>MC</code>(última columna) para construir manualmente un histograma de frecuencias. Interprete el histograma y haga comentarios sobre la simetría o asimetría.</li>
+<li>Seleccione una variable continua. Calcule usando R todas las medidas o estadisticos de tendencia central y los de dispersión. Haga un histograma y un gráfico de tallos y hojas. Interprete los gráficos y evalue la simetría o asimetría. Calcule un percentil de su elección e interpretelo. Calcule los cuartiles y use el criterio del RIC para evaluar la presencia de outliers. Haga un grafico de caja y bigotes (“Boxplot”) e interpretelo.</li>
+<li>Seleccione una variable continua y una culitativa dicotomica(por ejemplo:Si o No, Hombre o Mujer). Haga un gráfico de caja y bigotes (“Boxplot”) para grupos e interprete la gráfica. Haga comentarios sobre la variabilidad y presencia de outliers.</li>
+<li>Seleccione una variable continua y una cualitativa con tres o más categorias. Haga un grafico de caja y bigotes (“Boxplot”) para grupos e interprete la gráfica. Haga comentarios sobre la variabilidad y presencia de outliers.</li>
+</ol>
+<div id="cualquier-duda-comuniquese-con-el-profesor-via-correo-electronico-o-en-las-horas-de-oficina." class="section level4">
+<h4>Cualquier duda comuníquese con el profesor vía correo electrónico o en las horas de oficina.</h4>
+<hr />
+<p><strong>Éxitos</strong></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
