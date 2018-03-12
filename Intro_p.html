@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Introducción a la Probabilidad</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Introducción a la Probabilidad</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#algunas-preguntas-de-investigacion">Algunas preguntas de investigación</a><ul>
+<li><a href="#poblaciones-y-muestras-aleatorias">Poblaciones y muestras aleatorias</a></li>
+</ul></li>
+<li><a href="#espacio-muestral">Espacio Muestral</a><ul>
+<li><a href="#tipos-de-datos">Tipos de datos</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="algunas-preguntas-de-investigacion" class="section level2">
+<h2>Algunas preguntas de investigación</h2>
+<p>Los estudios de investigación se llevan a cabo para responder algún tipo de pregunta (s) de investigación. Por ejemplo, los investigadores del Vegan Health Study definen al menos ocho preguntas principales que les gustaría responder sobre la salud de las personas que consumen una dieta totalmente libre de animales (sin carne, sin lácteos, sin huevos). Recientemente se realizó otro estudio de investigación para determinar si las personas que toman los analgésicos Vioxx o Celebrex corren un mayor riesgo de ataques cardíacos que las personas que no los toman. La lista continua. Los investigadores trabajan todos los días para responder sus preguntas de investigación.</p>
+<p>¿Qué piensas sobre estas preguntas de investigación?</p>
+<p>¿Qué porcentaje de estudiantes universitarios se siente privado de sueño? ¿Cuál es la probabilidad de que un estudiante de PSU seleccionado al azar tenga más de siete horas de sueño cada noche? Por lo general, las mujeres compran más ropa que los hombres? ¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101? Suponiendo que las preguntas anteriores no nos interesan mucho, ¿Podemos formular algunas preguntas de investigación que realmente nos interesen?</p>
+<p>Si intentáramos responder a nuestras preguntas de investigación, pronto nos daríamos cuenta de que no podríamos preguntar a todas las personas de la población por ejemplo si se sienten privadas de sueño, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen.</p>
+<p>¿Cómo podemos responder nuestras preguntas de investigación si no podemos preguntarle a cada persona de la población?</p>
+<div id="poblaciones-y-muestras-aleatorias" class="section level3">
+<h3>Poblaciones y muestras aleatorias</h3>
+<p>Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o hacer una inferencia, sobre la población:</p>
+<div class="figure">
+<img src="sample.jpg" />
+
+</div>
+<p>Para la pregunta de investigación “¿Qué porcentaje de estudiantes universitarios se siente privado de sueño?”, La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla. Para la pregunta de investigación “¿cuál es la probabilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”, La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar. Para la pregunta de investigación “¿cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”, La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101. ¡Ahhhh! Si solo estamos interesados en estudiantes actualmente inscritos en ESMA3101, no tenemos necesidad de tomar una muestra al azar. En cambio, podemos realizar un censo o encuesta, en el que se encuesta a todos los estudiantes.</p>
+<p><strong>Ejercicio: Identifique la población y describa una posible muestra aleatoria para la pregunta de investigación “¿las mujeres suelen comprar más ropa que los hombres?”</strong></p>
+<p>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién termina en nuestra muestra aleatoria, es decir los datos que seleccionamos. No podemos predecir los posibles resultados con certeza, pero al menos podemos crear una lista de posibles resultados.</p>
+</div>
+</div>
+<div id="espacio-muestral" class="section level2">
+<h2>Espacio Muestral</h2>
+<p><strong>Definición.</strong> El espacio muestral (o espacio de resultados), denotado por <span class="math inline">\(S\)</span>, es la colección o el conjunto de todos los posibles resultados de un estudio aleatorio.</p>
+<p>Para responder a mi primera pregunta de investigación, tendríamos que tomar una muestra aleatoria de estudiantes universitarios de puerto Rico. Y preguntarles a cada uno: “¿Se siente privado de sueño?” Cada alumno debe responder “sí” o “no”. Por lo tanto, escribiríamos el espacio muestral como:</p>
+<p><span class="math inline">\(S = \{sí, no\}\)</span></p>
+<p>Para responder a mi segunda pregunta de investigación, necesitaríamos saber cuántas horas de sueño recibe una muestra aleatoria de estudiantes universitarios cada noche. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas de sueño que tuvieron anoche. En este caso, si permitimos que h denote el número de horas dormidas, escribiríamos el espacio de muestra como:</p>
+<p><span class="math inline">\(S = \{h: h ≥ 0 \quad horas\}\)</span></p>
+<p>Hmmm, si realizamos un estudio aleatorio para responder a mi tercera pregunta de investigación, ¿cómo definiríamos nuestro espacio de muestra? Bueno, por supuesto, depende de cómo tratamos de intentar responder la pregunta. Si le preguntamos a una muestra aleatoria de hombres y mujeres “¿cuántos días compraste ropa el mes pasado?”, Escribiríamos el espacio de muestra como:</p>
+<p><span class="math inline">\(S = \{0, 1, 2, ..., 30\}\)</span></p>
+<p>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, cuando intente responder mi cuarta pregunta de investigación, podríamos preguntarles a todos los estudiantes actuales de ESMA3101 “¿Cuántas tarjetas de crédito tienen?” En ese caso, escribiríamos nuestro espacio de muestra como:</p>
+<p><span class="math inline">\(S = \{0, 1, 2, ...\}\)</span></p>
+<p>No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el espacio muestral si en cambio le preguntáramos a una muestra aleatoria de estudiantes universitarios “¿durmió más de siete horas anoche?”</p>
+<div id="tipos-de-datos" class="section level3">
+<h3>Tipos de datos</h3>
+<p>Ejemplo:</p>
+<p>Se realizó la pregunta a una muestra aleatoria de 20 estudiantes universitarios “¿se considera privado de sueño?” Sus respuestas fueron:</p>
+<pre><code>`sí sí sí no no no sí sí sí sí sí no no sí sí no sí sí sí sí`</code></pre>
+<p>Por supuesto, sería bueno resumir las respuestas de los estudiantes. Sin embargo, lo que hacemos con los datos depende del tipo de datos recopilados. Para nuestros propósitos, nos ocuparemos principalmente de tres tipos de datos:</p>
+<ul>
+<li>Discreto.</li>
+<li>Continuo.</li>
+<li>Categórico.</li>
+</ul>
+<p>Ahora, para sus definiciones!</p>
+<p><strong>Definición.</strong> Los datos cuantitativos se denominan discretos si el espacio muestral contiene un número finito o contable infinito de valores. Recuerde que un conjunto de elementos es contablemente infinito si los elementos del conjunto se pueden poner en correspondencia uno a uno con los enteros positivos. La tercera pregunta de investigación arroja datos discretos, porque su espacio de muestra:</p>
+<p><span class="math inline">\(S= \{0, 1, 2, ..., 31\}\)</span></p>
+<p>contiene un número finito de valores. Y, la cuarta pregunta de investigación arroja datos discretos, porque su espacio muestral es:</p>
+<p><span class="math inline">\(S = \{0, 1, 2, ...\}\)</span></p>
+<p>contiene un número infinitamente contable de valores.</p>
+<p><strong>Definición.</strong> Los datos cuantitativos se llaman continuos si el espacio muestral contiene un intervalo o un intervalo continuo de números reales. Mi segunda pregunta de investigación arroja datos continuos, porque su espacio de muestra:</p>
+<p><span class="math inline">\(S = \{h: h ≥ 0 \quad horas\}\)</span></p>
+<p>es toda la línea real positiva.</p>
+<p>Para datos continuos, teóricamente hay un número infinito de posibles resultados; la herramienta de medición es el factor restrictivo. Por ejemplo, si tuviera que preguntar cuánto pesaba cada estudiante de la clase (en libras), lo más probable es que obtuviera respuestas como 126, 172 y 210. Las respuestas son aparentemente discretas. Pero, ¿en realidad son discretos? Si informo que peso 118 libras, ¿tengo exactamente 118 libras? Probablemente no; Tal vez tengo 118.0120980335927 … libras. Es solo que la escala que obtengo me dice que peso 118 libras. Una vez más, la herramienta de medición es el factor restrictivo, algo en lo que siempre debes pensar al tratar de distinguir entre datos discretos y continuos.</p>
+<p><strong>Definición.</strong> Los datos cualitativos se denominan categóricos si el espacio de muestra contiene objetos que están agrupados o categorizados en función de algún rasgo cualitativo. Cuando solo hay dos grupos o categorías, los datos se consideran binarios.</p>
+<p>La primera pregunta de investigación arroja datos binarios, porque su espacio muestral es:</p>
+<p><span class="math inline">\(S = \{sí, no\}\)</span></p>
+<p>Otros dos ejemplos de datos categóricos son el color de los ojos (marrón, azul, verdes, etc.) y la posición semestral (estudiante de primer año, segundo, tercer y último año).</p>
+<p>Según lo anterior, podemos clasificar los espacios muestrales de dos maneras:</p>
+<p><strong>Espacio muestral Discreto:</strong> Son espacios muestrales cuyos elementos resultan de hacer conteos, y por lo general son subconjuntos de los números enteros. Es decir los elementos del espacio muestral son datos discretos.</p>
+<p><strong>Espacio Muestral Continuo:</strong> Son espacios muestrales cuyos elementos resultan de hacer mediciones y por lo general son intervalos en la recta real. Los elementos del espacio muestral son datos continuos.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
