@@ -14,3 +14,9 @@ output: html_document
 
 ### [Medidas de tendencia central y variabilidad.](https://didier-murillo.netlify.com/Medidas/)
 
+
+-----------------
+
+
+### [Introducción a probabilidad](https://didier-murillo.netlify.com/Intro_p/)
+
