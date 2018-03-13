@@ -110,6 +110,15 @@ median(carros_outlier)
 
 *   **La moda** es el valor (o valores) que se repite con mayor frecuencia en la muestra. La Moda puede aplicarse tanto a datos cuantitativos como cualitativos.
 
+En RStudio la moda se puede calcular ejecutando la siguiente función (Se debe copiar y pegar en R, luego ejecutarla.)
+
+```{r,comment=NA}
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+```
+
 
 **Ejemplo**. Los siguientes datos representan el número de veces que 11 personas van al cine mensualmente:
 3, 4, 4, 5, 0, 2, 1, 5, 4, 5 y 4.
@@ -118,12 +127,30 @@ Hallar la moda.
 
 La Moda es 4. Es decir,  que predominan más las personas que asisten 4 veces al mes al cine.
 
+Usemos la función anterior `getmode` en R
+
+
+```{r,comment=NA}
+cine <- c(3, 4, 4, 5, 0, 2, 1, 5, 4, 5, 4)
+getmode(cine)
+```
+
+
 
 **Ejemplo**. Los siguientes datos representan tipos de sangre de 9 personas A, O, B, O, AB, O, B, O, A
 
 Hallar la Moda.
 
 La Moda es el tipo de sangre O. Se repite cuatro veces. 
+
+Verificamos en RStudio con la función `getmode`
+
+
+```{r,comment=NA}
+sangre <- c("A","O","B","O","AB", "O", "B", "O", "A")
+getmode(sangre)
+```
+
 
 En resumen, las medidas de tendencia central son tres: La Media, la Mediana y la Moda.
 

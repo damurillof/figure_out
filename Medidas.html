@@ -293,12 +293,25 @@ median(carros_outlier)</code></pre>
 <ul>
 <li><strong>La moda</strong> es el valor (o valores) que se repite con mayor frecuencia en la muestra. La Moda puede aplicarse tanto a datos cuantitativos como cualitativos.</li>
 </ul>
+<p>En RStudio la moda se puede calcular ejecutando la siguiente función (Se debe copiar y pegar en R, luego ejecutarla.)</p>
+<pre class="r"><code>getmode &lt;- function(v) {
+   uniqv &lt;- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}</code></pre>
 <p><strong>Ejemplo</strong>. Los siguientes datos representan el número de veces que 11 personas van al cine mensualmente: 3, 4, 4, 5, 0, 2, 1, 5, 4, 5 y 4.</p>
 <p>Hallar la moda.</p>
 <p>La Moda es 4. Es decir, que predominan más las personas que asisten 4 veces al mes al cine.</p>
+<p>Usemos la función anterior <code>getmode</code> en R</p>
+<pre class="r"><code>cine &lt;- c(3, 4, 4, 5, 0, 2, 1, 5, 4, 5, 4)
+getmode(cine)</code></pre>
+<pre><code>[1] 4</code></pre>
 <p><strong>Ejemplo</strong>. Los siguientes datos representan tipos de sangre de 9 personas A, O, B, O, AB, O, B, O, A</p>
 <p>Hallar la Moda.</p>
 <p>La Moda es el tipo de sangre O. Se repite cuatro veces.</p>
+<p>Verificamos en RStudio con la función <code>getmode</code></p>
+<pre class="r"><code>sangre &lt;- c(&quot;A&quot;,&quot;O&quot;,&quot;B&quot;,&quot;O&quot;,&quot;AB&quot;, &quot;O&quot;, &quot;B&quot;, &quot;O&quot;, &quot;A&quot;)
+getmode(sangre)</code></pre>
+<pre><code>[1] &quot;O&quot;</code></pre>
 <p>En resumen, las medidas de tendencia central son tres: La Media, la Mediana y la Moda.</p>
 </div>
 </div>
@@ -462,29 +475,29 @@ quantile(example2,0.75) </code></pre>
 Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/text.txt&quot;,header = T)
 # Boxplot para estatura
 boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;Estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
-<p><img src="Medidas_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code># Boxplot para GPE
 boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;GPA por estudiantes&quot;,xlab=&quot;Grupo sexo&quot;, ylab=&quot;GPA&quot;)</code></pre>
-<p><img src="Medidas_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <div id="boxplot-para-grupos" class="section level3">
 <h3>Boxplot para grupos</h3>
 <p>El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado. Veamos</p>
 <pre class="r"><code># Boxplot para GPE
 boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
-<p><img src="Medidas_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p><strong>Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda</strong></p>
 <p>Usando <code>ggplot2</code> para dibujar un boxplot para la variable <code>GPA</code> y el grupo sexo.</p>
 <pre class="r"><code>library(ggplot2)
 # Boxplot para GPA
 ggplot(Estudiantes, aes(x=Estudiantes$sexo, y=Estudiantes$gpa, fill=Estudiantes$sexo)) + geom_boxplot() +
   ggtitle(&quot;Boxplot para GPA por grupo sexo&quot;) + xlab(&quot;Grupo sexo&quot;) + ylab(&quot;GPA&quot;)</code></pre>
-<p><img src="Medidas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>¿Tendran mejores notas los estudiantes que trabajan comparado con los que no trabajan?. Veamos</p>
 <pre class="r"><code>library(ggplot2)
 # Boxplot para GPA por trabaja
 ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiantes$trabaja)) + geom_boxplot() +
   ggtitle(&quot;Boxplot para GPA por grupo trabaja&quot;) + xlab(&quot;Grupo trabaja&quot;) + ylab(&quot;GPA&quot;)</code></pre>
-<p><img src="Medidas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p>De la gráfica podemos concluir que hay mayor variabilidad en el grupo de estudiantes que trabajan, es decir la caja es más larga.</p>
 </div>
 </div>
