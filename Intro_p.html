@@ -211,6 +211,11 @@ $(document).ready(function () {
 <li><a href="#espacio-muestral">Espacio Muestral</a><ul>
 <li><a href="#tipos-de-datos">Tipos de datos</a></li>
 </ul></li>
+<li><a href="#espacios-muestrales-y-eventos">Espacios Muestrales y eventos</a><ul>
+<li><a href="#eventos">Eventos</a></li>
+<li><a href="#relaciones-entre-eventos">Relaciones entre eventos</a></li>
+</ul></li>
+<li><a href="#que-es-probabilidad">¿Qué es probabilidad?</a></li>
 </ul>
 </div>
 
@@ -270,10 +275,102 @@ $(document).ready(function () {
 <p>La primera pregunta de investigación arroja datos binarios, porque su espacio muestral es:</p>
 <p><span class="math inline">\(S = \{sí, no\}\)</span></p>
 <p>Otros dos ejemplos de datos categóricos son el color de los ojos (marrón, azul, verdes, etc.) y la posición semestral (estudiante de primer año, segundo, tercer y último año).</p>
+</div>
+</div>
+<div id="espacios-muestrales-y-eventos" class="section level2">
+<h2>Espacios Muestrales y eventos</h2>
+<p><strong>Experimentos Aleatorios</strong>:</p>
+<p>Un experimento es una observación de un fenómeno que ocurre en la naturaleza. Tipos de experimentos:</p>
+<p><strong>Experimentos Determinísticos</strong>: Son aquellos en donde no hay incertidumbre acerca del resultado que ocurrirá cuando éstos son repetidos varias veces.</p>
+<p><strong>Experimentos Aleatorios</strong>: Son aquellos en donde no se puede anticipar el resultado que ocurrirá, pero si se tiene una completa idea acerca de todos los resultados posibles del experimento cuando éste es ejecutado.</p>
 <p>Según lo anterior, podemos clasificar los espacios muestrales de dos maneras:</p>
 <p><strong>Espacio muestral Discreto:</strong> Son espacios muestrales cuyos elementos resultan de hacer conteos, y por lo general son subconjuntos de los números enteros. Es decir los elementos del espacio muestral son datos discretos.</p>
 <p><strong>Espacio Muestral Continuo:</strong> Son espacios muestrales cuyos elementos resultan de hacer mediciones y por lo general son intervalos en la recta real. Los elementos del espacio muestral son datos continuos.</p>
+<p>Ejemplos Espacios muestrales:</p>
+<ol style="list-style-type: decimal">
+<li>Consideremos el experimento de lanzar un dado, ¿Cuál es el espcio muestral para este experimento?</li>
+</ol>
+<p><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Consideremos el experimento de lanzar una moneda, ¿Cuál es el espcio muestral para este experimento?</li>
+</ol>
+<p><span class="math display">\[S=\{Cara, Cruz\}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Cuál es el espcio muestral para este experimento?</li>
+</ol>
+<p><span class="math display">\[S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}\]</span></p>
+<div id="eventos" class="section level3">
+<h3>Eventos</h3>
+<p>Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayusculas. Ejemplos:</p>
+<p><strong>A</strong>: Que salga un número par al lanzar un dado.</p>
+<p><strong>E</strong>: Que haya que esperar más de 10 minutos para ser atendidos en la cafetería de estudiantes.</p>
+<p><strong>F</strong>: Sacar A en la nota final del curso ESMA3101.</p>
+<p><strong>H</strong>: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de credito.</p>
+<p>Ejemplos:</p>
+<ol style="list-style-type: decimal">
+<li>Consideremos el experimento de lanzar un dado, ¿Enunciar algunos eventos posibles en este experimento?</li>
+</ol>
+<p><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></p>
+<p><strong>A</strong>: Obtener un número par.</p>
+<p><strong>B</strong>: Obtener un número impar</p>
+<p><strong>C</strong>: Obtener un número mayor que tres</p>
+<p>Son algunos eventos del anterior experimento.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Consideremos el experimento de lanzar una moneda, ¿Enunciar algunos eventos posibles en este experimento?</li>
+</ol>
+<p><span class="math display">\[S=\{Cara, Cruz\}\]</span></p>
+<p><strong>A</strong>: Obtener una cara.</p>
+<p><strong>B</strong>: Obtener una cruz.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Enuncial algunos eventos posibles?</li>
+</ol>
+<p><span class="math display">\[S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}\]</span> <strong>A</strong>: Obtener una cara y un número impar</p>
+<p><strong>B</strong>: Obtener una cruz y un número mayor que cinco.</p>
+<p><strong>C</strong>: Obtener cara.</p>
+<p><strong>Evento Nulo</strong>: Es aquél que no tiene elementos. Se representa por <span class="math inline">\(\emptyset\)</span>.</p>
 </div>
+<div id="relaciones-entre-eventos" class="section level3">
+<h3>Relaciones entre eventos</h3>
+<p><strong>Unión de eventos:</strong> Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de un mismo espacio muestral su unión se representa por <span class="math inline">\(A \cup B\)</span> y es el evento que contiene los elementos que estan en <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.</p>
+<p><strong>Intersección de eventos</strong>: Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de un mismo espacio muestral su intersección se representa por <span class="math inline">\(A \cap B\)</span>, y es el evento que contiene los elementos que estan en <span class="math inline">\(A\)</span> y en <span class="math inline">\(B\)</span> al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente.</p>
+<p><strong>Evento Complemento</strong>: El complemento de un evento <span class="math inline">\(A\)</span> se representa representa por <span class="math inline">\(A^c\)</span> y es el evento que contiene contiene todos los elementos que no están en <span class="math inline">\(A\)</span>. El evento ocurre si <span class="math inline">\(A\)</span> no ocurre.</p>
+<p><strong>Propiedades de relaciones entre eventos</strong>: Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> eventos de un mismo espacio muestral <span class="math inline">\(S\)</span> entonces se cumplen las siguientes propiedades:</p>
+<p><strong>1. Propiedad Conmutativa</strong>: <span class="math inline">\(A \cup B = B \cup A\)</span> y <span class="math inline">\(A \cap B = B \cap A\)</span></p>
+<p><strong>2. Propiedad Asociativa</strong>: <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> y <span class="math inline">\(A \cap (B \cap C) = (A \cap B) \cup C\)</span></p>
+<p><strong>Propiedad Distributiva</strong>: <span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span> y <span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span>.</p>
+<p><strong>Leyes de Morgan</strong>: <span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span> y <span class="math inline">\((A \cap B)^c = A^c \cup B^c\)</span></p>
+</div>
+</div>
+<div id="que-es-probabilidad" class="section level2">
+<h2>¿Qué es probabilidad?</h2>
+<p>Pensemos en la probabilidad de manera informal por un momento.</p>
+<p><strong>Definición</strong>. La probabilidad es un número entre 0 y 1, donde:</p>
+<ol style="list-style-type: decimal">
+<li>Un número cercano a 0 significa “no probable”.</li>
+<li>Un número cercano a 1 significa “bastante probable”.</li>
+</ol>
+<p>Si la probabilidad de un evento es exactamente 0, entonces el evento no puede ocurrir. Si la probabilidad de un evento es exactamente 1, entonces el evento definitivamente ocurrirá.</p>
+<p>Ahora pensemos en algunos eventos según lo aprendido:</p>
+<p><strong>Un evento o eventos que de seguro ocurrirán</strong>: Que llueva hoy en Mayaguez, que finalice el día, sacar cara al lanzar una moneda, que finalice el semestre, sacar un número par al lanzar un dado… etc.</p>
+<p>¿Qué probabilidad le asignaria a cada uno de estos eventos?</p>
+<p><strong>Un evento o eventos que son imposibles que ocurran</strong>: Que no hayan huracanes en el caribe, obtener un número 8 al lanzar un dado.</p>
+<p>¿Qué probabilidad le asignaria a cada uno de estos eventos?</p>
+<p><strong>Un evento o eventos que posiblemente ocurran</strong>: Ganar el Power Ball, Qué un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.</p>
+<p>¿Qué probabilidad le asignaria a cada uno de estos eventos?</p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
 </div>
 
 

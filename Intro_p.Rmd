@@ -110,10 +110,191 @@ $S = \{sí, no\}$
 
 Otros dos ejemplos de datos categóricos son el color de los ojos (marrón, azul, verdes, etc.) y la posición semestral (estudiante de primer año, segundo, tercer y último año).
 
+
+##Espacios Muestrales y eventos
+
+**Experimentos Aleatorios**:
+
+
+Un experimento es una observación de un fenómeno que ocurre en la naturaleza. Tipos de experimentos:
+
+**Experimentos Determinísticos**: Son aquellos en donde no hay incertidumbre acerca del resultado que ocurrirá cuando éstos son repetidos varias veces.
+
+**Experimentos Aleatorios**: Son aquellos en donde no se puede anticipar el resultado que ocurrirá, pero si se tiene una completa idea acerca de todos los resultados posibles del experimento cuando éste es ejecutado.
+
+
 Según lo anterior, podemos clasificar los espacios muestrales de dos maneras:
 
 **Espacio muestral Discreto:**  Son espacios muestrales cuyos elementos  resultan de hacer conteos, y por lo general son subconjuntos  de los números  enteros. Es decir los elementos del espacio muestral son datos discretos.
 
-
 **Espacio Muestral Continuo:** Son espacios muestrales cuyos elementos resultan de hacer mediciones y por lo general son intervalos en la recta real. Los elementos del espacio muestral son datos continuos.
+
+Ejemplos Espacios muestrales:
+
+1. Consideremos el experimento de lanzar un dado, ¿Cuál es el espcio muestral para este experimento?
+
+$$S=\{1,2,3,4,5,6 \}$$
+
+2.  Consideremos el experimento de lanzar una moneda, ¿Cuál es el espcio muestral para este experimento?
+
+$$S=\{Cara, Cruz\}$$
+
+3.  Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Cuál es el espcio muestral para este experimento?
+
+$$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}$$
+
+
+
+
+### Eventos
+
+Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayusculas. Ejemplos:
+
+
+**A**: Que salga un número par al lanzar un dado.
+
+**E**: Que haya que esperar más de 10 minutos para ser atendidos en la cafetería de estudiantes.
+
+**F**: Sacar A en la nota final del curso ESMA3101.
+
+**H**: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de credito.
+
+Ejemplos: 
+
+1. Consideremos el experimento de lanzar un dado, ¿Enunciar algunos eventos posibles en este experimento?
+
+$$S=\{1,2,3,4,5,6 \}$$
+
+**A**: Obtener un número par.
+
+**B**: Obtener un número impar
+
+**C**: Obtener un número mayor que tres
+
+Son algunos eventos del anterior experimento. 
+
+
+2.  Consideremos el experimento de lanzar una moneda, ¿Enunciar algunos eventos posibles en este experimento?
+
+$$S=\{Cara, Cruz\}$$
+
+**A**: Obtener una cara.
+
+**B**: Obtener una cruz.
+
+
+3.  Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Enuncial algunos eventos posibles?
+
+$$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}$$
+**A**: Obtener una cara y un número impar 
+
+**B**: Obtener una cruz y un número mayor que cinco. 
+
+**C**: Obtener cara.
+
+
+
+**Evento Nulo**: Es aquél que no tiene elementos. Se representa  por $\emptyset$.
+
+### Relaciones entre eventos
+
+**Unión de eventos:** Dados dos eventos $A$ y $B$ de un mismo espacio muestral su unión se representa por 
+$A \cup B$ y es el evento que contiene los elementos que estan en $A$ o $B$ o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.
+
+**Intersección de eventos**: Dados dos eventos $A$ y $B$ de un mismo espacio muestral su intersección se representa por $A \cap B$, y es el evento que contiene los elementos que estan en $A$ y en $B$ al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente. 
+
+**Evento Complemento**: El complemento de un evento $A$ se representa representa por $A^c$ y es el evento que contiene contiene todos los elementos que no están en $A$. El evento ocurre si $A$ no ocurre.
+
+**Propiedades de relaciones entre eventos**: Sean $A$, $B$ y $C$ eventos de un mismo espacio muestral $S$ entonces se cumplen las siguientes propiedades:
+
+**1.  Propiedad Conmutativa**: $A \cup B = B \cup A$ y $A \cap B = B \cap A$
+
+**2.  Propiedad Asociativa**: $A \cup (B \cup C) = (A \cup B) \cup C$ y $A \cap (B \cap C) = (A \cap B) \cup C$
+
+**Propiedad Distributiva**: $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$  y   $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+
+**Leyes de Morgan**: $(A \cup B)^c = A^c \cap B^c$  y  $(A \cap B)^c = A^c \cup B^c$
+
+
+
+
+
+## ¿Qué es probabilidad?
+
+Pensemos en la probabilidad de manera informal por un momento.
+
+**Definición**. La probabilidad es un número entre 0 y 1, donde:
+
+1.  Un número cercano a 0 significa "no probable".
+2.  Un número cercano a 1 significa "bastante probable".
+
+Si la probabilidad de un evento es exactamente 0, entonces el evento no puede ocurrir. Si la probabilidad de un evento es exactamente 1, entonces el evento definitivamente ocurrirá.
+
+Ahora pensemos en algunos eventos según lo aprendido:
+
+**Un evento o eventos que de seguro ocurrirán**: Que llueva hoy en Mayaguez, que finalice el día, sacar cara al lanzar una moneda, que finalice el semestre, sacar un número par al lanzar un dado... etc.
+
+¿Qué probabilidad le asignaria a cada uno de estos eventos?
+
+
+**Un evento o eventos que son imposibles que ocurran**: Que no hayan huracanes en el caribe, obtener un número 8 al lanzar un dado.
+
+¿Qué probabilidad le asignaria a cada uno de estos eventos?
+
+
+**Un evento o eventos que posiblemente ocurran**: Ganar el Power Ball, Qué un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.
+
+¿Qué probabilidad le asignaria a cada uno de estos eventos?
+
+
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 

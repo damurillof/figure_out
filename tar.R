@@ -32,6 +32,10 @@ birthweight <- read_excel("~/Desktop/birthweight.xlsx")
 View(birthweight)
 
 
+boxplot(birthweight$bwt ~ birthweight$race)
+boxplot(birthweight$bwt ~ birthweight$smoke)
+
+
 library(ggplot2)
 
 ggplot(birthweights,aes(as.factor(birthweights$smoke),birthweights$bwt,fill=as.factor(birthweights$smoke))) + geom_boxplot()
