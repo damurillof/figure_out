@@ -175,6 +175,12 @@ Ejemplo para la variable `peso`
 tabla_frecuencia(Estudiantes$peso)
 ```
 
+
+Con los resultados de la tabla de frecuencia y usando los puntos medios y las frecuencas absolutas  podemos hacer un histograma para el `peso` de los estudiantes.
+
+![](hist.png)
+
+
 Ejemplo para la variable `estatura`
 
 ```{r, comment=NA,echo=T,eval=T}
