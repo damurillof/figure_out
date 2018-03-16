@@ -246,6 +246,70 @@ Ahora pensemos en algunos eventos según lo aprendido:
 
 ¿Qué probabilidad le asignaria a cada uno de estos eventos?
 
+## Métodos Métodos de asignar asignar Probabilidades 
+
+### Método axiomatico
+
+La  Probabilidad es  considerada como una función de valor real definida sobre una colección de eventos de un espacio muestral $S$ que satisface los siguientes axiomas:
+
+Ax1.  $P(S)=1$
+
+Ax2.  $P(A) \geq 0$
+
+AX3.  $P(\bigcup_{i=1}^{n}A_i)=\sum_{i=1}^{n}(P(A_i))$
+
+si A1, A2, ... son mutuamente excluyentes.
+
+
+>  Propiedades de la probabilidad.
+
+1.  $P(\emptyset)=0$
+
+2.  $P(A^c)= 1-P(A)$
+
+3.  $P(A \cup B)= P(A) + P(B) - P(A \cap B)$
+
+En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacio es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.
+
+
+> **Ejemplos**:
+
+
+1.  Juan y Luis están solicitando ser admitidos en una universidad. La probabilidad de que Juan sea admitido es  es $0.7$ y la probabilidad de que Luis  sea admitido es $0.6$. La probabilidad de que ambos sean admitidos es $0.45$.
+
+a) ¿Cuál es la probabilidad de que solamente uno de ellos sea admitido?
+
+b)  Cuál es la probabilidad de que al menos uno de ellos sea admitido?
+
+c) ¿Cuál es la probabilidad de que ninguno de los dos sea admitido?
+
+2.  Una empresa tiene dos maneras $A$ y $B$ de presentar un nuevo producto al mercado. Si presenta el producto de la manera $A$  la probabilidad de que el producto sea exitoso es $0.44$ y si lo presenta de la manera $B$ la probabilidad de éxito se reduce a $0.29$. La probabilidad de que el producto fracase con ambas maneras de presentación es $0.37$. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?
+
+
+> **Definición**
+
+Un espacio muestral finito  $S =\{A_1, A_2,…,A_n\}$ se dice que es **equiprobable** si cada uno de sus elementos tiene la misma probabilidad de ocurrencia, es decir  $P(A_i)=\frac{1}{n}$ para todo $i=1,..., n$.
+
+> **Ejemplos**
+
+1. Se lanza un dado de seis caras, entonces su espacio muestral esta dado por $S=\{1,2,3,4,5,6\}$, vemos que hay sis posibles resultados, entonces la probabilidad de cada uno de ellos es 1/6.
+
+2.  Se lanza un par de dados legales y distinguibles, entonces su espacio muestral dado por: $S=\{(i,j);i,j=1,2,3,4,5,6\}$ tiene 36 resultados, cada uno de ellos con probabilidad de ocurrencia 1/36.  
+
+
+> **Definición**
+
+Si un experimento aleatorio tiene un espacio muestral equiprobable $S$ que contiene $N$ elementos y $A$ es un evento de $S$ que ocurre de $\#(A)$ maneras distintas entonces la probabilidad de ocurrencia de $A$ esta dada por:
+
+$$P(A)=\frac{\# A}{N}$$
+
+> **Ejemplos**
+
+1.   ¿Cuál es la probabilidad de obtener una suma mayor que 7 al lanzar un par de dados?
+
+
+
+
 
 ---------------------------------------------------------------------------------------------------------
 
