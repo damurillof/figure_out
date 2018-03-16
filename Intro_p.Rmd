@@ -246,9 +246,9 @@ Ahora pensemos en algunos eventos según lo aprendido:
 
 ¿Qué probabilidad le asignaria a cada uno de estos eventos?
 
-## Métodos Métodos de asignar asignar Probabilidades 
+## Métodos  para  asignar  probabilidades 
 
-### Método axiomatico
+### Método axiomático
 
 La  Probabilidad es  considerada como una función de valor real definida sobre una colección de eventos de un espacio muestral $S$ que satisface los siguientes axiomas:
 
