@@ -286,6 +286,8 @@ c) ¿Cuál es la probabilidad de que ninguno de los dos sea admitido?
 2.  Una empresa tiene dos maneras $A$ y $B$ de presentar un nuevo producto al mercado. Si presenta el producto de la manera $A$  la probabilidad de que el producto sea exitoso es $0.44$ y si lo presenta de la manera $B$ la probabilidad de éxito se reduce a $0.29$. La probabilidad de que el producto fracase con ambas maneras de presentación es $0.37$. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?
 
 
+### Método clásico
+
 > **Definición**
 
 Un espacio muestral finito  $S =\{A_1, A_2,…,A_n\}$ se dice que es **equiprobable** si cada uno de sus elementos tiene la misma probabilidad de ocurrencia, es decir  $P(A_i)=\frac{1}{n}$ para todo $i=1,..., n$.
@@ -307,9 +309,44 @@ $$P(A)=\frac{\# A}{N}$$
 
 1.   ¿Cuál es la probabilidad de obtener una suma mayor que 7 al lanzar un par de dados?
 
+### Método frecuentista
 
 
+Si un experimento se repite $n$ veces y $n(A)$ de esa veces ocurre el evento $A$, entonces la frecuencia relativa de $A$ se define como:
 
+$$\frac{n(A)}{n} \to P(A)$$
+
+La probabilidad es el valor en el cual se estabiliza la frecuencia relativa del evento después de haber repetido el experimento un número grande de veces. La existencia de este valor está garantizando por un resultado llamado La Ley de los Grandes números. Desde el punto de vista práctico se puede considerar que la frecuencia relativa de un evento es un estimado de la probabilidad de ocurrencia del evento.
+
+El problema principal de la definición frecuencial de probabilidad es que, el cálculo de la probabilidad de un evento sería un proceso demasiado lento. El otro problema es que algunas veces es imposible tener un número grande de repeticiones del experimento, por ejemplo, si se desea calcular la probabilidad de que una persona en particular sobreviva una operación quirúrgica, tendríamos que tener información acerca de todas las operaciones de dicha persona, la cual por lo general es muy baja.
+
+> Estimando la probabilidad de ocurrencia de un evento
+
+Con la ayuda de la computadora se puede simular la ejecución de un experimento un gran número de veces y haciendo uso de la definición frecuencial se puede estimar la probabilidad de ocurrencia de un evento. 
+
+**Ejemplo**. Supongamos que lanzamos un par de dados legales y tratamos de estimar la probabilidad de obtener  que la suma de los resultados sea 7.
+
+Solución: Esta probabilidad puede ser determinada exactamente a través del espacio muestral del experimento y es igual a 6/36. Sin embargo, nosotros la podemos estimar a través de simulaciones.
+
+La siguiente función en R realiza la simulación de un par de números como resultado de lanzar dos dados legales.
+
+```{r,comment=NA}
+sum_dados <- function(n){
+sum_d <- rep(0,n)
+for(i in 1:n){
+sum_d[i] <- sum(sample(1:6,2,T))
+}
+table(sum_d)/n
+}
+```
+
+A continuación usamos la función `sum_dados` y repetimos la simulación 10000 mil veces.
+
+```{r,comment=NA}
+sum_dados(10000)
+```
+
+Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.
 
 ---------------------------------------------------------------------------------------------------------
 
