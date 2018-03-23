@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Probabilidad condicional</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Probabilidad condicional</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#probabilidad-condicional">Probabilidad condicional</a><ul>
+<li><a href="#regla-del-producto">Regla del producto</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="probabilidad-condicional" class="section level2">
+<h2>Probabilidad condicional</h2>
+<p>Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> dos eventos de un mismo espacio muestral <span class="math inline">\(S\)</span>. La probabilidad condicional de que ocurra <span class="math inline">\(A\)</span> dado que el evento <span class="math inline">\(B\)</span> ha ocurrido esta dado por:</p>
+<p><span class="math display">\[P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{\#(A\cap B)}{\#(B)}\]</span></p>
+<blockquote>
+<p><strong>Ejemplos</strong>:</p>
+</blockquote>
+<p><strong>Ejemplo 1</strong>. se lanza un par de dados legales y distinguibles. ¿Cuál es la probabilidad de que solamente uno de los dos dados sea par si se sabe que la suma de los dos es mayor que 8?</p>
+<p>Solucion:</p>
+<p>Sean los eventos <span class="math inline">\(A\)</span>: “Que solamente uno de los dos dados sea par”&quot; y el evento condicionante <span class="math inline">\(B\)</span>: “Que la suma sea mayor que 8”.</p>
+<p>Podemos notar que:</p>
+<p><span class="math display">\[\#(A\cap B)=6\]</span> y que, <span class="math display">\[\#(B)=10\]</span> Finalmente,</p>
+<p><span class="math display">\[P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{6}{10}\]</span></p>
+<p>Ejemplor 2: En una ciudad se hizo una encuesta acerca de la opinión de las personas adultas con respecto a una ley del gobierno. La siguiente tabla muestra los resultados de la encuesta clasificados según el sexo del entrevistado.</p>
+<p><img src="tabla.png" /> Se elige al azar una persona:</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que favorezca la ley si resulta ser mujer?</li>
+<li>¿Cuál es la probabilidad de que sea mujer si resulta estar en contra de la ley?</li>
+<li>¿Cuál es la probabilidad de que sea hombre si la persona elegida no se abstuvo de opinar?</li>
+</ol>
+<p>Solución: Considerando que las frecuencias relativas estiman a las probabilidades de los eventos, se tiene que:</p>
+<ol style="list-style-type: lower-alpha">
+<li>De las 37 mujeres hay 10 que están a favor de la ley, luego</li>
+</ol>
+<p><span class="math display">\[P(F|M)=\dfrac{10}{37}\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>De los 43 entrevistados que están en contra de la ley 15 son mujeres, luego</li>
+</ol>
+<p><span class="math display">\[P(M|C)=\dfrac{15}{43}\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>De los 65 que no se abstuvieron de opinar 40 fueron hombres, luego</li>
+</ol>
+<p><span class="math display">\[P(H|F\cup C)=\dfrac{40}{65}\]</span></p>
+<div id="regla-del-producto" class="section level3">
+<h3>Regla del producto</h3>
+<p>Dados los eventos A y B de un mismo espacio muestral, la probabilidad de que ambos ocurran conjuntamente está dado por</p>
+<p><span class="math display">\[P(A \cap B)=P(A)P(B|A)\]</span></p>
+<p>Esta expresión se obtiene despejando de la fórmula de probabilidad condicional. Se usa para calcular la probabilidad de que dos eventos ocurran al mismo tiempo.</p>
+<blockquote>
+<p><strong>Ejemplos</strong></p>
+</blockquote>
+<p>Ejemplo 1. Una urna contiene 3 bolas rojas y 4 bolas blancas. Se extraen al azar dos bolas de la urna, una por una y sin reposición. ¿Cuál es la probabilidad de que:</p>
+<ol style="list-style-type: lower-alpha">
+<li>ambas bolas sean rojas?</li>
+<li>la segunda bola sea roja?</li>
+<li>sólo una de las dos bolas sea roja?</li>
+</ol>
+<p>Solución:</p>
+<p>La forma más fácil de resolver el problema es haciendo un diagrama de árbol. Luego,</p>
+<p><img src="arbol1.png" /> a) <span class="math display">\[P(R_1\cap R_2)=P(R_1)P(R_2|R_1)=3/7*2/6=1/7\]</span> b)</p>
+<p><span class="math display">\[P(R_2)=P(R_1\cap R_2) + P(B_1\cap R_2)=3/7*2/6 + 4/7*3/6=18/42=3/7\]</span> c) sólo una de las dos bolas sea roja?</p>
+<p><span class="math display">\[P(R_1\cap R_2) + P(B_1\cap R_2)=P(R_1)P(B_2|R1)+P(B_1)P(R_2|B_1)=\]</span> <span class="math display">\[3/7*4/6+4/7*3/6=24/42=4/7\]</span> Ejemplo 2. Según la Comisión Electoral de un país, el 90 por ciento de las esposas votan si sus esposos lo hacen, y el 20 por ciento vota si su esposo no lo hace. Además el 70 por ciento de los hombres casados votan. Se elige al azar un matrimonio. ¿Cuál es la probabilidad de que:</p>
+<ol style="list-style-type: lower-alpha">
+<li>ambos esposos voten?</li>
+<li>sólo uno de los esposos vote?</li>
+<li>vote la esposa?</li>
+<li>al menos uno de los esposos vote?</li>
+</ol>
+<p>Solución:</p>
+<p>Sean los eventos <span class="math inline">\(V_1\)</span>: “Que vote el esposo” y <span class="math inline">\(V_2\)</span>: “Que vote la esposa”. El problema puede ser representado por un diagrama de árbol.</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

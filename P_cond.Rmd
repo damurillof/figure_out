@@ -1,0 +1,104 @@
+---
+title: "Probabilidad condicional"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Probabilidad condicional
+
+Sean $A$ y $B$ dos eventos de un mismo espacio muestral $S$. La probabilidad condicional de que ocurra $A$ dado que el evento $B$ ha ocurrido  esta dado por:
+
+$$P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{\#(A\cap B)}{\#(B)}$$
+
+> **Ejemplos**:
+
+**Ejemplo 1**. se lanza un par de dados legales y distinguibles. ¿Cuál es la probabilidad de que solamente uno de los dos dados sea par si se sabe que la suma de los dos es mayor que 8?
+
+Solucion:
+
+Sean los eventos $A$: "Que solamente uno de los dos dados sea par"" y el evento condicionante $B$: "Que la suma sea mayor que 8".
+
+Podemos notar que:
+
+$$\#(A\cap B)=6$$
+y que, $$\#(B)=10$$
+Finalmente,
+
+$$P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{6}{10}$$
+
+Ejemplor 2:  En una ciudad se hizo una encuesta acerca de la opinión de las personas adultas con respecto a una ley del gobierno. La siguiente tabla muestra los resultados de la encuesta clasificados según el sexo del entrevistado.
+
+![](tabla.png)
+Se elige al azar  una persona:
+
+a) ¿Cuál es la probabilidad de que favorezca la ley si resulta ser mujer?
+b) ¿Cuál es la probabilidad de que sea mujer si resulta estar en contra de la ley?
+c) ¿Cuál es la probabilidad de que sea hombre si la persona elegida no se abstuvo de opinar?
+
+Solución: Considerando que las frecuencias relativas estiman a las probabilidades de los
+eventos, se tiene que: 
+
+a) De las 37 mujeres hay 10 que están a favor de la ley, luego 
+
+$$P(F|M)=\dfrac{10}{37}$$
+
+b) De los 43 entrevistados que están en contra de la ley 15 son mujeres, luego
+
+
+$$P(M|C)=\dfrac{15}{43}$$
+
+c) De los 65 que no se abstuvieron de opinar 40 fueron hombres, luego
+
+$$P(H|F\cup C)=\dfrac{40}{65}$$
+
+### Regla del producto
+
+Dados los eventos A y B de un mismo espacio muestral, la probabilidad de que ambos ocurran conjuntamente está dado por
+
+
+$$P(A \cap B)=P(A)P(B|A)$$
+
+
+Esta expresión se obtiene despejando de la fórmula de probabilidad condicional. Se usa para calcular la probabilidad de que dos eventos ocurran al mismo tiempo.
+
+> **Ejemplos**
+
+Ejemplo 1. Una urna contiene 3 bolas rojas y 4 bolas blancas. Se extraen al azar dos bolas de la urna, una por una y sin reposición. ¿Cuál es la probabilidad de que:
+
+a) ambas bolas sean rojas?
+b) la segunda bola sea roja?
+c) sólo una de las dos bolas sea roja?
+
+Solución:
+
+La forma más fácil de resolver el problema es haciendo un diagrama de árbol. Luego,
+
+![](arbol1.png)
+a) 
+$$P(R_1\cap R_2)=P(R_1)P(R_2|R_1)=3/7*2/6=1/7$$
+b) 
+
+$$P(R_2)=P(R_1\cap R_2) + P(B_1\cap R_2)=3/7*2/6 + 4/7*3/6=18/42=3/7$$
+c) sólo una de las dos bolas sea roja?
+
+$$P(R_1\cap R_2) + P(B_1\cap R_2)=P(R_1)P(B_2|R1)+P(B_1)P(R_2|B_1)=$$
+$$3/7*4/6+4/7*3/6=24/42=4/7$$
+Ejemplo 2. Según la Comisión Electoral de un país, el 90 por ciento de las esposas votan si sus esposos lo hacen, y el 20 por ciento vota si su esposo no lo hace. Además el 70 por ciento de los hombres casados votan. Se elige al azar un matrimonio. ¿Cuál es la probabilidad de que:
+
+a) ambos esposos voten?
+b) sólo uno de los esposos vote?
+c) vote la esposa?
+d) al menos uno de los esposos vote?
+
+Solución:
+
+Sean los eventos $V_1$: "Que vote el esposo" y $V_2$: "Que vote la esposa". El problema puede ser
+representado por un diagrama de árbol.
+
+
