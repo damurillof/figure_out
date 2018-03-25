@@ -260,7 +260,8 @@ $(document).ready(function () {
 </ol>
 <p>Solución:</p>
 <p>La forma más fácil de resolver el problema es haciendo un diagrama de árbol. Luego,</p>
-<p><img src="arbol1.png" /> a) <span class="math display">\[P(R_1\cap R_2)=P(R_1)P(R_2|R_1)=3/7*2/6=1/7\]</span> b)</p>
+<p><img src="arbol11.png" /> a)ambas bolas sean rojas?</p>
+<p><span class="math display">\[P(R_1\cap R_2)=P(R_1)P(R_2|R_1)=3/7*2/6=1/7\]</span> b) la segunda bola sea roja?</p>
 <p><span class="math display">\[P(R_2)=P(R_1\cap R_2) + P(B_1\cap R_2)=3/7*2/6 + 4/7*3/6=18/42=3/7\]</span> c) sólo una de las dos bolas sea roja?</p>
 <p><span class="math display">\[P(R_1\cap R_2) + P(B_1\cap R_2)=P(R_1)P(B_2|R1)+P(B_1)P(R_2|B_1)=\]</span> <span class="math display">\[3/7*4/6+4/7*3/6=24/42=4/7\]</span> Ejemplo 2. Según la Comisión Electoral de un país, el 90 por ciento de las esposas votan si sus esposos lo hacen, y el 20 por ciento vota si su esposo no lo hace. Además el 70 por ciento de los hombres casados votan. Se elige al azar un matrimonio. ¿Cuál es la probabilidad de que:</p>
 <ol style="list-style-type: lower-alpha">
@@ -270,7 +271,41 @@ $(document).ready(function () {
 <li>al menos uno de los esposos vote?</li>
 </ol>
 <p>Solución:</p>
-<p>Sean los eventos <span class="math inline">\(V_1\)</span>: “Que vote el esposo” y <span class="math inline">\(V_2\)</span>: “Que vote la esposa”. El problema puede ser representado por un diagrama de árbol.</p>
+<p>Sean los eventos <span class="math inline">\(H\)</span>: “Que vote el esposo” y <span class="math inline">\(W\)</span>: “Que vote la esposa”. El problema puede ser representado por un diagrama de árbol. Las probabilidades de color rojo indican que es información que aporta el problema.</p>
+<div class="figure">
+<img src="arbol2.png" />
+
+</div>
+<ol style="list-style-type: lower-alpha">
+<li>¿Ambos esposos voten?</li>
+</ol>
+<p><span class="math display">\[P(H\cap W)=P(H)P(W|H)=0.7*0.9=0.63\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>¿Sólo uno de los esposos vote?</li>
+</ol>
+<p><span class="math display">\[P(H\cap W^c) + P(H^c \cap W)=\]</span> <span class="math display">\[P(H)P(W^c|H) + P(H^c)P(W|H^c)=\]</span> <span class="math display">\[0.7*0.1 + 0.30*0.20=0.13\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>¿Vote la esposa?</li>
+</ol>
+<p><span class="math display">\[P(W)=P(H)P(W|H) + P(H^c)P(W|H^c)=\]</span> <span class="math display">\[0.7*0.9 + 0.3*0.2=0.69\]</span></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>¿Al menos uno de los esposos vote?</li>
+</ol>
+<p><span class="math display">\[P(H \cup W)=P(H) + P(W) - P(H \cap W)=0.70 + 0.69 - 0.63 = 0.76\]</span></p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
 </div>
 </div>
 

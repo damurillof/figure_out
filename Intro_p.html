@@ -381,20 +381,66 @@ $(document).ready(function () {
 <li><p><span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B)\)</span></p></li>
 </ol>
 <p>En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacio es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.</p>
+<p>Las relaciones entre las probabilidades de dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> también pueden resumirse mediante la siguiente tabla de filas y columnas:</p>
+<div class="figure">
+<img src="tablap.png" />
+
+</div>
 <blockquote>
 <p><strong>Ejemplos</strong>:</p>
 </blockquote>
 <ol style="list-style-type: decimal">
 <li>Juan y Luis están solicitando ser admitidos en una universidad. La probabilidad de que Juan sea admitido es es <span class="math inline">\(0.7\)</span> y la probabilidad de que Luis sea admitido es <span class="math inline">\(0.6\)</span>. La probabilidad de que ambos sean admitidos es <span class="math inline">\(0.45\)</span>.</li>
 </ol>
+<p>Este tipo de problemas los podemos resolver usando digramas de Venn:</p>
+<p>Por información que nos da el problema sabemos que: <strong><span class="math inline">\(P(J)=0.7\)</span></strong> y <strong><span class="math inline">\(P(L)=0.6\)</span></strong>, también sabemos que <strong><span class="math inline">\(P(J \cap L)=0.45\)</span></strong></p>
+<div class="figure">
+<img src="venn1.png" />
+
+</div>
 <ol style="list-style-type: lower-alpha">
-<li><p>¿Cuál es la probabilidad de que solamente uno de ellos sea admitido?</p></li>
-<li><p>Cuál es la probabilidad de que al menos uno de ellos sea admitido?</p></li>
-<li><p>¿Cuál es la probabilidad de que ninguno de los dos sea admitido?</p></li>
+<li>¿Cuál es la probabilidad de que solamente uno de ellos sea admitido?</li>
 </ol>
+<p>Para responder esta pregunta debemos fijarnos solo en las probabilidades que les corresponden a cada evento sin la probabilidad que tienen en común, esto es:</p>
+<p><span class="math display">\[P(A \cap B^c) + P(A^c \cap B)= 0.25 + 0.15 = 0.40\]</span> Por tanto, la probabilidad de que solo uno de los dos sea admitido es <strong><span class="math inline">\(0.40\)</span></strong></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Cuál es la probabilidad de que al menos uno de ellos sea admitido?</li>
+</ol>
+<p>Para este caso podemos usar la regla aditiva, es decir</p>
+<p><span class="math display">\[P(J \cup L)= P(J) + P(L) - P(J\cap L)=\]</span> <span class="math display">\[0.7 + 0.6 - 0.45=0.85\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que ninguno de los dos sea admitido?</li>
+</ol>
+<p>Debemos darnos cuenta que el ejercicio nos esta preguntando por una probabilidad del complemento, esto es: <span class="math inline">\(P(J^c \cap L^c)\)</span>, si usamos las leyes de Morgan, el problema es resuelto, veamos:</p>
+<p><span class="math display">\[P(J^c \cap L^c)=P(J \cup L)^c=1-P(J \cup L)=1-0.85=0.15\]</span> Entonces tenemos que la probabilidad de que ninguno de los dos sea admitido es de <span class="math inline">\(0.85\)</span></p>
+<p>La otra forma de resolver el problema es usando la tabla de doble entrada,</p>
+<div class="figure">
+<img src="tabla2.png" />
+
+</div>
+<p>Los datos de color rojo son los que provee el problema, los demas son calculados usando complementos.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Una empresa tiene dos maneras <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de presentar un nuevo producto al mercado. Si presenta el producto de la manera <span class="math inline">\(A\)</span> la probabilidad de que el producto sea exitoso es <span class="math inline">\(0.44\)</span> y si lo presenta de la manera <span class="math inline">\(B\)</span> la probabilidad de éxito se reduce a <span class="math inline">\(0.29\)</span>. La probabilidad de que el producto fracase con ambas maneras de presentación es <span class="math inline">\(0.37\)</span>. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?</li>
 </ol>
+<p>Definamos los siguientes eventos:</p>
+<p><strong>A: “Método uno”</strong>. Sabemos que <span class="math inline">\(P(A)=0.44\)</span></p>
+<p><strong>B: “Método dos”</strong>. Sabemos que <span class="math inline">\(P(B)=0.29\)</span></p>
+<p>También sabemos que <strong><span class="math inline">\(P(A^c \cap B^c)=P(A \cup B)^c=0.37\)</span></strong> mediante la ley de Morgan. Entonces:</p>
+<p><span class="math display">\[P(A \cup B)^c= 1-P(A\cup B)\]</span> Resolviendo para <span class="math inline">\(P(A\cup B)\)</span>, tenemos:</p>
+<p><span class="math display">\[P(A\cup B)= 1-P(A \cup B)^c= 1- 0.37=0.63\]</span></p>
+<p>Finalmente,</p>
+<p><span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B)\)</span></p>
+<p>resolviendo para <span class="math inline">\(P(A \cap B)\)</span> tenemos:</p>
+<p><span class="math display">\[P(A \cap B)= P(A) + P(B) - P(A \cup B)=0.44 + 0.29 - 0.63 = 0.10\]</span> El procedimiento anterior es la forma analitica de resolver el problema. Mediante un diagrama de Venn se puede resolver el problema de una manera más sencilla, veamos</p>
+<div class="figure">
+<img src="venn2.png" />
+
+</div>
+<p>La otra forma es mediante la tabla de doble entrada, como vemos a continuación.</p>
+<div class="figure">
+<img src="tabla3.png" />
+
+</div>
 </div>
 <div id="metodo-clasico" class="section level3">
 <h3>Método clásico</h3>
@@ -420,6 +466,12 @@ $(document).ready(function () {
 <ol style="list-style-type: decimal">
 <li>¿Cuál es la probabilidad de obtener una suma mayor que 7 al lanzar un par de dados?</li>
 </ol>
+<p>Es decir la suma de los resultados debe dar 8, 9, 10, 11 o 12.</p>
+<p>El evento de obtener una suma mayor que 7 al lanzar un par de dados esta dado de la siguiente manera</p>
+<p><span class="math display">\[A=\{(6,6),(6,5),(6,4),(6,3),(6,2),(5,6),(5,5),(5,4),(5,3),(4,6),(4,5),(4,4),(3,6),(3,5),(2,6)\}\]</span></p>
+<p>Vemos que <span class="math inline">\(\#(A)=15\)</span> de un total de <span class="math inline">\(N=36\)</span> posibilidades.</p>
+<p>Entonces,</p>
+<p><span class="math display">\[P(A)=\dfrac{\#A}{N}=\dfrac{15}{36}\]</span></p>
 </div>
 <div id="metodo-frecuentista" class="section level3">
 <h3>Método frecuentista</h3>
@@ -445,9 +497,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0283 0.0576 0.0855 0.1089 0.1386 0.1668 0.1324 0.1112 0.0851 0.0551 
+0.0274 0.0557 0.0808 0.1170 0.1355 0.1661 0.1384 0.1138 0.0839 0.0537 
     12 
-0.0305 </code></pre>
+0.0277 </code></pre>
 <p>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</p>
 <hr />
 <hr />

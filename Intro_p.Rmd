@@ -271,20 +271,79 @@ si A1, A2, ... son mutuamente excluyentes.
 
 En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacio es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.
 
+Las relaciones entre las probabilidades de dos eventos $A$ y $B$ también pueden resumirse mediante la siguiente tabla de filas y columnas:
+
+![](tablap.png)
 
 > **Ejemplos**:
 
 
 1.  Juan y Luis están solicitando ser admitidos en una universidad. La probabilidad de que Juan sea admitido es  es $0.7$ y la probabilidad de que Luis  sea admitido es $0.6$. La probabilidad de que ambos sean admitidos es $0.45$.
 
+Este tipo de problemas los podemos resolver usando digramas de Venn:
+
+Por información que nos da el problema sabemos que: **$P(J)=0.7$** y **$P(L)=0.6$**, también sabemos que 
+**$P(J \cap L)=0.45$**
+
+![](venn1.png)
+
 a) ¿Cuál es la probabilidad de que solamente uno de ellos sea admitido?
+
+Para responder esta pregunta debemos fijarnos solo en las probabilidades que les corresponden a cada evento sin la probabilidad que tienen en común, esto es:
+
+$$P(A \cap B^c) + P(A^c \cap B)= 0.25 + 0.15 = 0.40$$
+Por tanto, la probabilidad de que solo uno de los dos sea admitido es **$0.40$**
 
 b)  Cuál es la probabilidad de que al menos uno de ellos sea admitido?
 
+Para este caso podemos usar la regla aditiva, es decir 
+
+$$P(J \cup L)= P(J) + P(L) - P(J\cap L)=$$
+$$0.7 + 0.6 - 0.45=0.85$$
+
 c) ¿Cuál es la probabilidad de que ninguno de los dos sea admitido?
+
+Debemos darnos cuenta que el ejercicio nos esta preguntando por una probabilidad del complemento, esto es: $P(J^c \cap L^c)$, si usamos las leyes de Morgan, el problema es resuelto, veamos:
+
+$$P(J^c \cap L^c)=P(J \cup L)^c=1-P(J \cup L)=1-0.85=0.15$$
+Entonces tenemos que la probabilidad de que ninguno de los dos sea admitido es de $0.85$
+
+La otra forma de resolver el problema es usando la tabla de doble entrada, 
+
+![](tabla2.png)
+
+Los datos de color rojo son los que provee el problema, los demas son calculados usando complementos. 
 
 2.  Una empresa tiene dos maneras $A$ y $B$ de presentar un nuevo producto al mercado. Si presenta el producto de la manera $A$  la probabilidad de que el producto sea exitoso es $0.44$ y si lo presenta de la manera $B$ la probabilidad de éxito se reduce a $0.29$. La probabilidad de que el producto fracase con ambas maneras de presentación es $0.37$. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?
 
+Definamos los siguientes eventos:
+
+**A: "Método uno"**. Sabemos que $P(A)=0.44$
+
+**B: "Método dos"**. Sabemos que $P(B)=0.29$
+
+También sabemos que **$P(A^c \cap B^c)=P(A \cup B)^c=0.37$** mediante la ley de Morgan. Entonces:
+
+$$P(A \cup B)^c= 1-P(A\cup B)$$
+Resolviendo para $P(A\cup B)$, tenemos:
+
+$$P(A\cup B)= 1-P(A \cup B)^c= 1- 0.37=0.63$$
+
+Finalmente, 
+
+$P(A \cup B)= P(A) + P(B) - P(A \cap B)$
+
+resolviendo para $P(A \cap B)$ tenemos:
+
+
+$$P(A \cap B)= P(A) + P(B) - P(A \cup B)=0.44 + 0.29 - 0.63 = 0.10$$
+El procedimiento anterior es la forma analitica de resolver el problema. Mediante un diagrama de Venn se puede resolver el problema de una manera más sencilla, veamos 
+
+![](venn2.png)
+
+La otra forma es mediante la tabla de doble entrada, como vemos a continuación.
+
+![](tabla3.png)
 
 ### Método clásico
 
@@ -308,6 +367,19 @@ $$P(A)=\frac{\# A}{N}$$
 > **Ejemplos**
 
 1.   ¿Cuál es la probabilidad de obtener una suma mayor que 7 al lanzar un par de dados?
+
+Es decir la suma de los resultados debe dar 8, 9, 10, 11 o 12.
+
+El evento de obtener una suma mayor que 7 al lanzar un par de dados esta dado de la siguiente manera
+
+$$A=\{(6,6),(6,5),(6,4),(6,3),(6,2),(5,6),(5,5),(5,4),(5,3),(4,6),(4,5),(4,4),(3,6),(3,5),(2,6)\}$$
+
+Vemos que $\#(A)=15$ de un total de $N=36$ posibilidades.
+
+
+Entonces,
+
+$$P(A)=\dfrac{\#A}{N}=\dfrac{15}{36}$$
 
 ### Método frecuentista
 
