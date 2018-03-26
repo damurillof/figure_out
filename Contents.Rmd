@@ -22,3 +22,5 @@ output: html_document
 
 ### [Probabilidad condicional](https://didier-murillo.netlify.com/P_cond/)
 
+### [Técnicas de conteo](https://didier-murillo.netlify.com/count/)
+

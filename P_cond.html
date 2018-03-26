@@ -209,9 +209,10 @@ $(document).ready(function () {
 <li><a href="#regla-del-producto">Regla del producto</a></li>
 </ul></li>
 <li><a href="#probabilidad-total-y-regla-de-bayes">Probabilidad Total y Regla de Bayes</a><ul>
-<li><a href="#probabilidad-total">Probabilidad total</a></li>
+<li><a href="#regla-de-la-probabilidad-total">Regla de la Probabilidad Total</a></li>
 <li><a href="#teorema-de-bayes">Teorema de Bayes</a></li>
 </ul></li>
+<li><a href="#eventos-independientes">Eventos Independientes</a></li>
 </ul>
 </div>
 
@@ -300,12 +301,46 @@ $(document).ready(function () {
 </div>
 <div id="probabilidad-total-y-regla-de-bayes" class="section level2">
 <h2>Probabilidad Total y Regla de Bayes</h2>
-<div id="probabilidad-total" class="section level3">
-<h3>Probabilidad total</h3>
+<div id="regla-de-la-probabilidad-total" class="section level3">
+<h3>Regla de la Probabilidad Total</h3>
+<p>Sean <span class="math inline">\(B_1,...,B_n\)</span> una colección de eventos que forman una partición sobre el espacio muestral <span class="math inline">\(S\)</span>, es decir <span class="math inline">\(\bigcup_{i=1}^{n}B_i)\)</span> y <span class="math inline">\(B_i \cap B_j=\emptyset\)</span> para <span class="math inline">\(i\neq j\)</span>. Sea <span class="math inline">\(A\)</span> otro evento del espacio muestral <span class="math inline">\(S\)</span>, entonces:</p>
+<p><span class="math display">\[P(A)=\sum_{i=1}^{n}P(B_i)P(A | B_i)\]</span> es llamada la formula de la probabilidad total.</p>
+<p>La siguiente imagen representa un espacio muestral <span class="math inline">\(S\)</span> particionado en 5 partes.</p>
+<div class="figure">
+<img src="total.png" />
+
+</div>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p><strong>Ejemplo 1</strong>: El 70 % de los pacientes con cáncer de pulmón de un hospital son mujeres y el 20 % de ellas son fumadoras. Por otro lado el 40 % de los pacientes con cancer de pulmon hombres son fumadores. Se elige al azar un paciente del hospital. ¿Cuál es la probabilidad de que sea fumador?</p>
+<p>Definamos los eventos:</p>
+<p><strong>H</strong>: El paciente es hombre.</p>
+<p><strong>M</strong>: El paciente es mujer.</p>
+<p><strong>F</strong>: El paciente es fumador.</p>
+<p>Sabemos que, <span class="math inline">\(P(H)=0.30\)</span>, <span class="math inline">\(P(M)=0.70\)</span>, <span class="math inline">\(P(F|H)=0.40\)</span> y que <span class="math inline">\(P(F|M)=0.20\)</span>. Por tanto, aplicando la regla de probabilidad total tenemos:</p>
+<p><span class="math display">\[P(F)=P(H)P(F|H) + P(M)P(F|M)=0.30*0.40 + 0.70*0.20 = 0.26\]</span></p>
+<p>Por tanto la probabilidad de seleccionar un paciente al azar y que resulte ser fumador es de 0.26.</p>
+<p><strong>Ejemplo 2</strong>:Una empresa tiene 3 plantas: A, B y C. La planta A produce el 50% de la producción total, B produce el 30% y C el 20%. El 3% de la producción de A es defectuosa, mientras que el 2% de B y el 5% de C también lo son. Se elige al azar un artículo producido por la empresa:</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que el artículo elegido sea defectuoso?</li>
+</ol>
+<p>Definamos los siguientes eventos:</p>
+<p><strong>A</strong>: “Producción en la planta A”, sabemos que <span class="math inline">\(P(A)=0.50\)</span> <strong>B</strong>: “Producción en la planta B”, sabemos que <span class="math inline">\(P(B)=0.30\)</span> <strong>C</strong>: “Producción en la planta C”, sabemos que <span class="math inline">\(P(C)=0.20\)</span> <strong>D</strong>: “La producción es defectuosa”</p>
+<p>Según la información que nos da el problema, tenemos <span class="math inline">\(P(D|A)=0.03\)</span>, <span class="math inline">\(P(D|B)=0.02\)</span> y <span class="math inline">\(P(D|C)=0.05\)</span></p>
+<p>Vemos que los eventos A, B y C hacen parte de la partición al espacio muestral. Aplicando la regla de probabilidad total tenemos:</p>
+<p><span class="math display">\[P(D)=P(A)P(D|A) + P(B)P(D|B) + P(C)P(D|C)=\]</span> <span class="math display">\[P(D)=0.5*0.03 + 0.3*0.02 + 0.20*0.05=0.031\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Si el artículo elegido resulta ser defectuoso, ¿Cuál es la probabilidad de que provenga de la planta C?</li>
+</ol>
+<p>Tenemos que encontrar <span class="math inline">\(P(C \cap D)\)</span></p>
+<p>Por definición de probabilidad condicional tenemos,</p>
+<p><span class="math display">\[P(C|D)=\dfrac{P(C \cap D)}{P(D)}=\dfrac{0.20*0.05}{0.031}=0.32\]</span></p>
 </div>
 <div id="teorema-de-bayes" class="section level3">
 <h3>Teorema de Bayes</h3>
-<p>Nos dice con qué fprobabilidad sucede el evento <span class="math inline">\(A\)</span> dado que el evento <span class="math inline">\(B\)</span> ha sucedido, y se escribe como <span class="math inline">\(P(A | B)\)</span>. Cuando sabemos con qué frecuencia ocurre <span class="math inline">\(B\)</span> dado que <span class="math inline">\(A\)</span> sucede, se escribe <span class="math inline">\(P(B | A)\)</span>, y cuán probable que los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> ocurran por separado.</p>
+<p>En la teoría de la probabilidad y las estadísticas, el teorema de Bayes (alternativamente, la ley de Bayes o la regla de Bayes) describe la probabilidad de un evento, sobre la base del conocimiento previo de las condiciones que podrían estar relacionadas con el evento. Por ejemplo, si el cáncer está relacionado con la edad, usando el teorema de Bayes, se puede usar la edad de una persona para evaluar con mayor precisión la probabilidad de tener cáncer, en comparación con la evaluación de la probabilidad de cáncer sin conocer su edad. El teorema de Bayes lleva el nombre en honor al matemático Inglés Thomas Bayes (1701-1761).</p>
+<p>El Teorema de Bayes nos dice con qué probabilidad sucede el evento <span class="math inline">\(A\)</span> dado que el evento <span class="math inline">\(B\)</span> ha sucedido, y se escribe como <span class="math inline">\(P(A | B)\)</span>. Cuando sabemos con qué frecuencia ocurre <span class="math inline">\(B\)</span> dado que <span class="math inline">\(A\)</span> sucede, se escribe <span class="math inline">\(P(B | A)\)</span>, y cuán probable que los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> ocurran por separado.</p>
 <div class="figure">
 <img src="bayescat1.png" />
 
@@ -314,8 +349,9 @@ $(document).ready(function () {
 <li><span class="math inline">\(P(A | B)\)</span> es la “Probabilidad de A dado B”, la probabilidad de <span class="math inline">\(A\)</span> dado que el evento <span class="math inline">\(B\)</span> ocurre.</li>
 <li><span class="math inline">\(P(A)\)</span> es la probabilidad del evento <span class="math inline">\(A\)</span></li>
 <li><span class="math inline">\(P(B | A)\)</span> es la “Probabilidad de B dado A”, la probabilidad de B dado que ocurre el evento <span class="math inline">\(A\)</span>.</li>
-<li><span class="math inline">\(P(B)\)</span> es la probabilidad del evento <span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(P(B)\)</span> es la probabilidad total del evento <span class="math inline">\(B\)</span></li>
 </ul>
+<p><span class="math display">\[P(B)=\sum_{i=1}^{n}P(A_i)P(B | A_i)\]</span></p>
 <p>Analicemos el siguiente ejemplo:</p>
 <p>Cuando <strong>P(Fuego)</strong> significa con qué frecuencia hay fuego, y <strong>P(Humo)</strong> significa la frecuencia con que vemos humo, entonces:</p>
 <p><strong>P(Fuego | Humo)</strong> significa con qué frecuencia hay fuego cuando vemos humo. <strong>P(Humo | Fuego)</strong> significa la frecuencia con la que vemos humo cuando hay un incendio.</p>
@@ -325,21 +361,81 @@ $(document).ready(function () {
 </blockquote>
 <p>Si los incendios peligrosos son poco frecuentes (1%) pero el humo es bastante común (10%) debido a las fábricas, y el 90% de los incendios peligrosos producen humo, entonces:</p>
 <p><span class="math display">\[P(Fuego | Humo) = \dfrac{P(Fuego)*P(Humo | Fuego)}{P(Humo)}=\dfrac{0.01*0.9}{0.10}=0.09\]</span> Entonces encontramos que el 9 % de las veces que vemos humo, este proviene de un incendio peligroso. En otras palabras el 9% de las veces se espera que el humo signifique un incendio peligroso</p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p><strong>Ejemplo 1</strong>: Suponga que los chips de un circuito integrado son probados con cierto instrumento y la probabilidad de que se detecten los defectuosos es .99. Por otro lado hay una probabilidad de .05 de que un chip sea declarado como defectuoso cuando en realidad es bueno. Si el 1 % de todos los chips son defectuosos. ¿Cuál es la probabilidad de que un chip que es declarado como defectuoso sea en realidad bueno?</p>
+<p>Resolver este tipo de problemas puede ser confuso, pero la estrategia para no moriri en el intento es declarar adecuadamente los eventos que intervienen en el problema, veamos:</p>
+<p><strong>D: “El chip es defectuoso”</strong>, con <strong>P(D)=0.01</strong> (un 1 %).</p>
+<p><strong>B: “El chip es bueno”</strong>, con <strong>P(B)=1-P(D)=1-0.01=0.99</strong> (El complemento de que sea defectuoso)</p>
+<p><strong>M: “El chip es declarado como defectuoso”</strong> (P(M), Esta probabilidad es desconocida)</p>
+<p>Del problema tenemos que <strong>P(M|D)=0.99</strong> y que <strong>P(M|B)=0.05</strong></p>
+<p>¿Que nos esta pidiendo el problema?, es simple, debemos calcular <strong>P(B|M)</strong>.</p>
+<p>Aplicando el Teorema de Bayes,</p>
+<p><span class="math display">\[P(B|M)=\dfrac{P(B)P(M|B)}{P(M)}\]</span> La probabilidad total para <strong>P(M)</strong> es</p>
+<p><span class="math display">\[P(M)=P(B)P(M|B) + P(D)P(M|D)=0.99*0.05 + 0.01*0.99=0.0495 + 0.0099 =  0.0594\]</span></p>
+<p>Finalmente,</p>
+<p><span class="math display">\[P(B|M)=\dfrac{P(B)P(M|B)}{P(M)}=\dfrac{0.99*0.05}{0.0594}=0.8333\]</span></p>
+<p>Es decir, la probabilidad de encontrar un chip que en realidad es bueno y declararlo como defectuos es de 0.8333. (MUY ALTA!)</p>
 </div>
+</div>
+<div id="eventos-independientes" class="section level2">
+<h2>Eventos Independientes</h2>
+<p>Dos eventos A y B del mismo espacio muestral S son independientes, si la probabilidad de que ocurra uno no afecta la probabilidad de que el otro ocurra. Lo anterior matemáticamente significa que</p>
+<p>A y B son independientes si:</p>
+<p><span class="math display">\[P(A|B)=P(A)\]</span> o <span class="math display">\[P(B|A)=P(B)\]</span></p>
+<p>Una definición equivalente para eventos independientes es:</p>
+<p>Los eventos A y B son independientes si,</p>
+<p><span class="math display">\[P(A \cap B)= P(A)P(B)\]</span></p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p><strong>Ejemplo 1</strong>:Se lanzan un par de dados legales y distinguibles y se definen los siguientes eventos:</p>
+<p><strong>A: “Que el primer dado sea par.”</strong></p>
+<p><strong>B: “Que el segundo dado sea mayor que 4.”</strong></p>
+<p>¿Son los eventos A y B independientes?</p>
+<p>Tenemos que,</p>
+<p><span class="math display">\[P(A)=18/36 \quad P(B)=12/36\]</span> también tenemos que <span class="math display">\[P(A \cap B)=6/36\]</span></p>
+<p>¿Cómo vefificamos que A y B son independientes?, solo debemos el producto de sus probabilidades es igual a la probabilidad de la intersección. Veamos</p>
+<p><span class="math display">\[P(A)P(B)=18/36*12/36=6/36\]</span> Finalmente podemos decir que A y B son eventos independientes!</p>
+<p><strong>Ejemplo 2</strong>: Un aprendiz para francotirador está practicando en un polígono de tiro y debe presentar una prueba que consta en hacer dos disparos. Según su entrenamiento y basado en resultados anteriores él ha encontrado que la probabilidad de que acierte en el blanco es 0.8, independientemente del disparo que haga. ¿Cuál es la probabilidad de que el aprendiz:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Acierte ambos disparos?</li>
+</ol>
+<p>Definimos los eventos para cada disparo como:</p>
+<p>A: “Acertar en el disparo uno”</p>
+<p>B: “Acertar en el disparo dos”</p>
+<p>Aquí simplemente, como cada disparo es independiente del anterior, tenemos</p>
+<p><span class="math display">\[P(A \cap B)=P(A)P(B)=0.8*0.8=0.64\]</span> La probabilidad de acertar en ambos intentos es 0.64.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Acierte sólo uno de los dos disparos?</li>
+</ol>
+<p>Debemos tener encuenta los complementos,</p>
+<p><span class="math display">\[P(A \cap B^c) + P(A^c \cap B)=P(A)P(B^c) + P(A^c)P(B)=0.8*0.2 + 0.2*0.8=0.16 + 0.16 = 0.32\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Acierte por lo menos un disparo?</li>
+</ol>
+<p><span class="math display">\[P(A \cup B)=P(A)+P(B)-P(A \cap B)=0.8 + 0.8 - 0.64= 0.96\]</span></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>No acierte ninguno de los dos disparos?</li>
+</ol>
+<p>Como <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes, tenemos que,</p>
+<p><span class="math display">\[P(A^c \cap B^c)=P(A^c)P(B^c)=0.2*0.2=0.04\]</span></p>
+<p>La probabilidad de que no de en el blanco en ningún disparo es bien baja, 0.04.</p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
 </div>
 
 
