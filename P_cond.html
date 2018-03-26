@@ -208,6 +208,10 @@ $(document).ready(function () {
 <li><a href="#probabilidad-condicional">Probabilidad condicional</a><ul>
 <li><a href="#regla-del-producto">Regla del producto</a></li>
 </ul></li>
+<li><a href="#probabilidad-total-y-regla-de-bayes">Probabilidad Total y Regla de Bayes</a><ul>
+<li><a href="#probabilidad-total">Probabilidad total</a></li>
+<li><a href="#teorema-de-bayes">Teorema de Bayes</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -292,6 +296,35 @@ $(document).ready(function () {
 <li>¿Al menos uno de los esposos vote?</li>
 </ol>
 <p><span class="math display">\[P(H \cup W)=P(H) + P(W) - P(H \cap W)=0.70 + 0.69 - 0.63 = 0.76\]</span></p>
+</div>
+</div>
+<div id="probabilidad-total-y-regla-de-bayes" class="section level2">
+<h2>Probabilidad Total y Regla de Bayes</h2>
+<div id="probabilidad-total" class="section level3">
+<h3>Probabilidad total</h3>
+</div>
+<div id="teorema-de-bayes" class="section level3">
+<h3>Teorema de Bayes</h3>
+<p>Nos dice con qué fprobabilidad sucede el evento <span class="math inline">\(A\)</span> dado que el evento <span class="math inline">\(B\)</span> ha sucedido, y se escribe como <span class="math inline">\(P(A | B)\)</span>. Cuando sabemos con qué frecuencia ocurre <span class="math inline">\(B\)</span> dado que <span class="math inline">\(A\)</span> sucede, se escribe <span class="math inline">\(P(B | A)\)</span>, y cuán probable que los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> ocurran por separado.</p>
+<div class="figure">
+<img src="bayescat1.png" />
+
+</div>
+<ul>
+<li><span class="math inline">\(P(A | B)\)</span> es la “Probabilidad de A dado B”, la probabilidad de <span class="math inline">\(A\)</span> dado que el evento <span class="math inline">\(B\)</span> ocurre.</li>
+<li><span class="math inline">\(P(A)\)</span> es la probabilidad del evento <span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(P(B | A)\)</span> es la “Probabilidad de B dado A”, la probabilidad de B dado que ocurre el evento <span class="math inline">\(A\)</span>.</li>
+<li><span class="math inline">\(P(B)\)</span> es la probabilidad del evento <span class="math inline">\(B\)</span></li>
+</ul>
+<p>Analicemos el siguiente ejemplo:</p>
+<p>Cuando <strong>P(Fuego)</strong> significa con qué frecuencia hay fuego, y <strong>P(Humo)</strong> significa la frecuencia con que vemos humo, entonces:</p>
+<p><strong>P(Fuego | Humo)</strong> significa con qué frecuencia hay fuego cuando vemos humo. <strong>P(Humo | Fuego)</strong> significa la frecuencia con la que vemos humo cuando hay un incendio.</p>
+<p>Entonces, la fórmula nos dice “como ir haca adelante” cuando sabemos lo que ha ocurrido (o viceversa)</p>
+<blockquote>
+<p>Ejemplos:</p>
+</blockquote>
+<p>Si los incendios peligrosos son poco frecuentes (1%) pero el humo es bastante común (10%) debido a las fábricas, y el 90% de los incendios peligrosos producen humo, entonces:</p>
+<p><span class="math display">\[P(Fuego | Humo) = \dfrac{P(Fuego)*P(Humo | Fuego)}{P(Humo)}=\dfrac{0.01*0.9}{0.10}=0.09\]</span> Entonces encontramos que el 9 % de las veces que vemos humo, este proviene de un incendio peligroso. En otras palabras el 9% de las veces se espera que el humo signifique un incendio peligroso</p>
 <hr />
 <hr />
 <hr />
