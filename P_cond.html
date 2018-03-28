@@ -357,7 +357,7 @@ $(document).ready(function () {
 <p><strong>P(Fuego | Humo)</strong> significa con qué frecuencia hay fuego cuando vemos humo. <strong>P(Humo | Fuego)</strong> significa la frecuencia con la que vemos humo cuando hay un incendio.</p>
 <p>Entonces, la fórmula nos dice “como ir haca adelante” cuando sabemos lo que ha ocurrido (o viceversa)</p>
 <blockquote>
-<p>Ejemplos:</p>
+<p>Ejemplos</p>
 </blockquote>
 <p>Si los incendios peligrosos son poco frecuentes (1%) pero el humo es bastante común (10%) debido a las fábricas, y el 90% de los incendios peligrosos producen humo, entonces:</p>
 <p><span class="math display">\[P(Fuego | Humo) = \dfrac{P(Fuego)*P(Humo | Fuego)}{P(Humo)}=\dfrac{0.01*0.9}{0.10}=0.09\]</span> Entonces encontramos que el 9 % de las veces que vemos humo, este proviene de un incendio peligroso. En otras palabras el 9% de las veces se espera que el humo signifique un incendio peligroso</p>
@@ -398,6 +398,11 @@ $(document).ready(function () {
 <p><span class="math display">\[P(A)=18/36 \quad P(B)=12/36\]</span> también tenemos que <span class="math display">\[P(A \cap B)=6/36\]</span></p>
 <p>¿Cómo vefificamos que A y B son independientes?, solo debemos el producto de sus probabilidades es igual a la probabilidad de la intersección. Veamos</p>
 <p><span class="math display">\[P(A)P(B)=18/36*12/36=6/36\]</span> Finalmente podemos decir que A y B son eventos independientes!</p>
+<p><strong>Nota</strong>: Un error muy común es considerar que los eventos son independientes si son mutuamente excluyentes: observe que esto no es cierto. Por ejemplo, si se lanza una moneda legal una vez y se consideran los eventos</p>
+<p><strong>A: “El resultado obtenido es cara”</strong>.</p>
+<p><strong>B: “En resultado obtenido es cruz”</strong></p>
+<p>Entonces es evidente que los eventos <strong>A</strong> y <strong>B</strong> son mutuamente excluyentes. Sin embargo NO son independientes, pues</p>
+<p><span class="math display">\[P(A \cap B)=0\]</span> y <span class="math display">\[P(A)(B)=1/2*1/2=1/4\]</span> Así vemos que <span class="math inline">\(0 \neq 1/4\)</span>, por tanto A y B no son independientes.</p>
 <p><strong>Ejemplo 2</strong>: Un aprendiz para francotirador está practicando en un polígono de tiro y debe presentar una prueba que consta en hacer dos disparos. Según su entrenamiento y basado en resultados anteriores él ha encontrado que la probabilidad de que acierte en el blanco es 0.8, independientemente del disparo que haga. ¿Cuál es la probabilidad de que el aprendiz:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Acierte ambos disparos?</li>

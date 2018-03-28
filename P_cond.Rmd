@@ -214,7 +214,9 @@ Cuando **P(Fuego)** significa con qué frecuencia hay fuego, y **P(Humo)** signi
 
 Entonces, la fórmula nos dice "como ir haca adelante" cuando sabemos lo que ha ocurrido (o viceversa)
 
-> Ejemplos: 
+
+> Ejemplos
+
 
 Si los incendios peligrosos son poco frecuentes (1%) pero el humo es bastante común (10%) debido a las fábricas, y el 90% de los incendios peligrosos producen humo, entonces:
 
@@ -290,6 +292,19 @@ $$P(A \cap B)=6/36$$
 $$P(A)P(B)=18/36*12/36=6/36$$
 Finalmente podemos decir que A y B son eventos independientes!
 
+
+**Nota**: Un error muy común es considerar que los eventos son independientes si son mutuamente excluyentes: observe que esto no es cierto. Por ejemplo, si se lanza una moneda legal una vez y se consideran los eventos 
+
+**A: "El resultado obtenido es cara"**.
+
+**B: "En resultado obtenido es cruz"**
+
+Entonces es evidente que los eventos **A** y **B** son mutuamente excluyentes. Sin embargo NO son independientes, pues 
+
+$$P(A \cap B)=0$$
+y 
+$$P(A)(B)=1/2*1/2=1/4$$
+Así vemos que $0 \neq 1/4$, por tanto A y B no son independientes.
 
 **Ejemplo 2**: Un aprendiz para francotirador está practicando en un polígono de tiro y debe presentar una prueba que consta en hacer dos disparos. Según su entrenamiento y basado en resultados anteriores él ha encontrado que la probabilidad de que acierte en el blanco es 0.8, independientemente del disparo que haga. ¿Cuál es la probabilidad de que el aprendiz: 
 
