@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Técnicas de Conteo</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Técnicas de Conteo</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#tecnicas-de-conteo">Técnicas de conteo</a><ul>
+<li><a href="#teorema-fundamental-de-conteo">Teorema fundamental de conteo</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="tecnicas-de-conteo" class="section level2">
+<h2>Técnicas de conteo</h2>
+<div id="teorema-fundamental-de-conteo" class="section level3">
+<h3>Teorema fundamental de conteo</h3>
+<p>Si una tarea consiste de <span class="math inline">\(k\)</span> tareas separadas y cada una de ellas se puede hacer de <span class="math inline">\(n_k\)</span> maneras entonces la tarea total se puede hacer de <span class="math inline">\(n_1.n_2...n_k\)</span> maneras.</p>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+<p>¿Cuántas tablillas de vehículos se pueden formar si cada tablilla contiene tres letras y tres dígitos? Asumiendo que se pueden repetir.</p>
+<p>Con repetición de letras o números:</p>
+<p>En total hay 26 × 26 × 26 × 10 × 10 × 10 = 17,576,000 tablillas</p>
+<p>Sin repetición de letras o números:</p>
+<p>En total hay 26 × 25 × 24 × 10 × 9 × 8 = 11,232,000 tablillas</p>
+<blockquote>
+<p>Definición</p>
+</blockquote>
+<p>Para un número entero positivo <span class="math inline">\(n\)</span>, <span class="math inline">\(n!\)</span> (se lee n factorial) es el producto de todos los enteros positivos menores o iguales a n.</p>
+<p>Por ejemplo, <span class="math inline">\(5! = 5.4.3.2.1 = 120\)</span>. Por definición, <span class="math inline">\(0! = 1\)</span>.</p>
+<p><strong>Ejemplo 2</strong>: Supongamos que un juego de lotería consiste en boletos de seis números seleccionados de los números del 1 al 44. ¿Cuántas posibilidades hay de que una persona se gane la lotería? Para contestar esta pregunta debemos considerar si la selección de los números se hace con o sin reemplazo y si el orden de los números seleccionados importa.</p>
+<p><strong>Orden importa, Sin reemplazo</strong>: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Esto es,</p>
+<p><span class="math display">\[44.43.42.41.40.39=5,082,517,440\]</span> En general, este tipo de problemas cuando consideramos que el orden es importante y sin repetición o reemplazo, se resuelven mediante permutaciones. Veamos, <span class="math inline">\(P_r^n\)</span> significa tomar r objetos de uno en uno de un total de n y se lee “n permutado r”. Se define de la siguiente manera:</p>
+<p><span class="math display">\[P_r^n=\dfrac{n!}{(n-r)!} \quad n &gt; 0 \quad y \quad r\leq n\]</span> Recordar que <span class="math inline">\(0!=1\)</span>.</p>
+<p><strong>Orden importa, Con reemplazo</strong>: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 44, y así sucesivamente. Esto es,</p>
+<p><span class="math display">\[44.44.44.44.44.44=44^6=7,256,313,856\]</span> Es decir <span class="math inline">\(n^r\)</span>.</p>
+<p><strong>Orden no importa, Sin reemplazo</strong>: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Sin embargo, como el número (12, 15, 23, 24, 25, 43) es igual a (43, 25, 12, 15, 23, 24) (orden no importa), entonces tenemos que eliminar las redundancias que ocurren al reordenar los seis números seleccionados (esto se puede hacer de 6! formas). Para resolver este problema se usa la definición de “Combinatoria”.</p>
+<p>Si de un total de <span class="math inline">\(n\)</span> elementos se desea seleccionar <span class="math inline">\(r\)</span> de ellos sin importar el orden y sin reeplazo, se tiene:</p>
+<p><span class="math display">\[{n \choose r}=\dfrac{n!}{(n-r)!r!} \quad r\leq n\]</span></p>
+<p>Entonces en nuestro problema tenemos <span class="math inline">\(n=44\)</span> y <span class="math inline">\(r=6\)</span>, por tanto</p>
+<p><span class="math display">\[{44 \choose 6}=\dfrac{44!}{(44-6)!6!}=\dfrac{44!}{38!6!}= 7,059,052\]</span></p>
+<p>Es decir que <span class="math display">\[{44 \choose 6}=7,059,052\]</span></p>
+<p><strong>Orden no importa, Con reemplazo</strong> En general, las posibles formas de seleccionar <span class="math inline">\(r\)</span> objetos con repetición de <span class="math inline">\(n\)</span> objetos cuando el orden no importa esta dado por:</p>
+<p><span class="math display">\[{n+r-1 \choose r}\]</span> Aplicado a nuestro problema tenemos que <span class="math inline">\(n=44\)</span> y <span class="math inline">\(r=6\)</span></p>
+<p><span class="math display">\[{49 \choose 6} = \dfrac{49!}{(49-6)!6!}=\dfrac{49!}{43!6!}=13,983,816\]</span></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+---
+title: "Técnicas de Conteo"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Técnicas de conteo
+
+### Teorema fundamental de conteo 
+
+Si una tarea consiste de $k$ tareas separadas y cada una de ellas se puede hacer de $n_k$ maneras entonces la tarea total se puede hacer de $n_1.n_2...n_k$ maneras.
+
+> Ejemplo
+
+¿Cuántas tablillas de vehículos se pueden formar si cada tablilla contiene tres letras y tres dígitos?  Asumiendo que se pueden repetir. 
+
+Con repetición de letras o números:
+
+En total hay 26 × 26 × 26 × 10 × 10 × 10 = 17,576,000 tablillas 
+
+Sin repetición de letras o números:
+
+En total hay 26 × 25 × 24 × 10 × 9 × 8 = 11,232,000 tablillas 
+
+> Definición
+
+
+Para un número entero positivo $n$, $n!$ (se lee n factorial) es el producto de todos los enteros positivos menores o iguales a n. 
+
+Por ejemplo, $5! = 5.4.3.2.1 = 120$. Por definición, $0! = 1$.
+
+**Ejemplo 2**: Supongamos que un juego de lotería consiste en boletos de seis números seleccionados de los números del 1 al 44. ¿Cuántas posibilidades hay de que una persona se gane la lotería? Para contestar esta pregunta debemos considerar si la selección de los números se hace con o sin reemplazo y si el orden de los números seleccionados importa.
+
+**Orden importa, Sin reemplazo**: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Esto es,
+
+$$44.43.42.41.40.39=5,082,517,440$$
+En general, este tipo de problemas cuando consideramos que el orden es importante y sin repetición o reemplazo, se resuelven mediante permutaciones. Veamos, $P_r^n$ significa tomar r objetos de uno en uno de un total de n y se lee "n permutado r". Se define de la siguiente manera:
+
+
+$$P_r^n=\dfrac{n!}{(n-r)!} \quad n > 0 \quad y \quad r\leq n$$
+Recordar que $0!=1$.
+
+**Orden importa, Con reemplazo**: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 44, y así sucesivamente. Esto es,
+
+$$44.44.44.44.44.44=44^6=7,256,313,856$$
+Es decir $n^r$. 
+
+
+**Orden no importa, Sin reemplazo**: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Sin embargo, como el número (12, 15, 23, 24, 25, 43) es igual a (43, 25, 12, 15, 23, 24) (orden no importa), entonces tenemos que eliminar las redundancias que ocurren al reordenar los seis números seleccionados (esto se puede hacer de 6! formas). Para resolver este problema se usa la definición de "Combinatoria". 
+
+Si de un total de $n$ elementos  se desea seleccionar $r$ de ellos sin importar el orden y sin reeplazo, se tiene:
+
+$${n \choose r}=\dfrac{n!}{(n-r)!r!} \quad r\leq n$$
+
+Entonces en nuestro problema tenemos $n=44$ y $r=6$, por tanto 
+
+$${44 \choose 6}=\dfrac{44!}{(44-6)!6!}=\dfrac{44!}{38!6!}= 7,059,052$$
+
+Es decir que $${44 \choose 6}=7,059,052$$
+
+**Orden no importa, Con reemplazo**  En general, las posibles formas de seleccionar $r$ objetos con repetición de $n$ objetos
+cuando el orden no importa esta dado por:
+
+$${n+r-1 \choose r}$$
+Aplicado a nuestro problema tenemos que $n=44$ y $r=6$
+
+$${49 \choose 6} = \dfrac{49!}{(49-6)!6!}=\dfrac{49!}{43!6!}=13,983,816$$
+
+
+
