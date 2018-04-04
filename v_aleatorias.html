@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Variables Aleatorias Discretas</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Variables Aleatorias Discretas</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#introduccion">Introducción</a></li>
+<li><a href="#variables-aleatorias-discretas">Variables aleatorias discretas</a><ul>
+<li><a href="#funcion-de-probabilidad-pxx_i">Función de probabilidad <span class="math inline">\(P(X=x_i)\)</span></a></li>
+<li><a href="#funcion-de-distribucion-fx">Función de Distribución <span class="math inline">\(F(x)\)</span></a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="introduccion" class="section level2">
+<h2>Introducción</h2>
+<p>Una variable aleatoria es una función de los resultados de un procedimiento de recopilación de datos (Espacio muestral). Convierte los resultados del espacio muestral en un número. Si este número es representativo de la cuenta de algo, entonces es una variable aleatoria discreta. Si este número es representativo de la medida de algo (por ejemplo, la duración, el peso, la velocidad, etc.), entonces es una variable aleatoria continua. En estadística, las variables aleatorias son ligeramente diferentes a las variables utilizadas en álgebra. Dado que las variables aleatorias son una función del espacio muestral <span class="math inline">\(S\)</span>, que tiene resultados aleatorios, las variables aleatorias también implican incertidumbre, y por lo tanto debemos caracterizar esta incertidumbre. La nomenclatura utilizada normalmente (pueden ser más) para una variable aleatoria es <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> o <span class="math inline">\(Z\)</span> (en mayúscula), mientras que los valores específicos de la variable aleatoria se muestran en minúscula <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> o <span class="math inline">\(z\)</span> . La incertidumbre en el valor de una variable aleatoria se cuantifica a través de la probabilidad. En este capítulo, lo que haremos es trabajar con variables aleatorias discretas como una forma de encontrar en general las propiedades de un procedimiento de recopilación de datos como: probabilidades, valor esperado y varianza.</p>
+<ul>
+<li><span class="math inline">\(X:=\)</span> La suma que se obtiene al lanzar un par de dados.</li>
+<li><span class="math inline">\(Y:=\)</span> El número de caras que aparecen al lanzar una moneda tres veces.</li>
+<li><span class="math inline">\(Z:=\)</span> El número de errores que se encuentran en la página de un libro.</li>
+<li><span class="math inline">\(T:=\)</span> El tiempo de vida de una bombilla</li>
+<li><span class="math inline">\(W:=\)</span> El tiempo de espera para ser atendido en un banco</li>
+</ul>
+</div>
+<div id="variables-aleatorias-discretas" class="section level2">
+<h2>Variables aleatorias discretas</h2>
+<p>Como dijimos anteriormente, una variable aleatoria es una función que tomas los valores del espacio muestral y los transforma en números reales. La variable aleatoria es <strong>discreta</strong> si esta toma un número finito o un número contable de valores.</p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p><strong>Ejemplo 1</strong>: Suponga el lanzamiento de tres monedas, sea la variable aleatoria <span class="math inline">\(X\)</span> :=“número de caras”. En este caso, el espacio muestral esta definido por <span class="math inline">\(S = \{CCC, CC+, C++, C+C, +C+, ++C, +CC, +++\}\)</span>. Por ejemplo, cuando evaluamos a <span class="math inline">\(X\)</span> en <span class="math inline">\(S\)</span> para el elemento <span class="math inline">\(\{CCC\}\)</span> encontramos que <span class="math inline">\(X({CCC}) = 3\)</span>, donde <span class="math inline">\(3\)</span> es un número real. Vemos que la variable aleatoria <span class="math inline">\(X\)</span> puede tomar los siguientes valores <span class="math inline">\(\{0, 1, 2, 3\}\)</span>. Estos valores corresponden al dominio de la variable aleatoria.</p>
+<p><strong>Ejemplo 2</strong>: Considere el experimento de lanzar dos dados, y sea la variable aleatoria <span class="math inline">\(Y:=\)</span> ”la suma de los resultados”, entonces encontramos que los valores que podria tomar la variable aleatoria <span class="math inline">\(Y\)</span> son: <span class="math inline">\(\{2,3,4,5,6,7,8,9,10,11,12\}\)</span>.</p>
+<div id="funcion-de-probabilidad-pxx_i" class="section level3">
+<h3>Función de probabilidad <span class="math inline">\(P(X=x_i)\)</span></h3>
+<p>Suponga un espacio muestral <span class="math inline">\(S = \{s1, . . . , sn\}\)</span>, con una función de probabilidad P y un dominio <span class="math inline">\(\{x_1, . . . , x_m\}\)</span>. Entonces <span class="math inline">\(P(X = x_i)\)</span> se conoce como la función de probabilidad inducida sobre el dominio de la variable aleatoria.</p>
+<p><strong>Ejemplo 3</strong>: Retomemos el ejemplo del lanzamiento de tres monedas donde <span class="math inline">\(S =\{CCC, CC+, C + +, C + C, +C+, + + C, +CC, + + +\}\)</span> y <span class="math inline">\(\{0, 1, 2, 3\}\)</span> el dominio. Tenemos que, por ejemplo, si queremos saber cuál es la probabilidad de obtener dos caras, <span class="math inline">\(P(X = 2)\)</span>, es decir,</p>
+<p><span class="math display">\[P(X = 2) = P(\{CC+, C + C, +CC\}) = \dfrac{3}{8}\]</span>.</p>
+<p>Entonces podemos definir la función de probabilidad sobre el dominio de <span class="math inline">\(X\)</span>:</p>
+<span class="math display">\[\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+\dfrac{1}{8} \quad si \quad x = 0\\
+\dfrac{3}{8} \quad si \quad x = 1\\
+\dfrac{3}{8} \quad si \quad x = 2\\
+\dfrac{1}{8} \quad si \quad x = 3
+\end{array}
+\right.
+\end{equation}\]</span>
+<p><strong>Ejemplo 4</strong>: Hallemos la función de probabilidad de la variable aleatoria <span class="math inline">\(X :=\)</span> “número de caras pares al arrojar dos veces un dado equilibrado”. Notamos que el dominio de la variable aleatoria <span class="math inline">\(X\)</span> es {0,1,2}.</p>
+<p><span class="math inline">\(P(X=0)=\dfrac{9}{36}\)</span>, es decir la probabilidad de obtener ninguna cara par.</p>
+<p><span class="math inline">\(P(X=1)=\dfrac{18}{36}\)</span>, es decir la probabilidad de obtener una cara par.</p>
+<p><span class="math inline">\(P(X=0)=\dfrac{9}{36}\)</span>, es decir la probabilidad de obtener las dos caras pares.</p>
+<p>Finalmente la función de probabilidad esta dada por:</p>
+<span class="math display">\[\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+\dfrac{9}{36} \quad si \quad x = 0\\
+\dfrac{18}{36} \quad si \quad x = 1\\
+\dfrac{9}{36} \quad si \quad x = 2
+\end{array}
+\right.
+\end{equation}\]</span>
+<p>La función de probabilidad tiene dos propiedades importantes,</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(P(X=x_i) \geq 0\)</span></p></li>
+<li><p><span class="math inline">\(\sum_{x}P(X=x)=1\)</span></p></li>
+</ol>
+</div>
+<div id="funcion-de-distribucion-fx" class="section level3">
+<h3>Función de Distribución <span class="math inline">\(F(x)\)</span></h3>
+<p>A cada variable aleatoria se le asocia una función llamada función de distribución acumulada de <span class="math inline">\(X\)</span>.</p>
+<p>La función de distribución acumulada (en inglés cdf) de una variable aleatoria <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(F(x)\)</span>, se define como:</p>
+<p><span class="math display">\[F(x) = P(X \leq x), \quad para \quad todo \quad x.\]</span></p>
+<p><strong>Ejemplo 5</strong>: Retomemos la variable aleatoria del ejemplo uno <span class="math inline">\(X:=\)</span> “Número de caras en el lanzamiento de tres monedas”. En este ejemplo <span class="math inline">\(F(x)\)</span> es una función definida a trozos (escalonada) con los saltos iguales a <span class="math inline">\(P(X = x_i)\)</span>. La función está definida en todos los números reales.</p>
+<span class="math display">\[\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+0 \quad si  \quad -\infty &lt; x &lt; 0\\
+\dfrac{1}{8} \quad si \quad 0 \leq x &lt; 1 \\
+\dfrac{4}{8} \quad si \quad 1 \leq x &lt; 2 \\
+\dfrac{7}{8} \quad si \quad 2 \leq x &lt; 3 \\
+1 \quad si \quad   3 \leq x &lt; \infty  \\
+\end{array}
+\right.
+\end{equation}\]</span>
+<p>Por ejemplo,</p>
+<p><span class="math display">\[F(2.5) = P(X ≤ 2.5) = P(X = 0) + P(X = 1) + P(X = 2) =\dfrac{7}{8}\]</span></p>
+<p>De otro lado,</p>
+<p><span class="math display">\[FX(−1) = P(X ≤ −1) = 0\]</span></p>
+<p><span class="math display">\[FX(4) = P(X ≤ 4) = 1\]</span></p>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
