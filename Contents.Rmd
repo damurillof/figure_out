@@ -24,3 +24,5 @@ output: html_document
 
 ### [Técnicas de conteo](https://didier-murillo.netlify.com/count/)
 
+### [Variables aleatorias.](https://didier-murillo.netlify.com/v_aleatorias/)
+

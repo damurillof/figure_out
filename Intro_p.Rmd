@@ -260,6 +260,10 @@ AX3.  $P(\bigcup_{i=1}^{n}A_i)=\sum_{i=1}^{n}(P(A_i))$
 
 si A1, A2, ... son mutuamente excluyentes.
 
+<center>**Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir $A \cap B = \emptyset$**</center>
+
+
+
 
 >  Propiedades de la probabilidad.
 

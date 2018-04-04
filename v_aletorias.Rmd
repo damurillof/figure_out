@@ -1,0 +1,166 @@
+---
+title: "Variables Aleatorias Discretas"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introducción
+
+Una variable aleatoria es una función de los resultados de un procedimiento de recopilación de datos (Espacio muestral). Convierte los resultados del espacio muestral en un número. Si este número es representativo de la cuenta de algo, entonces es una variable aleatoria discreta. Si este número es representativo de la medida de algo (por ejemplo, la duración, el peso, la velocidad, etc.), entonces es una variable aleatoria continua. En estadística, las variables aleatorias son ligeramente diferentes a las variables utilizadas en álgebra. Dado que las variables aleatorias son una función del espacio muestral $S$, que tiene resultados aleatorios, las variables aleatorias también implican incertidumbre, y por lo tanto debemos caracterizar esta incertidumbre. La nomenclatura utilizada normalmente (pueden ser más) para una variable aleatoria es $X$, $Y$ o $Z$ (en mayúscula), mientras que los valores específicos de la variable aleatoria se muestran en minúscula $x$, $y$ o $z$ . La incertidumbre en el valor de una variable aleatoria se cuantifica a través de la probabilidad. En este capítulo, lo que haremos es trabajar con variables aleatorias discretas como una forma de encontrar en general las propiedades de un procedimiento de recopilación de datos como: probabilidades, valor esperado y varianza.
+
+* $X:=$ La suma que se obtiene al lanzar un par de dados.
+* $Y:=$ El número de caras que aparecen al lanzar una moneda tres veces.
+* $Z:=$ El número de errores que se encuentran en la página de un libro.
+* $T:=$ El tiempo de vida de una bombilla
+* $W:=$ El tiempo de espera para ser atendido en un banco
+
+## Variables aleatorias discretas
+
+Como dijimos anteriormente, una variable aleatoria es una función que tomas los valores del espacio muestral y los transforma en números reales. La  variable aleatoria es **discreta** si esta toma un número finito o un número contable de valores.
+
+> Ejemplos
+
+**Ejemplo 1**: Suponga  el lanzamiento de tres monedas, sea la variable aleatoria $X$ :=“número de caras”. En este caso, el espacio muestral esta definido por  $S = \{CCC, CC+, C++, C+C, +C+, ++C, +CC, +++\}$.  Por ejemplo, cuando evaluamos a $X$ en $S$ para el elemento $\{CCC\}$ encontramos que $X({CCC}) = 3$, donde $3$ es un número real. Vemos que la variable aleatoria $X$ puede tomar los siguientes  valores $\{0, 1, 2, 3\}$. Estos valores corresponden al dominio de la variable aleatoria.
+
+
+**Ejemplo 2**: Considere el experimento de lanzar dos dados, y sea la variable aleatoria $Y:=$ ”la suma de los resultados”, entonces encontramos que los valores que podria tomar la variable aleatoria $Y$ son: $\{2,3,4,5,6,7,8,9,10,11,12\}$.
+
+### Función de probabilidad $P(X=x_i)$
+
+Suponga un espacio muestral $S = \{s1, . . . , sn\}$, con una función de probabilidad P y un dominio  $\{x_1, . . . , x_m\}$. Entonces $P(X = x_i)$ se conoce como la función de probabilidad inducida sobre el dominio de la variable aleatoria.
+
+**Ejemplo 3**: Retomemos el ejemplo del lanzamiento de tres monedas donde $S =\{CCC, CC+, C + +, C + C, +C+, + + C, +CC, + + +\}$ y $\{0, 1, 2, 3\}$ el dominio. Tenemos que, por ejemplo, si queremos saber cuál es la probabilidad de obtener dos caras, $P(X = 2)$, es decir,
+
+$$P(X = 2) = P(\{CC+, C + C, +CC\}) = \dfrac{3}{8}$$.
+
+Entonces podemos definir la función de probabilidad sobre el dominio de $X$:
+
+\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+\dfrac{1}{8} \quad si \quad x = 0\\
+\dfrac{3}{8} \quad si \quad x = 1\\
+\dfrac{3}{8} \quad si \quad x = 2\\
+\dfrac{1}{8} \quad si \quad x = 3
+\end{array}
+\right.
+\end{equation}
+
+**Ejemplo 4**:  Hallemos la función de probabilidad  de la variable aleatoria $X :=$ “número de caras pares al arrojar dos veces un dado equilibrado”. Notamos que el dominio de la variable aleatoria $X$  es {0,1,2}. 
+
+$P(X=0)=\dfrac{9}{36}$, es decir la probabilidad de obtener ninguna cara par.
+
+$P(X=1)=\dfrac{18}{36}$, es decir la probabilidad de obtener una cara par.
+
+$P(X=0)=\dfrac{9}{36}$, es decir la probabilidad de obtener las dos caras pares.
+
+Finalmente la función de probabilidad esta dada por:
+
+\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+\dfrac{9}{36} \quad si \quad x = 0\\
+\dfrac{18}{36} \quad si \quad x = 1\\
+\dfrac{9}{36} \quad si \quad x = 2
+\end{array}
+\right.
+\end{equation}
+
+La función de probabilidad tiene dos propiedades importantes,
+
+1.  $P(X=x_i) \geq 0$
+
+2.  $\sum_{x}P(X=x)=1$  
+
+
+
+### Función de Distribución $F(x)$
+
+A cada variable aleatoria se le asocia una función llamada función de distribución acumulada de $X$.
+
+La función de distribución acumulada (en inglés cdf) de una variable aleatoria $X$, denotada por $F(x)$, se define como:
+
+$$F(x) = P(X \leq x), \quad para \quad todo \quad x.$$
+
+**Ejemplo 5**: Retomemos la variable aleatoria del ejemplo uno $X:=$ “Número de caras en el lanzamiento de tres monedas”. En este ejemplo $F(x)$ es una función definida a trozos (escalonada) con los saltos iguales a $P(X = x_i)$. La función está definida en todos los números reales.
+
+
+\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+0 \quad si  \quad -\infty < x < 0\\
+\dfrac{1}{8} \quad si \quad 0 \leq x < 1 \\
+\dfrac{4}{8} \quad si \quad 1 \leq x < 2 \\
+\dfrac{7}{8} \quad si \quad 2 \leq x < 3 \\
+1 \quad si \quad   3 \leq x < \infty  \\
+\end{array}
+\right.
+\end{equation}
+
+
+
+Por ejemplo,
+
+$$F(2.5) = P(X ≤ 2.5) = P(X = 0) + P(X = 1) + P(X = 2) =\dfrac{7}{8}$$
+
+De otro lado,
+
+$$FX(−1) = P(X ≤ −1) = 0$$
+
+$$FX(4) = P(X ≤ 4) = 1$$
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
