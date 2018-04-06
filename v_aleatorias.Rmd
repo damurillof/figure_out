@@ -58,7 +58,7 @@ $P(X=0)=\dfrac{9}{36}$, es decir la probabilidad de obtener ninguna cara par.
 
 $P(X=1)=\dfrac{18}{36}$, es decir la probabilidad de obtener una cara par.
 
-$P(X=0)=\dfrac{9}{36}$, es decir la probabilidad de obtener las dos caras pares.
+$P(X=2)=\dfrac{9}{36}$, es decir la probabilidad de obtener las dos caras pares.
 
 Finalmente la función de probabilidad esta dada por:
 
@@ -92,7 +92,7 @@ $$F(x) = P(X \leq x), \quad para \quad todo \quad x.$$
 
 
 \begin{equation}
-P(X=x) = \left\lbrace
+P(X \leq x) = \left\lbrace
 \begin{array}{ll}
 0 \quad si  \quad -\infty < x < 0\\
 \dfrac{1}{8} \quad si \quad 0 \leq x < 1 \\
@@ -111,13 +111,63 @@ $$F(2.5) = P(X ≤ 2.5) = P(X = 0) + P(X = 1) + P(X = 2) =\dfrac{7}{8}$$
 
 De otro lado,
 
-$$FX(−1) = P(X ≤ −1) = 0$$
+$$F(−1) = P(X ≤ −1) = 0$$
 
-$$FX(4) = P(X ≤ 4) = 1$$
+$$F(4) = P(X ≤ 4) = 1$$
+
+## Valor esperado de una variable aleatoria discreta
+
+Cuando la variable aleatoria es discreta, el valor esperado es igual a la suma de la probabilidad de cada suceso aleatorio multiplicado por cada valor que toma la variable. Por lo tanto, el valor esperado  representa la cantidad media o valor medio que se "esperaría" como resultado de un experimento aleatorio cuando la probabilidad de cada suceso se mantiene constante y el experimento se repite un número elevado de veces. Representamos el valor esperado de una variable aleatoria $X$ como $E(X)$. Entonces,
+
+$$E(X)=\sum_{i=1}^{n}x_iP(X=x_i)$$
+
+**Ejemplo**: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad $P(X=x_i)$ esta dada por:
+
+![](proba.png)
+Si repetimos este experimento muchas veces, ¿cuál sera el valor de la suma que esperamos encontrar?, esta pregunta la podemos resolver usando la definición de valor esperado, es decir calcular E(X).
+
+$E(X)=\sum_{i=1}^{n}x_iP(X=x_i)$\\
+
+$E(X)=2*(1/36)+3*(2/36)+4*(3/36)+5*(4/36)+6*(5/36)+7*(6/36)+8*(5/36)+9*(4/36)+10*(3/36)+11*(2/36)+12*(3/36)$
+
+
+$E(X)=7$
+
+Por tanto, encontramos que el valor esperado E(X) es igual a 7.
+
+## Varianza y desviación estandar.
+
+La Varianza, $Var(X)$, indica la dispersión de la variable aleatoria, o que tan dispersos estan los valores que toma la variable aleatoria alrededor del valor esperado. Una forma de definir la varianza de una variable aleatoria es:
+
+$$Var(X)=E(X^2)-[E(X)]^2$$
+¿A qué es igual la varianza del ejemplo anterior?. Para responder esta pregunta necesitamos saber el valor de $E(X^2)$ dado que se encuentra en la formula de la varianza. 
+
+$E(X^2)=2^2*(1/36)+3^2*(2/36)+4^2*(3/36)+5^2*(4/36)+6^2*(5/36)+7^2*(6/36)+8^2*(5/36)+9^2*(4/36)+10^2*(3/36)+11^2*(2/36)+12^2*(3/36)$
+
+
+$E(X^2)=54.83$
+
+Entonces, por definición de varianza tenemos:
+
+$Var(X)=E(X^2)-[E(X)]^2$
+
+$Var(X)=54.83 - 7^2$
+
+$Var(X)=5.83$
+
+
+La desviación estandar se define como la raiz cuadrada de la varianza
+
+$$SD=\sqrt{Var(X)}=\sqrt{5.83}=2.41$$
+
+
+
+
 
 
 
 ---------------------------------------------------------------------------------------------------------
+
 
 ---------------------------------------------------------------------------------------------------------
 

@@ -11,7 +11,7 @@
 
 
 
-<title>Contenidos ESMA3101.</title>
+<title>Distribuciones discretas de probabilidad</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -199,41 +199,57 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Contenidos ESMA3101.</h1>
+<h1 class="title toc-ignore">Distribuciones discretas de probabilidad</h1>
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#distribucion-de-probabilidad">Distribución de probabilidad</a></li>
+<li><a href="#distribucion-binomial">Distribución Binomial</a></li>
+</ul>
+</div>
 
-<div id="prontuario" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Prontuario.pdf">Prontuario</a></h3>
+<div id="distribucion-de-probabilidad" class="section level2">
+<h2>Distribución de probabilidad</h2>
+<p>En teoría de la probabilidad y estadística, la distribución de probabilidad de una variable aleatoria es una función que asigna a cada suceso la probabilidad de que dicho suceso ocurra.</p>
 </div>
-<div id="algunas-ideas-y-conceptos-basicos" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Intro_Esma3101/">Algunas ideas y conceptos básicos</a></h3>
-</div>
-<div id="introduccion-a-r" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Intro_R/">Introducción a R</a></h3>
-</div>
-<div id="estadistica-descriptiva" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Esta_descrip/">Estadística descriptiva</a></h3>
-</div>
-<div id="medidas-de-tendencia-central-y-variabilidad." class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Medidas/">Medidas de tendencia central y variabilidad.</a></h3>
+<div id="distribucion-binomial" class="section level2">
+<h2>Distribución Binomial</h2>
+<p>Distribución binomial La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener x resultados exitosos en un experimento de n ensayos independientes es la siguiente.</p>
+<p><span class="math display">\[P(X=5)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n\]</span></p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p><strong>Ejemplo</strong>: Una empresa quiere contratar 5 nuevos empleados. De la experiencia previa en anteriores contrataciones saben que aproximadamente 1 de cada 10 solicitantes cumplen todos los requisitos para ser contratados. ¿Cuál es la probabilidad de que si se entrevistan a 20 solicitantes, puedan contratar exactamente las 5 personas?</p>
+<p>Considere cada entrevista como una “prueba” con los únicos dos resultados posibles: “éxito” (puede ser contratado) o “fracaso” (no es adecuado). Suposiciones</p>
+<ol style="list-style-type: decimal">
+<li><p>“Probabilidad de éxito” es la misma para todos los solicitantes (siempre que no sepamos nada más acerca de ellos, esto está bien).</p></li>
+<li><p>Los ensayos son independientes (depende un poco de la configuración de las entrevistas, pero debería estar bien) entonces, si permitimos que <span class="math inline">\(X :=\)</span> “Número de solicitantes adecuados en el grupo de 20” tenemos <span class="math inline">\(X \sim B(20,0.1)\)</span> y encontramos</p></li>
+</ol>
+<p>Entonces debemos encontrar <span class="math inline">\(P(X=5)\)</span>, sabemos que <span class="math inline">\(p=0.1\)</span>, <span class="math inline">\(x=5\)</span> y <span class="math inline">\(n=20\)</span></p>
+<p><span class="math display">\[P(X=5)={20 \choose 5}*(0.1)^5*(0.9)^{20-5}=15504*0.00001*0.2058=0.0319\]</span> Podemos usar <code>RStudio</code> para encontrar esta probabilidad mediante el comando <code>dbinom()</code></p>
+<pre class="r"><code>dbinom(5,20,0.1)</code></pre>
+<pre><code>## [1] 0.03192136</code></pre>
+<p>También podemos preguntarnos sobre la probabilidad de que el empleador pueda contratar a lo más 3 personas, es decir <span class="math inline">\(P(X \leq 3)\)</span></p>
+<p>Entonces para este caso tenemos</p>
+<p><span class="math display">\[P(X \leq 3)=P(X=0)+P(X=1)+P(2)+ P(3)\]</span> <span class="math display">\[P(X \leq 3)={20 \choose 0}*(0.1)^0*(0.9)^{20-0}+{20 \choose 1}*(0.1)^1*(0.9)^{20-1}+{20 \choose 2}*(0.1)^2*(0.9)^{20-2}+ {20 \choose 3}*(0.1)^3*(0.9)^{20-3}\]</span> <span class="math display">\[P(X \leq 3)=0.8670\]</span> Podemos usar <code>RStudio</code> para encontrar este resultado</p>
+<pre class="r"><code>dbinom(0,20,0.1) +dbinom(1,20,0.1)+dbinom(2,20,0.1)+dbinom(3,20,0.1)</code></pre>
+<pre><code>## [1] 0.8670467</code></pre>
 <hr />
-</div>
-<div id="introduccion-a-probabilidad" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/Intro_p/">Introducción a probabilidad</a></h3>
-</div>
-<div id="probabilidad-condicional" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/P_cond/">Probabilidad condicional</a></h3>
-</div>
-<div id="tecnicas-de-conteo" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/count/">Técnicas de conteo</a></h3>
-</div>
-<div id="variables-aleatorias." class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/v_aleatorias/">Variables aleatorias.</a></h3>
-</div>
-<div id="distribuciones-discretas-de-probabilidad-binomial-y-poisson" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/dis_bin/">Distribuciones discretas de probabilidad: Binomial y Poisson</a></h3>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
 </div>
 
 

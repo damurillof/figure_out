@@ -26,3 +26,5 @@ output: html_document
 
 ### [Variables aleatorias.](https://didier-murillo.netlify.com/v_aleatorias/)
 
+### [Distribuciones discretas de probabilidad: Binomial y Poisson](https://didier-murillo.netlify.com/dis_bin/)
+
