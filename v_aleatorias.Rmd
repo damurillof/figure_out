@@ -128,7 +128,7 @@ Si repetimos este experimento muchas veces, ¿cuál sera el valor de la suma que
 
 $E(X)=\sum_{i=1}^{n}x_iP(X=x_i)$\\
 
-$E(X)=2*(1/36)+3*(2/36)+4*(3/36)+5*(4/36)+6*(5/36)+7*(6/36)+8*(5/36)+9*(4/36)+10*(3/36)+11*(2/36)+12*(3/36)$
+$E(X)=2*(1/36)+3*(2/36)+4*(3/36)+5*(4/36)+6*(5/36)+7*(6/36)+8*(5/36)+9*(4/36)+10*(3/36)+11*(2/36)+12*(1/36)$
 
 
 $E(X)=7$
@@ -142,7 +142,7 @@ La Varianza, $Var(X)$, indica la dispersión de la variable aleatoria, o que tan
 $$Var(X)=E(X^2)-[E(X)]^2$$
 ¿A qué es igual la varianza del ejemplo anterior?. Para responder esta pregunta necesitamos saber el valor de $E(X^2)$ dado que se encuentra en la formula de la varianza. 
 
-$E(X^2)=2^2*(1/36)+3^2*(2/36)+4^2*(3/36)+5^2*(4/36)+6^2*(5/36)+7^2*(6/36)+8^2*(5/36)+9^2*(4/36)+10^2*(3/36)+11^2*(2/36)+12^2*(3/36)$
+$E(X^2)=2^2*(1/36)+3^2*(2/36)+4^2*(3/36)+5^2*(4/36)+6^2*(5/36)+7^2*(6/36)+8^2*(5/36)+9^2*(4/36)+10^2*(3/36)+11^2*(2/36)+12^2*(1/36)$
 
 
 $E(X^2)=54.83$

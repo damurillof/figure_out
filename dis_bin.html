@@ -206,7 +206,12 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#distribucion-de-probabilidad">Distribución de probabilidad</a></li>
-<li><a href="#distribucion-binomial">Distribución Binomial</a></li>
+<li><a href="#distribucion-binomial">Distribución Binomial</a><ul>
+<li><a href="#media-y-varianza">Media y varianza</a></li>
+</ul></li>
+<li><a href="#distribucion-poisson">Distribución Poisson</a><ul>
+<li><a href="#media-y-varianza-1">Media y Varianza</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -216,12 +221,18 @@ $(document).ready(function () {
 </div>
 <div id="distribucion-binomial" class="section level2">
 <h2>Distribución Binomial</h2>
-<p>Distribución binomial La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener x resultados exitosos en un experimento de n ensayos independientes es la siguiente.</p>
-<p><span class="math display">\[P(X=5)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n\]</span></p>
+<p>La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener x resultados exitosos en un experimento de n ensayos independientes es la siguiente.</p>
+<p><span class="math display">\[P(X=x)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n\]</span> ### Propiedades de la distribución Binomial</p>
+<ol style="list-style-type: decimal">
+<li><p>Es una distribución de probabilidad discreta con dominio en <span class="math inline">\(\{0,1,2,3,...,n\}\)</span></p></li>
+<li><p>La probabilidad <span class="math inline">\(p\)</span> es constante para todas las repeticiones</p></li>
+<li><p>Los ensayos o intentos son independientes.</p></li>
+<li><p>Hay solo dos posibilidades: Éxito o Fracaso.</p></li>
+</ol>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
-<p><strong>Ejemplo</strong>: Una empresa quiere contratar 5 nuevos empleados. De la experiencia previa en anteriores contrataciones saben que aproximadamente 1 de cada 10 solicitantes cumplen todos los requisitos para ser contratados. ¿Cuál es la probabilidad de que si se entrevistan a 20 solicitantes, puedan contratar exactamente las 5 personas?</p>
+<p><strong>Ejemplo 1</strong>: Una empresa quiere contratar 5 nuevos empleados. De la experiencia previa en anteriores contrataciones saben que aproximadamente 1 de cada 10 solicitantes cumplen todos los requisitos para ser contratados. ¿Cuál es la probabilidad de que si se entrevistan a 20 solicitantes, puedan contratar exactamente las 5 personas?</p>
 <p>Considere cada entrevista como una “prueba” con los únicos dos resultados posibles: “éxito” (puede ser contratado) o “fracaso” (no es adecuado). Suposiciones</p>
 <ol style="list-style-type: decimal">
 <li><p>“Probabilidad de éxito” es la misma para todos los solicitantes (siempre que no sepamos nada más acerca de ellos, esto está bien).</p></li>
@@ -233,9 +244,70 @@ $(document).ready(function () {
 <pre><code>## [1] 0.03192136</code></pre>
 <p>También podemos preguntarnos sobre la probabilidad de que el empleador pueda contratar a lo más 3 personas, es decir <span class="math inline">\(P(X \leq 3)\)</span></p>
 <p>Entonces para este caso tenemos</p>
-<p><span class="math display">\[P(X \leq 3)=P(X=0)+P(X=1)+P(2)+ P(3)\]</span> <span class="math display">\[P(X \leq 3)={20 \choose 0}*(0.1)^0*(0.9)^{20-0}+{20 \choose 1}*(0.1)^1*(0.9)^{20-1}+{20 \choose 2}*(0.1)^2*(0.9)^{20-2}+ {20 \choose 3}*(0.1)^3*(0.9)^{20-3}\]</span> <span class="math display">\[P(X \leq 3)=0.8670\]</span> Podemos usar <code>RStudio</code> para encontrar este resultado</p>
-<pre class="r"><code>dbinom(0,20,0.1) +dbinom(1,20,0.1)+dbinom(2,20,0.1)+dbinom(3,20,0.1)</code></pre>
+<p><span class="math display">\[P(X \leq 3)=P(X=0)+P(X=1)+P(X=2)+ P(X=3)\]</span> <span class="math display">\[P(X \leq 3)={20 \choose 0}*(0.1)^0*(0.9)^{20-0}+{20 \choose 1}*(0.1)^1*(0.9)^{20-1}+{20 \choose 2}*(0.1)^2*(0.9)^{20-2}+ {20 \choose 3}*(0.1)^3*(0.9)^{20-3}\]</span> <span class="math display">\[P(X \leq 3)=0.8670\]</span> Podemos usar <code>RStudio</code> para encontrar este resultado</p>
+<pre class="r"><code>dbinom(0,20,0.1) + dbinom(1,20,0.1) + dbinom(2,20,0.1) + dbinom(3,20,0.1)</code></pre>
 <pre><code>## [1] 0.8670467</code></pre>
+<p><strong>Ejemplo 2</strong>: Supongamos que en un examen de estadística hay doce preguntas de opción múltiple . Cada pregunta tiene cuatro respuestas posibles, y solo una de ellas es correcta. Un estudiante que no estudio para el examen, intenta responder todas las preguntas al azar. Encuentre la probabilidad de que el estudiante tenga cuatro o menos respuestas correctas.</p>
+<p>Como solo una de cada cuantro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta por azar es de p= 1/4 = 0.25.</p>
+<p>La probabilidad de que obtenga cuatro o menos respuestas correctas <span class="math inline">\(P(X \leq x)\)</span> es:</p>
+<p><span class="math display">\[P(X \leq 4)=P(X=0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4)\]</span> Tenemos que,</p>
+<p><span class="math inline">\(P(X = 0)={12 \choose 0}(0.25)^0(0.75)^{12}=0.0316\)</span></p>
+<p><span class="math inline">\(P(X = 1)={12 \choose 1}(0.25)^1(0.75)^{11}=0.1267\)</span></p>
+<p><span class="math inline">\(P(X = 2)={12 \choose 2}(0.25)^2(0.75)^{10}=0.2322\)</span></p>
+<p><span class="math inline">\(P(X = 3)={12 \choose 3}(0.25)^3(0.75)^9=0.2581\)</span></p>
+<p><span class="math inline">\(P(X = 4)={12 \choose 4}(0.25)^4(0.75)^8=0.1935\)</span></p>
+<p>Entonces,</p>
+<p><span class="math display">\[P(X \leq 4)=0.0316 + 0.1267 + 0.2322 + 0.2581 + 0.1935 = 0.8421\]</span> En <code>RStudio</code> se puede resolver de dos formas, la primera calculando la densidad para cada experimento con <code>dbinom()</code> o calculando directamente la acumulada <code>pbinom()</code>. Veamos</p>
+<pre class="r"><code>#Experimentos independientes
+dbinom(0,12,0.25) + dbinom(1,12,0.25) + dbinom(2,12,0.25) +dbinom(3,12,0.25) + dbinom(4,12,0.25)</code></pre>
+<pre><code>## [1] 0.8423563</code></pre>
+<pre class="r"><code>#Función de probabilidad acumulada
+pbinom(4,12,0.25)</code></pre>
+<pre><code>## [1] 0.8423563</code></pre>
+<p><strong>¿Cuál es la probabilidad de que el estudiante responda 5 o más preguntas correctamente?</strong>.En esencia tenemos <span class="math inline">\(P(X \geq 5)\)</span>, y pues esto es lo mismo que <span class="math inline">\(1-P(X &lt; 5)\)</span>, por complemento, es decir</p>
+<p><span class="math display">\[P(X \geq 5)= 1-P(X &lt; 5)=1-0.8421=0.1579\]</span> En <code>RStudio</code> sería</p>
+<pre class="r"><code>#Función de probabilidad acumulada
+1-pbinom(4,12,0.25)</code></pre>
+<pre><code>## [1] 0.1576437</code></pre>
+<div id="media-y-varianza" class="section level3">
+<h3>Media y varianza</h3>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria con distribución binomial, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, su media <span class="math inline">\(E(X)\)</span> y vaianza <span class="math inline">\(Var(X)\)</span> estan definidas como:</p>
+<p><span class="math display">\[E(X)=np\]</span> <span class="math display">\[Var(X)=np(1-p)\]</span></p>
+</div>
+</div>
+<div id="distribucion-poisson" class="section level2">
+<h2>Distribución Poisson</h2>
+<p>La distribución de Poisson es la distribución de probabilidad que modela el número de ocurrencias de eventos independientes en un intervalo. Si <span class="math inline">\(\lambda\)</span> es la ocurrencia promedio por intervalo, entonces la probabilidad de tener x ocurrencias <span class="math inline">\(P(X=x)\)</span> dentro de un intervalo dado es:</p>
+<p><span class="math display">\[P(X=x)=\dfrac{\lambda^xe^{-\lambda}}{x!}\]</span></p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p><strong>Ejemplo 1</strong>: El número de llamadas que llegan por minuto al centro de reservas de un hotel es una variable aleatoria de Poisson con una media de 3.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Encuentre la probabilidad de que no ocurran llamadas en un período de 1 minuto.</li>
+</ol>
+<p>Definamos <span class="math inline">\(X:=\)</span> # de llamadas recibidas por minuto en un hotel.</p>
+<p>Tenemos que <span class="math inline">\(\lambda=3\)</span>, sea <span class="math inline">\(X \sim poiss(3)\)</span>, entonces debemos encontrar <span class="math inline">\(P(X=0)\)</span></p>
+<p><span class="math display">\[P(X=0)=\dfrac{(3)^0e^{-3}}{0!}=0.0497\]</span> En <code>RStudio</code> podemos usar la función <code>dpoiss()</code></p>
+<pre class="r"><code>dpois(0,3)</code></pre>
+<pre><code>## [1] 0.04978707</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de recibir a lo más 3 llamadas por minuto?</li>
+</ol>
+<p>Debemos encontrar <span class="math inline">\(P(X \le 3)\)</span></p>
+<p><span class="math display">\[P(X \le 3)= P(X=0)+P(X=1)+P(X=2)+P(X=3)\]</span></p>
+<p><span class="math display">\[P(X \le 3)= \dfrac{(3)^0e^{-3}}{0!}+\dfrac{(3)^1e^{-3}}{1!}+\dfrac{(3)^2e^{-3}}{2!}+\dfrac{(3)^3e^{-3}}{3!}=0.6472\]</span></p>
+<p>En <code>Rstudio</code> lo podemos calcular de dos maneras:</p>
+<pre class="r"><code>#Ensayos independientes
+dpois(0,3)+dpois(1,3)+dpois(2,3)+dpois(3,3)</code></pre>
+<pre><code>## [1] 0.6472319</code></pre>
+<pre class="r"><code>#Probabilidad acumulada
+ppois(3,3)</code></pre>
+<pre><code>## [1] 0.6472319</code></pre>
+<div id="media-y-varianza-1" class="section level3">
+<h3>Media y Varianza</h3>
+<p>Si <span class="math inline">\(X \sim poiss(\lambda)\)</span> entonces,</p>
+<p><span class="math display">\[E(X)=\lambda\]</span> <span class="math display">\[Var(X)=\lambda\]</span></p>
 <hr />
 <hr />
 <hr />
@@ -250,6 +322,7 @@ $(document).ready(function () {
 <hr />
 <hr />
 <hr />
+</div>
 </div>
 
 
