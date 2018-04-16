@@ -205,13 +205,141 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#distribucion-normal-o-gaussiana.">Distribución Normal o Gaussiana.</a></li>
+<li><a href="#distribucion-normal-o-gaussiana.">Distribución Normal o Gaussiana.</a><ul>
+<li><a href="#distribucion-normal-estandar">Distribución Normal Estándar</a></li>
+<li><a href="#calculo-de-probabilidades-de-la-distribucion-normal-estandar">Cálculo de probabilidades de la distribución Normal estándar</a></li>
+<li><a href="#estandarizacion-de-una-normal">Estandarización de una Normal</a></li>
+<li><a href="#formulas-para-calcular-area-debajo-de-la-curva-normal-estandar">Fórmulas para calcular área debajo de la curva normal estándar</a></li>
+<li><a href="#percentiles-de-una-distribucion-normal">Percentiles de una distribución Normal</a></li>
+<li><a href="#simulando-datos-de-una-distribucion-normal">Simulando datos de una distribución Normal</a></li>
+</ul></li>
 </ul>
 </div>
 
 <div id="distribucion-normal-o-gaussiana." class="section level2">
 <h2>Distribución Normal o Gaussiana.</h2>
-<p>En probabilidad y estadística la distribución normal es la más importante</p>
+<p>En probabilidad y estadística la distribución normal es una de las más importantes. Es llamada también distribución Gaussiana en honor a el matemático, físico y astrónomo alemán K. Gauss, es una distribución continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa la gráfica de la siguiente ecuación.</p>
+<p><span class="math display">\[f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty &lt;x&lt; +\infty\]</span> Si <span class="math inline">\(X\)</span> es una variable aleatoria continua y <span class="math inline">\(X\)</span> se distribuye normalmente entonces se escribe <span class="math inline">\(X \sim Normal(\mu,\sigma)\)</span>, donde <span class="math inline">\(\mu\)</span> es la media y <span class="math inline">\(\sigma\)</span> es la desviación estándar.</p>
+<div class="figure">
+<img src="plotnormal.png" />
+
+</div>
+<div id="distribucion-normal-estandar" class="section level3">
+<h3>Distribución Normal Estándar</h3>
+<p>A la distribución Normal que tiene media <span class="math inline">\(\mu=0\)</span> y desviación estándar <span class="math inline">\(\sigma=1\)</span> se le llama normal estándar y se representa por la letra <span class="math inline">\(Z\)</span>. Las áreas debajo de la curva normal representan las probabilidades estándar y anteriormente eran consultadas en tablas, pero con el auge de las computadoras y los software estadísticos dichas tablas ahora son prácticamente obsoletas.</p>
+<p>El dominio de la distribución normal estándar también está entre menos infinito y más infinito, es decir <span class="math inline">\(-\infty&lt;z&lt;\infty\)</span>, pero el <span class="math inline">\(99.73\)</span> % de la probabilidad bajo la curva se concentra entre <span class="math inline">\(-3&lt;z&lt;3\)</span></p>
+<div class="figure">
+<img src="plotestandar.png" />
+
+</div>
+<p>Como hemos dicho anteriormente la probabilidad total bajo la curva es igual a 1, esto quiere decir que la probabilidad entre <span class="math inline">\(-3\)</span> y <span class="math inline">\(0\)</span> es aproximadamente <span class="math inline">\(0.5\)</span> y que la probabilidad entre <span class="math inline">\(0\)</span> y <span class="math inline">\(3\)</span> es también aproximadamente <span class="math inline">\(0.5\)</span>, esto ocurre dado a que la distribución normal es simétrica.</p>
+</div>
+<div id="calculo-de-probabilidades-de-la-distribucion-normal-estandar" class="section level3">
+<h3>Cálculo de probabilidades de la distribución Normal estándar</h3>
+<p>A continuación vamos a ilustrar el uso de <code>RStudio</code> para calcular probabilidades de la distribución <span class="math inline">\(Z\)</span>, también se puede usar la siguiente función para graficar la respectiva área bajo la curva.</p>
+<pre class="r"><code>plot_area &lt;- function(a,b){
+z=seq(-3,3,length=200)
+F_z=dnorm(z,mean = 0,sd=1)
+plot(z,F_z,type=&quot;l&quot;, lwd=2, col=&quot;black&quot;)
+z=seq(a,b,length=200)
+F_z=dnorm(z,mean = 0,sd=1)
+polygon(c(a,z,b),c(0,F_z,0),col=&quot;blue&quot;)
+axis(side = 1, at=-3:3)
+}</code></pre>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p>Hallar las siguientes probabilidades, dado que <span class="math inline">\(Z \sim Normal(0,1)\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>P (Z &lt; 2)</li>
+</ol>
+<pre class="r"><code>pnorm(2,0,1)</code></pre>
+<pre><code>## [1] 0.9772499</code></pre>
+<pre class="r"><code>plot_area(-3,2)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-2-1.png" width="672" /> b) P ( Z &gt; 1.54)</p>
+<pre class="r"><code>1 - pnorm(1.54,0,1)</code></pre>
+<pre><code>## [1] 0.06178018</code></pre>
+<pre class="r"><code>plot_area(1.54,3)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-3-1.png" width="672" /> c) P (-1 &lt; Z &lt; 1)</p>
+<pre class="r"><code>pnorm(1,0,1) - pnorm(-1,0,1)</code></pre>
+<pre><code>## [1] 0.6826895</code></pre>
+<pre class="r"><code>plot_area(-1,1)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-4-1.png" width="672" /> d) P (Z &lt; 0)</p>
+<pre class="r"><code>pnorm(0,0,1)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre class="r"><code>plot_area(-3,0)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-5-1.png" width="672" /> e) P (Z &gt;-1.95)</p>
+<pre class="r"><code>1 - pnorm(-1.95,0,1)</code></pre>
+<pre><code>## [1] 0.9744119</code></pre>
+<pre class="r"><code>plot_area(-1.95,3)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-6-1.png" width="672" /> f) P (-1.33 &lt; Z &lt; 2.15)</p>
+<pre class="r"><code>pnorm(2.15,0,1) - pnorm(-1.33,0,1)</code></pre>
+<pre><code>## [1] 0.8924633</code></pre>
+<pre class="r"><code>plot_area(-1.33,2.15)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="estandarizacion-de-una-normal" class="section level3">
+<h3>Estandarización de una Normal</h3>
+<p>Dada una variable aleatoria <span class="math inline">\(X\)</span> distribuida Normalmente con media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span> entonces puede ser convertida a una normal estándar mediante el proceso de estandarización, definido por</p>
+<p><span class="math display">\[Z = \dfrac{X - \mu}{\sigma}\]</span>.</p>
+<p>Es decir,</p>
+<p><span class="math display">\[P(Z &lt; \dfrac{X - \mu}{\sigma})\]</span></p>
+</div>
+<div id="formulas-para-calcular-area-debajo-de-la-curva-normal-estandar" class="section level3">
+<h3>Fórmulas para calcular área debajo de la curva normal estándar</h3>
+<p><span class="math inline">\(F_z\)</span> representa la distribución acumulada de la distribución Normal estándar, es decir el área acumulada a la izquierda del valor dado</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(F_z(Z &lt; a)= F_z(a)\)</span>.</p></li>
+<li><p><span class="math inline">\(F_z(Z &gt; a)= 1 - F_z(a)\)</span>.</p></li>
+<li><p><span class="math inline">\(F_z(a &lt;Z &lt; b)= F_z(b) - F_z(a)\)</span>.</p></li>
+</ol>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p>Si <span class="math inline">\(X\)</span> es una población Normal con media <span class="math inline">\(\mu = 70\)</span> y desviación estśndar <span class="math inline">\(\sigma = 10\)</span>. Use el procedimiento de estandarización para hallar las siguientes probabilidades:</p>
+<ol style="list-style-type: lower-alpha">
+<li>P (X &lt; 60)</li>
+</ol>
+<p>Primero debemos estandarizar</p>
+<p><span class="math display">\[P(X &lt;60)=P(Z&lt;\dfrac{60-70}{10})=P(Z&lt; -1)\]</span> Entonces nos resta el trabajo de encontrar en <code>RStudio</code> <span class="math inline">\(P(Z&lt;-1)\)</span>, veamos:</p>
+<pre class="r"><code>pnorm(-1,mean = 0,sd=1)</code></pre>
+<pre><code>## [1] 0.1586553</code></pre>
+<pre class="r"><code>plot_area(-3,-1)</code></pre>
+<p><img src="dNormal_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>P(X &gt; 95)</li>
+</ol>
+<p>Estandarizando tenemos</p>
+<p><span class="math display">\[P(X &gt; 95)= 1 - P(X \leq 95)= 1 - P(Z&lt;\dfrac{95-70}{10})= 1 - P(Z&lt; 2.5)\]</span> Usando <code>RStudio</code></p>
+<pre class="r"><code>1 - pnorm(2.5,mean = 0,sd=1)</code></pre>
+<pre><code>## [1] 0.006209665</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>P (50 &lt; X &lt; 80)</li>
+</ol>
+<p>Aplicando la fórmula para el caso en que <span class="math inline">\(F(a &lt; X &lt; b)= F(b) - F(a)\)</span></p>
+<p><span class="math display">\[P(50 &lt; X &lt; 80)=P(X &lt;80) - P(X &lt; 50)=P(Z &lt; \dfrac{80-70}{10}) - P(Z &lt; \dfrac{50-70}{10})=\]</span> <span class="math display">\[P(Z &lt; 1) - P(Z &lt; -2)\]</span></p>
+<p>Usando <code>RStudio</code></p>
+<pre class="r"><code>pnorm(1,0,1) - pnorm(-2,0,1)</code></pre>
+<pre><code>## [1] 0.8185946</code></pre>
+</div>
+<div id="percentiles-de-una-distribucion-normal" class="section level3">
+<h3>Percentiles de una distribución Normal</h3>
+<p>Si <span class="math inline">\(X \sim Normal(\mu,\sigma)\)</span> y si <span class="math inline">\(X_p\)</span> y <span class="math inline">\(Z_p\)</span> representen sus respectivos percentiles entonces: <span class="math display">\[X_p=\mu+\sigma Z_p\]</span> es el percentil <span class="math inline">\(p\)</span>.</p>
+</div>
+<div id="simulando-datos-de-una-distribucion-normal" class="section level3">
+<h3>Simulando datos de una distribución Normal</h3>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p>Supongamos que deseamos simular 30 notas de una población normal que tiene media <span class="math inline">\(75\)</span> y desviación estándar <span class="math inline">\(10\)</span>.</p>
+<pre class="r"><code># Simular 30 datos con media 75 y desviación 10
+Notas &lt;- rnorm(30,75,10)
+# Redondeando los resultados
+Notas &lt;- round(Notas,digits = 0)
+print(Notas)</code></pre>
+<pre><code>##  [1] 50 78 96 70 77 87 73 66 77 58 88 77 85 84 97 66 88 66 62 64 94 79 73
+## [24] 91 58 75 82 79 48 95</code></pre>
+<p><strong>¿Cuál es la probabilidad que un estudiante tenga más 73 en la nota?</strong></p>
 <hr />
 <hr />
 <hr />
@@ -226,6 +354,7 @@ $(document).ready(function () {
 <hr />
 <hr />
 <hr />
+</div>
 </div>
 
 
