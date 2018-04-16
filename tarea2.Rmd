@@ -60,14 +60,14 @@ d)  $P(A^c|A \cup B)$
 
 e)  $P(A \cap B|A \cup B)$
 
-#### 6. Un estudiante de Matemáticas tiene que presentar el mismo día un examen de probabilidad y uno de estadística. Sean:
+#### 6. Un estudiante del Colegio tiene que presentar el mismo día un examen de Inglés y uno de Estadística. Sean:
 
 
-**$A:=$"El estudiante aprueba el examen de Probabilidad"**
+**$A:=$"El estudiante aprueba el examen de Inglés"**
 
 **$B:=$"El estudiante aprueba el examen de Estadística"**
 
-Si $P(A)=0.4$, $P(B)=0.3$ y $P(A \cap B)=0.2$. ¿A que es igual la probabilidad de que el estudiante apruebe el examen de estadística dado que aprobo el de probabilidad?, ¿A qué es igual la probabilidad de que el estudiante apruebe el examen de probabilidad dado que aprobo el de inglés.?
+Si $P(A)=0.4$, $P(B)=0.3$ y $P(A \cap B)=0.2$. ¿A qué es igual la probabilidad de que el estudiante apruebe el examen de estadística dado que aprobó el de Inglés, ¿A qué es igual la probabilidad de que el estudiante apruebe el examen de Estadística dado que No aprobo el de Inglés?.
 
 
 #### 7. El 5 % de las personas de una población sufren de tensión arterial  alta. De las personas con tensión arterial alta se tiene que el 75 % son consumidores asiduos de bebidas alcohólicas, mientras que el 50 % de las personas sin tensión arterial alta, consumen frecuentemente bebidas alcohólicas.  

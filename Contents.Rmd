@@ -28,10 +28,18 @@ output: html_document
 
 ### [Distribuciones discretas de probabilidad: Binomial y Poisson.](https://didier-murillo.netlify.com/dis_bin/)
 
+### [Distribución Normal](https://didier-murillo.netlify.com/dNormal/)
+
 
 ----------------- 
 
 
-### [Distribución Normal](https://didier-murillo.netlify.com/dNormal/)
+### [Pruebas para evaluar Normalidad](https://didier-murillo.netlify.com/pru_norm/)
+
+
+
+
+
+
 
 
