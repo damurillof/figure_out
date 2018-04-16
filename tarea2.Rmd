@@ -20,15 +20,15 @@ a)  Describir en palabras los siguientes eventos $A \cap B$, $A \cup B$, $A^c$, 
 
 b)  Escriba el espacio muestral $S$ del experimento
 
-#### 2.  Se lanza un dado corrinte dos veces consecutivas. Sean $A$, $B$ y $C$ eventos dados por:
+#### 2.  Se lanza un dado corriente dos veces consecutivas. Sean $A$, $B$ y $C$ eventos dados por:
 
 **A:="El primer resultado obtenido es un número par"**
 
-**B:="La suma de los resultados obtenisdos es menor que 7"**
+**B:="La suma de los resultados obtenidos es menor que 7"**
 
 **C:="El segundo resultado obtenido es un número primo"**
 
-Determinar los elementos que pertencen a los siguienteseventos:
+Determinar los elementos que pertenecen a los siguientes eventos:
 
 a)  $A \cap B \cap C$
 
@@ -39,11 +39,11 @@ c)  $(A \cap B) \cap [(A \cap B)^c]$
 
 #### 3.  Un experimento aleatorio consiste en extraer tres bombillos al azar y clasificarlo como defectuoso "D" o No defectuoso "N". Considere los eventos:
 
-**$A_i:=$"El i-ésimo bombillo extraido es defectuoso"** con $i=1,2,3.$
+**$A_i:=$"El i-ésimo bombillo extraído es defectuoso"** con $i=1,2,3.$
 
 a)  Escribir el espacio muestral $S$ para este experimento
 
-b)  Escriba los elementos que estan en $A_1$, $A_2$, $A_1 \cup A_3$, $A^c_1 \cap A^c_2 \cap A_3$.
+b)  Escriba los elementos que están en $A_1, \quad A_2, \quad (A_1 \cup A_3), \quad  (A^c_1 \cap A^c_2 \cap A_3)$.
 
 
 #### 4.  El 35 % de estudiantes de una universidad de Puerto Rico están inscritos en un curso de Inglés, 7 % están inscritos en un curso de Alemán y el 2 % están inscritos en cursos de Inglés y  Alemán.  ¿Qué porcentaje de estudiantes están inscritos en cursos de inglés pero no de Alemán? ¿Qué porcentaje de estudiantes no están inscritos en Inglés ni en Alemán?
@@ -65,7 +65,7 @@ e)  $P(A \cap B|A \cup B)$
 
 **$A:=$"El estudiante aprueba el examen de Probabilidad"**
 
-**$A:=$"El estudiante aprueba el examen de Estadística"**
+**$B:=$"El estudiante aprueba el examen de Estadística"**
 
 Si $P(A)=0.4$, $P(B)=0.3$ y $P(A \cap B)=0.2$. ¿A que es igual la probabilidad de que el estudiante apruebe el examen de estadística dado que aprobo el de probabilidad?, ¿A qué es igual la probabilidad de que el estudiante apruebe el examen de probabilidad dado que aprobo el de inglés.?
 
@@ -82,7 +82,7 @@ d) 	¿Qué porcentaje de personas tienen tensión arterial alta según su condic
 
 e) 	¿Cuál es  el porcentaje que consumen bebidas alcohólicas con tensión arterial alta?
 
-#### 8.   Se $S$ un espacio muestral y $A,B,C$ eventos del espacio muestral. Se tiene que $P(A)=0.8$, $P(B)=0.5$, $P(C)=0.4$ y $P(A \cap B)=0.2$.
+#### 8.   Sea $S$ un espacio muestral y $A,B,C$ eventos del espacio muestral. Se tiene que $P(A)=0.8$, $P(B)=0.5$, $P(C)=0.4$ y $P(A \cap B)=0.2$.
 
 a)  Supóngase que $A$ y $B$ son independientes. Calcular: $P(A \cap B), \quad P(A \cup B), \quad P(A|B)$
 
@@ -112,6 +112,18 @@ c) Escriba la función de probabilidad acumulada de la variable aleatoria $X$
 
 ####  10.   La mejor amiga de paula la invitó a una fiesta. Como Paula es aún muy pequeña, sus padres condicionan el permiso a que su hermano la acompañe. El hermano de paula reacio a querer acompañarla le propone el siguiente trato: “Tú escoges un número, el que quieras entre 1 y 6; luego lanzamos cuatro veces un dado, si el número que tú escogiste aparece por lo menos dos veces, entonces te acompaño a la fiesta. En caso contrario no te acompaño”. ¿Cuál es la probabilidad de que Paula pueda ir a la fiesta?
 
+#### 11.  En la maquita ATH que está en el Colegio por datos históricos se contabilizan en promedio de 30 retiros de efectivo por cada hora y se puede afirmar que este proceso se rige por una distribución Poisson. 
+
+a) ¿Cuál es la probabilidad de que se realicen menos de 15 retiros en una hora?
+
+b) ¿Cuál es la probabilidad de que se realicen más de 25 retiros entre las 11:00 am y las 01:00 pm?
+
+
+#### 12. El volumen que una máquina de llenado automático deposita en latas de una bebida gaseosa tiene una distribución Normal con media $\mu=12.4$ onzas de líquido y desviación $\sigma=0.1$ onzas de líquido. Use el proceso de estandarización para responder las siguientes preguntas:
+
+a)  ¿Cuál es la probabilidad de que el volumen depositado sea menos que 12 onzas de líquido?
+
+b)  ¿Cuál es el porcentaje de latas de soda con un volumen de líquido entre 12.1 y 12.6 onzas?
 
 
 
