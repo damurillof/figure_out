@@ -1,0 +1,127 @@
+---
+title: "Tarea 2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Fecha de Entrega: Lunes 23 de abril al iniciar la clase.
+
+Resuelva los siguientes problemas:
+
+#### 1.  Se lanza una moneda tres veces  de manera consecutiva. Se definen los siguientes eventos:
+
+**A:="En el primer lanzamiento se obtiene cara"**
+
+**B:="En el tercer lanzamiento se obtiene cruz"**
+
+a)  Describir en palabras los siguientes eventos $A \cap B$, $A \cup B$, $A^c$, $A^c \cap B^c$, $A \cap B^c$
+
+b)  Escriba el espacio muestral $S$ del experimento
+
+#### 2.  Se lanza un dado corrinte dos veces consecutivas. Sean $A$, $B$ y $C$ eventos dados por:
+
+**A:="El primer resultado obtenido es un número par"**
+
+**B:="La suma de los resultados obtenisdos es menor que 7"**
+
+**C:="El segundo resultado obtenido es un número primo"**
+
+Determinar los elementos que pertencen a los siguienteseventos:
+
+a)  $A \cap B \cap C$
+
+b)  $B \cup (A \cap C)^c$
+
+c)  $(A \cap B) \cap [(A \cap B)^c]$
+
+
+#### 3.  Un experimento aleatorio consiste en extraer tres bombillos al azar y clasificarlo como defectuoso "D" o No defectuoso "N". Considere los eventos:
+
+**$A_i:=$"El i-ésimo bombillo extraido es defectuoso"** con $i=1,2,3.$
+
+a)  Escribir el espacio muestral $S$ para este experimento
+
+b)  Escriba los elementos que estan en $A_1$, $A_2$, $A_1 \cup A_3$, $A^c_1 \cap A^c_2 \cap A_3$.
+
+
+#### 4.  El 35 % de estudiantes de una universidad de Puerto Rico están inscritos en un curso de Inglés, 7 % están inscritos en un curso de Alemán y el 2 % están inscritos en cursos de Inglés y  Alemán.  ¿Qué porcentaje de estudiantes están inscritos en cursos de inglés pero no de Alemán? ¿Qué porcentaje de estudiantes no están inscritos en Inglés ni en Alemán?
+
+#### 5.  Sean $A$ y $B$ eventos tales que $P(A)=0.5$, $P(B)=0.3$ y $P(A \cap B)=0.1$, calcular:
+
+a)  $P(A|B)$
+
+b)  $P(A|B^c)$
+
+c)  $P(A|A \cap B)$
+
+d)  $P(A^c|A \cup B)$
+
+e)  $P(A \cap B|A \cup B)$
+
+#### 6. Un estudiante de Matemáticas tiene que presentar el mismo día un examen de probabilidad y uno de estadística. Sean:
+
+
+**$A:=$"El estudiante aprueba el examen de Probabilidad"**
+
+**$A:=$"El estudiante aprueba el examen de Estadística"**
+
+Si $P(A)=0.4$, $P(B)=0.3$ y $P(A \cap B)=0.2$. ¿A que es igual la probabilidad de que el estudiante apruebe el examen de estadística dado que aprobo el de probabilidad?, ¿A qué es igual la probabilidad de que el estudiante apruebe el examen de probabilidad dado que aprobo el de inglés.?
+
+
+#### 7. El 5 % de las personas de una población sufren de tensión arterial  alta. De las personas con tensión arterial alta se tiene que el 75 % son consumidores asiduos de bebidas alcohólicas, mientras que el 50 % de las personas sin tensión arterial alta, consumen frecuentemente bebidas alcohólicas.  
+
+a)	Elabore un diagrama de árbol mostrando los eventos y sus probabilidades.
+
+b)	¿Cuáĺ es la probabilidad de que una persona consuma bebidas alcohólicas y tenga tensión arterial alta?
+
+c) 	¿Cuáĺ es la probabilidad de que una persona no consuma bebidas alcohólicas y no tenga tensión arterial alta?
+
+d) 	¿Qué porcentaje de personas tienen tensión arterial alta según su condición de consumo de alcohol?
+
+e) 	¿Cuál es  el porcentaje que consumen bebidas alcohólicas con tensión arterial alta?
+
+#### 8.   Se $S$ un espacio muestral y $A,B,C$ eventos del espacio muestral. Se tiene que $P(A)=0.8$, $P(B)=0.5$, $P(C)=0.4$ y $P(A \cap B)=0.2$.
+
+a)  Supóngase que $A$ y $B$ son independientes. Calcular: $P(A \cap B), \quad P(A \cup B), \quad P(A|B)$
+
+b)  ¿Son los eventos $A$ y $C$ independientes?. Explicar!
+
+c) Calcular $P(A \cup C^c), \quad P(A | C^c), \quad P(C|A)$
+
+#### 9.   Sea $X$ una variable  aleatoria discreta con la función de probabilidad dada por:
+
+\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+\dfrac{1}{7} \quad si \quad x = -1\\
+\dfrac{2}{7} \quad si \quad x = 0\\
+\dfrac{1}{7} \quad si \quad x = 1\\
+\dfrac{2}{7} \quad si \quad x = 2\\
+\dfrac{1}{7} \quad si \quad x = 3
+\end{array}
+\right.
+\end{equation}
+
+a) Calcular el valor esperado de $X$
+
+b) Calcular la varianza y desviación estándar de $X$
+
+c) Escriba la función de probabilidad acumulada de la variable aleatoria $X$
+
+####  10.   La mejor amiga de paula la invitó a una fiesta. Como Paula es aún muy pequeña, sus padres condicionan el permiso a que su hermano la acompañe. El hermano de paula reacio a querer acompañarla le propone el siguiente trato: “Tú escoges un número, el que quieras entre 1 y 6; luego lanzamos cuatro veces un dado, si el número que tú escogiste aparece por lo menos dos veces, entonces te acompaño a la fiesta. En caso contrario no te acompaño”. ¿Cuál es la probabilidad de que Paula pueda ir a la fiesta?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

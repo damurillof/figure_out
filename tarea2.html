@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Tarea 2</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Tarea 2</h1>
+
+</div>
+
+
+<div id="fecha-de-entrega-lunes-23-de-abril-al-iniciar-la-clase." class="section level2">
+<h2>Fecha de Entrega: Lunes 23 de abril al iniciar la clase.</h2>
+<p>Resuelva los siguientes problemas:</p>
+<div id="se-lanza-una-moneda-tres-veces-de-manera-consecutiva.-se-definen-los-siguientes-eventos" class="section level4">
+<h4>1. Se lanza una moneda tres veces de manera consecutiva. Se definen los siguientes eventos:</h4>
+<p><strong>A:=“En el primer lanzamiento se obtiene cara”</strong></p>
+<p><strong>B:=“En el tercer lanzamiento se obtiene cruz”</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Describir en palabras los siguientes eventos <span class="math inline">\(A \cap B\)</span>, <span class="math inline">\(A \cup B\)</span>, <span class="math inline">\(A^c\)</span>, <span class="math inline">\(A^c \cap B^c\)</span>, <span class="math inline">\(A \cap B^c\)</span></p></li>
+<li><p>Escriba el espacio muestral <span class="math inline">\(S\)</span> del experimento</p></li>
+</ol>
+</div>
+<div id="se-lanza-un-dado-corrinte-dos-veces-consecutivas.-sean-a-b-y-c-eventos-dados-por" class="section level4">
+<h4>2. Se lanza un dado corrinte dos veces consecutivas. Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> eventos dados por:</h4>
+<p><strong>A:=“El primer resultado obtenido es un número par”</strong></p>
+<p><strong>B:=“La suma de los resultados obtenisdos es menor que 7”</strong></p>
+<p><strong>C:=“El segundo resultado obtenido es un número primo”</strong></p>
+<p>Determinar los elementos que pertencen a los siguienteseventos:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(A \cap B \cap C\)</span></p></li>
+<li><p><span class="math inline">\(B \cup (A \cap C)^c\)</span></p></li>
+<li><p><span class="math inline">\((A \cap B) \cap [(A \cap B)^c]\)</span></p></li>
+</ol>
+</div>
+<div id="un-experimento-aleatorio-consiste-en-extraer-tres-bombillos-al-azar-y-clasificarlo-como-defectuoso-d-o-no-defectuoso-n.-considere-los-eventos" class="section level4">
+<h4>3. Un experimento aleatorio consiste en extraer tres bombillos al azar y clasificarlo como defectuoso “D” o No defectuoso “N”. Considere los eventos:</h4>
+<p><strong><span class="math inline">\(A_i:=\)</span>“El i-ésimo bombillo extraido es defectuoso”</strong> con <span class="math inline">\(i=1,2,3.\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Escribir el espacio muestral <span class="math inline">\(S\)</span> para este experimento</p></li>
+<li><p>Escriba los elementos que estan en <span class="math inline">\(A_1\)</span>, <span class="math inline">\(A_2\)</span>, <span class="math inline">\(A_1 \cup A_3\)</span>, <span class="math inline">\(A^c_1 \cap A^c_2 \cap A_3\)</span>.</p></li>
+</ol>
+</div>
+<div id="el-35-de-estudiantes-de-una-universidad-de-puerto-rico-estan-inscritos-en-un-curso-de-ingles-7-estan-inscritos-en-un-curso-de-aleman-y-el-2-estan-inscritos-en-cursos-de-ingles-y-aleman.-que-porcentaje-de-estudiantes-estan-inscritos-en-cursos-de-ingles-pero-no-de-aleman-que-porcentaje-de-estudiantes-no-estan-inscritos-en-ingles-ni-en-aleman" class="section level4">
+<h4>4. El 35 % de estudiantes de una universidad de Puerto Rico están inscritos en un curso de Inglés, 7 % están inscritos en un curso de Alemán y el 2 % están inscritos en cursos de Inglés y Alemán. ¿Qué porcentaje de estudiantes están inscritos en cursos de inglés pero no de Alemán? ¿Qué porcentaje de estudiantes no están inscritos en Inglés ni en Alemán?</h4>
+</div>
+<div id="sean-a-y-b-eventos-tales-que-pa0.5-pb0.3-y-pa-cap-b0.1-calcular" class="section level4">
+<h4>5. Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> eventos tales que <span class="math inline">\(P(A)=0.5\)</span>, <span class="math inline">\(P(B)=0.3\)</span> y <span class="math inline">\(P(A \cap B)=0.1\)</span>, calcular:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(A|B)\)</span></p></li>
+<li><p><span class="math inline">\(P(A|B^c)\)</span></p></li>
+<li><p><span class="math inline">\(P(A|A \cap B)\)</span></p></li>
+<li><p><span class="math inline">\(P(A^c|A \cup B)\)</span></p></li>
+<li><p><span class="math inline">\(P(A \cap B|A \cup B)\)</span></p></li>
+</ol>
+</div>
+<div id="un-estudiante-de-matematicas-tiene-que-presentar-el-mismo-dia-un-examen-de-probabilidad-y-uno-de-estadistica.-sean" class="section level4">
+<h4>6. Un estudiante de Matemáticas tiene que presentar el mismo día un examen de probabilidad y uno de estadística. Sean:</h4>
+<p><strong><span class="math inline">\(A:=\)</span>“El estudiante aprueba el examen de Probabilidad”</strong></p>
+<p><strong><span class="math inline">\(A:=\)</span>“El estudiante aprueba el examen de Estadística”</strong></p>
+<p>Si <span class="math inline">\(P(A)=0.4\)</span>, <span class="math inline">\(P(B)=0.3\)</span> y <span class="math inline">\(P(A \cap B)=0.2\)</span>. ¿A que es igual la probabilidad de que el estudiante apruebe el examen de estadística dado que aprobo el de probabilidad?, ¿A qué es igual la probabilidad de que el estudiante apruebe el examen de probabilidad dado que aprobo el de inglés.?</p>
+</div>
+<div id="el-5-de-las-personas-de-una-poblacion-sufren-de-tension-arterial-alta.-de-las-personas-con-tension-arterial-alta-se-tiene-que-el-75-son-consumidores-asiduos-de-bebidas-alcoholicas-mientras-que-el-50-de-las-personas-sin-tension-arterial-alta-consumen-frecuentemente-bebidas-alcoholicas." class="section level4">
+<h4>7. El 5 % de las personas de una población sufren de tensión arterial alta. De las personas con tensión arterial alta se tiene que el 75 % son consumidores asiduos de bebidas alcohólicas, mientras que el 50 % de las personas sin tensión arterial alta, consumen frecuentemente bebidas alcohólicas.</h4>
+<ol style="list-style-type: lower-alpha">
+<li><p>Elabore un diagrama de árbol mostrando los eventos y sus probabilidades.</p></li>
+<li><p>¿Cuáĺ es la probabilidad de que una persona consuma bebidas alcohólicas y tenga tensión arterial alta?</p></li>
+<li><p>¿Cuáĺ es la probabilidad de que una persona no consuma bebidas alcohólicas y no tenga tensión arterial alta?</p></li>
+<li><p>¿Qué porcentaje de personas tienen tensión arterial alta según su condición de consumo de alcohol?</p></li>
+<li><p>¿Cuál es el porcentaje que consumen bebidas alcohólicas con tensión arterial alta?</p></li>
+</ol>
+</div>
+<div id="se-s-un-espacio-muestral-y-abc-eventos-del-espacio-muestral.-se-tiene-que-pa0.8-pb0.5-pc0.4-y-pa-cap-b0.2." class="section level4">
+<h4>8. Se <span class="math inline">\(S\)</span> un espacio muestral y <span class="math inline">\(A,B,C\)</span> eventos del espacio muestral. Se tiene que <span class="math inline">\(P(A)=0.8\)</span>, <span class="math inline">\(P(B)=0.5\)</span>, <span class="math inline">\(P(C)=0.4\)</span> y <span class="math inline">\(P(A \cap B)=0.2\)</span>.</h4>
+<ol style="list-style-type: lower-alpha">
+<li><p>Supóngase que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes. Calcular: <span class="math inline">\(P(A \cap B), \quad P(A \cup B), \quad P(A|B)\)</span></p></li>
+<li><p>¿Son los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(C\)</span> independientes?. Explicar!</p></li>
+<li><p>Calcular <span class="math inline">\(P(A \cup C^c), \quad P(A | C^c), \quad P(C|A)\)</span></p></li>
+</ol>
+</div>
+<div id="sea-x-una-variable-aleatoria-discreta-con-la-funcion-de-probabilidad-dada-por" class="section level4">
+<h4>9. Sea <span class="math inline">\(X\)</span> una variable aleatoria discreta con la función de probabilidad dada por:</h4>
+<span class="math display">\[\begin{equation}
+P(X=x) = \left\lbrace
+\begin{array}{ll}
+\dfrac{1}{7} \quad si \quad x = -1\\
+\dfrac{2}{7} \quad si \quad x = 0\\
+\dfrac{1}{7} \quad si \quad x = 1\\
+\dfrac{2}{7} \quad si \quad x = 2\\
+\dfrac{1}{7} \quad si \quad x = 3
+\end{array}
+\right.
+\end{equation}\]</span>
+<ol style="list-style-type: lower-alpha">
+<li><p>Calcular el valor esperado de <span class="math inline">\(X\)</span></p></li>
+<li><p>Calcular la varianza y desviación estándar de <span class="math inline">\(X\)</span></p></li>
+<li><p>Escriba la función de probabilidad acumulada de la variable aleatoria <span class="math inline">\(X\)</span></p></li>
+</ol>
+</div>
+<div id="la-mejor-amiga-de-paula-la-invito-a-una-fiesta.-como-paula-es-aun-muy-pequena-sus-padres-condicionan-el-permiso-a-que-su-hermano-la-acompane.-el-hermano-de-paula-reacio-a-querer-acompanarla-le-propone-el-siguiente-trato-tu-escoges-un-numero-el-que-quieras-entre-1-y-6-luego-lanzamos-cuatro-veces-un-dado-si-el-numero-que-tu-escogiste-aparece-por-lo-menos-dos-veces-entonces-te-acompano-a-la-fiesta.-en-caso-contrario-no-te-acompano.-cual-es-la-probabilidad-de-que-paula-pueda-ir-a-la-fiesta" class="section level4">
+<h4>10. La mejor amiga de paula la invitó a una fiesta. Como Paula es aún muy pequeña, sus padres condicionan el permiso a que su hermano la acompañe. El hermano de paula reacio a querer acompañarla le propone el siguiente trato: “Tú escoges un número, el que quieras entre 1 y 6; luego lanzamos cuatro veces un dado, si el número que tú escogiste aparece por lo menos dos veces, entonces te acompaño a la fiesta. En caso contrario no te acompaño”. ¿Cuál es la probabilidad de que Paula pueda ir a la fiesta?</h4>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
