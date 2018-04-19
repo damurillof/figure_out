@@ -82,7 +82,7 @@ d) 	¿Qué porcentaje de personas tienen tensión arterial alta según su condic
 
 e) 	¿Cuál es  el porcentaje que consumen bebidas alcohólicas con tensión arterial alta?
 
-#### 8.   Sea $S$ un espacio muestral y $A,B,C$ eventos del espacio muestral. Se tiene que $P(A)=0.8$, $P(B)=0.5$, $P(C)=0.4$ y $P(A \cap B)=0.2$.
+#### 8.   Sea $S$ un espacio muestral y $A,B,C$ eventos del espacio muestral. Se tiene que $P(A)=0.8$, $P(B)=0.5$, $P(C)=0.4$ y $P(A \cap C)=0.2$.
 
 a)  Supóngase que $A$ y $B$ son independientes. Calcular: $P(A \cap B), \quad P(A \cup B), \quad P(A|B)$
 
