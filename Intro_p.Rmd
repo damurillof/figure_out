@@ -13,19 +13,18 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Algunas preguntas de investigación
 
 
-Los estudios de investigación se llevan a cabo para responder algún tipo de pregunta (s) de investigación. Por ejemplo, los investigadores del Vegan Health Study definen al menos ocho preguntas principales que les gustaría responder sobre la salud de las personas que consumen una dieta totalmente libre de animales (sin carne, sin lácteos, sin huevos). Recientemente se realizó otro estudio de investigación para determinar si las personas que toman los analgésicos Vioxx o Celebrex corren un mayor riesgo de ataques cardíacos que las personas que no los toman. La lista continua. Los investigadores trabajan todos los días para responder sus preguntas de investigación.
+Los estudios de investigación se llevan a cabo para responder algún tipo de pregunta (s) de investigación. Por ejemplo, los investigadores del Vegan Health Study definen al menos ocho preguntas principales qué les gustaría responder sobre la salud de las personas que consumen una dieta totalmente libre de animales (sin carne, sin lácteos, sin huevos). Recientemente se realizó otro estudio de investigación para determinar si las personas que toman los analgésicos Vioxx o Celebrex corren un mayor riesgo de ataques cardíacos que las personas que no los toman. La lista continúa. Los investigadores trabajan todos los días para responder sus preguntas de investigación.
+
 
 ¿Qué piensas sobre estas preguntas de investigación?
 
-¿Qué porcentaje de estudiantes universitarios se siente privado de sueño?
-¿Cuál es la probabilidad de que un estudiante de PSU seleccionado al azar tenga más de siete horas de sueño cada noche?
-Por lo general, las mujeres compran más ropa  que los hombres?
-¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?
-Suponiendo que las preguntas anteriores no nos interesan mucho, ¿Podemos formular algunas preguntas de investigación que realmente nos interesen?
 
-Si intentáramos responder a nuestras preguntas de investigación, pronto nos daríamos cuenta de que no podríamos preguntar a todas las personas de la población por ejemplo si se sienten privadas de sueño, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen.
+¿Qué porcentaje de estudiantes universitarios se siente privado de sueño? ¿Cuál es la probabilidad de que un estudiante del Colegio seleccionado al azar tenga más de siete horas de sueño cada noche? Por lo general, las mujeres compran más ropa que los hombres? ¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101? Suponiendo que las preguntas anteriores no nos interesan mucho, ¿Podemos formular algunas preguntas de investigación que realmente nos interesen?
+Si intentamos responder a nuestras preguntas de investigación, pronto nos daríamos cuenta de que no podríamos preguntar a todas las personas de la población por ejemplo si se sienten privadas de sueño, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen.
 
-¿Cómo podemos responder nuestras preguntas de  investigación si no podemos preguntarle a cada persona de la población?
+
+¿Cómo podemos responder nuestras preguntas de investigación si no podemos preguntarle a cada persona de la población?
+
 
 ### Poblaciones y muestras aleatorias
 
