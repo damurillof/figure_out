@@ -8,6 +8,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ## Fecha de Entrega: Lunes 23 de abril al iniciar la clase.
 
+### Puntuación: 60 puntos
+
 Resuelva los siguientes problemas:
 
 #### 1.  Se lanza una moneda tres veces  de manera consecutiva. Se definen los siguientes eventos:
