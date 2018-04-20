@@ -1,0 +1,72 @@
+---
+title: "Laboratorio 2"
+date: "April 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Al finalizar debe enviar el laboratorio resuelto en formato pdf vía correo electrónico. El informe debe incluir el respectivo código de R y los RESULTADOS. Informes enviados después de la clase no serán aceptados. 
+
+#### Use R y/o RStudio para resolver las siguientes preguntas:
+
+#### Total puntuación: 7 puntos de Bono
+
+1. Suponga que $X$ representa el número de llamadas que recibe un Call center en un minuto, con un promedio de 25 llamadas por minuto. Calcular:
+
+a)  $P(X > 12)$
+
+b)  $P(X \leq 10)$
+
+c)  $P(X = 10)$
+
+d)  $P(23 \leq X \leq 28)$
+
+e)  $P(X \geq 30)$
+
+
+2. Una forma de realizar encuestas es via correo electronico, pero este método tiene una desventaja y es que la probabilidad de que una persona devuelva la información solicitada es muy baja ($p=0.08$). Suponga $Y$ el número de encuestas que son devueltas satisfactoriamente de un total de 400 encuestas que fueron enviadas. Calcular 
+
+a)  $P(Y = 100)$
+
+b)  $P(Y \leq 150)$
+
+c)  $P(50 \leq Y \leq 90)$
+
+d)  $P(Y < 20)$
+
+e)  $P(Y \geq 50)$
+
+3. Use la data `bdims` que se encuentra en el siguiente enlace, debe ejecutarlo en la consola.
+
+```{r }
+load(url("http://www.openintro.org/stat/data/bdims.RData"))
+```
+
+Luego debe formar dos tablas de datos una para el sexo masculino y otra para el sexo femenino:
+
+```{r }
+mdims <- subset(bdims, sex == 1)
+fdims <- subset(bdims, sex == 0)
+```
+
+
+a)  Elabora un histograma de las alturas de los hombres y un histograma de las alturas de las mujeres (Variable `hgt`). ¿Cómo compararías los diversos aspectos de las dos distribuciones? ¿Para usted cuál de las dos poblaciones se asemeja a una distribución normal?
+
+b)  Responda: Use la función `pnorm()` directamente con las respectivas medias y desviaciones. 
+
+¿Cuál es la probabilidad de que una mujer adulta  elegida al azar tenga una altura menor que 5'3'' (~ 160 cm)?
+
+
+¿Cuál es la probabilidad de que una mujer adulta  elegida al azar pese más de 54 kg?
+
+
+¿Cuál es la probabilidad de que un hombre adulto  elegido al azar pese más de 54 kg?
+
+c)  Responda las preguntas anteriores usando el método de estandarización. Compare los resultados. 
+
+
+
+

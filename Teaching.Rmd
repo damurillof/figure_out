@@ -25,6 +25,9 @@ Aquí esta el enlace para la página web del curso:
 #### 1.   [Laboratorio 1](https://didier-murillo.netlify.com/Lab1/)
 
 
+#### 2.   [Laboratorio 2](https://didier-murillo.netlify.com/Lab2/)
+
+
 > Exámenes
 
 ##### Primer examen parcial miércoles 21 de marzo de 2018. Horario de la Clase. 
