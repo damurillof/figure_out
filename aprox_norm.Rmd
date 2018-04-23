@@ -1,0 +1,22 @@
+---
+title: "Aproximación Normal"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+En algunos casos una Distributión Binomial puede aproximarse por una Distributión Normal (que tenga la misma media y varianza).
+
+Si X es una variable aleatoria con una Distribución Normal podemos escribir:
+
+
+$$X \sim Binom(n,p)$$
+
+Entonces, si Y es una variable aleatoria Normal con la misma media y varianza:
+
+$$X \sim Normal(np,\sqrt{np(1-p)})$$
+
+
+Si n es "bastante grande" y p está "próximo a" 0.5, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la Distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión). 
