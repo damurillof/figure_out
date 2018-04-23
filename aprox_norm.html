@@ -208,8 +208,38 @@ $(document).ready(function () {
 <p>Si X es una variable aleatoria con una Distribución Normal podemos escribir:</p>
 <p><span class="math display">\[X \sim Binom(n,p)\]</span></p>
 <p>Entonces, si Y es una variable aleatoria Normal con la misma media y varianza:</p>
-<p><span class="math display">\[X \sim Normal(np,\sqrt{np(1-p)})\]</span></p>
+<p><span class="math inline">\(\mu=np\)</span></p>
+<p><span class="math inline">\(\sigma=\sqrt{np(1-p)}\)</span></p>
+<p><span class="math display">\[X \sim Normal(\mu,\sigma)\]</span></p>
 <p>Si n es “bastante grande” y p está “próximo a” 0.5, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la Distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión).</p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p>Entonces, como ejemplo, considere lanzar una moneda 100 veces e intentar encontrar la probabilidad de obtener 47 veces cruz.</p>
+<p>Matematicamente tenemos</p>
+<p>Usando Distribución Binomial:</p>
+<p><span class="math display">\[P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066\]</span></p>
+<p>Usando una aproximación a la distribución Normal:</p>
+<p>Tenemos que:</p>
+<p><span class="math inline">\(\mu=np=100*0.5=50\)</span></p>
+<p><span class="math inline">\(\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5\)</span></p>
+<p>Entonces supongamos <span class="math inline">\(Y\)</span> una variable aleatoria normal</p>
+<p><span class="math display">\[Y \sim Normal(50,5)\]</span> Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular de 46.5 a 47.5 usando normalización.</p>
+<p><span class="math display">\[Z_1=\dfrac{46.5-50}{5}=-0.7\]</span></p>
+<p><span class="math display">\[Z_2=\dfrac{47.5-50}{5}=-0.5\]</span> Usando R encontramos que</p>
+<p>Y a partir de una tabla de puntuación z, sabemos que:</p>
+<p><span class="math inline">\(z_1 = -0.7\)</span> tiene una probabilidad de .2420</p>
+<p><span class="math inline">\(z_2 = -0.5\)</span> tiene una probabilidad de .3085</p>
+<p>Restando los dos nos da una probabilidad de 0.0665 o 6.65 %.</p>
+<blockquote>
+<p>Realizando todo el procedimiento en RStudio</p>
+</blockquote>
+<pre class="r"><code>dbinom(x = 47, size = 100, prob = .5)</code></pre>
+<pre><code>## [1] 0.0665905</code></pre>
+<pre class="r"><code>dnorm(x = 47, mean = 50, sd = 5)</code></pre>
+<pre><code>## [1] 0.06664492</code></pre>
+<pre class="r"><code>pnorm(q = 47.5, mean = 50, sd = 5) - pnorm(q = 46.5, mean = 50, sd = 5)</code></pre>
+<pre><code>## [1] 0.06657389</code></pre>
 
 
 

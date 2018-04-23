@@ -16,7 +16,68 @@ $$X \sim Binom(n,p)$$
 
 Entonces, si Y es una variable aleatoria Normal con la misma media y varianza:
 
-$$X \sim Normal(np,\sqrt{np(1-p)})$$
+$\mu=np$
 
+$\sigma=\sqrt{np(1-p)}$
+
+$$X \sim Normal(\mu,\sigma)$$
 
 Si n es "bastante grande" y p está "próximo a" 0.5, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la Distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión). 
+
+
+> Ejemplos
+
+
+Entonces, como ejemplo, considere lanzar una moneda 100 veces e intentar encontrar la probabilidad de obtener 47 veces cruz.
+
+Matematicamente tenemos 
+
+Usando Distribución Binomial:
+
+
+$$P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066$$
+
+Usando una aproximación a la  distribución Normal:
+
+
+Tenemos que:
+
+
+$\mu=np=100*0.5=50$
+
+
+$\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5$
+
+Entonces supongamos $Y$ una variable aleatoria normal 
+
+$$Y \sim Normal(50,5)$$
+Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular de 46.5 a 47.5 usando normalización.
+
+$$Z_1=\dfrac{46.5-50}{5}=-0.7$$
+
+$$Z_2=\dfrac{47.5-50}{5}=-0.5$$
+Usando R encontramos que 
+
+
+Y a partir de una tabla de puntuación z, sabemos que:
+
+
+$z_1 = -0.7$ tiene una probabilidad de .2420
+
+
+$z_2 = -0.5$ tiene una probabilidad de .3085
+
+Restando los dos nos da una probabilidad de 0.0665 o 6.65 %.
+
+> Realizando todo el procedimiento en RStudio
+
+```{r}
+dbinom(x = 47, size = 100, prob = .5)
+dnorm(x = 47, mean = 50, sd = 5)
+pnorm(q = 47.5, mean = 50, sd = 5) - pnorm(q = 46.5, mean = 50, sd = 5)
+
+```
+
+
+
+
