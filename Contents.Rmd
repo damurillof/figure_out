@@ -38,6 +38,8 @@ output: html_document
 
 ### [Aproximación Normal de la distribución Binomial](https://didier-murillo.netlify.com/aprox_norm/)
 
+### [Distribuciones Muestrales](https://didier-murillo.netlify.com/d_muestral/)
+
 
 
 
