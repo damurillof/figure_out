@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Distribuciones Muestrales</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Distribuciones Muestrales</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#distribuciones-muestrales">Distribuciones Muestrales</a><ul>
+<li><a href="#distribucion-de-la-media-muestral-cuando-la-poblacion-es-normal">Distribución de la media muestral cuando la población es normal</a></li>
+<li><a href="#el-teorema-del-limite-central">El Teorema del Límite Central</a></li>
+<li><a href="#distribucion-de-la-proporcion-muestral">Distribución de la Proporción Muestral</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="distribuciones-muestrales" class="section level2">
+<h2>Distribuciones Muestrales</h2>
+<p>Uno de los objetivos de la estadística es saber acerca del comportamiento de parámetros poblacionales tales como: la media <span class="math inline">\(\mu\)</span>, la varianza <span class="math inline">\(\sigma^2\)</span> o la proporción <span class="math inline">\(p\)</span>. Se extrae una muestra aleatoria de la población y se calcula el valor de un estadístico correspondiente, por ejemplo, la media muestral <span class="math inline">\(\bar{X}\)</span>, la varianza muestral <span class="math inline">\(S^2\)</span> o la proporción muestral <span class="math inline">\(\hat{p}\)</span>. El valor del estadístico es aleatorio porque depende de los elementos elegidos en la muestra seleccionada y, por lo tanto, el estadístico tiene una distribución de probabilidad la cual es llamada la <strong>Distribución Muestral del Estadístico</strong>.</p>
+<div id="distribucion-de-la-media-muestral-cuando-la-poblacion-es-normal" class="section level3">
+<h3>Distribución de la media muestral cuando la población es normal</h3>
+<p>Suponga que su objeto de estudio es una población normal y de donde se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de una población infinita con media poblacional <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span></p>
+<ul>
+<li><p>La media de las medias muestrales es igual a la media poblacional. Es decir, <span class="math inline">\(\mu_{\bar{X}}=\mu\)</span></p></li>
+<li><p>La varianza de las medias muestrales es igual a la varianza poblacional dividida por <span class="math inline">\(n\)</span>. En consecuencia la desviación estándar de las medias muestrales (llamada también el error estándar de la media muestral), es igual a la desviación estándar poblacional dividida por la raíz cuadrada de <span class="math inline">\(n\)</span>. Es decir,</p></li>
+</ul>
+<p><span class="math display">\[\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}\]</span></p>
+</div>
+<div id="el-teorema-del-limite-central" class="section level3">
+<h3>El Teorema del Límite Central</h3>
+<p>De una población infinita con media y varianza se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span>, entonces la media muestral <span class="math inline">\(\bar{X}\)</span> se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional <span class="math inline">\(\mu\)</span> y con desviación estándar <span class="math inline">\(\sigma\)</span> igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:</p>
+<p><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></p>
+<p>Estandarizando, donde <span class="math inline">\(Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}\)</span></p>
+<p>tenemos:</p>
+<p><span class="math display">\[Z \sim Normal(0,1)\]</span></p>
+<blockquote>
+<p>Ejemplo Teorema del límite central</p>
+</blockquote>
+<p>Considerar una población que consiste de los siguientes datos: 3, 4, 6, 8, 10, 11, 12, 15, 20.</p>
+<ol style="list-style-type: decimal">
+<li>Calculamos la media y desviación estándar de dicha población. Para esto usamos <code>RStudio</code></li>
+</ol>
+<pre class="r"><code>n &lt;- c(3, 4, 6, 8, 10, 11, 12, 15, 20)
+media_n &lt;- mean(n)
+media_n</code></pre>
+<pre><code>## [1] 9.888889</code></pre>
+<pre class="r"><code>sd_n &lt;- sd(n)
+sd_n</code></pre>
+<pre><code>## [1] 5.418589</code></pre>
+<p>Notamos que <span class="math inline">\(\mu=9.88\)</span> y que <span class="math inline">\(\sigma=5.41\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Extraemos 30 muestras de tamaño 4 de dicha población, estó mediante el siguiente código</li>
+</ol>
+<pre class="r"><code>n &lt;- c(3, 4, 6, 8, 10, 11, 12, 15, 20)
+d_mean &lt;- c()
+for (i in 1:30){
+  d_mean[i] &lt;- mean(sample(n,size = 4,replace = TRUE))
+}
+#d_mean
+mean(d_mean)</code></pre>
+<pre><code>## [1] 9.041667</code></pre>
+<pre class="r"><code>sd(d_mean)</code></pre>
+<pre><code>## [1] 2.568949</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Tercero, calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</li>
+</ol>
+<pre class="r"><code>mean(d_mean)</code></pre>
+<pre><code>## [1] 9.041667</code></pre>
+<pre class="r"><code>sd(d_mean)</code></pre>
+<pre><code>## [1] 2.568949</code></pre>
+<p>Interpretación: Notar que la media de las medias muestrales es <span class="math inline">\(\mu_{\bar{X}}=10.075\)</span> que está bien cerca de la media poblacional . Además la desviación estándar de la media muestral es 2.806 mientras que <span class="math inline">\(\sigma/\sqrt{n}=5.418/2=2.709\)</span>. Ambos valores también están relativamente cerca. El histograma si está un poco alejado de la normalidad. Si se incrementa el tamaño de las muestras se puede notar una mejor aproximación a la Normal.</p>
+<pre class="r"><code>hist(d_mean,col = &quot;blue&quot;,freq = F)</code></pre>
+<p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Si se incrementa el tamaño de las muestras a 1000 se puede notar una mejor aproximación a la Normal.</p>
+<pre class="r"><code>n &lt;- c(3, 4, 6, 8, 10, 11, 12, 15, 20)
+d_mean &lt;- c()
+for (i in 1:1000){
+  d_mean[i] &lt;- mean(sample(n,size = 4,replace = TRUE))
+}
+hist(d_mean,col = &quot;blue&quot;,freq = F)</code></pre>
+<p><img src="d_muestral_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="distribucion-de-la-proporcion-muestral" class="section level3">
+<h3>Distribución de la Proporción Muestral</h3>
+<p>Si de una población distribuida Binomialmente con probabilidad de éxito <span class="math inline">\(p\)</span>, se extrae una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es <span class="math inline">\(\mu=np\)</span> y que su varianza es <span class="math inline">\(\sigma^2=np(1-p)\)</span>. En consecuencia la proporción muestral <span class="math inline">\(\hat{p}=\dfrac{X}{n}\)</span> tiene media <span class="math inline">\(p\)</span> y varianza <span class="math inline">\(\dfrac{p(1-p)}{n}\)</span>. Entonces: por el Teorema del Límite Central, cuando <span class="math inline">\(n\)</span> es grande se tiene:</p>
+<p><span class="math display">\[Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}\]</span></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -240,6 +240,49 @@ $(document).ready(function () {
 <pre><code>## [1] 0.06664492</code></pre>
 <pre class="r"><code>pnorm(q = 47.5, mean = 50, sd = 5) - pnorm(q = 46.5, mean = 50, sd = 5)</code></pre>
 <pre><code>## [1] 0.06657389</code></pre>
+<div id="formulas-de-aproximacion-normal-a-la-binomial." class="section level3">
+<h3>Fórmulas de aproximación Normal a la Binomial.</h3>
+<p>Si X es una variable aleatoria Binomial con parámetros n y p, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, entonces</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(P(X=x)=P(x-0.5&lt; X &lt;x+0.5)=P(\dfrac{x-0.5-np}{\sqrt{np(1-p)}}&lt; Z &lt; \dfrac{x+0.5-np}{\sqrt{np(1-p)}})\)</span></p></li>
+<li><p><span class="math inline">\(P(a&lt;X &lt;b)=P(a+0.5&lt; X &lt;b-0.5)=P(\dfrac{a+0.5-np}{\sqrt{np(1-p)}}&lt; Z &lt; \dfrac{b-0.5-np}{\sqrt{np(1-p)}})\)</span></p></li>
+<li><p><span class="math inline">\(P(a\leq X \leq b)=P(a-0.5&lt; X &lt;b+0.5)=P(\dfrac{a-0.5-np}{\sqrt{np(1-p)}}&lt; Z &lt;\dfrac{b+0.5-np}{\sqrt{np(1-p)}})\)</span></p></li>
+</ol>
+<blockquote>
+<p>Ejemplo</p>
+</blockquote>
+<p>Según reportes del centro nacional para estadísticas de salud, alrededor del 20 % de la población masculina adulta de los Estados Unidos es obesa. Se elige al azar una muestra de 150 hombres adultos en los Estados Unidos. ¿Cuál es la probabilidad de que:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Se encuentren a lo más 25 personas obesas?</li>
+</ol>
+<p><span class="math display">\[P(X \leq 25)=P(X &lt; 25.5)=P(Z &lt; \dfrac{25.5-30}{\sqrt{24}})=P(Z &lt; -0.91)=0.1814\]</span></p>
+<pre class="r"><code>pnorm(-0.91)</code></pre>
+<pre><code>## [1] 0.1814113</code></pre>
+<p>o también,</p>
+<pre class="r"><code>pnorm(25.5,30,4.89)</code></pre>
+<pre><code>## [1] 0.1787223</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Se encuentren más de 22 pero menos de 35 hombres obesos?</li>
+</ol>
+<p><span class="math display">\[P(22&lt;X &lt;35)=P(22.5&lt; X &lt;34.5)=P(\dfrac{22.5-30}{\sqrt{24}}&lt; Z &lt; \dfrac{34.5-30}{\sqrt{24}})=\]</span> <span class="math display">\[P(-1.53&lt; Z &lt;0.91)=0.8186-0.063=0.7556\]</span></p>
+<pre class="r"><code>pnorm(0.91) - pnorm(-1.53)</code></pre>
+<pre><code>## [1] 0.7555804</code></pre>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+</div>
 
 
 
