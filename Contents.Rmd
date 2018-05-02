@@ -40,6 +40,8 @@ output: html_document
 
 ### [Distribuciones Muestrales](https://didier-murillo.netlify.com/d_muestral/)
 
+### [Estimación puntual y por intervalos de confianza](https://didier-murillo.netlify.com/interval/)
+
 
 
 
