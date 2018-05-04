@@ -211,6 +211,7 @@ $(document).ready(function () {
 <li><a href="#estimacion-por-intervalos">Estimación por intervalos</a><ul>
 <li><a href="#intervalo-de-confianza-para-la-media-de-una-poblacion">Intervalo de confianza para la media de una población</a></li>
 <li><a href="#intervalo-para-mu-con-sigma2-conocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> conocida</a></li>
+<li><a href="#intervalo-para-mu-con-sigma2-desconocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> desconocida</a></li>
 </ul></li>
 </ul>
 </div>
@@ -332,17 +333,17 @@ $(document).ready(function () {
 <tr class="odd">
 <td>99 %</td>
 <td>0.01</td>
-<td>2.54</td>
+<td>2.575</td>
 </tr>
 <tr class="even">
 <td>95 %</td>
 <td>0.05</td>
-<td>1.96</td>
+<td>1.960</td>
 </tr>
 <tr class="odd">
 <td>90 %</td>
 <td>0.1</td>
-<td>1.64</td>
+<td>1.645</td>
 </tr>
 </tbody>
 </table>
@@ -351,6 +352,40 @@ $(document).ready(function () {
 <h3>Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> conocida</h3>
 <p>Si conocemos la desviación estándar poblacional el intervalo de confianza para <span class="math inline">\(\mu\)</span> esta definido de la siguiente manera:</p>
 <p><span class="math display">\[\bar{X} \pm Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\]</span></p>
+<p>Donde,</p>
+<p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\)</span></p>
+<p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\)</span></p>
+<p>Por tanto, el intervalo para la media <span class="math inline">\(\mu\)</span> es</p>
+<p><span class="math display">\[\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)\]</span></p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Los siguientes datos corresponden a una muestra de la estatura de los estudiantes (en centímetros) en cierta universidad. Se sabe que la población es normal con varianza <span class="math inline">\(\sigma^2=7\)</span>.</li>
+</ol>
+<p>159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual</p></li>
+<li><p>Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.</p></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Una prestigiosa cadena de restaurantes está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos piensan que si dichas ventas en promedio son mayores a <span class="math inline">\(30,000\)</span> al mes, entonces la decisión será viable. Se conoce que la desviación estándar poblacional es <span class="math inline">\(\sigma=9\)</span>. Los datos son los siguientes:</li>
+</ol>
+<p>28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308, 1933, 27284</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?</p></li>
+<li><p>Construya un intervalo de confianza para estimar el promedio de ventas mensuales. ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.</p></li>
+</ol>
+</div>
+<div id="intervalo-para-mu-con-sigma2-desconocida" class="section level3">
+<h3>Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> desconocida</h3>
+<p><span class="math display">\[\bar{X} \pm t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\]</span></p>
+<p>Donde,</p>
+<p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\)</span></p>
+<p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\)</span></p>
+<p>Por tanto, el intervalo para la media <span class="math inline">\(\mu\)</span> es</p>
+<p><span class="math display">\[\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)\]</span></p>
+<p>Donde <span class="math inline">\(n-1\)</span>son los grados de libertad para estimar <span class="math inline">\(\mu\)</span>. Tambén <span class="math inline">\(t_{n-1,\alpha/2}\)</span> es la distribución t-student con <span class="math inline">\(n-1\)</span> grados de libertad. En <code>RStudio</code> se puede usar el comando <code>qt(p,n-1)</code> para encontrar el valor crítico de la distribución.</p>
 <hr />
 <hr />
 <hr />

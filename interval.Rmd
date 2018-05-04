@@ -174,9 +174,9 @@ En resumen,
 
 Nivel de confianza | Nivel de significancia $\alpha$ | Punto crítico $Z_{\alpha/2}$
 ------------- | --------| -------------
-99 %          | 0.01 | 2.54
-95 %          | 0.05 | 1.96
-90 %          | 0.1| 1.64
+99 %          | 0.01 | 2.575
+95 %          | 0.05 | 1.960
+90 %          | 0.1  | 1.645
 
 ### Intervalo para $\mu$ con $\sigma^2$ conocida
 
@@ -184,6 +184,57 @@ Si conocemos la desviación estándar poblacional el intervalo de confianza para
 manera:
 
 $$\bar{X} \pm Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$$
+
+Donde, 
+
+**Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$
+
+**Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$
+
+Por tanto, el intervalo para la media $\mu$ es
+
+$$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)$$
+
+> Ejemplos
+
+1.  Los siguientes datos corresponden a una muestra de la estatura de los estudiantes (en centímetros) en cierta universidad.  Se sabe que la población es  normal con varianza $\sigma^2=7$. 
+
+159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172
+
+
+a)  Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual
+
+b)  Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.
+
+
+2.  Una prestigiosa cadena de restaurantes  está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos  piensan que si dichas ventas en promedio son mayores a $30,000$ al mes, entonces  la decisión será viable.  Se conoce que la desviación estándar poblacional es $\sigma=9$. Los datos son los siguientes:
+
+28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284
+
+
+a)	Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?
+
+b)	Construya un intervalo de confianza para estimar el promedio de ventas mensuales.  ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.
+
+
+### Intervalo para $\mu$ con $\sigma^2$ desconocida
+
+$$\bar{X} \pm t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}$$
+
+Donde, 
+
+**Límite Inferior**: $\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}$
+
+**Límite Superior**: $\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}$
+
+Por tanto, el intervalo para la media $\mu$ es
+
+$$\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)$$
+
+Donde $n-1$son los grados de libertad para estimar $\mu$. Tambén $t_{n-1,\alpha/2}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución.
+
+
+
 
 
 
