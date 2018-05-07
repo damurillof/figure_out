@@ -204,7 +204,53 @@ $$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + Z_
 
 a)  Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual
 
+La estimación puntual mediante la media es:
+
+```{r}
+estatura <- c(159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172)
+mean(estatura)
+```
+
+Es decir que $\bar{X}=167.1 cm$ es la estimación de la media poblacional.
+
+
 b)  Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.
+
+
+Para este caso tenemos los siguientes datos:
+
+$n=50$
+
+$\bar{X}=167.1$
+
+$\sigma=\sqrt{7}=2.645$
+
+Necesitamos el valor crítico de la distribución normal estándar en $Z_{\alpha/2}$
+
+
+```{r}
+qnorm(0.025,0,1)
+```
+
+Es decir $Z_{0.005}=1.960$, tomando el valor positivo. 
+
+Luego:
+
+
+**Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 - 1.960*\dfrac{2.645}{\sqrt{50}}=166.36$
+
+**Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 + 1.960*\dfrac{9000}{\sqrt{50}}=167.83$
+
+Por lo tanto el intervalo de confianza del 95 % esta dado por 
+
+$$\Big(166.36, 167.83 \Big)cm $$
+
+Conclusión: Podemos afirmar con una confiabilidad del 95 % que el promedio de la estatura en los estudiantes esta dentro del intervalo de confianza. Es decir entre $166.36$  y $167.83$.
+
+
+
+
+
 
 
 2.  Una prestigiosa cadena de restaurantes  está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos  piensan que si dichas ventas en promedio son mayores a $30,000$ al mes, entonces  la decisión será viable.  Se conoce que la desviación estándar poblacional es $\sigma=\$9000$. Los datos son los siguientes:
@@ -214,7 +260,50 @@ b)  Construya un intervalo de confianza para estimar la media poblacional de la 
 
 a)	Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?
 
+
+```{r}
+ventas <- c(28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284)
+mean(ventas)
+```
+
+Tenemos que $\bar{X}=\$23126.67$ es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra uno nuevo. 
+
+
+
 b)	Construya un intervalo de confianza para estimar el promedio de ventas mensuales.  ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.
+
+Para este caso tenemos los siguientes datos:
+
+$n=12$
+
+$\bar{X}=\$23126.67$
+
+$\sigma=9000$
+
+Necesitamos el valor crítico de la distribución normal estándar en $Z_{\alpha/2}$
+
+
+```{r}
+qnorm(0.005,0,1)
+```
+
+Es decir $Z_{0.005}=2.575$, tomando el valor positivo. 
+
+Luego:
+
+
+**Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 - 2.575*\dfrac{9000}{\sqrt{12}}=16436.62$
+
+**Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 + 2.575*\dfrac{9000}{\sqrt{12}}=29816.71$
+
+Por lo tanto el intervalo de confianza del 99 % esta dado por 
+
+$$\Big(16436.62, 29816.71 \Big)\$ $$
+
+Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales esta dentro del intervalo de confianza. Es decir entre $\$16436.62$  y $\$29816.71$.
+
+**También la apertura de un nuevo restaurante NO puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante NO esta dentro del intervalo**. 
+
 
 
 ### Intervalo para $\mu$ con $\sigma^2$ desconocida
@@ -234,10 +323,77 @@ $$\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{
 Donde $n-1$son los grados de libertad para estimar $\mu$. Tambén $t_{n-1,\alpha/2}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución.
 
 
+> Ejemplos
+
+Supongamos que en el ejemplo de la cadena de restaurantes, desconocemos la desviació poblacional $\sigma$, por lo tanto tenemos que calcular la desviación muestral $S$. Responder las preguntas a) y b) en este nuevo escenario. 
 
 
+Tenemos que calcular la desviación estándar de los datos 
+
+```{r}
+ventas <- c(28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284)
+mean(ventas)
+sd(ventas)
+```
+
+a)  Tenemos que $\bar{X}=\$23126.67$, es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra un nuevo restaurante. 
+
+b)  Para este caso tenemos los siguientes datos:
+
+$n=12$
+
+$\bar{X}=\$23126.67$
+
+$S=9157.75$
+
+Necesitamos el valor de la distribución t-studen en $t_{n-1,\alpha/2}$
 
 
+```{r}
+qt(0.005,11)
+```
+
+Es decir $t_{11,0.005}=3.1058$, tomando el valor positivo. 
+
+Luego:
+
+
+**Límite Inferior**: $\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13$
+
+**Límite Superior**: $\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20$
+
+Por lo anto el intervalo de confianza esta dado por 
+
+$$\Big(14916.13,31337.20\Big)\$ $$
+
+Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales esta dentro del intervalo de confianza. Es decir entre $\$14916.13$  y $\$31337.20$.
+
+**También la apertura de un nuevo restaurante puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante esta dentro del intervalo**. 
+
+
+## Intervalo de confianza para proporciones
+
+El intervalo de confianza para estimar una proporción $\pi$, conocida como una proporción muestral \hat{p} de una muestra de tamaño $n$, a un nivel de confianza del $(1-\alpha)100 \%$ es:
+
+
+$$\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} $$
+Donde,
+
+**Límite Inferior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+
+**Límite Superior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+
+Es decir el intervalo es 
+
+$$\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\Big)$$
+
+
+> Ejemplos
+
+1.  Volvamos al ejemplo de los estudiantes a los que les gusta la comida de la cafeteria colegial, suponga que fueron preguntados 300 estudiantes del Colegio y de ellos 180 contestaron que si les gusta la comida. Construir intervalos de confianza del 99 %, 95 % y 90 % para estimar la proporción de estudiantes a los que les gusta la comida de la cafeteria. 
+
+
+2.  De una muestra de 180 personas que son fumadores frecuentes se econtró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.
 
 ---------------------------------------------------------------------------------------------------------------
 

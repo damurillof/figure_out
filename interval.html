@@ -213,6 +213,7 @@ $(document).ready(function () {
 <li><a href="#intervalo-para-mu-con-sigma2-conocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> conocida</a></li>
 <li><a href="#intervalo-para-mu-con-sigma2-desconocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> desconocida</a></li>
 </ul></li>
+<li><a href="#intervalo-de-confianza-para-proporciones">Intervalo de confianza para proporciones</a></li>
 </ul>
 </div>
 
@@ -365,17 +366,59 @@ $(document).ready(function () {
 </ol>
 <p>159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual</p></li>
-<li><p>Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.</p></li>
+<li>Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual</li>
 </ol>
+<p>La estimación puntual mediante la media es:</p>
+<pre class="r"><code>estatura &lt;- c(159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172)
+mean(estatura)</code></pre>
+<pre><code>## [1] 167.1</code></pre>
+<p>Es decir que <span class="math inline">\(\bar{X}=167.1 cm\)</span> es la estimación de la media poblacional.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.</li>
+</ol>
+<p>Para este caso tenemos los siguientes datos:</p>
+<p><span class="math inline">\(n=50\)</span></p>
+<p><span class="math inline">\(\bar{X}=167.1\)</span></p>
+<p><span class="math inline">\(\sigma=\sqrt{7}=2.645\)</span></p>
+<p>Necesitamos el valor crítico de la distribución normal estándar en <span class="math inline">\(Z_{\alpha/2}\)</span></p>
+<pre class="r"><code>qnorm(0.025,0,1)</code></pre>
+<pre><code>## [1] -1.959964</code></pre>
+<p>Es decir <span class="math inline">\(Z_{0.005}=1.960\)</span>, tomando el valor positivo.</p>
+<p>Luego:</p>
+<p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 - 1.960*\dfrac{2.645}{\sqrt{50}}=166.36\)</span></p>
+<p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 + 1.960*\dfrac{9000}{\sqrt{50}}=167.83\)</span></p>
+<p>Por lo tanto el intervalo de confianza del 95 % esta dado por</p>
+<p><span class="math display">\[\Big(166.36, 167.83 \Big)cm \]</span></p>
+<p>Conclusión: Podemos afirmar con una confiabilidad del 95 % que el promedio de la estatura en los estudiantes esta dentro del intervalo de confianza. Es decir entre <span class="math inline">\(166.36\)</span> y <span class="math inline">\(167.83\)</span>.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Una prestigiosa cadena de restaurantes está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos piensan que si dichas ventas en promedio son mayores a <span class="math inline">\(30,000\)</span> al mes, entonces la decisión será viable. Se conoce que la desviación estándar poblacional es <span class="math inline">\(\sigma=\$9000\)</span>. Los datos son los siguientes:</li>
 </ol>
 <p>28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308, 1933, 27284</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?</p></li>
-<li><p>Construya un intervalo de confianza para estimar el promedio de ventas mensuales. ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.</p></li>
+<li>Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?</li>
 </ol>
+<pre class="r"><code>ventas &lt;- c(28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284)
+mean(ventas)</code></pre>
+<pre><code>## [1] 23126.67</code></pre>
+<p>Tenemos que <span class="math inline">\(\bar{X}=\$23126.67\)</span> es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra uno nuevo.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Construya un intervalo de confianza para estimar el promedio de ventas mensuales. ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.</li>
+</ol>
+<p>Para este caso tenemos los siguientes datos:</p>
+<p><span class="math inline">\(n=12\)</span></p>
+<p><span class="math inline">\(\bar{X}=\$23126.67\)</span></p>
+<p><span class="math inline">\(\sigma=9000\)</span></p>
+<p>Necesitamos el valor crítico de la distribución normal estándar en <span class="math inline">\(Z_{\alpha/2}\)</span></p>
+<pre class="r"><code>qnorm(0.005,0,1)</code></pre>
+<pre><code>## [1] -2.575829</code></pre>
+<p>Es decir <span class="math inline">\(Z_{0.005}=2.575\)</span>, tomando el valor positivo.</p>
+<p>Luego:</p>
+<p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 - 2.575*\dfrac{9000}{\sqrt{12}}=16436.62\)</span></p>
+<p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 + 2.575*\dfrac{9000}{\sqrt{12}}=29816.71\)</span></p>
+<p>Por lo tanto el intervalo de confianza del 99 % esta dado por</p>
+<p><span class="math display">\[\Big(16436.62, 29816.71 \Big)\$ \]</span></p>
+<p>Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales esta dentro del intervalo de confianza. Es decir entre <span class="math inline">\(\$16436.62\)</span> y <span class="math inline">\(\$29816.71\)</span>.</p>
+<p><strong>También la apertura de un nuevo restaurante NO puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante NO esta dentro del intervalo</strong>.</p>
 </div>
 <div id="intervalo-para-mu-con-sigma2-desconocida" class="section level3">
 <h3>Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> desconocida</h3>
@@ -386,22 +429,66 @@ $(document).ready(function () {
 <p>Por tanto, el intervalo para la media <span class="math inline">\(\mu\)</span> es</p>
 <p><span class="math display">\[\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)\]</span></p>
 <p>Donde <span class="math inline">\(n-1\)</span>son los grados de libertad para estimar <span class="math inline">\(\mu\)</span>. Tambén <span class="math inline">\(t_{n-1,\alpha/2}\)</span> es la distribución t-student con <span class="math inline">\(n-1\)</span> grados de libertad. En <code>RStudio</code> se puede usar el comando <code>qt(p,n-1)</code> para encontrar el valor crítico de la distribución.</p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<p>Supongamos que en el ejemplo de la cadena de restaurantes, desconocemos la desviació poblacional <span class="math inline">\(\sigma\)</span>, por lo tanto tenemos que calcular la desviación muestral <span class="math inline">\(S\)</span>. Responder las preguntas a) y b) en este nuevo escenario.</p>
+<p>Tenemos que calcular la desviación estándar de los datos</p>
+<pre class="r"><code>ventas &lt;- c(28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284)
+mean(ventas)</code></pre>
+<pre><code>## [1] 23126.67</code></pre>
+<pre class="r"><code>sd(ventas)</code></pre>
+<pre><code>## [1] 9157.75</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><p>Tenemos que <span class="math inline">\(\bar{X}=\$23126.67\)</span>, es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra un nuevo restaurante.</p></li>
+<li><p>Para este caso tenemos los siguientes datos:</p></li>
+</ol>
+<p><span class="math inline">\(n=12\)</span></p>
+<p><span class="math inline">\(\bar{X}=\$23126.67\)</span></p>
+<p><span class="math inline">\(S=9157.75\)</span></p>
+<p>Necesitamos el valor de la distribución t-studen en <span class="math inline">\(t_{n-1,\alpha/2}\)</span></p>
+<pre class="r"><code>qt(0.005,11)</code></pre>
+<pre><code>## [1] -3.105807</code></pre>
+<p>Es decir <span class="math inline">\(t_{11,0.005}=3.1058\)</span>, tomando el valor positivo.</p>
+<p>Luego:</p>
+<p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13\)</span></p>
+<p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20\)</span></p>
+<p>Por lo anto el intervalo de confianza esta dado por</p>
+<p><span class="math display">\[\Big(14916.13,31337.20\Big)\$ \]</span></p>
+<p>Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales esta dentro del intervalo de confianza. Es decir entre <span class="math inline">\(\$14916.13\)</span> y <span class="math inline">\(\$31337.20\)</span>.</p>
+<p><strong>También la apertura de un nuevo restaurante puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante esta dentro del intervalo</strong>.</p>
 </div>
+</div>
+<div id="intervalo-de-confianza-para-proporciones" class="section level2">
+<h2>Intervalo de confianza para proporciones</h2>
+<p>El intervalo de confianza para estimar una proporción <span class="math inline">\(\pi\)</span>, conocida como una proporción muestral  de una muestra de tamaño <span class="math inline">\(n\)</span>, a un nivel de confianza del <span class="math inline">\((1-\alpha)100 \%\)</span> es:</p>
+<p><span class="math display">\[\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} \]</span> Donde,</p>
+<p><strong>Límite Inferior</strong>: <span class="math inline">\(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+<p><strong>Límite Superior</strong>: <span class="math inline">\(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></p>
+<p>Es decir el intervalo es</p>
+<p><span class="math display">\[\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\Big)\]</span></p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p>Volvamos al ejemplo de los estudiantes a los que les gusta la comida de la cafeteria colegial, suponga que fueron preguntados 300 estudiantes del Colegio y de ellos 180 contestaron que si les gusta la comida. Construir intervalos de confianza del 99 %, 95 % y 90 % para estimar la proporción de estudiantes a los que les gusta la comida de la cafeteria.</p></li>
+<li><p>De una muestra de 180 personas que son fumadores frecuentes se econtró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.</p></li>
+</ol>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
 </div>
 
 
