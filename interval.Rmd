@@ -381,7 +381,7 @@ Donde,
 
 **Límite Inferior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
-**Límite Superior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+**Límite Superior**: $\hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
 Es decir el intervalo es 
 
