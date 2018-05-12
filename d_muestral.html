@@ -257,16 +257,16 @@ for (i in 1:30){
 }
 #d_mean
 mean(d_mean)</code></pre>
-<pre><code>## [1] 10.01667</code></pre>
+<pre><code>## [1] 10.45833</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.630993</code></pre>
+<pre><code>## [1] 2.603118</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Tercero, calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</li>
 </ol>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 10.01667</code></pre>
+<pre><code>## [1] 10.45833</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.630993</code></pre>
+<pre><code>## [1] 2.603118</code></pre>
 <p>Interpretación: Notar que la media de las medias muestrales es <span class="math inline">\(\mu_{\bar{X}}=10.075\)</span> que está bien cerca de la media poblacional . Además la desviación estándar de la media muestral es 2.806 mientras que <span class="math inline">\(\sigma/\sqrt{n}=5.418/2=2.709\)</span>. Ambos valores también están relativamente cerca. El histograma si está un poco alejado de la normalidad. Si se incrementa el tamaño de las muestras se puede notar una mejor aproximación a la Normal.</p>
 <pre class="r"><code>hist(d_mean,col = &quot;blue&quot;,freq = F)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>

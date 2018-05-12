@@ -1,0 +1,66 @@
+---
+title: "Pruebas de Hipótesis"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Pruebas de hipótesis
+
+### Introducción
+
+Una prueba de hipótesis es un método estadístico que responde a una pregunta particular de forma  Sí o No.
+
+Ejemplo: ¿El GPA promedio de estudiantes universitarios es menor a 2.8?
+
+Ejemplo: ¿El ingreso promedio de los hombres en Puerto Rico es más alto que el ingreso promedio de las mujeres?
+
+
+Analogía: Juicio penal
+
+Puede pensar en una prueba de hipótesis como un juicio en un tribunal penal: ¿es el acusado culpable o inocente? A veces hay una abrumadora prueba de culpabilidad, tal vez un video que muestra el crimen. De manera similar, a veces los datos son tan obvios que no se necesitan estadísticas. Por lo general, sin embargo, sólo hay evidencia circunstancial: huellas dactilares parciales, un motivo, ninguna coartada, y luego el jurado debe tomar una decisión.
+
+Una prueba de hipótesis generalmente se expresa en forma de dos enunciados en lugar de una pregunta. Estas declaraciones se llaman la hipótesis nula ($H_0$) y la hipótesis alternativa o de investigación ($H_1$ )
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+

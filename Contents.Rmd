@@ -43,6 +43,14 @@ output: html_document
 ### [Estimación puntual y por intervalos de confianza](https://didier-murillo.netlify.com/interval/)
 
 
+----------------- 
+
+
+### [Pruebas de hipótesis](https://didier-murillo.netlify.com/p_hipot/)
+
+
+
+
 
 
 
