@@ -432,7 +432,7 @@ $$\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{
 
 
 
-> **Ejercicios de repaso**
+## Ejercicios de repaso
 
 
 1. Digamos que $X \sim Binom(22,0.45)$. Mediante aproximación  normal encuentre:
