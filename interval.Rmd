@@ -443,7 +443,7 @@ b)  $P(2 < X < 5)$
 
 c)  $P(3 \leq X \leq 6)$
 
-2. Sea $X \sim Normal(5,7)$, $Y \sim Normal(2,10)$ y $W \sim Normal(10,12)$
+2. Se tomo una muestra $n=10$ de cada una de las poblaciones Normales. Sea $X \sim Normal(5,7)$, $Y \sim Normal(2,10)$ y $W \sim Normal(10,12)$
 
 
 a) Encuentre la distribución de la media muestral de $X$, $Y$ y $W$, es decir 

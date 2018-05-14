@@ -316,7 +316,7 @@ $p_0 = 0.5$
 
 $n = 500$
 
-$\alpha = 0.01$
+$\alpha = 0.05$
 
 **Paso 2: Plantear las hipótesis**
 
