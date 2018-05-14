@@ -207,6 +207,9 @@ $(document).ready(function () {
 <ul>
 <li><a href="#pruebas-de-hipotesis">Pruebas de hipótesis</a><ul>
 <li><a href="#introduccion">Introducción</a></li>
+<li><a href="#formalismo-en-pruebas-de-hipotesis">Formalismo en pruebas de hipótesis</a></li>
+<li><a href="#pruebas-de-hipotesis-para-la-media-poblacional">Pruebas de hipótesis para la media poblacional</a></li>
+<li><a href="#prueba-de-hipotes-para-una-proporcion">Prueba de hipótes para una proporción</a></li>
 </ul></li>
 </ul>
 </div>
@@ -218,9 +221,212 @@ $(document).ready(function () {
 <p>Una prueba de hipótesis es un método estadístico que responde a una pregunta particular de forma Sí o No.</p>
 <p>Ejemplo: ¿El GPA promedio de estudiantes universitarios es menor a 2.8?</p>
 <p>Ejemplo: ¿El ingreso promedio de los hombres en Puerto Rico es más alto que el ingreso promedio de las mujeres?</p>
-<p>Analogía: Juicio penal</p>
-<p>Puede pensar en una prueba de hipótesis como un juicio en un tribunal penal: ¿es el acusado culpable o inocente? A veces hay una abrumadora prueba de culpabilidad, tal vez un video que muestra el crimen. De manera similar, a veces los datos son tan obvios que no se necesitan estadísticas. Por lo general, sin embargo, sólo hay evidencia circunstancial: huellas dactilares parciales, un motivo, ninguna coartada, y luego el jurado debe tomar una decisión.</p>
-<p>Una prueba de hipótesis generalmente se expresa en forma de dos enunciados en lugar de una pregunta. Estas declaraciones se llaman la hipótesis nula (<span class="math inline">\(H_0\)</span>) y la hipótesis alternativa o de investigación (<span class="math inline">\(H_1\)</span> )</p>
+<p>Una prueba de hipótesis generalmente se expresa en forma de dos enunciados en lugar de una pregunta. Estas declaraciones se llaman la hipótesis nula (<span class="math inline">\(H_0\)</span>) y la hipótesis alternativa o de investigación (<span class="math inline">\(H_a\)</span>)</p>
+<p><span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_a\)</span> corresponden a dos enunciados en lugar de hacer una sola pregunta.</p>
+<p>Ejemplos:</p>
+<ol style="list-style-type: decimal">
+<li>Podemos considerar el planteamiento de las siguientes hipótesis para el GPA de los estudiantes del colegio.</li>
+</ol>
+<p><span class="math inline">\(H_0\)</span>: El GPA promedio de los estudiantes subgraduado del Colegio es igual a 2.8</p>
+<p><span class="math inline">\(H_a\)</span>: El GPA promedio de los estudiantes subgraduados del Colegio es mayor a 2.8</p>
+<p>Otra forma de escribir estas hipótesis es mediante un parámetro poblacional, que en este caso el promedio poblacional <span class="math inline">\(\mu\)</span>.</p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = 2.8\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu &gt; 2.8\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>¿Devengan más dinero los hombres que las mujeres en Puerto Rico?</li>
+</ol>
+<p><span class="math inline">\(H_0\)</span>: El ingreso mensual promedio es igual en hombres y en mujeres.</p>
+<p><span class="math inline">\(H_a\)</span>: El ingreso mensual promedio es mayor en hombres que en mujeres.</p>
+<p>Para este caso el parámetro es el ingreso promedio de hombres y mujeres, es decir, <span class="math inline">\(\mu_M\)</span> y <span class="math inline">\(\mu_F\)</span> respectivamente. entonces</p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_M = \mu_F\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu_M &gt; \mu_F\)</span></p>
+<p>Uno de los errores más comunes al plantear las hipótesis para la media poblacional <span class="math inline">\(\mu\)</span> es usar la media muestra <span class="math inline">\(\bar{X}\)</span>.</p>
+</div>
+<div id="formalismo-en-pruebas-de-hipotesis" class="section level3">
+<h3>Formalismo en pruebas de hipótesis</h3>
+<p>Podemos organizar la metodología para realizar pruebas de hipótesis en unos simples pasos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Definir el parámetro de interés y los datos del problema.</p></li>
+<li><p>Plantear las hipótesis</p></li>
+<li><p>Método de análisis y supuestos</p></li>
+<li><p>Encontrar el valor crítico de la distribución y especificar la región de rechazo y no rechazo.</p></li>
+<li><p>Decisión y conclusión.</p></li>
+</ol>
+</div>
+<div id="pruebas-de-hipotesis-para-la-media-poblacional" class="section level3">
+<h3>Pruebas de hipótesis para la media poblacional</h3>
+<blockquote>
+<p>Caso 1: Varianza poblacional <span class="math inline">\(\sigma^2\)</span> es conocida</p>
+</blockquote>
+<p>En algunos casos, por algún motivo se es conocida la varianza poblacional <span class="math inline">\(\sigma^2\)</span> y un valor específico de <span class="math inline">\(\mu\)</span> como <span class="math inline">\(\mu_0\)</span>. En este caso el método de análisis, suponiendo que los datos provienen de una distribución normal y que la varianza es conocida es mediante la distribución normal estándar.</p>
+<p>El estadístico de prueba es</p>
+<p><span class="math display">\[Z_0=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}\]</span></p>
+<p>En general podemos plantear tres tipos de hipótesis para la media poblacional</p>
+<ol style="list-style-type: decimal">
+<li>Prueba a cola izquierda</li>
+</ol>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = \mu_0\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu &lt; \mu_0\)</span></p>
+<p>En este caso la región de rechazo esta dada por los valores de <span class="math inline">\(Z\)</span> menores que <span class="math inline">\(-Z_{\alpha}\)</span>.</p>
+<p>El criterio de decisión, es decir, se decide rechazar <span class="math inline">\(H_0\)</span> si,</p>
+<p><span class="math display">\[Z_0 &lt; -Z_{\alpha}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Prueba a cola derecha</li>
+</ol>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = \mu_0\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu &gt; \mu_0\)</span></p>
+<p>En este caso la región de rechazo esta dada por los valores de <span class="math inline">\(Z\)</span> mayores que <span class="math inline">\(-Z_{\alpha}\)</span>.</p>
+<p>El criterio de decisión, es decir, se decide rechazar <span class="math inline">\(H_0\)</span> si,</p>
+<p><span class="math display">\[Z_0 &gt; Z_{\alpha}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Prueba a dos colas</li>
+</ol>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = \mu_0\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu \neq \mu_0\)</span></p>
+<p>En este caso la región de rechazo esta dada por los valores de <span class="math inline">\(Z\)</span> mayores que <span class="math inline">\(Z_{\alpha/2}\)</span> y menores que <span class="math inline">\(-Z_{\alpha/2}\)</span>.</p>
+<p>El criterio de decisión, es decir, se decide rechazar <span class="math inline">\(H_0\)</span> si tenemos:</p>
+<p><span class="math display">\[|Z_0| &gt; Z_{\alpha/2}\]</span></p>
+<p><strong>Las regiones de rechazo para cada caso de hipótesis alterna son las siguientes:</strong></p>
+<p><img src="test-z.jpg" /> <strong>¿Que es <span class="math inline">\(\alpha\)</span>?</strong></p>
+<p>Es la significancia estadística, representa el valos de la probabilidad de rechazar la hipótesis nulla <span class="math inline">\(H_0\)</span>, dado que <span class="math inline">\(H_0\)</span> es cierta y es conocido como el error tipo I.</p>
+<p><strong>¿Cómo councluir?</strong></p>
+<p>Si la decisión es rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, entonces se debe concluir con base en la hipótesis alterna <span class="math inline">\(H_a\)</span></p>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>En los últimos cinco años el puntaje promedio en el examen final de un curso fue 73 puntos. Este semestre una clase con 27 estudiantes utilizando un nuevo libro de texto obtuvo en promedio 78.1. Se sabe que la varianza poblacional es <span class="math inline">\(\sigma^2=49\)</span>. ¿Hay evidencia para afirmar que el nuevo libro de texto hizo que el resultado del examen final fuera más alto?. Use un nivel de significancia del 5 %</li>
+</ol>
+<p><strong>Paso 1: Los datos del problema y supuestos del problema son</strong></p>
+<p><span class="math inline">\(\bar{X}=78.1\)</span></p>
+<p><span class="math inline">\(\mu_0 = 73\)</span></p>
+<p><span class="math inline">\(n = 27\)</span></p>
+<p><span class="math inline">\(\sigma = 7\)</span></p>
+<p><span class="math inline">\(\alpha = 0.05\)</span></p>
+<p><strong>Paso 2: Plantear las hipótesis</strong></p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = 73\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu &gt; 73\)</span></p>
+<p><strong>Paso 3: Estadístico de prueba</strong></p>
+<p>El estadístico de prueba bajo <span class="math inline">\(H_0\)</span> es</p>
+<p><span class="math display">\[Z_0=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}=\dfrac{78.1-73}{7/\sqrt{27}}=2.91\]</span></p>
+<p>Entonces la región de rechazo esta dada por todos los valores de <span class="math inline">\(Z\)</span> mayores que <span class="math inline">\(2.91\)</span></p>
+<p><strong>Paso 4: Valor crítico</strong></p>
+<p>Para calcular el valor crítco de la distribución normal estándar se usa la siguiente función en <code>RStudio</code></p>
+<pre class="r"><code>qnorm(0.05,0,1)</code></pre>
+<pre><code>## [1] -1.644854</code></pre>
+<p>Omitiendo el signo negativo dado que la prueba es a cola derecha. Entonces tenemos que</p>
+<p><span class="math display">\[Z_0 &gt; Z_{0.05}\]</span> es decir,</p>
+<p><span class="math display">\[2.914 &gt; 1.644\]</span> <strong>Paso 4: Decisión y conclusión</strong></p>
+<p><strong>Decisión</strong>: Se decide rechazar la hipotesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(Z_0 &gt; Z_{0.05}\)</span>.</p>
+<p><strong>Conclusión</strong>: Se encontró evidencia significativa de que la nota final aumento con el uso del nuevo libro de texto en la clase.</p>
+<blockquote>
+<p><strong>Caso 2: Varianza poblacional <span class="math inline">\(\sigma^2\)</span> es desconocida</strong></p>
+</blockquote>
+<p>En este caso no es posible usar la distribución normal estándar, por tanto se usa la distribución t-student.</p>
+<p>El estadístico de prueba bajo <span class="math inline">\(H_0\)</span> es</p>
+<p><span class="math display">\[t_0=\dfrac{\bar{X}-\mu_0}{s/\sqrt{n}}\]</span></p>
+<p>y el valor crítico de la distribución t-student será <span class="math inline">\(t_{\alpha,n-1}\)</span>, donde <span class="math inline">\(n-1\)</span> son los grados de libertad.</p>
+<p>Si la prueba es a cola izquierda la región de rechazo son los valores de <span class="math inline">\(t &lt; -t_{\alpha}\)</span>, y se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t_0 &lt; -t_{\alpha}\)</span>.</p>
+<p>Si la prueba es a cola derecha la región de rechazo son los valores de <span class="math inline">\(t &gt; t_{\alpha}\)</span>, y se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t_0 &gt; t_{\alpha}\)</span>.</p>
+<p>Si la prueba es a dos colas la región de rechazo son los valores de <span class="math inline">\(t &lt; -t_{\alpha}\)</span> y los valores de <span class="math inline">\(t &gt; t_{\alpha}\)</span>, y se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(|t_0| &gt; t_{\alpha}\)</span>.</p>
+<div class="figure">
+<img src="test-t.jpg" />
+
+</div>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>En el pasado, la compra promedio de un cliente en una tienda determinada de ropa era de <span class="math inline">\(\$ 55\)</span>. La tienda acaba de publicar un anuncio en el periódico ofreciendo una promoción y quiere saber si aumentaron las ventas después de publicar las ofertas. En la semana posterior al anuncio 43 de los clientes gastaron un promedio de <span class="math inline">\(\$63\)</span> con una desviación estándar de <span class="math inline">\(\$18\)</span>. Pruebe al nivel del 10% si la promoción fue un éxito.</li>
+</ol>
+<p><strong>Paso 1: Los datos del problema y supuestos del problema son</strong></p>
+<p>Se asume que los datos provienen de una distribución normal.</p>
+<p><span class="math inline">\(\bar{X}=55\)</span></p>
+<p><span class="math inline">\(\mu = 63\)</span></p>
+<p><span class="math inline">\(n = 43\)</span></p>
+<p><span class="math inline">\(S = 18\)</span></p>
+<p><span class="math inline">\(\alpha = 0.1\)</span></p>
+<p><strong>Paso 2: Plantear las hipótesis</strong></p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu = 55\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu &gt; 55\)</span></p>
+<p><strong>Paso 3: Estadístico de prueba</strong></p>
+<p>El estadístico de prueba bajo <span class="math inline">\(H_0\)</span> es</p>
+<p><span class="math display">\[t_0=\dfrac{\bar{X}-\mu_0}{S/\sqrt{n}}=\dfrac{63-55}{18/\sqrt{43}}=2.914\]</span></p>
+<p>Entonces la región de rechazo esta dada por todos los valores de <span class="math inline">\(t_{\alpha}\)</span> mayores que <span class="math inline">\(2.91\)</span></p>
+<p><strong>Paso 4: Valor crítico</strong></p>
+<p>Para calcular el valor crítco de la distribuciónt-student con <span class="math inline">\(n-1\)</span> grados de libertad, es decir con 43-1=42 se usa la siguiente función en <code>RStudio</code></p>
+<pre class="r"><code>qt(0.1,42)</code></pre>
+<pre><code>## [1] -1.302035</code></pre>
+<p>Omitiendo el signo negativo dado que la prueba es a cola derecha. Entonces tenemos que</p>
+<p><span class="math display">\[t_0 &lt; t_{0.1,43}\]</span></p>
+<p>es decir,</p>
+<p><span class="math display">\[2.914 &gt; 1.302\]</span></p>
+<p><strong>Paso 4: Decisión y conclusión</strong></p>
+<p><strong>Decisión</strong>: Se decide rechazar la hipotesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(t_0 &gt; t_{0.1,42}\)</span>.</p>
+<p><strong>Conclusión</strong>: Se encontró evidencia significativa de que las ventas aumentaron y que por tanto la promoción fue exitosa.</p>
+</div>
+<div id="prueba-de-hipotes-para-una-proporcion" class="section level3">
+<h3>Prueba de hipótes para una proporción</h3>
+<p>La distribución del estadístico de prueba bajo la hipótesis nula <span class="math inline">\(H_0 : p= p_0\)</span> y la región de rechazo correspondiente para cada forma de la hipótesis alternativa (cola izquierda, cola derecha o dos colas), se muestran a continuación:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(H_a : p &lt; p_0\)</span></p></li>
+<li><p><span class="math inline">\(H_a : p &gt; p_0\)</span></p></li>
+<li><p><span class="math inline">\(H_a : p \neq p_0\)</span></p></li>
+</ol>
+<p>La distribución del estadístico de prueba bajo la hipótesis nula <span class="math inline">\(H_0 : p= p_0\)</span></p>
+<p><span class="math display">\[Z_0=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}\]</span></p>
+<div class="figure">
+<img src="proportion.jpg" />
+
+</div>
+<blockquote>
+<p>Ejemplos</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Un fabricante de refrescos afirma que la mayoría de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5%, para respaldar el reclamo del fabricante de refrescos de que la población está dividida en partes iguales en su preferencia.</li>
+</ol>
+<p><strong>Paso 1: Los datos del problema y supuestos del problema son</strong></p>
+<p>No tiene supuestos</p>
+<p><span class="math inline">\(\hat{p}=270/500=0.54\)</span></p>
+<p><span class="math inline">\(p_0 = 0.5\)</span></p>
+<p><span class="math inline">\(n = 500\)</span></p>
+<p><span class="math inline">\(\alpha = 0.01\)</span></p>
+<p><strong>Paso 2: Plantear las hipótesis</strong></p>
+<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = 0.5\)</span></p>
+<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(p &gt; 0.5\)</span></p>
+<p><strong>Paso 3: Estadístico de prueba</strong></p>
+<p>El estadístico de prueba bajo <span class="math inline">\(H_0\)</span> es</p>
+<p><span class="math display">\[Z_0=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789\]</span></p>
+<p>Entonces la región de rechazo esta dada por todos los valores de <span class="math inline">\(Z_{\alpha}\)</span> mayores que <span class="math inline">\(1.789\)</span></p>
+<p><strong>Paso 4: Valor crítico</strong></p>
+<p>Para calcular el valor crítco de la distribución normal estándar usamos la siguiente función en <code>RStudio</code></p>
+<pre class="r"><code>qnorm(0.05,0,1)</code></pre>
+<pre><code>## [1] -1.644854</code></pre>
+<p>Omitiendo el signo negativo dado que la prueba es a cola derecha. Entonces tenemos que</p>
+<p><span class="math display">\[Z_0 &gt; {Z_0.05}\]</span></p>
+<p>es decir,</p>
+<p><span class="math display">\[1.789 &gt; 1.644\]</span></p>
+<p><strong>Paso 4: Decisión y conclusión</strong></p>
+<p><strong>Decisión</strong>: Se decide rechazar la hipotesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(Z_0 &gt; {Z_0.05}\)</span>.</p>
+<p><strong>Conclusión</strong>: Se encontró evidencia significativa de que llos adultos prefieren la el refresco del fabricante uno.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Los bebés recién nacidos son más propensos a ser niños que niñas. Una muestra aleatoria encontró 13173 niños nacidos entre 25468 recién nacidos. ¿Hay evidencia de que el nacimiento de niños es más común que el nacimiento de niñas en toda la población? Use <span class="math inline">\(\alpha=0.1\)</span>.</li>
+</ol>
+<blockquote>
+<p><strong>Ejercicios de repaso</strong></p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p>Los investigadores desean probar la eficacia de un programa destinado a reducir la duración del parto en el parto. El tiempo de trabajo promedio aceptado en el nacimiento de un primer hijo es de 15.3 horas. La duración media de los trabajos de 13 madres primerizas en un programa piloto fue de 8,8 horas. Suponga que la desviación estándar poblacional es conocida e igual a 3,1 horas. Suponiendo una distribución normal de los tiempos de trabajo de parto, evalúe al nivel de 10 % de la prueba de significancia si el tiempo de parto promedio para todas las mujeres que siguen este programa es menos de 15.3 horas.</p></li>
+<li><p>El precio de una raqueta de tenis popular en una cadena de tiendas nacional es de $ 179. Juan compró cinco de la misma raqueta en un sitio de subastas en línea por los siguientes precios:</p></li>
+</ol>
+<p>155, 179, 175, 175, 161</p>
+<p>Suponiendo que los precios de subasta de las raquetas se distribuyen normalmente, determine si hay suficiente evidencia en la muestra, al nivel de significancia del 5%, para concluir que el precio promedio de la raqueta es menor a $ 179 si se compra en una subasta en línea.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>En el pasado, la duración promedio de una llamada telefónica saliente desde una oficina comercial ha sido de 143 segundos. Un gerente desea verificar si ese promedio ha disminuido después de la introducción de los cambios de política. Una muestra de 100 llamadas telefónicas produjo una media de 133 segundos, con una desviación estándar de 35 segundos. Realice la prueba pertinente al nivel de significancia del 1%.</p></li>
+<li><p>El tamaño promedio del hogar en una región determinada hace varios años era 3.14 personas. Un sociólogo desea probar, con un nivel de significación del 5%, si ahora es diferente. Realice la prueba con la información recopilada por el sociólogo: en una muestra aleatoria de 75 hogares, el tamaño promedio fue de 2.98 personas, con una desviación estándar de muestra de 0.82 personas.</p></li>
+<li><p>Hace dos años, el 72 % de los hogares de un determinado condado participaban regularmente en el reciclaje de los desechos domésticos. El gobierno del condado desea investigar si esa proporción ha aumentado después de una campaña intensiva para promover el reciclaje. En una encuesta de 900 hogares, 674 dijeron participar regularmente en el reciclaje. Realice la prueba pertinente al nivel de significancia del 10 %.</p></li>
+<li><p>El gobierno de un país en particular informa que su tasa de alfabetización es del 52 %. Una organización no gubernamental cree que es menos. La organización toma una muestra aleatoria de 600 habitantes y obtiene una tasa de alfabetización del 42 %. Realice la prueba pertinente al 0.05% de significancia.</p></li>
+</ol>
 <hr />
 <hr />
 <hr />

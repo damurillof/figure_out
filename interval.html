@@ -209,6 +209,7 @@ $(document).ready(function () {
 <li><a href="#estimacion-puntual">Estimación puntual</a></li>
 </ul></li>
 <li><a href="#estimacion-por-intervalos">Estimación por intervalos</a><ul>
+<li><a href="#intervalos-de-confianza-mas-precisos">Intervalos de confianza más precisos</a></li>
 <li><a href="#intervalo-de-confianza-para-la-media-de-una-poblacion">Intervalo de confianza para la media de una población</a></li>
 <li><a href="#intervalo-para-mu-con-sigma2-conocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> conocida</a></li>
 <li><a href="#intervalo-para-mu-con-sigma2-desconocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> desconocida</a></li>
@@ -282,6 +283,27 @@ $(document).ready(function () {
 <p><strong>Valor puntual <span class="math inline">\(\pm\)</span> Valor crítico x error estándar</strong></p>
 <p>Si consideramos el intervalo para la media poblacional, entonces el intervalo construido tendrá una confianza especifíca de la estimación correcta del valor del parámetro poblacional <span class="math inline">\(\mu\)</span>. En otras palabras, existe una confianza especificada de que <span class="math inline">\(\mu\)</span> se encuentre en algún lugar en el rango de números definidos dentro del intervalo.</p>
 <p>En general, el <strong>nivel de confianza</strong> se simboliza con <span class="math inline">\((1 - \alpha).100 \%\)</span>, donde <span class="math inline">\(\alpha\)</span> es la proporción de las colas de la distribución que estan fuera del intervalo de confianza. La proporción de la cola superior e inferior de la distribución es <span class="math inline">\(\alpha/2\)</span></p>
+<div id="intervalos-de-confianza-mas-precisos" class="section level3">
+<h3>Intervalos de confianza más precisos</h3>
+<p>Si el intervalo de confianza es demasiado ancho, usted no puede estar muy seguro del valor real de un parámetro, como por ejemplo la media. Sin embargo, puede utilizar varias estrategias para reducir el ancho de un intervalo de confianza y hacer que la estimación sea más precisa. Las siguientes características afectan el ancho del intervalo de confianza.</p>
+<ul>
+<li>Tamaño de la muestra</li>
+<li>Variación en los datos</li>
+<li>Tipo de intervalo</li>
+<li>Nivel de confianza</li>
+</ul>
+<p><strong>Aumentar el tamaño de la muestra</strong></p>
+<p>Con frecuencia, la manera más práctica de reducir el margen de error es aumentar el tamaño de la muestra. Por lo general, mientras más observaciones haya, más estrecho será el intervalo alrededor del estadístico de la muestra. Por lo tanto, se recomienda recolectar más datos para obtener una estimación más precisa de un parámetro de población.</p>
+<p>Debe sopesar los beneficios de una mayor precisión con respecto al tiempo y los recursos adicionales necesarios para recopilar una muestra más grande. Por ejemplo, un intervalo de confianza que sea lo suficientemente estrecho como para contener solamente el parámetro de población requiere que se midan todos los sujetos de la población. Obviamente, esta estrategia por lo general resultaría muy poco práctica.</p>
+<p><strong>Reducir la variabilidad</strong></p>
+<p>Mientras menos varíen los datos, más precisa será la estimación de un parámetro de población. Eso se debe a que al reducirse la variabilidad de los datos, disminuye la desviación estándar y, por ende, el margen de error de la estimación. Aunque puede ser difícil reducir la variabilidad de los datos, a veces se puede lograr ajustando la forma en que se recolectan los datos. Por ejemplo, puede utilizar un diseño pareado para comparar dos grupos. También podría reducir la variabilidad mejorando el proceso, de manera que el proceso sea más consistente, o midiendo con mayor precisión.</p>
+<p><strong>Utilizar un intervalo de confianza unilateral</strong></p>
+<p>Un intervalo de confianza unilateral tiene un margen de error más pequeño que un intervalo de confianza bilateral. Sin embargo, un intervalo unilateral indica solo si un parámetro es menor que o mayor que un valor de corte. Un intervalo unilateral no proporciona información acerca del parámetro en la dirección opuesta. Por lo tanto, utilice un intervalo de confianza unilateral para aumentar la precisión de una estimación solo cuando le preocupe que la estimación sea mayor o menor que un valor de corte, pero no ambos.</p>
+<p>Por ejemplo, una empresa de bebidas desea determinar la cantidad de sólidos disueltos en su agua potable. Mientras menos sólidos disueltos tenga el agua, mejor será. Cuando calculan un intervalo de confianza bilateral, el lado superior del intervalo es 18.4. Sin embargo, puesto que a la empresa solo le preocupa el límite superior, pueden calcular más bien un intervalo de confianza unilateral. El intervalo de confianza unilateral muestra que el límite superior de la cantidad de sólidos disueltos es incluso menor, 17.8 mg/L.</p>
+<p><strong>Reducir el nivel de confianza</strong></p>
+<p>La ventaja de un nivel de confianza más bajo es que se obtiene un intervalo de confianza más estrecho y más preciso. La desventaja es que se está menos seguro de que el intervalo de confianza contiene el parámetro de población de interés.</p>
+<p>Entonces, reduzca el nivel de confianza solo si, en su situación, la ventaja de una mayor precisión supera a la desventaja de un menor grado de certeza. Por ejemplo, si es demasiado costoso aumentar el tamaño de la muestra en su estudio, disminuir el nivel de confianza reducirá la longitud del intervalo a expensas de perder algo de confianza.</p>
+</div>
 <div id="intervalo-de-confianza-para-la-media-de-una-poblacion" class="section level3">
 <h3>Intervalo de confianza para la media de una población</h3>
 <p>De una población de media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span> se pueden tomar muestras de tamaño <span class="math inline">\(n\)</span>. Como vimos anteriormente cada una de estas muestras tiene a su vez una media y que la media de todas las medias muestrales coincide con la media poblacional: <span class="math inline">\(\mu_{\bar{x}}=\mu\)</span>.</p>
@@ -357,7 +379,7 @@ $(document).ready(function () {
 <p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\)</span></p>
 <p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\)</span></p>
 <p>Por tanto, el intervalo para la media <span class="math inline">\(\mu\)</span> es</p>
-<p><span class="math display">\[\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)\]</span></p>
+<p><span class="math display">\[\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} , \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)\]</span></p>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
@@ -427,7 +449,7 @@ mean(ventas)</code></pre>
 <p><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\)</span></p>
 <p><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\)</span></p>
 <p>Por tanto, el intervalo para la media <span class="math inline">\(\mu\)</span> es</p>
-<p><span class="math display">\[\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)\]</span></p>
+<p><span class="math display">\[\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} , \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)\]</span></p>
 <p>Donde <span class="math inline">\(n-1\)</span>son los grados de libertad para estimar <span class="math inline">\(\mu\)</span>. Tambén <span class="math inline">\(t_{n-1,\alpha/2}\)</span> es la distribución t-student con <span class="math inline">\(n-1\)</span> grados de libertad. En <code>RStudio</code> se puede usar el comando <code>qt(p,n-1)</code> para encontrar el valor crítico de la distribución.</p>
 <blockquote>
 <p>Ejemplos</p>
@@ -474,6 +496,39 @@ mean(ventas)</code></pre>
 <li><p>Volvamos al ejemplo de los estudiantes a los que les gusta la comida de la cafeteria colegial, suponga que fueron preguntados 300 estudiantes del Colegio y de ellos 180 contestaron que si les gusta la comida. Construir intervalos de confianza del 99 %, 95 % y 90 % para estimar la proporción de estudiantes a los que les gusta la comida de la cafeteria.</p></li>
 <li><p>De una muestra de 180 personas que son fumadores frecuentes se econtró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.</p></li>
 </ol>
+<blockquote>
+<p><strong>Ejercicios de repaso</strong></p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Digamos que <span class="math inline">\(X \sim Binom(22,0.45)\)</span>. Mediante aproximación normal encuentre:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X = 4)\)</span></p></li>
+<li><p><span class="math inline">\(P(2 &lt; X &lt; 5)\)</span></p></li>
+<li><p><span class="math inline">\(P(3 \leq X \leq 6)\)</span></p></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Sea <span class="math inline">\(X \sim Normal(5,7)\)</span>, <span class="math inline">\(Y \sim Normal(2,10)\)</span> y <span class="math inline">\(W \sim Normal(10,12)\)</span></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Encuentre la distribución de la media muestral de <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> y <span class="math inline">\(W\)</span>, es decir</li>
+</ol>
+<p><span class="math display">\[\bar{X} \sim \]</span> <span class="math display">\[\bar{Y} \sim\]</span> <span class="math display">\[\bar{W} \sim\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Mediante estandarizacoón encuentre <span class="math inline">\(P(\bar{X} &gt; 3)\)</span>, <span class="math inline">\(P(\bar{Y} &lt; 2)\)</span> y <span class="math inline">\(P(3 \leq \bar{W} \leq 6)\)</span></li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Una muestra de tamaño 49 tiene un promedio muestral de 35 y una desviación estándar muestral de 14. Construya un intervalo de confianza del 98 % de confiabilidad para la media de la población usando esta información. Interpreta su significado.</p></li>
+<li><p>Una muestra aleatoria de 120 estudiantes de una universidad de EEUU arroja un promedio del GPA igual a 2.71. Suponga que conocemos la desviación estándar poblacional y es igual a 0.55. Construya un intervalo de confianza del 90 % para el GPA promedio de todos los estudiantes en la universidad.</p></li>
+<li><p>A cuatrocientos adultos trabajadores seleccionados al azar en un determinado estado, se les preguntó la distancia desde su hogar hasta su lugar de trabajo. La distancia promedio fue de 8.84 millas con una desviación estándar de 2.70 millas. Construya intervalos de confianza del 90 %, 94 %, 97 % para la distancia media entre el hogar y el trabajo de todos los residentes de este estado.</p></li>
+<li><p>Para estimar el número de calorías en una porción de carne de pechuga de pollo en cubos, se mide la cantidad de calorías en una muestra de 15 platos de carne separadas. La media muestral es de 211.8 calorías con una desviación estándar de muestra de 0.9 calorías. Suponiendo que el contenido calórico de todas las carnes de pollo se distribuye normalmente, construya un intervalo de confianza del 95% para la cantidad media de calorías en un plato de carne.</p></li>
+<li><p>Para estimar la proporción de estudiantes en una universidad grande que son mujeres, se selecciona una muestra aleatoria de 120 estudiantes. Hay 75 alumnas en la muestra. Construya un intervalo de confianza del 90 % y 99 % para la proporción de todos los estudiantes de la universidad que son mujeres.</p></li>
+<li><p>En una muestra aleatoria de 900 adultos, 42 se definieron a sí mismos como vegetarianos.</p></li>
+</ol>
+<ul>
+<li><p>Proporcione una estimación puntual de la proporción de adultos que se definirían como vegetarianos.</p></li>
+<li><p>Construya un intervalo de confianza del 80 % de confianza para la proporción de todos los adultos que se definirían a sí mismos como vegetarianos.</p></li>
+</ul>
 <hr />
 <hr />
 <hr />

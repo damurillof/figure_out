@@ -114,6 +114,41 @@ Si consideramos el intervalo para la media poblacional, entonces el intervalo co
 
 En general, el **nivel de confianza** se simboliza con $(1 - \alpha).100 \%$, donde $\alpha$ es la proporción de las colas de la distribución que estan fuera del intervalo de confianza. La proporción de la cola superior e inferior de la distribución es $\alpha/2$
 
+### Intervalos de confianza más precisos
+
+Si el intervalo de confianza es demasiado ancho, usted no puede estar muy seguro del valor real de un parámetro, como por ejemplo la media. Sin embargo, puede utilizar varias estrategias para reducir el ancho de un intervalo de confianza y hacer que la estimación sea más precisa. Las siguientes características afectan el ancho del intervalo de confianza.
+
+* Tamaño de la muestra
+* Variación en los datos
+* Tipo de intervalo
+* Nivel de confianza
+
+**Aumentar el tamaño de la muestra**
+
+Con frecuencia, la manera más práctica de reducir el margen de error es aumentar el tamaño de la muestra. Por lo general, mientras más observaciones haya, más estrecho será el intervalo alrededor del estadístico de la muestra. Por lo tanto, se recomienda recolectar más datos para obtener una estimación más precisa de un parámetro de población.
+
+Debe sopesar los beneficios de una mayor precisión con respecto al tiempo y los recursos adicionales necesarios para recopilar una muestra más grande. Por ejemplo, un intervalo de confianza que sea lo suficientemente estrecho como para contener solamente el parámetro de población requiere que se midan todos los sujetos de la población. Obviamente, esta estrategia por lo general resultaría muy poco práctica.
+
+**Reducir la variabilidad**
+
+Mientras menos varíen los datos, más precisa será la estimación de un parámetro de población. Eso se debe a que al reducirse la variabilidad de los datos, disminuye la desviación estándar y, por ende, el margen de error de la estimación. Aunque puede ser difícil reducir la variabilidad de los datos, a veces se puede lograr ajustando la forma en que se recolectan los datos. Por ejemplo, puede utilizar un diseño pareado para comparar dos grupos. También podría reducir la variabilidad mejorando el proceso, de manera que el proceso sea más consistente, o midiendo con mayor precisión.
+
+**Utilizar un intervalo de confianza unilateral**
+
+Un intervalo de confianza unilateral tiene un margen de error más pequeño que un intervalo de confianza bilateral. Sin embargo, un intervalo unilateral indica solo si un parámetro es menor que o mayor que un valor de corte. Un intervalo unilateral no proporciona información acerca del parámetro en la dirección opuesta. Por lo tanto, utilice un intervalo de confianza unilateral para aumentar la precisión de una estimación solo cuando le preocupe que la estimación sea mayor o menor que un valor de corte, pero no ambos.
+
+Por ejemplo, una empresa de bebidas desea determinar la cantidad de sólidos disueltos en su agua potable. Mientras menos sólidos disueltos tenga el agua, mejor será. Cuando calculan un intervalo de confianza bilateral, el lado superior del intervalo es 18.4. Sin embargo, puesto que a la empresa solo le preocupa el límite superior, pueden calcular más bien un intervalo de confianza unilateral. El intervalo de confianza unilateral muestra que el límite superior de la cantidad de sólidos disueltos es incluso menor, 17.8 mg/L.
+
+**Reducir el nivel de confianza**
+
+
+La ventaja de un nivel de confianza más bajo es que se obtiene un intervalo de confianza más estrecho y más preciso. La desventaja es que se está menos seguro de que el intervalo de confianza contiene el parámetro de población de interés.
+
+Entonces, reduzca el nivel de confianza solo si, en su situación, la ventaja de una mayor precisión supera a la desventaja de un menor grado de certeza. Por ejemplo, si es demasiado costoso aumentar el tamaño de la muestra en su estudio, disminuir el nivel de confianza reducirá la longitud del intervalo a expensas de perder algo de confianza.
+
+
+
+
 ### Intervalo de confianza para la media de una población
 
 
@@ -193,7 +228,7 @@ Donde,
 
 Por tanto, el intervalo para la media $\mu$ es
 
-$$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)$$
+$$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} , \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)$$
 
 > Ejemplos
 
@@ -318,7 +353,7 @@ Donde,
 
 Por tanto, el intervalo para la media $\mu$ es
 
-$$\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} \leq \mu \leq \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)$$
+$$\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} , \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)$$
 
 Donde $n-1$son los grados de libertad para estimar $\mu$. Tambén $t_{n-1,\alpha/2}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución.
 
@@ -394,6 +429,49 @@ $$\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{
 
 
 2.  De una muestra de 180 personas que son fumadores frecuentes se econtró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.
+
+
+
+> **Ejercicios de repaso**
+
+
+1. Digamos que $X \sim Binom(22,0.45)$. Mediante aproximación  normal encuentre:
+
+a)  $P(X = 4)$
+
+b)  $P(2 < X < 5)$
+
+c)  $P(3 \leq X \leq 6)$
+
+2. Sea $X \sim Normal(5,7)$, $Y \sim Normal(2,10)$ y $W \sim Normal(10,12)$
+
+
+a) Encuentre la distribución de la media muestral de $X$, $Y$ y $W$, es decir 
+
+$$\bar{X} \sim $$
+$$\bar{Y} \sim$$
+$$\bar{W} \sim$$
+
+b)  Mediante estandarizacoón encuentre $P(\bar{X} > 3)$, $P(\bar{Y} < 2)$ y $P(3 \leq \bar{W} \leq 6)$
+
+
+3.  Una muestra de tamaño 49 tiene un promedio muestral de 35 y una desviación estándar muestral de  14. Construya un intervalo de confianza del 98 % de confiabilidad para la media de la población usando esta información. Interpreta su significado.
+
+4.  Una muestra aleatoria de 120 estudiantes de una  universidad de EEUU arroja un promedio del GPA igual a 2.71. Suponga que conocemos la desviación estándar poblacional y es igual a 0.55. Construya un intervalo de confianza del 90 % para el GPA promedio de todos los estudiantes en la universidad.
+
+5.  A cuatrocientos adultos trabajadores seleccionados al azar en un determinado estado, se les preguntó la distancia desde su hogar hasta su lugar de trabajo. La distancia promedio fue de 8.84 millas con una desviación estándar de 2.70 millas. Construya intervalos de confianza del 90 %, 94 %, 97 % para la distancia media entre el hogar y el trabajo de todos los residentes de este estado.
+
+6.  Para estimar el número de calorías en una porción de carne de pechuga de pollo en cubos, se mide la cantidad de calorías en una muestra de 15 platos de carne separadas. La media muestral es de 211.8 calorías con una desviación estándar de muestra de 0.9 calorías. Suponiendo que el contenido calórico de todas las carnes de pollo se distribuye normalmente, construya un intervalo de confianza del 95% para la cantidad media de calorías en un plato de carne.
+
+
+7.  Para estimar la proporción de estudiantes en una universidad grande que son mujeres, se selecciona una muestra aleatoria de 120 estudiantes. Hay 75 alumnas en la muestra. Construya un intervalo de confianza del 90 % y 99 % para la proporción de todos los estudiantes de la universidad que son mujeres.
+
+8. En una muestra aleatoria de 900 adultos, 42 se definieron a sí mismos como vegetarianos.
+
+* Proporcione una estimación puntual de la proporción de adultos que se definirían como vegetarianos.
+
+* Construya un intervalo de confianza del 80 % de confianza  para la proporción de todos los adultos que se definirían a sí mismos como vegetarianos.
+
 
 ---------------------------------------------------------------------------------------------------------------
 
