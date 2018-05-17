@@ -468,9 +468,69 @@ b)  Mediante estandarizacoón encuentre $P(\bar{X} > 3)$, $P(\bar{Y} < 2)$ y $P(
 
 8. En una muestra aleatoria de 900 adultos, 42 se definieron a sí mismos como vegetarianos.
 
-* Proporcione una estimación puntual de la proporción de adultos que se definirían como vegetarianos.
+a)   Proporcione una estimación puntual de la proporción de adultos que se definirían como vegetarianos.
 
-* Construya un intervalo de confianza del 80 % de confianza  para la proporción de todos los adultos que se definirían a sí mismos como vegetarianos.
+b)   Construya un intervalo de confianza del 80 % de confianza  para la proporción de todos los adultos que se definirían a sí mismos como vegetarianos.
+
+
+### Respuestas
+
+1. 
+
+a)  $P(X = 4)=0.0072$
+
+b)  $P(2 < X < 5)=0.0095$
+
+c)  $P(3 \leq X \leq 6)=0.0717$
+
+2. 
+
+a)  .
+
+
+* $\bar{X} \sim Normal \Big(5, \frac{7}{\sqrt{10}}\Big)$
+
+* $\bar{Y} \sim Normal \Big(2, \frac{10}{\sqrt{10}}\Big)$
+
+* $\bar{W} \sim Normal \Big(10, \frac{12}{\sqrt{10}}\Big)$
+
+b) 
+
+* $P(\bar{X} > 3)=0.8168$ 
+
+* $P(\bar{Y} < 2)=0.5$
+
+* $P(3 \leq \bar{W} \leq 6)=0.1133$
+
+3.  $(30.1868,398131)$ at 98 %
+
+4.  $(2.6274,2.7925)$ at 90 %
+
+5. .
+
+*  $(8.6174,9.0625)$ at 90 %
+
+*  $(8.5853,9.0946)$ at 94 %
+
+*  $(8.5459,9.1340)$ at 97 %
+
+6.  $(211.3016,212.2984)$ at 95 %
+
+7.  
+
+*  $(0.5523,0.6976)$ at 90 %
+
+*  $(0.5111,0.7388)$ at 99 %
+
+
+8.  
+
+a)   $\hat{p}=\dfrac{42}{900}=0.0466$
+
+b)   $(0.0375,0.0556)$ at 80 %
+
+
+
 
 
 ---------------------------------------------------------------------------------------------------------------
