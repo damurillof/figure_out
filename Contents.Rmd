@@ -48,6 +48,8 @@ output: html_document
 
 ### [Pruebas de hipótesis](https://didier-murillo.netlify.com/p_hipot/)
 
+### [Correlación](https://didier-murillo.netlify.com/correlacion/)
+
 
 
 
