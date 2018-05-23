@@ -1,0 +1,179 @@
+---
+title: "Regresión"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Si existe una relación entre las variables "x" e "y", ¿podemos describirlo?
+ 
+Hacemos eso al encontrar un modelo, que es una ecuación $y = f (x)$. Aquí lo mantenemos muy simple $y$ consideramos solo relaciones lineales, es decir, ecuaciones de la forma
+ 
+$$y=mx+b$$
+En Estadística, aunque utilizamos una notación ligeramente diferente:
+ 
+$$y = \beta_0 + \beta_1x$$
+ 
+La lógica aquí es esta: si sabemos el valor de $x$, podemos calcular el correspondiente valor de $y$. Lamentablemente, siempre hay "errores" en este cálculo, por lo que la respuesta $y$ varía incluso para la misma $x$.
+ 
+Por ejemplo, sea $x$ la cantidad de horas que un estudiante estudia para un examen y  $y$ la puntuación del examen. Digamos que sabemos por experiencia que $y = 50 + 5x$. Entonces, incluso si el estudiante no estudia  $(x = 0)$, él o ella obtendría alrededor de 50 puntos, y por cada hora estudiada, el puntaje aumenta alrededor de 5 puntos.
+Pero, por supuesto, hay muchos otros factores que influyen en el grado, como la capacidad general, la experiencia previa, estar saludable el día del examen, la ansiedad del examen, etc., por lo que para un alumno específico el puntaje no será exactamente lo que predice la ecuación. Entonces, si tres estudiantes estudian 6 horas, la ecuación predice un puntaje de $50 + 5 * 6 = 80$ para todos, pero uno podría obtener un 69, el siguiente un $78$ y el tercero un $99$. Lo que la ecuación predice es en realidad su puntuación media.
+ 
+Esto se ilustra en el siguiente gráfico:
+
+![](plots.png)
+
+
+Donde las puntuaciones de las personas que estudiaron 6 horas están en rojo, y su puntaje promedio está marcado por una $X$. El significado de la línea se explica como la respuesta media o promedio.
+ 
+Por tanto $\beta_0$ y $\beta_1$ son números que dependen de la población de la cual se extraen los datos $(X,Y)$. Por lo tanto, son parámetros como la media o la mediana.
+ 
+**Un problema estándar es este**: Tenemos un conjunto de datos y creemos que hay una relación lineal entre $x$ e $y$. Nos gustaría saber la ecuación que describe el moelo matematicamente.
+ 
+ $$y = \beta_0 + \beta_1x$$
+ 
+Es decir, ¿tenemos que "adivinar" los valores de  $\beta_0$ y $\beta_1$?. La respuesta es No, Los estimaremos mediante un método llamado regresión por mínimos cuadrados. Esto se hace en RStudio con el comando `lm()`.
+ 
+## Tiempo de espera para la erupción de un geyser. 
+
+Datos de 272 erupciones de un geyser, esta data tiene dos variables: Una es la duración de la erupción `eruptions` y la otra es el tiempo de espera hasta la próxima erupción `waiting`.
+
+```{r}
+head(faithful,20)
+```
+ 
+Para revisar como se distribuyen los datos podemos dibujar un diagrama de dispersión 
+
+```{r}
+library(ggplot2)
+p <- ggplot(faithful) +
+       geom_point(aes(x=waiting, y=eruptions)) +
+       scale_x_continuous("Waiting time until next eruption (min)") +
+       scale_y_continuous("Eruption duration (min)")
+print(p)
+```
+
+Por lo que vemos una clara correlación positiva, cuanto mayor es el tiempo de espera, menor es la tasa mayor es la duración de la erupción.
+
+
+Entonces, ¿qué podemos decir sobre la relación real?
+
+Esta relación la podemos encontrar mediante un modelo de regresión simple de la forma:
+
+$$eruption = \beta_0 + \beta_1*waiting$$
+
+```{r}
+lm(eruptions ~ waiting, data = faithful)
+``` 
+ 
+Entonces, según los resultados estimados para $\beta_0$ y $\beta_1$ el modelo es el siguiente:
+
+$$ eruptions = -1.87402 + 0.07563*waiting$$
+Hay un buen gráfico llamado diagrama de línea ajustado, que es el diagrama de dispersión con la línea de regresión de mínimos cuadrados añadida:
+
+```{r}
+ggplot(faithful, aes(x=waiting, y=eruptions)) +    geom_point() +  geom_smooth(method=lm , color="red", se=FALSE)
+``` 
+ 
+ 
+### Coeficiente de determinación
+
+El coeficiente de determinación de un modelo de regresión lineal es el cociente de las varianzas de los valores ajustados y los valores observados de la variable dependiente. Si denotamos $y_i$ como los valores observados de la variable dependiente, $\bar{y}$ como su media, y $\hat{y}_i$ como el valor ajustado, entonces el coeficiente de determinación es:
+ 
+$$R^2=\dfrac{(\hat{y_i}-\bar{y})^2}{(y_i-\bar{y})^2}$$
+
+> Problema
+ 
+Encuentre el coeficiente de determinación para el modelo de regresión lineal simple del conjunto de datos `faitfiul`.
+ 
+> Solución
+ 
+Aplicamos la función lm a una fórmula que describe las erupciones variables por la variable que espera, y guardamos el modelo de regresión lineal en una nueva variable `eruption.lm`.
+
+```{r}
+eruption.lm <- lm(eruptions ~ waiting, data = faithful)
+``` 
+ 
+Luego extraemos el coeficiente de determinación del atributo r.squared de su resumen.
+
+
+```{r}
+summary(eruption.lm)$r.squared
+``` 
+ 
+ 
+El coeficiente de determinación del modelo de regresión lineal simple para el conjunto de datos  es 0.81146.
+
+**Interpretación**: Este valor significa que la variabilidad en la respuesta (eruptions) es explicada en un 0.8114 (81 %) por la variable predictora `waiting`.
+
+
+> **Dos cosas importantes**
+
+1.  Digamos que  $\bar{X}$ es la media del vector x, y que y $\bar{Y}$  es la media del vector y, entonces  $(\bar{X}, \bar{Y})$  es siempre un punto en la línea. Es decir la línea de regresión siempre pasa por el punto 
+ 
+2.  Hemos visto anteriormente que para el coeficiente de correlación no importa qué variable elijamos como X y que como Y, es decir, tenemos
+ 
+$$cor(x, y) = cor(y, x)$$
+
+Por ejemplo,la correlación entre las variables es
+
+```{r}
+cor(faithful$waiting,faithful$eruptions)
+``` 
+ 
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

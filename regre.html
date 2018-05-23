@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Regresión</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Regresión</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#tiempo-de-espera-para-la-erupcion-de-un-geyser.">Tiempo de espera para la erupción de un geyser.</a><ul>
+<li><a href="#coeficiente-de-determinacion">Coeficiente de determinación</a></li>
+</ul></li>
+</ul>
+</div>
+
+<p>Si existe una relación entre las variables “x” e “y”, ¿podemos describirlo?</p>
+<p>Hacemos eso al encontrar un modelo, que es una ecuación <span class="math inline">\(y = f (x)\)</span>. Aquí lo mantenemos muy simple <span class="math inline">\(y\)</span> consideramos solo relaciones lineales, es decir, ecuaciones de la forma</p>
+<p><span class="math display">\[y=mx+b\]</span> En Estadística, aunque utilizamos una notación ligeramente diferente:</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1x\]</span></p>
+<p>La lógica aquí es esta: si sabemos el valor de <span class="math inline">\(x\)</span>, podemos calcular el correspondiente valor de <span class="math inline">\(y\)</span>. Lamentablemente, siempre hay “errores” en este cálculo, por lo que la respuesta <span class="math inline">\(y\)</span> varía incluso para la misma <span class="math inline">\(x\)</span>.</p>
+<p>Por ejemplo, sea <span class="math inline">\(x\)</span> la cantidad de horas que un estudiante estudia para un examen y <span class="math inline">\(y\)</span> la puntuación del examen. Digamos que sabemos por experiencia que <span class="math inline">\(y = 50 + 5x\)</span>. Entonces, incluso si el estudiante no estudia <span class="math inline">\((x = 0)\)</span>, él o ella obtendría alrededor de 50 puntos, y por cada hora estudiada, el puntaje aumenta alrededor de 5 puntos. Pero, por supuesto, hay muchos otros factores que influyen en el grado, como la capacidad general, la experiencia previa, estar saludable el día del examen, la ansiedad del examen, etc., por lo que para un alumno específico el puntaje no será exactamente lo que predice la ecuación. Entonces, si tres estudiantes estudian 6 horas, la ecuación predice un puntaje de <span class="math inline">\(50 + 5 * 6 = 80\)</span> para todos, pero uno podría obtener un 69, el siguiente un <span class="math inline">\(78\)</span> y el tercero un <span class="math inline">\(99\)</span>. Lo que la ecuación predice es en realidad su puntuación media.</p>
+<p>Esto se ilustra en el siguiente gráfico:</p>
+<div class="figure">
+<img src="plots.png" />
+
+</div>
+<p>Donde las puntuaciones de las personas que estudiaron 6 horas están en rojo, y su puntaje promedio está marcado por una <span class="math inline">\(X\)</span>. El significado de la línea se explica como la respuesta media o promedio.</p>
+<p>Por tanto <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> son números que dependen de la población de la cual se extraen los datos <span class="math inline">\((X,Y)\)</span>. Por lo tanto, son parámetros como la media o la mediana.</p>
+<p><strong>Un problema estándar es este</strong>: Tenemos un conjunto de datos y creemos que hay una relación lineal entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>. Nos gustaría saber la ecuación que describe el moelo matematicamente.</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1x\]</span></p>
+<p>Es decir, ¿tenemos que “adivinar” los valores de <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span>?. La respuesta es No, Los estimaremos mediante un método llamado regresión por mínimos cuadrados. Esto se hace en RStudio con el comando <code>lm()</code>.</p>
+<div id="tiempo-de-espera-para-la-erupcion-de-un-geyser." class="section level2">
+<h2>Tiempo de espera para la erupción de un geyser.</h2>
+<p>Datos de 272 erupciones de un geyser, esta data tiene dos variables: Una es la duración de la erupción <code>eruptions</code> y la otra es el tiempo de espera hasta la próxima erupción <code>waiting</code>.</p>
+<pre class="r"><code>head(faithful,20)</code></pre>
+<pre><code>##    eruptions waiting
+## 1      3.600      79
+## 2      1.800      54
+## 3      3.333      74
+## 4      2.283      62
+## 5      4.533      85
+## 6      2.883      55
+## 7      4.700      88
+## 8      3.600      85
+## 9      1.950      51
+## 10     4.350      85
+## 11     1.833      54
+## 12     3.917      84
+## 13     4.200      78
+## 14     1.750      47
+## 15     4.700      83
+## 16     2.167      52
+## 17     1.750      62
+## 18     4.800      84
+## 19     1.600      52
+## 20     4.250      79</code></pre>
+<p>Para revisar como se distribuyen los datos podemos dibujar un diagrama de dispersión</p>
+<pre class="r"><code>library(ggplot2)
+p &lt;- ggplot(faithful) +
+       geom_point(aes(x=waiting, y=eruptions)) +
+       scale_x_continuous(&quot;Waiting time until next eruption (min)&quot;) +
+       scale_y_continuous(&quot;Eruption duration (min)&quot;)
+print(p)</code></pre>
+<p><img src="regre_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Por lo que vemos una clara correlación positiva, cuanto mayor es el tiempo de espera, menor es la tasa mayor es la duración de la erupción.</p>
+<p>Entonces, ¿qué podemos decir sobre la relación real?</p>
+<p>Esta relación la podemos encontrar mediante un modelo de regresión simple de la forma:</p>
+<p><span class="math display">\[eruption = \beta_0 + \beta_1*waiting\]</span></p>
+<pre class="r"><code>lm(eruptions ~ waiting, data = faithful)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = eruptions ~ waiting, data = faithful)
+## 
+## Coefficients:
+## (Intercept)      waiting  
+##    -1.87402      0.07563</code></pre>
+<p>Entonces, según los resultados estimados para <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> el modelo es el siguiente:</p>
+<p><span class="math display">\[ eruptions = -1.87402 + 0.07563*waiting\]</span> Hay un buen gráfico llamado diagrama de línea ajustado, que es el diagrama de dispersión con la línea de regresión de mínimos cuadrados añadida:</p>
+<pre class="r"><code>ggplot(faithful, aes(x=waiting, y=eruptions)) +    geom_point() +  geom_smooth(method=lm , color=&quot;red&quot;, se=FALSE)</code></pre>
+<p><img src="regre_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="coeficiente-de-determinacion" class="section level3">
+<h3>Coeficiente de determinación</h3>
+<p>El coeficiente de determinación de un modelo de regresión lineal es el cociente de las varianzas de los valores ajustados y los valores observados de la variable dependiente. Si denotamos <span class="math inline">\(y_i\)</span> como los valores observados de la variable dependiente, <span class="math inline">\(\bar{y}\)</span> como su media, y <span class="math inline">\(\hat{y}_i\)</span> como el valor ajustado, entonces el coeficiente de determinación es:</p>
+<p><span class="math display">\[R^2=\dfrac{(\hat{y_i}-\bar{y})^2}{(y_i-\bar{y})^2}\]</span></p>
+<blockquote>
+<p>Problema</p>
+</blockquote>
+<p>Encuentre el coeficiente de determinación para el modelo de regresión lineal simple del conjunto de datos <code>faitfiul</code>.</p>
+<blockquote>
+<p>Solución</p>
+</blockquote>
+<p>Aplicamos la función lm a una fórmula que describe las erupciones variables por la variable que espera, y guardamos el modelo de regresión lineal en una nueva variable <code>eruption.lm</code>.</p>
+<pre class="r"><code>eruption.lm &lt;- lm(eruptions ~ waiting, data = faithful)</code></pre>
+<p>Luego extraemos el coeficiente de determinación del atributo r.squared de su resumen.</p>
+<pre class="r"><code>summary(eruption.lm)$r.squared</code></pre>
+<pre><code>## [1] 0.8114608</code></pre>
+<p>El coeficiente de determinación del modelo de regresión lineal simple para el conjunto de datos es 0.81146.</p>
+<p><strong>Interpretación</strong>: Este valor significa que la variabilidad en la respuesta (eruptions) es explicada en un 0.8114 (81 %) por la variable predictora <code>waiting</code>.</p>
+<blockquote>
+<p><strong>Dos cosas importantes</strong></p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p>Digamos que <span class="math inline">\(\bar{X}\)</span> es la media del vector x, y que y <span class="math inline">\(\bar{Y}\)</span> es la media del vector y, entonces <span class="math inline">\((\bar{X}, \bar{Y})\)</span> es siempre un punto en la línea. Es decir la línea de regresión siempre pasa por el punto</p></li>
+<li><p>Hemos visto anteriormente que para el coeficiente de correlación no importa qué variable elijamos como X y que como Y, es decir, tenemos</p></li>
+</ol>
+<p><span class="math display">\[cor(x, y) = cor(y, x)\]</span></p>
+<p>Por ejemplo,la correlación entre las variables es</p>
+<pre class="r"><code>cor(faithful$waiting,faithful$eruptions)</code></pre>
+<pre><code>## [1] 0.9008112</code></pre>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

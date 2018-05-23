@@ -50,6 +50,7 @@ output: html_document
 
 ### [Correlación](https://didier-murillo.netlify.com/correlacion/)
 
+### [Regresión Simple](https://didier-murillo.netlify.com/regre/)
 
 
 
