@@ -1,0 +1,12 @@
+---
+title: "Laboratorio 3"
+output:
+  html_document:
+    toc: true
+    theme: flatly
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
