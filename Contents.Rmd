@@ -3,9 +3,8 @@ title: "Contenidos ESMA3101."
 output: html_document
 ---
 
-### [Examenes pasados](https://didier-murillo.netlify.com/oldexams)
 
-### [Prontuario](https://didier-murillo.netlify.com/Prontuario.pdf)
+### [Prontuario](https://didier-murillo.netlify.com/Prontuariofall2018.pdf)
 
 ### [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/Intro_Esma3101/)
 
