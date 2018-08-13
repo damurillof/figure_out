@@ -1,0 +1,17 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Exámenes pasados-Spring 2018.
+
+#### [Primer Examen](https://didier-murillo.netlify.com/Examen1-ESMA3101.pdf)
+
+#### [Segundo Examen](https://didier-murillo.netlify.com/Examen2-ESMA3101.pdf)
+
+#### [Tercer Examen](https://didier-murillo.netlify.com/Examen3-ESMA3101.pdf)
+
