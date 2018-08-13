@@ -14,7 +14,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 En probabilidad y estadística la distribución normal es una de las más importantes.  Es llamada también distribución Gaussiana en honor a el  matemático, físico y astrónomo alemán K. Gauss, es una distribución continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa  la gráfica de la siguiente ecuación.
 
-$$f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty <x< +\infty$$
+\begin{equation*}
+f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty <x< +\infty
+\end{equation*}
+
 Si $X$ es una variable aleatoria continua y $X$ se distribuye normalmente entonces se escribe $X \sim Normal(\mu,\sigma)$, donde $\mu$ es la media y $\sigma$ es la desviación estándar.
 
 

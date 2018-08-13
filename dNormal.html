@@ -219,7 +219,10 @@ $(document).ready(function () {
 <div id="distribucion-normal-o-gaussiana." class="section level2">
 <h2>Distribución Normal o Gaussiana.</h2>
 <p>En probabilidad y estadística la distribución normal es una de las más importantes. Es llamada también distribución Gaussiana en honor a el matemático, físico y astrónomo alemán K. Gauss, es una distribución continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa la gráfica de la siguiente ecuación.</p>
-<p><span class="math display">\[f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty &lt;x&lt; +\infty\]</span> Si <span class="math inline">\(X\)</span> es una variable aleatoria continua y <span class="math inline">\(X\)</span> se distribuye normalmente entonces se escribe <span class="math inline">\(X \sim Normal(\mu,\sigma)\)</span>, donde <span class="math inline">\(\mu\)</span> es la media y <span class="math inline">\(\sigma\)</span> es la desviación estándar.</p>
+<span class="math display">\[\begin{equation*}
+f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty &lt;x&lt; +\infty
+\end{equation*}\]</span>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria continua y <span class="math inline">\(X\)</span> se distribuye normalmente entonces se escribe <span class="math inline">\(X \sim Normal(\mu,\sigma)\)</span>, donde <span class="math inline">\(\mu\)</span> es la media y <span class="math inline">\(\sigma\)</span> es la desviación estándar.</p>
 <div class="figure">
 <img src="plotnormal.png" />
 
@@ -337,8 +340,8 @@ Notas &lt;- rnorm(30,75,10)
 # Redondeando los resultados
 Notas &lt;- round(Notas,digits = 0)
 print(Notas)</code></pre>
-<pre><code>##  [1] 60 71 82 95 79 67 69 87 70 77 83 55 79 91 78 63 86 74 69 85 68 60 75
-## [24] 95 68 88 87 77 73 66</code></pre>
+<pre><code>##  [1] 75 67 70 80 59 73 93 91 77 92 87 63 90 78 83 59 69 78 67 64 78 72 69
+## [24] 79 85 56 74 60 76 86</code></pre>
 <p><strong>¿Cuál es la probabilidad que un estudiante tenga más 73 en la nota?</strong></p>
 <hr />
 <hr />
