@@ -8,6 +8,8 @@ output: html_document
 
 ### [Algunas ideas y conceptos básicos](https://didier-murillo.netlify.com/Intro_Esma3101/)
 
+### [Formas de muestreo](https://didier-murillo.netlify.com/sampling/)
+
 ### [Introducción a R](https://didier-murillo.netlify.com/Intro_R/)
 
 ### [Estadística descriptiva](https://didier-murillo.netlify.com/Esta_descrip/)
