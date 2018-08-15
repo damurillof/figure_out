@@ -10,6 +10,8 @@ output: html_document
 
 ### [Formas de muestreo](https://didier-murillo.netlify.com/sampling/)
 
+### [Diseños de experimentos en estadística](https://didier-murillo.netlify.com/d_expe/)
+
 ### [Introducción a R](https://didier-murillo.netlify.com/Intro_R/)
 
 ### [Estadística descriptiva](https://didier-murillo.netlify.com/Esta_descrip/)

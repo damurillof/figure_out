@@ -66,3 +66,6 @@ La aleatorización se refiere a la práctica de usar métodos aleatorios (tablas
 Replicación. La replicación se refiere a la práctica de asignar cada tratamiento a muchas unidades experimentales. En general, cuanto más unidades experimentales en cada condición de tratamiento, menor es la variabilidad de la medida dependiente
 
 
+![](blanco.png)
+
+
