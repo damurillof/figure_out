@@ -219,17 +219,48 @@ $(document).ready(function () {
 <div id="muestreo-aleatorio-simple" class="section level4">
 <h4>Muestreo Aleatorio simple</h4>
 <p>Se usa cuando a cada elemento de la población se le quiere dar la misma oportunidad de ser elegido en la muestra.</p>
-<p>Después de fijar el tamaño de la muestra <span class="math inline">\(n\)</span>, los elementos que la compongan se deben elegir aleatoriamente entre los <span class="math inline">\(N\)</span> de la población. Para hacer que el proceso sea aleatorio los individuos se deben etiquetar (números por ejemplo), y luego serán seleccionados usando computadora u otro método adecuado.</p>
+<ul>
+<li><p>La población consiste en N objetos.</p></li>
+<li><p>La muestra consta de n objetos.</p></li>
+<li><p>Si todas las muestras posibles de <span class="math inline">\(n\)</span> objetos tienen la misma probabilidad de ocurrir, el método de muestreo se llama muestreo aleatorio simple.</p></li>
+</ul>
+<p>Después de fijar el tamaño de la muestra <span class="math inline">\(n\)</span>, los elementos que la compongan se deben elegir aleatoriamente entre los <span class="math inline">\(N\)</span> de la población. Para hacer que el proceso sea aleatorio los individuos se deben etiquetar (números por ejemplo), y luego serán seleccionados usando computadora u otro método adecuado. Hay muchas formas de obtener una muestra aleatoria simple. Una forma sería el método de lotería. A cada uno de los N miembros de la población se le asigna un número único. Los números se colocan en un recipiente y luego se mezclan bien. Entonces, un investigador selecciona los <span class="math inline">\(n\)</span> números. Los miembros de la población que tienen los números seleccionados terminan haciendo parte de la muestra.</p>
 </div>
 <div id="muestreo-estratificado" class="section level4">
 <h4>Muestreo Estratificado</h4>
-<p>Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño. Luego, de cada estrato se saca una muestra aleatoria, usualmente proporcional al tamaño del estrato.</p>
-<p>Este tipo de muestreo consiste en considerar categorías típicas diferentes entre sí (estratos) que poseen gran homogeneidad respecto a alguna característica (se puede estratificar, por ejemplo, según la profesión, el municipio de residencia, el sexo, el estado civil, etc.). Lo que se pretende con este tipo de muestreo es asegurarse de que todos los estratos de interés estarán representados adecuadamente en la muestra. Cada estrato funciona independientemente, pudiendo aplicarse dentro de ellos el muestreo aleatorio simple o el estratificado para elegir los elementos concretos que formarán parte de la muestra.</p>
+<p>Se usa cuando se conoce de antemano que la población está dividida en estratos, que son equivalentes a categorías y los cuales por lo general no son de igual tamaño.</p>
+<p>El muestreo estratificado es posible cuando tiene sentido dividir la población en grupos según un factor que puede influir en la variable que se está midiendo. Estos grupos se llaman estratos. Un grupo individual se llama estrato. Con muestreo estratificado uno debería:</p>
+<ul>
+<li>Dividir la población en grupos (estratos).</li>
+<li>Obtener una muestra aleatoria simple de cada grupo (estrato)</li>
+<li>Recopilar datos sobre cada unidad de muestreo que se muestreó aleatoriamente de cada grupo (estrato)</li>
+</ul>
+<p>El muestreo estratificado funciona bien cuando una población heterogénea se divide en grupos bastante homogéneos. Bajo estas condiciones, la estratificación generalmente produce estimaciones más precisas de los parámetros poblacionales comparado con las estimaciones que se encontrarían a partir de una muestra aleatoria simple. La siguiente tabla muestra algunos ejemplos de formas de obtener una muestra estratificada.</p>
+<div class="figure">
+<img src="estratos.png" />
+
+</div>
 </div>
 <div id="muestreo-por-conglomerados-clusters" class="section level4">
 <h4>Muestreo por conglomerados (“Clusters”)</h4>
 <p>En este caso la población se divide en grupos llamados conglomerados. Luego se elige al azar un cierto número de ellos y todos los elementos de los conglomerados elegidos forman la muestra.</p>
-<p>En el muestreo por conglomerados la unidad muestral es un grupo de elementos de la población que forman una unidad, a la que llamamos conglomerado. Las unidades hospitalarias, los departamentos universitarios, una caja de determinado producto, etc., son conglomerados naturales. En otras ocasiones se pueden utilizar conglomerados no naturales como, por ejemplo, las urnas electorales. Cuando los conglomerados son áreas geográficas suele hablarse de “muestreo por áreas”. El muestreo por conglomerados consiste en seleccionar aleatoriamente un cierto número de conglomerados (el necesario para alcanzar el tamaño muestral establecido) y en investigar después todos los elementos pertenecientes a los conglomerados elegidos.</p>
+<p>En el muestreo por conglomerados la unidad muestral es un grupo de elementos de la población que forman una unidad, a la que llamamos conglomerado. Las unidades hospitalarias, los departamentos universitarios, una caja de determinado producto, etc., son conglomerados naturales. En otras ocasiones se pueden utilizar conglomerados no naturales como, por ejemplo, las urnas electorales. Cuando los conglomerados son áreas geográficas suele hablarse de “muestreo por áreas”. El muestreo por conglomerados consiste en seleccionar aleatoriamente un cierto número de conglomerados (Clousters) (el necesario para alcanzar el tamaño muestral establecido) y en investigar después todos los elementos pertenecientes a los conglomerados elegidos.</p>
+<div class="figure">
+<img src="clouster.png" />
+
+</div>
+<ul>
+<li><strong>Con el Ejemplo 1:</strong></li>
+</ul>
+<p>Se preferiría el muestreo estratificado sobre el muestreo por conglomerados, particularmente si las preguntas de interés se ven afectadas por el huso horario. Por ejemplo, el porcentaje de personas que ven un evento deportivo en vivo en la televisión podría verse muy afectado por la zona horaria en la que se encuentran. El muestreo por conglomerados funciona mejor cuando hay un número razonable de conglomerados en relación con toda la población. En este caso, seleccionar 2 clusters de 4 posibles clusters realmente no proporciona mucha ventaja sobre el muestreo aleatorio simple.</p>
+<ul>
+<li><strong>Con el Ejemplo 1:</strong></li>
+</ul>
+<p>Se puede usar el muestreo estratificado o el muestreo por conglomerados. Dependerá de qué preguntas se hagan. Por ejemplo, considere la pregunta “¿Está de acuerdo o en desacuerdo con que reciba la atención adecuada del equipo de médicos de la Clínica de Medicina del Deporte cuando está lesionado?” La respuesta a esta pregunta probablemente no dependa del equipo, por lo que el muestreo por conglomerados (Clousters) estaría bien. En contraste, si la pregunta de interés es “¿Está de acuerdo o en desacuerdo con que el clima afecte su desempeño durante un evento deportivo?” La respuesta a esta pregunta probablemente se verá influida por si el deporte se juega o se practica a campo abirto o en un sitio cubierto. En consecuencia, sería preferible el muestreo estratificado.</p>
+<ul>
+<li><strong>Con el Ejemplo 3:</strong></li>
+</ul>
+<p>El muestreo por conglomerados probablemente sería mejor que el muestreo estratificado si cada escuela primaria individual representa apropiadamente a toda la población como en el distrito escolar donde los estudiantes de todo el distrito pueden asistir a cualquier escuela. El muestreo estratificado podría usarse si las escuelas primarias tenían ubicaciones muy diferentes y solo atendían a su vecindario local (es decir, una escuela primaria está ubicada en un entorno rural, mientras que otra escuela primaria está ubicada en un entorno urbano). Una vez más, las preguntas de interés pueden afectar qué método de muestreo se debe utilizar.</p>
 </div>
 <div id="muestreo-sistematico" class="section level4">
 <h4>Muestreo Sistemático</h4>
