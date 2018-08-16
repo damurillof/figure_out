@@ -18,10 +18,10 @@ knitr::opts_chunk$set(echo = TRUE)
 a)  Población: 
 b)  Muestra: 
 c)  Variable:
-d)  Tipo Variable: 
+d)  Tipo de variable: 
 
 
-#### 2. Clasifique según se vio en clase las siguientes variables o características
+#### 2. Clasifique las siguientes variables según se discutió en clase .
 
 a)  Zona horaria
 b)  Calorías en un producto alimenticio
