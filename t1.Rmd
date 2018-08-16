@@ -1,0 +1,34 @@
+---
+title: "Tarea # 1"
+author: ""
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **Fecha de entrega:** Viernes 24 de agosto de 2018. Al iniciar la clase. 
+
+#### **Puntaje:** 15 puntos 
+
+#### 1. Se está interesado en estudiar la cantidad de tiempo (en minutos) que toman para ser atendidos los estudiantes que acuden a  la cafetería del RUM en hora de almuerzo. Se recopiló el tiempo de espera para 12 estudiantes. Identifique la siguiente información
+
+a)  Población: 
+b)  Muestra: 
+c)  Variable:
+d)  Tipo Variable: 
+
+
+#### 2. Clasifique según se vio en clase las siguientes variables o características
+
+a)  Zona horaria
+b)  Calorías en un producto alimenticio
+c)  Número de playas en cada municipio de PR
+d)  Salario
+e)  Número de mascotas
+f)  Estatus economico
+g)  GPA de un estudiante. 
+
+#### 3. Suponga que usted trabaja como analista de datos para una compañía que vende autos y está llevando a cabo una encuesta de satisfacción del cliente sobre el producto comprado. Usted cuenta con una muestra de 4800 nuevos compradores y sabe que de esos nuevos compradores 1200 fueron de Toyota, 1000 de Honda, 1500 de Mazda , 500 de Lexus y 600 de BMW. Proponga y explique de forma detallada una estrategia de muestreo que le permita recolectar la información que usted requiere. Justifique porqué su elección es la mejor opción para este caso. 

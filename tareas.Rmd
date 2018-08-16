@@ -1,0 +1,19 @@
+---
+title: "Tareas"
+author: ""
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Reglas para todas las tareas: 
+
+1. La tarea debe ser entregada en físico al iniciar la clase y en el día señalado.
+2. Se pueden ayudar mutuamente en el uso de las computadoras, pero dos trabajos exactamente iguales recibirán nota CERO.
+3. En su reporte final debe aparecer todo el código de R y los respectivos resultados. En los cálculos manuales debe mostrar su procedimiento detalladamente.
+4. Todas las gráficas deben tener títulos que incluyan su nombre de estudiante, de lo contrario se descontarán puntos.
+
+### [Tarea 1. Fecha limite: Viernes 24 de agosto](https://didier-murillo.netlify.com/t1)
