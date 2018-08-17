@@ -8,7 +8,7 @@ navbar:
     - text: "Teaching"     ##### the new
       href: Teaching.html  ##### stuff
     - text: "About Me"
-      href: about.html
+      href: about.html 
 output:
   html_document:
     theme: flatly

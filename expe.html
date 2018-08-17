@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Diseños de experimentos en estadística</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Diseños de experimentos en estadística</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#definicion-de-experimento">Definición de experimento</a></li>
+<li><a href="#partes-de-un-experimento">Partes de un experimento</a><ul>
+<li><a href="#caracteristicas-de-un-experimento-bien-disenado">Características de un experimento bien diseñado</a></li>
+</ul></li>
+<li><a href="#un-ejemplo-de-diseno-experimental">Un ejemplo de diseño experimental</a><ul>
+<li><a href="#diseno-completamente-aleatorizado">Diseño completamente aleatorizado</a></li>
+<li><a href="#diseno-de-bloques-aleatorizados">Diseño de bloques aleatorizados</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="definicion-de-experimento" class="section level2">
+<h2>Definición de experimento</h2>
+<p>¿Qué es un experimento?</p>
+<p>Hay dos métodos básicos para diseñar experimentos con personas o individuos.</p>
+<p>Un estudio observacional observa individuos y mide variables de interés, pero no intenta influir en las respuestas</p>
+<p>Un experimento diseñado deliberadamente impone algún tratamiento a los individuos para observar sus respuestas.</p>
+<p>En un experimento, un investigador manipula una o más variables, mientras mantiene constantes todas las otras variables. Al observar cómo las variables manipuladas afectan una variable de respuesta, el investigador puede probar si existe una relación causal entre las variables manipuladas y la variable de respuesta.</p>
+</div>
+<div id="partes-de-un-experimento" class="section level2">
+<h2>Partes de un experimento</h2>
+<p>Todos los experimentos tienen variables independientes, variables dependientes y unidades experimentales.</p>
+<div id="variable-independiente." class="section level4">
+<h4>Variable independiente.</h4>
+<p>Una variable independiente (también llamada factor) es una variable explicativa manipulada por el experimentador. Cada factor tiene dos o más niveles (es decir, diferentes valores del factor). Las combinaciones de niveles de los factores se llaman tratamientos. La siguiente tabla muestra variables independientes, factores, niveles y tratamientos para un experimento hipotético.</p>
+<div class="figure">
+<img src="vitaminas.png" />
+
+</div>
+<p>En este experimento hipotético, el investigador está estudiando los posibles efectos de la vitamina C y la vitamina E en la salud. Hay dos factores: la dosis de vitamina C y la dosis de vitamina E. El factor de vitamina C tiene tres niveles: 0 mg por día, 250 mg por día y 500 mg por día. El factor de vitamina E tiene 2 niveles: 0 mg por día y 400 mg por día. El experimento tiene seis tratamientos. El tratamiento 1 es 0 mg de E y 0 mg de C, el Tratamiento 2 es 0 mg de E y 250 mg de C, y así sucesivamente.</p>
+</div>
+<div id="variable-dependiente." class="section level4">
+<h4>Variable dependiente.</h4>
+<p>También conocida como variable respuesta. En el experimento hipotético anterior, el investigador está estudiando el efecto de las vitaminas en la salud. La variable dependiente o respuesta en este experimento sería alguna medida de salud (facturas anuales del médico, cantidad de resfriados o gripes en un año, días de hospitalización, etc.).</p>
+</div>
+<div id="unidades-experimentales." class="section level4">
+<h4>Unidades experimentales.</h4>
+<p>Los individuos en los que se realiza un experimento se llaman unidades experimentales. Cuando las unidades experimentales son seres humanos, se les llama sujetos. Una condición experimental específica aplicada a una unidad se llama tratamiento. Las unidades experimentales en un experimento podrían ser cualquier cosa: personas, plantas, animales o etc.</p>
+</div>
+<div id="caracteristicas-de-un-experimento-bien-disenado" class="section level3">
+<h3>Características de un experimento bien diseñado</h3>
+<p>Un experimento bien diseñado incluye características de diseño que permiten a los investigadores eliminar variables extrañas como una explicación de la relación observada entre las variables independientes y la variable dependiente. Algunas de estas características se enumeran a continuación.</p>
+<div id="control" class="section level4">
+<h4>Control</h4>
+<p>Control se refiere a los pasos tomados para reducir los efectos de variables extrañas (es decir, variables distintas de la variable independiente y la variable dependiente). Estas variables extrañas se llaman variables ruidosas. El control implica hacer que el experimento sea lo más similar posible en cada una de las unidades experimentales bajo cada tipo de tratamiento. Dos estrategias para controlar ese tipo de variables son: Un grupo control y placebos.</p>
+<ul>
+<li>Grupo Control.</li>
+</ul>
+<p>Un grupo de control es un grupo de referencia que no recibe tratamiento o que solo recibe un tratamiento neutral. Para evaluar los efectos del tratamiento, el experimentador compara los resultados en el grupo de tratamiento con los resultados en el grupo de control.</p>
+<ul>
+<li>Placebo.</li>
+</ul>
+<p>A menudo, los participantes en un experimento responden de manera diferente después de recibir un tratamiento, incluso si el tratamiento es neutral. Un tratamiento neutral que no tiene un efecto “real” en la variable dependiente se llama placebo, y la respuesta positiva de un participante a un placebo se llama efecto placebo. El ejemplo clásico es usar una pastilla de almidón en la investigación de medicamentos. El nuevo fármaco se considera efectivo solo si los participantes que reciben el medicamento tienen mejores resultados que los sujetos que reciben el placebo.</p>
+<p><strong>Por supuesto, si los participantes en el grupo control saben que están recibiendo un placebo, el efecto placebo se reducirá o se eliminará; y el placebo no cumplirá su propósito de control previsto. Por regla general los participantes que están recibiendo un placebo no lo saben.</strong></p>
+</div>
+<div id="aleatorizacion." class="section level4">
+<h4>Aleatorización.</h4>
+<p>La aleatorización se refiere a la práctica de usar métodos aleatorios (tablas de números aleatorios, lanzar una moneda, etc.) para asignar unidades experimentales a los tratamientos. De esta forma, los efectos potenciales de las variables ruidosas se distribuyen en niveles de probabilidad (con suerte aproximadamente iguales) en todos los tratamientos.</p>
+</div>
+<div id="replicacion." class="section level4">
+<h4>Replicación.</h4>
+<p>La replicación se refiere a la práctica de asignar cada tratamiento a muchas unidades experimentales. En general, cuanto más unidades experimentales en cada condición de tratamiento, menor es la variabilidad de la medida dependiente</p>
+</div>
+</div>
+</div>
+<div id="un-ejemplo-de-diseno-experimental" class="section level2">
+<h2>Un ejemplo de diseño experimental</h2>
+<p>Considera el siguiente experimento hipotético. Acme Medicine está realizando un experimento para probar una nueva vacuna, desarrollada para inmunizar a las personas contra el resfriado común o gripe. Para probar la vacuna, Acme tiene 1000 voluntarios, 500 hombres y 500 mujeres. Los participantes tienen edades comprendidas entre 21 y 70 años. En esta lección, describimos dos tipos de diseños experimentales: un diseño completamente aleatorizado y un diseño de bloques al azar. Y mostramos cómo Acme Medicine podría aplicar cada diseño para comprender el efecto de la vacuna, a la vez que descarta los efectos confusos de otros factores.</p>
+<div id="diseno-completamente-aleatorizado" class="section level3">
+<h3>Diseño completamente aleatorizado</h3>
+<p>El diseño completamente aleatorizado es probablemente el diseño experimental más simple, en términos de análisis de datos y conveniencia. Con este diseño, los participantes se asignan aleatoriamente a los tratamientos. Un diseño completamente aleatorizado para el experimento Acme se muestra en la tabla a continuación.</p>
+<p>TABLA 1</p>
+<p>En este diseño, el experimentador asignó aleatoriamente a los participantes a uno de dos tratamientos. Por lo tanto, recibieron un placebo o recibieron la vacuna. Se asignó el mismo número de participantes (500) a cada tratamiento (aunque esto no es obligatorio). La variable dependiente es la cantidad de resfriados informados en cada tratamiento. Si la vacuna es efectiva, los participantes en la condición de “vacuna” deben informar significativamente menos casos de gripe comparado con los sujetos en el tratamiento “placebo”.</p>
+</div>
+<div id="diseno-de-bloques-aleatorizados" class="section level3">
+<h3>Diseño de bloques aleatorizados</h3>
+<p>Con un diseño de bloques al azar, el experimentador divide a los participantes en subgrupos llamados bloques, de modo que la variabilidad dentro de los bloques es menor que la variabilidad entre los bloques. Luego, los participantes dentro de cada bloque se asignan aleatoriamente a los tratamientos. Debido a que este diseño reduce la variabilidad y la posible confusión, produce una mejor estimación de los efectos del tratamiento. La siguiente tabla muestra un diseño de bloques aleatorizados para el experimento Acme.</p>
+<p>TABLA 2</p>
+<p>Los sujetos se asignan a bloques, en función del género, es decir cada género es un Bloque. Luego, dentro de cada bloque, los participantes se asignan aleatoriamente a los tratamientos. Para este diseño, 250 hombres reciben el placebo, 250 hombres reciben la vacuna, 250 mujeres reciben el placebo y 250 mujeres reciben la vacuna.</p>
+<p>Se sabe que los hombres y las mujeres son fisiológicamente diferentes y reaccionan de manera diferente a los medicamentos. Este diseño garantiza que cada tratamiento tenga una proporción igual de hombres y mujeres. Como resultado, las diferencias entre los tipos de tratamiento no pueden atribuirse al género. Este diseño de bloques aleatorizados elimina el género como una fuente potencial de variabilidad.</p>
+<p>En este ejemplo de Acme, el diseño de bloques aleatorizados es una mejora sobre el diseño completamente aleatorizado. Ambos diseños usan aleatorización para evitar implícitamente la confusión. Pero solo el diseño de bloques aleatorizados controla explícitamente el género.</p>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
