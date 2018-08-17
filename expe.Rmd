@@ -81,7 +81,7 @@ En esta lección, describimos dos tipos de diseños experimentales: un diseño c
 
 El diseño completamente aleatorizado es probablemente el diseño experimental más simple, en términos de análisis de datos y conveniencia. Con este diseño, los participantes se asignan aleatoriamente a los tratamientos. Un diseño completamente aleatorizado para el experimento Acme se muestra en la tabla a continuación.
 
-TABLA 1
+![](random.png)
 
 En este diseño, el experimentador asignó aleatoriamente a los participantes a uno de dos tratamientos. Por lo tanto, recibieron un placebo o recibieron la vacuna. Se asignó el mismo número de participantes (500) a cada tratamiento (aunque esto no es obligatorio). La variable dependiente es la cantidad de resfriados informados en cada tratamiento. Si la vacuna es efectiva, los participantes en la condición de "vacuna" deben informar significativamente menos casos de gripe comparado con  los sujetos en el tratamiento "placebo".
 
@@ -89,7 +89,7 @@ En este diseño, el experimentador asignó aleatoriamente a los participantes a 
 
 Con un diseño de bloques al azar, el experimentador divide a los participantes en subgrupos llamados bloques, de modo que la variabilidad dentro de los bloques es menor que la variabilidad entre los bloques. Luego, los participantes dentro de cada bloque se asignan aleatoriamente a los tratamientos. Debido a que este diseño reduce la variabilidad y la posible confusión, produce una mejor estimación de los efectos del tratamiento. La siguiente tabla muestra un diseño de bloques aleatorizados para el experimento Acme.
 
-TABLA 2
+![](blocks.png)
 
 Los sujetos se asignan a bloques, en función del género, es decir cada género es un Bloque. Luego, dentro de cada bloque, los participantes se asignan aleatoriamente a los tratamientos. Para este diseño, 250 hombres reciben el placebo, 250 hombres reciben la vacuna, 250 mujeres reciben el placebo y 250 mujeres reciben la vacuna.
 
