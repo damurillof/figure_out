@@ -16,4 +16,4 @@ knitr::opts_chunk$set(echo = TRUE)
 3. En su reporte final debe aparecer todo el código de R y los respectivos resultados. En los cálculos manuales debe mostrar su procedimiento detalladamente.
 4. Todas las gráficas deben tener títulos que incluyan el nombre de estudiante, de lo contrario se descontarán puntos.
 
-### [Tarea 1. Fecha limite: Viernes 24 de agosto](https://didier-murillo.netlify.com/t1)
+### [Tarea 1. Fecha límite: Viernes 24 de agosto-2018](https://didier-murillo.netlify.com/t1)
