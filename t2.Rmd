@@ -39,7 +39,7 @@ b)  En `R` y/o `RStudio` la función `min()` encuentra el valor más pequeño en
 
 c)  En `R` y/o `RStudio` la función `sum()` calcula la suma total de un conjunto de datos. Use `sum()` para encontrar  el número total  de homicidios entre 2016 y 2017. 
 
-#### 3. Divida la tabla de datos que construyó en la parte 1 en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla  dos con la información de 2017.
+#### 3. Divida la tabla de datos que construyó en el **ejercicio 1** en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla  dos con la información de 2017.
 
 #### Puede usar el siguiente código para hacerlo.
 
@@ -52,6 +52,6 @@ a)  Encontrar  el número máximo de homicidios en cada uno de los años. ¿Cuá
 
 b)  Encontrar  el número mínimo de homicidios en cada uno de los años. ¿Cuáles son los meses con menor número de homicidios en cada año?
 
-c)  Si se dice que un año es más violento que otro por tener un número total de homicidios mayor. ¿Cuál fue el año más violento?
+c)  Se dice que un año es más violento que otro por tener un número total de homicidios mayor. ¿Cuál fue el año más violento?
 
 ![](blanco.png)

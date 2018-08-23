@@ -35,10 +35,10 @@ g)  GPA de un estudiante. $\to$ **Continua**
 + **300 en el estrato Toyota**
 + **200 en el estrato Honda**
 + **350 en el estrato Mazda**
-+ **150 en el estrato Lexus**
-+ **100 en el estrato BMW**
++ **100 en el estrato Lexus**
++ **150 en el estrato BMW**
 
-#### 4.  **Finalmente la muestra esta conformada por 300 + 200 + 350 + 150 + 100 = 1100 clientes.**
+#### 4.  **Finalmente la muestra esta conformada por 300 + 200 + 350 + 100 + 150 = 1100 clientes.**
 
 
 ### Si la pregunta estuviera orientada a indagar sobre el grado de satisfacción del cliente con el trato recibido al tramitar el crédito para adquirir el auto. ¿Usarias el mismo método?

@@ -219,6 +219,7 @@ $(document).ready(function () {
 <li><a href="#como-instalar-paquetes-en-rstudio">Como instalar paquetes en RStudio</a></li>
 <li><a href="#leer-datos-externos-en-rstudio">Leer datos externos en RStudio</a></li>
 <li><a href="#leer-datos-internos-de-rstudio">Leer datos internos de RStudio</a></li>
+<li><a href="#subconjuntos-de-un-data-frame-o-tabla-de-datos.">Subconjuntos de un data frame o tabla de datos.</a></li>
 </ul></li>
 </ul>
 </div>
@@ -546,6 +547,57 @@ table(iris$Species)</code></pre>
     setosa versicolor  virginica 
         50         50         50 </code></pre>
 <p>50 datos para cada especie.</p>
+</div>
+<div id="subconjuntos-de-un-data-frame-o-tabla-de-datos." class="section level3">
+<h3>Subconjuntos de un data frame o tabla de datos.</h3>
+<p>Quiza estamos interesados en solo un subconjunto de una tabla de datos. Por ejemplo, en la tabla de datos <code>iris</code> solo queremos usar los datos de la especie <code>versicolor</code>, entonces para este trabajo podemos unsar la función de R <code>subset()</code>. Veamos un ejemplo.</p>
+<pre class="r"><code># Selecciona todas las filas que cumplen la condición que la especie sea versicolor
+Specie_versicolor &lt;- subset(iris, iris$Species == &quot;versicolor&quot;) </code></pre>
+<p>Ahora <code>Specie_versicolor</code> es un objeto que contiene todas las filas de <code>iris</code> en donde la variable <code>Specie</code> es <code>versicolor</code>.</p>
+<pre class="r"><code>head(Specie_versicolor,20)</code></pre>
+<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+51          7.0         3.2          4.7         1.4 versicolor
+52          6.4         3.2          4.5         1.5 versicolor
+53          6.9         3.1          4.9         1.5 versicolor
+54          5.5         2.3          4.0         1.3 versicolor
+55          6.5         2.8          4.6         1.5 versicolor
+56          5.7         2.8          4.5         1.3 versicolor
+57          6.3         3.3          4.7         1.6 versicolor
+58          4.9         2.4          3.3         1.0 versicolor
+59          6.6         2.9          4.6         1.3 versicolor
+60          5.2         2.7          3.9         1.4 versicolor
+61          5.0         2.0          3.5         1.0 versicolor
+62          5.9         3.0          4.2         1.5 versicolor
+63          6.0         2.2          4.0         1.0 versicolor
+64          6.1         2.9          4.7         1.4 versicolor
+65          5.6         2.9          3.6         1.3 versicolor
+66          6.7         3.1          4.4         1.4 versicolor
+67          5.6         3.0          4.5         1.5 versicolor
+68          5.8         2.7          4.1         1.0 versicolor
+69          6.2         2.2          4.5         1.5 versicolor
+70          5.6         2.5          3.9         1.1 versicolor</code></pre>
+<p>Notemos que el primer argumento de la función <code>subset()</code> es el nombre de los datos o tabla de datos original, luego el segundo argumento es la condición que usted quiere que cumpla su nueva tabla. Que pasa si solo queremos usuar <code>Petal.Length</code> mayores a 5.8?</p>
+<pre class="r"><code># Selecciona todas las filas que cumplen la condición que la longitud del pétalo sea mayor a 5.8
+Petal.Length_greater5.8 &lt;- subset(iris, iris$Petal.Length &gt; 5.8)
+print(Petal.Length_greater5.8)</code></pre>
+<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+101          6.3         3.3          6.0         2.5 virginica
+103          7.1         3.0          5.9         2.1 virginica
+106          7.6         3.0          6.6         2.1 virginica
+108          7.3         2.9          6.3         1.8 virginica
+110          7.2         3.6          6.1         2.5 virginica
+118          7.7         3.8          6.7         2.2 virginica
+119          7.7         2.6          6.9         2.3 virginica
+123          7.7         2.8          6.7         2.0 virginica
+126          7.2         3.2          6.0         1.8 virginica
+131          7.4         2.8          6.1         1.9 virginica
+132          7.9         3.8          6.4         2.0 virginica
+136          7.7         3.0          6.1         2.3 virginica
+144          6.8         3.2          5.9         2.3 virginica</code></pre>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 <hr />
 <p><strong>FIN</strong></p>
 </div>
