@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje:** 15 puntos 
 
-#### Para esta tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`.
+#### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`.
 
 #### 1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.
 
@@ -41,7 +41,7 @@ c)  En `R` y/o `RStudio` la función `sum()` calcula la suma total de un conjunt
 
 #### 3. Divida la tabla de datos que construyó en el **ejercicio 1** en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla  dos con la información de 2017.
 
-#### Puede usar el siguiente código para hacerlo.
+
 
 ```{r, echo=T,eval=T}
 año2016 <- subset(Asesinatos, Año == 2016) # Selecciona todas las filas que cumplen la condición Año=2016
