@@ -38,7 +38,7 @@ output: html_document
 ----------------- 
 
 
-### [Pruebas para evaluar Normalidad](https://didier-murillo.netlify.com/pru_norm/)
+### [Pruebas para evaluar Normalidad](https://didier-murillo.netlify.com/e_norm/)
 
 ### [Aproximación Normal de la distribución Binomial](https://didier-murillo.netlify.com/aprox_norm/)
 

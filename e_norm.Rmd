@@ -7,6 +7,11 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r, comment=NA,eval=T,echo=F,fig.align='center',fig.height=6,fig.width=12}
+load("/datos/DirectorioR/figure_out/normality.RData")
+``` 
+
+
 ## Pruebas gráficas para evaluar Normalidad
 
 Muchos procedimientos o métodos en estadística toman un supuesto de entrada, el supuesto de la Normalidad, es decir que los datos que se están utilizando si son continuos provengan de una población Normal. Es decir, aplicamos un método estadístico y obtenemos unos resultados, que solo son ciertos si se cumple el supuesto de Normalidad. No siempre los datos provienen de una población que se distribuye normal, por tanto es necesario realizar algunas pruebas para verificarlo. 
@@ -16,11 +21,9 @@ Muchos procedimientos o métodos en estadística toman un supuesto de entrada, e
 En estadística, un gráfico Q-Q ("Q" viene de cuantil) es un método gráfico para el diagnóstico de diferencias entre la distribución de probabilidad de una población de la que se ha extraído una muestra aleatoria y una distribución usada para la comparación, para nuestro caso es la distribución normal. 
 
 
-Vamos a usar los siguientes datos para usar el procedimiento
+Vamos a usar los siguientes datos para ilustrar el procedimiento
 
-
-```{r }
-load(url("http://www.openintro.org/stat/data/bdims.RData"))
+```{r ,eval=T,echo=TRUE,comment=NA}
 head(bdims)
 ```
 
@@ -67,4 +70,6 @@ qqline(fdims$hgt)
 En este caso no es tan evidente la normalidad, dado que como se observa en la gráfica hay varios puntos que se alejan de la línea. 
 
 Existen pruebas más rigurosas, que se discutirán más adelante. 
+
+![](blanco.png)
 

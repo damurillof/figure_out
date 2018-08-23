@@ -21,4 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ### [Tarea 2. Fecha límite: Viernes 31 de agosto-2018](https://didier-murillo.netlify.com/t2)
 
 
+![](blanco.png)
+
+
 
