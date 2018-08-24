@@ -215,7 +215,7 @@ $(document).ready(function () {
 <li><a href="#el-plot-de-puntos-dotplot">El plot de puntos (“Dotplot”)</a></li>
 <li><a href="#organizacion-de-datos-cuantitativos-continuos.">Organización de datos Cuantitativos Continuos.</a><ul>
 <li><a href="#histograma">Histograma</a></li>
-<li><a href="#histogramas-simetricos-y-asimetricos.">Histogramas simétricos y asimétricos.</a></li>
+<li><a href="#histogramas-simetricos-y-sesgados.">Histogramas simétricos y sesgados.</a></li>
 </ul></li>
 <li><a href="#presentacion-de-datos-cualitativos">Presentación de datos cualitativos</a><ul>
 <li><a href="#graficos-de-barras">Gráficos de barras</a></li>
@@ -236,19 +236,19 @@ $(document).ready(function () {
 <p>Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de frecuencias. Tipos de frecuencias:</p>
 <ul>
 <li><p><strong>Frecuencia absoluta:</strong> Indica el número de veces que se repite un valor de la variable.</p></li>
-<li><p><strong>Frecuencia relativa:</strong> Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para trabajar con una Frecuencia relativa porcentual.</p></li>
+<li><p><strong>Frecuencia relativa:</strong> Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente multiplicarla por 100 para trabajar con una Frecuencia relativa porcentual.</p></li>
 <li><p><strong>Frecuencia absoluta acumulada:</strong> Indica el número de valores que son menores o iguales que el valor dado.</p></li>
 <li><p><strong>Frecuencia relativa acumulada:</strong> Indica el porcentaje de datos que son menores o iguales que el valor dado.</p></li>
 </ul>
-<p><strong>Ejemplo:</strong> Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano <code>txt</code>, por tanto la forma de leerlos es la siguiente.</p>
-<pre class="r"><code>Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/text&quot;,header = T)
+<p><strong>Ejemplo:</strong> Usaremos los datos de 50 estudiantes de cierta universidad. Los datos están formato plano <code>txt</code>, por tanto la forma de leerlos es la siguiente.</p>
+<pre class="r"><code>Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/estudiantes.txt&quot;,header = T)
 head(Estudiantes)</code></pre>
 <pre><code>  peso estatura edad sexo hermanos tipo_sangre fuma num_cig h_internet
 1 77.2    178.8   21    M        2           B   si       0         13
 2 74.6    158.6   21    M        0           A   no       0         24
-3 57.8    171.7   22    M        0           O   si       1         33
-4 65.6    170.1   21    F        1           B   no       2         45
-5 56.5    167.8   16    M        5          AB   si       0         22
+3 57.8    171.7   31    M        0           O   si       1         33
+4 65.6    170.1   32    F        1           B   no       2         45
+5 56.5    167.8   13    M        5          AB   si       0         22
 6 60.2    169.7   22    F        2           B   si       3         36
    gpa nota_esma  area trabaja
 1 3.52         I Oeste      si
@@ -301,7 +301,7 @@ table_frec</code></pre>
 4    3    7          0.14               44                0.88
 5    4    3          0.06               47                0.94
 6    5    3          0.06               50                1.00</code></pre>
-<p>O escrita manualmente con los resultados encontrados, como se ve a continuación:</p>
+<p>Finalmente encontramos que la tabla de frecuencia para la variable número de hermanos es:</p>
 <table>
 <colgroup>
 <col width="9%" />
@@ -376,7 +376,7 @@ table_frec</code></pre>
 <li><p>De las frecuencias absolutas se puede interpretar por ejemplo que hay 15 estudiantes que no tienen hermanos o que hay 10 que tienen 2 hermanos.</p></li>
 <li><p>De la frecuencia relativa podemos decir que el 30 % de los estudiantes no tienen hermanos o que el 14 % de los estudiantes tienen tres hermanos.</p></li>
 <li><p>De La frecuencia acumulada se puede decir por ejemplo que hay 44 estudiantes que tienen entre 0 y 3 hermanos o que hay 27 estudiantes que tienen menos de dos hermanos.</p></li>
-<li><p>De la frecuancia relativa acumulada se puede concluir que el numéro de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %.</p></li>
+<li><p>De la frecuencia relativa acumulada se puede concluir que el número de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %.</p></li>
 </ol>
 </div>
 </div>
@@ -388,7 +388,7 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
   ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>En este caso no tenemos presencia de valores anormales (“outliers”).</p>
-<p>A continuación hacemos un Dotplot para la variable cuantitativa discreta <code>edad</code> para ilustrar la presencia de datos anormales.</p>
+<p>A continuación hacemos un Dotplot para la variable cuantitativa - discreta <code>edad</code> para ilustrar la presencia de datos anormales.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>Observamos que la edad de los estudiantes se situa entre los 17 y los 26 años aproximadamente, pero vemos la presencia de un dato a la izquierda de la gráfica y otros a la derecha muy alejados del grupo del centro, estos valores se conocen como datos anormales.</p>
 </div>
@@ -403,9 +403,9 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <li>A un mayor número de datos le corresponde un mayor número de clases.</li>
 </ul></li>
 </ul>
-<p>Una regla bien usada es que el número de clases <span class="math inline">\(k\)</span> debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por <span class="math display">\[k = 1+3.3*log(n)\]</span> Donde <span class="math inline">\(n\)</span> es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de cada clase usando la siguiente fórmula: <span class="math display">\[Amplitud=\frac{máximo - mínimo}{k}\]</span> Usualmente la amplitud debe ser redondeada.</p>
-<p>También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.</p>
-<p>La siguiente función construye una tabla de frecuencias para variables continuas. Para usar esta función solo debe copiar el código y ejecutarlo en su computador. frec_relativa, frec_acumu, frecuencia_abs_acum</p>
+<p>Una regla bien usada es que el número de clases <span class="math inline">\(k\)</span> debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por <span class="math display">\[k = 1+3.3*log(n)\]</span> Donde <span class="math inline">\(n\)</span> es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de cada clase usando la siguiente fórmula: <span class="math display">\[Amplitud=\frac{máximo - mínimo}{k}\]</span> Usualmente la amplitud debe ser redondeada al siguiente número.</p>
+<p>También se debe tener encuenta la <strong>Marca de clase o Punto Medio</strong>, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos valores.</p>
+<p>La siguiente función construye una tabla de frecuencias para variables continuas. Para usar esta función solo debe copiar el código y ejecutarlo en su consola de <code>RStudio</code>.</p>
 <pre class="r"><code>tabla_frecuencia &lt;- function(datos) {
   k &lt;- nclass.Sturges(datos)
   intervalos &lt;- cut(datos, breaks = k)
@@ -467,12 +467,12 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
   geom_histogram(binwidth=0.2,col=&quot;orange&quot;,fill=&quot;black&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 </div>
-<div id="histogramas-simetricos-y-asimetricos." class="section level3">
-<h3>Histogramas simétricos y asimétricos.</h3>
+<div id="histogramas-simetricos-y-sesgados." class="section level3">
+<h3>Histogramas simétricos y sesgados.</h3>
 <blockquote>
-<p>Histograma Asimétrico a la Izquierda</p>
+<p>Histograma sesgado a la Izquierda</p>
 </blockquote>
-<p>Se refiere a un histograma asimétrico a la izquierda cuando hay menos datos al lado izquierdo del histograma.</p>
+<p>Se refiere a un histograma sesgado a la izquierda cuando hay menos datos al lado izquierdo del histograma.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma Simétrico</p>
@@ -480,9 +480,9 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 <p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <blockquote>
-<p>Histograma Asimétrico a la Derecha</p>
+<p>Histograma sesgado a la Derecha</p>
 </blockquote>
-<p>Se refiere a un histograma asimétrico a la derecha cuando hay menos datos al lado derecho del histograma.</p>
+<p>Se refiere a un histograma sesgadoa la derecha cuando hay menos datos al lado derecho del histograma.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 </div>

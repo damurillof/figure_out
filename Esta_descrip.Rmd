@@ -24,7 +24,7 @@ Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Dis
 
 *  **Frecuencia absoluta:** Indica el número de veces que se repite un valor de la variable.
     
-*  **Frecuencia relativa:** Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente mutiplicarla por 100 para
+*  **Frecuencia relativa:** Indica la proporción con que se repite un valor. Se obtiene dividiendo la frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente multiplicarla por 100 para
 trabajar con una Frecuencia relativa porcentual.
 
 
@@ -33,10 +33,11 @@ trabajar con una Frecuencia relativa porcentual.
     
 *  **Frecuencia relativa  acumulada:** Indica el porcentaje de datos que son menores o iguales que el valor dado.
     
-**Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos estan formato plano `txt`, por tanto la forma de leerlos es la siguiente.
+**Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos están formato plano `txt`, por tanto la forma de leerlos es la siguiente.
+
 
 ```{r, comment=NA,echo=T,eval=T}
-Estudiantes <- read.table("/datos/DirectorioR/figure_out/text",header = T)
+Estudiantes <- read.table("/datos/DirectorioR/figure_out/estudiantes.txt",header = T)
 head(Estudiantes)
 ```
 
@@ -81,7 +82,7 @@ table_frec <- data.frame(frecuencias,frec_relativa, frecuencias_acum, frecuencia
 table_frec
 ```
 
-O escrita manualmente con los resultados encontrados, como se ve a continuación:
+Finalmente encontramos que la tabla de frecuencia para la variable número de hermanos es:
 
 
 hermanos | Frecuencia Abs | Frecuencia Relativa | Frecuencia Acumulada | Frecuancia Relativa Acumulada
@@ -102,7 +103,7 @@ Algunas interpretaciones para esta tabla son:
 
 3. De La frecuencia acumulada se puede decir por ejemplo que hay 44 estudiantes que tienen entre 0 y 3 hermanos o que hay 27 estudiantes que tienen menos de dos hermanos. 
 
-4. De la frecuancia relativa acumulada se puede concluir que el numéro de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %. 
+4. De la frecuencia relativa acumulada se puede concluir que el número de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %. 
 
 
 ## El plot de puntos (“Dotplot”)
@@ -117,12 +118,13 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = "green"
 
 En este caso no tenemos presencia de valores anormales ("outliers").
 
-A continuación hacemos un Dotplot para la variable cuantitativa discreta `edad` para ilustrar la presencia de datos anormales.
+A continuación hacemos un Dotplot para la variable cuantitativa - discreta `edad` para ilustrar la presencia de datos anormales.
 
 ```{r, comment=NA,echo=F,eval=T,message=FALSE,warning=FALSE}
-Estudiantes1 <- read.table("/datos/DirectorioR/figure_out/text",header = T)
+Estudiantes1 <- read.table("/datos/DirectorioR/figure_out/estudiantes.txt",header = T)
 library(ggplot2)
-ggplot(Estudiantes1, aes(x = Estudiantes1$edad)) + geom_dotplot(fill = "red", color = "black") + 
+ggplot(Estudiantes1, aes(x = Estudiantes1$edad)) + 
+  geom_dotplot(method="histodot" ,fill = "red", color = "black") + 
   ggtitle("Dotplot para edad")  + xlab("Edad") + ylab("conteos")
 ```
 
@@ -140,15 +142,13 @@ Cuando los datos son de una variable continua o de una variable discreta que asu
     
 Una regla bien usada es que el número de clases $k$ debe ser aproximadamente igual a la raíz cuadrada del número de datos. También está la regla de Sturges, en donde el número de clases está dado por 
 $$k = 1+3.3*log(n)$$
-Donde $n$ es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de
-cada clase usando la siguiente fórmula:
+Donde $n$ es el número de datos. Una vez que se determina el número de clases se calcula la amplitud de cada clase usando la siguiente fórmula:
 $$Amplitud=\frac{máximo - mínimo}{k}$$
-Usualmente la amplitud debe ser redondeada. 
+Usualmente la amplitud debe ser redondeada al siguiente número.
 
-También se debe tener encuenta la Marca de clase, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos parámetros.
+También se debe tener encuenta la **Marca de clase o Punto Medio**, que se refiere a el punto medio de cada intervalo y es el valor que representa a todo el intervalo para el cálculo de algunos valores.
 
-La siguiente función construye una tabla de frecuencias para variables continuas. Para usar esta función solo debe copiar el código  y ejecutarlo en su computador. 
-frec_relativa, frec_acumu, frecuencia_abs_acum
+La siguiente función construye una tabla de frecuencias para variables continuas. Para usar esta función solo debe copiar el código  y ejecutarlo en su consola de `RStudio`. 
 
 
 ```{r, comment=NA,echo=T,eval=T}
@@ -222,12 +222,12 @@ ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) +
   geom_histogram(binwidth=0.2,col="orange",fill="black") + ggtitle("Histograma para GPA")  + xlab("GPA")
 ```
 
-### Histogramas simétricos y asimétricos.
+### Histogramas simétricos y sesgados.
 
 
-> Histograma Asimétrico a la Izquierda
+> Histograma sesgado a la Izquierda
 
-Se refiere a un histograma asimétrico a la izquierda cuando hay menos datos al lado izquierdo del histograma.
+Se refiere a un histograma sesgado a la izquierda cuando hay menos datos al lado izquierdo del histograma.
 
 ```{r, comment=NA,echo=F,eval=T}
 
@@ -241,18 +241,18 @@ ggplot(data=asimetric1, aes(x = asimetric1)) +
 
 Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho. 
 
-```{r, comment=NA,echo=F,eval=T}
-simetric <- rnorm(1000,3,0.3)
+```{r, comment=NA,echo=F,eval=T,message=FALSE}
+simetric <- rnorm(10000)
 simetric <- as.data.frame(simetric)
 ggplot(data=simetric, aes(x = simetric)) + 
-  geom_histogram(binwidth=0.2,col="red",fill="black") + ggtitle("Histograma Simétrico")  + xlab("GPA")
+  geom_histogram(col="red",fill="black") + ggtitle("Histograma Simétrico")  + xlab("GPA")
 
 ```
 
 
-> Histograma Asimétrico a la Derecha
+> Histograma sesgado a la Derecha
 
-Se refiere a un histograma asimétrico a la derecha cuando hay menos datos al lado derecho del histograma.
+Se refiere a un histograma sesgadoa la derecha cuando hay menos datos al lado derecho del histograma.
 
 ```{r, comment=NA,echo=F,eval=T}
 asimetric2 <- c(runif(80,2,2.6),runif(25,2.5,4))
