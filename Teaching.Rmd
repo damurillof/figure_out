@@ -15,12 +15,7 @@ Aquí esta el enlace para la página web del curso:
 
 ### [Tareas](https://didier-murillo.netlify.com/tareas)
 
-
-
-
 ### [Laboratorios](https://didier-murillo.netlify.com/labs)
-
-
 
 ### [Exámenes pasados](https://didier-murillo.netlify.com/oldexams)
 
