@@ -7,6 +7,10 @@ Aquí esta el enlace para la página web del curso:
 ## [ESMA3101: Estadística Aplicada I](https://didier-murillo.netlify.com/Contents/)
 
 
+### [Datos](https://didier-murillo.netlify.com/datos)
+
+
+-----------------
 
 
 ### [Tareas](https://didier-murillo.netlify.com/tareas)

@@ -2,7 +2,7 @@
 title: "Contenidos ESMA3101."
 output: html_document
 ---
-### [Datos](https://didier-murillo.netlify.com/datos)
+
 
 ### [Prontuario](https://didier-murillo.netlify.com/Prontuariofall2018.pdf)
 
