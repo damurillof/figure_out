@@ -8,4 +8,4 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-### [Estudiantes](https://didier-murillo.netlify.com/estudiantes.txt)
+### [Estudiantes](https://didier-murillo.netlify.com/estudiantes)
