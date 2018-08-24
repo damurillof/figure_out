@@ -352,7 +352,7 @@ table(iris$Species)
 
 ### Subconjuntos de un data frame o tabla de datos.
 
-Quiza estamos interesados en solo un subconjunto de una tabla de datos. Por ejemplo, en la tabla de datos `iris` solo queremos usar los datos de la especie `versicolor`, entonces para este trabajo podemos unsar la función de R `subset()`. Veamos un ejemplo.
+Quizá estamos interesados en solo un subconjunto de una tabla de datos. Por ejemplo, en la tabla de datos `iris` solo queremos usar los datos de la especie `versicolor`, entonces para este trabajo podemos usar la función de R `subset()`. Veamos un ejemplo.
 
 ```{r, comment=NA,echo=T,eval=T}
 # Selecciona todas las filas que cumplen la condición que la especie sea versicolor
@@ -365,7 +365,7 @@ Ahora `Specie_versicolor` es un objeto que contiene todas las filas de `iris` en
 head(Specie_versicolor,20)
 ```
 
-Notemos que el primer argumento de la función `subset()` es el nombre de los datos o tabla de datos original, luego el segundo argumento es la condición que usted quiere que cumpla su nueva tabla. Que pasa si solo queremos usuar `Petal.Length` mayores a 5.8?
+Notemos que el primer argumento de la función `subset()` es el nombre de los datos o tabla de datos original, luego el segundo argumento es la condición que usted quiere que cumpla su nueva tabla. Que pasa si solo queremos usar `Petal.Length` mayores a 5.8?
 
 ```{r, comment=NA,echo=T,eval=T}
 # Selecciona todas las filas que cumplen la condición que la longitud del pétalo sea mayor a 5.8

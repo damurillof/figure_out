@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### 1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.
 
-La siguiente tabla de datos muestra la información del número de homicidios por mes y años para un estado particularde los EEUU.
+La siguiente tabla de datos muestra la información del número de homicidios por mes y año entre 2016 y 2017 para un estado particular de los EEUU.
 
 ```{r, echo=F,eval=T}
 Mes <- c(rep(c("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto",
@@ -31,17 +31,17 @@ kable(Asesinatos) %>%
 #knitr::kable(Asesinatos,align = "c")
 ```
 
-#### 2. Use la tabla de datos que construyó en la parte 1 para constestar las siguientes preguntas.
+#### 2. Use la tabla de datos que construyó en la parte 1 para contestar las siguientes preguntas.
 
 a)  En `R` y/o `RStudio` la función `max()` encuentra el valor más grande en un conjunto de datos. Use `max()` para encontrar  el número máximo de homicidios. ¿Cuál fue el año y mes más violento?
 
-b)  En `R` y/o `RStudio` la función `min()` encuentra el valor más pequeño en un conjunto de datos. Use `min()` para encontrar  el número minimo de homicidios. ¿Cuál fue el año y mes menos violento?
+b)  En `R` y/o `RStudio` la función `min()` encuentra el valor más pequeño en un conjunto de datos. Use `min()` para encontrar  el número mínimo de homicidios. ¿Cuál fue el año y mes menos violento?
 
 c)  En `R` y/o `RStudio` la función `sum()` calcula la suma total de un conjunto de datos. Use `sum()` para encontrar  el número total  de homicidios entre 2016 y 2017. 
 
 #### 3. Divida la tabla de datos que construyó en el **ejercicio 1** en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla  dos con la información de 2017.
 
-
+Puede usar el siguiente código para hacerlo, mi data frame se llama `Asesinatos`, usted puede darle otro nombre.
 
 ```{r, echo=T,eval=T}
 año2016 <- subset(Asesinatos, Año == 2016) # Selecciona todas las filas que cumplen la condición Año=2016
@@ -55,3 +55,4 @@ b)  Encontrar  el número mínimo de homicidios en cada uno de los años. ¿Cuá
 c)  Se dice que un año es más violento que otro por tener un número total de homicidios mayor. ¿Cuál fue el año más violento?
 
 ![](blanco.png)
+

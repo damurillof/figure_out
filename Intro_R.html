@@ -550,7 +550,7 @@ table(iris$Species)</code></pre>
 </div>
 <div id="subconjuntos-de-un-data-frame-o-tabla-de-datos." class="section level3">
 <h3>Subconjuntos de un data frame o tabla de datos.</h3>
-<p>Quiza estamos interesados en solo un subconjunto de una tabla de datos. Por ejemplo, en la tabla de datos <code>iris</code> solo queremos usar los datos de la especie <code>versicolor</code>, entonces para este trabajo podemos unsar la función de R <code>subset()</code>. Veamos un ejemplo.</p>
+<p>Quizá estamos interesados en solo un subconjunto de una tabla de datos. Por ejemplo, en la tabla de datos <code>iris</code> solo queremos usar los datos de la especie <code>versicolor</code>, entonces para este trabajo podemos usar la función de R <code>subset()</code>. Veamos un ejemplo.</p>
 <pre class="r"><code># Selecciona todas las filas que cumplen la condición que la especie sea versicolor
 Specie_versicolor &lt;- subset(iris, iris$Species == &quot;versicolor&quot;) </code></pre>
 <p>Ahora <code>Specie_versicolor</code> es un objeto que contiene todas las filas de <code>iris</code> en donde la variable <code>Specie</code> es <code>versicolor</code>.</p>
@@ -576,7 +576,7 @@ Specie_versicolor &lt;- subset(iris, iris$Species == &quot;versicolor&quot;) </c
 68          5.8         2.7          4.1         1.0 versicolor
 69          6.2         2.2          4.5         1.5 versicolor
 70          5.6         2.5          3.9         1.1 versicolor</code></pre>
-<p>Notemos que el primer argumento de la función <code>subset()</code> es el nombre de los datos o tabla de datos original, luego el segundo argumento es la condición que usted quiere que cumpla su nueva tabla. Que pasa si solo queremos usuar <code>Petal.Length</code> mayores a 5.8?</p>
+<p>Notemos que el primer argumento de la función <code>subset()</code> es el nombre de los datos o tabla de datos original, luego el segundo argumento es la condición que usted quiere que cumpla su nueva tabla. Que pasa si solo queremos usar <code>Petal.Length</code> mayores a 5.8?</p>
 <pre class="r"><code># Selecciona todas las filas que cumplen la condición que la longitud del pétalo sea mayor a 5.8
 Petal.Length_greater5.8 &lt;- subset(iris, iris$Petal.Length &gt; 5.8)
 print(Petal.Length_greater5.8)</code></pre>

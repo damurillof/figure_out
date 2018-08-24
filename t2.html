@@ -219,7 +219,7 @@ $(document).ready(function () {
 </div>
 <div id="use-r-yo-rstudio-para-reproducir-una-tabla-de-datos-como-la-siguiente." class="section level4">
 <h4>1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.</h4>
-<p>La siguiente tabla de datos muestra la información del número de homicidios por mes y años para un estado particularde los EEUU.</p>
+<p>La siguiente tabla de datos muestra la información del número de homicidios por mes y año entre 2016 y 2017 para un estado particular de los EEUU.</p>
 <table class="table table-striped" style="width: auto !important; ">
 <thead>
 <tr>
@@ -502,16 +502,17 @@ Diciembre
 </tbody>
 </table>
 </div>
-<div id="use-la-tabla-de-datos-que-construyo-en-la-parte-1-para-constestar-las-siguientes-preguntas." class="section level4">
-<h4>2. Use la tabla de datos que construyó en la parte 1 para constestar las siguientes preguntas.</h4>
+<div id="use-la-tabla-de-datos-que-construyo-en-la-parte-1-para-contestar-las-siguientes-preguntas." class="section level4">
+<h4>2. Use la tabla de datos que construyó en la parte 1 para contestar las siguientes preguntas.</h4>
 <ol style="list-style-type: lower-alpha">
 <li><p>En <code>R</code> y/o <code>RStudio</code> la función <code>max()</code> encuentra el valor más grande en un conjunto de datos. Use <code>max()</code> para encontrar el número máximo de homicidios. ¿Cuál fue el año y mes más violento?</p></li>
-<li><p>En <code>R</code> y/o <code>RStudio</code> la función <code>min()</code> encuentra el valor más pequeño en un conjunto de datos. Use <code>min()</code> para encontrar el número minimo de homicidios. ¿Cuál fue el año y mes menos violento?</p></li>
+<li><p>En <code>R</code> y/o <code>RStudio</code> la función <code>min()</code> encuentra el valor más pequeño en un conjunto de datos. Use <code>min()</code> para encontrar el número mínimo de homicidios. ¿Cuál fue el año y mes menos violento?</p></li>
 <li><p>En <code>R</code> y/o <code>RStudio</code> la función <code>sum()</code> calcula la suma total de un conjunto de datos. Use <code>sum()</code> para encontrar el número total de homicidios entre 2016 y 2017.</p></li>
 </ol>
 </div>
 <div id="divida-la-tabla-de-datos-que-construyo-en-el-ejercicio-1-en-dos-partes.-la-tabla-uno-sera-una-tabla-con-la-informacion-para-el-ano-2016-la-tabla-dos-con-la-informacion-de-2017." class="section level4">
 <h4>3. Divida la tabla de datos que construyó en el <strong>ejercicio 1</strong> en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla dos con la información de 2017.</h4>
+<p>Puede usar el siguiente código para hacerlo, mi data frame se llama <code>Asesinatos</code>, usted puede darle otro nombre.</p>
 <pre class="r"><code>año2016 &lt;- subset(Asesinatos, Año == 2016) # Selecciona todas las filas que cumplen la condición Año=2016
 año2017 &lt;- subset(Asesinatos, Año == 2017) # Selecciona todas las filas que cumplen la condición Año=2017</code></pre>
 <ol style="list-style-type: lower-alpha">
