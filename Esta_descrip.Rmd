@@ -33,7 +33,7 @@ trabajar con una Frecuencia relativa porcentual.
     
 *  **Frecuencia relativa  acumulada:** Indica el porcentaje de datos que son menores o iguales que el valor dado.
     
-**Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos están formato plano `txt`, por tanto la forma de leerlos es la siguiente.
+**Ejemplo:** Usaremos los datos de 50 estudiantes de cierta universidad. Los datos están en formato plano `txt`, por lo tanto la forma de leerlos es la siguiente.
 
 
 ```{r, comment=NA,echo=T,eval=T}
@@ -41,30 +41,37 @@ Estudiantes <- read.table("/datos/DirectorioR/figure_out/estudiantes.txt",header
 head(Estudiantes)
 ```
 
-Vamos a construir una tabla de frecuencias paso a paso para la variable `hermanos`.
+Otra forma de leer los datos es directamente desde internet usando la función `fread()` de la librería `data.table`. Para esto debe tener una conexión a internet. 
 
-*   Paso 1: Encontrar las frecuencias usando la función `table`.
+```{r, comment=NA,echo=T,eval=T}
+library(data.table)
+Estudiantes <- read.table("https://didier-murillo.netlify.com/estudiantes.txt",header = T)
+head(Estudiantes)
+```
+
+Vamos a construir una tabla de frecuencias paso a paso para la variable discreta `hermanos` que se refiere al número de hermanos de cada estudiante.
+
+*   **Paso 1: Encontrar las frecuencias usando la función `table`.**
 
 ```{r, comment=NA,echo=T,eval=T}
 frecuencias <- table(Estudiantes$hermanos)
 frecuencias
 ```
-
-*   Paso 2: Encontrar las frecuencia  relativas dividiendo por el número de registros.
+*   **Paso 2: Encontrar las frecuencia  relativas dividiendo por el número de registros.**
 
 ```{r, comment=NA,echo=T,eval=T}
 frec_relativa <- frecuencias/50
 frec_relativa
 ```
 
-*   Paso 3: Encontrar las frecuencia  absolutas acumuladas. Esto lo hace la función `cumsum()`
+*   **Paso 3: Encontrar las frecuencia  absolutas acumuladas. Esto lo hace la función `cumsum()`**
 
 ```{r, comment=NA,echo=T,eval=T}
 frecuencias_acum <- cumsum(frecuencias)
 frecuencias_acum
 ```
 
-*   Paso 4: Encontrar la frecuencia relativa  acumulada. Esto se hace dividiendo por el numero de registros.
+*   **Paso 4: Encontrar la frecuencia relativa  acumulada. Esto se hace dividiendo por el numero de registros.**
 
 
 ```{r, comment=NA,echo=T,eval=T}
@@ -75,25 +82,23 @@ frecuencias_abs_acum
 Mediante un data frame se puede crear la tabla de frecuencias
 
 ```{r, comment=NA,echo=T,eval=T}
-frec_relativa <- as.vector(frec_relativa)
-frecuencias_acum <- as.vector(frecuencias_acum)
-frecuencia_abs_acum <- as.vector(frecuencias_abs_acum)
-table_frec <- data.frame(frecuencias,frec_relativa, frecuencias_acum, frecuencia_abs_acum)
+Obs <- sort(unique(Estudiantes$hermanos),F)
+Frecuencia_Abs <- as.vector(frecuencias)
+Frecuencia_Relativa <- as.vector(frec_relativa)
+Frecuencia_Acum <- as.vector(frecuencias_acum)
+Frecuencia_Abs_Acum <- as.vector(frecuencias_abs_acum)
+table_frec <- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
 table_frec
 ```
 
 Finalmente encontramos que la tabla de frecuencia para la variable número de hermanos es:
 
-
-hermanos | Frecuencia Abs | Frecuencia Relativa | Frecuencia Acumulada | Frecuancia Relativa Acumulada
--------- | ---------------|---------------------|----------------------|-----------------------------
-0        |    15          |        0.30         |    15                |    0.30
-1        |    12          |        0.24         |    27                |    0.54
-2        |    10          |        0.20         |    37                |    0.74
-3        |    7           |        0.14         |    44                |    0.88
-4        |    3           |        0.06         |    47                |    0.94
-5        |    3           |        0.06         |    50                |    1.00
-Total    |    50          |        1.00         |                      |
+```{r, comment=NA,echo=F,eval=T}
+library(knitr)
+library(kableExtra)
+kable(table_frec) %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
+```
 
 Algunas interpretaciones para esta tabla son:
 
@@ -108,12 +113,13 @@ Algunas interpretaciones para esta tabla son:
 
 ## El plot de puntos (“Dotplot”)
 
-La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores anormales (“outliers”).
+La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores atípicos (“outliers”).
 
 ```{r, comment=NA,echo=T,eval=T,message=FALSE,warning=FALSE}
 library(ggplot2)
-ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = "green", color = "black") + 
-  ggtitle("Dotplot para Número de hermanos")  + xlab("hermanos") + ylab("conteos")
+ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + 
+  geom_dotplot(fill = "green", color = "black") + 
+  ggtitle("Dotplot para Número de hermanos")  + xlab("Número de hermanos") + ylab("conteos")
 ```
 
 En este caso no tenemos presencia de valores anormales ("outliers").
@@ -175,12 +181,6 @@ Ejemplo para la variable `peso`
 tabla_frecuencia(Estudiantes$peso)
 ```
 
-
-Con los resultados de la tabla de frecuencia y usando los puntos medios y las frecuencas absolutas  podemos hacer un histograma para el `peso` de los estudiantes.
-
-![](hist.png)
-
-
 Ejemplo para la variable `estatura`
 
 ```{r, comment=NA,echo=T,eval=T}
@@ -199,7 +199,11 @@ Algunas interpretaciones de la tabla de frecuencia de `estatura`.
 
 ### Histograma
 
-Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. 
+Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. En un histograma las barras más altas identifican los valores más comunes en la muestra. Aquellas gráficas donde los datos se agrupan alrededor de un valor central se dice que son simétricas, mientras que aquellas que tienen más datos a un lado que a otro se dice que están sesgadas,  presentando “sesgo a la derecha” cuando las barras más altas se posicionan al principio de la gráfica y “sesgo a la izquierda” cuando las barras más grandes aparecen a la derecha de la gráfica. 
+
+Con los resultados de la tabla de frecuencia construida arriba para el pesos de los estudiantes y usando los puntos medios `MC` y las frecuencas absolutas  podemos hacer manualmente  un histograma de frecuencias para el `peso` de los estudiantes.
+
+![](hist.png)
 
 Para hacer un Histograma en R puede usar la función `hist()` veamos,
 
@@ -227,14 +231,14 @@ ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) +
 
 > Histograma sesgado a la Izquierda
 
-Se refiere a un histograma sesgado a la izquierda cuando hay menos datos al lado izquierdo del histograma.
+Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.
 
 ```{r, comment=NA,echo=F,eval=T}
-
+set.seed(12345)
 asimetric1 <- c(runif(25,2,3.3),runif(80,3.2,4))
 asimetric1 <- as.data.frame(asimetric1)
 ggplot(data=asimetric1, aes(x = asimetric1)) + 
-  geom_histogram(binwidth=0.2,col="black",fill="green") + ggtitle("Histograma Asimétrico a la izquierda")  + xlab("GPA")
+  geom_histogram(binwidth=0.2,col="black",fill="green") + ggtitle("Histograma Sesgado a la izquierda")  + xlab("GPA")
 ```
 
 > Histograma Simétrico
@@ -242,23 +246,27 @@ ggplot(data=asimetric1, aes(x = asimetric1)) +
 Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho. 
 
 ```{r, comment=NA,echo=F,eval=T,message=FALSE}
+set.seed(123)
 simetric <- rnorm(10000)
 simetric <- as.data.frame(simetric)
 ggplot(data=simetric, aes(x = simetric)) + 
-  geom_histogram(col="red",fill="black") + ggtitle("Histograma Simétrico")  + xlab("GPA")
+  geom_histogram(col="black",fill="white") + ggtitle("Histograma Simétrico")  + xlab("GPA")
 
 ```
 
 
 > Histograma sesgado a la Derecha
 
-Se refiere a un histograma sesgadoa la derecha cuando hay menos datos al lado derecho del histograma.
+Se refiere a un histograma sesgadoa  la derecha cuando hay menos datos al lado derecho del histograma.
+
+Se refiere a un histograma sesgado a la  derecha cuando las barras más altas estan al comienzo de la gráfica.
 
 ```{r, comment=NA,echo=F,eval=T}
+set.seed(1234)
 asimetric2 <- c(runif(80,2,2.6),runif(25,2.5,4))
 asimetric2 <- as.data.frame(asimetric2)
 ggplot(data=asimetric2, aes(x = asimetric2)) + 
-  geom_histogram(binwidth=0.2,col="black",fill="orange") + ggtitle("Histograma Asimétrico a la derecha")  + xlab("GPA") 
+  geom_histogram(binwidth=0.2,col="black",fill="orange") + ggtitle("Histograma sesgado a la derecha")  + xlab("GPA") 
 ```
 
 
@@ -330,13 +338,12 @@ Es una gráfica usada para datos cuantitativos. Es la gráfica más básica de u
  
 Hacer su gráfica de “Stem-and Leaf”.
 
+
 Solución: En este caso las ramas la forman los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:
 
+![](stem.png)
 
-
-
-
-**Interpretación:**  El uso del “stem-and-leaf” es exactamente igual al del Histograma, la única diferencia está en que del “stem-and-leaf” se pueden recuperar los datos muestrales, pero de un histograma no se puede hacer. En este ejemplo el “stem-and-leaf” es asimétrico a la izquierda, no tiene mucha variabilidad ni “outliers”.
+**Interpretación:**  El uso del “stem-and-leaf” es exactamente igual al del Histograma, la única diferencia está en que del “stem-and-leaf” se pueden recuperar los datos muestrales, pero de un histograma no se puede hacer. En este ejemplo el “stem-and-leaf” es sesgado a la izquierda, no tiene mucha variabilidad ni “outliers”.
 
 Podemos hacer el “stem-and leaf“ directamente en RStudio con la función `stem()`. 
 

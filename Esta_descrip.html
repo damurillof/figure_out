@@ -22,6 +22,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -240,8 +241,30 @@ $(document).ready(function () {
 <li><p><strong>Frecuencia absoluta acumulada:</strong> Indica el número de valores que son menores o iguales que el valor dado.</p></li>
 <li><p><strong>Frecuencia relativa acumulada:</strong> Indica el porcentaje de datos que son menores o iguales que el valor dado.</p></li>
 </ul>
-<p><strong>Ejemplo:</strong> Usaremos los datos de 50 estudiantes de cierta universidad. Los datos están formato plano <code>txt</code>, por tanto la forma de leerlos es la siguiente.</p>
+<p><strong>Ejemplo:</strong> Usaremos los datos de 50 estudiantes de cierta universidad. Los datos están en formato plano <code>txt</code>, por lo tanto la forma de leerlos es la siguiente.</p>
 <pre class="r"><code>Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/estudiantes.txt&quot;,header = T)
+head(Estudiantes)</code></pre>
+<pre><code>  peso estatura edad sexo hermanos tipo_sangre fuma num_cig h_internet
+1 77.2    178.8   21    M        2           B   si       0         13
+2 74.6    158.6   21    M        0           A   no       0         24
+3 57.8    171.7   31    M        0           O   si       1         33
+4 65.6    170.1   32    F        1           B   no       2         45
+5 56.5    167.8   13    M        5          AB   si       0         22
+6 60.2    169.7   22    F        2           B   si       3         36
+   gpa nota_esma  area trabaja
+1 3.52         I Oeste      si
+2 2.92         D Oeste      no
+3 3.32         F Norte      si
+4 3.17         C  Otra      si
+5 4.00         B   Sur      si
+6 2.99         D Oeste      si</code></pre>
+<p>Otra forma de leer los datos es directamente desde internet usando la función <code>fread()</code> de la librería <code>data.table</code>. Para esto debe tener una conexión a internet.</p>
+<pre class="r"><code>library(data.table)</code></pre>
+<pre><code>data.table 1.10.4.3</code></pre>
+<pre><code>  The fastest way to learn (by data.table authors): https://www.datacamp.com/courses/data-analysis-the-data-table-way</code></pre>
+<pre><code>  Documentation: ?data.table, example(data.table) and browseVignettes(&quot;data.table&quot;)</code></pre>
+<pre><code>  Release notes, videos and slides: http://r-datatable.com</code></pre>
+<pre class="r"><code>Estudiantes &lt;- read.table(&quot;https://didier-murillo.netlify.com/estudiantes.txt&quot;,header = T)
 head(Estudiantes)</code></pre>
 <pre><code>  peso estatura edad sexo hermanos tipo_sangre fuma num_cig h_internet
 1 77.2    178.8   21    M        2           B   si       0         13
@@ -257,9 +280,9 @@ head(Estudiantes)</code></pre>
 4 3.17         C  Otra      si
 5 4.20         B   Sur      si
 6 2.99         D Oeste      si</code></pre>
-<p>Vamos a construir una tabla de frecuencias paso a paso para la variable <code>hermanos</code>.</p>
+<p>Vamos a construir una tabla de frecuencias paso a paso para la variable discreta <code>hermanos</code> que se refiere al número de hermanos de cada estudiante.</p>
 <ul>
-<li>Paso 1: Encontrar las frecuencias usando la función <code>table</code>.</li>
+<li><strong>Paso 1: Encontrar las frecuencias usando la función <code>table</code>.</strong></li>
 </ul>
 <pre class="r"><code>frecuencias &lt;- table(Estudiantes$hermanos)
 frecuencias</code></pre>
@@ -267,7 +290,7 @@ frecuencias</code></pre>
  0  1  2  3  4  5 
 15 12 10  7  3  3 </code></pre>
 <ul>
-<li>Paso 2: Encontrar las frecuencia relativas dividiendo por el número de registros.</li>
+<li><strong>Paso 2: Encontrar las frecuencia relativas dividiendo por el número de registros.</strong></li>
 </ul>
 <pre class="r"><code>frec_relativa &lt;- frecuencias/50
 frec_relativa</code></pre>
@@ -275,99 +298,164 @@ frec_relativa</code></pre>
    0    1    2    3    4    5 
 0.30 0.24 0.20 0.14 0.06 0.06 </code></pre>
 <ul>
-<li>Paso 3: Encontrar las frecuencia absolutas acumuladas. Esto lo hace la función <code>cumsum()</code></li>
+<li><strong>Paso 3: Encontrar las frecuencia absolutas acumuladas. Esto lo hace la función <code>cumsum()</code></strong></li>
 </ul>
 <pre class="r"><code>frecuencias_acum &lt;- cumsum(frecuencias)
 frecuencias_acum</code></pre>
 <pre><code> 0  1  2  3  4  5 
 15 27 37 44 47 50 </code></pre>
 <ul>
-<li>Paso 4: Encontrar la frecuencia relativa acumulada. Esto se hace dividiendo por el numero de registros.</li>
+<li><strong>Paso 4: Encontrar la frecuencia relativa acumulada. Esto se hace dividiendo por el numero de registros.</strong></li>
 </ul>
 <pre class="r"><code>frecuencias_abs_acum &lt;- frecuencias_acum/50
 frecuencias_abs_acum </code></pre>
 <pre><code>   0    1    2    3    4    5 
 0.30 0.54 0.74 0.88 0.94 1.00 </code></pre>
 <p>Mediante un data frame se puede crear la tabla de frecuencias</p>
-<pre class="r"><code>frec_relativa &lt;- as.vector(frec_relativa)
-frecuencias_acum &lt;- as.vector(frecuencias_acum)
-frecuencia_abs_acum &lt;- as.vector(frecuencias_abs_acum)
-table_frec &lt;- data.frame(frecuencias,frec_relativa, frecuencias_acum, frecuencia_abs_acum)
+<pre class="r"><code>Obs &lt;- sort(unique(Estudiantes$hermanos),F)
+Frecuencia_Abs &lt;- as.vector(frecuencias)
+Frecuencia_Relativa &lt;- as.vector(frec_relativa)
+Frecuencia_Acum &lt;- as.vector(frecuencias_acum)
+Frecuencia_Abs_Acum &lt;- as.vector(frecuencias_abs_acum)
+table_frec &lt;- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
 table_frec</code></pre>
-<pre><code>  Var1 Freq frec_relativa frecuencias_acum frecuencia_abs_acum
-1    0   15          0.30               15                0.30
-2    1   12          0.24               27                0.54
-3    2   10          0.20               37                0.74
-4    3    7          0.14               44                0.88
-5    4    3          0.06               47                0.94
-6    5    3          0.06               50                1.00</code></pre>
+<pre><code>  Obs Frecuencia_Abs Frecuencia_Relativa Frecuencia_Acum
+1   0             15                0.30              15
+2   1             12                0.24              27
+3   2             10                0.20              37
+4   3              7                0.14              44
+5   4              3                0.06              47
+6   5              3                0.06              50
+  Frecuencia_Abs_Acum
+1                0.30
+2                0.54
+3                0.74
+4                0.88
+5                0.94
+6                1.00</code></pre>
 <p>Finalmente encontramos que la tabla de frecuencia para la variable número de hermanos es:</p>
-<table>
-<colgroup>
-<col width="9%" />
-<col width="16%" />
-<col width="22%" />
-<col width="23%" />
-<col width="30%" />
-</colgroup>
+<table class="table table-striped" style="width: auto !important; ">
 <thead>
-<tr class="header">
-<th>hermanos</th>
-<th>Frecuencia Abs</th>
-<th>Frecuencia Relativa</th>
-<th>Frecuencia Acumulada</th>
-<th>Frecuancia Relativa Acumulada</th>
+<tr>
+<th style="text-align:right;">
+Obs
+</th>
+<th style="text-align:right;">
+Frecuencia_Abs
+</th>
+<th style="text-align:right;">
+Frecuencia_Relativa
+</th>
+<th style="text-align:right;">
+Frecuencia_Acum
+</th>
+<th style="text-align:right;">
+Frecuencia_Abs_Acum
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>0</td>
-<td>15</td>
-<td>0.30</td>
-<td>15</td>
-<td>0.30</td>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0.30
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0.30
+</td>
 </tr>
-<tr class="even">
-<td>1</td>
-<td>12</td>
-<td>0.24</td>
-<td>27</td>
-<td>0.54</td>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.24
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+0.54
+</td>
 </tr>
-<tr class="odd">
-<td>2</td>
-<td>10</td>
-<td>0.20</td>
-<td>37</td>
-<td>0.74</td>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0.20
+</td>
+<td style="text-align:right;">
+37
+</td>
+<td style="text-align:right;">
+0.74
+</td>
 </tr>
-<tr class="even">
-<td>3</td>
-<td>7</td>
-<td>0.14</td>
-<td>44</td>
-<td>0.88</td>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0.14
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+0.88
+</td>
 </tr>
-<tr class="odd">
-<td>4</td>
-<td>3</td>
-<td>0.06</td>
-<td>47</td>
-<td>0.94</td>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+47
+</td>
+<td style="text-align:right;">
+0.94
+</td>
 </tr>
-<tr class="even">
-<td>5</td>
-<td>3</td>
-<td>0.06</td>
-<td>50</td>
-<td>1.00</td>
-</tr>
-<tr class="odd">
-<td>Total</td>
-<td>50</td>
-<td>1.00</td>
-<td></td>
-<td></td>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+<td style="text-align:right;">
+50
+</td>
+<td style="text-align:right;">
+1.00
+</td>
 </tr>
 </tbody>
 </table>
@@ -382,14 +470,15 @@ table_frec</code></pre>
 </div>
 <div id="el-plot-de-puntos-dotplot" class="section level2">
 <h2>El plot de puntos (“Dotplot”)</h2>
-<p>La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores anormales (“outliers”).</p>
+<p>La gráfica más elemental es el plot de puntos (“Dotplot”) que consiste en colocar un punto cada vez que se repite un valor. Esta gráfica permite explorar la simetría y el grado de variabilidad de la distribución de los datos con respecto al centro, el grado de concentración o dispersión de los datos con respecto al valor central y permite detectar la presencia de valores atípicos (“outliers”).</p>
 <pre class="r"><code>library(ggplot2)
-ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
-  ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + 
+  geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
+  ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;Número de hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>En este caso no tenemos presencia de valores anormales (“outliers”).</p>
 <p>A continuación hacemos un Dotplot para la variable cuantitativa - discreta <code>edad</code> para ilustrar la presencia de datos anormales.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Observamos que la edad de los estudiantes se situa entre los 17 y los 26 años aproximadamente, pero vemos la presencia de un dato a la izquierda de la gráfica y otros a la derecha muy alejados del grupo del centro, estos valores se conocen como datos anormales.</p>
 </div>
 <div id="organizacion-de-datos-cuantitativos-continuos." class="section level2">
@@ -430,11 +519,6 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 5 (68.7,73.5]   12          0.24         38                0.76 71.10
 6 (73.5,78.4]    7          0.14         45                0.90 75.95
 7 (78.4,83.2]    5          0.10         50                1.00 80.80</code></pre>
-<p>Con los resultados de la tabla de frecuencia y usando los puntos medios y las frecuencas absolutas podemos hacer un histograma para el <code>peso</code> de los estudiantes.</p>
-<div class="figure">
-<img src="hist.png" />
-
-</div>
 <p>Ejemplo para la variable <code>estatura</code></p>
 <pre class="r"><code>tabla_frecuencia(Estudiantes$estatura)</code></pre>
 <pre><code>  intervalos Freq frec_relativa frec_acumu frecuencia_abs_acum    MC
@@ -454,36 +538,42 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + geom_dotplot(fill = &quot;g
 </ul>
 <div id="histograma" class="section level3">
 <h3>Histograma</h3>
-<p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos.</p>
+<p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. En un histograma las barras más altas identifican los valores más comunes en la muestra. Aquellas gráficas donde los datos se agrupan alrededor de un valor central se dice que son simétricas, mientras que aquellas que tienen más datos a un lado que a otro se dice que están sesgadas, presentando “sesgo a la derecha” cuando las barras más altas se posicionan al principio de la gráfica y “sesgo a la izquierda” cuando las barras más grandes aparecen a la derecha de la gráfica.</p>
+<p>Con los resultados de la tabla de frecuencia construida arriba para el pesos de los estudiantes y usando los puntos medios <code>MC</code> y las frecuencas absolutas podemos hacer manualmente un histograma de frecuencias para el <code>peso</code> de los estudiantes.</p>
+<div class="figure">
+<img src="hist.png" />
+
+</div>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
   geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;red&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
   geom_histogram(binwidth=0.2,col=&quot;orange&quot;,fill=&quot;black&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
 <div id="histogramas-simetricos-y-sesgados." class="section level3">
 <h3>Histogramas simétricos y sesgados.</h3>
 <blockquote>
 <p>Histograma sesgado a la Izquierda</p>
 </blockquote>
-<p>Se refiere a un histograma sesgado a la izquierda cuando hay menos datos al lado izquierdo del histograma.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.</p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma Simétrico</p>
 </blockquote>
 <p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma sesgado a la Derecha</p>
 </blockquote>
 <p>Se refiere a un histograma sesgadoa la derecha cuando hay menos datos al lado derecho del histograma.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>Se refiere a un histograma sesgado a la derecha cuando las barras más altas estan al comienzo de la gráfica.</p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 </div>
 <div id="presentacion-de-datos-cualitativos" class="section level2">
@@ -515,12 +605,12 @@ tabla_frecuencia</code></pre>
 <p>Grafica de barras para la variable <code>area</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <blockquote>
 <p>Grafica de barras para la variable <code>nota_esma</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 </div>
 <div id="graficas-circulares" class="section level3">
 <h3>Gráficas Circulares</h3>
@@ -535,7 +625,7 @@ Centro   Este  Norte  Oeste   Otra    Sur
 num_Area &lt;-c(7, 6, 4, 13, 10, 10 )
 ## Usando la función pie
 pie(num_Area,Area)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 <p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
 </div>
 <div id="grafica-de-tallo-y-hojas-stemand-leaf" class="section level3">
@@ -545,7 +635,11 @@ pie(num_Area,Area)</code></pre>
 <p>165 178 185 169 152 180 175 189 195 200 183 191 197 208 179</p>
 <p>Hacer su gráfica de “Stem-and Leaf”.</p>
 <p>Solución: En este caso las ramas la forman los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:</p>
-<p><strong>Interpretación:</strong> El uso del “stem-and-leaf” es exactamente igual al del Histograma, la única diferencia está en que del “stem-and-leaf” se pueden recuperar los datos muestrales, pero de un histograma no se puede hacer. En este ejemplo el “stem-and-leaf” es asimétrico a la izquierda, no tiene mucha variabilidad ni “outliers”.</p>
+<div class="figure">
+<img src="stem.png" />
+
+</div>
+<p><strong>Interpretación:</strong> El uso del “stem-and-leaf” es exactamente igual al del Histograma, la única diferencia está en que del “stem-and-leaf” se pueden recuperar los datos muestrales, pero de un histograma no se puede hacer. En este ejemplo el “stem-and-leaf” es sesgado a la izquierda, no tiene mucha variabilidad ni “outliers”.</p>
 <p>Podemos hacer el “stem-and leaf“ directamente en RStudio con la función <code>stem()</code>.</p>
 <p>Debemos crear un vector con los datos y usar la función <code>stem()</code></p>
 <pre class="r"><code>pesos &lt;- c(165, 178, 185, 169, 152, 180, 175, 189, 195, 200, 183, 191, 197, 208, 179)
