@@ -47,7 +47,6 @@ Otra forma de leer los datos es directamente desde internet usando la función `
 library(data.table)
 Estudiantes <- fread("https://didier-murillo.netlify.com/estudiantes.txt")
 head(Estudiantes)
-View(Estudiantes)
 ```
 
 Vamos a construir una tabla de frecuencias paso a paso para la variable discreta `hermanos` que se refiere al número de hermanos de cada estudiante.
