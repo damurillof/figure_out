@@ -220,6 +220,7 @@ $(document).ready(function () {
 </ul></li>
 <li><a href="#presentacion-de-datos-cualitativos">Presentación de datos cualitativos</a><ul>
 <li><a href="#graficos-de-barras">Gráficos de barras</a></li>
+<li><a href="#graficos-de-barras-por-grupos">Gráficos de barras por grupos</a></li>
 <li><a href="#graficas-circulares">Gráficas Circulares</a></li>
 <li><a href="#grafica-de-tallo-y-hojas-stemand-leaf">Gráfica de tallo y hojas (“Stemand-Leaf”)</a></li>
 </ul></li>
@@ -260,7 +261,7 @@ head(Estudiantes)</code></pre>
 6 2.99         D Oeste      si</code></pre>
 <p>Otra forma de leer los datos es directamente desde internet usando la función <code>fread()</code> de la librería <code>data.table</code>. Para esto debe tener una conexión a internet.</p>
 <pre class="r"><code>library(data.table)
-Estudiantes &lt;- fread(&quot;https://didier-murillo.netlify.com/estudiantes.txt&quot;)
+Estudiantes &lt;- fread(&quot;https://didier-murillo.netlify.com/estudiantes.txt&quot;,header = TRUE,sep = &quot;\t&quot;)
 head(Estudiantes)</code></pre>
 <p>Vamos a construir una tabla de frecuencias paso a paso para la variable discreta <code>hermanos</code> que se refiere al número de hermanos de cada estudiante.</p>
 <ul>
@@ -582,20 +583,32 @@ tabla_frecuencia</code></pre>
 4  Oeste   13                     0.26
 5   Otra   10                     0.20
 6    Sur   10                     0.20</code></pre>
-<p>Las frecuencias acumuladas no son importantes si la variables es nominal como el caso de la variable <code>area</code></p>
+<p>Las frecuencias acumuladas no son importantes si las variables son nominales como el caso de la variable <code>area</code></p>
 <div id="graficos-de-barras" class="section level3">
 <h3>Gráficos de barras</h3>
 <p>Las gráficas de barras pueden ser verticales u horizontales. Usando la función <code>ggplot</code> obtenemos:</p>
 <blockquote>
 <p>Grafica de barras para la variable <code>area</code></p>
 </blockquote>
-<pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()</code></pre>
+<pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar(position=&quot;dodge&quot;) + 
+  ggtitle(&quot;Grafico de barras para area del estudiante&quot;) + xlab(&quot;Area del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <blockquote>
 <p>Grafica de barras para la variable <code>nota_esma</code></p>
 </blockquote>
-<pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()</code></pre>
+<pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar(position=&quot;dodge&quot;) + 
+  ggtitle(&quot;Grafico de barras para notas de los estudiante en ESMA&quot;) +
+  xlab(&quot;Notas&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="graficos-de-barras-por-grupos" class="section level3">
+<h3>Gráficos de barras por grupos</h3>
+<p>Se pueden comparar grupos usando graficas de barras. Por ejemplo podemos tomar las variables area y trabaja y comparar mediante un gráfico de barras por grupos.</p>
+<pre class="r"><code># Gráfico de barras por grupos
+ggplot(Estudiantes, aes(fill=Estudiantes$trabaja,  x=Estudiantes$area)) + 
+    geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Grafico de barras por grupos para area y opción de trabajo.&quot;) +
+  xlab(&quot;Area del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 </div>
 <div id="graficas-circulares" class="section level3">
 <h3>Gráficas Circulares</h3>
@@ -608,9 +621,12 @@ Centro   Este  Norte  Oeste   Otra    Sur
 <p>Ahora creamos dos vectores</p>
 <pre class="r"><code>Area &lt;- c(&quot;Centro&quot;,&quot;Este&quot;,  &quot;Norte&quot;,&quot;Oeste&quot;,&quot;Otra&quot;,&quot;Sur&quot; )
 num_Area &lt;-c(7, 6, 4, 13, 10, 10 )
-## Usando la función pie
-pie(num_Area,Area)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+pct &lt;- round(num_Area/sum(num_Area)*100)
+Area &lt;- paste(Area, pct) # add percents to labels 
+Area &lt;- paste(Area,&quot;%&quot;,sep=&quot;&quot;) # ad % to labels 
+pie(num_Area,labels = Area, col=rainbow(length(Area)),
+    main=&quot;Gráfico circular para area&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
 </div>
 <div id="grafica-de-tallo-y-hojas-stemand-leaf" class="section level3">

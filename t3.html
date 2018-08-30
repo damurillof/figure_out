@@ -214,10 +214,71 @@ $(document).ready(function () {
 <h4><strong>Puntaje:</strong> 20 puntos</h4>
 </div>
 <div id="para-esta-tarea-usted-debe-usar-r-yo-rstudio.-en-su-informe-final-debe-mostrar-todos-los-codigos-y-resultados.-su-informe-final-lo-puede-hacer-usando-word-o-directamente-desde-rstudio-usando-rmarkdown.-dare-3-puntos-de-bono-si-su-informe-final-es-realizado-usando-rmarkdown-y-exportado-en-html-o-word." class="section level4">
-<h4>Para está tarea usted debe usar <code>R</code> y/o <code>RStudio</code>. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde <code>RStudio</code> usando <code>Rmarkdown</code>. Daré 3 puntos de bono si su informe final es realizado usando <code>Rmarkdown</code> y exportado en <code>html</code> o <code>word</code>.</h4>
+<h4>Para está tarea usted debe usar <code>R</code> y/o <code>RStudio</code>. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde <code>RStudio</code> usando <code>Rmarkdown</code>. Daré 3 puntos de BONO si su informe final es realizado usando <code>Rmarkdown</code> y exportado en <code>html</code> o <code>word</code>.</h4>
 </div>
-<div id="use-r-yo-rstudio-para-reproducir-una-tabla-de-datos-como-la-siguiente." class="section level4">
-<h4>1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.</h4>
+<div id="la-siguiente-funcion-construye-una-tabla-de-frecuencias-para-datos-discretos-en-r" class="section level4">
+<h4>1. La siguiente función construye una tabla de frecuencias para datos discretos en R</h4>
+<pre class="r"><code>tabla_freq_discretas &lt;- function(x){
+  Obs &lt;- sort(unique(x),F)
+  Frecuencia_Abs &lt;- as.vector(table(x))
+  Frecuencia_Relativa &lt;- as.vector(Frecuencia_Abs/length(x))
+  Frecuencia_Acum &lt;- as.vector(cumsum(Frecuencia_Abs))
+  Frecuencia_Abs_Acum &lt;- as.vector(Frecuencia_Acum/length(x))
+  table_frec &lt;- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
+  table_frec
+}</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li>El siguiente código simula datos de un experiento en donde se esta probando la efectividad de un nuevo insecticida contra una especie de insecto. Se realizarón 40 repeteciones del experimento y se observarón la cantidad de insectos muertos en cada repetición.</li>
+</ol>
+<pre class="r"><code>insectos_m &lt;- rpois(40,10)</code></pre>
+<p>Usar la función <code>tabla_freq_discretas</code> descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. <strong>Interpretar un valor cualquiera en cada columna de la tabla de frecuencias</strong>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Hacer una grafica <code>Dotplot</code> para el número de insectos muetos. El data frame se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
+</ol>
+<pre class="r"><code>insectos_muertos &lt;- data.frame(insectos_m)
+## Mostrar las primeras 10 filas
+head(insectos_muertos,10)</code></pre>
+<pre><code>   insectos_m
+1           8
+2           4
+3           6
+4           6
+5           8
+6           5
+7          12
+8          12
+9          12
+10         12</code></pre>
+</div>
+<div id="para-este-ejercicio-y-el-3-debe-usar-los-datos-class_survey-que-le-fueron-enviados-a-su-correo-electronico.-una-forma-de-leer-los-datos-es-la-siguiente.-usted-solo-debe-cambiar-la-ubicacion-del-archivo." class="section level4">
+<h4>2. Para este ejercicio y el 3 debe usar los datos <code>class_survey</code> que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.</h4>
+<pre class="r"><code>class_survey &lt;- read.table(&quot;/datos/DirectorioR/class_survey.txt&quot;,header=TRUE,sep = &quot;\t&quot;)</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><p>Seleccione una variable continua y construya una tabla de frecuancias (use la función descrita durante la clase)</p></li>
+<li><p>Interprete un valor de cada columna en la tabla de frecuancias.</p></li>
+<li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a la derecha o izquierda.</p></li>
+<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
+</ol>
+</div>
+<div id="use-r-yo-rstudio-para-contestar-las-siguietes-preguntas" class="section level4">
+<h4>3. Use <code>R</code> y/o <code>RStudio</code> para contestar las siguietes preguntas</h4>
+<ol style="list-style-type: lower-alpha">
+<li><p>Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</p></li>
+<li><p>Haga un grafico totalemnete igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.</p></li>
+</ol>
+<p><img src="t3_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Haga un gráfico circular con la variable <code>Religious_Importance</code>. Interprete el gráfico.</li>
+</ol>
+</div>
+<div id="los-siguientes-datos-corresponden-al-numero-de-dias-que-ha-llovido-en-mayaguez-durante-los-ultimos-15-anos." class="section level4">
+<h4>4. Los siguientes datos corresponden al número de días que ha llovido en Mayaguez durante los últimos 15 años.</h4>
+<p>311 293 285 306 311 309 313 309 320 311 319 307 320 273 297</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Hacer un gráfico de tallos y hojas de forma manual. Comentar si el grafico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos.</p></li>
+<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>stem()</code> para crear el gráfico de tallos y hojas.</p></li>
+<li><p>Use <code>R</code> y/o <code>RStudio</code> para hacer un histograma de los datos. Compare su histograma con el gráfico de tallos y hojas.</p></li>
+</ol>
 <div class="figure">
 <img src="blanco.png" />
 

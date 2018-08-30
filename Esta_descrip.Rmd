@@ -45,7 +45,7 @@ Otra forma de leer los datos es directamente desde internet usando la función `
 
 ```{r, comment=NA,echo=T,eval=F,message=FALSE,warning=FALSE}
 library(data.table)
-Estudiantes <- fread("https://didier-murillo.netlify.com/estudiantes.txt")
+Estudiantes <- fread("https://didier-murillo.netlify.com/estudiantes.txt",header = TRUE,sep = "\t")
 head(Estudiantes)
 ```
 
@@ -291,9 +291,7 @@ tabla_frecuencia <- data.frame(frecuencia_area,frecuencia_relativa_area)
 tabla_frecuencia
 ```
 
-Las frecuencias acumuladas no son importantes si la variables es nominal como el caso de la variable `area`
-
-
+Las frecuencias acumuladas no son importantes si las variables son nominales como el caso de la variable `area`
 
 ### Gráficos de barras
 
@@ -302,15 +300,30 @@ Las gráficas de barras pueden ser verticales u horizontales. Usando la función
 > Grafica de barras para la variable `area`
 
 ```{r, comment=NA,echo=T,eval=T}
-ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()
+ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar(position="dodge") + 
+  ggtitle("Grafico de barras para area del estudiante") + xlab("Area del estudiante") + ylab("Número de estudiantes") 
 ```
 
 
 > Grafica de barras para la variable `nota_esma`
 
 ```{r, comment=NA,echo=T,eval=T}
-ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()
+ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar(position="dodge") + 
+  ggtitle("Grafico de barras para notas de los estudiante en ESMA") +
+  xlab("Notas") + ylab("Número de estudiantes") 
 ```
+
+### Gráficos de barras por grupos
+
+Se pueden comparar grupos usando graficas de barras. Por ejemplo podemos tomar las variables area y trabaja y comparar mediante un gráfico de barras por grupos.
+
+```{r, comment=NA,echo=T,eval=T}
+# Gráfico de barras por grupos
+ggplot(Estudiantes, aes(fill=Estudiantes$trabaja,  x=Estudiantes$area)) + 
+    geom_bar(position="dodge") + ggtitle("Grafico de barras por grupos para area y opción de trabajo.") +
+  xlab("Area del estudiante") + ylab("Número de estudiantes") 
+```
+
 
 ### Gráficas Circulares
 
@@ -326,8 +339,11 @@ Ahora creamos dos vectores
 ```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
 Area <- c("Centro","Este",  "Norte","Oeste","Otra","Sur" )
 num_Area <-c(7, 6, 4, 13, 10, 10 )
-## Usando la función pie
-pie(num_Area,Area)
+pct <- round(num_Area/sum(num_Area)*100)
+Area <- paste(Area, pct) # add percents to labels 
+Area <- paste(Area,"%",sep="") # ad % to labels 
+pie(num_Area,labels = Area, col=rainbow(length(Area)),
+  	main="Gráfico circular para area")
 ```
 
 Como resultado obtenemos un diagrama de sectores para la variable cualitativa `area`.

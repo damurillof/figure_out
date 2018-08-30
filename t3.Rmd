@@ -11,11 +11,78 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje:** 20 puntos 
 
-#### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de bono si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
+#### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de BONO si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
 
-#### 1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.
+#### 1. La siguiente función construye una tabla de frecuencias para datos discretos en R
+
+```{r}
+tabla_freq_discretas <- function(x){
+  Obs <- sort(unique(x),F)
+  Frecuencia_Abs <- as.vector(table(x))
+  Frecuencia_Relativa <- as.vector(Frecuencia_Abs/length(x))
+  Frecuencia_Acum <- as.vector(cumsum(Frecuencia_Abs))
+  Frecuencia_Abs_Acum <- as.vector(Frecuencia_Acum/length(x))
+  table_frec <- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
+  table_frec
+}
+```
+
+a) El siguiente código simula datos de un experiento en donde se esta probando la efectividad de un nuevo insecticida contra una especie  de insecto.  Se realizarón 40 repeteciones del experimento y se observarón la cantidad de insectos muertos en cada repetición. 
+
+```{r}
+insectos_m <- rpois(40,10)
+```
+
+Usar la función `tabla_freq_discretas` descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. **Interpretar un valor cualquiera en cada columna de la tabla de frecuencias**.
+
+b) Hacer una grafica `Dotplot` para el número de insectos muetos. El data frame se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
+
+```{r,comment=NA}
+insectos_muertos <- data.frame(insectos_m)
+## Mostrar las primeras 10 filas
+head(insectos_muertos,10)
+```
+
+#### 2. Para este ejercicio  y el 3 debe usar los datos `class_survey` que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
+
+```{r,comment=NA,eval=T,echo=T}
+class_survey <- read.table("/datos/DirectorioR/class_survey.txt",header=TRUE,sep = "\t")
+```
+
+a) Seleccione una variable continua y construya una tabla de frecuancias (use la función descrita durante la clase)
+
+b) Interprete un valor de cada columna en la tabla de frecuancias.
+
+c) Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a la derecha o izquierda. 
+
+d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable. La gráfica debe tener título y nombre en los ejes x-y.
+
+#### 3. Use `R` y/o `RStudio` para contestar las siguietes preguntas
+
+a)  Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
+
+b)  Haga un grafico totalemnete igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.
+
+```{r,comment=NA,eval=T,echo=FALSE}
+class_survey <- read.table("/datos/DirectorioR/class_survey.txt",T,sep = "\t")
+library(ggplot2)
+ggplot(class_survey, aes(fill=class_survey$Smoke_Cigarettes,  x=class_survey$Religious_Importance)) + 
+    geom_bar(position="dodge") + ggtitle("Gráfico de barras por grupos - Su Nombre") +
+  xlab("Importancia de la Religión") + ylab("Número de estudiantes")
+```
+
+c)  Haga un gráfico circular con la variable `Religious_Importance`. Interprete el gráfico.
 
 
+#### 4. Los siguientes datos corresponden al número de días que ha llovido en Mayaguez durante los últimos 15 años.
+
+311 293 285 306 311 309 313 309 320 311 319 307 320 273 297
+
+a) Hacer un gráfico de tallos y hojas de forma manual. Comentar si el grafico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos. 
+
+b) Use `R` y/o `RStudio` y la función `stem()` para crear el gráfico de tallos y hojas.
+
+c) Use `R` y/o `RStudio` para hacer un histograma de los datos. Compare su histograma con el gráfico de tallos y hojas. 
 
 
 ![](blanco.png)

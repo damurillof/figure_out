@@ -9,3 +9,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ### [1. Estudiantes](https://didier-murillo.netlify.com/estudiantes.txt)
+
+### [2. class_survey](https://didier-murillo.netlify.com/class_survey.txt)
