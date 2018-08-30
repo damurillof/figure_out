@@ -260,7 +260,7 @@ head(Estudiantes)</code></pre>
 6 2.99         D Oeste      si</code></pre>
 <p>Otra forma de leer los datos es directamente desde internet usando la función <code>fread()</code> de la librería <code>data.table</code>. Para esto debe tener una conexión a internet.</p>
 <pre class="r"><code>library(data.table)
-Estudiantes &lt;- fread(&quot;https://didier-murillo.netlify.com/estudiantes.txt&quot;,header = T)
+Estudiantes &lt;- fread(&quot;https://didier-murillo.netlify.com/estudiantes.txt&quot;)
 head(Estudiantes)</code></pre>
 <p>Vamos a construir una tabla de frecuencias paso a paso para la variable discreta <code>hermanos</code> que se refiere al número de hermanos de cada estudiante.</p>
 <ul>

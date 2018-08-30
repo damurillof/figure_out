@@ -1,0 +1,21 @@
+---
+title: 'Tarea  # 3'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **Fecha de entrega:** Viernes 07 de septiembre de 2018. Al iniciar la clase. 
+
+#### **Puntaje:** 20 puntos 
+
+#### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de bono si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
+
+#### 1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.
+
+
+
+
+![](blanco.png)
