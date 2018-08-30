@@ -212,6 +212,12 @@ Para hacer un Histograma en R puede usar la función `hist()` veamos,
 hist(Estudiantes$peso)
 ```
 
+La función `hist()` tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x,y. También se puede cambiar el color del histograma. 
+
+```{r, comment=NA,echo=T,eval=T}
+hist(Estudiantes$peso, col="green",xlab = "Peso", ylab = "Frecuencias",main = "Histograma de frecuencias para peso")
+```
+
 Puede usar el paquete `ggplot2` para hacer una grafica más atractiva.
 
 ```{r, comment=NA,echo=T,eval=T}

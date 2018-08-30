@@ -529,14 +529,17 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>La función <code>hist()</code> tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x,y. También se puede cambiar el color del histograma.</p>
+<pre class="r"><code>hist(Estudiantes$peso, col=&quot;green&quot;,xlab = &quot;Peso&quot;, ylab = &quot;Frecuencias&quot;,main = &quot;Histograma de frecuencias para peso&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
   geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;red&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
   geom_histogram(binwidth=0.2,col=&quot;orange&quot;,fill=&quot;black&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="histogramas-simetricos-y-sesgados." class="section level3">
 <h3>Histogramas simétricos y sesgados.</h3>
@@ -544,18 +547,18 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <p>Histograma sesgado a la Izquierda</p>
 </blockquote>
 <p>Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma Simétrico</p>
 </blockquote>
 <p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma sesgado a la Derecha</p>
 </blockquote>
 <p>Se refiere a un histograma sesgadoa la derecha cuando hay menos datos al lado derecho del histograma.</p>
 <p>Se refiere a un histograma sesgado a la derecha cuando las barras más altas estan al comienzo de la gráfica.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 </div>
 <div id="presentacion-de-datos-cualitativos" class="section level2">
@@ -587,12 +590,12 @@ tabla_frecuencia</code></pre>
 <p>Grafica de barras para la variable <code>area</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar()</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <blockquote>
 <p>Grafica de barras para la variable <code>nota_esma</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar()</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 <div id="graficas-circulares" class="section level3">
 <h3>Gráficas Circulares</h3>
@@ -607,7 +610,7 @@ Centro   Este  Norte  Oeste   Otra    Sur
 num_Area &lt;-c(7, 6, 4, 13, 10, 10 )
 ## Usando la función pie
 pie(num_Area,Area)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
 </div>
 <div id="grafica-de-tallo-y-hojas-stemand-leaf" class="section level3">
