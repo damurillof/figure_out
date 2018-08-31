@@ -222,7 +222,7 @@ $(document).ready(function () {
 <li><a href="#graficos-de-barras">Gráficos de barras</a></li>
 <li><a href="#graficos-de-barras-por-grupos">Gráficos de barras por grupos</a></li>
 <li><a href="#graficas-circulares">Gráficas Circulares</a></li>
-<li><a href="#grafica-de-tallo-y-hojas-stemand-leaf">Gráfica de tallo y hojas (“Stemand-Leaf”)</a></li>
+<li><a href="#grafica-de-tallo-y-hojas-stem-and-leaf">Gráfica de tallo y hojas (“Stem-and-Leaf”)</a></li>
 </ul></li>
 </ul>
 </div>
@@ -628,13 +628,16 @@ pie(num_Area,labels = Area, col=rainbow(length(Area)),
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
 <p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
 </div>
-<div id="grafica-de-tallo-y-hojas-stemand-leaf" class="section level3">
-<h3>Gráfica de tallo y hojas (“Stemand-Leaf”)</h3>
+<div id="grafica-de-tallo-y-hojas-stem-and-leaf" class="section level3">
+<h3>Gráfica de tallo y hojas (“Stem-and-Leaf”)</h3>
 <p>Es una gráfica usada para datos cuantitativos. Es la gráfica más básica de un conjunto de técnicas conocido con el nombre de Análisis Exploratorio de Datos (EDA) introducida por John Tukey a mediados de los años 70. La idea es considerar los primeros dígitos del dato como una rama del tallo (“stem”) y el último dígito como una hoja (“leaf”) de dicha rama. Las ramas son ordenadas en forma creciente.</p>
 <p><strong>Ejemplo</strong>. Los siguientes datos representan pesos de una muestra de 15 varones adultos.</p>
 <p>165 178 185 169 152 180 175 189 195 200 183 191 197 208 179</p>
 <p>Hacer su gráfica de “Stem-and Leaf”.</p>
-<p>Solución: En este caso las ramas la forman los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:</p>
+<p>Solución:</p>
+<p>El primer paso es ordenar los datos de menor a mayor</p>
+<p><strong>152 165 169 175 178 179 180 183 185 189 191 195 197 200 208</strong></p>
+<p>En este caso las ramas están formadas por los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:</p>
 <div class="figure">
 <img src="stem.png" />
 
@@ -653,6 +656,10 @@ stem(pesos,2)</code></pre>
   18 | 0359
   19 | 157
   20 | 08</code></pre>
+<p>Comparemos el gráfico de tallos y hojas con un histograma de los datos.</p>
+<pre class="r"><code>hist(pesos)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Notamos que la forma del histograma es muy similar al gráfico de tallo y hojas, también es simétrico a izquierda.</p>
 <p>Hagamos una grafica de tallos y hojas para la variable <code>estatura</code> de los estudiantes.</p>
 <pre class="r"><code>stem(Estudiantes$estatura)</code></pre>
 <pre><code>

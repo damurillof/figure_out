@@ -367,7 +367,7 @@ pie(num_Area,labels = Area, col=rainbow(length(Area)),
 Como resultado obtenemos un diagrama de sectores para la variable cualitativa `area`.
 
 
-### Gráfica de tallo y hojas (“Stemand-Leaf”)
+### Gráfica de tallo y hojas (“Stem-and-Leaf”)
 
 Es una gráfica usada para datos cuantitativos. Es la gráfica más básica de un conjunto de técnicas conocido con el nombre de Análisis Exploratorio de Datos (EDA) introducida por John Tukey a mediados de los años 70. La idea es considerar los primeros dígitos del dato como una rama del tallo (“stem”) y el último dígito como una hoja (“leaf”) de dicha rama. Las ramas son ordenadas en forma creciente.
 
@@ -379,7 +379,13 @@ Es una gráfica usada para datos cuantitativos. Es la gráfica más básica de u
 Hacer su gráfica de “Stem-and Leaf”.
 
 
-Solución: En este caso las ramas la forman los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:
+Solución: 
+
+El primer paso es ordenar los datos de menor a mayor
+
+ **152 165 169 175 178 179 180 183 185 189 191 195 197 200 208**
+
+En este caso las ramas están formadas por los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:
 
 ![](stem.png)
 
@@ -394,6 +400,13 @@ pesos <- c(165, 178, 185, 169, 152, 180, 175, 189, 195, 200, 183, 191, 197, 208,
 stem(pesos,2)
 ```
 
+Comparemos el gráfico de tallos y hojas con un histograma de los datos.
+
+```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
+hist(pesos)
+```
+
+Notamos que la forma del histograma es muy similar al gráfico de tallo y hojas, también es simétrico a izquierda.
 
 Hagamos una grafica de tallos y hojas para la variable `estatura` de los estudiantes.
 
