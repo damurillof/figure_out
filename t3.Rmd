@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de BONO si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
 
-#### 1. La siguiente función construye una tabla de frecuencias para datos discretos en R
+#### 1. La siguiente función se llama `tabla_freq_discretas` y construye una tabla de frecuencias para datos discretos en R
 
 ```{r}
 tabla_freq_discretas <- function(x){
