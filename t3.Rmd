@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje:** 20 puntos 
 
-#### **Recomendación:** Si usa `RMarkdown` para escribir su informe debe copiar y pegar las funciones `tabla_freq_discretas` y `tabla_frecuencia` en un chunk al comienzo de su informe. 
+#### **Recomendación:** Si usa `Rmarkdown` para escribir su informe debe copiar y pegar las funciones `tabla_freq_discretas` y `tabla_frecuencia` en un chunk al comienzo de su informe. 
 
 #### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de BONO si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
 
