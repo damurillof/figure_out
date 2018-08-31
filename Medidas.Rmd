@@ -31,7 +31,7 @@ Cuando el conjunto de datos es una **muestra aleatoria** recibe el nombre de med
 
 74, 82, 107, 92, 125, 130, 118, 140, 153.
 
-Hallar el precio promedio de las casas.
+Hallar el precio promedio de los autos.
 
 Para encontrar la media o promedio entonces tenemos que sumar todos los datos y luego dividir el resultado por el número de observaciones en la muestra. 
 

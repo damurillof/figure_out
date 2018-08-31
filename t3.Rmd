@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje:** 20 puntos 
 
+#### **Recomendación:** Si usa `RMarkdown` para escribir su informe debe copiar y pegar las funciones `tabla_freq_discretas` y `tabla_frecuencia` en un chunk al comienzo de su informe. 
+
 #### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de BONO si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
 
 #### 1. La siguiente función construye una tabla de frecuencias para datos discretos en R
@@ -18,12 +20,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 tabla_freq_discretas <- function(x){
   Obs <- sort(unique(x),F)
-  Frecuencia_Abs <- as.vector(table(x))
-  Frecuencia_Relativa <- as.vector(Frecuencia_Abs/length(x))
-  Frecuencia_Acum <- as.vector(cumsum(Frecuencia_Abs))
-  Frecuencia_Abs_Acum <- as.vector(Frecuencia_Acum/length(x))
-  table_frec <- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
-  table_frec
+  Freq_Abs <- as.vector(table(x))
+  Freq_Relativa <- as.vector(Freq_Abs/length(x))
+  Freq_Acum <- as.vector(cumsum(Freq_Abs))
+  Freq_Abs_Acum <- as.vector(Freq_Acum/length(x))
+  table_freq <- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  table_freq
 }
 ```
 
@@ -33,12 +35,28 @@ a) El siguiente código simula datos de un experiento en donde se esta probando 
 insectos_m <- rpois(40,10)
 ```
 
-Usar la función `tabla_freq_discretas` descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. **Interpretar un valor cualquiera en cada columna de la tabla de frecuencias**.
+Usar la función `tabla_freq_discretas` descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. **Interpretar un valor cualquiera en cada columna de la tabla de frecuencias**. 
+
+### Puede usar el siguiente código para hacer la tabla de frecuencias.
+
+```{r,eval=F,echo=T}
+insectos_m <- rpois(40,10)
+tabla_freq_discretas(insectos_m)
+```
 
 b) Hacer una grafica `Dotplot` para el número de insectos muertos. El data frame o tabla de datos se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
 
-```{r,comment=NA}
+```{r,comment=NA,eval=F,echo=T}
 insectos_muertos <- data.frame(insectos_m)
+```
+
+#### Un ejemplo de código es el siguiente: Usted debe usar este código como guia y adaptarlo a la tabla de datos `insectos_muertos` y la unica columna `insectos_m`. Ajuste el nombre para el título, el nombre para el eje `x` y para el eje `y`. Debe instalar el paquete `ggplot2`. Intente cambiar los colores.
+
+```{r,comment=NA,eval=F,echo=T}
+library(ggplot2)
+ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + 
+  geom_dotplot(fill = "green", color = "black") + 
+  ggtitle("Dotplot para Número de hermanos")  + xlab("Número de hermanos") + ylab("conteos")
 ```
 
 #### 2. Para este ejercicio  y el 3 debe usar los datos `class_survey` que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
@@ -54,7 +72,7 @@ library(data.table)
 class_survey <- fread("https://didier-murillo.netlify.com/class_survey.txt",header=TRUE)
 ```
 
-a) Seleccione una variable continua y construya una tabla de frecuancias (use la función `` descrita durante la clase)
+a) Seleccione una variable continua y construya una tabla de frecuancias (use la función `tabla_frecuencia` que discutimos durante la clase).
 
 b) Interprete un valor de cada columna en la tabla de frecuancias.
 

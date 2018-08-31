@@ -213,6 +213,9 @@ $(document).ready(function () {
 <div id="puntaje-20-puntos" class="section level4">
 <h4><strong>Puntaje:</strong> 20 puntos</h4>
 </div>
+<div id="recomendacion-si-usa-rmarkdown-para-escribir-su-informe-debe-copiar-y-pegar-las-funciones-tabla_freq_discretas-y-tabla_frecuencia-en-un-chunk-al-comienzo-de-su-informe." class="section level4">
+<h4><strong>Recomendación:</strong> Si usa <code>RMarkdown</code> para escribir su informe debe copiar y pegar las funciones <code>tabla_freq_discretas</code> y <code>tabla_frecuencia</code> en un chunk al comienzo de su informe.</h4>
+</div>
 <div id="para-esta-tarea-usted-debe-usar-r-yo-rstudio.-en-su-informe-final-debe-mostrar-todos-los-codigos-y-resultados.-su-informe-final-lo-puede-hacer-usando-word-o-directamente-desde-rstudio-usando-rmarkdown.-dare-3-puntos-de-bono-si-su-informe-final-es-realizado-usando-rmarkdown-y-exportado-en-html-o-word." class="section level4">
 <h4>Para está tarea usted debe usar <code>R</code> y/o <code>RStudio</code>. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde <code>RStudio</code> usando <code>Rmarkdown</code>. Daré 3 puntos de BONO si su informe final es realizado usando <code>Rmarkdown</code> y exportado en <code>html</code> o <code>word</code>.</h4>
 </div>
@@ -220,22 +223,33 @@ $(document).ready(function () {
 <h4>1. La siguiente función construye una tabla de frecuencias para datos discretos en R</h4>
 <pre class="r"><code>tabla_freq_discretas &lt;- function(x){
   Obs &lt;- sort(unique(x),F)
-  Frecuencia_Abs &lt;- as.vector(table(x))
-  Frecuencia_Relativa &lt;- as.vector(Frecuencia_Abs/length(x))
-  Frecuencia_Acum &lt;- as.vector(cumsum(Frecuencia_Abs))
-  Frecuencia_Abs_Acum &lt;- as.vector(Frecuencia_Acum/length(x))
-  table_frec &lt;- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
-  table_frec
+  Freq_Abs &lt;- as.vector(table(x))
+  Freq_Relativa &lt;- as.vector(Freq_Abs/length(x))
+  Freq_Acum &lt;- as.vector(cumsum(Freq_Abs))
+  Freq_Abs_Acum &lt;- as.vector(Freq_Acum/length(x))
+  table_freq &lt;- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  table_freq
 }</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>El siguiente código simula datos de un experiento en donde se esta probando la efectividad de un nuevo insecticida contra una especie de insecto. Se realizarón 40 repeteciones del experimento y se observarón la cantidad de insectos muertos en cada repetición.</li>
 </ol>
 <pre class="r"><code>insectos_m &lt;- rpois(40,10)</code></pre>
 <p>Usar la función <code>tabla_freq_discretas</code> descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. <strong>Interpretar un valor cualquiera en cada columna de la tabla de frecuencias</strong>.</p>
+</div>
+<div id="puede-usar-el-siguiente-codigo-para-hacer-la-tabla-de-frecuencias." class="section level3">
+<h3>Puede usar el siguiente código para hacer la tabla de frecuencias.</h3>
+<pre class="r"><code>insectos_m &lt;- rpois(40,10)
+tabla_freq_discretas(insectos_m)</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Hacer una grafica <code>Dotplot</code> para el número de insectos muertos. El data frame o tabla de datos se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
 </ol>
 <pre class="r"><code>insectos_muertos &lt;- data.frame(insectos_m)</code></pre>
+<div id="un-ejemplo-de-codigo-es-el-siguiente-usted-debe-usar-este-codigo-como-guia-y-adaptarlo-a-la-tabla-de-datos-insectos_muertos-y-la-unica-columna-insectos_m.-ajuste-el-nombre-para-el-titulo-el-nombre-para-el-eje-x-y-para-el-eje-y.-debe-instalar-el-paquete-ggplot2.-intente-cambiar-los-colores." class="section level4">
+<h4>Un ejemplo de código es el siguiente: Usted debe usar este código como guia y adaptarlo a la tabla de datos <code>insectos_muertos</code> y la unica columna <code>insectos_m</code>. Ajuste el nombre para el título, el nombre para el eje <code>x</code> y para el eje <code>y</code>. Debe instalar el paquete <code>ggplot2</code>. Intente cambiar los colores.</h4>
+<pre class="r"><code>library(ggplot2)
+ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + 
+  geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
+  ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;Número de hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
 </div>
 <div id="para-este-ejercicio-y-el-3-debe-usar-los-datos-class_survey-que-le-fueron-enviados-a-su-correo-electronico.-una-forma-de-leer-los-datos-es-la-siguiente.-usted-solo-debe-cambiar-la-ubicacion-del-archivo." class="section level4">
 <h4>2. Para este ejercicio y el 3 debe usar los datos <code>class_survey</code> que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.</h4>
@@ -244,7 +258,7 @@ $(document).ready(function () {
 <pre class="r"><code>library(data.table)
 class_survey &lt;- fread(&quot;https://didier-murillo.netlify.com/class_survey.txt&quot;,header=TRUE)</code></pre>
 <ol style="list-style-type: lower-alpha">
-<li><p>Seleccione una variable continua y construya una tabla de frecuancias (use la función `` descrita durante la clase)</p></li>
+<li><p>Seleccione una variable continua y construya una tabla de frecuancias (use la función <code>tabla_frecuencia</code> que discutimos durante la clase).</p></li>
 <li><p>Interprete un valor de cada columna en la tabla de frecuancias.</p></li>
 <li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a derecha o izquierda.</p></li>
 <li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
@@ -256,7 +270,7 @@ class_survey &lt;- fread(&quot;https://didier-murillo.netlify.com/class_survey.t
 <li><p>Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</p></li>
 <li><p>Haga un grafico totalmente igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.</p></li>
 </ol>
-<p><img src="t3_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="t3_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Haga un gráfico circular con la variable <code>Religious_Importance</code>. Interprete el gráfico.</li>
 </ol>
@@ -272,6 +286,7 @@ class_survey &lt;- fread(&quot;https://didier-murillo.netlify.com/class_survey.t
 <div class="figure">
 <img src="blanco.png" />
 
+</div>
 </div>
 </div>
 
