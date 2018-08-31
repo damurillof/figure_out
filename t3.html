@@ -233,40 +233,30 @@ $(document).ready(function () {
 <pre class="r"><code>insectos_m &lt;- rpois(40,10)</code></pre>
 <p>Usar la función <code>tabla_freq_discretas</code> descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. <strong>Interpretar un valor cualquiera en cada columna de la tabla de frecuencias</strong>.</p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Hacer una grafica <code>Dotplot</code> para el número de insectos muetos. El data frame se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
+<li>Hacer una grafica <code>Dotplot</code> para el número de insectos muertos. El data frame o tabla de datos se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
 </ol>
-<pre class="r"><code>insectos_muertos &lt;- data.frame(insectos_m)
-## Mostrar las primeras 10 filas
-head(insectos_muertos,10)</code></pre>
-<pre><code>   insectos_m
-1           8
-2           4
-3           6
-4           6
-5           8
-6           5
-7          12
-8          12
-9          12
-10         12</code></pre>
+<pre class="r"><code>insectos_muertos &lt;- data.frame(insectos_m)</code></pre>
 </div>
 <div id="para-este-ejercicio-y-el-3-debe-usar-los-datos-class_survey-que-le-fueron-enviados-a-su-correo-electronico.-una-forma-de-leer-los-datos-es-la-siguiente.-usted-solo-debe-cambiar-la-ubicacion-del-archivo." class="section level4">
 <h4>2. Para este ejercicio y el 3 debe usar los datos <code>class_survey</code> que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.</h4>
 <pre class="r"><code>class_survey &lt;- read.table(&quot;/datos/DirectorioR/class_survey.txt&quot;,header=TRUE,sep = &quot;\t&quot;)</code></pre>
+<p>Otra forma, es leerlos directamente desde el sitio web del curso, pero se debe instalar el paquete <code>data.table</code></p>
+<pre class="r"><code>library(data.table)
+class_survey &lt;- fread(&quot;https://didier-murillo.netlify.com/class_survey.txt&quot;,header=TRUE)</code></pre>
 <ol style="list-style-type: lower-alpha">
-<li><p>Seleccione una variable continua y construya una tabla de frecuancias (use la función descrita durante la clase)</p></li>
+<li><p>Seleccione una variable continua y construya una tabla de frecuancias (use la función `` descrita durante la clase)</p></li>
 <li><p>Interprete un valor de cada columna en la tabla de frecuancias.</p></li>
-<li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a la derecha o izquierda.</p></li>
-<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
+<li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a derecha o izquierda.</p></li>
+<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
 </ol>
 </div>
 <div id="use-r-yo-rstudio-para-contestar-las-siguietes-preguntas" class="section level4">
 <h4>3. Use <code>R</code> y/o <code>RStudio</code> para contestar las siguietes preguntas</h4>
 <ol style="list-style-type: lower-alpha">
 <li><p>Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</p></li>
-<li><p>Haga un grafico totalemnete igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.</p></li>
+<li><p>Haga un grafico totalmente igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.</p></li>
 </ol>
-<p><img src="t3_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="t3_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Haga un gráfico circular con la variable <code>Religious_Importance</code>. Interprete el gráfico.</li>
 </ol>

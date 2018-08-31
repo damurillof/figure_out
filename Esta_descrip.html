@@ -257,11 +257,11 @@ head(Estudiantes)</code></pre>
 2 2.92         D Oeste      no
 3 3.32         F Norte      si
 4 3.17         C  Otra      si
-5 4.00         B   Sur      si
+5 2.75         B   Sur      si
 6 2.99         D Oeste      si</code></pre>
 <p>Otra forma de leer los datos es directamente desde internet usando la función <code>fread()</code> de la librería <code>data.table</code>. Para esto debe tener una conexión a internet.</p>
 <pre class="r"><code>library(data.table)
-Estudiantes &lt;- fread(&quot;https://didier-murillo.netlify.com/estudiantes.txt&quot;,header = TRUE,sep = &quot;\t&quot;)
+Estudiantes &lt;- fread(&quot;https://didier-murillo.netlify.com/estudiantes.csv&quot;,header = TRUE)
 head(Estudiantes)</code></pre>
 <p>Vamos a construir una tabla de frecuencias paso a paso para la variable discreta <code>hermanos</code> que se refiere al número de hermanos de cada estudiante.</p>
 <ul>
@@ -522,30 +522,26 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <div id="histograma" class="section level3">
 <h3>Histograma</h3>
 <p>Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. En un histograma las barras más altas identifican los valores más comunes en la muestra. Aquellas gráficas donde los datos se agrupan alrededor de un valor central se dice que son simétricas, mientras que aquellas que tienen más datos a un lado que a otro se dice que están sesgadas, presentando “sesgo a la derecha” cuando las barras más altas se posicionan al principio de la gráfica y “sesgo a la izquierda” cuando las barras más grandes aparecen a la derecha de la gráfica.</p>
-<p>Con los resultados de la tabla de frecuencia construida arriba para el pesos de los estudiantes y usando los puntos medios <code>MC</code> y las frecuencas absolutas podemos hacer manualmente un histograma de frecuencias para el <code>peso</code> de los estudiantes.</p>
-<div class="figure">
-<img src="hist.png" />
-
-</div>
+<p>Con los resultados de la tabla de frecuencia construida arriba para el peso de los estudiantes y usando los puntos medios <code>MC</code> y las frecuencas absolutas podemos hacer manualmente un histograma de frecuencias para el <code>peso</code> de los estudiantes.</p>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p>La función <code>hist()</code> tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x,y. También se puede cambiar el color del histograma.</p>
+<p>La función <code>hist()</code> tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x-y. También se puede cambiar el color de las barras en el histograma.</p>
 <pre class="r"><code>hist(Estudiantes$peso, col=&quot;green&quot;,xlab = &quot;Peso&quot;, ylab = &quot;Frecuencias&quot;,main = &quot;Histograma de frecuencias para peso&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p>Puede usar el paquete <code>ggplot2</code> para hacer una grafica más atractiva.</p>
+<p>Puede usar el paquete <code>ggplot2</code> para hacer la misma gráfica.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
-  geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;red&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
+  geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;white&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
-  geom_histogram(binwidth=0.2,col=&quot;orange&quot;,fill=&quot;black&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
+  geom_histogram(binwidth=0.25,col=&quot;black&quot;,fill=&quot;white&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 </div>
 <div id="histogramas-simetricos-y-sesgados." class="section level3">
 <h3>Histogramas simétricos y sesgados.</h3>
 <blockquote>
-<p>Histograma sesgado a la Izquierda</p>
+<p>Histograma sesgado a izquierda</p>
 </blockquote>
 <p>Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
@@ -555,11 +551,12 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <blockquote>
-<p>Histograma sesgado a la Derecha</p>
+<p>Histograma sesgado a derecha</p>
 </blockquote>
-<p>Se refiere a un histograma sesgadoa la derecha cuando hay menos datos al lado derecho del histograma.</p>
-<p>Se refiere a un histograma sesgado a la derecha cuando las barras más altas estan al comienzo de la gráfica.</p>
+<p>Se refiere a un histograma sesgado a derecha cuando hay menos datos al lado derecho del histograma. En otras palabras un histograma es sesgado a derecha cuando las barras más altas estan al comienzo de la gráfica.</p>
 <p><img src="Esta_descrip_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>Para resumir, veamos los tres tipos de histogramas que podemos encontrar.</p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 </div>
 </div>
 <div id="presentacion-de-datos-cualitativos" class="section level2">
@@ -591,24 +588,26 @@ tabla_frecuencia</code></pre>
 <p>Grafica de barras para la variable <code>area</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar(position=&quot;dodge&quot;) + 
-  ggtitle(&quot;Grafico de barras para area del estudiante&quot;) + xlab(&quot;Area del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+  ggtitle(&quot;Gráfico de barras para región geográfica del estudiante&quot;) + xlab(&quot;Región geográfica del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>Según la gráfica de barras, la región geográfica de donde provienen los estudiantes con mayor frecuancia es el oeste. En último lugar está el Norte.</p>
 <blockquote>
 <p>Grafica de barras para la variable <code>nota_esma</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar(position=&quot;dodge&quot;) + 
-  ggtitle(&quot;Grafico de barras para notas de los estudiante en ESMA&quot;) +
+  ggtitle(&quot;Gráfico de barras para notas de los estudiante en ESMA&quot;) +
   xlab(&quot;Notas&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Según la gráfica de barras, las notas con mayor frecuencia son en primer lugar la C, seguido de la D. La nota A esta en el tercer lugar.</p>
 </div>
 <div id="graficos-de-barras-por-grupos" class="section level3">
 <h3>Gráficos de barras por grupos</h3>
 <p>Se pueden comparar grupos usando graficas de barras. Por ejemplo podemos tomar las variables area y trabaja y comparar mediante un gráfico de barras por grupos.</p>
 <pre class="r"><code># Gráfico de barras por grupos
 ggplot(Estudiantes, aes(fill=Estudiantes$trabaja,  x=Estudiantes$area)) + 
-    geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Grafico de barras por grupos para area y opción de trabajo.&quot;) +
-  xlab(&quot;Area del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+    geom_bar(position=&quot;dodge&quot;) + 
+  ggtitle(&quot;Grafico de barras por grupos: Región y opción de trabajo.&quot;) + xlab(&quot;Región geográfica del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
 <div id="graficas-circulares" class="section level3">
 <h3>Gráficas Circulares</h3>
@@ -625,8 +624,8 @@ pct &lt;- round(num_Area/sum(num_Area)*100)
 Area &lt;- paste(Area, pct) # add percents to labels 
 Area &lt;- paste(Area,&quot;%&quot;,sep=&quot;&quot;) # ad % to labels 
 pie(num_Area,labels = Area, col=rainbow(length(Area)),
-    main=&quot;Gráfico circular para area&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+    main=&quot;Gráfico de sectores para región geográfica del estudiante&quot;)</code></pre>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
 <p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
 </div>
 <div id="grafica-de-tallo-y-hojas-stemand-leaf" class="section level3">

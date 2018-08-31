@@ -35,12 +35,10 @@ insectos_m <- rpois(40,10)
 
 Usar la función `tabla_freq_discretas` descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. **Interpretar un valor cualquiera en cada columna de la tabla de frecuencias**.
 
-b) Hacer una grafica `Dotplot` para el número de insectos muetos. El data frame se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
+b) Hacer una grafica `Dotplot` para el número de insectos muertos. El data frame o tabla de datos se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
 
 ```{r,comment=NA}
 insectos_muertos <- data.frame(insectos_m)
-## Mostrar las primeras 10 filas
-head(insectos_muertos,10)
 ```
 
 #### 2. Para este ejercicio  y el 3 debe usar los datos `class_survey` que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
@@ -49,19 +47,26 @@ head(insectos_muertos,10)
 class_survey <- read.table("/datos/DirectorioR/class_survey.txt",header=TRUE,sep = "\t")
 ```
 
-a) Seleccione una variable continua y construya una tabla de frecuancias (use la función descrita durante la clase)
+Otra forma, es leerlos directamente desde el sitio web del curso, pero se debe instalar el paquete `data.table`
+
+```{r,comment=NA,eval=FALSE,echo=TRUE}
+library(data.table)
+class_survey <- fread("https://didier-murillo.netlify.com/class_survey.txt",header=TRUE)
+```
+
+a) Seleccione una variable continua y construya una tabla de frecuancias (use la función `` descrita durante la clase)
 
 b) Interprete un valor de cada columna en la tabla de frecuancias.
 
-c) Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a la derecha o izquierda. 
+c) Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a derecha o izquierda. 
 
-d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable. La gráfica debe tener título y nombre en los ejes x-y.
+d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.
 
 #### 3. Use `R` y/o `RStudio` para contestar las siguietes preguntas
 
 a)  Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
 
-b)  Haga un grafico totalemnete igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.
+b)  Haga un grafico totalmente igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.
 
 ```{r,comment=NA,eval=T,echo=FALSE}
 class_survey <- read.table("/datos/DirectorioR/class_survey.txt",T,sep = "\t")

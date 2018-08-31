@@ -45,7 +45,7 @@ Otra forma de leer los datos es directamente desde internet usando la función `
 
 ```{r, comment=NA,echo=T,eval=F,message=FALSE,warning=FALSE}
 library(data.table)
-Estudiantes <- fread("https://didier-murillo.netlify.com/estudiantes.txt",header = TRUE,sep = "\t")
+Estudiantes <- fread("https://didier-murillo.netlify.com/estudiantes.csv",header = TRUE)
 head(Estudiantes)
 ```
 
@@ -201,9 +201,8 @@ Algunas interpretaciones de la tabla de frecuencia de `estatura`.
 
 Es la gráfica de la tabla de distribución de frecuencias para datos agrupados, consiste de barras cuyas bases son los intervalos de clases y cuyas alturas son proporcionales a las frecuencias absolutas (o relativas) de los correspondientes intervalos. En un histograma las barras más altas identifican los valores más comunes en la muestra. Aquellas gráficas donde los datos se agrupan alrededor de un valor central se dice que son simétricas, mientras que aquellas que tienen más datos a un lado que a otro se dice que están sesgadas,  presentando “sesgo a la derecha” cuando las barras más altas se posicionan al principio de la gráfica y “sesgo a la izquierda” cuando las barras más grandes aparecen a la derecha de la gráfica. 
 
-Con los resultados de la tabla de frecuencia construida arriba para el pesos de los estudiantes y usando los puntos medios `MC` y las frecuencas absolutas  podemos hacer manualmente  un histograma de frecuencias para el `peso` de los estudiantes.
+Con los resultados de la tabla de frecuencia construida arriba para el peso de los estudiantes y usando los puntos medios `MC` y las frecuencas absolutas  podemos hacer manualmente  un histograma de frecuencias para el `peso` de los estudiantes.
 
-![](hist.png)
 
 Para hacer un Histograma en R puede usar la función `hist()` veamos,
 
@@ -212,39 +211,41 @@ Para hacer un Histograma en R puede usar la función `hist()` veamos,
 hist(Estudiantes$peso)
 ```
 
-La función `hist()` tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x,y. También se puede cambiar el color del histograma. 
+La función `hist()` tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x-y. También se puede cambiar el color de las barras en el histograma. 
 
 ```{r, comment=NA,echo=T,eval=T}
 hist(Estudiantes$peso, col="green",xlab = "Peso", ylab = "Frecuencias",main = "Histograma de frecuencias para peso")
 ```
 
-Puede usar el paquete `ggplot2` para hacer una grafica más atractiva.
+Puede usar el paquete `ggplot2` para hacer la misma gráfica.
 
 ```{r, comment=NA,echo=T,eval=T}
 ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
-  geom_histogram(binwidth=6,col="black",fill="red") + ggtitle("Histograma para peso")  + xlab("Peso")
+  geom_histogram(binwidth=6,col="black",fill="white") + ggtitle("Histograma para peso")  + xlab("Peso")
 ```
 
 Para la variable `gpa`
 
 ```{r, comment=NA,echo=T,eval=T}
 ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
-  geom_histogram(binwidth=0.2,col="orange",fill="black") + ggtitle("Histograma para GPA")  + xlab("GPA")
+  geom_histogram(binwidth=0.25,col="black",fill="white") + ggtitle("Histograma para GPA")  + xlab("GPA")
 ```
 
 ### Histogramas simétricos y sesgados.
 
 
-> Histograma sesgado a la Izquierda
+> Histograma sesgado a izquierda
 
 Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.
 
-```{r, comment=NA,echo=F,eval=T}
+```{r, comment=NA,echo=F,eval=T,message=FALSE}
 set.seed(12345)
-asimetric1 <- c(runif(25,2,3.3),runif(80,3.2,4))
-asimetric1 <- as.data.frame(asimetric1)
-ggplot(data=asimetric1, aes(x = asimetric1)) + 
-  geom_histogram(binwidth=0.2,col="black",fill="green") + ggtitle("Histograma Sesgado a la izquierda")  + xlab("GPA")
+num.samples <- 10000
+U <-  runif(num.samples)
+X <- (256*U)^(1/4)
+asimetric1 <- as.data.frame(X)
+ggplot(data=asimetric1, aes(x = X)) + 
+  geom_histogram(binwidth = 0.12,col="black",fill="green") + ggtitle("Histograma sesgado a izquierda")  + xlab("GPA")
 ```
 
 > Histograma Simétrico
@@ -253,27 +254,42 @@ Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al
 
 ```{r, comment=NA,echo=F,eval=T,message=FALSE}
 set.seed(123)
-simetric <- rnorm(10000)
+simetric <- abs(rnorm(10000,3.2,0.25))
 simetric <- as.data.frame(simetric)
 ggplot(data=simetric, aes(x = simetric)) + 
   geom_histogram(col="black",fill="white") + ggtitle("Histograma Simétrico")  + xlab("GPA")
-
 ```
 
 
-> Histograma sesgado a la Derecha
+> Histograma sesgado a derecha
 
-Se refiere a un histograma sesgadoa  la derecha cuando hay menos datos al lado derecho del histograma.
+Se refiere a un histograma sesgado a derecha cuando hay menos datos al lado derecho del histograma. En otras palabras un histograma es sesgado a derecha cuando las barras más altas estan al comienzo de la gráfica.
 
-Se refiere a un histograma sesgado a la  derecha cuando las barras más altas estan al comienzo de la gráfica.
-
-```{r, comment=NA,echo=F,eval=T}
+```{r, comment=NA,echo=F,eval=T,message=FALSE}
 set.seed(1234)
-asimetric2 <- c(runif(80,2,2.6),runif(25,2.5,4))
+asimetric2 <- c(rgamma(10000,2,2))
 asimetric2 <- as.data.frame(asimetric2)
 ggplot(data=asimetric2, aes(x = asimetric2)) + 
-  geom_histogram(binwidth=0.2,col="black",fill="orange") + ggtitle("Histograma sesgado a la derecha")  + xlab("GPA") 
+  geom_histogram(col="black",fill="orange") + ggtitle("Histograma sesgado a la derecha")  + xlab("GPA") 
 ```
+
+Para resumir, veamos los tres tipos de histogramas que podemos encontrar.
+
+```{r, comment=NA,echo=F,eval=T,message=FALSE}
+p1 <- ggplot(data=asimetric1, aes(x = X)) + 
+  geom_histogram(binwidth = 0.12,col="black",fill="green") + ggtitle("Sesgado a izquierda")  + xlab("GPA")
+p2 <- ggplot(data=simetric, aes(x = simetric)) + 
+  geom_histogram(col="black",fill="white") + ggtitle("Simétrico")  + 
+  xlab("GPA")
+p3 <- ggplot(data=asimetric2, aes(x = asimetric2)) + 
+  geom_histogram(col="black",fill="orange") + ggtitle("Sesgado a derecha")  + xlab("GPA") 
+library(gridExtra)
+grid.arrange(p1,p2,p3,ncol = 3)
+```
+
+
+
+
 
 
 ## Presentación de datos cualitativos 
@@ -301,17 +317,22 @@ Las gráficas de barras pueden ser verticales u horizontales. Usando la función
 
 ```{r, comment=NA,echo=T,eval=T}
 ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar(position="dodge") + 
-  ggtitle("Grafico de barras para area del estudiante") + xlab("Area del estudiante") + ylab("Número de estudiantes") 
+  ggtitle("Gráfico de barras para región geográfica del estudiante") + xlab("Región geográfica del estudiante") + ylab("Número de estudiantes") 
 ```
+
+Según la gráfica de barras, la región geográfica de donde provienen los estudiantes con mayor frecuancia  es el oeste. En último lugar está el Norte. 
 
 
 > Grafica de barras para la variable `nota_esma`
 
 ```{r, comment=NA,echo=T,eval=T}
 ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar(position="dodge") + 
-  ggtitle("Grafico de barras para notas de los estudiante en ESMA") +
+  ggtitle("Gráfico de barras para notas de los estudiante en ESMA") +
   xlab("Notas") + ylab("Número de estudiantes") 
 ```
+
+Según la gráfica de barras, las notas con mayor frecuencia son en primer lugar la C, seguido de la D. La nota A esta en el tercer lugar.
+
 
 ### Gráficos de barras por grupos
 
@@ -320,8 +341,8 @@ Se pueden comparar grupos usando graficas de barras. Por ejemplo podemos tomar l
 ```{r, comment=NA,echo=T,eval=T}
 # Gráfico de barras por grupos
 ggplot(Estudiantes, aes(fill=Estudiantes$trabaja,  x=Estudiantes$area)) + 
-    geom_bar(position="dodge") + ggtitle("Grafico de barras por grupos para area y opción de trabajo.") +
-  xlab("Area del estudiante") + ylab("Número de estudiantes") 
+    geom_bar(position="dodge") + 
+  ggtitle("Grafico de barras por grupos: Región y opción de trabajo.") + xlab("Región geográfica del estudiante") + ylab("Número de estudiantes") 
 ```
 
 
@@ -336,14 +357,14 @@ frec
 
 Ahora creamos dos vectores 
 
-```{r, comment=NA,echo=T,eval=T,fig.width=7,fig.height=8}
+```{r, comment=NA,echo=T,eval=T,fig.width=6,fig.height=6}
 Area <- c("Centro","Este",  "Norte","Oeste","Otra","Sur" )
 num_Area <-c(7, 6, 4, 13, 10, 10 )
 pct <- round(num_Area/sum(num_Area)*100)
 Area <- paste(Area, pct) # add percents to labels 
 Area <- paste(Area,"%",sep="") # ad % to labels 
 pie(num_Area,labels = Area, col=rainbow(length(Area)),
-  	main="Gráfico circular para area")
+  	main="Gráfico de sectores para región geográfica del estudiante")
 ```
 
 Como resultado obtenemos un diagrama de sectores para la variable cualitativa `area`.
