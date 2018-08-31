@@ -238,7 +238,7 @@ ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) +
 
 Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.
 
-```{r, comment=NA,echo=F,eval=T,message=FALSE}
+```{r, comment=NA,echo=F,eval=T,message=FALSE,warning=FALSE}
 set.seed(12345)
 num.samples <- 10000
 U <-  runif(num.samples)
@@ -252,7 +252,7 @@ ggplot(data=asimetric1, aes(x = X)) +
 
 Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho. 
 
-```{r, comment=NA,echo=F,eval=T,message=FALSE}
+```{r, comment=NA,echo=F,eval=T,message=FALSE,warning=FALSE}
 set.seed(123)
 simetric <- abs(rnorm(10000,3.2,0.25))
 simetric <- as.data.frame(simetric)
@@ -265,7 +265,7 @@ ggplot(data=simetric, aes(x = simetric)) +
 
 Se refiere a un histograma sesgado a derecha cuando hay menos datos al lado derecho del histograma. En otras palabras un histograma es sesgado a derecha cuando las barras más altas estan al comienzo de la gráfica.
 
-```{r, comment=NA,echo=F,eval=T,message=FALSE}
+```{r, comment=NA,echo=F,eval=T,message=FALSE,warning=FALSE}
 set.seed(1234)
 asimetric2 <- c(rgamma(10000,2,2))
 asimetric2 <- as.data.frame(asimetric2)
@@ -275,7 +275,7 @@ ggplot(data=asimetric2, aes(x = asimetric2)) +
 
 Para resumir, veamos los tres tipos de histogramas que podemos encontrar.
 
-```{r, comment=NA,echo=F,eval=T,message=FALSE}
+```{r, comment=NA,echo=F,eval=T,message=FALSE,warning=FALSE}
 p1 <- ggplot(data=asimetric1, aes(x = X)) + 
   geom_histogram(binwidth = 0.12,col="black",fill="green") + ggtitle("Sesgado a izquierda")  + xlab("GPA")
 p2 <- ggplot(data=simetric, aes(x = simetric)) + 
