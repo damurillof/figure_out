@@ -270,7 +270,7 @@ set.seed(1234)
 asimetric2 <- c(rgamma(10000,2,2))
 asimetric2 <- as.data.frame(asimetric2)
 ggplot(data=asimetric2, aes(x = asimetric2)) + 
-  geom_histogram(col="black",fill="orange") + ggtitle("Histograma sesgado a la derecha")  + xlab("GPA") 
+  geom_histogram(col="black",fill="orange") + ggtitle("Histograma sesgado a derecha")  + xlab("GPA") + xlim(0,4)
 ```
 
 Para resumir, veamos los tres tipos de histogramas que podemos encontrar.
@@ -282,14 +282,11 @@ p2 <- ggplot(data=simetric, aes(x = simetric)) +
   geom_histogram(col="black",fill="white") + ggtitle("Simétrico")  + 
   xlab("GPA")
 p3 <- ggplot(data=asimetric2, aes(x = asimetric2)) + 
-  geom_histogram(col="black",fill="orange") + ggtitle("Sesgado a derecha")  + xlab("GPA") 
+  geom_histogram(col="black",fill="orange") + ggtitle("Sesgado a derecha")  + xlab("GPA") +
+  xlim(0,4)
 library(gridExtra)
 grid.arrange(p1,p2,p3,ncol = 3)
 ```
-
-
-
-
 
 
 ## Presentación de datos cualitativos 
