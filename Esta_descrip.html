@@ -449,6 +449,25 @@ Frecuencia_Abs_Acum
 <li><p>De La frecuencia acumulada se puede decir por ejemplo que hay 44 estudiantes que tienen entre 0 y 3 hermanos o que hay 27 estudiantes que tienen menos de dos hermanos.</p></li>
 <li><p>De la frecuencia relativa acumulada se puede concluir que el número de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %.</p></li>
 </ol>
+<p>La siguiente función construye tablas de frecuencia para datos discretos. Para poder utilizarla solo debe copiarla y pegarla en la consola de <code>RStudio</code>.</p>
+<pre class="r"><code>tabla_freq_discretas &lt;- function(x){
+  Obs &lt;- sort(unique(x),F)
+  Freq_Abs &lt;- as.vector(table(x))
+  Freq_Relativa &lt;- as.vector(Freq_Abs/length(x))
+  Freq_Acum &lt;- as.vector(cumsum(Freq_Abs))
+  Freq_Abs_Acum &lt;- as.vector(Freq_Acum/length(x))
+  table_freq &lt;- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  table_freq
+}</code></pre>
+<p>Por ejemplo, para la tabla de frecuencias de la variable <code>hermanos</code></p>
+<pre class="r"><code>tabla_freq_discretas(Estudiantes$hermanos)</code></pre>
+<pre><code>##   Obs Freq_Abs Freq_Relativa Freq_Acum Freq_Abs_Acum
+## 1   0       15          0.30        15          0.30
+## 2   1       12          0.24        27          0.54
+## 3   2       10          0.20        37          0.74
+## 4   3        7          0.14        44          0.88
+## 5   4        3          0.06        47          0.94
+## 6   5        3          0.06        50          1.00</code></pre>
 </div>
 </div>
 <div id="el-plot-de-puntos-dotplot" class="section level2">
@@ -458,10 +477,10 @@ Frecuencia_Abs_Acum
 ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) + 
   geom_dotplot(fill = &quot;green&quot;, color = &quot;black&quot;) + 
   ggtitle(&quot;Dotplot para Número de hermanos&quot;)  + xlab(&quot;Número de hermanos&quot;) + ylab(&quot;conteos&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>En este caso no tenemos presencia de valores anormales (“outliers”).</p>
 <p>A continuación hacemos un Dotplot para la variable cuantitativa - discreta <code>edad</code> para ilustrar la presencia de datos anormales.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>Observamos que la edad de los estudiantes se situa entre los 17 y los 26 años aproximadamente, pero vemos la presencia de un dato a la izquierda de la gráfica y otros a la derecha muy alejados del grupo del centro, estos valores se conocen como datos anormales.</p>
 </div>
 <div id="organizacion-de-datos-cuantitativos-continuos." class="section level2">
@@ -482,8 +501,8 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
   k &lt;- nclass.Sturges(datos)
   intervalos &lt;- cut(datos, breaks = k)
   tabla2 &lt;- as.data.frame(table(intervalos))
-  tabla2 &lt;- transform(tabla2, frec_relativa = prop.table(Freq),frec_acumu = cumsum(Freq))
-  tabla2 &lt;- transform(tabla2, frecuencia_abs_acum = cumsum(frec_relativa))
+  tabla2 &lt;- transform(tabla2, Freq_Relativa = prop.table(Freq),Frec_Acum = cumsum(Freq))
+  tabla2 &lt;- transform(tabla2, Freq_Abs_Acum = cumsum(Freq_Relativa))
   midpoints &lt;- function(x, dp=2){
     lower &lt;- as.numeric(gsub(&#39;,.*&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
     upper &lt;- as.numeric(gsub(&#39;.*,&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
@@ -492,26 +511,27 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
   tabla2 &lt;- transform(tabla2, MC = midpoints(intervalos))
   tabla2
 }</code></pre>
+<p>Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum</p>
 <p>Ejemplo para la variable <code>peso</code></p>
 <pre class="r"><code>tabla_frecuencia(Estudiantes$peso)</code></pre>
-<pre><code>   intervalos Freq frec_relativa frec_acumu frecuencia_abs_acum    MC
-1 (49.3,54.1]    2          0.04          2                0.04 51.70
-2   (54.1,59]    9          0.18         11                0.22 56.55
-3   (59,63.8]    6          0.12         17                0.34 61.40
-4 (63.8,68.7]    9          0.18         26                0.52 66.25
-5 (68.7,73.5]   12          0.24         38                0.76 71.10
-6 (73.5,78.4]    7          0.14         45                0.90 75.95
-7 (78.4,83.2]    5          0.10         50                1.00 80.80</code></pre>
+<pre><code>   intervalos Freq Freq_Relativa Frec_Acum Freq_Abs_Acum    MC
+1 (49.3,54.1]    2          0.04         2          0.04 51.70
+2   (54.1,59]    9          0.18        11          0.22 56.55
+3   (59,63.8]    6          0.12        17          0.34 61.40
+4 (63.8,68.7]    9          0.18        26          0.52 66.25
+5 (68.7,73.5]   12          0.24        38          0.76 71.10
+6 (73.5,78.4]    7          0.14        45          0.90 75.95
+7 (78.4,83.2]    5          0.10        50          1.00 80.80</code></pre>
 <p>Ejemplo para la variable <code>estatura</code></p>
 <pre class="r"><code>tabla_frecuencia(Estudiantes$estatura)</code></pre>
-<pre><code>  intervalos Freq frec_relativa frec_acumu frecuencia_abs_acum    MC
-1  (153,157]    7          0.14          7                0.14 155.0
-2  (157,161]   11          0.22         18                0.36 159.0
-3  (161,166]    6          0.12         24                0.48 163.5
-4  (166,170]   12          0.24         36                0.72 168.0
-5  (170,174]    7          0.14         43                0.86 172.0
-6  (174,179]    4          0.08         47                0.94 176.5
-7  (179,183]    3          0.06         50                1.00 181.0</code></pre>
+<pre><code>  intervalos Freq Freq_Relativa Frec_Acum Freq_Abs_Acum    MC
+1  (153,157]    7          0.14         7          0.14 155.0
+2  (157,161]   11          0.22        18          0.36 159.0
+3  (161,166]    6          0.12        24          0.48 163.5
+4  (166,170]   12          0.24        36          0.72 168.0
+5  (170,174]    7          0.14        43          0.86 172.0
+6  (174,179]    4          0.08        47          0.94 176.5
+7  (179,183]    3          0.06        50          1.00 181.0</code></pre>
 <p>Algunas interpretaciones de la tabla de frecuencia de <code>estatura</code>.</p>
 <ul>
 <li><p>Hay 11 estudiantes con estatura entre 157 y 161 centimetros</p></li>
@@ -525,18 +545,18 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <p>Con los resultados de la tabla de frecuencia construida arriba para el peso de los estudiantes y usando los puntos medios <code>MC</code> y las frecuencas absolutas podemos hacer manualmente un histograma de frecuencias para el <code>peso</code> de los estudiantes.</p>
 <p>Para hacer un Histograma en R puede usar la función <code>hist()</code> veamos,</p>
 <pre class="r"><code>hist(Estudiantes$peso)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>La función <code>hist()</code> tiene opciones para colocar el nombre o título del histograma, también para asignar nombres a los ejes x-y. También se puede cambiar el color de las barras en el histograma.</p>
 <pre class="r"><code>hist(Estudiantes$peso, col=&quot;green&quot;,xlab = &quot;Peso&quot;, ylab = &quot;Frecuencias&quot;,main = &quot;Histograma de frecuencias para peso&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p>Puede usar el paquete <code>ggplot2</code> para hacer la misma gráfica.</p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$peso)) + 
   geom_histogram(binwidth=6,col=&quot;black&quot;,fill=&quot;white&quot;) + ggtitle(&quot;Histograma para peso&quot;)  + xlab(&quot;Peso&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>Para la variable <code>gpa</code></p>
 <pre class="r"><code>ggplot(data=Estudiantes, aes(x = Estudiantes$gpa)) + 
   geom_histogram(binwidth=0.25,col=&quot;black&quot;,fill=&quot;white&quot;) + ggtitle(&quot;Histograma para GPA&quot;)  + xlab(&quot;GPA&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 </div>
 <div id="histogramas-simetricos-y-sesgados." class="section level3">
 <h3>Histogramas simétricos y sesgados.</h3>
@@ -544,19 +564,19 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <p>Histograma sesgado a izquierda</p>
 </blockquote>
 <p>Se refiere a un histograma sesgado a la izquierda cuando las barras más altas estan al final de la gráfica.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma Simétrico</p>
 </blockquote>
 <p>Un histograma es simétrico si hay aproximadamente la misma cantidad de datos al lado izquierdo y en el lado dereho.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <blockquote>
 <p>Histograma sesgado a derecha</p>
 </blockquote>
 <p>Se refiere a un histograma sesgado a derecha cuando hay menos datos al lado derecho del histograma. En otras palabras un histograma es sesgado a derecha cuando las barras más altas estan al comienzo de la gráfica.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p>Para resumir, veamos los tres tipos de histogramas que podemos encontrar.</p>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 </div>
 </div>
 <div id="presentacion-de-datos-cualitativos" class="section level2">
@@ -589,7 +609,7 @@ tabla_frecuencia</code></pre>
 </blockquote>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$area,fill = Estudiantes$area)) + geom_bar(position=&quot;dodge&quot;) + 
   ggtitle(&quot;Gráfico de barras para región geográfica del estudiante&quot;) + xlab(&quot;Región geográfica del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <p>Según la gráfica de barras, la región geográfica de donde provienen los estudiantes con mayor frecuancia es el oeste. En último lugar está el Norte.</p>
 <blockquote>
 <p>Grafica de barras para la variable <code>nota_esma</code></p>
@@ -597,7 +617,7 @@ tabla_frecuencia</code></pre>
 <pre class="r"><code>ggplot(Estudiantes, aes(x = Estudiantes$nota_esma,fill = Estudiantes$nota_esma)) + geom_bar(position=&quot;dodge&quot;) + 
   ggtitle(&quot;Gráfico de barras para notas de los estudiante en ESMA&quot;) +
   xlab(&quot;Notas&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p>Según la gráfica de barras, las notas con mayor frecuencia son en primer lugar la C, seguido de la D. La nota A esta en el tercer lugar.</p>
 </div>
 <div id="graficos-de-barras-por-grupos" class="section level3">
@@ -607,7 +627,7 @@ tabla_frecuencia</code></pre>
 ggplot(Estudiantes, aes(fill=Estudiantes$trabaja,  x=Estudiantes$area)) + 
     geom_bar(position=&quot;dodge&quot;) + 
   ggtitle(&quot;Grafico de barras por grupos: Región y opción de trabajo.&quot;) + xlab(&quot;Región geográfica del estudiante&quot;) + ylab(&quot;Número de estudiantes&quot;) </code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 </div>
 <div id="graficas-circulares" class="section level3">
 <h3>Gráficas Circulares</h3>
@@ -625,7 +645,7 @@ Area &lt;- paste(Area, pct) # add percents to labels
 Area &lt;- paste(Area,&quot;%&quot;,sep=&quot;&quot;) # ad % to labels 
 pie(num_Area,labels = Area, col=rainbow(length(Area)),
     main=&quot;Gráfico de sectores para región geográfica del estudiante&quot;)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-29-1.png" width="576" /></p>
 <p>Como resultado obtenemos un diagrama de sectores para la variable cualitativa <code>area</code>.</p>
 </div>
 <div id="grafica-de-tallo-y-hojas-stem-and-leaf" class="section level3">
@@ -658,7 +678,7 @@ stem(pesos,2)</code></pre>
   20 | 08</code></pre>
 <p>Comparemos el gráfico de tallos y hojas con un histograma de los datos.</p>
 <pre class="r"><code>hist(pesos)</code></pre>
-<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="Esta_descrip_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <p>Notamos que la forma del histograma es muy similar al gráfico de tallo y hojas, también es simétrico a izquierda.</p>
 <p>Hagamos una grafica de tallos y hojas para la variable <code>estatura</code> de los estudiantes.</p>
 <pre class="r"><code>stem(Estudiantes$estatura)</code></pre>

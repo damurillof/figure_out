@@ -100,6 +100,7 @@ kable(table_frec) %>%
   kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
 ```
 
+
 Algunas interpretaciones para esta tabla son:
 
 1. De las frecuencias absolutas se puede interpretar por ejemplo que hay 15 estudiantes que no tienen hermanos o que hay 10 que tienen 2 hermanos.
@@ -110,6 +111,27 @@ Algunas interpretaciones para esta tabla son:
 
 4. De la frecuencia relativa acumulada se puede concluir que el número de estudiantes con más de 3 hermanos es el 12 % o que el porcentaje de estudiantes que tienen hermanos es del 70 %. 
 
+
+La siguiente función construye tablas de frecuencia para datos discretos. Para poder utilizarla solo debe copiarla y pegarla en la consola de `RStudio`.
+
+```{r}
+tabla_freq_discretas <- function(x){
+  Obs <- sort(unique(x),F)
+  Freq_Abs <- as.vector(table(x))
+  Freq_Relativa <- as.vector(Freq_Abs/length(x))
+  Freq_Acum <- as.vector(cumsum(Freq_Abs))
+  Freq_Abs_Acum <- as.vector(Freq_Acum/length(x))
+  table_freq <- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  table_freq
+}
+```
+
+
+Por ejemplo, para la tabla de frecuencias de la variable `hermanos`
+
+```{r}
+tabla_freq_discretas(Estudiantes$hermanos)
+```
 
 ## El plot de puntos (“Dotplot”)
 
@@ -162,8 +184,8 @@ tabla_frecuencia <- function(datos) {
   k <- nclass.Sturges(datos)
   intervalos <- cut(datos, breaks = k)
   tabla2 <- as.data.frame(table(intervalos))
-  tabla2 <- transform(tabla2, frec_relativa = prop.table(Freq),frec_acumu = cumsum(Freq))
-  tabla2 <- transform(tabla2, frecuencia_abs_acum = cumsum(frec_relativa))
+  tabla2 <- transform(tabla2, Freq_Relativa = prop.table(Freq),Frec_Acum = cumsum(Freq))
+  tabla2 <- transform(tabla2, Freq_Abs_Acum = cumsum(Freq_Relativa))
   midpoints <- function(x, dp=2){
     lower <- as.numeric(gsub(',.*','',gsub('\\(|\\[|\\)|\\]','', x)))
     upper <- as.numeric(gsub('.*,','',gsub('\\(|\\[|\\)|\\]','', x)))
@@ -173,6 +195,8 @@ tabla_frecuencia <- function(datos) {
   tabla2
 }
 ```
+
+Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum
 
 Ejemplo para la variable `peso`
 
