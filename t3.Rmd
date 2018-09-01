@@ -84,7 +84,7 @@ d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crea
 
 a)  Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
 
-b)  Haga un grafico totalmente igual al siguiente plot de barras por grupos. El título debe llevar su nombre. Interprete el gráfico.
+b)  Haga un gráfico similar al siguiente plot de barras por grupos (Es decir usar las mismas variables). El título debe llevar su nombre. Interprete el gráfico.
 
 ```{r,comment=NA,eval=T,echo=FALSE}
 class_survey <- read.table("/datos/DirectorioR/class_survey.txt",T,sep = "\t")
