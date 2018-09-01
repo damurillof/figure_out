@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje:** 20 puntos 
 
-#### **Recomendación:** Si usa `Rmarkdown` para escribir su informe debe copiar y pegar las funciones `tabla_freq_discretas` y `tabla_frecuencia` en un chunk al comienzo de su informe. 
+#### **Recomendación:** Si usa `Rmarkdown` para escribir su informe, debe copiar y pegar las funciones `tabla_freq_discretas` y `tabla_frecuencia` en un chunk al comienzo de su informe. 
 
 #### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`. Daré 3 puntos de BONO si su informe final es realizado usando `Rmarkdown` y exportado en `html` o `word`.
 
@@ -37,7 +37,7 @@ insectos_m <- rpois(40,10)
 
 Usar la función `tabla_freq_discretas` descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. **Interpretar un valor cualquiera en cada columna de la tabla de frecuencias**. 
 
-### Puede usar el siguiente código para hacer la tabla de frecuencias.
+Puede usar el siguiente código para hacer la tabla de frecuencias.
 
 ```{r,eval=F,echo=T}
 insectos_m <- rpois(40,10)

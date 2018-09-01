@@ -70,7 +70,9 @@ Puede usar el siguiente código para hacerlo, mi data frame se llama `Asesinatos
 
 ```{r, echo=T,eval=T}
 año2016 <- subset(Asesinatos, Año == 2016) # Selecciona todas las filas que cumplen la condición Año=2016
+print(año2016)
 año2017 <- subset(Asesinatos, Año == 2017) # Selecciona todas las filas que cumplen la condición Año=2017
+print(año2017)
 ```
 
 a)  Encontrar  el número máximo de homicidios en cada uno de los años. ¿Cuáles son los meses con mayor número de homicidios en cada año?
@@ -86,6 +88,7 @@ max_h_2016
 print(paste("El mes con más homicidios fue",max_h_2016[1,2]))
 ```
 
+**Información para el año 2017**
 
 ```{r, echo=T,eval=T}
 maximo2017 <- max(año2017$Homicidios)
@@ -98,6 +101,7 @@ print(paste("El mes con menos homicidios en 2017 fue",max_h_2016[1,2]))
 
 b)  Encontrar  el número mínimo de homicidios en cada uno de los años. ¿Cuáles son los meses con menor número de homicidios en cada año?
 
+**Información para el año 2016**
 
 ```{r, echo=T,eval=T}
 minimo2016 <- min(año2016$Homicidios)
@@ -107,6 +111,8 @@ min_h_2016 <- subset(año2016, Homicidios == minimo2016)
 min_h_2016
 print(paste("El mes con menos homicidios en 2016 fue",min_h_2016[1,2]))
 ```
+
+**Información para el año 2017**
 
 ```{r, echo=T,eval=T}
 minimo2017 <- min(año2017$Homicidios)

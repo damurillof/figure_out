@@ -287,7 +287,35 @@ print(paste(&quot;El número de homicidios totales entre 2016 y 2017 fue&quot;,t
 <h4>3. Divida la tabla de datos que construyó en el <strong>ejercicio 1</strong> en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla dos con la información de 2017.</h4>
 <p>Puede usar el siguiente código para hacerlo, mi data frame se llama <code>Asesinatos</code>, usted puede darle otro nombre.</p>
 <pre class="r"><code>año2016 &lt;- subset(Asesinatos, Año == 2016) # Selecciona todas las filas que cumplen la condición Año=2016
-año2017 &lt;- subset(Asesinatos, Año == 2017) # Selecciona todas las filas que cumplen la condición Año=2017</code></pre>
+print(año2016)</code></pre>
+<pre><code>##     Año        Mes Homicidios
+## 1  2016      Enero         89
+## 2  2016    Febrero         95
+## 3  2016      Marzo        131
+## 4  2016      Abril        101
+## 5  2016       Mayo        103
+## 6  2016      Junio        134
+## 7  2016      Julio        109
+## 8  2016     Agosto         75
+## 9  2016 Septiembre         86
+## 10 2016    Octubre         91
+## 11 2016  Noviembre        124
+## 12 2016  Diciembre        107</code></pre>
+<pre class="r"><code>año2017 &lt;- subset(Asesinatos, Año == 2017) # Selecciona todas las filas que cumplen la condición Año=2017
+print(año2017)</code></pre>
+<pre><code>##     Año        Mes Homicidios
+## 13 2017      Enero        108
+## 14 2017    Febrero        102
+## 15 2017      Marzo         89
+## 16 2017      Abril        136
+## 17 2017       Mayo        110
+## 18 2017      Junio         61
+## 19 2017      Julio        114
+## 20 2017     Agosto         91
+## 21 2017 Septiembre         79
+## 22 2017    Octubre         96
+## 23 2017  Noviembre         79
+## 24 2017  Diciembre         85</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Encontrar el número máximo de homicidios en cada uno de los años. ¿Cuáles son los meses con mayor número de homicidios en cada año?</li>
 </ol>
@@ -303,6 +331,7 @@ max_h_2016</code></pre>
 ## 6 2016 Junio        134</code></pre>
 <pre class="r"><code>print(paste(&quot;El mes con más homicidios fue&quot;,max_h_2016[1,2]))</code></pre>
 <pre><code>## [1] &quot;El mes con más homicidios fue Junio&quot;</code></pre>
+<p><strong>Información para el año 2017</strong></p>
 <pre class="r"><code>maximo2017 &lt;- max(año2017$Homicidios)
 maximo2017</code></pre>
 <pre><code>## [1] 136</code></pre>
@@ -317,6 +346,7 @@ max_h_2017</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Encontrar el número mínimo de homicidios en cada uno de los años. ¿Cuáles son los meses con menor número de homicidios en cada año?</li>
 </ol>
+<p><strong>Información para el año 2016</strong></p>
 <pre class="r"><code>minimo2016 &lt;- min(año2016$Homicidios)
 minimo2016</code></pre>
 <pre><code>## [1] 75</code></pre>
@@ -328,6 +358,7 @@ min_h_2016</code></pre>
 ## 8 2016 Agosto         75</code></pre>
 <pre class="r"><code>print(paste(&quot;El mes con menos homicidios en 2016 fue&quot;,min_h_2016[1,2]))</code></pre>
 <pre><code>## [1] &quot;El mes con menos homicidios en 2016 fue Agosto&quot;</code></pre>
+<p><strong>Información para el año 2017</strong></p>
 <pre class="r"><code>minimo2017 &lt;- min(año2017$Homicidios)
 minimo2017</code></pre>
 <pre><code>## [1] 61</code></pre>
