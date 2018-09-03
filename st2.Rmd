@@ -7,11 +7,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#### **Fecha de entrega:** Viernes 31 de agosto de 2018. Al iniciar la clase. 
-
-#### **Puntaje:** 15 puntos 
-
-#### Para está tarea usted debe usar `R` y/o `RStudio`. En su informe final debe mostrar todos los códigos y resultados. Su informe final lo puede hacer usando word o directamente desde `RStudio` usando `Rmarkdown`.
 
 #### 1. Use R y/o RStudio para reproducir una tabla de datos como la siguiente.
 
