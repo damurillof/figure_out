@@ -41,7 +41,7 @@ a)  En `R` y/o `RStudio` la función `max()` encuentra el valor más grande en u
 
 ```{r, echo=T,eval=T}
 maximo <- max(Asesinatos$Homicidios)
-print(paste("El número máximo de homicidios fue",maximo))
+print(paste("El número máximo de homicidios entre 2016 y 2017 fue",maximo))
 max_h <- subset(Asesinatos, Homicidios == maximo)
 print(paste("El Año con más homicidios fue",max_h[1,1]))
 print(paste("El mes con más homicidios fue",max_h[1,2]))
@@ -51,17 +51,17 @@ b)  En `R` y/o `RStudio` la función `min()` encuentra el valor más pequeño en
 
 ```{r, echo=T,eval=T}
 minimo <- min(Asesinatos$Homicidios)
-print(paste("El número mínimo de homicidios fue",minimo))
+print(paste("El número mínimo de homicidios entre 2016 y 2017 fue",minimo))
 min_h <- subset(Asesinatos, Homicidios == minimo)
 print(paste("El Año con menos homicidios fue",min_h[1,1]))
-print(paste("El mes con menos homicidios fue",min_h[1,2]))
+print(paste("El mes con menos homicidios de ese año fue",min_h[1,2]))
 ```
 
 c)  En `R` y/o `RStudio` la función `sum()` calcula la suma total de un conjunto de datos. Use `sum()` para encontrar  el número total  de homicidios entre 2016 y 2017. 
 
 ```{r, echo=T,eval=T}
 total_homicidios <- sum(Asesinatos$Homicidios)
-print(paste("El número de homicidios totales entre 2016 y 2017 fue",total_homicidios))
+print(paste("El número de homicidios total entre 2016 y 2017 fue",total_homicidios))
 ```
 
 #### 3. Divida la tabla de datos que construyó en el **ejercicio 1** en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla  dos con la información de 2017.
@@ -77,7 +77,7 @@ print(año2017)
 
 a)  Encontrar  el número máximo de homicidios en cada uno de los años. ¿Cuáles son los meses con mayor número de homicidios en cada año?
 
-**Información para el año 2016**
+**Información del máximo de homicidios para el año 2016**
 
 ```{r, echo=T,eval=T}
 maximo2016 <- max(año2016$Homicidios)
@@ -88,20 +88,20 @@ max_h_2016
 print(paste("El mes con más homicidios fue",max_h_2016[1,2]))
 ```
 
-**Información para el año 2017**
+**Información del máximo de homicidios para el año 2017**
 
 ```{r, echo=T,eval=T}
 maximo2017 <- max(año2017$Homicidios)
 maximo2017
 print(paste("El número máximo de  homicidios en 2017 fue",maximo2017))
-max_h_2017 <- subset(año2016, Homicidios == maximo2017)
+max_h_2017 <- subset(año2017, Homicidios == maximo2017)
 max_h_2017
-print(paste("El mes con menos homicidios en 2017 fue",max_h_2016[1,2]))
+print(paste("El mes con más homicidios en 2017 fue",max_h_2017[1,2]))
 ```
 
 b)  Encontrar  el número mínimo de homicidios en cada uno de los años. ¿Cuáles son los meses con menor número de homicidios en cada año?
 
-**Información para el año 2016**
+**Información del mínimo de homicidios para el año 2017**
 
 ```{r, echo=T,eval=T}
 minimo2016 <- min(año2016$Homicidios)
@@ -112,13 +112,13 @@ min_h_2016
 print(paste("El mes con menos homicidios en 2016 fue",min_h_2016[1,2]))
 ```
 
-**Información para el año 2017**
+**Información del mínimo de homicidios para el año 2017**
 
 ```{r, echo=T,eval=T}
 minimo2017 <- min(año2017$Homicidios)
 minimo2017
-print(paste("El número mínimo de  homicidios en 2017 fue",minimo2016))
-min_h_2017 <- subset(año2016, Homicidios == minimo2016)
+print(paste("El número mínimo de  homicidios en 2017 fue",minimo2017))
+min_h_2017 <- subset(año2017, Homicidios == minimo2017)
 min_h_2017
 print(paste("El mes con menos homicidios en 2017 fue",min_h_2017[1,2]))
 ```
@@ -130,10 +130,10 @@ sum_h2016 <- sum(año2016$Homicidios)
 sum_h2016
 sum_h2017 <- sum(año2017$Homicidios)
 sum_h2017
-if(sum_h2017 > sum_h2016){
+if (sum_h2017 > sum_h2016) {
   print(paste("El año más violento fue 2017 con",sum_h2017,"homicidios"))
-}else {
-  print(paste("El año más violento fue 2016 con",sum_h2016,"homicidios"))
+} else {
+  print(paste("El año más violento fue 2016 con",sum_h2016,"homicidios :("))
 }
 ```
 

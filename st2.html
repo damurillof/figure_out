@@ -258,8 +258,8 @@ print(Asesinatos)</code></pre>
 <li>En <code>R</code> y/o <code>RStudio</code> la función <code>max()</code> encuentra el valor más grande en un conjunto de datos. Use <code>max()</code> para encontrar el número máximo de homicidios. ¿Cuál fue el año y mes más violento?</li>
 </ol>
 <pre class="r"><code>maximo &lt;- max(Asesinatos$Homicidios)
-print(paste(&quot;El número máximo de homicidios fue&quot;,maximo))</code></pre>
-<pre><code>## [1] &quot;El número máximo de homicidios fue 136&quot;</code></pre>
+print(paste(&quot;El número máximo de homicidios entre 2016 y 2017 fue&quot;,maximo))</code></pre>
+<pre><code>## [1] &quot;El número máximo de homicidios entre 2016 y 2017 fue 136&quot;</code></pre>
 <pre class="r"><code>max_h &lt;- subset(Asesinatos, Homicidios == maximo)
 print(paste(&quot;El Año con más homicidios fue&quot;,max_h[1,1]))</code></pre>
 <pre><code>## [1] &quot;El Año con más homicidios fue 2017&quot;</code></pre>
@@ -269,19 +269,19 @@ print(paste(&quot;El Año con más homicidios fue&quot;,max_h[1,1]))</code></pre
 <li>En <code>R</code> y/o <code>RStudio</code> la función <code>min()</code> encuentra el valor más pequeño en un conjunto de datos. Use <code>min()</code> para encontrar el número mínimo de homicidios. ¿Cuál fue el año y mes menos violento?</li>
 </ol>
 <pre class="r"><code>minimo &lt;- min(Asesinatos$Homicidios)
-print(paste(&quot;El número mínimo de homicidios fue&quot;,minimo))</code></pre>
-<pre><code>## [1] &quot;El número mínimo de homicidios fue 61&quot;</code></pre>
+print(paste(&quot;El número mínimo de homicidios entre 2016 y 2017 fue&quot;,minimo))</code></pre>
+<pre><code>## [1] &quot;El número mínimo de homicidios entre 2016 y 2017 fue 61&quot;</code></pre>
 <pre class="r"><code>min_h &lt;- subset(Asesinatos, Homicidios == minimo)
 print(paste(&quot;El Año con menos homicidios fue&quot;,min_h[1,1]))</code></pre>
 <pre><code>## [1] &quot;El Año con menos homicidios fue 2017&quot;</code></pre>
-<pre class="r"><code>print(paste(&quot;El mes con menos homicidios fue&quot;,min_h[1,2]))</code></pre>
-<pre><code>## [1] &quot;El mes con menos homicidios fue Junio&quot;</code></pre>
+<pre class="r"><code>print(paste(&quot;El mes con menos homicidios de ese año fue&quot;,min_h[1,2]))</code></pre>
+<pre><code>## [1] &quot;El mes con menos homicidios de ese año fue Junio&quot;</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>En <code>R</code> y/o <code>RStudio</code> la función <code>sum()</code> calcula la suma total de un conjunto de datos. Use <code>sum()</code> para encontrar el número total de homicidios entre 2016 y 2017.</li>
 </ol>
 <pre class="r"><code>total_homicidios &lt;- sum(Asesinatos$Homicidios)
-print(paste(&quot;El número de homicidios totales entre 2016 y 2017 fue&quot;,total_homicidios))</code></pre>
-<pre><code>## [1] &quot;El número de homicidios totales entre 2016 y 2017 fue 2395&quot;</code></pre>
+print(paste(&quot;El número de homicidios total entre 2016 y 2017 fue&quot;,total_homicidios))</code></pre>
+<pre><code>## [1] &quot;El número de homicidios total entre 2016 y 2017 fue 2395&quot;</code></pre>
 </div>
 <div id="divida-la-tabla-de-datos-que-construyo-en-el-ejercicio-1-en-dos-partes.-la-tabla-uno-sera-una-tabla-con-la-informacion-para-el-ano-2016-la-tabla-dos-con-la-informacion-de-2017." class="section level4">
 <h4>3. Divida la tabla de datos que construyó en el <strong>ejercicio 1</strong> en dos partes. La tabla uno será una tabla con la información para el año 2016, la tabla dos con la información de 2017.</h4>
@@ -319,7 +319,7 @@ print(año2017)</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>Encontrar el número máximo de homicidios en cada uno de los años. ¿Cuáles son los meses con mayor número de homicidios en cada año?</li>
 </ol>
-<p><strong>Información para el año 2016</strong></p>
+<p><strong>Información del máximo de homicidios para el año 2016</strong></p>
 <pre class="r"><code>maximo2016 &lt;- max(año2016$Homicidios)
 maximo2016</code></pre>
 <pre><code>## [1] 134</code></pre>
@@ -331,22 +331,22 @@ max_h_2016</code></pre>
 ## 6 2016 Junio        134</code></pre>
 <pre class="r"><code>print(paste(&quot;El mes con más homicidios fue&quot;,max_h_2016[1,2]))</code></pre>
 <pre><code>## [1] &quot;El mes con más homicidios fue Junio&quot;</code></pre>
-<p><strong>Información para el año 2017</strong></p>
+<p><strong>Información del máximo de homicidios para el año 2017</strong></p>
 <pre class="r"><code>maximo2017 &lt;- max(año2017$Homicidios)
 maximo2017</code></pre>
 <pre><code>## [1] 136</code></pre>
 <pre class="r"><code>print(paste(&quot;El número máximo de  homicidios en 2017 fue&quot;,maximo2017))</code></pre>
 <pre><code>## [1] &quot;El número máximo de  homicidios en 2017 fue 136&quot;</code></pre>
-<pre class="r"><code>max_h_2017 &lt;- subset(año2016, Homicidios == maximo2017)
+<pre class="r"><code>max_h_2017 &lt;- subset(año2017, Homicidios == maximo2017)
 max_h_2017</code></pre>
-<pre><code>## [1] Año        Mes        Homicidios
-## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
-<pre class="r"><code>print(paste(&quot;El mes con menos homicidios en 2017 fue&quot;,max_h_2016[1,2]))</code></pre>
-<pre><code>## [1] &quot;El mes con menos homicidios en 2017 fue Junio&quot;</code></pre>
+<pre><code>##     Año   Mes Homicidios
+## 16 2017 Abril        136</code></pre>
+<pre class="r"><code>print(paste(&quot;El mes con más homicidios en 2017 fue&quot;,max_h_2017[1,2]))</code></pre>
+<pre><code>## [1] &quot;El mes con más homicidios en 2017 fue Abril&quot;</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Encontrar el número mínimo de homicidios en cada uno de los años. ¿Cuáles son los meses con menor número de homicidios en cada año?</li>
 </ol>
-<p><strong>Información para el año 2016</strong></p>
+<p><strong>Información del mínimo de homicidios para el año 2017</strong></p>
 <pre class="r"><code>minimo2016 &lt;- min(año2016$Homicidios)
 minimo2016</code></pre>
 <pre><code>## [1] 75</code></pre>
@@ -358,18 +358,18 @@ min_h_2016</code></pre>
 ## 8 2016 Agosto         75</code></pre>
 <pre class="r"><code>print(paste(&quot;El mes con menos homicidios en 2016 fue&quot;,min_h_2016[1,2]))</code></pre>
 <pre><code>## [1] &quot;El mes con menos homicidios en 2016 fue Agosto&quot;</code></pre>
-<p><strong>Información para el año 2017</strong></p>
+<p><strong>Información del mínimo de homicidios para el año 2017</strong></p>
 <pre class="r"><code>minimo2017 &lt;- min(año2017$Homicidios)
 minimo2017</code></pre>
 <pre><code>## [1] 61</code></pre>
-<pre class="r"><code>print(paste(&quot;El número mínimo de  homicidios en 2017 fue&quot;,minimo2016))</code></pre>
-<pre><code>## [1] &quot;El número mínimo de  homicidios en 2017 fue 75&quot;</code></pre>
-<pre class="r"><code>min_h_2017 &lt;- subset(año2016, Homicidios == minimo2016)
+<pre class="r"><code>print(paste(&quot;El número mínimo de  homicidios en 2017 fue&quot;,minimo2017))</code></pre>
+<pre><code>## [1] &quot;El número mínimo de  homicidios en 2017 fue 61&quot;</code></pre>
+<pre class="r"><code>min_h_2017 &lt;- subset(año2017, Homicidios == minimo2017)
 min_h_2017</code></pre>
-<pre><code>##    Año    Mes Homicidios
-## 8 2016 Agosto         75</code></pre>
+<pre><code>##     Año   Mes Homicidios
+## 18 2017 Junio         61</code></pre>
 <pre class="r"><code>print(paste(&quot;El mes con menos homicidios en 2017 fue&quot;,min_h_2017[1,2]))</code></pre>
-<pre><code>## [1] &quot;El mes con menos homicidios en 2017 fue Agosto&quot;</code></pre>
+<pre><code>## [1] &quot;El mes con menos homicidios en 2017 fue Junio&quot;</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Se dice que un año es más violento que otro por tener un número total de homicidios mayor. ¿Cuál fue el año más violento?</li>
 </ol>
@@ -379,12 +379,12 @@ sum_h2016</code></pre>
 <pre class="r"><code>sum_h2017 &lt;- sum(año2017$Homicidios)
 sum_h2017</code></pre>
 <pre><code>## [1] 1150</code></pre>
-<pre class="r"><code>if(sum_h2017 &gt; sum_h2016){
+<pre class="r"><code>if (sum_h2017 &gt; sum_h2016) {
   print(paste(&quot;El año más violento fue 2017 con&quot;,sum_h2017,&quot;homicidios&quot;))
-}else {
-  print(paste(&quot;El año más violento fue 2016 con&quot;,sum_h2016,&quot;homicidios&quot;))
+} else {
+  print(paste(&quot;El año más violento fue 2016 con&quot;,sum_h2016,&quot;homicidios :(&quot;))
 }</code></pre>
-<pre><code>## [1] &quot;El año más violento fue 2016 con 1245 homicidios&quot;</code></pre>
+<pre><code>## [1] &quot;El año más violento fue 2016 con 1245 homicidios :(&quot;</code></pre>
 <div class="figure">
 <img src="blanco.png" />
 
