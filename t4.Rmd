@@ -1,0 +1,57 @@
+---
+title: 'Tarea # 4'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **Fecha de entrega:** Viernes 14 de septiembre de 2018. Al iniciar la clase. 
+
+#### **Puntaje:** 15 puntos 
+
+#### **Recomendación:** Los cálculos manuales debe explicarlos detalladamente para no perder puntos.  
+
+#### 1. **(5 pts)** Los siguientes datos corresponden a las cifras mensuales en % del desempleo en Puerto Rico para el año 2014
+
+15.2 13.1 14.7 14.2 13.8 13.1 13.5 14.2 14 14.2 13.7  13.1
+
+Use los datos anteriores para contestar manualmente: (Debe detallar su procedimiento.)
+
+a) ¿Cuál fue la tasa de desempleo promedio  en Puerto Rico para el año 2014?
+
+b)  Encuentre la mediana del la tasa de desempleo en Puerto Rico para el año 2014. ¿Qué significado tiene la mediana en este caso?
+
+c)  Encuentre la moda de la tasa de desempleo en Puerto Rico para el año 2014. Interprete la moda.
+
+#### 2. **(10 pts)** Volvamos a los datos de la lluvia en Mayagüez, los cuales son:
+
+
+$\color{green}{\text{311 293 285 306 311 309 313 309 320 311 319 307 320 273 297}}$.
+
+
+#### Ahora también tenemos información sobre los días de lluvia durante los últimos 15 años en Ponce.
+
+ $\color{red}{\text{126 141  96 159 171 213  73 101 112 100 151  39 140 108 103}}$.
+
+#### Use los datos de la lluvia de Mayagüez y Ponce para responder las siguientes preguntas:
+
+a) En promedio, ¿cuál es la ciudad más lluviosa?. Justifique.
+
+b) Use los valores de la media, la mediana y un gráfico adecuado para decir si las distribuciones de la lluvia son simétricas o sesgadas a derecha o izquierda.
+
+c) Use la idea del coeficiente de variación para decidir cuál de las dos ciudades presenta mayor variabilidad en la lluvia. Debería usar R para encontrar la desviación estándar de los datos. 
+
+d) Encontrar manualmente los cuartiles $Q_1, Q_2$ y $Q_3$ en el conjunto de datos para la lluvia de Ponce. También encuentre e interprete el percentil 64.  Luego use R para verificar sus resultados.
+
+e) Use R y/o RStudio para hacer una gráfica de caja y bigotes (Boxplot) con los datos de la lluvia en las dos ciudades. Interpretar el gráfico.
+
+
+![](blanco.png)
+
+
+
+
+
+
