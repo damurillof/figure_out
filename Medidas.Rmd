@@ -375,7 +375,7 @@ El boxplot es una herramienta interesante para visualizar graficamente la distri
 
 ```{r,comment=NA}
 # Boxplot para GPE
-boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main="Estatura de estudiantes por género",xlab="", ylab="GPA")
+boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main="Estatura de estudiantes por género",xlab="", ylab="Estatura")
 ```
 
 **Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda**
@@ -480,9 +480,9 @@ LI=$Q1-1.5RIC=8-1.5(4)=2$.
 
 LS=$Q3+1.5RIC=12+1.5(4)=18$.
 
-Finalmente tenemos $(2,18)$, es decir que hay cuatro outliers: 0, 0, 20 y 24.
+Finalmente tenemos $(2,18)$, es decir que hay cuatro outliers: 0, 0, 20 y 25.
 
-
+![](blanco.png)
 
 
 

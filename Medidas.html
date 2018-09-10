@@ -486,7 +486,7 @@ boxplot(Estudiantes$gpa,data=Estudiantes,main=&quot;GPA por estudiantes&quot;,xl
 <h3>Boxplot para grupos</h3>
 <p>El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado. Veamos</p>
 <pre class="r"><code># Boxplot para GPE
-boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura de estudiantes por género&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
+boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura de estudiantes por género&quot;,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p><strong>Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda</strong></p>
 <p>Usando <code>ggplot2</code> para dibujar un boxplot para la variable <code>GPA</code> y el grupo sexo.</p>
@@ -554,7 +554,11 @@ fivenum(test)</code></pre>
 <p>Luego los límites inferior y superior son:</p>
 <p>LI=<span class="math inline">\(Q1-1.5RIC=8-1.5(4)=2\)</span>.</p>
 <p>LS=<span class="math inline">\(Q3+1.5RIC=12+1.5(4)=18\)</span>.</p>
-<p>Finalmente tenemos <span class="math inline">\((2,18)\)</span>, es decir que hay cuatro outliers: 0, 0, 20 y 24.</p>
+<p>Finalmente tenemos <span class="math inline">\((2,18)\)</span>, es decir que hay cuatro outliers: 0, 0, 20 y 25.</p>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 </div>
 
