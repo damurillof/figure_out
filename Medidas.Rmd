@@ -351,22 +351,22 @@ El “Boxplot” , al igual que el histograma y el “stem-and-leaf”, permite 
 **Interpretación:** La línea central de la caja representa la **Mediana** y los lados de la caja representan los cuartiles $Q_1$ y $Q_3$ respectivamente. Si la Mediana está bien al centro de la caja, entonces hay simetria. Si la Mediana está más cerca a Q3 que a Q1 entonces la **asimetría es hacia la izquierda**, de lo contrario la **asimetría es hacia la derecha**. Si la caja no es muy alargada entonces se dice que no hay mucha variabilidad, es decir entre más larga la caja es mayor la variabilidad en los datos.
 
 
-Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas
-laterales llegan hasta los valores adyacentes a las fronteras interiores.
+Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas laterales llegan hasta los valores adyacentes a las fronteras interiores.
 
 Para dibujar un Boxplot en RStudio se puede usar la función `boxplot`. Veamos algunos ejemplos con los datos de la clase.
 
 ```{r,comment=NA}
 # Leer los datos
-Estudiantes <- read.table("/datos/DirectorioR/text.txt",header = T)
+Estudiantes <- read.table("/datos/DirectorioR/figure_out/estudiantes.txt",header = T)
 # Boxplot para estatura
-boxplot(Estudiantes$estatura,data=Estudiantes,main="Estatura por estudiantes",xlab="", ylab="Estatura")
+boxplot(Estudiantes$estatura,data=Estudiantes,main="Box plot de estatura por estudiantes",xlab="", ylab="Estatura")
 ```
+
 
 
 ```{r,comment=NA}
 # Boxplot para GPE
-boxplot(Estudiantes$estatura,data=Estudiantes,main="GPA por estudiantes",xlab="Grupo sexo", ylab="GPA")
+boxplot(Estudiantes$gpa,data=Estudiantes,main="GPA por estudiantes",xlab="", ylab="GPA")
 ```
 
 ### Boxplot para grupos 
@@ -375,7 +375,7 @@ El boxplot es una herramienta interesante para visualizar graficamente la distri
 
 ```{r,comment=NA}
 # Boxplot para GPE
-boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main="Estatura por estudiantes",xlab="", ylab="GPA")
+boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main="Estatura de estudiantes por género",xlab="", ylab="GPA")
 ```
 
 **Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda**
@@ -413,7 +413,10 @@ El resumen de los cinco números es un conjunto de estadísticas descriptivas qu
 
 **Ejemplo: Resultados de examenes**
 
-Un maestro quiere examinar los puntajes de los exámenes de los estudiantes. Sus puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.
+Un maestro quiere examinar los puntajes de los exámenes de sus estudiantes. Los puntajes son: 
+
+
+74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.
 
 Encuentre el resumen de los cinco números para esta muestra de datos. 
 
@@ -478,6 +481,7 @@ LI=$Q1-1.5RIC=8-1.5(4)=2$.
 LS=$Q3+1.5RIC=12+1.5(4)=18$.
 
 Finalmente tenemos $(2,18)$, es decir que hay cuatro outliers: 0, 0, 20 y 24.
+
 
 
 

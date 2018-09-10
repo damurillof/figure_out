@@ -475,18 +475,18 @@ quantile(example2,0.75) </code></pre>
 <p>Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas laterales llegan hasta los valores adyacentes a las fronteras interiores.</p>
 <p>Para dibujar un Boxplot en RStudio se puede usar la función <code>boxplot</code>. Veamos algunos ejemplos con los datos de la clase.</p>
 <pre class="r"><code># Leer los datos
-Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/text.txt&quot;,header = T)
+Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/estudiantes.txt&quot;,header = T)
 # Boxplot para estatura
-boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;Estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
+boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;Box plot de estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code># Boxplot para GPE
-boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;GPA por estudiantes&quot;,xlab=&quot;Grupo sexo&quot;, ylab=&quot;GPA&quot;)</code></pre>
+boxplot(Estudiantes$gpa,data=Estudiantes,main=&quot;GPA por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <div id="boxplot-para-grupos" class="section level3">
 <h3>Boxplot para grupos</h3>
 <p>El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado. Veamos</p>
 <pre class="r"><code># Boxplot para GPE
-boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
+boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura de estudiantes por género&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <p><strong>Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda</strong></p>
 <p>Usando <code>ggplot2</code> para dibujar un boxplot para la variable <code>GPA</code> y el grupo sexo.</p>
@@ -515,7 +515,8 @@ ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiant
 <li>El valor o dato máximo (observación más grande)</li>
 </ol>
 <p><strong>Ejemplo: Resultados de examenes</strong></p>
-<p>Un maestro quiere examinar los puntajes de los exámenes de los estudiantes. Sus puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.</p>
+<p>Un maestro quiere examinar los puntajes de los exámenes de sus estudiantes. Los puntajes son:</p>
+<p>74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.</p>
 <p>Encuentre el resumen de los cinco números para esta muestra de datos.</p>
 <ol style="list-style-type: decimal">
 <li>El mínimo es <span class="math inline">\(74\)</span></li>
