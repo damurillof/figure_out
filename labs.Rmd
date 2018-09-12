@@ -4,4 +4,4 @@ output: html_document
 ---
 
 
-### [Laboratorio  1] (https://didier-murillo.netlify.com/l1)
+### [Laboratorio 1](https://didier-murillo.netlify.com/l1): Medidas de tendencia central, variabilidad y gráficas.

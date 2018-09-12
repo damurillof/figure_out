@@ -3,6 +3,7 @@ title: 'Laboratorio # 1'
 output: html_document
 ---
 
+
 ### Su informe de laboratorio debe ser guardado en formato PDF y enviado al profesor vía correo electrónico al finalizar la clase. 
 
 ### **Puntaje:** 7 puntos de BONO para el examen # 1
