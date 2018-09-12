@@ -62,7 +62,7 @@ Finalmente, si estábamos interesados en aprender sobre los estudiantes que toma
 
 $S = \{0, 1, 2, ...\}$
 
-No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el espacio muestral si en cambio le preguntáramos a una muestra aleatoria de estudiantes universitarios "¿durmió más de siete horas anoche?"
+No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el espacio muestral si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios "¿durmió más de siete horas anoche?"
 
 ###  Tipos de datos
 
@@ -130,15 +130,15 @@ Según lo anterior, podemos clasificar los espacios muestrales de dos maneras:
 
 Ejemplos Espacios muestrales:
 
-1. Consideremos el experimento de lanzar un dado, ¿Cuál es el espcio muestral para este experimento?
+1. Consideremos el experimento de lanzar un dado, ¿Cuál es el espacio muestral para este experimento?
 
 $$S=\{1,2,3,4,5,6 \}$$
 
-2.  Consideremos el experimento de lanzar una moneda, ¿Cuál es el espcio muestral para este experimento?
+2.  Consideremos el experimento de lanzar una moneda, ¿Cuál es el espacio muestral para este experimento?
 
 $$S=\{Cara, Cruz\}$$
 
-3.  Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Cuál es el espcio muestral para este experimento?
+3.  Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Cuál es el espacio muestral para este experimento?
 
 $$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}$$
 
@@ -147,7 +147,7 @@ $$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(C
 
 ### Eventos
 
-Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayusculas. Ejemplos:
+Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayúsculas. Ejemplos:
 
 
 **A**: Que salga un número par al lanzar un dado.
@@ -156,7 +156,7 @@ Un Evento es un resultado particular de un experimento aleatorio. En términos d
 
 **F**: Sacar A en la nota final del curso ESMA3101.
 
-**H**: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de credito.
+**H**: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de crédito.
 
 Ejemplos: 
 
@@ -182,7 +182,7 @@ $$S=\{Cara, Cruz\}$$
 **B**: Obtener una cruz.
 
 
-3.  Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Enuncial algunos eventos posibles?
+3.  Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Enunciar algunos eventos posibles?
 
 $$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}$$
 **A**: Obtener una cara y un número impar 
@@ -198,9 +198,9 @@ $$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(C
 ### Relaciones entre eventos
 
 **Unión de eventos:** Dados dos eventos $A$ y $B$ de un mismo espacio muestral su unión se representa por 
-$A \cup B$ y es el evento que contiene los elementos que estan en $A$ o $B$ o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.
+$A \cup B$ y es el evento que contiene los elementos que están en $A$ o $B$ o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.
 
-**Intersección de eventos**: Dados dos eventos $A$ y $B$ de un mismo espacio muestral su intersección se representa por $A \cap B$, y es el evento que contiene los elementos que estan en $A$ y en $B$ al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente. 
+**Intersección de eventos**: Dados dos eventos $A$ y $B$ de un mismo espacio muestral su intersección se representa por $A \cap B$, y es el evento que contiene los elementos que están en $A$ y en $B$ al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente. 
 
 **Evento Complemento**: El complemento de un evento $A$ se representa representa por $A^c$ y es el evento que contiene contiene todos los elementos que no están en $A$. El evento ocurre si $A$ no ocurre.
 
@@ -231,19 +231,19 @@ Si la probabilidad de un evento es exactamente 0, entonces el evento no puede oc
 
 Ahora pensemos en algunos eventos según lo aprendido:
 
-**Un evento o eventos que de seguro ocurrirán**: Que llueva hoy en Mayaguez, que finalice el día, sacar cara al lanzar una moneda, que finalice el semestre, sacar un número par al lanzar un dado... etc.
+**Un evento o eventos que de seguro ocurrirán**: Que llueva hoy en Mayagüez, que finalice el día, sacar cara al lanzar una moneda, que finalice el semestre, sacar un número par al lanzar un dado... etc.
 
-¿Qué probabilidad le asignaria a cada uno de estos eventos?
+¿Qué probabilidad le asignaría a cada uno de estos eventos?
 
 
 **Un evento o eventos que son imposibles que ocurran**: Que no hayan huracanes en el caribe, obtener un número 8 al lanzar un dado.
 
-¿Qué probabilidad le asignaria a cada uno de estos eventos?
+¿Qué probabilidad le asignaría a cada uno de estos eventos?
 
 
 **Un evento o eventos que posiblemente ocurran**: Ganar el Power Ball, Qué un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.
 
-¿Qué probabilidad le asignaria a cada uno de estos eventos?
+¿Qué probabilidad le asignaría a cada uno de estos eventos?
 
 ## Métodos  para  asignar  probabilidades 
 
@@ -272,7 +272,7 @@ si A1, A2, ... son mutuamente excluyentes.
 
 3.  $P(A \cup B)= P(A) + P(B) - P(A \cap B)$
 
-En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacio es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.
+En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.
 
 Una forma de mostrar las relaciones entre eventos es  mediante los famosos diagramas de Venn. Por ejemplo, sean los eventos $A$ y $B$ del mismo espacio muestral, con probabilidades $P(A)$ y $P(B)$ respectivamente. Para este caso con dos eventos, el diagra de Venn es el siguiente:
 
@@ -288,7 +288,7 @@ Las relaciones entre las probabilidades de dos eventos $A$ y $B$ también pueden
 
 1.  Juan y Luis están solicitando ser admitidos en una universidad. La probabilidad de que Juan sea admitido es  es $0.7$ y la probabilidad de que Luis  sea admitido es $0.6$. La probabilidad de que ambos sean admitidos es $0.45$.
 
-Este tipo de problemas los podemos resolver usando digramas de Venn:
+Este tipo de problemas los podemos resolver usando diagramas de Venn:
 
 Por información que nos da el problema sabemos que: **$P(J)=0.7$** y **$P(L)=0.6$**, también sabemos que 
 **$P(J \cap L)=0.45$**
@@ -311,7 +311,7 @@ $$0.7 + 0.6 - 0.45=0.85$$
 
 c) ¿Cuál es la probabilidad de que ninguno de los dos sea admitido?
 
-Debemos darnos cuenta que el ejercicio nos esta preguntando por una probabilidad del complemento, esto es: $P(J^c \cap L^c)$, si usamos las leyes de Morgan, el problema es resuelto, veamos:
+Debemos darnos cuenta que el ejercicio nos está preguntando por una probabilidad del complemento, esto es: $P(J^c \cap L^c)$, si usamos las leyes de Morgan, el problema es resuelto, veamos:
 
 $$P(J^c \cap L^c)=P(J \cup L)^c=1-P(J \cup L)=1-0.85=0.15$$
 Entonces tenemos que la probabilidad de que ninguno de los dos sea admitido es de $0.85$
@@ -320,7 +320,7 @@ La otra forma de resolver el problema es usando la tabla de doble entrada,
 
 ![](tabla2.png)
 
-Los datos de color rojo son los que provee el problema, los demas son calculados usando complementos. 
+Los datos de color rojo son los que provee el problema, los demás son calculados usando complementos. 
 
 2.  Una empresa tiene dos maneras $A$ y $B$ de presentar un nuevo producto al mercado. Si presenta el producto de la manera $A$  la probabilidad de que el producto sea exitoso es $0.44$ y si lo presenta de la manera $B$ la probabilidad de éxito se reduce a $0.29$. La probabilidad de que el producto fracase con ambas maneras de presentación es $0.37$. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?
 
@@ -361,14 +361,14 @@ Un espacio muestral finito  $S =\{A_1, A_2,…,A_n\}$ se dice que es **equiproba
 
 > **Ejemplos**
 
-1. Se lanza un dado de seis caras, entonces su espacio muestral esta dado por $S=\{1,2,3,4,5,6\}$, vemos que hay sis posibles resultados, entonces la probabilidad de cada uno de ellos es 1/6.
+1. Se lanza un dado de seis caras, entonces su espacio muestral esta dado por $S=\{1,2,3,4,5,6\}$, vemos que hay seis posibles resultados, entonces la probabilidad de cada uno de ellos es 1/6.
 
 2.  Se lanza un par de dados legales y distinguibles, entonces su espacio muestral dado por: $S=\{(i,j);i,j=1,2,3,4,5,6\}$ tiene 36 resultados, cada uno de ellos con probabilidad de ocurrencia 1/36.  
 
 
 > **Definición**
 
-Si un experimento aleatorio tiene un espacio muestral equiprobable $S$ que contiene $N$ elementos y $A$ es un evento de $S$ que ocurre de $\#(A)$ maneras distintas entonces la probabilidad de ocurrencia de $A$ esta dada por:
+Si un experimento aleatorio tiene un espacio muestral equiprobable $S$ que contiene $N$ elementos y $A$ es un evento de $S$ que ocurre de $\#(A)$ maneras distintas entonces la probabilidad de ocurrencia de $A$ está dada por:
 
 $$P(A)=\frac{\# A}{N}$$
 
