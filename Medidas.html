@@ -233,14 +233,14 @@ $(document).ready(function () {
 <h2>Cálculo de Medidas Estadisticas</h2>
 <p>Hay dos tipos principales de medidas Estadísticas: Medidas de Tendencia Central y medidas de Variabilidad.</p>
 <p><strong>Las medidas de tendencia central</strong> dan una idea del centro de la distribución de los datos. Las principales medidas de este tipo son la media o promedio aritmético, la mediana, la moda y la media podada.</p>
-<p><strong>Las medidas de variabilidad</strong> expresan el grado de concentración o dispersión de los datos con respecto al centro de la distribución. Entre las principales medidas de este tipo están la varianza, la desviación estándar, el rango intercuartílico. Aparte también hay medidas de posición, como son los cuartiles, deciles y percentiles. Además, una medida de asimetría (“skewness”) y una medida de aplanamiento (“kurtosis”).</p>
+<p><strong>Las medidas de variabilidad</strong> expresan el grado de concentración o dispersión de los datos con respecto al centro de la distribución. Entre las principales medidas de este tipo están la varianza, la desviación estándar, el rango intercuartílico. Aparte también hay medidas de posición, como son los cuartiles, deciles y percentiles. Además, una medida de sesgo (“skewness”) y una medida de aplanamiento (“kurtosis”).</p>
 </div>
 <div id="medidas-de-centralidad" class="section level2">
 <h2>Medidas de Centralidad</h2>
 <ul>
 <li><strong>La media o promedio</strong> se obtiene sumando todos los datos y dividiendo entre el número de datos. Es decir, si <span class="math inline">\(x_1, x_2 ,…,x_n\)</span>, representan las observaciones de una variable X en una muestra de tamaño n, entonces la media de la variable X está dada por:</li>
 </ul>
-<p><span class="math display">\[\bar{X}=\frac{\sum_{i=1}^{n}x_i}{n}\]</span> Cuando el conjunto de datos es una <strong>muestra aleatoria</strong> recibe el nombre de media muestral siendo uno de los principales estadísticos muestrales. Se espera que la <strong>media</strong> este ralacionada con el valor que más posibilidades tiene de ocurrir en una variable, por tanto si es así, la media es el centro de la distribución.</p>
+<p><span class="math display">\[\bar{X}=\frac{\sum_{i=1}^{n}x_i}{n}\]</span> Cuando el conjunto de datos es una <strong>muestra aleatoria</strong> recibe el nombre de media muestral siendo uno de los principales estadísticos muestrales. Se espera que la <strong>media</strong> esté relacionada con el valor que más posibilidades tiene de ocurrir en una variable, por tanto si es así, la media es el centro de la distribución.</p>
 <div class="figure">
 <img src="media.png" />
 
@@ -255,8 +255,8 @@ $(document).ready(function () {
 <pre class="r"><code>carros &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153)
 mean(carros)</code></pre>
 <pre><code>[1] 113.4444</code></pre>
-<p>La media es afectada por la asimetría de la distribución de los datos y por la presencia de “outliers” como se muestra en el siguiente ejemplo.</p>
-<p><strong>Ejemplo.</strong> Supongamos que en el ejemplo anterior se elige adicionalmente un carro cuyo precio es de 500 mil dolares.</p>
+<p>La media es afectada por el sesgo de la distribución de los datos y por la presencia de “outliers” como se muestra en el siguiente ejemplo.</p>
+<p><strong>Ejemplo.</strong> Supongamos que en el ejemplo anterior se elige adicionalmente un carro cuyo precio es de 500 mil dólares.</p>
 <p>Luego el promedio será:</p>
 <p><span class="math display">\[\bar{X}=\frac{74 + 82 + 107 + 92 + 125 + 130 + 118 + 140 + 153 + 500}{10}=\frac{1521}{10}=152.1\]</span></p>
 <p>En este caso la media da una idea errónea del centro de la distribución, la presencia del “outlier” ha afectado la media y ya no es el centro de la distribución. Sólo dos datos de las 10 observaciones tienen precio promedio mayor a <span class="math inline">\(\$152,100\)</span></p>
@@ -276,13 +276,13 @@ mean(carros_outlier)</code></pre>
 <p>Para calcular la mediana primero se deben ordenar los datos de <strong>menor a mayor</strong>. Si el número de datos es <strong>impar</strong>, entonces la mediana será el valor central. Si el número de datos es <strong>par</strong> entonces, la mediana se obtiene promediando los dos valores centrales.</p>
 <p><strong>Ejemplo con datos impares:</strong> Calcular la mediana para los datos de el precio de los 9 carros.</p>
 <p>74, 82, 107, 92, 125, 130, 118, 140, 153.</p>
-<p>Debemos ordenar los datos de menor a mayor: 74, 82, 92, 107, <strong>118</strong>, 125, 130, 140, 153. Vemos que el valor central esta en 118, es decir la mediana del precio de los carros es <span class="math inline">\(\$118,000\)</span>.</p>
+<p>Debemos ordenar los datos de menor a mayor: 74, 82, 92, 107, <strong>118</strong>, 125, 130, 140, 153. Vemos que el valor central está en 118, es decir la mediana del precio de los carros es <span class="math inline">\(\$118,000\)</span>.</p>
 <p><strong>Ejemplo con datos pares:</strong> Calcular la mediana para los datos de el precio de los 10 carros donde hay un “outlier”.</p>
 <p>74, 82, 107, 92, 125, 130, 118, 140, 153, 500.</p>
 <p>Debemos ordenar los datos de menor a mayor: 74, 82, 92, 107, <strong>118, 125</strong>, 130, 140, 153, 500. Vemos que hay dos valores centrales que son 118 y 125, por lo tanto se deben promediar estos dos valores, es decir</p>
 <p><span class="math display">\[Mediana = \frac{118 + 125}{2}=121.5\]</span></p>
 <p>Es decir la mediana del precio de los carros es <span class="math inline">\(\$121,500\)</span>.</p>
-<p>A diferencia de la media, la <strong>mediana no es afectada</strong> por la presencia de valores anormales o “outliers”. Asi, la mediana para los datos del ejemplo anterior, donde hay un número par de datos, la mediana resulta ser el promedio de los dos valores centrales y el dato anormal 500 no afecta el valor de la mediana.</p>
+<p>A diferencia de la media, la <strong>mediana no es afectada</strong> por la presencia de valores anormales o “outliers”. Así, la mediana para los datos del ejemplo anterior, donde hay un número par de datos, la mediana resulta ser el promedio de los dos valores centrales y el dato anormal 500 no afecta el valor de la mediana.</p>
 <p>En RStudio la función para calcular la <strong>Mediana</strong> es <code>median()</code>, vamos a calcular la mediana para los datos del precio de los carros:</p>
 <p>Sin presencia de outliers</p>
 <pre class="r"><code>carros &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153)
@@ -292,7 +292,6 @@ median(carros)</code></pre>
 <pre class="r"><code>carros_outlier &lt;- c(74, 82, 107, 92, 125, 130, 118, 140, 153, 500)
 median(carros_outlier)</code></pre>
 <pre><code>[1] 121.5</code></pre>
-<p><strong>Cuando la distribución es asimétrica hacia la derecha, la mediana es menor que la media. Si hay asimetría hacia la izquierda entonces la mediana es mayor que la media y cuando hay simetría, ambas son iguales.</strong></p>
 <ul>
 <li><strong>La moda</strong> es el valor (o valores) que se repite con mayor frecuencia en la muestra. La Moda puede aplicarse tanto a datos cuantitativos como cualitativos.</li>
 </ul>
@@ -315,21 +314,32 @@ getmode(cine)</code></pre>
 <pre class="r"><code>sangre &lt;- c(&quot;A&quot;,&quot;O&quot;,&quot;B&quot;,&quot;O&quot;,&quot;AB&quot;, &quot;O&quot;, &quot;B&quot;, &quot;O&quot;, &quot;A&quot;)
 getmode(sangre)</code></pre>
 <pre><code>[1] &quot;O&quot;</code></pre>
-<p>En resumen, las medidas de tendencia central son tres: La Media, la Mediana y la Moda.</p>
+<p><strong>Cuando la distribución es sesgada hacia la izquierda, la media es menor que la mediana. Si hay sesgo hacia la derecha, entonces la media es mayor que la mediana y cuando hay simetría, tanto la media, como la mediana son iguales.</strong></p>
+<p>Es decir,</p>
+<ul>
+<li><p>Distribución sesgada a derecha (la media es mayor a la mediana) <span class="math inline">\(\bar{X} &gt; Mediana\)</span></p></li>
+<li><p>Distribución simétrica (la media es igual a la mediana) <span class="math inline">\(\bar{X} = Mediana\)</span></p></li>
+<li><p>Distribución sesgada a izquierda (la media es menor a la mediana) <span class="math inline">\(\bar{X} &lt; Mediana\)</span></p></li>
+</ul>
+<div class="figure">
+<img src="sesgo.png" />
+
+</div>
+<p>En resumen, las medidas de tendencia central son tres: La Media, la Mediana y la Moda. Vimos que estas medidas pueden ser usadas para decidir sobre la simetría o sesgo de una distribución.</p>
 </div>
 </div>
 <div id="medidas-de-variabilidad" class="section level2">
 <h2>Medidas de Variabilidad</h2>
-<p>Las medidas de variabilidad o dispersión nos indican si losdatos están próximos entre sí o si por el contrario están muy dispersos.</p>
+<p>Las medidas de variabilidad o dispersión nos indican si los datos están próximos entre sí o si por el contrario están muy dispersos.</p>
 <p><strong>El rango o amplitud</strong> se obtiene restando el valor más bajo de un conjunto de observaciones del valor más alto. Mientras mayor sea el rango existe mayor variabilidad.</p>
 <p>Para calcular en RSudio el rango se debe restar el máximo de los datos menos en mínimo. La función para calcular el máximo es <code>max()</code> y el mínimo es <code>min()</code></p>
-<p><strong>La varianza</strong> es una medida que da una idea del grado de concentración de los datos con respecto a la media. Matematicamente se define de la siguiente manera</p>
+<p><strong>La varianza</strong> es una medida que da una idea del grado de concentración de los datos con respecto a la media. Matemáticamente se define de la siguiente manera</p>
 <p><span class="math display">\[S^2=\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}\]</span></p>
 <p>En RStudio la función para la varianza es <code>var()</code></p>
 <p><strong>La desviación estándar</strong> es la raíz cuadrada positiva de la varianza y tiene la ventaja que está en las mismas unidades de medida que los datos. Se representa por <span class="math inline">\(S\)</span>.</p>
-<p>La función para la desviación estandar es <code>sd</code></p>
+<p>La función para la desviación estándar es <code>sd</code></p>
 <p>De por si sola la desviación estándar no permite concluir si la muestra es muy variable o poco variable. Al igual que la varianza es usada principalmente para comparar la variabilidad entre grupos.</p>
-<p><strong>Ejemplo.</strong> Estudiar la variabilidada de las suguientes dos muestras:</p>
+<p><strong>Ejemplo.</strong> Estudiar la variabilidad de las siguientes dos muestras:</p>
 <p>muestra1: 16 18 25 28 23 42 24 47 38 19 22 34.</p>
 <p>muestra2: 116 118 125 128 123 142 124 147 138 119 120 132</p>
 <p>Vamos a calcular las el rango, la varianza y la desviación para las dos muestras, en la muestra uno tenemos:</p>
@@ -360,9 +370,9 @@ print(var_n2)</code></pre>
 <pre class="r"><code>sd_n2 &lt;- sd(n2)
 print(sd_n2)</code></pre>
 <pre><code>[1] 10.04837</code></pre>
-<p>Las muestras tienen practicamente las mismas varianzas, es decir en términos absolutos tienen la misma variabilidad, pero se debe tener encuenta que en la muestra uno, la varianza esta mucho más alejada de la media, lo que significa que la muestra uno es bastante variable, mientras que la muestra dos es poco variable.</p>
-<p>Otra medida de variabilidad es el coeficiente devariación (CV)</p>
-<p><strong>El Coeficiente de Variación CV</strong> que se define como <span class="math inline">\(CV=\frac{s}{|\bar{x}|}*100 \%\)</span>. Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 % entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra 2 es 7.87. Hagamos los calculos en RStudio</p>
+<p>Las muestras tienen prácticamente las mismas varianzas, es decir en términos absolutos tienen la misma variabilidad, pero se debe tener en cuenta que en la muestra uno, la varianza está mucho más alejada de la media, lo que significa que la muestra uno es bastante variable, mientras que la muestra dos es poco variable.</p>
+<p>Otra medida de variabilidad es el coeficiente de variación (CV)</p>
+<p><strong>El Coeficiente de Variación CV</strong> que se define como <span class="math inline">\(CV=\frac{s}{|\bar{x}|}*100 \%\)</span>. Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 % entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra 2 es 7.87. Hagamos los cálculos en RStudio</p>
 <pre class="r"><code>## CV para n1
 CV_n1 &lt;- (sd_n1/mean_n1)*100
 print(CV_n1)</code></pre>
@@ -378,7 +388,7 @@ print(CV_n2)</code></pre>
 <div id="los-cuartiles" class="section level3">
 <h3>Los cuartiles</h3>
 <p><strong>Los Cuartiles:</strong> Son valores que dividen a la muestra en 4 partes aproximadamente iguales. El 25% de los datos son menores o iguales que el cuartil inferior o primer cuartil, representado por <span class="math inline">\(Q_1\)</span>. El siguiente 25 % de datos cae entre el cuartil inferior y la mediana, la cual es equivalente al segundo cuartil <span class="math inline">\(Q_2\)</span> (<span class="math inline">\(Q_2\)</span> coincide con la mediana de los datos.). El 75 % de los datos son menores o iguales que el cuartil superior o tercer cuartil, representado por <span class="math inline">\(Q_3\)</span>, y el restante 25% de datos son mayores o iguales que Q3.</p>
-<p>Existen varios métodos para calcular los cuartiles pero la manera mas simple es ordenar los datos y considerar Q1 como la mediana de la primera mitad, o sea aquella que va desde el menor valor hasta la mediana. Similarmente Q3 es la mediana de la segunda mitad, o sea aquella que va desde la mediana hasta el mayor valor.</p>
+<p>Existen varios métodos para calcular los cuartiles pero la manera más simple es ordenar los datos y considerar Q1 como la mediana de la primera mitad, o sea aquella que va desde el menor valor hasta la mediana. Similarmente Q3 es la mediana de la segunda mitad, o sea aquella que va desde la mediana hasta el mayor valor.</p>
 <p><strong>Ejemplo.</strong> Calcular los cuartiles de las siguientes muestras:</p>
 <ol style="list-style-type: lower-alpha">
 <li>6, 8, 4, 12, 15, 17, 23, 18, 25, 11.</li>
@@ -422,8 +432,8 @@ summary(data2)</code></pre>
 <p>El percentil <span class="math inline">\(p\)</span> de un conjunto de datos ordenados es el valor que tiene a lo sumo <span class="math inline">\(P\%\)</span> de los datos debajo de él y como máximo <span class="math inline">\((100-P)\%\)</span> por encima.</p>
 <p>Paso para encontrar el <span class="math inline">\(P^{th}\)</span> percentil</p>
 <ol style="list-style-type: decimal">
-<li><p>Ordenar el conunto de datos de menor a mayor.</p></li>
-<li><p>Encuentre la ubicación del percentil <span class="math inline">\(P^{th}\)</span>: <span class="math inline">\(np/100\)</span>, redondear hacia adelante.</p></li>
+<li><p>Ordenar el conjunto de datos de menor a mayor.</p></li>
+<li><p>Encuentre la ubicación del percentil <span class="math inline">\(P^{th} = \dfrac{np}{100}\)</span>, redondear hacia adelante.</p></li>
 <li><p>Encuentra el percentil <span class="math inline">\(P^{th}\)</span> en esa ubicación.</p></li>
 </ol>
 <p>Ejemplo: Encuentre el percentil 67 de los siguientes datos: 46 25 34 35 41 41 46 46 22 47 49 54 54 59 60.</p>
@@ -433,19 +443,19 @@ summary(data2)</code></pre>
 </ol>
 <p>22 25 34 35 41 41 46 46 46 47 49 54 54 59 60.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Encuentrar la ubicación del percentil,</li>
+<li>Encontrar la ubicación del percentil,</li>
 </ol>
 <p><span class="math display">\[\frac{nP}{100}=\frac{(15)(67)}{100}=10.05\]</span> Redondeando al siguiente número, por tanto la ubicación es <span class="math inline">\(11\)</span>.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>El valor de los datos en la ubicación 11 es <span class="math inline">\(49\)</span>, por tanto el percentil 67 es <span class="math inline">\(49\)</span>.</li>
 </ol>
-<p>Un error muy popular en los estudiantes es pensar que el número encontrado en el paso 2 ya es el percentil. Es la ubicación del percentil en el conjunto de datos ordenado. De nuevo, si cometes ese error la mayor parte del tiempo, ¡tu respuesta no tendrá niungún sentido! En el ejemplo anterior encontramos 11, pero ¿cómo podría ser el percentil 67? Es más pequeño que cualquiera de las observaciones. Eso no puede suceder!</p>
+<p>Un error muy popular en los estudiantes es pensar que el número encontrado en el paso 2 ya es el percentil. Es la ubicación del percentil en el conjunto de datos ordenado. De nuevo, si cometes ese error la mayor parte del tiempo, ¡tu respuesta no tendrá ningún sentido! En el ejemplo anterior encontramos 11, pero ¿cómo podría ser el percentil 67? Es más pequeño que cualquiera de las observaciones. Eso no puede suceder!</p>
 <pre class="r"><code>example1 &lt;- c(46, 25, 34, 35, 41, 41, 46, 46,  22, 47, 49, 54, 54, 59, 60)
 quantile(example1,0.67) </code></pre>
 <pre><code>  67% 
 47.76 </code></pre>
 <p>Tenga en cuenta que las respuestas no son exactamente las mismas, R usa una fórmula algo más complicada. La diferencia realmente no importa, sin embargo.</p>
-<p><strong>Ejemplo</strong> Encuenre el percentil <span class="math inline">\(P_{75}\)</span> del siguiente conjunto de datos:</p>
+<p><strong>Ejemplo</strong> Encuentre el percentil <span class="math inline">\(P_{75}\)</span> del siguiente conjunto de datos:</p>
 <p>1.2 , 2.2 , 2.4 , 2.4 , 2.8 , 2.9 , 3 , 3.2 , 3.4 , 4 , 4.1 , 4.5 , 4.6</p>
 <ol style="list-style-type: decimal">
 <li>Ordenar los datos:</li>
@@ -471,34 +481,37 @@ quantile(example2,0.75) </code></pre>
 <img src="box.png" />
 
 </div>
-<p><strong>Interpretación:</strong> La línea central de la caja representa la <strong>Mediana</strong> y los lados de la caja representan los cuartiles <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_3\)</span> respectivamente. Si la Mediana está bien al centro de la caja, entonces hay simetria. Si la Mediana está más cerca a Q3 que a Q1 entonces la <strong>asimetría es hacia la izquierda</strong>, de lo contrario la <strong>asimetría es hacia la derecha</strong>. Si la caja no es muy alargada entonces se dice que no hay mucha variabilidad, es decir entre más larga la caja es mayor la variabilidad en los datos.</p>
-<p>Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las lineas laterales llegan hasta los valores adyacentes a las fronteras interiores.</p>
+<p><strong>Interpretación:</strong> La línea central de la caja representa la <strong>Mediana</strong> y los lados de la caja representan los cuartiles <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_3\)</span> respectivamente. Si la Mediana está bien al centro de la caja, entonces hay simetría. Si la Mediana está más cerca a Q3 que a Q1 entonces la distribución es <strong>sesgada a la izquierda</strong>, de lo contrario la distribución es <strong>sesgada a derecha</strong>. Si la caja no es muy alargada entonces se dice que no hay mucha variabilidad, es decir entre más larga la caja es mayor la variabilidad en los datos.</p>
+<p>Si no hay “outliers” entonces las líneas laterales de la caja llegan hasta el valor mínimo por abajo, y hasta el valor máximo por arriba. Cuando hay “outliers” entonces éstos aparecen identificados en la figura y las líneas laterales llegan hasta los valores adyacentes a las fronteras interiores.</p>
 <p>Para dibujar un Boxplot en RStudio se puede usar la función <code>boxplot</code>. Veamos algunos ejemplos con los datos de la clase.</p>
 <pre class="r"><code># Leer los datos
 Estudiantes &lt;- read.table(&quot;/datos/DirectorioR/figure_out/estudiantes.txt&quot;,header = T)
 # Boxplot para estatura
-boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;Box plot de estatura por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
+boxplot(Estudiantes$estatura,data=Estudiantes,main=&quot;Box plot de estatura&quot;,col = &quot;green&quot;
+        ,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<pre class="r"><code># Boxplot para GPE
-boxplot(Estudiantes$gpa,data=Estudiantes,main=&quot;GPA por estudiantes&quot;,xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
+<pre class="r"><code># Boxplot para GPA
+boxplot(Estudiantes$gpa,data=Estudiantes,main=&quot;GPA por estudiantes&quot;, col = &quot;red&quot;,
+        xlab=&quot;&quot;, ylab=&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <div id="boxplot-para-grupos" class="section level3">
 <h3>Boxplot para grupos</h3>
-<p>El boxplot es una herramienta interesante para visualizar graficamente la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado. Veamos</p>
-<pre class="r"><code># Boxplot para GPE
-boxplot(Estudiantes$estatura~Estudiantes$sexo,data=Estudiantes,main=&quot;Estatura de estudiantes por género&quot;,xlab=&quot;&quot;, ylab=&quot;Estatura&quot;)</code></pre>
+<p>El boxplot es una herramienta interesante para visualizar la distribución de los datos por grupos, por ejemplo en los datos podemos visualizar la distribución de la estatura para mujeres y hombres por separado, pero en el mismo gráfico. Veamos</p>
+<pre class="r"><code># Boxplot para estatura
+boxplot(Estudiantes$estatura ~ Estudiantes$sexo,data=Estudiantes, main=&quot;Estatura de estudiantes por género&quot;, col = c(&quot;grey&quot;,&quot;green&quot;),xlab=&quot;Género&quot;, ylab=&quot;Estatura&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
-<p><strong>Observamos que la distribución de la estatura para los hombres es asimetrica a la izquierda</strong></p>
+<p><strong>Observamos que la distribución de la estatura para los hombres es sesgada a la izquierda</strong></p>
 <p>Usando <code>ggplot2</code> para dibujar un boxplot para la variable <code>GPA</code> y el grupo sexo.</p>
 <pre class="r"><code>library(ggplot2)
 # Boxplot para GPA
-ggplot(Estudiantes, aes(x=Estudiantes$sexo, y=Estudiantes$gpa, fill=Estudiantes$sexo)) + geom_boxplot() +
+ggplot(Estudiantes, aes(x=Estudiantes$sexo, y=Estudiantes$gpa, fill=Estudiantes$sexo)) + 
+  stat_boxplot(geom =&#39;errorbar&#39;) + geom_boxplot() +
   ggtitle(&quot;Boxplot para GPA por grupo sexo&quot;) + xlab(&quot;Grupo sexo&quot;) + ylab(&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <p>¿Tendran mejores notas los estudiantes que trabajan comparado con los que no trabajan?. Veamos</p>
 <pre class="r"><code>library(ggplot2)
 # Boxplot para GPA por trabaja
-ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiantes$trabaja)) + geom_boxplot() +
+ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiantes$trabaja)) +  stat_boxplot(geom =&#39;errorbar&#39;) + geom_boxplot() +
   ggtitle(&quot;Boxplot para GPA por grupo trabaja&quot;) + xlab(&quot;Grupo trabaja&quot;) + ylab(&quot;GPA&quot;)</code></pre>
 <p><img src="Medidas_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <p>De la gráfica podemos concluir que hay mayor variabilidad en el grupo de estudiantes que trabajan, es decir la caja es más larga.</p>
@@ -514,7 +527,7 @@ ggplot(Estudiantes, aes(x=Estudiantes$trabaja, y=Estudiantes$gpa, fill=Estudiant
 <li>El tercer cuartil (<span class="math inline">\(Q_3\)</span>)</li>
 <li>El valor o dato máximo (observación más grande)</li>
 </ol>
-<p><strong>Ejemplo: Resultados de examenes</strong></p>
+<p><strong>Ejemplo: Resultados de exámenes</strong></p>
 <p>Un maestro quiere examinar los puntajes de los exámenes de sus estudiantes. Los puntajes son:</p>
 <p>74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.</p>
 <p>Encuentre el resumen de los cinco números para esta muestra de datos.</p>
@@ -536,8 +549,8 @@ fivenum(test)</code></pre>
 <div id="metodo-del-ric" class="section level3">
 <h3>Método del RIC</h3>
 <p>Podemos usar el método RIC para identificar valores atípicos y establecer un tipo de frontera fuera de Q1 y Q3. Cualquier valor que quede fuera de esta frontera se considera atípico. En resumen se debe encontrar un intervalo de la siguiente manera:</p>
-<p><span class="math display">\[(Q_1-1.5RIC, Q_3+1.5RIC)\]</span> Calquier dato que quede fuera de este intervalo sera considerado como un dato atipico.</p>
-<p><strong>Ejemplo: Resultados de examenes</strong></p>
+<p><span class="math display">\[(Q_1-1.5RIC, Q_3+1.5RIC)\]</span> Cualquier dato que quede fuera de este intervalo será considerado como un dato atípico.</p>
+<p><strong>Ejemplo: Resultados de exámenes</strong></p>
 <p>Los puntajes son: 74, 88, 78, 90, 94, 90, 84, 90, 98 y 80.</p>
 <p>El resumen de los cinco números es: 74, 80, 89, 90, 98. como lo encontramos anteriormente.</p>
 <p>Necesitamos calcular el RIC,</p>
@@ -555,6 +568,19 @@ fivenum(test)</code></pre>
 <p>LI=<span class="math inline">\(Q1-1.5RIC=8-1.5(4)=2\)</span>.</p>
 <p>LS=<span class="math inline">\(Q3+1.5RIC=12+1.5(4)=18\)</span>.</p>
 <p>Finalmente tenemos <span class="math inline">\((2,18)\)</span>, es decir que hay cuatro outliers: 0, 0, 20 y 25.</p>
+<p>Podemos ver los outliers mediante un boxplot</p>
+<pre class="r"><code># Boxplot para  número de libros
+libros &lt;- c(0, 0, 2, 5, 8, 8, 8, 9, 9, 10, 10, 10, 11, 12, 12, 12, 14 , 15, 20, 25)
+boxplot(libros, col = &quot;blue&quot;,main =&quot;Boxplot para cantidad de libros&quot;,ylab =&quot;libros&quot;)</code></pre>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>o usando <code>ggplot2</code></p>
+<pre class="r"><code># Boxplot para número de libros
+library(ggplot2)
+libros &lt;- c(0, 0, 2, 5, 8, 8, 8, 9, 9, 10, 10, 10, 11, 12, 12, 12, 14 , 15, 20, 25)
+df.libros &lt;- data.frame(libros)
+ggplot(df.libros, aes(x = factor(1),y=libros)) + geom_boxplot(width=0.4,outlier.colour = &quot;red&quot;) + 
+  ggtitle(&quot;Boxplot para cantidad libros&quot;) + xlab(&quot;&quot;) + ylab(&quot;libros&quot;)</code></pre>
+<p><img src="Medidas_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <div class="figure">
 <img src="blanco.png" />
 
