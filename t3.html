@@ -231,7 +231,7 @@ $(document).ready(function () {
   table_freq
 }</code></pre>
 <ol style="list-style-type: lower-alpha">
-<li>El siguiente código simula datos de un experiento en donde se esta probando la efectividad de un nuevo insecticida contra una especie de insecto. Se realizarón 40 repeteciones del experimento y se observarón la cantidad de insectos muertos en cada repetición.</li>
+<li>El siguiente código simula datos de un experimento en donde se está probando la efectividad de un nuevo insecticida contra una especie de insecto. Se realizaron 40 repeticiones del experimento y se observaron la cantidad de insectos muertos en cada repetición.</li>
 </ol>
 <pre class="r"><code>insectos_m &lt;- rpois(40,10)</code></pre>
 <p>Usar la función <code>tabla_freq_discretas</code> descrita arriba para construir una tabla de frecuencias para el número de insectos muertos. <strong>Interpretar un valor cualquiera en cada columna de la tabla de frecuencias</strong>.</p>
@@ -239,7 +239,7 @@ $(document).ready(function () {
 <pre class="r"><code>insectos_m &lt;- rpois(40,10)
 tabla_freq_discretas(insectos_m)</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Hacer una grafica <code>Dotplot</code> para el número de insectos muertos. El data frame o tabla de datos se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
+<li>Hacer una gráfica <code>Dotplot</code> para el número de insectos muertos. El data frame o tabla de datos se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
 </ol>
 <pre class="r"><code>insectos_muertos &lt;- data.frame(insectos_m)</code></pre>
 </div>
@@ -257,16 +257,16 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
 <pre class="r"><code>library(data.table)
 class_survey &lt;- fread(&quot;https://didier-murillo.netlify.com/class_survey.txt&quot;,header=TRUE)</code></pre>
 <ol style="list-style-type: lower-alpha">
-<li><p>Seleccione una variable continua y construya una tabla de frecuancias (use la función <code>tabla_frecuencia</code> que discutimos durante la clase).</p></li>
-<li><p>Interprete un valor de cada columna en la tabla de frecuancias.</p></li>
+<li><p>Seleccione una variable continua y construya una tabla de frecuencias (use la función <code>tabla_frecuencia</code> que discutimos durante la clase).</p></li>
+<li><p>Interprete un valor de cada columna en la tabla de frecuencias.</p></li>
 <li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a derecha o izquierda.</p></li>
 <li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
 </ol>
 </div>
-<div id="use-r-yo-rstudio-para-contestar-las-siguietes-preguntas" class="section level4">
-<h4>3. Use <code>R</code> y/o <code>RStudio</code> para contestar las siguietes preguntas</h4>
+<div id="use-r-yo-rstudio-para-contestar-las-siguientes-preguntas" class="section level4">
+<h4>3. Use <code>R</code> y/o <code>RStudio</code> para contestar las siguientes preguntas</h4>
 <ol style="list-style-type: lower-alpha">
-<li><p>Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</p></li>
+<li><p>Seleccione una variable cualitativa (Categórica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</p></li>
 <li><p>Haga un gráfico similar al siguiente plot de barras por grupos (Es decir usar las mismas variables). El título debe llevar su nombre. Interprete el gráfico.</p></li>
 </ol>
 <p><img src="t3_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
@@ -275,10 +275,10 @@ class_survey &lt;- fread(&quot;https://didier-murillo.netlify.com/class_survey.t
 </ol>
 </div>
 <div id="los-siguientes-datos-corresponden-al-numero-de-dias-que-ha-llovido-en-mayaguez-durante-los-ultimos-15-anos." class="section level4">
-<h4>4. Los siguientes datos corresponden al número de días que ha llovido en Mayaguez durante los últimos 15 años.</h4>
+<h4>4. Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.</h4>
 <p>311 293 285 306 311 309 313 309 320 311 319 307 320 273 297</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>Hacer un gráfico de tallos y hojas de forma manual. Comentar si el grafico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos.</p></li>
+<li><p>Hacer un gráfico de tallos y hojas de forma manual. Comentar si el gráfico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos.</p></li>
 <li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>stem()</code> para crear el gráfico de tallos y hojas.</p></li>
 <li><p>Use <code>R</code> y/o <code>RStudio</code> para hacer un histograma de los datos. Compare su histograma con el gráfico de tallos y hojas.</p></li>
 </ol>

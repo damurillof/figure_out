@@ -6,7 +6,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 #### **Fecha de entrega:** Viernes 07 de septiembre de 2018. Al iniciar la clase. 
 
 #### **Puntaje:** 20 puntos 
@@ -29,7 +28,7 @@ tabla_freq_discretas <- function(x){
 }
 ```
 
-a) El siguiente código simula datos de un experiento en donde se esta probando la efectividad de un nuevo insecticida contra una especie  de insecto.  Se realizarón 40 repeteciones del experimento y se observarón la cantidad de insectos muertos en cada repetición. 
+a) El siguiente código simula datos de un experimento en donde se está probando la efectividad de un nuevo insecticida contra una especie  de insecto.  Se realizaron 40 repeticiones del experimento y se observaron la cantidad de insectos muertos en cada repetición. 
 
 ```{r}
 insectos_m <- rpois(40,10)
@@ -44,7 +43,7 @@ insectos_m <- rpois(40,10)
 tabla_freq_discretas(insectos_m)
 ```
 
-b) Hacer una grafica `Dotplot` para el número de insectos muertos. El data frame o tabla de datos se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
+b) Hacer una gráfica `Dotplot` para el número de insectos muertos. El data frame o tabla de datos se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
 
 ```{r,comment=NA,eval=F,echo=T}
 insectos_muertos <- data.frame(insectos_m)
@@ -72,17 +71,17 @@ library(data.table)
 class_survey <- fread("https://didier-murillo.netlify.com/class_survey.txt",header=TRUE)
 ```
 
-a) Seleccione una variable continua y construya una tabla de frecuancias (use la función `tabla_frecuencia` que discutimos durante la clase).
+a) Seleccione una variable continua y construya una tabla de frecuencias (use la función `tabla_frecuencia` que discutimos durante la clase).
 
-b) Interprete un valor de cada columna en la tabla de frecuancias.
+b) Interprete un valor de cada columna en la tabla de frecuencias.
 
 c) Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lapiz). Comente si es simétrico o sesgado a derecha o izquierda. 
 
 d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.
 
-#### 3. Use `R` y/o `RStudio` para contestar las siguietes preguntas
+#### 3. Use `R` y/o `RStudio` para contestar las siguientes preguntas
 
-a)  Seleccione una variable cualitativa (Catégorica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
+a)  Seleccione una variable cualitativa (Categórica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
 
 b)  Haga un gráfico similar al siguiente plot de barras por grupos (Es decir usar las mismas variables). El título debe llevar su nombre. Interprete el gráfico.
 
@@ -97,11 +96,11 @@ ggplot(class_survey, aes(fill=class_survey$Smoke_Cigarettes,  x=class_survey$Rel
 c)  Haga un gráfico circular con la variable `Religious_Importance`. Interprete el gráfico.
 
 
-#### 4. Los siguientes datos corresponden al número de días que ha llovido en Mayaguez durante los últimos 15 años.
+#### 4. Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.
 
 311 293 285 306 311 309 313 309 320 311 319 307 320 273 297
 
-a) Hacer un gráfico de tallos y hojas de forma manual. Comentar si el grafico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos. 
+a) Hacer un gráfico de tallos y hojas de forma manual. Comentar si el gráfico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos. 
 
 b) Use `R` y/o `RStudio` y la función `stem()` para crear el gráfico de tallos y hojas.
 
@@ -109,3 +108,4 @@ c) Use `R` y/o `RStudio` para hacer un histograma de los datos. Compare su histo
 
 
 ![](blanco.png)
+

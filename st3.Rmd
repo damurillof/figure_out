@@ -1,0 +1,174 @@
+---
+title: "Solución tarea # 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Las siguientes funciones serán usadas para resolver la tarea 
+
+```{r}
+############## Tabla de frecuencia datos discretos#############
+tabla_freq_discretas <- function(x){
+  Obs <- sort(unique(x),F)
+  Freq_Abs <- as.vector(table(x))
+  Freq_Relativa <- as.vector(Freq_Abs/length(x))
+  Freq_Acum <- as.vector(cumsum(Freq_Abs))
+  Freq_Abs_Acum <- as.vector(Freq_Acum/length(x))
+  table_freq <- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  table_freq
+}
+############## Tabla de frecuencia datos continuos#############
+tabla_frecuencia <- function(datos) {
+  k <- nclass.Sturges(datos)
+  intervalos <- cut(datos, breaks = k)
+  tabla2 <- as.data.frame(table(intervalos))
+  tabla2 <- transform(tabla2, Freq_Relativa = prop.table(Freq),Frec_Acum = cumsum(Freq))
+  tabla2 <- transform(tabla2, Freq_Abs_Acum = cumsum(Freq_Relativa))
+  midpoints <- function(x, dp=2){
+    lower <- as.numeric(gsub(',.*','',gsub('\\(|\\[|\\)|\\]','', x)))
+    upper <- as.numeric(gsub('.*,','',gsub('\\(|\\[|\\)|\\]','', x)))
+    return(round(lower+(upper-lower)/2, dp))
+  }
+  tabla2 <- transform(tabla2, MC = midpoints(intervalos))
+  tabla2
+}
+```
+
+
+### Ejercicio 1
+
+a) El siguiente código simula datos de un experimento en donde se está probando la efectividad de un nuevo insecticida contra una especie  de insecto.  Se realizaron 40 repeticiones del experimento y se observaron la cantidad de insectos muertos en cada repetición. 
+
+```{r}
+set.seed(123)
+insectos_m <- rpois(40,10)
+print(tabla_freq_discretas(insectos_m))
+```
+
+
+Las observaciones son la cantidad de insectos muertos en cada repetición de un total de 40 ensayos o repeticiones del experimento. Según la tabla tenemos por ejemplo que
+
+* En seis ensayos murieron de a 8 insectos.
+
+* En el 10 % de los ensayos murieron de a 6 insectos.
+
+* En 22 ensayos murieron entre 3 y 9 insectos.
+
+* En el 45 % de los ensayos murieron de 9 a 15 insectos.
+
+
+
+b) Hacer una gráfica `Dotplot` para el número de insectos muertos. El data frame o tabla de datos se llama `insectos_muertos` y tiene solo una columna `insectos_m` con el conteo de insectos muertos. Interpretar el gráfico.
+
+```{r,comment=NA,eval=T,echo=T}
+insectos_muertos <- data.frame(insectos_m)
+library(ggplot2)
+ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) + 
+  geom_dotplot(fill = "blue", color = "black") + 
+  ggtitle("Dotplot para el número de insectos muertos - Didier Murillo")  + xlab("Número de insectos") + ylab("frecuencia")
+```
+
+#### 2. Para este ejercicio  y el 3 debe usar los datos `class_survey` que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
+
+```{r,comment=NA,eval=T,echo=T}
+## Leer los datos  
+class_survey <- read.table("/datos/DirectorioR/class_survey.txt",header=TRUE,sep = "\t")
+head(class_survey)
+```
+
+a) Seleccione una variable continua y construya una tabla de frecuencias (use la función `tabla_frecuencia` que discutimos durante la clase).
+
+```{r}
+# Seleccioné la variable continua SATM
+print(tabla_frecuencia(class_survey$SATM))
+```
+
+
+b) Interprete un valor de cada columna en la tabla de frecuencias.
+
+* Hay 55 estudiantes con puntajes en SATM entre 578 y 633
+
+* El 10% de los estudiantes tienen puntajes de SATM entre 689 y 744
+
+* Solo nueve estudiantes tienen puntajes de SATM mayores a 744
+
+* 3/ % de los estudiantes tiene puntajes de SATM superiores a 633
+
+c) Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lápiz). Comente si es simétrico o sesgado a derecha o izquierda. 
+
+
+
+d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.
+
+```{r}
+hist(class_survey$SATM,main = "Histograma para SATM - Didier Murillo",col = "seagreen",xlab = "SATM",ylab = "Número de estudiantes")
+```
+
+Claramente se ve que el histograma para SATM es sesgado a la izquierda. Esto quiere decir que la mayoría de estudiantes tienen puntajes altos para la prueba SATM.
+
+#### 3. Use `R` y/o `RStudio` para contestar las siguientes preguntas
+
+a)  Seleccione una variable cualitativa (Categórica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
+
+```{r,comment=NA,eval=T,echo=T}
+library(ggplot2)
+ggplot(class_survey, aes(fill=class_survey$Religious_Importance,  x=class_survey$Religious_Importance)) + 
+    geom_bar(position="dodge") + ggtitle("Gráfico de barras por grupos - Didier Murillo") +
+  xlab("Importancia de la Religión") + ylab("Número de estudiantes")
+```
+
+Podemos observar que a la mayoría de estudiantes en la muestra les parece muy importante la religión.
+
+b)  Haga un gráfico similar al siguiente plot de barras por grupos (Es decir usar las mismas variables). El título debe llevar su nombre. Interprete el gráfico.
+
+```{r,comment=NA,eval=T,echo=T}
+library(ggplot2)
+ggplot(class_survey, aes(fill=class_survey$Smoke_Cigarettes,  x=class_survey$Religious_Importance)) + 
+    geom_bar(position="dodge") + ggtitle("Gráfico de barras por grupos - Didier Murillo") +
+  xlab("Importancia de la Religión") + ylab("Número de estudiantes")
+```
+
+
+c)  Haga un gráfico circular con la variable `Religious_Importance`. Interprete el gráfico.
+
+```{r}
+table(class_survey$Religious_Importance)
+Importance <- c("Fairly Important "," Not Important", "Very Important ")
+num_Importance <- c(97,61,63 )
+pct <- round(num_Importance/sum(num_Importance)*100)
+Importance <- paste(Importance, pct) # add percents to labels 
+Importance <- paste(Importance,"%",sep="") # ad % to labels 
+pie(num_Importance,labels = Importance, col=rainbow(length(Importance)),
+    main="Gráfico de sectores para importancia de la religión - Didier Murillo")
+```
+
+
+
+#### 4. Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.
+
+311 293 285 306 311 309 313 309 320 311 319 307 320 273 297
+
+a) Hacer un gráfico de tallos y hojas de forma manual. Comentar si el gráfico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos. 
+
+b) Use `R` y/o `RStudio` y la función `stem()` para crear el gráfico de tallos y hojas.
+
+```{r}
+ s <- c(311, 293, 285, 306, 311, 309, 313, 309, 320, 311, 319, 307, 320, 273, 297)
+ stem(s,1)
+```
+
+El gráfico de tallos y hojas es sesgado a izquierda (No es una sorpresa!). Eso quiere decir que en Mayagüez llueve mucho. 
+
+c) Use `R` y/o `RStudio` para hacer un histograma de los datos. Compare su histograma con el gráfico de tallos y hojas. 
+
+```{r}
+hist(s,main = "Histograma para lluvia en Mayagüez - Didier Murillo",col = "cornflowerblue",xlab = "Días de lluvia",ylab = "Frecuencias")
+```
+
+El histograma es muy similar al gráfico de tallos y hojas. También encontramos el sesgo de la distribución de la lluvia a izquierda. 
+
+![](blanco.png)

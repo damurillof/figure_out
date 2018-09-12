@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Solución tarea # 3</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Solución tarea # 3</h1>
+
+</div>
+
+
+<p>Las siguientes funciones serán usadas para resolver la tarea</p>
+<pre class="r"><code>############## Tabla de frecuencia datos discretos#############
+tabla_freq_discretas &lt;- function(x){
+  Obs &lt;- sort(unique(x),F)
+  Freq_Abs &lt;- as.vector(table(x))
+  Freq_Relativa &lt;- as.vector(Freq_Abs/length(x))
+  Freq_Acum &lt;- as.vector(cumsum(Freq_Abs))
+  Freq_Abs_Acum &lt;- as.vector(Freq_Acum/length(x))
+  table_freq &lt;- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  table_freq
+}
+############## Tabla de frecuencia datos continuos#############
+tabla_frecuencia &lt;- function(datos) {
+  k &lt;- nclass.Sturges(datos)
+  intervalos &lt;- cut(datos, breaks = k)
+  tabla2 &lt;- as.data.frame(table(intervalos))
+  tabla2 &lt;- transform(tabla2, Freq_Relativa = prop.table(Freq),Frec_Acum = cumsum(Freq))
+  tabla2 &lt;- transform(tabla2, Freq_Abs_Acum = cumsum(Freq_Relativa))
+  midpoints &lt;- function(x, dp=2){
+    lower &lt;- as.numeric(gsub(&#39;,.*&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
+    upper &lt;- as.numeric(gsub(&#39;.*,&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
+    return(round(lower+(upper-lower)/2, dp))
+  }
+  tabla2 &lt;- transform(tabla2, MC = midpoints(intervalos))
+  tabla2
+}</code></pre>
+<div id="ejercicio-1" class="section level3">
+<h3>Ejercicio 1</h3>
+<ol style="list-style-type: lower-alpha">
+<li>El siguiente código simula datos de un experimento en donde se está probando la efectividad de un nuevo insecticida contra una especie de insecto. Se realizaron 40 repeticiones del experimento y se observaron la cantidad de insectos muertos en cada repetición.</li>
+</ol>
+<pre class="r"><code>set.seed(123)
+insectos_m &lt;- rpois(40,10)
+print(tabla_freq_discretas(insectos_m))</code></pre>
+<pre><code>##    Obs Freq_Abs Freq_Relativa Freq_Acum Freq_Abs_Acum
+## 1    3        1         0.025         1         0.025
+## 2    4        2         0.050         3         0.075
+## 3    5        2         0.050         5         0.125
+## 4    6        4         0.100         9         0.225
+## 5    7        3         0.075        12         0.300
+## 6    8        6         0.150        18         0.450
+## 7    9        4         0.100        22         0.550
+## 8   10        3         0.075        25         0.625
+## 9   11        5         0.125        30         0.750
+## 10  12        5         0.125        35         0.875
+## 11  13        2         0.050        37         0.925
+## 12  14        1         0.025        38         0.950
+## 13  15        2         0.050        40         1.000</code></pre>
+<p>Las observaciones son la cantidad de insectos muertos en cada repetición de un total de 40 ensayos o repeticiones del experimento. Según la tabla tenemos por ejemplo que</p>
+<ul>
+<li><p>En seis ensayos murieron de a 8 insectos.</p></li>
+<li><p>En el 10 % de los ensayos murieron de a 6 insectos.</p></li>
+<li><p>En 22 ensayos murieron entre 3 y 9 insectos.</p></li>
+<li><p>En el 45 % de los ensayos murieron de 9 a 15 insectos.</p></li>
+</ul>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Hacer una gráfica <code>Dotplot</code> para el número de insectos muertos. El data frame o tabla de datos se llama <code>insectos_muertos</code> y tiene solo una columna <code>insectos_m</code> con el conteo de insectos muertos. Interpretar el gráfico.</li>
+</ol>
+<pre class="r"><code>insectos_muertos &lt;- data.frame(insectos_m)
+library(ggplot2)
+ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) + 
+  geom_dotplot(fill = &quot;blue&quot;, color = &quot;black&quot;) + 
+  ggtitle(&quot;Dotplot para el número de insectos muertos - Didier Murillo&quot;)  + xlab(&quot;Número de insectos&quot;) + ylab(&quot;frecuencia&quot;)</code></pre>
+<pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="st3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div id="para-este-ejercicio-y-el-3-debe-usar-los-datos-class_survey-que-le-fueron-enviados-a-su-correo-electronico.-una-forma-de-leer-los-datos-es-la-siguiente.-usted-solo-debe-cambiar-la-ubicacion-del-archivo." class="section level4">
+<h4>2. Para este ejercicio y el 3 debe usar los datos <code>class_survey</code> que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.</h4>
+<pre class="r"><code>## Leer los datos  
+class_survey &lt;- read.table(&quot;/datos/DirectorioR/class_survey.txt&quot;,header=TRUE,sep = &quot;\t&quot;)
+head(class_survey)</code></pre>
+<pre><code>     Sex  GPA Religious_Importance Monthly_Parties Drinking_Days
+1   Male 2.67       Very Important               1             0
+2 Female 2.98     Fairly Important               2             0
+3 Female 2.67     Fairly Important               3             2
+4 Female 3.60        Not Important               8             8
+5 Female 3.76     Fairly Important               6             6
+6   Male 3.86        Not Important               5             7
+  Smoke_Cigarettes SATM SATV Height Weight
+1               No  700  700     67    190
+2               No  700  500     54    110
+3               No  470  470     65    225
+4              Yes  710  560     52    135
+5               No  600  520     72    128
+6               No  610  720     70    188</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li>Seleccione una variable continua y construya una tabla de frecuencias (use la función <code>tabla_frecuencia</code> que discutimos durante la clase).</li>
+</ol>
+<pre class="r"><code># Seleccioné la variable continua SATM
+print(tabla_frecuencia(class_survey$SATM))</code></pre>
+<pre><code>##   intervalos Freq Freq_Relativa Frec_Acum Freq_Abs_Acum    MC
+## 1  (300,356]    1   0.004524887         1   0.004524887 328.0
+## 2  (356,411]    2   0.009049774         3   0.013574661 383.5
+## 3  (411,467]   13   0.058823529        16   0.072398190 439.0
+## 4  (467,522]   26   0.117647059        42   0.190045249 494.5
+## 5  (522,578]   43   0.194570136        85   0.384615385 550.0
+## 6  (578,633]   55   0.248868778       140   0.633484163 605.5
+## 7  (633,689]   49   0.221719457       189   0.855203620 661.0
+## 8  (689,744]   23   0.104072398       212   0.959276018 716.5
+## 9  (744,800]    9   0.040723982       221   1.000000000 772.0</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Interprete un valor de cada columna en la tabla de frecuencias.</li>
+</ol>
+<ul>
+<li><p>Hay 55 estudiantes con puntajes en SATM entre 578 y 633</p></li>
+<li><p>El 10% de los estudiantes tienen puntajes de SATM entre 689 y 744</p></li>
+<li><p>Solo nueve estudiantes tienen puntajes de SATM mayores a 744</p></li>
+<li><p>3/ % de los estudiantes tiene puntajes de SATM superiores a 633</p></li>
+</ul>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lápiz). Comente si es simétrico o sesgado a derecha o izquierda.</p></li>
+<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
+</ol>
+<pre class="r"><code>hist(class_survey$SATM,main = &quot;Histograma para SATM - Didier Murillo&quot;,col = &quot;seagreen&quot;,xlab = &quot;SATM&quot;,ylab = &quot;Número de estudiantes&quot;)</code></pre>
+<p><img src="st3_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Claramente se ve que el histograma para SATM es sesgado a la izquierda. Esto quiere decir que la mayoría de estudiantes tienen puntajes altos para la prueba SATM.</p>
+</div>
+<div id="use-r-yo-rstudio-para-contestar-las-siguientes-preguntas" class="section level4">
+<h4>3. Use <code>R</code> y/o <code>RStudio</code> para contestar las siguientes preguntas</h4>
+<ol style="list-style-type: lower-alpha">
+<li>Seleccione una variable cualitativa (Categórica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</li>
+</ol>
+<pre class="r"><code>library(ggplot2)
+ggplot(class_survey, aes(fill=class_survey$Religious_Importance,  x=class_survey$Religious_Importance)) + 
+    geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Gráfico de barras por grupos - Didier Murillo&quot;) +
+  xlab(&quot;Importancia de la Religión&quot;) + ylab(&quot;Número de estudiantes&quot;)</code></pre>
+<p><img src="st3_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Podemos observar que a la mayoría de estudiantes en la muestra les parece muy importante la religión.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Haga un gráfico similar al siguiente plot de barras por grupos (Es decir usar las mismas variables). El título debe llevar su nombre. Interprete el gráfico.</li>
+</ol>
+<pre class="r"><code>library(ggplot2)
+ggplot(class_survey, aes(fill=class_survey$Smoke_Cigarettes,  x=class_survey$Religious_Importance)) + 
+    geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Gráfico de barras por grupos - Didier Murillo&quot;) +
+  xlab(&quot;Importancia de la Religión&quot;) + ylab(&quot;Número de estudiantes&quot;)</code></pre>
+<p><img src="st3_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Haga un gráfico circular con la variable <code>Religious_Importance</code>. Interprete el gráfico.</li>
+</ol>
+<pre class="r"><code>table(class_survey$Religious_Importance)</code></pre>
+<pre><code>## 
+## Fairly Important    Not Important   Very Important 
+##               97               61               63</code></pre>
+<pre class="r"><code>Importance &lt;- c(&quot;Fairly Important &quot;,&quot; Not Important&quot;, &quot;Very Important &quot;)
+num_Importance &lt;- c(97,61,63 )
+pct &lt;- round(num_Importance/sum(num_Importance)*100)
+Importance &lt;- paste(Importance, pct) # add percents to labels 
+Importance &lt;- paste(Importance,&quot;%&quot;,sep=&quot;&quot;) # ad % to labels 
+pie(num_Importance,labels = Importance, col=rainbow(length(Importance)),
+    main=&quot;Gráfico de sectores para importancia de la religión - Didier Murillo&quot;)</code></pre>
+<p><img src="st3_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="los-siguientes-datos-corresponden-al-numero-de-dias-que-ha-llovido-en-mayaguez-durante-los-ultimos-15-anos." class="section level4">
+<h4>4. Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.</h4>
+<p>311 293 285 306 311 309 313 309 320 311 319 307 320 273 297</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Hacer un gráfico de tallos y hojas de forma manual. Comentar si el gráfico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos.</p></li>
+<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>stem()</code> para crear el gráfico de tallos y hojas.</p></li>
+</ol>
+<pre class="r"><code> s &lt;- c(311, 293, 285, 306, 311, 309, 313, 309, 320, 311, 319, 307, 320, 273, 297)
+ stem(s,1)</code></pre>
+<pre><code>## 
+##   The decimal point is 1 digit(s) to the right of the |
+## 
+##   27 | 3
+##   28 | 5
+##   29 | 37
+##   30 | 6799
+##   31 | 11139
+##   32 | 00</code></pre>
+<p>El gráfico de tallos y hojas es sesgado a izquierda (No es una sorpresa!). Eso quiere decir que en Mayagüez llueve mucho.</p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Use <code>R</code> y/o <code>RStudio</code> para hacer un histograma de los datos. Compare su histograma con el gráfico de tallos y hojas.</li>
+</ol>
+<pre class="r"><code>hist(s,main = &quot;Histograma para lluvia en Mayagüez - Didier Murillo&quot;,col = &quot;cornflowerblue&quot;,xlab = &quot;Días de lluvia&quot;,ylab = &quot;Frecuencias&quot;)</code></pre>
+<p><img src="st3_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>El histograma es muy similar al gráfico de tallos y hojas. También encontramos el sesgo de la distribución de la lluvia a izquierda.</p>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
