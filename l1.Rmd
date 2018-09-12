@@ -1,0 +1,58 @@
+---
+title: 'Laboratorio # 1'
+output: html_document
+---
+
+### Su informe de laboratorio debe ser guardado en formato PDF y enviado al profesor vía correo electrónico al finalizar la clase. 
+
+### **Puntaje:** 7 puntos de BONO para el examen # 1
+
+### <span style="color:red">Parte 1</span>
+
+Use la siguiente información para responder las siguientes preguntas:
+
+```{r}
+ # tipos de frutas
+ Frutas <- factor(sample(c("CHINA","KIWI","UVA","FRESA"),size = 500,replace = TRUE))
+ # precio en dolares por cada 5 libras 
+ Precio <- round(c(rnorm(180,5,1),rgamma(20,2,5),rnorm(300,15,2)),1)
+```
+
+a) Construya un data frame con los dos vectores anteriores. Debe asignarle el nombre `datos_frutas` Su data frame debe lucir de la siguiente manera: 
+
+```{r,eval=TRUE,echo=FALSE}
+datos_frutas <- data.frame(Precio,Frutas)
+```
+
+```{r,eval=TRUE,echo=FALSE}
+head(datos_frutas,10)
+```
+
+b) Calcular la media, mediana, desviación estándar y el rango intercuartílico para el precio de cada fruta. Puede usar el siguiente código. solo debe cambiar el nombre de la función en `FUN=`. 
+
+```{r,eval=FALSE,echo=TRUE}
+ aggregate(datos_frutas$Precio, by=list(datos_frutas$Frutas), FUN=mean)[c(1,2)]
+```
+
+c) Con los datos obtenidos en b)
+
+* En promedio cual es la fruta más costosa
+* Según la media y la mediana. ¿Son simétricas las distribuciones del precio de cada fruta?
+* Según el RIC ¿Cuál es la fruta que tiene mayor variabilidad en su precio?
+
+d) Use la función `boxplot` para hacer un boxplot por grupos. Cada tipo de fruta es un grupo. Debe dar un color diferente a cada boxplot. Debe dar título que incluya su nombre de estudiante. Debe dar nombre para los ejes-y y x.
+
+e) Interprete el boxplot anterior y comente sobre la simetría de las distribuciones del precio de la fruta. 
+
+f) Ejecute el siguiente código. Debe cambiar el color en cada histogrma, use colores diferentes.  Tambien debe asignar título a cada gráfica siguiendo el ejemplo de la primera.
+
+```{r}
+ par(mfrow=c(2,2))
+ hist(datos_frutas$Precio[datos_frutas$Frutas== "CHINA"],xlab = "",main = "Histograma: Precio del CHINA")
+ hist(datos_frutas$Precio[datos_frutas$Frutas== "FRESA"],xlab = "")
+ hist(datos_frutas$Precio[datos_frutas$Frutas== "KIWI"],xlab = "")
+ hist(datos_frutas$Precio[datos_frutas$Frutas== "UVA"],xlab = "")
+```
+
+Ya usted conoce los datos de la media del precio de cada fruta. Ahora viendo los histogramas, ¿Cree usted que la media nos da un buen valor para aproximar el valor promedio de cada fruta? Explique!
+

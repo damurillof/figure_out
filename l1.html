@@ -11,7 +11,7 @@
 
 
 
-<title>Laboratorios</title>
+<title>Laboratorio # 1</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -202,13 +202,62 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Laboratorios</h1>
+<h1 class="title toc-ignore">Laboratorio # 1</h1>
 
 </div>
 
 
-<div id="laboratorio-1-httpsdidier-murillo.netlify.coml1" class="section level3">
-<h3>[Laboratorio 1] (<a href="https://didier-murillo.netlify.com/l1" class="uri">https://didier-murillo.netlify.com/l1</a>)</h3>
+<div id="su-informe-de-laboratorio-debe-ser-guardado-en-formato-pdf-y-enviado-al-profesor-via-correo-electronico-al-finalizar-la-clase." class="section level3">
+<h3>Su informe de laboratorio debe ser guardado en formato PDF y enviado al profesor vía correo electrónico al finalizar la clase.</h3>
+</div>
+<div id="puntaje-7-puntos-de-bono-para-el-examen-1" class="section level3">
+<h3><strong>Puntaje:</strong> 7 puntos de BONO para el examen # 1</h3>
+</div>
+<div id="parte-1" class="section level3">
+<h3><span style="color:red">Parte 1</span></h3>
+<p>Use la siguiente información para responder las siguientes preguntas:</p>
+<pre class="r"><code> # tipos de frutas
+ Frutas &lt;- factor(sample(c(&quot;CHINA&quot;,&quot;KIWI&quot;,&quot;UVA&quot;,&quot;FRESA&quot;),size = 500,replace = TRUE))
+ # precio en dolares por cada 5 libras 
+ Precio &lt;- round(c(rnorm(180,5,1),rgamma(20,2,5),rnorm(300,15,2)),1)</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li>Construya un data frame con los dos vectores anteriores. Debe asignarle el nombre <code>datos_frutas</code> Su data frame debe lucir de la siguiente manera:</li>
+</ol>
+<pre><code>##    Precio Frutas
+## 1     5.3  CHINA
+## 2     3.2  CHINA
+## 3     4.2  FRESA
+## 4     5.1  CHINA
+## 5     4.7    UVA
+## 6     4.2  FRESA
+## 7     5.1    UVA
+## 8     5.1  FRESA
+## 9     5.3   KIWI
+## 10    5.7   KIWI</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Calcular la media, mediana, desviación estándar y el rango intercuartílico para el precio de cada fruta. Puede usar el siguiente código. solo debe cambiar el nombre de la función en <code>FUN=</code>.</li>
+</ol>
+<pre class="r"><code> aggregate(datos_frutas$Precio, by=list(datos_frutas$Frutas), FUN=mean)[c(1,2)]</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Con los datos obtenidos en b)</li>
+</ol>
+<ul>
+<li>En promedio cual es la fruta más costosa</li>
+<li>Según la media y la mediana. ¿Son simétricas las distribuciones del precio de cada fruta?</li>
+<li>Según el RIC ¿Cuál es la fruta que tiene mayor variabilidad en su precio?</li>
+</ul>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><p>Use la función <code>boxplot</code> para hacer un boxplot por grupos. Cada tipo de fruta es un grupo. Debe dar un color diferente a cada boxplot. Debe dar título que incluya su nombre de estudiante. Debe dar nombre para los ejes-y y x.</p></li>
+<li><p>Interprete el boxplot anterior y comente sobre la simetría de las distribuciones del precio de la fruta.</p></li>
+<li><p>Ejecute el siguiente código. Debe cambiar el color en cada histogrma, use colores diferentes. Tambien debe asignar título a cada gráfica siguiendo el ejemplo de la primera.</p></li>
+</ol>
+<pre class="r"><code> par(mfrow=c(2,2))
+ hist(datos_frutas$Precio[datos_frutas$Frutas== &quot;CHINA&quot;],xlab = &quot;&quot;,main = &quot;Histograma: Precio del CHINA&quot;)
+ hist(datos_frutas$Precio[datos_frutas$Frutas== &quot;FRESA&quot;],xlab = &quot;&quot;)
+ hist(datos_frutas$Precio[datos_frutas$Frutas== &quot;KIWI&quot;],xlab = &quot;&quot;)
+ hist(datos_frutas$Precio[datos_frutas$Frutas== &quot;UVA&quot;],xlab = &quot;&quot;)</code></pre>
+<p><img src="l1_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Ya usted conoce los datos de la media del precio de cada fruta. Ahora viendo los histogramas, ¿Cree usted que la media nos da un buen valor para aproximar el valor promedio de cada fruta? Explique!</p>
 </div>
 
 
