@@ -237,7 +237,16 @@ Las muestras tienen prácticamente las mismas varianzas, es decir en términos a
 
 Otra medida de variabilidad es el coeficiente de variación (CV)
 
-**El Coeficiente de Variación CV** que se define como $CV=\frac{s}{|\bar{x}|}*100 \%$. Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 % entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra 2 es 7.87. Hagamos los cálculos en RStudio
+**El Coeficiente de Variación CV** 
+
+El coeficiente de variación se define como,
+
+$$CV=\displaystyle\dfrac{S}{|\bar{X}|}*100 \%$$. 
+
+Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 %, entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra dos es 7.87.
+
+
+Hagamos los cálculos en RStudio
 
 
 ```{r,comment=NA}
@@ -249,7 +258,7 @@ CV_n2 <- (sd_n2/mean_n2)*100
 print(CV_n2)
 ```
 
-Según los resultados para el CV, los datos de la muestra uno son mucho más variables con un CV=35.77, mientras que los de la muestra dos tienen poca variabilidad con un CV=7.87. 
+Según los resultados para el CV, los datos de la muestra uno son mucho más variables con un **CV=35.77**, mientras que los de la muestra dos tienen poca variabilidad con un **CV=7.87**. 
 
 ## Medidas de Posición
 

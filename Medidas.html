@@ -380,7 +380,11 @@ print(sd_n2)</code></pre>
 <pre><code>[1] 10.04837</code></pre>
 <p>Las muestras tienen prácticamente las mismas varianzas, es decir en términos absolutos tienen la misma variabilidad, pero se debe tener en cuenta que en la muestra uno, la varianza está mucho más alejada de la media, lo que significa que la muestra uno es bastante variable, mientras que la muestra dos es poco variable.</p>
 <p>Otra medida de variabilidad es el coeficiente de variación (CV)</p>
-<p><strong>El Coeficiente de Variación CV</strong> que se define como <span class="math inline">\(CV=\frac{s}{|\bar{x}|}*100 \%\)</span>. Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 % entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra 2 es 7.87. Hagamos los cálculos en RStudio</p>
+<p><strong>El Coeficiente de Variación CV</strong></p>
+<p>El coeficiente de variación se define como,</p>
+<p><span class="math display">\[CV=\displaystyle\dfrac{S}{|\bar{X}|}*100 \%\]</span>.</p>
+<p>Si el CV es mayor que 30 % la muestra es bastante variable y si CV es menor del 10 %, entonces existe poca variabilidad. Para el ejemplo el CV para la muestra uno es 35.77 y para la muestra dos es 7.87.</p>
+<p>Hagamos los cálculos en RStudio</p>
 <pre class="r"><code>## CV para n1
 CV_n1 &lt;- (sd_n1/mean_n1)*100
 print(CV_n1)</code></pre>
@@ -389,7 +393,7 @@ print(CV_n1)</code></pre>
 CV_n2 &lt;- (sd_n2/mean_n2)*100
 print(CV_n2)</code></pre>
 <pre><code>[1] 7.870784</code></pre>
-<p>Según los resultados para el CV, los datos de la muestra uno son mucho más variables con un CV=35.77, mientras que los de la muestra dos tienen poca variabilidad con un CV=7.87.</p>
+<p>Según los resultados para el CV, los datos de la muestra uno son mucho más variables con un <strong>CV=35.77</strong>, mientras que los de la muestra dos tienen poca variabilidad con un <strong>CV=7.87</strong>.</p>
 </div>
 <div id="medidas-de-posicion" class="section level2">
 <h2>Medidas de Posición</h2>
