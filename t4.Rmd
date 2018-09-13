@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#### **Fecha de entrega:** Viernes 14 de septiembre de 2018. Al iniciar la clase. 
+#### **Fecha de entrega:** Viernes 14 de septiembre de 2018. Al iniciar la clase.
 
 #### **Puntaje:** 20 puntos 
 
