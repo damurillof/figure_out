@@ -272,8 +272,11 @@ ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) +
   ggtitle(&quot;Dotplot para el número de insectos muertos - Didier Murillo&quot;)  + xlab(&quot;Número de insectos&quot;) + ylab(&quot;frecuencia&quot;)</code></pre>
 <pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="st3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<div id="para-este-ejercicio-y-el-3-debe-usar-los-datos-class_survey-que-le-fueron-enviados-a-su-correo-electronico.-una-forma-de-leer-los-datos-es-la-siguiente.-usted-solo-debe-cambiar-la-ubicacion-del-archivo." class="section level4">
-<h4>2. Para este ejercicio y el 3 debe usar los datos <code>class_survey</code> que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.</h4>
+</div>
+<div id="ejercicio-2" class="section level3">
+<h3>Ejercicio 2</h3>
+<div id="una-forma-de-leer-los-datos-es-la-siguiente.-usted-solo-debe-cambiar-la-ubicacion-del-archivo." class="section level4">
+<h4>Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.</h4>
 <pre class="r"><code>## Leer los datos  
 class_survey &lt;- read.table(&quot;/datos/DirectorioR/class_survey.txt&quot;,header=TRUE,sep = &quot;\t&quot;)
 head(class_survey)</code></pre>
@@ -315,22 +318,22 @@ print(tabla_frecuencia(class_survey$SATM))</code></pre>
 <li><p>Solo nueve estudiantes tienen puntajes de SATM mayores a 744</p></li>
 <li><p>3/ % de los estudiantes tiene puntajes de SATM superiores a 633</p></li>
 </ul>
-<ol start="3" style="list-style-type: lower-alpha">
-<li><p>Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lápiz). Comente si es simétrico o sesgado a derecha o izquierda.</p></li>
-<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.</p></li>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Use <code>R</code> y/o <code>RStudio</code> y la función <code>hist()</code> o el paquete <code>ggplot2</code> para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.</li>
 </ol>
 <pre class="r"><code>hist(class_survey$SATM,main = &quot;Histograma para SATM - Didier Murillo&quot;,col = &quot;seagreen&quot;,xlab = &quot;SATM&quot;,ylab = &quot;Número de estudiantes&quot;)</code></pre>
 <p><img src="st3_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Claramente se ve que el histograma para SATM es sesgado a la izquierda. Esto quiere decir que la mayoría de estudiantes tienen puntajes altos para la prueba SATM.</p>
 </div>
-<div id="use-r-yo-rstudio-para-contestar-las-siguientes-preguntas" class="section level4">
-<h4>3. Use <code>R</code> y/o <code>RStudio</code> para contestar las siguientes preguntas</h4>
+</div>
+<div id="problema-3." class="section level3">
+<h3>Problema 3.</h3>
 <ol style="list-style-type: lower-alpha">
 <li>Seleccione una variable cualitativa (Categórica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.</li>
 </ol>
 <pre class="r"><code>library(ggplot2)
 ggplot(class_survey, aes(fill=class_survey$Religious_Importance,  x=class_survey$Religious_Importance)) + 
-    geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Gráfico de barras por grupos - Didier Murillo&quot;) +
+    geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Gráfico de barras para importancia de la religión - Didier Murillo&quot;) +
   xlab(&quot;Importancia de la Religión&quot;) + ylab(&quot;Número de estudiantes&quot;)</code></pre>
 <p><img src="st3_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Podemos observar que a la mayoría de estudiantes en la muestra les parece muy importante la religión.</p>
@@ -358,12 +361,13 @@ pie(num_Importance,labels = Importance, col=rainbow(length(Importance)),
     main=&quot;Gráfico de sectores para importancia de la religión - Didier Murillo&quot;)</code></pre>
 <p><img src="st3_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
+<div id="problema-4." class="section level3">
+<h3>Problema 4.</h3>
 <div id="los-siguientes-datos-corresponden-al-numero-de-dias-que-ha-llovido-en-mayaguez-durante-los-ultimos-15-anos." class="section level4">
-<h4>4. Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.</h4>
+<h4>Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.</h4>
 <p>311 293 285 306 311 309 313 309 320 311 319 307 320 273 297</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Hacer un gráfico de tallos y hojas de forma manual. Comentar si el gráfico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos.</p></li>
-<li><p>Use <code>R</code> y/o <code>RStudio</code> y la función <code>stem()</code> para crear el gráfico de tallos y hojas.</p></li>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Use <code>R</code> y/o <code>RStudio</code> y la función <code>stem()</code> para crear el gráfico de tallos y hojas.</li>
 </ol>
 <pre class="r"><code> s &lt;- c(311, 293, 285, 306, 311, 309, 313, 309, 320, 311, 319, 307, 320, 273, 297)
  stem(s,1)</code></pre>

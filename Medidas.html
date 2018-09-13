@@ -296,9 +296,17 @@ median(carros_outlier)</code></pre>
 <li><strong>La moda</strong> es el valor (o valores) que se repite con mayor frecuencia en la muestra. La Moda puede aplicarse tanto a datos cuantitativos como cualitativos.</li>
 </ul>
 <p>En RStudio la moda se puede calcular ejecutando la siguiente función (Se debe copiar y pegar en R, luego ejecutarla.)</p>
-<pre class="r"><code>getmode &lt;- function(v) {
-   uniqv &lt;- unique(v)
-   uniqv[which.max(tabulate(match(v, uniqv)))]
+<pre class="r"><code>getmode &lt;- function (x, na.rm = FALSE) 
+{
+  if (!is.atomic(x) | is.matrix(x)) 
+    stop(&quot;Mode supports only atomic vectors. Use sapply(*, Mode) instead.&quot;)
+  if (na.rm) 
+    x &lt;- na.omit(x)
+  tab &lt;- table(x)
+  res &lt;- names(which(tab == max(tab)))
+  if (!inherits(x, &quot;factor&quot;)) 
+    class(res) &lt;- class(x)
+  return(as.vector(res))
 }</code></pre>
 <p><strong>Ejemplo</strong>. Los siguientes datos representan el número de veces que 11 personas van al cine mensualmente: 3, 4, 4, 5, 0, 2, 1, 5, 4, 5 y 4.</p>
 <p>Hallar la moda.</p>

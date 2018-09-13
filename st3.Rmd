@@ -72,7 +72,9 @@ ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) +
   ggtitle("Dotplot para el número de insectos muertos - Didier Murillo")  + xlab("Número de insectos") + ylab("frecuencia")
 ```
 
-#### 2. Para este ejercicio  y el 3 debe usar los datos `class_survey` que le fueron enviados a su correo electrónico. Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
+
+### Ejercicio 2
+#### Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
 
 ```{r,comment=NA,eval=T,echo=T}
 ## Leer los datos  
@@ -98,10 +100,6 @@ b) Interprete un valor de cada columna en la tabla de frecuencias.
 
 * 3/ % de los estudiantes tiene puntajes de SATM superiores a 633
 
-c) Use los puntos medios para dibujar un histograma de forma manual (Usando sus manos, papel y lápiz). Comente si es simétrico o sesgado a derecha o izquierda. 
-
-
-
 d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.
 
 ```{r}
@@ -110,14 +108,14 @@ hist(class_survey$SATM,main = "Histograma para SATM - Didier Murillo",col = "sea
 
 Claramente se ve que el histograma para SATM es sesgado a la izquierda. Esto quiere decir que la mayoría de estudiantes tienen puntajes altos para la prueba SATM.
 
-#### 3. Use `R` y/o `RStudio` para contestar las siguientes preguntas
+### Problema 3.
 
 a)  Seleccione una variable cualitativa (Categórica) y haga un gráfico de barras. La gráfica debe tener título y nombre en los ejes x-y. Interprete el gráfico.
 
 ```{r,comment=NA,eval=T,echo=T}
 library(ggplot2)
 ggplot(class_survey, aes(fill=class_survey$Religious_Importance,  x=class_survey$Religious_Importance)) + 
-    geom_bar(position="dodge") + ggtitle("Gráfico de barras por grupos - Didier Murillo") +
+    geom_bar(position="dodge") + ggtitle("Gráfico de barras para importancia de la religión - Didier Murillo") +
   xlab("Importancia de la Religión") + ylab("Número de estudiantes")
 ```
 
@@ -147,12 +145,13 @@ pie(num_Importance,labels = Importance, col=rainbow(length(Importance)),
 ```
 
 
+### Problema 4.
 
-#### 4. Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.
+#### Los siguientes datos corresponden al número de días que ha llovido en Mayagüez durante los últimos 15 años.
 
 311 293 285 306 311 309 313 309 320 311 319 307 320 273 297
 
-a) Hacer un gráfico de tallos y hojas de forma manual. Comentar si el gráfico es simétrico o sesgado a izquierda o derecha y si hay presencia de datos atípicos. 
+
 
 b) Use `R` y/o `RStudio` y la función `stem()` para crear el gráfico de tallos y hojas.
 

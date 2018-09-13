@@ -112,9 +112,17 @@ median(carros_outlier)
 En RStudio la moda se puede calcular ejecutando la siguiente función (Se debe copiar y pegar en R, luego ejecutarla.)
 
 ```{r,comment=NA}
-getmode <- function(v) {
-   uniqv <- unique(v)
-   uniqv[which.max(tabulate(match(v, uniqv)))]
+getmode <- function (x, na.rm = FALSE) 
+{
+  if (!is.atomic(x) | is.matrix(x)) 
+    stop("Mode supports only atomic vectors. Use sapply(*, Mode) instead.")
+  if (na.rm) 
+    x <- na.omit(x)
+  tab <- table(x)
+  res <- names(which(tab == max(tab)))
+  if (!inherits(x, "factor")) 
+    class(res) <- class(x)
+  return(as.vector(res))
 }
 ```
 
