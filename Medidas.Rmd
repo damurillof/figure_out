@@ -275,11 +275,11 @@ a) 6, 8, 4, 12, 15, 17, 23, 18, 25, 11.
 
 Los datos ordenados serán: 4, 6, 8, 11, 12, 15, 17, 18, 23, 25.
 
-La primera mitad es: 4, 6, 8, 11, 12, luego Q1 = 8.
+La primera mitad es: 4, 6, 8, 11, 12, luego $Q_1 = 8$.
 
-La segunda mitad es: 15, 17, 18, 23, 25, luego Q3 = 18
+La segunda mitad es: 15, 17, 18, 23, 25, luego $Q_3 = 18$.
 
-En RStudio se pueden calcular los cuartiles con la función `summary()` la cual me arroja un resumen de los datos. 
+En RStudio se pueden encontrar algunas medidas de resumen que incluyen a los cuartiles con la función `summary()` la cual me arroja un resumen de los datos. 
 
 
 ```{r,comment=NA}
@@ -291,9 +291,9 @@ b)  10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44.
 
 Los datos ordenados serán: 10, 13, 17, 18, 22, 23, 28, 29, 39, 40, 44.
 
-La primera mitad es: 10, 13, 17, 18, 22, 23, luego Q1 =  17.5
+La primera mitad es: 10, 13, 17, 18, 22, 23, luego $Q_1 =  17.5$.
 
-La segunda mitad es: 23, 28, 29,39, 40, 44, luego Q3 =  34
+La segunda mitad es: 23, 28, 29,39, 40, 44, luego $Q_3 =  34$.
 
 ```{r,comment=NA}
 data2 <- c(10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44)
@@ -302,9 +302,11 @@ summary(data2)
 
 ### Rango Intercuartílico
 
-A la diferencia de $Q_3$ y $Q_1$ se le llama **Rango Intercuartílico**, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”.
+A la diferencia de $Q_3$ y $Q_1$ se le llama **Rango Intercuartílico**, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”. En español se acostumbra la abreviación RIC. En ingles es IQR.
 
-$$RIC=Q_3-Q_1$$
+$$\text{RIC}=Q_3-Q_1$$
+
+En `R` y/o `RStudio` la función `IQR` encuentra el rango intercuatílico.
 
 ### Los Deciles
 
@@ -326,9 +328,11 @@ Paso para encontrar el $P^{th}$ percentil
 
 2.  Encuentre la ubicación del percentil $P^{th} = \dfrac{np}{100}$, redondear hacia adelante. 
 
-3.  Encuentra el percentil $P^{th}$ en esa ubicación.
+3.  Encuentre el percentil $P^{th}$ en esa ubicación.
 
-Ejemplo: Encuentre el percentil 67 de los siguientes datos: 46 25 34 35 41 41 46 46  22 47 49 54 54 59 60.
+> Ejemplo: 
+
+Encuentre el percentil 67 de los siguientes datos: 46 25 34 35 41 41 46 46  22 47 49 54 54 59 60.
 
 Solución:
 

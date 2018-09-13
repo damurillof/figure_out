@@ -406,9 +406,9 @@ print(CV_n2)</code></pre>
 <li>6, 8, 4, 12, 15, 17, 23, 18, 25, 11.</li>
 </ol>
 <p>Los datos ordenados serán: 4, 6, 8, 11, 12, 15, 17, 18, 23, 25.</p>
-<p>La primera mitad es: 4, 6, 8, 11, 12, luego Q1 = 8.</p>
-<p>La segunda mitad es: 15, 17, 18, 23, 25, luego Q3 = 18</p>
-<p>En RStudio se pueden calcular los cuartiles con la función <code>summary()</code> la cual me arroja un resumen de los datos.</p>
+<p>La primera mitad es: 4, 6, 8, 11, 12, luego <span class="math inline">\(Q_1 = 8\)</span>.</p>
+<p>La segunda mitad es: 15, 17, 18, 23, 25, luego <span class="math inline">\(Q_3 = 18\)</span>.</p>
+<p>En RStudio se pueden encontrar algunas medidas de resumen que incluyen a los cuartiles con la función <code>summary()</code> la cual me arroja un resumen de los datos.</p>
 <pre class="r"><code>data &lt;- c(6, 8, 4, 12, 15, 17, 23, 18, 25, 11)
 summary(data)</code></pre>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -417,8 +417,8 @@ summary(data)</code></pre>
 <li>10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44.</li>
 </ol>
 <p>Los datos ordenados serán: 10, 13, 17, 18, 22, 23, 28, 29, 39, 40, 44.</p>
-<p>La primera mitad es: 10, 13, 17, 18, 22, 23, luego Q1 = 17.5</p>
-<p>La segunda mitad es: 23, 28, 29,39, 40, 44, luego Q3 = 34</p>
+<p>La primera mitad es: 10, 13, 17, 18, 22, 23, luego <span class="math inline">\(Q_1 = 17.5\)</span>.</p>
+<p>La segunda mitad es: 23, 28, 29,39, 40, 44, luego <span class="math inline">\(Q_3 = 34\)</span>.</p>
 <pre class="r"><code>data2 &lt;- c(10, 22, 17, 13, 28, 40, 29, 18, 23, 39, 44)
 summary(data2)</code></pre>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -426,8 +426,9 @@ summary(data2)</code></pre>
 </div>
 <div id="rango-intercuartilico" class="section level3">
 <h3>Rango Intercuartílico</h3>
-<p>A la diferencia de <span class="math inline">\(Q_3\)</span> y <span class="math inline">\(Q_1\)</span> se le llama <strong>Rango Intercuartílico</strong>, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”.</p>
-<p><span class="math display">\[RIC=Q_3-Q_1\]</span></p>
+<p>A la diferencia de <span class="math inline">\(Q_3\)</span> y <span class="math inline">\(Q_1\)</span> se le llama <strong>Rango Intercuartílico</strong>, ésta es una medida de variabilidad que puede ser usada en lugar de la desviación estándar, cuando hay “outliers”. En español se acostumbra la abreviación RIC. En ingles es IQR.</p>
+<p><span class="math display">\[\text{RIC}=Q_3-Q_1\]</span></p>
+<p>En <code>R</code> y/o <code>RStudio</code> la función <code>IQR</code> encuentra el rango intercuatílico.</p>
 </div>
 <div id="los-deciles" class="section level3">
 <h3>Los Deciles</h3>
@@ -446,9 +447,12 @@ summary(data2)</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Ordenar el conjunto de datos de menor a mayor.</p></li>
 <li><p>Encuentre la ubicación del percentil <span class="math inline">\(P^{th} = \dfrac{np}{100}\)</span>, redondear hacia adelante.</p></li>
-<li><p>Encuentra el percentil <span class="math inline">\(P^{th}\)</span> en esa ubicación.</p></li>
+<li><p>Encuentre el percentil <span class="math inline">\(P^{th}\)</span> en esa ubicación.</p></li>
 </ol>
-<p>Ejemplo: Encuentre el percentil 67 de los siguientes datos: 46 25 34 35 41 41 46 46 22 47 49 54 54 59 60.</p>
+<blockquote>
+<p>Ejemplo:</p>
+</blockquote>
+<p>Encuentre el percentil 67 de los siguientes datos: 46 25 34 35 41 41 46 46 22 47 49 54 54 59 60.</p>
 <p>Solución:</p>
 <ol style="list-style-type: decimal">
 <li>Ordenar los datos.</li>
