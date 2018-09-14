@@ -22,19 +22,19 @@ Pensemos en lo siguiente:
 3.  ¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101? 
 
 
-Si intentamos responder a nuestras preguntas de investigación, notamose que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen por persona en ciarta población.
+Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen por persona en cierta población.
 
 
-Entonces la forma correcta es nuevamente a traves de una muestra tomada de la población. 
+Entonces la forma correcta es nuevamente a través de una muestra tomada de la población. 
 
 
 ### Poblaciones y muestras aleatorias
 
-Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o conocer ona o más caracteristicas  sobre la población:
+Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o conocer una o más características  sobre la población:
 
 Para la pregunta de investigación:
 
-"¿Qué porcentaje de estudiantes universitarios tine problemas para dormir?".
+"¿Qué porcentaje de estudiantes universitarios tiene problemas para dormir?".
 
 La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo  la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla. 
 
@@ -72,7 +72,7 @@ Cada alumno debe responder "Sí" o "No". Por lo tanto, tenemos un listado con la
 
 $$\{Sí, No\}$$
 
-Para responder a mi segunda pregunta de investigación, necesitaríamos saber cuántas horas de sueño según una muestra aleatoria de estudiantes universitarios. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, si permitimos que $h$ denote el número de horas dormidas, escribiríamos el listado de posibles resultados como:
+Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño según una muestra aleatoria de estudiantes universitarios. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, si permitimos que $h$ denote el número de horas dormidas, escribiríamos el listado de posibles resultados como:
 
 
 $$\{h: h ≥ 0 \quad horas\}$$
@@ -90,9 +90,9 @@ No siempre hay una sola forma de obtener una respuesta a una pregunta de investi
 Es muy común encontrarnos con situaciones cotidianas imprevisibles; como por ejemplo, saber si nuestro equipo de fútbol favorito ganará el próximo partido, saber cómo será el clima del día en que tenemos planeado un paseo, saber cuál cara de un dado quedará arriba después de lanzarlo. Este tipo de experiencias son llamadas experimentos aleatorios, en ellas está presente el azar, y su resultado es incierto, es decir no lo conoceremos sino después de realizar dicha experiencia. Lanzar una moneda corriente, escoger el número ganador en una lotería, sacar una bola de una urna que tiene bolas de distintos colores sin ver su interior, todos estos son experimentos aleatorios.
 
 
-**Experimento aleatorio:** Es aquel que realizándolo bajo las mismas condiciones iniciales, puede tener diferentes resultados. Este resultado sólo se conoce después de realizar el experimento.
+**Experimento aleatorio:** Es aquel que realizándose bajo las mismas condiciones iniciales, puede tener diferentes resultados. Este resultado sólo se conoce después de realizar el experimento.
 
-**Experimento Determinista:** Es aquel para el que realizándolo bajo las mismas condiciones iniciales, siempre se obtiene el mismo resultado.
+**Experimento Determinista:** Es aquel para el que realizándose bajo las mismas condiciones iniciales, siempre se obtiene el mismo resultado.
 
 
 ##Espacios Muestrales y eventos
@@ -186,10 +186,6 @@ $A \cup B$ y es el evento que contiene los elementos que están en $A$ o $B$ o e
 **Propiedad Distributiva**: $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$  y   $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
 
 **Leyes de Morgan**: $(A \cup B)^c = A^c \cap B^c$  y  $(A \cap B)^c = A^c \cup B^c$
-
-
-
-
 
 ## ¿Qué es probabilidad?
 
