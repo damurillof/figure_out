@@ -10,7 +10,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Algunas preguntas de investigación
+## Motivación: Algunas preguntas de investigación
+
 
 Pensemos en lo siguiente:
 
@@ -22,15 +23,16 @@ Pensemos en lo siguiente:
 3.  ¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101? 
 
 
-Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen por persona en cierta población.
+Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, cuantas horas  duerme un estudiante o cuántas tarjetas de crédito tienen por persona en cierta población.
 
 
-Entonces la forma correcta es nuevamente a través de una muestra tomada de la población. 
+Entonces la forma correcta es nuevamente a través de una muestra aleatoria tomada de la población. 
 
 
 ### Poblaciones y muestras aleatorias
 
-Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o conocer una o más características  sobre la población:
+
+En general tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria y la usamos para aprender algo, o conocer una o más características de la población.
 
 Para la pregunta de investigación:
 
@@ -40,21 +42,24 @@ La población de interés son todos los estudiantes universitarios. Por lo tanto
 
 Para la pregunta de investigación 
 
-"¿Cuál es la probabilidad de que un estudiante del Colegio  seleccionado al azar duerma más de 7 horas cada noche?". 
+"¿Cuál es la posibilidad de que un estudiante del Colegio  seleccionado al azar duerma más de 7 horas cada noche?". 
 
 La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar.
 
 Ahora para la pregunta de investigación 
 
 
-"¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?", La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101. 
+"¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?".
 
 
+La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101. 
 
-Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria, es decir los datos que seleccionamos. No podemos predecir los posibles resultados con certeza, pero al menos podemos crear una lista de posibles resultados.
+
+Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria. No podemos predecir los posibles resultados con exactitud, pero al menos podemos crear un listado de posibles resultados.
 
 
 Notemos que para cada pregunta vamos a obtener un listado de posibles respuestas.
+
 
 Por ejemplo, para responder a la primera pregunta de investigación, 
 
@@ -68,21 +73,25 @@ entonces, primero tendríamos que tomar una muestra aleatoria de estudiantes uni
 "¿Actualmente tiene problemas para conciliar el sueño?" 
 
 
-Cada alumno debe responder "Sí" o "No". Por lo tanto, tenemos un listado con las posibles respuestas
+Cada estudiante debe responder "Sí" o "No". Por lo tanto, tenemos un listado con las posibles respuestas
 
 $$\{Sí, No\}$$
 
-Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño según una muestra aleatoria de estudiantes universitarios. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, si permitimos que $h$ denote el número de horas dormidas, escribiríamos el listado de posibles resultados como:
+Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño duermen los estudiantes universitarios, según una muestra aleatoria. Una forma de obtener esta información es pedirle a cada estudiante seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, digamos que $h$ denota el número de horas dormidas, entonces el listado de posibles resultados es:
 
 
-$$\{h: h ≥ 0 \quad horas\}$$
+$$\{h: h ≥ 0,\quad horas\}$$
 
+Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, podríamos preguntarles a todos los estudiantes actuales de ESMA3101 
 
-Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, cuando intente responder mi cuarta pregunta de investigación, podríamos preguntarles a todos los estudiantes actuales de ESMA3101 "¿Cuántas tarjetas de crédito tienen?" En ese caso, escribiríamos nuestro listado de posibles respuestas como:
+"¿Cuántas tarjetas de crédito tienen?" 
+
+En ese caso, escribiríamos nuestro listado de posibles respuestas como:
+
 
 $$\{0, 1, 2, 3,...\}$$
 
-No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el espacio muestral si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios "¿durmió más de siete horas anoche?"
+No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el listado de posibles respuestas, si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios "¿Durmió más de siete horas anoche?".
 
 
 ## Experimentos Aleatorios
@@ -98,10 +107,13 @@ Es muy común encontrarnos con situaciones cotidianas imprevisibles; como por ej
 ##Espacios Muestrales y eventos
 
 
-A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda corriente tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral.
+A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados tal como vimos en las preguntas de investigación. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral. Entonces el espacio muestral se define como
+
+$$\text{El conjunto de todos los posibles resultados al realizar un experimento aleatorio.}$$
 
 
-Ejemplos Espacios muestrales:
+
+> Ejemplos: Espacios muestrales:
 
 
 1. Consideremos el experimento de lanzar un dado, ¿Cuál es el espacio muestral para este experimento?
@@ -163,15 +175,14 @@ $$S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(C
 **C**: Obtener cara.
 
 
-#### **Si lanzamos un dado tres veces. Que posibles eventos pueden ocurrir**
+#### **Si lanzamos un dado tres veces. ¿Qué posibles eventos pueden ocurrir?**
 
 
 **Evento Nulo**: Es aquél que no tiene elementos. Se representa  por $\emptyset$.
 
 ### Relaciones entre eventos
 
-**Unión de eventos:** Dados dos eventos $A$ y $B$ de un mismo espacio muestral su unión se representa por 
-$A \cup B$ y es el evento que contiene los elementos que están en $A$ o $B$ o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.
+**Unión de eventos:** Dados dos eventos $A$ y $B$ de un mismo espacio muestral su unión se representa por $A \cup B$ y es el evento que contiene los elementos que están en $A$ o $B$ o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.
 
 **Intersección de eventos**: Dados dos eventos $A$ y $B$ de un mismo espacio muestral su intersección se representa por $A \cap B$, y es el evento que contiene los elementos que están en $A$ y en $B$ al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente. 
 
@@ -210,13 +221,13 @@ Ahora pensemos en algunos eventos según lo aprendido:
 ¿Qué probabilidad le asignaría a cada uno de estos eventos?
 
 
-**Un evento o eventos que posiblemente ocurran**: Ganar el Power Ball, Qué un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.
+**Un evento o eventos que posiblemente ocurran**: Ganar el Power Ball, Que un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.
 
 ¿Qué probabilidad le asignaría a cada uno de estos eventos?
 
 ## Métodos  para  asignar  probabilidades 
 
-### Método axiomático
+### I.  Método axiomático
 
 La  Probabilidad es  considerada como una función de valor real definida sobre una colección de eventos de un espacio muestral $S$ que satisface los siguientes axiomas:
 
@@ -231,9 +242,8 @@ si A1, A2, ... son mutuamente excluyentes.
 <center>**Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir $A \cap B = \emptyset$**</center>
 
 
-
-
 >  Propiedades de la probabilidad.
+
 
 1.  $P(\emptyset)=0$
 
@@ -322,7 +332,7 @@ La otra forma es mediante la tabla de doble entrada, como vemos a continuación.
 
 ![](tabla3.png)
 
-### Método clásico
+### II. Método clásico
 
 > **Definición**
 
@@ -358,7 +368,7 @@ Entonces,
 
 $$P(A)=\dfrac{\#A}{N}=\dfrac{15}{36}$$
 
-### Método frecuentista
+### III.  Método frecuentista
 
 
 Si un experimento se repite $n$ veces y $n(A)$ de esa veces ocurre el evento $A$, entonces la frecuencia relativa de $A$ se define como:

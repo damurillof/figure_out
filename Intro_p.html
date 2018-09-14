@@ -208,7 +208,7 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#algunas-preguntas-de-investigacion">Algunas preguntas de investigación</a><ul>
+<li><a href="#motivacion-algunas-preguntas-de-investigacion">Motivación: Algunas preguntas de investigación</a><ul>
 <li><a href="#poblaciones-y-muestras-aleatorias">Poblaciones y muestras aleatorias</a></li>
 </ul></li>
 <li><a href="#experimentos-aleatorios">Experimentos Aleatorios</a></li>
@@ -218,47 +218,50 @@ $(document).ready(function () {
 </ul></li>
 <li><a href="#que-es-probabilidad">¿Qué es probabilidad?</a></li>
 <li><a href="#metodos-para-asignar-probabilidades">Métodos para asignar probabilidades</a><ul>
-<li><a href="#metodo-axiomatico">Método axiomático</a></li>
-<li><a href="#metodo-clasico">Método clásico</a></li>
-<li><a href="#metodo-frecuentista">Método frecuentista</a></li>
+<li><a href="#i.-metodo-axiomatico">I. Método axiomático</a></li>
+<li><a href="#ii.-metodo-clasico">II. Método clásico</a></li>
+<li><a href="#iii.-metodo-frecuentista">III. Método frecuentista</a></li>
 </ul></li>
 </ul>
 </div>
 
-<div id="algunas-preguntas-de-investigacion" class="section level2">
-<h2>Algunas preguntas de investigación</h2>
+<div id="motivacion-algunas-preguntas-de-investigacion" class="section level2">
+<h2>Motivación: Algunas preguntas de investigación</h2>
 <p>Pensemos en lo siguiente:</p>
 <ol style="list-style-type: decimal">
 <li><p>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</p></li>
 <li><p>¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de siete horas cada noche?</p></li>
 <li><p>¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?</p></li>
 </ol>
-<p>Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen por persona en cierta población.</p>
-<p>Entonces la forma correcta es nuevamente a través de una muestra tomada de la población.</p>
+<p>Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, cuantas horas duerme un estudiante o cuántas tarjetas de crédito tienen por persona en cierta población.</p>
+<p>Entonces la forma correcta es nuevamente a través de una muestra aleatoria tomada de la población.</p>
 <div id="poblaciones-y-muestras-aleatorias" class="section level3">
 <h3>Poblaciones y muestras aleatorias</h3>
-<p>Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o conocer una o más características sobre la población:</p>
+<p>En general tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria y la usamos para aprender algo, o conocer una o más características de la población.</p>
 <p>Para la pregunta de investigación:</p>
 <p>“¿Qué porcentaje de estudiantes universitarios tiene problemas para dormir?”.</p>
 <p>La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla.</p>
 <p>Para la pregunta de investigación</p>
-<p>“¿Cuál es la probabilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”.</p>
+<p>“¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”.</p>
 <p>La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar.</p>
 <p>Ahora para la pregunta de investigación</p>
-<p>“¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”, La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101.</p>
-<p>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria, es decir los datos que seleccionamos. No podemos predecir los posibles resultados con certeza, pero al menos podemos crear una lista de posibles resultados.</p>
+<p>“¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”.</p>
+<p>La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101.</p>
+<p>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria. No podemos predecir los posibles resultados con exactitud, pero al menos podemos crear un listado de posibles resultados.</p>
 <p>Notemos que para cada pregunta vamos a obtener un listado de posibles respuestas.</p>
 <p>Por ejemplo, para responder a la primera pregunta de investigación,</p>
 <p>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</p>
 <p>entonces, primero tendríamos que tomar una muestra aleatoria de estudiantes universitarios de puerto Rico. Y preguntarles a cada uno:</p>
 <p>“¿Actualmente tiene problemas para conciliar el sueño?”</p>
-<p>Cada alumno debe responder “Sí” o “No”. Por lo tanto, tenemos un listado con las posibles respuestas</p>
+<p>Cada estudiante debe responder “Sí” o “No”. Por lo tanto, tenemos un listado con las posibles respuestas</p>
 <p><span class="math display">\[\{Sí, No\}\]</span></p>
-<p>Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño según una muestra aleatoria de estudiantes universitarios. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, si permitimos que <span class="math inline">\(h\)</span> denote el número de horas dormidas, escribiríamos el listado de posibles resultados como:</p>
-<p><span class="math display">\[\{h: h ≥ 0 \quad horas\}\]</span></p>
-<p>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, cuando intente responder mi cuarta pregunta de investigación, podríamos preguntarles a todos los estudiantes actuales de ESMA3101 “¿Cuántas tarjetas de crédito tienen?” En ese caso, escribiríamos nuestro listado de posibles respuestas como:</p>
+<p>Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño duermen los estudiantes universitarios, según una muestra aleatoria. Una forma de obtener esta información es pedirle a cada estudiante seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, digamos que <span class="math inline">\(h\)</span> denota el número de horas dormidas, entonces el listado de posibles resultados es:</p>
+<p><span class="math display">\[\{h: h ≥ 0,\quad horas\}\]</span></p>
+<p>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, podríamos preguntarles a todos los estudiantes actuales de ESMA3101</p>
+<p>“¿Cuántas tarjetas de crédito tienen?”</p>
+<p>En ese caso, escribiríamos nuestro listado de posibles respuestas como:</p>
 <p><span class="math display">\[\{0, 1, 2, 3,...\}\]</span></p>
-<p>No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el espacio muestral si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios “¿durmió más de siete horas anoche?”</p>
+<p>No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el listado de posibles respuestas, si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios “¿Durmió más de siete horas anoche?”.</p>
 </div>
 </div>
 <div id="experimentos-aleatorios" class="section level2">
@@ -269,8 +272,11 @@ $(document).ready(function () {
 </div>
 <div id="espacios-muestrales-y-eventos" class="section level2">
 <h2>Espacios Muestrales y eventos</h2>
-<p>A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda corriente tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral.</p>
-<p>Ejemplos Espacios muestrales:</p>
+<p>A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados tal como vimos en las preguntas de investigación. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral. Entonces el espacio muestral se define como</p>
+<p><span class="math display">\[\text{El conjunto de todos los posibles resultados al realizar un experimento aleatorio.}\]</span></p>
+<blockquote>
+<p>Ejemplos: Espacios muestrales:</p>
+</blockquote>
 <ol style="list-style-type: decimal">
 <li>Consideremos el experimento de lanzar un dado, ¿Cuál es el espacio muestral para este experimento?</li>
 </ol>
@@ -313,7 +319,7 @@ $(document).ready(function () {
 <p><strong>B</strong>: Obtener una cruz y un número mayor que cinco.</p>
 <p><strong>C</strong>: Obtener cara.</p>
 <div id="si-lanzamos-un-dado-tres-veces.-que-posibles-eventos-pueden-ocurrir" class="section level4">
-<h4><strong>Si lanzamos un dado tres veces. Que posibles eventos pueden ocurrir</strong></h4>
+<h4><strong>Si lanzamos un dado tres veces. ¿Qué posibles eventos pueden ocurrir?</strong></h4>
 <p><strong>Evento Nulo</strong>: Es aquél que no tiene elementos. Se representa por <span class="math inline">\(\emptyset\)</span>.</p>
 </div>
 </div>
@@ -343,13 +349,13 @@ $(document).ready(function () {
 <p>¿Qué probabilidad le asignaría a cada uno de estos eventos?</p>
 <p><strong>Un evento o eventos que son imposibles que ocurran</strong>: Que no hayan huracanes en el caribe, obtener un número 8 al lanzar un dado.</p>
 <p>¿Qué probabilidad le asignaría a cada uno de estos eventos?</p>
-<p><strong>Un evento o eventos que posiblemente ocurran</strong>: Ganar el Power Ball, Qué un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.</p>
+<p><strong>Un evento o eventos que posiblemente ocurran</strong>: Ganar el Power Ball, Que un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.</p>
 <p>¿Qué probabilidad le asignaría a cada uno de estos eventos?</p>
 </div>
 <div id="metodos-para-asignar-probabilidades" class="section level2">
 <h2>Métodos para asignar probabilidades</h2>
-<div id="metodo-axiomatico" class="section level3">
-<h3>Método axiomático</h3>
+<div id="i.-metodo-axiomatico" class="section level3">
+<h3>I. Método axiomático</h3>
 <p>La Probabilidad es considerada como una función de valor real definida sobre una colección de eventos de un espacio muestral <span class="math inline">\(S\)</span> que satisface los siguientes axiomas:</p>
 <p>Ax1. <span class="math inline">\(P(S)=1\)</span></p>
 <p>Ax2. <span class="math inline">\(P(A) \geq 0\)</span></p>
@@ -433,8 +439,8 @@ $(document).ready(function () {
 
 </div>
 </div>
-<div id="metodo-clasico" class="section level3">
-<h3>Método clásico</h3>
+<div id="ii.-metodo-clasico" class="section level3">
+<h3>II. Método clásico</h3>
 <blockquote>
 <p><strong>Definición</strong></p>
 </blockquote>
@@ -464,8 +470,8 @@ $(document).ready(function () {
 <p>Entonces,</p>
 <p><span class="math display">\[P(A)=\dfrac{\#A}{N}=\dfrac{15}{36}\]</span></p>
 </div>
-<div id="metodo-frecuentista" class="section level3">
-<h3>Método frecuentista</h3>
+<div id="iii.-metodo-frecuentista" class="section level3">
+<h3>III. Método frecuentista</h3>
 <p>Si un experimento se repite <span class="math inline">\(n\)</span> veces y <span class="math inline">\(n(A)\)</span> de esa veces ocurre el evento <span class="math inline">\(A\)</span>, entonces la frecuencia relativa de <span class="math inline">\(A\)</span> se define como:</p>
 <p><span class="math display">\[\frac{n(A)}{n} \to P(A)\]</span></p>
 <p>La probabilidad es el valor en el cual se estabiliza la frecuencia relativa del evento después de haber repetido el experimento un número grande de veces. La existencia de este valor está garantizando por un resultado llamado La Ley de los Grandes números. Desde el punto de vista práctico se puede considerar que la frecuencia relativa de un evento es un estimado de la probabilidad de ocurrencia del evento.</p>
@@ -488,9 +494,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0284 0.0587 0.0844 0.1086 0.1409 0.1656 0.1379 0.1132 0.0805 0.0548 
+0.0281 0.0552 0.0789 0.1088 0.1374 0.1673 0.1348 0.1156 0.0876 0.0576 
     12 
-0.0270 </code></pre>
+0.0287 </code></pre>
 <p>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</p>
 <div class="figure">
 <img src="blanco.png" />
