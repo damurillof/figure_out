@@ -74,7 +74,8 @@ ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) +
 
 
 ### Ejercicio 2
-#### Una forma de leer los datos es la siguiente. Usted solo debe cambiar la ubicación del archivo.
+
+#### Una forma de leer los datos es la siguiente. 
 
 ```{r,comment=NA,eval=T,echo=T}
 ## Leer los datos  

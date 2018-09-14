@@ -211,9 +211,7 @@ $(document).ready(function () {
 <li><a href="#algunas-preguntas-de-investigacion">Algunas preguntas de investigación</a><ul>
 <li><a href="#poblaciones-y-muestras-aleatorias">Poblaciones y muestras aleatorias</a></li>
 </ul></li>
-<li><a href="#espacio-muestral">Espacio Muestral</a><ul>
-<li><a href="#tipos-de-datos">Tipos de datos</a></li>
-</ul></li>
+<li><a href="#experimentos-aleatorios">Experimentos Aleatorios</a></li>
 <li><a href="#espacios-muestrales-y-eventos">Espacios Muestrales y eventos</a><ul>
 <li><a href="#eventos">Eventos</a></li>
 <li><a href="#relaciones-entre-eventos">Relaciones entre eventos</a></li>
@@ -229,70 +227,49 @@ $(document).ready(function () {
 
 <div id="algunas-preguntas-de-investigacion" class="section level2">
 <h2>Algunas preguntas de investigación</h2>
-<p>Los estudios de investigación se llevan a cabo para responder algún tipo de pregunta (s) de investigación. Por ejemplo, los investigadores del Vegan Health Study definen al menos ocho preguntas principales qué les gustaría responder sobre la salud de las personas que consumen una dieta totalmente libre de animales (sin carne, sin lácteos, sin huevos). Recientemente se realizó otro estudio de investigación para determinar si las personas que toman los analgésicos Vioxx o Celebrex corren un mayor riesgo de ataques cardíacos que las personas que no los toman. La lista continúa. Los investigadores trabajan todos los días para responder sus preguntas de investigación.</p>
-<p>¿Qué piensas sobre estas preguntas de investigación?</p>
-<p>¿Qué porcentaje de estudiantes universitarios se siente privado de sueño? ¿Cuál es la probabilidad de que un estudiante del Colegio seleccionado al azar tenga más de siete horas de sueño cada noche? Por lo general, las mujeres compran más ropa que los hombres? ¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101? Suponiendo que las preguntas anteriores no nos interesan mucho, ¿Podemos formular algunas preguntas de investigación que realmente nos interesen? Si intentamos responder a nuestras preguntas de investigación, pronto nos daríamos cuenta de que no podríamos preguntar a todas las personas de la población por ejemplo si se sienten privadas de sueño, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen.</p>
-<p>¿Cómo podemos responder nuestras preguntas de investigación si no podemos preguntarle a cada persona de la población?</p>
+<p>Pensemos en lo siguiente:</p>
+<ol style="list-style-type: decimal">
+<li><p>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</p></li>
+<li><p>¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de siete horas cada noche?</p></li>
+<li><p>¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?</p></li>
+</ol>
+<p>Si intentamos responder a nuestras preguntas de investigación, notamose que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, con qué frecuencia van a cine o cuántas tarjetas de crédito tienen por persona en ciarta población.</p>
+<p>Entonces la forma correcta es nuevamente a traves de una muestra tomada de la población.</p>
 <div id="poblaciones-y-muestras-aleatorias" class="section level3">
 <h3>Poblaciones y muestras aleatorias</h3>
-<p>Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o hacer una inferencia, sobre la población:</p>
-<div class="figure">
-<img src="sample.jpg" />
-
-</div>
-<p>Para la pregunta de investigación “¿Qué porcentaje de estudiantes universitarios se siente privado de sueño?”, La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla. Para la pregunta de investigación “¿cuál es la probabilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”, La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar. Para la pregunta de investigación “¿cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”, La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101. ¡Ahhhh! Si solo estamos interesados en estudiantes actualmente inscritos en ESMA3101, no tenemos necesidad de tomar una muestra al azar. En cambio, podemos realizar un censo o encuesta, en el que se encuesta a todos los estudiantes.</p>
-<p><strong>Ejercicio: Identifique la población y describa una posible muestra aleatoria para la pregunta de investigación “¿las mujeres suelen comprar más ropa que los hombres?”</strong></p>
-<p>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién termina en nuestra muestra aleatoria, es decir los datos que seleccionamos. No podemos predecir los posibles resultados con certeza, pero al menos podemos crear una lista de posibles resultados.</p>
-</div>
-</div>
-<div id="espacio-muestral" class="section level2">
-<h2>Espacio Muestral</h2>
-<p><strong>Definición.</strong> El espacio muestral (o espacio de resultados), denotado por <span class="math inline">\(S\)</span>, es la colección o el conjunto de todos los posibles resultados de un estudio aleatorio.</p>
-<p>Para responder a mi primera pregunta de investigación, tendríamos que tomar una muestra aleatoria de estudiantes universitarios de puerto Rico. Y preguntarles a cada uno: “¿Se siente privado de sueño?” Cada alumno debe responder “sí” o “no”. Por lo tanto, escribiríamos el espacio muestral como:</p>
-<p><span class="math inline">\(S = \{sí, no\}\)</span></p>
-<p>Para responder a mi segunda pregunta de investigación, necesitaríamos saber cuántas horas de sueño recibe una muestra aleatoria de estudiantes universitarios cada noche. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas de sueño que tuvieron anoche. En este caso, si permitimos que h denote el número de horas dormidas, escribiríamos el espacio de muestra como:</p>
-<p><span class="math inline">\(S = \{h: h ≥ 0 \quad horas\}\)</span></p>
-<p>Hmmm, si realizamos un estudio aleatorio para responder a mi tercera pregunta de investigación, ¿cómo definiríamos nuestro espacio de muestra? Bueno, por supuesto, depende de cómo tratamos de intentar responder la pregunta. Si le preguntamos a una muestra aleatoria de hombres y mujeres “¿cuántos días compraste ropa el mes pasado?”, Escribiríamos el espacio de muestra como:</p>
-<p><span class="math inline">\(S = \{0, 1, 2, ..., 30\}\)</span></p>
-<p>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, cuando intente responder mi cuarta pregunta de investigación, podríamos preguntarles a todos los estudiantes actuales de ESMA3101 “¿Cuántas tarjetas de crédito tienen?” En ese caso, escribiríamos nuestro espacio de muestra como:</p>
-<p><span class="math inline">\(S = \{0, 1, 2, ...\}\)</span></p>
+<p>Al tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria de la población y usamos la muestra resultante para aprender algo, o conocer ona o más caracteristicas sobre la población:</p>
+<p>Para la pregunta de investigación:</p>
+<p>“¿Qué porcentaje de estudiantes universitarios tine problemas para dormir?”.</p>
+<p>La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla.</p>
+<p>Para la pregunta de investigación</p>
+<p>“¿Cuál es la probabilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”.</p>
+<p>La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar.</p>
+<p>Ahora para la pregunta de investigación</p>
+<p>“¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”, La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101.</p>
+<p>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria, es decir los datos que seleccionamos. No podemos predecir los posibles resultados con certeza, pero al menos podemos crear una lista de posibles resultados.</p>
+<p>Notemos que para cada pregunta vamos a obtener un listado de posibles respuestas.</p>
+<p>Por ejemplo, para responder a la primera pregunta de investigación,</p>
+<p>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</p>
+<p>entonces, primero tendríamos que tomar una muestra aleatoria de estudiantes universitarios de puerto Rico. Y preguntarles a cada uno:</p>
+<p>“¿Actualmente tiene problemas para conciliar el sueño?”</p>
+<p>Cada alumno debe responder “Sí” o “No”. Por lo tanto, tenemos un listado con las posibles respuestas</p>
+<p><span class="math display">\[\{Sí, No\}\]</span></p>
+<p>Para responder a mi segunda pregunta de investigación, necesitaríamos saber cuántas horas de sueño según una muestra aleatoria de estudiantes universitarios. Una forma de obtener esta información es pedirle a cada alumno seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, si permitimos que <span class="math inline">\(h\)</span> denote el número de horas dormidas, escribiríamos el listado de posibles resultados como:</p>
+<p><span class="math display">\[\{h: h ≥ 0 \quad horas\}\]</span></p>
+<p>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, cuando intente responder mi cuarta pregunta de investigación, podríamos preguntarles a todos los estudiantes actuales de ESMA3101 “¿Cuántas tarjetas de crédito tienen?” En ese caso, escribiríamos nuestro listado de posibles respuestas como:</p>
+<p><span class="math display">\[\{0, 1, 2, 3,...\}\]</span></p>
 <p>No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el espacio muestral si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios “¿durmió más de siete horas anoche?”</p>
-<div id="tipos-de-datos" class="section level3">
-<h3>Tipos de datos</h3>
-<p>Ejemplo:</p>
-<p>Se realizó la pregunta a una muestra aleatoria de 20 estudiantes universitarios “¿se considera privado de sueño?” Sus respuestas fueron:</p>
-<pre><code>`sí sí sí no no no sí sí sí sí sí no no sí sí no sí sí sí sí`</code></pre>
-<p>Por supuesto, sería bueno resumir las respuestas de los estudiantes. Sin embargo, lo que hacemos con los datos depende del tipo de datos recopilados. Para nuestros propósitos, nos ocuparemos principalmente de tres tipos de datos:</p>
-<ul>
-<li>Discreto.</li>
-<li>Continuo.</li>
-<li>Categórico.</li>
-</ul>
-<p>Ahora, para sus definiciones!</p>
-<p><strong>Definición.</strong> Los datos cuantitativos se denominan discretos si el espacio muestral contiene un número finito o contable infinito de valores. Recuerde que un conjunto de elementos es contablemente infinito si los elementos del conjunto se pueden poner en correspondencia uno a uno con los enteros positivos. La tercera pregunta de investigación arroja datos discretos, porque su espacio de muestra:</p>
-<p><span class="math inline">\(S= \{0, 1, 2, ..., 31\}\)</span></p>
-<p>contiene un número finito de valores. Y, la cuarta pregunta de investigación arroja datos discretos, porque su espacio muestral es:</p>
-<p><span class="math inline">\(S = \{0, 1, 2, ...\}\)</span></p>
-<p>contiene un número infinitamente contable de valores.</p>
-<p><strong>Definición.</strong> Los datos cuantitativos se llaman continuos si el espacio muestral contiene un intervalo o un intervalo continuo de números reales. Mi segunda pregunta de investigación arroja datos continuos, porque su espacio de muestra:</p>
-<p><span class="math inline">\(S = \{h: h ≥ 0 \quad horas\}\)</span></p>
-<p>es toda la línea real positiva.</p>
-<p>Para datos continuos, teóricamente hay un número infinito de posibles resultados; la herramienta de medición es el factor restrictivo. Por ejemplo, si tuviera que preguntar cuánto pesaba cada estudiante de la clase (en libras), lo más probable es que obtuviera respuestas como 126, 172 y 210. Las respuestas son aparentemente discretas. Pero, ¿en realidad son discretos? Si informo que peso 118 libras, ¿tengo exactamente 118 libras? Probablemente no; Tal vez tengo 118.0120980335927 … libras. Es solo que la escala que obtengo me dice que peso 118 libras. Una vez más, la herramienta de medición es el factor restrictivo, algo en lo que siempre debes pensar al tratar de distinguir entre datos discretos y continuos.</p>
-<p><strong>Definición.</strong> Los datos cualitativos se denominan categóricos si el espacio de muestra contiene objetos que están agrupados o categorizados en función de algún rasgo cualitativo. Cuando solo hay dos grupos o categorías, los datos se consideran binarios.</p>
-<p>La primera pregunta de investigación arroja datos binarios, porque su espacio muestral es:</p>
-<p><span class="math inline">\(S = \{sí, no\}\)</span></p>
-<p>Otros dos ejemplos de datos categóricos son el color de los ojos (marrón, azul, verdes, etc.) y la posición semestral (estudiante de primer año, segundo, tercer y último año).</p>
 </div>
+</div>
+<div id="experimentos-aleatorios" class="section level2">
+<h2>Experimentos Aleatorios</h2>
+<p>Es muy común encontrarnos con situaciones cotidianas imprevisibles; como por ejemplo, saber si nuestro equipo de fútbol favorito ganará el próximo partido, saber cómo será el clima del día en que tenemos planeado un paseo, saber cuál cara de un dado quedará arriba después de lanzarlo. Este tipo de experiencias son llamadas experimentos aleatorios, en ellas está presente el azar, y su resultado es incierto, es decir no lo conoceremos sino después de realizar dicha experiencia. Lanzar una moneda corriente, escoger el número ganador en una lotería, sacar una bola de una urna que tiene bolas de distintos colores sin ver su interior, todos estos son experimentos aleatorios.</p>
+<p><strong>Experimento aleatorio:</strong> Es aquel que realizándolo bajo las mismas condiciones iniciales, puede tener diferentes resultados. Este resultado sólo se conoce después de realizar el experimento.</p>
+<p><strong>Experimento Determinista:</strong> Es aquel para el que realizándolo bajo las mismas condiciones iniciales, siempre se obtiene el mismo resultado.</p>
 </div>
 <div id="espacios-muestrales-y-eventos" class="section level2">
 <h2>Espacios Muestrales y eventos</h2>
-<p><strong>Experimentos Aleatorios</strong>:</p>
-<p>Un experimento es una observación de un fenómeno que ocurre en la naturaleza. Tipos de experimentos:</p>
-<p><strong>Experimentos Determinísticos</strong>: Son aquellos en donde no hay incertidumbre acerca del resultado que ocurrirá cuando éstos son repetidos varias veces.</p>
-<p><strong>Experimentos Aleatorios</strong>: Son aquellos en donde no se puede anticipar el resultado que ocurrirá, pero si se tiene una completa idea acerca de todos los resultados posibles del experimento cuando éste es ejecutado.</p>
-<p>Según lo anterior, podemos clasificar los espacios muestrales de dos maneras:</p>
-<p><strong>Espacio muestral Discreto:</strong> Son espacios muestrales cuyos elementos resultan de hacer conteos, y por lo general son subconjuntos de los números enteros. Es decir los elementos del espacio muestral son datos discretos.</p>
-<p><strong>Espacio Muestral Continuo:</strong> Son espacios muestrales cuyos elementos resultan de hacer mediciones y por lo general son intervalos en la recta real. Los elementos del espacio muestral son datos continuos.</p>
+<p>A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda corriente tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral.</p>
 <p>Ejemplos Espacios muestrales:</p>
 <ol style="list-style-type: decimal">
 <li>Consideremos el experimento de lanzar un dado, ¿Cuál es el espacio muestral para este experimento?</li>
@@ -309,18 +286,19 @@ $(document).ready(function () {
 <div id="eventos" class="section level3">
 <h3>Eventos</h3>
 <p>Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayúsculas. Ejemplos:</p>
-<p><strong>A</strong>: Que salga un número par al lanzar un dado.</p>
-<p><strong>E</strong>: Que haya que esperar más de 10 minutos para ser atendidos en la cafetería de estudiantes.</p>
-<p><strong>F</strong>: Sacar A en la nota final del curso ESMA3101.</p>
+<p><strong>A</strong>: Obtener un número par al lanzar un dado.</p>
+<p><strong>E</strong>: Esperar más de 10 minutos para ser atendidos en la cafetería de estudiantes.</p>
 <p><strong>H</strong>: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de crédito.</p>
+<blockquote>
 <p>Ejemplos:</p>
+</blockquote>
 <ol style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar un dado, ¿Enunciar algunos eventos posibles en este experimento?</li>
+<li>Consideremos el experimento de lanzar un dado una vez, ¿Enunciar algunos eventos posibles en este experimento?</li>
 </ol>
 <p><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></p>
 <p><strong>A</strong>: Obtener un número par.</p>
-<p><strong>B</strong>: Obtener un número impar</p>
-<p><strong>C</strong>: Obtener un número mayor que tres</p>
+<p><strong>B</strong>: Obtener un número impar.</p>
+<p><strong>C</strong>: Obtener un número mayor que tres.</p>
 <p>Son algunos eventos del anterior experimento.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Consideremos el experimento de lanzar una moneda, ¿Enunciar algunos eventos posibles en este experimento?</li>
@@ -334,7 +312,10 @@ $(document).ready(function () {
 <p><span class="math display">\[S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}\]</span> <strong>A</strong>: Obtener una cara y un número impar</p>
 <p><strong>B</strong>: Obtener una cruz y un número mayor que cinco.</p>
 <p><strong>C</strong>: Obtener cara.</p>
+<div id="si-lanzamos-un-dado-tres-veces.-que-posibles-eventos-pueden-ocurrir" class="section level4">
+<h4><strong>Si lanzamos un dado tres veces. Que posibles eventos pueden ocurrir</strong></h4>
 <p><strong>Evento Nulo</strong>: Es aquél que no tiene elementos. Se representa por <span class="math inline">\(\emptyset\)</span>.</p>
+</div>
 </div>
 <div id="relaciones-entre-eventos" class="section level3">
 <h3>Relaciones entre eventos</h3>
@@ -507,9 +488,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0309 0.0535 0.0831 0.1111 0.1410 0.1685 0.1369 0.1090 0.0858 0.0541 
+0.0263 0.0537 0.0855 0.1127 0.1452 0.1626 0.1359 0.1099 0.0874 0.0537 
     12 
-0.0261 </code></pre>
+0.0271 </code></pre>
 <p>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</p>
 <div class="figure">
 <img src="blanco.png" />
