@@ -290,8 +290,8 @@ frecuencias_acum</code></pre>
 <ul>
 <li><strong>Paso 4: Encontrar la frecuencia relativa acumulada. Esto se hace dividiendo por el numero de registros.</strong></li>
 </ul>
-<pre class="r"><code>frecuencias_abs_acum &lt;- frecuencias_acum/50
-frecuencias_abs_acum </code></pre>
+<pre class="r"><code>frecuencias_Rel_acum &lt;- frecuencias_acum/50
+frecuencias_Rel_acum </code></pre>
 <pre><code>   0    1    2    3    4    5 
 0.30 0.54 0.74 0.88 0.94 1.00 </code></pre>
 <p>Mediante un data frame se puede crear la tabla de frecuencias</p>
@@ -299,8 +299,8 @@ frecuencias_abs_acum </code></pre>
 Frecuencia_Abs &lt;- as.vector(frecuencias)
 Frecuencia_Relativa &lt;- as.vector(frec_relativa)
 Frecuencia_Acum &lt;- as.vector(frecuencias_acum)
-Frecuencia_Abs_Acum &lt;- as.vector(frecuencias_abs_acum)
-table_frec &lt;- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
+Frecuencia_Rel_Acum &lt;- as.vector(frecuencias_Rel_acum)
+table_frec &lt;- data.frame(Obs,Frecuencia_Abs, Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Rel_Acum)
 table_frec</code></pre>
 <pre><code>  Obs Frecuencia_Abs Frecuencia_Relativa Frecuencia_Acum
 1   0             15                0.30              15
@@ -309,7 +309,7 @@ table_frec</code></pre>
 4   3              7                0.14              44
 5   4              3                0.06              47
 6   5              3                0.06              50
-  Frecuencia_Abs_Acum
+  Frecuencia_Rel_Acum
 1                0.30
 2                0.54
 3                0.74
@@ -333,7 +333,7 @@ Frecuencia_Relativa
 Frecuencia_Acum
 </th>
 <th style="text-align:right;">
-Frecuencia_Abs_Acum
+Frecuencia_Rel_Acum
 </th>
 </tr>
 </thead>
@@ -455,13 +455,13 @@ Frecuencia_Abs_Acum
   Freq_Abs &lt;- as.vector(table(x))
   Freq_Relativa &lt;- as.vector(Freq_Abs/length(x))
   Freq_Acum &lt;- as.vector(cumsum(Freq_Abs))
-  Freq_Abs_Acum &lt;- as.vector(Freq_Acum/length(x))
-  table_freq &lt;- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  Freq_Rel_Acum &lt;- as.vector(Freq_Acum/length(x))
+  table_freq &lt;- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Rel_Acum)
   table_freq
 }</code></pre>
 <p>Por ejemplo, para la tabla de frecuencias de la variable <code>hermanos</code></p>
 <pre class="r"><code>tabla_freq_discretas(Estudiantes$hermanos)</code></pre>
-<pre><code>##   Obs Freq_Abs Freq_Relativa Freq_Acum Freq_Abs_Acum
+<pre><code>##   Obs Freq_Abs Freq_Relativa Freq_Acum Freq_Rel_Acum
 ## 1   0       15          0.30        15          0.30
 ## 2   1       12          0.24        27          0.54
 ## 3   2       10          0.20        37          0.74
@@ -502,7 +502,7 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
   intervalos &lt;- cut(datos, breaks = k)
   tabla2 &lt;- as.data.frame(table(intervalos))
   tabla2 &lt;- transform(tabla2, Freq_Relativa = prop.table(Freq),Frec_Acum = cumsum(Freq))
-  tabla2 &lt;- transform(tabla2, Freq_Abs_Acum = cumsum(Freq_Relativa))
+  tabla2 &lt;- transform(tabla2, Freq_Relativa_Acum = cumsum(Freq_Relativa))
   midpoints &lt;- function(x, dp=2){
     lower &lt;- as.numeric(gsub(&#39;,.*&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
     upper &lt;- as.numeric(gsub(&#39;.*,&#39;,&#39;&#39;,gsub(&#39;\\(|\\[|\\)|\\]&#39;,&#39;&#39;, x)))
@@ -511,27 +511,26 @@ ggplot(Estudiantes, aes(x = Estudiantes$hermanos)) +
   tabla2 &lt;- transform(tabla2, MC = midpoints(intervalos))
   tabla2
 }</code></pre>
-<p>Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum</p>
 <p>Ejemplo para la variable <code>peso</code></p>
 <pre class="r"><code>tabla_frecuencia(Estudiantes$peso)</code></pre>
-<pre><code>   intervalos Freq Freq_Relativa Frec_Acum Freq_Abs_Acum    MC
-1 (49.3,54.1]    2          0.04         2          0.04 51.70
-2   (54.1,59]    9          0.18        11          0.22 56.55
-3   (59,63.8]    6          0.12        17          0.34 61.40
-4 (63.8,68.7]    9          0.18        26          0.52 66.25
-5 (68.7,73.5]   12          0.24        38          0.76 71.10
-6 (73.5,78.4]    7          0.14        45          0.90 75.95
-7 (78.4,83.2]    5          0.10        50          1.00 80.80</code></pre>
+<pre><code>   intervalos Freq Freq_Relativa Frec_Acum Freq_Relativa_Acum    MC
+1 (49.3,54.1]    2          0.04         2               0.04 51.70
+2   (54.1,59]    9          0.18        11               0.22 56.55
+3   (59,63.8]    6          0.12        17               0.34 61.40
+4 (63.8,68.7]    9          0.18        26               0.52 66.25
+5 (68.7,73.5]   12          0.24        38               0.76 71.10
+6 (73.5,78.4]    7          0.14        45               0.90 75.95
+7 (78.4,83.2]    5          0.10        50               1.00 80.80</code></pre>
 <p>Ejemplo para la variable <code>estatura</code></p>
 <pre class="r"><code>tabla_frecuencia(Estudiantes$estatura)</code></pre>
-<pre><code>  intervalos Freq Freq_Relativa Frec_Acum Freq_Abs_Acum    MC
-1  (153,157]    7          0.14         7          0.14 155.0
-2  (157,161]   11          0.22        18          0.36 159.0
-3  (161,166]    6          0.12        24          0.48 163.5
-4  (166,170]   12          0.24        36          0.72 168.0
-5  (170,174]    7          0.14        43          0.86 172.0
-6  (174,179]    4          0.08        47          0.94 176.5
-7  (179,183]    3          0.06        50          1.00 181.0</code></pre>
+<pre><code>  intervalos Freq Freq_Relativa Frec_Acum Freq_Relativa_Acum    MC
+1  (153,157]    7          0.14         7               0.14 155.0
+2  (157,161]   11          0.22        18               0.36 159.0
+3  (161,166]    6          0.12        24               0.48 163.5
+4  (166,170]   12          0.24        36               0.72 168.0
+5  (170,174]    7          0.14        43               0.86 172.0
+6  (174,179]    4          0.08        47               0.94 176.5
+7  (179,183]    3          0.06        50               1.00 181.0</code></pre>
 <p>Algunas interpretaciones de la tabla de frecuencia de <code>estatura</code>.</p>
 <ul>
 <li><p>Hay 11 estudiantes con estatura entre 157 y 161 centimetros</p></li>
@@ -657,7 +656,7 @@ pie(num_Area,labels = Area, col=rainbow(length(Area)),
 <p>Solución:</p>
 <p>El primer paso es ordenar los datos de menor a mayor</p>
 <p><strong>152 165 169 175 178 179 180 183 185 189 191 195 197 200 208</strong></p>
-<p>En este caso las ramas están formadas por los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:</p>
+<p>En este caso las ramas están formadas por los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos, es decir que la unidad de hoja es 1. Luego el “stem-and leaf “ será de la siguiente manera:</p>
 <div class="figure">
 <img src="stem.png" />
 

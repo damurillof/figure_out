@@ -75,8 +75,8 @@ frecuencias_acum
 
 
 ```{r, comment=NA,echo=T,eval=T}
-frecuencias_abs_acum <- frecuencias_acum/50
-frecuencias_abs_acum 
+frecuencias_Rel_acum <- frecuencias_acum/50
+frecuencias_Rel_acum 
 ```
 
 Mediante un data frame se puede crear la tabla de frecuencias
@@ -86,8 +86,8 @@ Obs <- sort(unique(Estudiantes$hermanos),F)
 Frecuencia_Abs <- as.vector(frecuencias)
 Frecuencia_Relativa <- as.vector(frec_relativa)
 Frecuencia_Acum <- as.vector(frecuencias_acum)
-Frecuencia_Abs_Acum <- as.vector(frecuencias_abs_acum)
-table_frec <- data.frame(Obs,Frecuencia_Abs,Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Abs_Acum)
+Frecuencia_Rel_Acum <- as.vector(frecuencias_Rel_acum)
+table_frec <- data.frame(Obs,Frecuencia_Abs, Frecuencia_Relativa, Frecuencia_Acum, Frecuencia_Rel_Acum)
 table_frec
 ```
 
@@ -120,8 +120,8 @@ tabla_freq_discretas <- function(x){
   Freq_Abs <- as.vector(table(x))
   Freq_Relativa <- as.vector(Freq_Abs/length(x))
   Freq_Acum <- as.vector(cumsum(Freq_Abs))
-  Freq_Abs_Acum <- as.vector(Freq_Acum/length(x))
-  table_freq <- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum)
+  Freq_Rel_Acum <- as.vector(Freq_Acum/length(x))
+  table_freq <- data.frame(Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Rel_Acum)
   table_freq
 }
 ```
@@ -185,7 +185,7 @@ tabla_frecuencia <- function(datos) {
   intervalos <- cut(datos, breaks = k)
   tabla2 <- as.data.frame(table(intervalos))
   tabla2 <- transform(tabla2, Freq_Relativa = prop.table(Freq),Frec_Acum = cumsum(Freq))
-  tabla2 <- transform(tabla2, Freq_Abs_Acum = cumsum(Freq_Relativa))
+  tabla2 <- transform(tabla2, Freq_Relativa_Acum = cumsum(Freq_Relativa))
   midpoints <- function(x, dp=2){
     lower <- as.numeric(gsub(',.*','',gsub('\\(|\\[|\\)|\\]','', x)))
     upper <- as.numeric(gsub('.*,','',gsub('\\(|\\[|\\)|\\]','', x)))
@@ -196,7 +196,6 @@ tabla_frecuencia <- function(datos) {
 }
 ```
 
-Obs,Freq_Abs,Freq_Relativa, Freq_Acum, Freq_Abs_Acum
 
 Ejemplo para la variable `peso`
 
@@ -409,7 +408,7 @@ El primer paso es ordenar los datos de menor a mayor
 
  **152 165 169 175 178 179 180 183 185 189 191 195 197 200 208**
 
-En este caso las ramas están formadas por los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos. Luego el “stem-and leaf “ será de la siguiente manera:
+En este caso las ramas están formadas por los primeros dos dígitos de los datos, y las hojas serán dadas por los últimos dígitos de los datos, es decir que la unidad de hoja es 1. Luego el “stem-and leaf “ será de la siguiente manera:
 
 ![](stem.png)
 
