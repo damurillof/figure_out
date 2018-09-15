@@ -469,8 +469,8 @@ if (sum_d > 7){
   x <- 1:n
   plot(x,p.run,type = "l",col = 'blue', log = 'x', 
        xlim = c(1, n), ylim = c(0.0, 1.0), cex.axis=1.5, 
-       xlab = 'Roll two dice', ylab = 'Proportion sum > 7', cex.lab = 1,
-       main = 'Running Proportion of sums > 7', cex.main = 1)
+       xlab = 'Roll two dice', ylab = 'Proportion sum > 7', cex.lab = 1.5,
+       main = 'Running Proportion of sums > 7', cex.main = 1.5,lty = 1.5)
   lines(c(1, n), c(p, p), lty = 1, col = 'red')
   print(paste("La probabilidad de obtener una suma mayor a 7 es",z/n))
 }
