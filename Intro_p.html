@@ -227,262 +227,581 @@ $(document).ready(function () {
 
 <div id="motivacion-algunas-preguntas-de-investigacion" class="section level2">
 <h2>Motivación: Algunas preguntas de investigación</h2>
-<p>Pensemos en lo siguiente:</p>
-<ol style="list-style-type: decimal">
-<li><p>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</p></li>
-<li><p>¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de siete horas cada noche?</p></li>
-<li><p>¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?</p></li>
-</ol>
-<p>Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, cuantas horas duerme un estudiante o cuántas tarjetas de crédito tienen por persona en cierta población.</p>
-<p>Entonces la forma correcta es nuevamente a través de una muestra aleatoria tomada de la población.</p>
+<div id="pensemos-en-lo-siguiente" class="section level4">
+<h4>Pensemos en lo siguiente:</h4>
+</div>
+<div id="que-porcentaje-de-estudiantes-universitarios-tiene-problemas-para-conciliar-el-sueno" class="section level4">
+<h4>1. ¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</h4>
+</div>
+<div id="cual-es-la-posibilidad-de-que-un-estudiante-del-colegio-seleccionado-al-azar-duerma-mas-de-siete-horas-cada-noche" class="section level4">
+<h4>2. ¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de siete horas cada noche?</h4>
+</div>
+<div id="cual-es-el-numero-tipico-de-tarjetas-de-credito-propiedad-de-los-estudiantes-de-esma3101" class="section level4">
+<h4>3. ¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?</h4>
+</div>
+<div id="si-intentamos-responder-a-nuestras-preguntas-de-investigacion-notamos-que-no-podriamos-preguntar-a-todas-las-personas-de-la-poblacion.-por-ejemplo-respecto-a-los-problemas-para-dormir-cuantas-horas-duerme-un-estudiante-o-cuantas-tarjetas-de-credito-tienen-por-persona-en-cierta-poblacion." class="section level4">
+<h4>Si intentamos responder a nuestras preguntas de investigación, notamos que no podríamos preguntar a todas las personas de la población. Por ejemplo, respecto a los problemas para dormir, cuantas horas duerme un estudiante o cuántas tarjetas de crédito tienen por persona en cierta población.</h4>
+</div>
+<div id="entonces-la-forma-correcta-es-nuevamente-a-traves-de-una-muestra-aleatoria-tomada-de-la-poblacion." class="section level4">
+<h4>Entonces la forma correcta es nuevamente a través de una muestra aleatoria tomada de la población.</h4>
+</div>
 <div id="poblaciones-y-muestras-aleatorias" class="section level3">
 <h3>Poblaciones y muestras aleatorias</h3>
-<p>En general tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria y la usamos para aprender algo, o conocer una o más características de la población.</p>
-<p>Para la pregunta de investigación:</p>
-<p>“¿Qué porcentaje de estudiantes universitarios tiene problemas para dormir?”.</p>
-<p>La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla.</p>
-<p>Para la pregunta de investigación</p>
-<p>“¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”.</p>
-<p>La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar.</p>
-<p>Ahora para la pregunta de investigación</p>
-<p>“¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”.</p>
-<p>La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101.</p>
-<p>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria. No podemos predecir los posibles resultados con exactitud, pero al menos podemos crear un listado de posibles resultados.</p>
-<p>Notemos que para cada pregunta vamos a obtener un listado de posibles respuestas.</p>
-<p>Por ejemplo, para responder a la primera pregunta de investigación,</p>
-<p>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?</p>
-<p>entonces, primero tendríamos que tomar una muestra aleatoria de estudiantes universitarios de puerto Rico. Y preguntarles a cada uno:</p>
-<p>“¿Actualmente tiene problemas para conciliar el sueño?”</p>
-<p>Cada estudiante debe responder “Sí” o “No”. Por lo tanto, tenemos un listado con las posibles respuestas</p>
-<p><span class="math display">\[\{Sí, No\}\]</span></p>
-<p>Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño duermen los estudiantes universitarios, según una muestra aleatoria. Una forma de obtener esta información es pedirle a cada estudiante seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, digamos que <span class="math inline">\(h\)</span> denota el número de horas dormidas, entonces el listado de posibles resultados es:</p>
-<p><span class="math display">\[\{h: h ≥ 0,\quad horas\}\]</span></p>
-<p>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, podríamos preguntarles a todos los estudiantes actuales de ESMA3101</p>
-<p>“¿Cuántas tarjetas de crédito tienen?”</p>
-<p>En ese caso, escribiríamos nuestro listado de posibles respuestas como:</p>
-<p><span class="math display">\[\{0, 1, 2, 3,...\}\]</span></p>
-<p>No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el listado de posibles respuestas, si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios “¿Durmió más de siete horas anoche?”.</p>
+<div id="en-general-tratar-de-responder-a-cada-una-de-nuestras-preguntas-de-investigacion-lamentablemente-no-podemos-preguntar-a-todas-las-personas-de-la-poblacion.-en-cambio-tomamos-una-muestra-aleatoria-y-la-usamos-para-aprender-algo-o-conocer-una-o-mas-caracteristicas-de-la-poblacion." class="section level4">
+<h4>En general tratar de responder a cada una de nuestras preguntas de investigación, lamentablemente no podemos preguntar a todas las personas de la población. En cambio, tomamos una muestra aleatoria y la usamos para aprender algo, o conocer una o más características de la población.</h4>
+</div>
+<div id="para-la-pregunta-de-investigacion" class="section level4">
+<h4>Para la pregunta de investigación:</h4>
+</div>
+<div id="que-porcentaje-de-estudiantes-universitarios-tiene-problemas-para-dormir." class="section level4">
+<h4>“¿Qué porcentaje de estudiantes universitarios tiene problemas para dormir?”.</h4>
+</div>
+<div id="la-poblacion-de-interes-son-todos-los-estudiantes-universitarios.-por-lo-tanto-suponiendo-que-estamos-restringiendo-la-poblacion-a-ser-estudiantes-universitarios-de-puerto-rico.-una-muestra-aleatoria-podria-consistir-en-1300-estudiantes-seleccionados-al-azar-de-todas-las-universidades-posibles-en-la-isla." class="section level4">
+<h4>La población de interés son todos los estudiantes universitarios. Por lo tanto, suponiendo que estamos restringiendo la población a ser estudiantes universitarios de Puerto Rico. Una muestra aleatoria podría consistir en 1300 estudiantes seleccionados al azar de todas las universidades posibles en la isla.</h4>
+</div>
+<div id="para-la-pregunta-de-investigacion-1" class="section level4">
+<h4>Para la pregunta de investigación</h4>
+</div>
+<div id="cual-es-la-posibilidad-de-que-un-estudiante-del-colegio-seleccionado-al-azar-duerma-mas-de-7-horas-cada-noche." class="section level4">
+<h4>“¿Cuál es la posibilidad de que un estudiante del Colegio seleccionado al azar duerma más de 7 horas cada noche?”.</h4>
+</div>
+<div id="la-poblacion-de-interes-es-un-poco-mas-estrecha-es-decir-solo-estudiantes-del-rum.-en-este-caso-una-muestra-aleatoria-podria-consistir-en-por-ejemplo-300-estudiantes-del-colegio-seleccionados-al-azar." class="section level4">
+<h4>La población de interés es un poco más estrecha, es decir, solo estudiantes del RUM. En este caso, una muestra aleatoria podría consistir en, por ejemplo, 300 estudiantes del Colegio seleccionados al azar.</h4>
+</div>
+<div id="ahora-para-la-pregunta-de-investigacion" class="section level4">
+<h4>Ahora para la pregunta de investigación</h4>
+</div>
+<div id="cual-es-el-numero-tipico-de-tarjetas-de-credito-propiedad-de-los-estudiantes-de-esma3101." class="section level4">
+<h4>“¿Cuál es el número típico de tarjetas de crédito propiedad de los estudiantes de ESMA3101?”.</h4>
+</div>
+<div id="la-poblacion-de-interes-es-aun-mas-limitada-es-decir-solo-los-estudiantes-matriculados-en-esma3101." class="section level4">
+<h4>La población de interés es aún más limitada, es decir, solo los estudiantes matriculados en ESMA3101.</h4>
+</div>
+<div id="las-respuestas-o-datos-que-tenemos-a-nuestras-preguntas-de-investigacion-dependen-por-supuesto-de-quien-conforma-nuestra-muestra-aleatoria.-no-podemos-predecir-los-posibles-resultados-con-exactitud-pero-al-menos-podemos-crear-un-listado-de-posibles-resultados." class="section level4">
+<h4>Las respuestas (o datos) que tenemos a nuestras preguntas de investigación dependen, por supuesto, de quién conforma nuestra muestra aleatoria. No podemos predecir los posibles resultados con exactitud, pero al menos podemos crear un listado de posibles resultados.</h4>
+</div>
+<div id="notemos-que-para-cada-pregunta-vamos-a-obtener-un-listado-de-posibles-respuestas." class="section level4">
+<h4>Notemos que para cada pregunta vamos a obtener un listado de posibles respuestas.</h4>
+</div>
+<div id="por-ejemplo-para-responder-a-la-primera-pregunta-de-investigacion" class="section level4">
+<h4>Por ejemplo, para responder a la primera pregunta de investigación,</h4>
+</div>
+<div id="que-porcentaje-de-estudiantes-universitarios-tiene-problemas-para-conciliar-el-sueno." class="section level4">
+<h4>¿Qué porcentaje de estudiantes universitarios tiene problemas para conciliar el sueño?.</h4>
+</div>
+<div id="entonces-primero-tendriamos-que-tomar-una-muestra-aleatoria-de-estudiantes-universitarios-de-puerto-rico.-y-preguntarles-a-cada-uno" class="section level4">
+<h4>Entonces, primero tendríamos que tomar una muestra aleatoria de estudiantes universitarios de puerto Rico. Y preguntarles a cada uno:</h4>
+</div>
+<div id="actualmente-tiene-problemas-para-conciliar-el-sueno" class="section level4">
+<h4>“¿Actualmente tiene problemas para conciliar el sueño?”</h4>
+</div>
+<div id="cada-estudiante-debe-responder-si-o-no.-por-lo-tanto-tenemos-un-listado-con-las-posibles-respuestas" class="section level4">
+<h4>Cada estudiante debe responder “Sí” o “No”. Por lo tanto, tenemos un listado con las posibles respuestas</h4>
+</div>
+<div id="si-no" class="section level4">
+<h4><span class="math display">\[\{Sí, No\}\]</span></h4>
+</div>
+<div id="para-responder-a-mi-segunda-pregunta-de-investigacion-necesitamos-saber-cuantas-horas-de-sueno-duermen-los-estudiantes-universitarios-segun-una-muestra-aleatoria.-una-forma-de-obtener-esta-informacion-es-pedirle-a-cada-estudiante-seleccionado-que-registre-la-cantidad-de-horas-durmieron-la-noche-anterior.-en-este-caso-digamos-que-h-denota-el-numero-de-horas-dormidas-entonces-el-listado-de-posibles-resultados-es" class="section level4">
+<h4>Para responder a mi segunda pregunta de investigación, necesitamos saber cuántas horas de sueño duermen los estudiantes universitarios, según una muestra aleatoria. Una forma de obtener esta información es pedirle a cada estudiante seleccionado que registre la cantidad de horas durmieron la noche anterior. En este caso, digamos que <span class="math inline">\(h\)</span> denota el número de horas dormidas, entonces el listado de posibles resultados es:</h4>
+</div>
+<div id="h-h-0quad-horas" class="section level4">
+<h4><span class="math display">\[\{h: h ≥ 0,\quad horas\}\]</span></h4>
+</div>
+<div id="finalmente-si-estabamos-interesados-en-aprender-sobre-los-estudiantes-que-tomaron-esma3101-en-la-ultima-decada-podriamos-preguntarles-a-todos-los-estudiantes-actuales-de-esma3101" class="section level4">
+<h4>Finalmente, si estábamos interesados en aprender sobre los estudiantes que tomaron ESMA3101 en la última década, podríamos preguntarles a todos los estudiantes actuales de ESMA3101</h4>
+</div>
+<div id="cuantas-tarjetas-de-credito-tienen" class="section level4">
+<h4>“¿Cuántas tarjetas de crédito tienen?”</h4>
+</div>
+<div id="en-ese-caso-escribiriamos-nuestro-listado-de-posibles-respuestas-como" class="section level4">
+<h4>En ese caso, escribiríamos nuestro listado de posibles respuestas como:</h4>
+</div>
+<div id="section" class="section level4">
+<h4><span class="math display">\[\{0, 1, 2, 3,...\}\]</span></h4>
+</div>
+<div id="no-siempre-hay-una-sola-forma-de-obtener-una-respuesta-a-una-pregunta-de-investigacion.-para-la-segunda-pregunta-de-investigacion-como-definiriamos-el-listado-de-posibles-respuestas-si-en-cambio-le-preguntamos-a-una-muestra-aleatoria-de-estudiantes-universitarios-durmio-mas-de-siete-horas-anoche." class="section level4">
+<h4>No siempre hay una sola forma de obtener una respuesta a una pregunta de investigación. Para la segunda pregunta de investigación, ¿cómo definiríamos el listado de posibles respuestas, si en cambio le preguntamos a una muestra aleatoria de estudiantes universitarios “¿Durmió más de siete horas anoche?”.</h4>
+</div>
 </div>
 </div>
 <div id="experimentos-aleatorios" class="section level2">
 <h2>Experimentos Aleatorios</h2>
-<p>Es muy común encontrarnos con situaciones cotidianas imprevisibles; como por ejemplo, saber si nuestro equipo de fútbol favorito ganará el próximo partido, saber cómo será el clima del día en que tenemos planeado un paseo, saber cuál cara de un dado quedará arriba después de lanzarlo. Este tipo de experiencias son llamadas experimentos aleatorios, en ellas está presente el azar, y su resultado es incierto, es decir no lo conoceremos sino después de realizar dicha experiencia. Lanzar una moneda corriente, escoger el número ganador en una lotería, sacar una bola de una urna que tiene bolas de distintos colores sin ver su interior, todos estos son experimentos aleatorios.</p>
-<p><strong>Experimento aleatorio:</strong> Es aquel que realizándose bajo las mismas condiciones iniciales, puede tener diferentes resultados. Este resultado sólo se conoce después de realizar el experimento.</p>
-<p><strong>Experimento Determinista:</strong> Es aquel para el que realizándose bajo las mismas condiciones iniciales, siempre se obtiene el mismo resultado.</p>
+<div id="es-muy-comun-encontrarnos-con-situaciones-cotidianas-imprevisibles-como-por-ejemplo-saber-si-nuestro-equipo-de-futbol-favorito-ganara-el-proximo-partido-saber-como-sera-el-clima-del-dia-en-que-tenemos-planeado-un-paseo-saber-cual-cara-de-un-dado-quedara-arriba-despues-de-lanzarlo.-este-tipo-de-experiencias-son-llamadas-experimentos-aleatorios-en-ellas-esta-presente-el-azar-y-su-resultado-es-incierto-es-decir-no-lo-conoceremos-sino-despues-de-realizar-dicha-experiencia.-lanzar-una-moneda-corriente-escoger-el-numero-ganador-en-una-loteria-sacar-una-bola-de-una-urna-que-tiene-bolas-de-distintos-colores-sin-ver-su-interior-todos-estos-son-experimentos-aleatorios." class="section level4">
+<h4>Es muy común encontrarnos con situaciones cotidianas imprevisibles; como por ejemplo, saber si nuestro equipo de fútbol favorito ganará el próximo partido, saber cómo será el clima del día en que tenemos planeado un paseo, saber cuál cara de un dado quedará arriba después de lanzarlo. Este tipo de experiencias son llamadas experimentos aleatorios, en ellas está presente el azar, y su resultado es incierto, es decir no lo conoceremos sino después de realizar dicha experiencia. Lanzar una moneda corriente, escoger el número ganador en una lotería, sacar una bola de una urna que tiene bolas de distintos colores sin ver su interior, todos estos son experimentos aleatorios.</h4>
+</div>
+<div id="experimento-aleatorio-es-aquel-que-realizandose-bajo-las-mismas-condiciones-iniciales-puede-tener-diferentes-resultados.-este-resultado-solo-se-conoce-despues-de-realizar-el-experimento." class="section level4">
+<h4><strong>Experimento aleatorio:</strong> Es aquel que realizándose bajo las mismas condiciones iniciales, puede tener diferentes resultados. Este resultado sólo se conoce después de realizar el experimento.</h4>
+</div>
+<div id="experimento-determinista-es-aquel-para-el-que-realizandose-bajo-las-mismas-condiciones-iniciales-siempre-se-obtiene-el-mismo-resultado." class="section level4">
+<h4><strong>Experimento Determinista:</strong> Es aquel para el que realizándose bajo las mismas condiciones iniciales, siempre se obtiene el mismo resultado.</h4>
+</div>
 </div>
 <div id="espacios-muestrales-y-eventos" class="section level2">
 <h2>Espacios Muestrales y eventos</h2>
-<p>A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados tal como vimos en las preguntas de investigación. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral. Entonces el espacio muestral se define como</p>
-<p><span class="math display">\[\text{El conjunto de todos los posibles resultados al realizar un experimento aleatorio.}\]</span></p>
+<div id="a-pesar-de-que-en-los-experimentos-aleatorios-no-podemos-saber-que-resultado-obtendremos-si-tenemos-una-serie-de-posibles-resultados-tal-como-vimos-en-las-preguntas-de-investigacion.-por-ejemplo-cuando-lanzamos-un-dado-tenemos-seis-posibles-resultados-cuando-lanzamos-una-moneda-tenemos-dos.-todos-los-posibles-resultados-de-un-experimento-aleatorio-conforman-lo-que-llamaremos-espacio-muestral.-entonces-el-espacio-muestral-se-define-como" class="section level4">
+<h4>A pesar de que en los experimentos aleatorios no podemos saber qué resultado obtendremos, si tenemos una serie de posibles resultados tal como vimos en las preguntas de investigación. Por ejemplo cuando lanzamos un dado tenemos seis posibles resultados, cuando lanzamos una moneda tenemos dos. Todos los posibles resultados de un experimento aleatorio conforman lo que llamaremos espacio muestral. Entonces el espacio muestral se define como</h4>
+</div>
+<div id="textel-conjunto-de-todos-los-posibles-resultados-al-realizar-un-experimento-aleatorio." class="section level4">
+<h4><span class="math display">\[\text{El conjunto de todos los posibles resultados al realizar un experimento aleatorio.}\]</span></h4>
 <blockquote>
-<p>Ejemplos: Espacios muestrales:</p>
+<h4 id="ejemplos-espacios-muestrales">Ejemplos: Espacios muestrales:</h4>
 </blockquote>
-<ol style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar un dado, ¿Cuál es el espacio muestral para este experimento?</li>
-</ol>
-<p><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar una moneda, ¿Cuál es el espacio muestral para este experimento?</li>
-</ol>
-<p><span class="math display">\[S=\{Cara, Cruz\}\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Cuál es el espacio muestral para este experimento?</li>
-</ol>
-<p><span class="math display">\[S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}\]</span></p>
+</div>
+<div id="consideremos-el-experimento-de-lanzar-un-dado-cual-es-el-espacio-muestral-para-este-experimento" class="section level4">
+<h4>1. Consideremos el experimento de lanzar un dado, ¿Cuál es el espacio muestral para este experimento?</h4>
+</div>
+<div id="s123456" class="section level4">
+<h4><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></h4>
+</div>
+<div id="consideremos-el-experimento-de-lanzar-una-moneda-cual-es-el-espacio-muestral-para-este-experimento" class="section level4">
+<h4>2. Consideremos el experimento de lanzar una moneda, ¿Cuál es el espacio muestral para este experimento?</h4>
+</div>
+<div id="scara-cruz" class="section level4">
+<h4><span class="math display">\[S=\{Cara, Cruz\}\]</span></h4>
+</div>
+<div id="consideremos-el-experimento-de-lanzar-una-moneda-y-un-dado-al-tiempo-cual-es-el-espacio-muestral-para-este-experimento" class="section level4">
+<h4>3. Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Cuál es el espacio muestral para este experimento?</h4>
+</div>
+<div id="sbigcara1cara2cara3cara4cara5cara6" class="section level4">
+<h4><span class="math display">\[S=\big\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),\]</span></h4>
+</div>
+<div id="quad-quad-cruz1cruz2cruz3cruz4cruz5cruz6big" class="section level4">
+<h4><span class="math display">\[\quad \quad (Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\big\}\]</span></h4>
+</div>
 <div id="eventos" class="section level3">
 <h3>Eventos</h3>
-<p>Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayúsculas. Ejemplos:</p>
-<p><strong>A</strong>: Obtener un número par al lanzar un dado.</p>
-<p><strong>E</strong>: Esperar más de 10 minutos para ser atendidos en la cafetería de estudiantes.</p>
-<p><strong>H</strong>: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de crédito.</p>
+<div id="un-evento-es-un-resultado-particular-de-un-experimento-aleatorio.-en-terminos-de-conjuntos-un-evento-es-un-subconjunto-del-espacio-muestral.-por-lo-general-se-le-representa-por-las-primeras-letras-del-alfabeto.-y-se-usan-letras-mayusculas.-ejemplos" class="section level4">
+<h4>Un Evento es un resultado particular de un experimento aleatorio. En términos de conjuntos, un evento es un subconjunto del espacio muestral. Por lo general se le representa por las primeras letras del alfabeto. Y se usan letras mayúsculas. Ejemplos:</h4>
+</div>
+<div id="a-obtener-un-numero-par-al-lanzar-un-dado." class="section level4">
+<h4><strong>A</strong>: Obtener un número par al lanzar un dado.</h4>
+</div>
+<div id="e-esperar-mas-de-10-minutos-para-ser-atendidos-en-la-cafeteria-de-estudiantes." class="section level4">
+<h4><strong>E</strong>: Esperar más de 10 minutos para ser atendidos en la cafetería de estudiantes.</h4>
+</div>
+<div id="h-que-los-estudiantes-de-esma3101-tengan-mas-de-dos-tarjetas-de-credito." class="section level4">
+<h4><strong>H</strong>: Que los estudiantes de ESMA3101 tengan más de dos tarjetas de crédito.</h4>
 <blockquote>
-<p>Ejemplos:</p>
+<h4 id="ejemplos">Ejemplos:</h4>
 </blockquote>
-<ol style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar un dado una vez, ¿Enunciar algunos eventos posibles en este experimento?</li>
-</ol>
-<p><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></p>
-<p><strong>A</strong>: Obtener un número par.</p>
-<p><strong>B</strong>: Obtener un número impar.</p>
-<p><strong>C</strong>: Obtener un número mayor que tres.</p>
-<p>Son algunos eventos del anterior experimento.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar una moneda, ¿Enunciar algunos eventos posibles en este experimento?</li>
-</ol>
-<p><span class="math display">\[S=\{Cara, Cruz\}\]</span></p>
-<p><strong>A</strong>: Obtener una cara.</p>
-<p><strong>B</strong>: Obtener una cruz.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Enunciar algunos eventos posibles?</li>
-</ol>
-<p><span class="math display">\[S=\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),(Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\}\]</span> <strong>A</strong>: Obtener una cara y un número impar</p>
-<p><strong>B</strong>: Obtener una cruz y un número mayor que cinco.</p>
-<p><strong>C</strong>: Obtener cara.</p>
+</div>
+<div id="consideremos-el-experimento-de-lanzar-un-dado-una-vez-enunciar-algunos-eventos-posibles-en-este-experimento" class="section level4">
+<h4>1. Consideremos el experimento de lanzar un dado una vez, ¿Enunciar algunos eventos posibles en este experimento?</h4>
+</div>
+<div id="s123456-1" class="section level4">
+<h4><span class="math display">\[S=\{1,2,3,4,5,6 \}\]</span></h4>
+</div>
+<div id="a-obtener-un-numero-par." class="section level4">
+<h4><strong>A</strong>: Obtener un número par.</h4>
+</div>
+<div id="a246" class="section level4">
+<h4><span class="math display">\[A=\{2,4,6\}\]</span></h4>
+</div>
+<div id="b-obtener-un-numero-impar." class="section level4">
+<h4><strong>B</strong>: Obtener un número impar.</h4>
+</div>
+<div id="b135" class="section level4">
+<h4><span class="math display">\[B=\{1,3,5\}\]</span></h4>
+</div>
+<div id="c-obtener-un-numero-mayor-que-tres." class="section level4">
+<h4><strong>C</strong>: Obtener un número mayor que tres.</h4>
+</div>
+<div id="c456" class="section level4">
+<h4><span class="math display">\[C=\{4,5,6\}\]</span></h4>
+</div>
+<div id="d-obtener-un-numero-mayor-que-siete." class="section level4">
+<h4><strong>D</strong>: Obtener un número mayor que siete.</h4>
+</div>
+<div id="demptyset" class="section level4">
+<h4><span class="math display">\[D=\{\emptyset\}\]</span></h4>
+</div>
+<div id="son-algunos-eventos-del-anterior-experimento." class="section level4">
+<h4>Son algunos eventos del anterior experimento.</h4>
+</div>
+<div id="consideremos-el-experimento-de-lanzar-una-moneda-enunciar-algunos-eventos-posibles-en-este-experimento" class="section level4">
+<h4>2. Consideremos el experimento de lanzar una moneda, ¿Enunciar algunos eventos posibles en este experimento?</h4>
+</div>
+<div id="scara-cruz-1" class="section level4">
+<h4><span class="math display">\[S=\{Cara, Cruz\}\]</span></h4>
+</div>
+<div id="a-obtener-una-cara." class="section level4">
+<h4><strong>A</strong>: Obtener una cara.</h4>
+</div>
+<div id="acara" class="section level4">
+<h4><span class="math display">\[A=\{Cara\}\]</span></h4>
+</div>
+<div id="b-obtener-una-cruz." class="section level4">
+<h4><strong>B</strong>: Obtener una cruz.</h4>
+</div>
+<div id="bcruz" class="section level4">
+<h4><span class="math display">\[B=\{Cruz\}\]</span></h4>
+</div>
+<div id="consideremos-el-experimento-de-lanzar-una-moneda-y-un-dado-al-tiempo-enunciar-algunos-eventos-posibles" class="section level4">
+<h4>3. Consideremos el experimento de lanzar una moneda y un dado al tiempo, ¿Enunciar algunos eventos posibles?</h4>
+</div>
+<div id="sbigcara1cara2cara3cara4cara5cara6-1" class="section level4">
+<h4><span class="math display">\[S=\big\{(Cara,1),(Cara,2),(Cara,3),(Cara,4),(Cara,5),(Cara,6),\]</span></h4>
+</div>
+<div id="quad-quad-cruz1cruz2cruz3cruz4cruz5cruz6big-1" class="section level4">
+<h4><span class="math display">\[\quad \quad (Cruz,1),(Cruz,2),(Cruz,3),(Cruz,4),(Cruz,5),(Cruz,6)\big\}\]</span></h4>
+</div>
+<div id="a-obtener-una-cara-y-un-numero-impar" class="section level4">
+<h4><strong>A</strong>: Obtener una cara y un número impar</h4>
+</div>
+<div id="abigcara1cara3cara5" class="section level4">
+<h4><span class="math display">\[A=\big\{(Cara,1),(Cara,3),(Cara,5)\}\]</span></h4>
+</div>
+<div id="b-obtener-una-cruz-y-un-numero-mayor-que-cinco." class="section level4">
+<h4><strong>B</strong>: Obtener una cruz y un número mayor que cinco.</h4>
+</div>
+<div id="sbigcruz6big" class="section level4">
+<h4><span class="math display">\[S=\big\{(Cruz,6)\big\}\]</span></h4>
+</div>
+<div id="c-obtener-cara." class="section level4">
+<h4><strong>C</strong>: Obtener cara.</h4>
+</div>
 <div id="si-lanzamos-un-dado-tres-veces.-que-posibles-eventos-pueden-ocurrir" class="section level4">
 <h4><strong>Si lanzamos un dado tres veces. ¿Qué posibles eventos pueden ocurrir?</strong></h4>
-<p><strong>Evento Nulo</strong>: Es aquél que no tiene elementos. Se representa por <span class="math inline">\(\emptyset\)</span>.</p>
+</div>
+<div id="evento-nulo-es-aquel-que-no-tiene-elementos.-se-representa-por-emptyset." class="section level4">
+<h4><strong>Evento Nulo</strong>: Es aquél que no tiene elementos. Se representa por <span class="math inline">\(\emptyset\)</span>.</h4>
 </div>
 </div>
 <div id="relaciones-entre-eventos" class="section level3">
 <h3>Relaciones entre eventos</h3>
-<p><strong>Unión de eventos:</strong> Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de un mismo espacio muestral su unión se representa por <span class="math inline">\(A \cup B\)</span> y es el evento que contiene los elementos que están en <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.</p>
-<p><strong>Intersección de eventos</strong>: Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de un mismo espacio muestral su intersección se representa por <span class="math inline">\(A \cap B\)</span>, y es el evento que contiene los elementos que están en <span class="math inline">\(A\)</span> y en <span class="math inline">\(B\)</span> al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente.</p>
-<p><strong>Evento Complemento</strong>: El complemento de un evento <span class="math inline">\(A\)</span> se representa representa por <span class="math inline">\(A^c\)</span> y es el evento que contiene contiene todos los elementos que no están en <span class="math inline">\(A\)</span>. El evento ocurre si <span class="math inline">\(A\)</span> no ocurre.</p>
-<p><strong>Propiedades de relaciones entre eventos</strong>: Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> eventos de un mismo espacio muestral <span class="math inline">\(S\)</span> entonces se cumplen las siguientes propiedades:</p>
-<p><strong>1. Propiedad Conmutativa</strong>: <span class="math inline">\(A \cup B = B \cup A\)</span> y <span class="math inline">\(A \cap B = B \cap A\)</span></p>
-<p><strong>2. Propiedad Asociativa</strong>: <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> y <span class="math inline">\(A \cap (B \cap C) = (A \cap B) \cup C\)</span></p>
-<p><strong>Propiedad Distributiva</strong>: <span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span> y <span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span>.</p>
-<p><strong>Leyes de Morgan</strong>: <span class="math inline">\((A \cup B)^c = A^c \cap B^c\)</span> y <span class="math inline">\((A \cap B)^c = A^c \cup B^c\)</span></p>
+<div id="union-de-eventos-dados-dos-eventos-a-y-b-de-un-mismo-espacio-muestral-su-union-se-representa-por-a-cup-b-y-es-el-evento-que-contiene-los-elementos-que-estan-en-a-o-b-o-en-ambos.-el-evento-ocurre-si-al-menos-uno-de-los-dos-eventos-ocurre." class="section level4">
+<h4><strong>Unión de eventos:</strong> Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de un mismo espacio muestral su unión se representa por <span class="math inline">\(A \cup B\)</span> y es el evento que contiene los elementos que están en <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> o en ambos. El evento ocurre si al menos uno de los dos eventos ocurre.</h4>
+</div>
+<div id="interseccion-de-eventos-dados-dos-eventos-a-y-b-de-un-mismo-espacio-muestral-su-interseccion-se-representa-por-a-cap-b-y-es-el-evento-que-contiene-los-elementos-que-estan-en-a-y-en-b-al-mismo-tiempo.-el-evento-ocurre-cuando-los-eventos-ocurren-simultaneamente." class="section level4">
+<h4><strong>Intersección de eventos</strong>: Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de un mismo espacio muestral su intersección se representa por <span class="math inline">\(A \cap B\)</span>, y es el evento que contiene los elementos que están en <span class="math inline">\(A\)</span> y en <span class="math inline">\(B\)</span> al mismo tiempo. El evento ocurre cuando los eventos ocurren simultáneamente.</h4>
+</div>
+<div id="evento-complemento-el-complemento-de-un-evento-a-se-representa-por-ac-y-es-el-evento-que-contiene-todos-los-elementos-que-no-estan-en-a.-el-evento-ocurre-si-a-no-ocurre." class="section level4">
+<h4><strong>Evento Complemento</strong>: El complemento de un evento <span class="math inline">\(A\)</span> se representa por <span class="math inline">\(A^C\)</span> y es el evento que contiene todos los elementos que no están en <span class="math inline">\(A\)</span>. El evento ocurre si <span class="math inline">\(A\)</span> no ocurre.</h4>
+</div>
+<div id="propiedades-de-relaciones-entre-eventos-sean-a-b-y-c-eventos-de-un-mismo-espacio-muestral-s-entonces-se-cumplen-las-siguientes-propiedades" class="section level4">
+<h4><strong>Propiedades de relaciones entre eventos</strong>: Sean <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> y <span class="math inline">\(C\)</span> eventos de un mismo espacio muestral <span class="math inline">\(S\)</span> entonces se cumplen las siguientes propiedades:</h4>
+</div>
+<div id="propiedad-conmutativa" class="section level4">
+<h4><strong>1. Propiedad Conmutativa</strong>:</h4>
+</div>
+<div id="conmutativa-de-la-union-quad-quad-quad-a-cup-b-b-cup-a" class="section level4">
+<h4>Conmutativa de la unión: <span class="math inline">\(\quad \quad \quad A \cup B = B \cup A\)</span></h4>
+</div>
+<div id="conmutativa-de-la-interseccion-quad-a-cap-b-b-cap-a" class="section level4">
+<h4>Conmutativa de la intersección: <span class="math inline">\(\quad A \cap B = B \cap A\)</span></h4>
+</div>
+<div id="propiedad-asociativa" class="section level4">
+<h4><strong>2. Propiedad Asociativa</strong>:</h4>
+</div>
+<div id="asociativa-de-la-union-quad-quad-quad-a-cup-b-cup-c-a-cup-b-cup-c" class="section level4">
+<h4>Asociativa de la unión: <span class="math inline">\(\quad \quad \quad A \cup (B \cup C) = (A \cup B) \cup C\)</span></h4>
+</div>
+<div id="asociativa-de-la-interseccion-quad-a-cap-b-cap-c-a-cap-b-cap-c" class="section level4">
+<h4>Asociativa de la intersección: <span class="math inline">\(\quad A \cap (B \cap C) = (A \cap B) \cap C\)</span></h4>
+</div>
+<div id="propiedad-distributiva" class="section level4">
+<h4><strong>3. Propiedad Distributiva</strong>:</h4>
+</div>
+<div id="distributiva-de-la-union-respecto-de-la-interseccion-quad-a-cup-b-cap-c-a-cup-b-cap-a-cup-c" class="section level4">
+<h4>Distributiva de la unión respecto de la intersección: <span class="math inline">\(\quad A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></h4>
+</div>
+<div id="distributiva-de-la-interseccion-respecto-de-la-union-quad-a-cap-b-cup-c-a-cap-b-cup-a-cap-c." class="section level4">
+<h4>Distributiva de la intersección respecto de la unión: <span class="math inline">\(\quad A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span>.</h4>
+</div>
+<div id="leyes-de-morgan" class="section level4">
+<h4><strong>4. Leyes de Morgan</strong>:</h4>
+</div>
+<div id="ley-de-morgan-para-la-union-quad-quad-quad-a-cup-bc-ac-cap-bc" class="section level4">
+<h4>Ley de Morgan para la unión: <span class="math inline">\(\quad \quad \quad (A \cup B)^C = A^C \cap B^C\)</span></h4>
+</div>
+<div id="ley-de-morgan-para-la-interseccion-quad-a-cap-bc-ac-cup-bc" class="section level4">
+<h4>Ley de Morgan para la intersección: <span class="math inline">\(\quad (A \cap B)^C = A^C \cup B^C\)</span></h4>
+</div>
 </div>
 </div>
 <div id="que-es-probabilidad" class="section level2">
 <h2>¿Qué es probabilidad?</h2>
-<p>Pensemos en la probabilidad de manera informal por un momento.</p>
-<p><strong>Definición</strong>. La probabilidad es un número entre 0 y 1, donde:</p>
-<ol style="list-style-type: decimal">
-<li>Un número cercano a 0 significa “no probable”.</li>
-<li>Un número cercano a 1 significa “bastante probable”.</li>
-</ol>
-<p>Si la probabilidad de un evento es exactamente 0, entonces el evento no puede ocurrir. Si la probabilidad de un evento es exactamente 1, entonces el evento definitivamente ocurrirá.</p>
-<p>Ahora pensemos en algunos eventos según lo aprendido:</p>
-<p><strong>Un evento o eventos que de seguro ocurrirán</strong>: Que llueva hoy en Mayagüez, que finalice el día, sacar cara al lanzar una moneda, que finalice el semestre, sacar un número par al lanzar un dado… etc.</p>
-<p>¿Qué probabilidad le asignaría a cada uno de estos eventos?</p>
-<p><strong>Un evento o eventos que son imposibles que ocurran</strong>: Que no hayan huracanes en el caribe, obtener un número 8 al lanzar un dado.</p>
-<p>¿Qué probabilidad le asignaría a cada uno de estos eventos?</p>
-<p><strong>Un evento o eventos que posiblemente ocurran</strong>: Ganar el Power Ball, Que un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.</p>
-<p>¿Qué probabilidad le asignaría a cada uno de estos eventos?</p>
+<div id="pensemos-en-la-probabilidad-de-manera-informal-por-un-momento." class="section level4">
+<h4>Pensemos en la probabilidad de manera informal por un momento.</h4>
+</div>
+<div id="definicion.-la-probabilidad-es-un-numero-entre-0-y-1-donde" class="section level4">
+<h4><strong>Definición</strong>. La probabilidad es un número entre 0 y 1, donde:</h4>
+</div>
+<div id="un-numero-cercano-a-0-significa-no-probable." class="section level4">
+<h4>1. Un número cercano a 0 significa “no probable”.</h4>
+</div>
+<div id="un-numero-cercano-a-1-significa-bastante-probable." class="section level4">
+<h4>2. Un número cercano a 1 significa “bastante probable”.</h4>
+</div>
+<div id="si-la-probabilidad-de-un-evento-es-exactamente-0-entonces-el-evento-no-puede-ocurrir.-si-la-probabilidad-de-un-evento-es-exactamente-1-entonces-el-evento-definitivamente-ocurrira." class="section level4">
+<h4>Si la probabilidad de un evento es exactamente 0, entonces el evento no puede ocurrir. Si la probabilidad de un evento es exactamente 1, entonces el evento definitivamente ocurrirá.</h4>
+</div>
+<div id="ahora-pensemos-en-algunos-eventos-segun-lo-aprendido" class="section level4">
+<h4>Ahora pensemos en algunos eventos según lo aprendido:</h4>
+</div>
+<div id="un-evento-o-eventos-que-de-seguro-ocurriran-que-llueva-hoy-en-mayaguez-que-finalice-el-dia-sacar-cara-al-lanzar-una-moneda-que-finalice-el-semestre-sacar-un-numero-par-al-lanzar-un-dado-etc." class="section level4">
+<h4><strong>Un evento o eventos que de seguro ocurrirán</strong>: Que llueva hoy en Mayagüez, que finalice el día, sacar cara al lanzar una moneda, que finalice el semestre, sacar un número par al lanzar un dado… etc.</h4>
+</div>
+<div id="que-probabilidad-le-asignaria-a-cada-uno-de-estos-eventos" class="section level4">
+<h4>¿Qué probabilidad le asignaría a cada uno de estos eventos?</h4>
+</div>
+<div id="un-evento-o-eventos-que-son-imposibles-que-ocurran-que-no-hayan-huracanes-en-el-caribe-obtener-un-numero-8-al-lanzar-un-dado." class="section level4">
+<h4><strong>Un evento o eventos que son imposibles que ocurran</strong>: Que no hayan huracanes en el caribe, obtener un número 8 al lanzar un dado.</h4>
+</div>
+<div id="que-probabilidad-le-asignaria-a-cada-uno-de-estos-eventos-1" class="section level4">
+<h4>¿Qué probabilidad le asignaría a cada uno de estos eventos?</h4>
+</div>
+<div id="un-evento-o-eventos-que-posiblemente-ocurran-ganar-el-power-ball-que-un-estudiante-de-esma3101-tenga-mas-de-25-anos-que-un-estudiante-del-colegio-tenga-mas-de-dos-carros." class="section level4">
+<h4><strong>Un evento o eventos que posiblemente ocurran</strong>: Ganar el Power Ball, Que un estudiante de ESMA3101 tenga más de 25 años, Que un estudiante del Colegio tenga más de dos carros.</h4>
+</div>
+<div id="que-probabilidad-le-asignaria-a-cada-uno-de-estos-eventos-2" class="section level4">
+<h4>¿Qué probabilidad le asignaría a cada uno de estos eventos?</h4>
+</div>
 </div>
 <div id="metodos-para-asignar-probabilidades" class="section level2">
 <h2>Métodos para asignar probabilidades</h2>
 <div id="i.-metodo-axiomatico" class="section level3">
 <h3>I. Método axiomático</h3>
-<p>La Probabilidad es considerada como una función de valor real definida sobre una colección de eventos de un espacio muestral <span class="math inline">\(S\)</span> que satisface los siguientes axiomas:</p>
-<p>Ax1. <span class="math inline">\(P(S)=1\)</span></p>
-<p>Ax2. <span class="math inline">\(P(A) \geq 0\)</span></p>
-<p>AX3. <span class="math inline">\(P(\bigcup_{i=1}^{n}A_i)=\sum_{i=1}^{n}(P(A_i))\)</span></p>
-<p>si A1, A2, … son mutuamente excluyentes.</p>
+<div id="la-probabilidad-es-considerada-como-una-funcion-de-valor-real-definida-sobre-una-coleccion-de-eventos-de-un-espacio-muestral-s-que-satisface-los-siguientes-axiomas" class="section level4">
+<h4>La Probabilidad es considerada como una función de valor real definida sobre una colección de eventos de un espacio muestral <span class="math inline">\(S\)</span> que satisface los siguientes axiomas:</h4>
+</div>
+<div id="ax1.-quad-ps1" class="section level4">
+<h4><strong>Ax1.</strong> <span class="math inline">\(\quad P(S)=1\)</span></h4>
+</div>
+<div id="ax2.-quad-pa-geq-0" class="section level4">
+<h4><strong>Ax2.</strong> <span class="math inline">\(\quad P(A) \geq 0\)</span></h4>
+</div>
+<div id="ax3.-quad-pbigbigcup_i1na_ibigsum_i1nbigpa_ibig-si-a_1-a_2-...-a_n-son-mutuamente-excluyentes." class="section level4">
+<h4><strong>AX3.</strong> <span class="math inline">\(\quad P\big(\bigcup_{i=1}^{n}A_i\big)=\sum_{i=1}^{n}\big(P(A_i)\big)\)</span> si <span class="math inline">\(A_1, A_2, ..., A_n\)</span> son mutuamente excluyentes.</h4>
 <center>
 <strong>Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir <span class="math inline">\(A \cap B = \emptyset\)</span></strong>
 </center>
 <blockquote>
-<p>Propiedades de la probabilidad.</p>
+<h4 id="propiedades-de-la-probabilidad.">Propiedades de la probabilidad.</h4>
 </blockquote>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(P(\emptyset)=0\)</span></p></li>
-<li><p><span class="math inline">\(P(A^c)= 1-P(A)\)</span></p></li>
-<li><p><span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B)\)</span></p></li>
-</ol>
-<p>En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.</p>
-<p>Una forma de mostrar las relaciones entre eventos es mediante los famosos diagramas de Venn. Por ejemplo, sean los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> del mismo espacio muestral, con probabilidades <span class="math inline">\(P(A)\)</span> y <span class="math inline">\(P(B)\)</span> respectivamente. Para este caso con dos eventos, el diagra de Venn es el siguiente:</p>
+</div>
+<div id="pemptyset0" class="section level4">
+<h4>1. <span class="math inline">\(P(\emptyset)=0\)</span></h4>
+</div>
+<div id="pac-1-pa" class="section level4">
+<h4>2. <span class="math inline">\(P(A^c)= 1-P(A)\)</span></h4>
+</div>
+<div id="pa-cup-b-pa-pb---pa-cap-b" class="section level4">
+<h4>3. <span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B)\)</span></h4>
+</div>
+<div id="en-la-propiedad-numero-uno-tenemos-que-la-probabilidad-de-un-evento-sin-elementos-es-decir-vacio-es-igual-a-cero.-respecto-a-la-probabilidad-del-complemento-es-en-realidad-la-probabilidad-de-que-no-ocurra-el-evento.-por-ultimo-tenemos-la-probabilidad-de-la-suma-de-dos-eventos-que-se-define-como-la-suma-de-las-probabilidades-menos-el-valor-de-la-probabilidad-de-la-interseccion." class="section level4">
+<h4>En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.</h4>
+</div>
+<div id="una-forma-de-mostrar-las-relaciones-entre-eventos-es-mediante-los-famosos-diagramas-de-venn.-por-ejemplo-sean-los-eventos-a-y-b-del-mismo-espacio-muestral-con-probabilidades-pa-y-pb-respectivamente.-para-este-caso-con-dos-eventos-el-diagra-de-venn-es-el-siguiente" class="section level4">
+<h4>Una forma de mostrar las relaciones entre eventos es mediante los famosos diagramas de Venn. Por ejemplo, sean los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> del mismo espacio muestral, con probabilidades <span class="math inline">\(P(A)\)</span> y <span class="math inline">\(P(B)\)</span> respectivamente. Para este caso con dos eventos, el diagra de Venn es el siguiente:</h4>
 <div class="figure">
 <img src="VENN.png" />
 
 </div>
-<p>Las relaciones entre las probabilidades de dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> también pueden resumirse mediante la siguiente tabla de filas y columnas:</p>
+</div>
+<div id="las-relaciones-entre-las-probabilidades-de-dos-eventos-a-y-b-tambien-pueden-resumirse-mediante-la-siguiente-tabla-de-filas-y-columnas" class="section level4">
+<h4>Las relaciones entre las probabilidades de dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> también pueden resumirse mediante la siguiente tabla de filas y columnas:</h4>
 <div class="figure">
 <img src="tablap.png" />
 
 </div>
 <blockquote>
-<p><strong>Ejemplos</strong>:</p>
+<h4 id="ejemplos-1"><strong>Ejemplos</strong>:</h4>
 </blockquote>
-<ol style="list-style-type: decimal">
-<li>Juan y Luis están solicitando ser admitidos en una universidad. La probabilidad de que Juan sea admitido es es <span class="math inline">\(0.7\)</span> y la probabilidad de que Luis sea admitido es <span class="math inline">\(0.6\)</span>. La probabilidad de que ambos sean admitidos es <span class="math inline">\(0.45\)</span>.</li>
-</ol>
-<p>Este tipo de problemas los podemos resolver usando diagramas de Venn:</p>
-<p>Por información que nos da el problema sabemos que: <strong><span class="math inline">\(P(J)=0.7\)</span></strong> y <strong><span class="math inline">\(P(L)=0.6\)</span></strong>, también sabemos que <strong><span class="math inline">\(P(J \cap L)=0.45\)</span></strong></p>
+</div>
+<div id="juan-y-luis-estan-solicitando-ser-admitidos-en-una-universidad.-la-probabilidad-de-que-juan-sea-admitido-es-es-0.7-y-la-probabilidad-de-que-luis-sea-admitido-es-0.6.-la-probabilidad-de-que-ambos-sean-admitidos-es-0.45." class="section level4">
+<h4>1. Juan y Luis están solicitando ser admitidos en una universidad. La probabilidad de que Juan sea admitido es es <span class="math inline">\(0.7\)</span> y la probabilidad de que Luis sea admitido es <span class="math inline">\(0.6\)</span>. La probabilidad de que ambos sean admitidos es <span class="math inline">\(0.45\)</span>.</h4>
+</div>
+<div id="este-tipo-de-problemas-los-podemos-resolver-usando-diagramas-de-venn" class="section level4">
+<h4>Este tipo de problemas los podemos resolver usando diagramas de Venn:</h4>
+</div>
+<div id="por-informacion-que-nos-da-el-problema-sabemos-que-pj0.7-y-pl0.6-tambien-sabemos-que" class="section level4">
+<h4>Por información que nos da el problema sabemos que: <strong><span class="math inline">\(P(J)=0.7\)</span></strong> y <strong><span class="math inline">\(P(L)=0.6\)</span></strong>, también sabemos que</h4>
+<p><strong><span class="math inline">\(P(J \cap L)=0.45\)</span></strong></p>
 <div class="figure">
 <img src="venn1.png" />
 
 </div>
-<ol style="list-style-type: lower-alpha">
-<li>¿Cuál es la probabilidad de que solamente uno de ellos sea admitido?</li>
-</ol>
-<p>Para responder esta pregunta debemos fijarnos solo en las probabilidades que les corresponden a cada evento sin la probabilidad que tienen en común, esto es:</p>
-<p><span class="math display">\[P(A \cap B^c) + P(A^c \cap B)= 0.25 + 0.15 = 0.40\]</span> Por tanto, la probabilidad de que solo uno de los dos sea admitido es <strong><span class="math inline">\(0.40\)</span></strong></p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Cuál es la probabilidad de que al menos uno de ellos sea admitido?</li>
-</ol>
-<p>Para este caso podemos usar la regla aditiva, es decir</p>
-<p><span class="math display">\[P(J \cup L)= P(J) + P(L) - P(J\cap L)=\]</span> <span class="math display">\[0.7 + 0.6 - 0.45=0.85\]</span></p>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>¿Cuál es la probabilidad de que ninguno de los dos sea admitido?</li>
-</ol>
-<p>Debemos darnos cuenta que el ejercicio nos está preguntando por una probabilidad del complemento, esto es: <span class="math inline">\(P(J^c \cap L^c)\)</span>, si usamos las leyes de Morgan, el problema es resuelto, veamos:</p>
-<p><span class="math display">\[P(J^c \cap L^c)=P(J \cup L)^c=1-P(J \cup L)=1-0.85=0.15\]</span> Entonces tenemos que la probabilidad de que ninguno de los dos sea admitido es de <span class="math inline">\(0.85\)</span></p>
-<p>La otra forma de resolver el problema es usando la tabla de doble entrada,</p>
+</div>
+<div id="a-cual-es-la-probabilidad-de-que-solamente-uno-de-ellos-sea-admitido" class="section level4">
+<h4>a) ¿Cuál es la probabilidad de que solamente uno de ellos sea admitido?</h4>
+</div>
+<div id="para-responder-esta-pregunta-debemos-fijarnos-solo-en-las-probabilidades-que-les-corresponden-a-cada-evento-sin-la-probabilidad-que-tienen-en-comun-esto-es" class="section level4">
+<h4>Para responder esta pregunta debemos fijarnos solo en las probabilidades que les corresponden a cada evento sin la probabilidad que tienen en común, esto es:</h4>
+</div>
+<div id="pa-cap-bc-pac-cap-b-0.25-0.15-0.40" class="section level4">
+<h4><span class="math display">\[P(A \cap B^c) + P(A^c \cap B)= 0.25 + 0.15 = 0.40\]</span></h4>
+</div>
+<div id="por-lo-tanto-la-probabilidad-de-que-solo-uno-de-los-dos-sea-admitido-es-0.40" class="section level4">
+<h4>Por lo tanto, la probabilidad de que solo uno de los dos sea admitido es <strong><span class="math inline">\(0.40\)</span></strong></h4>
+</div>
+<div id="b-cual-es-la-probabilidad-de-que-al-menos-uno-de-ellos-sea-admitido" class="section level4">
+<h4>b) Cuál es la probabilidad de que al menos uno de ellos sea admitido?</h4>
+</div>
+<div id="para-este-caso-podemos-usar-la-regla-aditiva-es-decir" class="section level4">
+<h4>Para este caso podemos usar la regla aditiva, es decir</h4>
+</div>
+<div id="pj-cup-l-pj-pl---pjcap-l" class="section level4">
+<h4><span class="math display">\[P(J \cup L)= P(J) + P(L) - P(J\cap L)=\]</span></h4>
+</div>
+<div id="section-1" class="section level4">
+<h4><span class="math display">\[0.7 + 0.6 - 0.45=0.85\]</span></h4>
+</div>
+<div id="c-cual-es-la-probabilidad-de-que-ninguno-de-los-dos-sea-admitido" class="section level4">
+<h4>c) ¿Cuál es la probabilidad de que ninguno de los dos sea admitido?</h4>
+</div>
+<div id="debemos-darnos-cuenta-que-el-ejercicio-nos-esta-preguntando-por-una-probabilidad-del-complemento-esto-es-pjc-cap-lc-si-usamos-las-leyes-de-morgan-el-problema-es-resuelto-veamos" class="section level4">
+<h4>Debemos darnos cuenta que el ejercicio nos está preguntando por una probabilidad del complemento, esto es: <span class="math inline">\(P(J^c \cap L^c)\)</span>, si usamos las leyes de Morgan, el problema es resuelto, veamos:</h4>
+</div>
+<div id="pjc-cap-lcpj-cup-lc1-pj-cup-l1-0.850.15" class="section level4">
+<h4><span class="math display">\[P(J^c \cap L^c)=P(J \cup L)^c=1-P(J \cup L)=1-0.85=0.15\]</span></h4>
+</div>
+<div id="entonces-tenemos-que-la-probabilidad-de-que-ninguno-de-los-dos-sea-admitido-es-de-0.85" class="section level4">
+<h4>Entonces tenemos que la probabilidad de que ninguno de los dos sea admitido es de <span class="math inline">\(0.85\)</span></h4>
+</div>
+<div id="la-otra-forma-de-resolver-el-problema-es-usando-la-tabla-de-doble-entrada" class="section level4">
+<h4>La otra forma de resolver el problema es usando la tabla de doble entrada,</h4>
 <div class="figure">
 <img src="tabla2.png" />
 
 </div>
-<p>Los datos de color rojo son los que provee el problema, los demás son calculados usando complementos.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Una empresa tiene dos maneras <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de presentar un nuevo producto al mercado. Si presenta el producto de la manera <span class="math inline">\(A\)</span> la probabilidad de que el producto sea exitoso es <span class="math inline">\(0.44\)</span> y si lo presenta de la manera <span class="math inline">\(B\)</span> la probabilidad de éxito se reduce a <span class="math inline">\(0.29\)</span>. La probabilidad de que el producto fracase con ambas maneras de presentación es <span class="math inline">\(0.37\)</span>. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?</li>
-</ol>
-<p>Definamos los siguientes eventos:</p>
-<p><strong>A: “Método uno”</strong>. Sabemos que <span class="math inline">\(P(A)=0.44\)</span></p>
-<p><strong>B: “Método dos”</strong>. Sabemos que <span class="math inline">\(P(B)=0.29\)</span></p>
-<p>También sabemos que <strong><span class="math inline">\(P(A^c \cap B^c)=P(A \cup B)^c=0.37\)</span></strong> mediante la ley de Morgan. Entonces:</p>
-<p><span class="math display">\[P(A \cup B)^c= 1-P(A\cup B)\]</span> Resolviendo para <span class="math inline">\(P(A\cup B)\)</span>, tenemos:</p>
-<p><span class="math display">\[P(A\cup B)= 1-P(A \cup B)^c= 1- 0.37=0.63\]</span></p>
-<p>Finalmente,</p>
-<p><span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B)\)</span></p>
-<p>resolviendo para <span class="math inline">\(P(A \cap B)\)</span> tenemos:</p>
-<p><span class="math display">\[P(A \cap B)= P(A) + P(B) - P(A \cup B)=0.44 + 0.29 - 0.63 = 0.10\]</span> El procedimiento anterior es la forma analitica de resolver el problema. Mediante un diagrama de Venn se puede resolver el problema de una manera más sencilla, veamos</p>
+</div>
+<div id="los-datos-de-color-rojo-son-los-que-provee-el-problema-los-demas-son-calculados-usando-complementos." class="section level4">
+<h4>Los datos de color rojo son los que provee el problema, los demás son calculados usando complementos.</h4>
+</div>
+<div id="una-empresa-tiene-dos-maneras-a-y-b-de-presentar-un-nuevo-producto-al-mercado.-si-presenta-el-producto-de-la-manera-a-la-probabilidad-de-que-el-producto-sea-exitoso-es-0.44-y-si-lo-presenta-de-la-manera-b-la-probabilidad-de-exito-se-reduce-a-0.29.-la-probabilidad-de-que-el-producto-fracase-con-ambas-maneras-de-presentacion-es-0.37.-cual-es-la-probabilidad-de-que-el-producto-sea-exitoso-con-ambas-formas-de-presentacion" class="section level4">
+<h4>2. Una empresa tiene dos maneras <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> de presentar un nuevo producto al mercado. Si presenta el producto de la manera <span class="math inline">\(A\)</span> la probabilidad de que el producto sea exitoso es <span class="math inline">\(0.44\)</span> y si lo presenta de la manera <span class="math inline">\(B\)</span> la probabilidad de éxito se reduce a <span class="math inline">\(0.29\)</span>. La probabilidad de que el producto fracase con ambas maneras de presentación es <span class="math inline">\(0.37\)</span>. ¿Cuál es la probabilidad de que el producto sea exitoso con ambas formas de presentación?</h4>
+</div>
+<div id="definamos-los-siguientes-eventos" class="section level4">
+<h4>Definamos los siguientes eventos:</h4>
+</div>
+<div id="a-metodo-uno.-sabemos-que-pa0.44" class="section level4">
+<h4><strong>A: “Método uno”</strong>. Sabemos que <span class="math inline">\(P(A)=0.44\)</span></h4>
+</div>
+<div id="b-metodo-dos.-sabemos-que-pb0.29" class="section level4">
+<h4><strong>B: “Método dos”</strong>. Sabemos que <span class="math inline">\(P(B)=0.29\)</span></h4>
+</div>
+<div id="tambien-sabemos-que-pac-cap-bcpa-cup-bc0.37-mediante-la-ley-de-morgan.-entonces" class="section level4">
+<h4>También sabemos que <strong><span class="math inline">\(P(A^c \cap B^c)=P(A \cup B)^c=0.37\)</span></strong> mediante la ley de Morgan. Entonces:</h4>
+</div>
+<div id="pa-cup-bc-1-pacup-b" class="section level4">
+<h4><span class="math display">\[P(A \cup B)^c= 1-P(A\cup B)\]</span></h4>
+</div>
+<div id="resolviendo-para-pacup-b-tenemos" class="section level4">
+<h4>Resolviendo para <span class="math inline">\(P(A\cup B)\)</span>, tenemos:</h4>
+</div>
+<div id="pacup-b-1-pa-cup-bc-1--0.370.63" class="section level4">
+<h4><span class="math display">\[P(A\cup B)= 1-P(A \cup B)^c= 1- 0.37=0.63\]</span></h4>
+</div>
+<div id="finalmente" class="section level4">
+<h4>Finalmente,</h4>
+</div>
+<div id="pa-cup-b-pa-pb---pa-cap-b-1" class="section level4">
+<h4><span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B),\)</span></h4>
+</div>
+<div id="resolviendo-para-pa-cap-b-tenemos" class="section level4">
+<h4>resolviendo para <span class="math inline">\(P(A \cap B)\)</span> tenemos:</h4>
+</div>
+<div id="pa-cap-b-pa-pb---pa-cup-b0.44-0.29---0.63-0.10" class="section level4">
+<h4><span class="math display">\[P(A \cap B)= P(A) + P(B) - P(A \cup B)=0.44 + 0.29 - 0.63 = 0.10\]</span></h4>
+</div>
+<div id="el-procedimiento-anterior-es-la-forma-analitica-de-resolver-el-problema.-mediante-un-diagrama-de-venn-se-puede-resolver-el-problema-de-una-manera-mas-sencilla-veamos" class="section level4">
+<h4>El procedimiento anterior es la forma analitica de resolver el problema. Mediante un diagrama de Venn se puede resolver el problema de una manera más sencilla, veamos</h4>
 <div class="figure">
 <img src="venn2.png" />
 
 </div>
-<p>La otra forma es mediante la tabla de doble entrada, como vemos a continuación.</p>
+</div>
+<div id="la-otra-forma-es-mediante-la-tabla-de-doble-entrada-como-vemos-a-continuacion." class="section level4">
+<h4>La otra forma es mediante la tabla de doble entrada, como vemos a continuación.</h4>
 <div class="figure">
 <img src="tabla3.png" />
 
 </div>
 </div>
+</div>
 <div id="ii.-metodo-clasico" class="section level3">
 <h3>II. Método clásico</h3>
 <blockquote>
-<p><strong>Definición</strong></p>
+<h4 id="definicion"><strong>Definición</strong></h4>
 </blockquote>
-<p>Un espacio muestral finito <span class="math inline">\(S =\{A_1, A_2,…,A_n\}\)</span> se dice que es <strong>equiprobable</strong> si cada uno de sus elementos tiene la misma probabilidad de ocurrencia, es decir <span class="math inline">\(P(A_i)=\frac{1}{n}\)</span> para todo <span class="math inline">\(i=1,..., n\)</span>.</p>
+<div id="un-espacio-muestral-finito-s-a_1-a_2a_n-se-dice-que-es-equiprobable-si-cada-uno-de-sus-elementos-tiene-la-misma-probabilidad-de-ocurrencia-es-decir-pa_ifrac1n-para-todo-i1...-n." class="section level4">
+<h4>Un espacio muestral finito <span class="math inline">\(S =\{A_1, A_2,…,A_n\}\)</span> se dice que es <strong>equiprobable</strong> si cada uno de sus elementos tiene la misma probabilidad de ocurrencia, es decir <span class="math inline">\(P(A_i)=\frac{1}{n}\)</span> para todo <span class="math inline">\(i=1,..., n\)</span>.</h4>
 <blockquote>
-<p><strong>Ejemplos</strong></p>
+<h4 id="ejemplos-2"><strong>Ejemplos</strong></h4>
 </blockquote>
-<ol style="list-style-type: decimal">
-<li><p>Se lanza un dado de seis caras, entonces su espacio muestral esta dado por <span class="math inline">\(S=\{1,2,3,4,5,6\}\)</span>, vemos que hay seis posibles resultados, entonces la probabilidad de cada uno de ellos es 1/6.</p></li>
-<li><p>Se lanza un par de dados legales y distinguibles, entonces su espacio muestral dado por: <span class="math inline">\(S=\{(i,j);i,j=1,2,3,4,5,6\}\)</span> tiene 36 resultados, cada uno de ellos con probabilidad de ocurrencia 1/36.</p></li>
-</ol>
+</div>
+<div id="se-lanza-un-dado-de-seis-caras-entonces-su-espacio-muestral-esta-dado-por-s123456-vemos-que-hay-seis-posibles-resultados-entonces-la-probabilidad-de-cada-uno-de-ellos-es-16." class="section level4">
+<h4>1. Se lanza un dado de seis caras, entonces su espacio muestral esta dado por <span class="math inline">\(S=\{1,2,3,4,5,6\}\)</span>, vemos que hay seis posibles resultados, entonces la probabilidad de cada uno de ellos es 1/6.</h4>
+</div>
+<div id="se-lanza-un-par-de-dados-legales-y-distinguibles-entonces-su-espacio-muestral-dado-por-sijij123456-tiene-36-resultados-cada-uno-de-ellos-con-probabilidad-de-ocurrencia-136." class="section level4">
+<h4>2. Se lanza un par de dados legales y distinguibles, entonces su espacio muestral dado por: <span class="math inline">\(S=\{(i,j);i,j=1,2,3,4,5,6\}\)</span> tiene 36 resultados, cada uno de ellos con probabilidad de ocurrencia 1/36.</h4>
 <blockquote>
-<p><strong>Definición</strong></p>
+<h4 id="definicion-1"><strong>Definición</strong></h4>
 </blockquote>
-<p>Si un experimento aleatorio tiene un espacio muestral equiprobable <span class="math inline">\(S\)</span> que contiene <span class="math inline">\(N\)</span> elementos y <span class="math inline">\(A\)</span> es un evento de <span class="math inline">\(S\)</span> que ocurre de <span class="math inline">\(\#(A)\)</span> maneras distintas entonces la probabilidad de ocurrencia de <span class="math inline">\(A\)</span> está dada por:</p>
-<p><span class="math display">\[P(A)=\frac{\# A}{N}\]</span></p>
+</div>
+<div id="si-un-experimento-aleatorio-tiene-un-espacio-muestral-equiprobable-s-que-contiene-n-elementos-y-a-es-un-evento-de-s-que-ocurre-de-a-maneras-distintas-entonces-la-probabilidad-de-ocurrencia-de-a-esta-dada-por" class="section level4">
+<h4>Si un experimento aleatorio tiene un espacio muestral equiprobable <span class="math inline">\(S\)</span> que contiene <span class="math inline">\(N\)</span> elementos y <span class="math inline">\(A\)</span> es un evento de <span class="math inline">\(S\)</span> que ocurre de <span class="math inline">\(\#(A)\)</span> maneras distintas entonces la probabilidad de ocurrencia de <span class="math inline">\(A\)</span> está dada por:</h4>
+</div>
+<div id="pafrac-an" class="section level4">
+<h4><span class="math display">\[P(A)=\frac{\# A}{N}\]</span></h4>
 <blockquote>
-<p><strong>Ejemplos</strong></p>
+<h4 id="ejemplos-3"><strong>Ejemplos</strong></h4>
 </blockquote>
-<ol style="list-style-type: decimal">
-<li>¿Cuál es la probabilidad de obtener una suma mayor que 7 al lanzar un par de dados?</li>
-</ol>
-<p>Es decir la suma de los resultados debe dar 8, 9, 10, 11 o 12.</p>
-<p>El evento de obtener una suma mayor que 7 al lanzar un par de dados esta dado de la siguiente manera</p>
-<p><span class="math display">\[A=\{(6,6),(6,5),(6,4),(6,3),(6,2),(5,6),(5,5),(5,4),(5,3),(4,6),(4,5),(4,4),(3,6),(3,5),(2,6)\}\]</span></p>
-<p>Vemos que <span class="math inline">\(\#(A)=15\)</span> de un total de <span class="math inline">\(N=36\)</span> posibilidades.</p>
-<p>Entonces,</p>
-<p><span class="math display">\[P(A)=\dfrac{\#A}{N}=\dfrac{15}{36}\]</span></p>
+</div>
+<div id="cual-es-la-probabilidad-de-obtener-una-suma-mayor-que-7-al-lanzar-un-par-de-dados" class="section level4">
+<h4>1. ¿Cuál es la probabilidad de obtener una suma mayor que 7 al lanzar un par de dados?</h4>
+</div>
+<div id="es-decir-la-suma-de-los-resultados-debe-dar-8-9-10-11-o-12." class="section level4">
+<h4>Es decir la suma de los resultados debe dar 8, 9, 10, 11 o 12.</h4>
+</div>
+<div id="el-evento-de-obtener-una-suma-mayor-que-7-al-lanzar-un-par-de-dados-es-el-siguiente" class="section level4">
+<h4>El evento de obtener una suma mayor que 7 al lanzar un par de dados es el siguiente</h4>
+</div>
+<div id="a6665646362565554" class="section level4">
+<h4><span class="math display">\[A=\{(6,6),(6,5),(6,4),(6,3),(6,2),(5,6),(5,5),(5,4),\]</span></h4>
+</div>
+<div id="quad-quad-53464544363526" class="section level4">
+<h4><span class="math display">\[\quad \quad (5,3),(4,6),(4,5),(4,4),(3,6),(3,5),(2,6)\}\]</span></h4>
+</div>
+<div id="vemos-que-a15-de-un-total-de-n36-posibilidades." class="section level4">
+<h4>Vemos que <span class="math inline">\(\#(A)=15\)</span> de un total de <span class="math inline">\(N=36\)</span> posibilidades.</h4>
+</div>
+<div id="entonces" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="padfracandfrac1536" class="section level4">
+<h4><span class="math display">\[P(A)=\dfrac{\#A}{N}=\dfrac{15}{36}\]</span></h4>
+</div>
 </div>
 <div id="iii.-metodo-frecuentista" class="section level3">
 <h3>III. Método frecuentista</h3>
-<p>Si un experimento se repite <span class="math inline">\(n\)</span> veces y <span class="math inline">\(n(A)\)</span> de esa veces ocurre el evento <span class="math inline">\(A\)</span>, entonces la frecuencia relativa de <span class="math inline">\(A\)</span> se define como:</p>
-<p><span class="math display">\[\frac{n(A)}{n} \to P(A)\]</span></p>
-<p>La probabilidad es el valor en el cual se estabiliza la frecuencia relativa del evento después de haber repetido el experimento un número grande de veces. La existencia de este valor está garantizando por un resultado llamado La Ley de los Grandes números. Desde el punto de vista práctico se puede considerar que la frecuencia relativa de un evento es un estimado de la probabilidad de ocurrencia del evento.</p>
-<p>El problema principal de la definición frecuencial de probabilidad es que, el cálculo de la probabilidad de un evento sería un proceso demasiado lento. El otro problema es que algunas veces es imposible tener un número grande de repeticiones del experimento, por ejemplo, si se desea calcular la probabilidad de que una persona en particular sobreviva una operación quirúrgica, tendríamos que tener información acerca de todas las operaciones de dicha persona, la cual por lo general es muy baja.</p>
+<div id="si-un-experimento-se-repite-n-veces-y-na-de-esa-veces-ocurre-el-evento-a-entonces-la-frecuencia-relativa-de-a-se-define-como" class="section level4">
+<h4>Si un experimento se repite <span class="math inline">\(n\)</span> veces y <span class="math inline">\(n(A)\)</span> de esa veces ocurre el evento <span class="math inline">\(A\)</span>, entonces la frecuencia relativa de <span class="math inline">\(A\)</span> se define como:</h4>
+</div>
+<div id="fracnan-to-pa" class="section level4">
+<h4><span class="math display">\[\frac{n(A)}{n} \to P(A)\]</span></h4>
+</div>
+<div id="la-probabilidad-es-el-valor-en-el-cual-se-estabiliza-la-frecuencia-relativa-del-evento-despues-de-haber-repetido-el-experimento-un-numero-grande-de-veces.-la-existencia-de-este-valor-esta-garantizando-por-un-resultado-llamado-la-ley-de-los-grandes-numeros.-desde-el-punto-de-vista-practico-se-puede-considerar-que-la-frecuencia-relativa-de-un-evento-es-un-estimado-de-la-probabilidad-de-ocurrencia-del-evento." class="section level4">
+<h4>La probabilidad es el valor en el cual se estabiliza la frecuencia relativa del evento después de haber repetido el experimento un número grande de veces. La existencia de este valor está garantizando por un resultado llamado La Ley de los Grandes números. Desde el punto de vista práctico se puede considerar que la frecuencia relativa de un evento es un estimado de la probabilidad de ocurrencia del evento.</h4>
+</div>
+<div id="el-problema-principal-de-la-definicion-frecuencial-de-probabilidad-es-que-el-calculo-de-la-probabilidad-de-un-evento-seria-un-proceso-demasiado-lento.-el-otro-problema-es-que-algunas-veces-es-imposible-tener-un-numero-grande-de-repeticiones-del-experimento-por-ejemplo-si-se-desea-calcular-la-probabilidad-de-que-una-persona-en-particular-sobreviva-una-operacion-quirurgica-tendriamos-que-tener-informacion-acerca-de-todas-las-operaciones-de-dicha-persona-la-cual-por-lo-general-es-muy-baja." class="section level4">
+<h4>El problema principal de la definición frecuencial de probabilidad es que, el cálculo de la probabilidad de un evento sería un proceso demasiado lento. El otro problema es que algunas veces es imposible tener un número grande de repeticiones del experimento, por ejemplo, si se desea calcular la probabilidad de que una persona en particular sobreviva una operación quirúrgica, tendríamos que tener información acerca de todas las operaciones de dicha persona, la cual por lo general es muy baja.</h4>
 <blockquote>
-<p>Estimando la probabilidad de ocurrencia de un evento</p>
+<h4 id="estimando-la-probabilidad-de-ocurrencia-de-un-evento">Estimando la probabilidad de ocurrencia de un evento</h4>
 </blockquote>
-<p>Con la ayuda de la computadora se puede simular la ejecución de un experimento un gran número de veces y haciendo uso de la definición frecuencial se puede estimar la probabilidad de ocurrencia de un evento.</p>
-<p><strong>Ejemplo</strong>. Supongamos que lanzamos un par de dados legales y tratamos de estimar la probabilidad de obtener que la suma de los resultados sea 7.</p>
-<p>Solución: Esta probabilidad puede ser determinada exactamente a través del espacio muestral del experimento y es igual a 6/36. Sin embargo, nosotros la podemos estimar a través de simulaciones.</p>
-<p>La siguiente función en R realiza la simulación de un par de números como resultado de lanzar dos dados legales.</p>
+</div>
+<div id="con-la-ayuda-de-la-computadora-se-puede-simular-la-ejecucion-de-un-experimento-un-gran-numero-de-veces-y-haciendo-uso-de-la-definicion-frecuencial-se-puede-estimar-la-probabilidad-de-ocurrencia-de-un-evento." class="section level4">
+<h4>Con la ayuda de la computadora se puede simular la ejecución de un experimento un gran número de veces y haciendo uso de la definición frecuencial se puede estimar la probabilidad de ocurrencia de un evento.</h4>
+</div>
+<div id="ejemplo.-supongamos-que-lanzamos-un-par-de-dados-legales-y-tratamos-de-estimar-la-probabilidad-de-obtener-que-la-suma-de-los-resultados-sea-7." class="section level4">
+<h4><strong>Ejemplo</strong>. Supongamos que lanzamos un par de dados legales y tratamos de estimar la probabilidad de obtener que la suma de los resultados sea 7.</h4>
+</div>
+<div id="solucion-esta-probabilidad-puede-ser-determinada-exactamente-a-traves-del-espacio-muestral-del-experimento-y-es-igual-a-636.-sin-embargo-nosotros-la-podemos-estimar-a-traves-de-simulaciones." class="section level4">
+<h4>Solución: Esta probabilidad puede ser determinada exactamente a través del espacio muestral del experimento y es igual a 6/36. Sin embargo, nosotros la podemos estimar a través de simulaciones.</h4>
+</div>
+<div id="la-siguiente-funcion-en-r-realiza-la-simulacion-de-un-par-de-numeros-como-resultado-de-lanzar-dos-dados-legales." class="section level4">
+<h4>La siguiente función en R realiza la simulación de un par de números como resultado de lanzar dos dados legales.</h4>
 <pre class="r"><code>sum_dados &lt;- function(n){
 sum_d &lt;- rep(0,n)
 for(i in 1:n){
@@ -490,17 +809,49 @@ sum_d[i] &lt;- sum(sample(1:6,2,T))
 }
 table(sum_d)/n
 }</code></pre>
-<p>A continuación usamos la función <code>sum_dados</code> y repetimos la simulación 10000 mil veces.</p>
+</div>
+<div id="a-continuacion-usamos-la-funcion-sum_dados-y-repetimos-la-simulacion-10000-mil-veces." class="section level4">
+<h4>A continuación usamos la función <code>sum_dados</code> y repetimos la simulación 10000 mil veces.</h4>
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0281 0.0552 0.0789 0.1088 0.1374 0.1673 0.1348 0.1156 0.0876 0.0576 
+0.0270 0.0578 0.0816 0.1121 0.1344 0.1631 0.1371 0.1142 0.0878 0.0582 
     12 
-0.0287 </code></pre>
-<p>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</p>
+0.0267 </code></pre>
+</div>
+<div id="como-resultado-encontramos-una-tabla-con-las-probabilidades-para-todos-los-posibles-resultados-en-el-experimento." class="section level4">
+<h4>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</h4>
+</div>
+<div id="pero-si-queremos-saber-la-probabilidad-de-que-la-suma-sea-mayor-que-7" class="section level4">
+<h4>Pero, ¿Si queremos saber la probabilidad de que la suma sea mayor que 7?</h4>
+<pre class="r"><code>sum_dados_mayorq7 &lt;- function(n, p = 0.4166){
+ z &lt;- 0
+ p.run &lt;- rep(0,n)
+for(i in 1:n) {
+sum_d &lt;- sum(sample(1:6,2,T))
+if (sum_d &gt; 7){
+  z &lt;- z + 1
+}
+ p.run[i] &lt;- z/i
+}
+  x &lt;- 1:n
+  plot(x,p.run,type = &quot;l&quot;,col = &#39;blue&#39;, log = &#39;x&#39;, 
+       xlim = c(1, n), ylim = c(0.0, 1.0), cex.axis=1.5, 
+       xlab = &#39;Roll two dice&#39;, ylab = &#39;Proportion sum &gt; 7&#39;, cex.lab = 1,
+       main = &#39;Running Proportion of sums &gt; 7&#39;, cex.main = 1)
+  lines(c(1, n), c(p, p), lty = 1, col = &#39;red&#39;)
+  print(paste(&quot;La probabilidad de obtener una suma mayor a 7 es&quot;,z/n))
+}</code></pre>
+</div>
+<div id="ahora-ejecutemos-la-funcion-sum_dados_mayorq7-10-mil-veces." class="section level4">
+<h4>Ahora ejecutemos la función <code>sum_dados_mayorq7</code> 10 mil veces.</h4>
+<pre class="r"><code>sum_dados_mayorq7(10000)</code></pre>
+<p><img src="Intro_p_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.4224&quot;</code></pre>
 <div class="figure">
 <img src="blanco.png" />
 
+</div>
 </div>
 </div>
 </div>
