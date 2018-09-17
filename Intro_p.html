@@ -815,9 +815,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0286 0.0576 0.0817 0.1082 0.1382 0.1608 0.1389 0.1132 0.0903 0.0537 
+0.0271 0.0588 0.0849 0.1092 0.1433 0.1709 0.1347 0.1037 0.0842 0.0554 
     12 
-0.0288 </code></pre>
+0.0278 </code></pre>
 </div>
 <div id="como-resultado-encontramos-una-tabla-con-las-probabilidades-para-todos-los-posibles-resultados-en-el-experimento." class="section level4">
 <h4>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</h4>
@@ -825,33 +825,32 @@ table(sum_d)/n
 <div id="pero-si-queremos-saber-la-probabilidad-de-que-la-suma-sea-mayor-que-7" class="section level4">
 <h4>Pero, ¿Si queremos saber la probabilidad de que la suma sea mayor que 7?</h4>
 <pre class="r"><code>sum_dados_mayorq7 &lt;- function(n, p = 0.4166){
+  library(ggplot2)
  z &lt;- 0
  p.run &lt;- rep(0,n)
 for(i in 1:n) {
 sum_d &lt;- sum(sample(1:6,2,T))
-if (sum_d &gt; 7){
+if (sum_d &gt; 7) {
   z &lt;- z + 1
 }
  p.run[i] &lt;- z/i
 }
-  x &lt;- 1:n
-  plot(x,p.run,type = &quot;l&quot;,col = &#39;blue&#39;, log = &#39;x&#39;, 
-       xlim = c(1, n), ylim = c(0.0, 1.0), cex.axis=1.5, 
-       xlab = &#39;Roll two dice&#39;, ylab = &#39;Proportion sum &gt; 7&#39;, cex.lab = 1.5,
-       main = &#39;Running Proportion of sums &gt; 7&#39;, cex.main = 1.5,lty = 1.5)
-  lines(c(1, n), c(p, p), lty = 1, col = &#39;red&#39;)
+ x &lt;- 1:n
+graph &lt;- ggplot(data.frame(x,p.run),aes(x = x, y = p.run)) + 
+  geom_line(col = &quot;red&quot;,size = 1) + ylim(0,1.0) +
+  geom_hline(aes(yintercept = p), color=&quot;blue&quot;, size=0.6) +
+  ggtitle(&quot;Simulación de la probabilidad de obtener una suma mayor a 7&quot;) + 
+  ylab(&quot;probability&quot;) + 
+  xlab(&quot;Simulaciones de un lanzamiento de un par de dados&quot;)
   print(paste(&quot;La probabilidad de obtener una suma mayor a 7 es&quot;,z/n))
+  print(graph)
 }</code></pre>
 </div>
 <div id="ahora-ejecutemos-la-funcion-sum_dados_mayorq7-10-mil-veces." class="section level4">
 <h4>Ahora ejecutemos la función <code>sum_dados_mayorq7</code> 10 mil veces.</h4>
-<pre class="r"><code>sum_dados_mayorq7(10000)</code></pre>
-<p><img src="Intro_p_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.4131&quot;</code></pre>
-<div class="figure">
-<img src="blanco.png" />
-
-</div>
+<pre class="r"><code>sum_dados_mayorq7(1000)</code></pre>
+<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.417&quot;</code></pre>
+<p><img src="Intro_p_files/figure-html/unnamed-chunk-4-1.png" width="672" /> <img src="blanco.png" /></p>
 </div>
 </div>
 </div>

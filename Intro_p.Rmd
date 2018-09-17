@@ -457,28 +457,31 @@ sum_dados(10000)
 
 ```{r,comment=NA}
 sum_dados_mayorq7 <- function(n, p = 0.4166){
+  library(ggplot2)
  z <- 0
  p.run <- rep(0,n)
 for(i in 1:n) {
 sum_d <- sum(sample(1:6,2,T))
-if (sum_d > 7){
+if (sum_d > 7) {
   z <- z + 1
 }
  p.run[i] <- z/i
 }
-  x <- 1:n
-  plot(x,p.run,type = "l",col = 'blue', log = 'x', 
-       xlim = c(1, n), ylim = c(0.0, 1.0), cex.axis=1.5, 
-       xlab = 'Roll two dice', ylab = 'Proportion sum > 7', cex.lab = 1.5,
-       main = 'Running Proportion of sums > 7', cex.main = 1.5,lty = 1.5)
-  lines(c(1, n), c(p, p), lty = 1, col = 'red')
+ x <- 1:n
+graph <- ggplot(data.frame(x,p.run),aes(x = x, y = p.run)) + 
+  geom_line(col = "red",size = 1) + ylim(0,1.0) +
+  geom_hline(aes(yintercept = p), color="blue", size=0.6) +
+  ggtitle("Simulación de la probabilidad de obtener una suma mayor a 7") + 
+  ylab("probability") + 
+  xlab("Simulaciones de un lanzamiento de un par de dados")
   print(paste("La probabilidad de obtener una suma mayor a 7 es",z/n))
+  print(graph)
 }
 ```
 
 #### Ahora ejecutemos la función `sum_dados_mayorq7` 10 mil veces.
 
 ```{r,comment=NA}
-sum_dados_mayorq7(10000)
+sum_dados_mayorq7(1000)
 ```
 ![](blanco.png)

@@ -258,7 +258,7 @@ print(tabla_freq_discretas(insectos_m))</code></pre>
 <p>Las observaciones son la cantidad de insectos muertos en cada repetición de un total de 40 ensayos o repeticiones del experimento. Según la tabla tenemos por ejemplo que</p>
 <ul>
 <li><p>En seis ensayos murieron de a 8 insectos.</p></li>
-<li><p>En el 10 % de los ensayos murieron de a 6 insectos.</p></li>
+<li><p>En el 10 % de los ensayos murieron de a 6 y 9 insectos.</p></li>
 <li><p>En 22 ensayos murieron entre 3 y 9 insectos.</p></li>
 <li><p>En el 45 % de los ensayos murieron de 9 a 15 insectos.</p></li>
 </ul>
@@ -272,6 +272,7 @@ ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) +
   ggtitle(&quot;Dotplot para el número de insectos muertos - Didier Murillo&quot;)  + xlab(&quot;Número de insectos&quot;) + ylab(&quot;frecuencia&quot;)</code></pre>
 <pre><code>`stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 <p><img src="st3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Cada punto azul representa una repetición del experimento, por ejemplo murieron 9 nueve insectos en 5 repeticiones.</p>
 </div>
 <div id="ejercicio-2" class="section level3">
 <h3>Ejercicio 2</h3>
@@ -345,6 +346,7 @@ ggplot(class_survey, aes(fill=class_survey$Smoke_Cigarettes,  x=class_survey$Rel
     geom_bar(position=&quot;dodge&quot;) + ggtitle(&quot;Gráfico de barras por grupos - Didier Murillo&quot;) +
   xlab(&quot;Importancia de la Religión&quot;) + ylab(&quot;Número de estudiantes&quot;)</code></pre>
 <p><img src="st3_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Se observa, que cuando no es importante la religión, aumenta la proporción de estudiantes que fuman.</p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Haga un gráfico circular con la variable <code>Religious_Importance</code>. Interprete el gráfico.</li>
 </ol>
