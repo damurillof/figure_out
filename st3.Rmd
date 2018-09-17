@@ -72,7 +72,7 @@ ggplot(insectos_muertos , aes(x = insectos_muertos$insectos_m)) +
   ggtitle("Dotplot para el número de insectos muertos - Didier Murillo")  + xlab("Número de insectos") + ylab("frecuencia")
 ```
 
-Cada punto azul representa una repetición del experimento, por ejemplo murieron 9 nueve insectos en 5 repeticiones. 
+Cada punto azul representa una repetición del experimento, por ejemplo murieron 8 insectos en 6 repeticiones. 
 
 ### Ejercicio 2
 
