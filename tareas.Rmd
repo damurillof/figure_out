@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### [Tarea 3. Fecha límite: Viernes-07-09](https://didier-murillo.netlify.com/t3) -- [Solución Tarea 3](https://didier-murillo.netlify.com/st3)
 
-### [Tarea 4. Fecha límite: Viernes-14-09](https://didier-murillo.netlify.com/t4)
+### [Tarea 4. Fecha límite: Viernes-14-09](https://didier-murillo.netlify.com/t4) -- [Solución Tarea 4](https://didier-murillo.netlify.com/st4)
 
 
 

@@ -22,7 +22,7 @@ $$P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{\#(A\cap B)}{\#(B)}$$
 
 Solucion:
 
-Sean los eventos $A$: "Que solamente uno de los dos dados sea par"" y el evento condicionante $B$: "Que la suma sea mayor que 8".
+Sean los eventos $A$: "Solamente uno de los dos dados sea par"" y el evento condicionante $B$: "La suma sea mayor que 8".
 
 Podemos notar que:
 
@@ -32,7 +32,7 @@ Finalmente,
 
 $$P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{6}{10}$$
 
-Ejemplor 2:  En una ciudad se hizo una encuesta acerca de la opinión de las personas adultas con respecto a una ley del gobierno. La siguiente tabla muestra los resultados de la encuesta clasificados según el sexo del entrevistado.
+Ejemplo 2:  En una ciudad se hizo una encuesta acerca de la opinión de las personas adultas con respecto a una ley del gobierno. La siguiente tabla muestra los resultados de la encuesta clasificados según el sexo del entrevistado.
 
 ![](tabla.png)
 Se elige al azar  una persona:
@@ -132,7 +132,7 @@ $$P(H \cup W)=P(H) + P(W) - P(H \cap W)=0.70 + 0.69 - 0.63 = 0.76$$
 Sean $B_1,...,B_n$ una colección de eventos que forman una partición sobre el espacio muestral $S$, es decir $\bigcup_{i=1}^{n}B_i)$ y $B_i \cap B_j=\emptyset$ para $i\neq j$. Sea $A$ otro evento del espacio muestral $S$, entonces:
 
 $$P(A)=\sum_{i=1}^{n}P(B_i)P(A | B_i)$$
-es llamada la formula de la probabilidad total.
+es llamada la fórmula de la probabilidad total.
 
 La siguiente imagen representa un espacio muestral $S$ particionado en 5 partes. 
 
@@ -212,7 +212,7 @@ Cuando **P(Fuego)** significa con qué frecuencia hay fuego, y **P(Humo)** signi
 **P(Fuego | Humo)** significa con qué frecuencia hay fuego cuando vemos humo.
 **P(Humo | Fuego)** significa la frecuencia con la que vemos humo cuando hay un incendio.
 
-Entonces, la fórmula nos dice "como ir haca adelante" cuando sabemos lo que ha ocurrido (o viceversa)
+Entonces, la fórmula nos dice "como ir hacia adelante" cuando sabemos lo que ha ocurrido (o viceversa)
 
 
 > Ejemplos
@@ -228,7 +228,7 @@ Entonces encontramos que el 9 % de las veces que vemos humo, este proviene de un
 
 **Ejemplo 1**: Suponga que los chips de un circuito integrado son probados con cierto instrumento y la probabilidad de que se detecten los defectuosos es .99. Por otro lado hay una probabilidad de .05 de que un chip sea declarado como defectuoso cuando en realidad es bueno. Si el 1 % de todos los chips son defectuosos. ¿Cuál es la probabilidad de que un chip que es declarado como defectuoso sea en realidad bueno? 
 
-Resolver este tipo de problemas puede ser confuso, pero la estrategia para no moriri en el intento es declarar adecuadamente los eventos que intervienen en el problema, veamos:
+Resolver este tipo de problemas puede ser confuso, pero la estrategia debe ser declarar adecuadamente los eventos que intervienen en el problema, veamos:
 
 **D: "El chip es defectuoso"**, con **P(D)=0.01** (un 1 %).
 
@@ -238,7 +238,7 @@ Resolver este tipo de problemas puede ser confuso, pero la estrategia para no mo
 
 Del problema tenemos que **P(M|D)=0.99** y que **P(M|B)=0.05**
 
-¿Que nos esta pidiendo el problema?, es simple, debemos calcular **P(B|M)**.
+¿Que nos está pidiendo el problema?, es simple, debemos calcular **P(B|M)**.
 
 Aplicando el Teorema de Bayes, 
 
@@ -252,7 +252,7 @@ Finalmente,
 
 $$P(B|M)=\dfrac{P(B)P(M|B)}{P(M)}=\dfrac{0.99*0.05}{0.0594}=0.8333$$
 
-Es decir, la probabilidad de encontrar un chip que en realidad es bueno y declararlo como defectuos es de 0.8333. (MUY ALTA!)
+Es decir, la probabilidad de encontrar un chip que en realidad es bueno y declararlo como defectuoso es de 0.8333. (MUY ALTA!)
 
 
 ## Eventos Independientes
@@ -287,7 +287,7 @@ $$P(A)=18/36 \quad P(B)=12/36$$
 también tenemos que 
 $$P(A \cap B)=6/36$$
 
-¿Cómo vefificamos que A y B son independientes?, solo debemos el producto de sus probabilidades es igual a la probabilidad de la intersección. Veamos
+¿Cómo verificamos que A y B son independientes?, solo debemos el producto de sus probabilidades es igual a la probabilidad de la intersección. Veamos
 
 $$P(A)P(B)=18/36*12/36=6/36$$
 Finalmente podemos decir que A y B son eventos independientes!
@@ -323,7 +323,7 @@ La probabilidad de acertar en ambos intentos es 0.64.
 
 b) Acierte sólo uno de los dos disparos? 
 
-Debemos tener encuenta los complementos,
+Debemos tener en cuenta los complementos,
 
 $$P(A \cap B^c) + P(A^c \cap B)=P(A)P(B^c) + P(A^c)P(B)=0.8*0.2 + 0.2*0.8=0.16 + 0.16 = 0.32$$
 
@@ -339,50 +339,4 @@ $$P(A^c \cap B^c)=P(A^c)P(B^c)=0.2*0.2=0.04$$
 
 La probabilidad de que no de en el blanco en ningún disparo es bien baja, 0.04.
 
-
-
-
-
-
-
----------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
-
----------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
+![](blanco.png)

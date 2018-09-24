@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Solución Tarea 4</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Solución Tarea 4</h1>
+
+</div>
+
+
+<div id="los-siguientes-datos-corresponden-a-las-cifras-mensuales-en-del-desempleo-en-puerto-rico-para-el-ano-2014" class="section level4">
+<h4>1. Los siguientes datos corresponden a las cifras mensuales en % del desempleo en Puerto Rico para el año 2014</h4>
+</div>
+<div id="section" class="section level4">
+<h4>15.2 13.1 14.7 14.2 13.8 13.1 13.5 14.2 14 14.2 13.7 13.1</h4>
+</div>
+<div id="use-los-datos-anteriores-para-contestar-manualmente-debe-detallar-su-procedimiento." class="section level4">
+<h4>Use los datos anteriores para contestar manualmente: (Debe detallar su procedimiento.)</h4>
+</div>
+<div id="a-cual-fue-la-tasa-de-desempleo-promedio-en-puerto-rico-para-el-ano-2014" class="section level4">
+<h4>a) ¿Cuál fue la tasa de desempleo promedio en Puerto Rico para el año 2014?</h4>
+</div>
+<div id="displaystyle-barx-dfracsum_i112x_i12-dfrac15.2-13.1-14.7-14.2-13.8-13.1-13.5-14.2-14-14.2-13.7-13.112" class="section level4">
+<h4><span class="math display">\[\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{12}x_i}{12}= \dfrac{15.2 + 13.1 + 14.7 + 14.2 + 13.8 + 13.1 + 13.5 + 14.2 + 14 + 14.2 + 13.7 + 13.1}{12}\]</span></h4>
+</div>
+<div id="displaystyle-barx-dfrac166.81213.9" class="section level4">
+<h4><span class="math display">\[\displaystyle \bar{X} = \dfrac{166.8}{12}=13.9\]</span></h4>
+</div>
+<div id="b-encuentre-la-mediana-del-la-tasa-de-desempleo-en-puerto-rico-para-el-ano-2014.-que-significado-tiene-la-mediana-en-este-caso" class="section level4">
+<h4>b) Encuentre la mediana del la tasa de desempleo en Puerto Rico para el año 2014. ¿Qué significado tiene la mediana en este caso?</h4>
+</div>
+<div id="los-datos-ordenados-son-los-siguientes" class="section level4">
+<h4>Los datos ordenados son los siguientes:</h4>
+</div>
+<div id="section-1" class="section level4">
+<h4>13.1 13.1 13.1 13.5 13.7 13.8 14.0 14.2 14.2 14.2 14.7 15.2</h4>
+</div>
+<div id="median-dfrac13.7-13.8213.9" class="section level4">
+<h4><span class="math display">\[Median = \dfrac{13.7 + 13.8}{2}=13.9\]</span></h4>
+</div>
+<div id="es-decir-que-el-50-de-los-datos-es-13.9" class="section level4">
+<h4>Es decir que el 50% de los datos es 13.9 %</h4>
+</div>
+<div id="c-encuentre-la-moda-de-la-tasa-de-desempleo-en-puerto-rico-para-el-ano-2014.-interprete-la-moda." class="section level4">
+<h4>c) Encuentre la moda de la tasa de desempleo en Puerto Rico para el año 2014. Interprete la moda.</h4>
+</div>
+<div id="el-conjunto-de-datos-tiene-dos-modas" class="section level4">
+<h4>El conjunto de datos tiene dos modas:</h4>
+</div>
+<div id="y-14.2." class="section level4">
+<h4>13.1 y 14.2.</h4>
+</div>
+<div id="por-lo-tanto-la-distribucion-de-los-datos-es-bimodal." class="section level4">
+<h4>Por lo tanto la distribución de los datos es bimodal.</h4>
+</div>
+<div id="volvamos-a-los-datos-de-la-lluvia-en-mayaguez-los-cuales-son" class="section level4">
+<h4>2. Volvamos a los datos de la lluvia en Mayagüez, los cuales son:</h4>
+</div>
+<div id="section-2" class="section level4">
+<h4><span style="color:green">311 293 285 306 311 309 313 309 320 311 319 307 320 273 297</span></h4>
+</div>
+<div id="ahora-tambien-tenemos-informacion-sobre-los-dias-de-lluvia-durante-los-ultimos-15-anos-en-ponce." class="section level4">
+<h4>Ahora también tenemos información sobre los días de lluvia durante los últimos 15 años en Ponce.</h4>
+</div>
+<div id="section-3" class="section level4">
+<h4><span style="color:red">126 141 96 159 171 213 73 101 112 100 151 39 140 108 103</span></h4>
+</div>
+<div id="use-los-datos-de-la-lluvia-de-mayaguez-y-ponce-para-responder-las-siguientes-preguntas" class="section level4">
+<h4>Use los datos de la lluvia de Mayagüez y Ponce para responder las siguientes preguntas:</h4>
+</div>
+<div id="a-en-promedio-cual-es-la-ciudad-mas-lluviosa.-justifique." class="section level4">
+<h4>a) En promedio, ¿cuál es la ciudad más lluviosa?. Justifique.</h4>
+</div>
+<div id="promedio-de-lluvia-en-mayaguez" class="section level4">
+<h4>Promedio de lluvia en Mayagüez:</h4>
+</div>
+<div id="displaystyle-barx-dfracsum_i115x_i12305.6" class="section level4">
+<h4><span class="math display">\[\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{12}=305.6\]</span></h4>
+</div>
+<div id="promedio-de-lluvia-en-ponce" class="section level4">
+<h4>Promedio de lluvia en Ponce:</h4>
+</div>
+<div id="displaystyle-barx-dfracsum_i115x_i12122.2" class="section level4">
+<h4><span class="math display">\[\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{12}=122.2\]</span></h4>
+</div>
+<div id="segun-la-media-la-ciudad-mas-lluviosa-es-mayaguez." class="section level4">
+<h4>Según la media, la ciudad más lluviosa es Mayaguez.</h4>
+</div>
+<div id="b-use-los-valores-de-la-media-la-mediana-y-un-grafico-adecuado-para-decir-si-las-distribuciones-de-la-lluvia-son-simetricas-o-sesgadas-a-derecha-o-izquierda." class="section level4">
+<h4>b) Use los valores de la media, la mediana y un gráfico adecuado para decir si las distribuciones de la lluvia son simétricas o sesgadas a derecha o izquierda.</h4>
+</div>
+<div id="la-mediana-para-los-dias-de-lluvia-en-mayaguez-es" class="section level4">
+<h4>La mediana para los días de lluvia en Mayagüez es:</h4>
+</div>
+<div id="mediana-309" class="section level4">
+<h4><span class="math display">\[Mediana = 309\]</span></h4>
+</div>
+<div id="tenemos-que-para-mayaguez-la-media-es-menor-que-la-mediana-barx-mediana-es-decir-305.6-309.-por-lo-tanto-la-distribucion-de-la-lluvia-en-mayaguez-es-sesgada-a-la-izquierda." class="section level4">
+<h4>Tenemos que para Mayagüez la Media es menor que la mediana (<span class="math inline">\(\bar{X} &lt; Mediana\)</span>), es decir <span class="math inline">\(305.6 &lt; 309\)</span>. Por lo tanto la distribución de la lluvia en Mayagüez es sesgada a la izquierda.</h4>
+</div>
+<div id="la-mediana-para-los-dias-de-lluvia-en-ponce-es" class="section level4">
+<h4>La mediana para los días de lluvia en Ponce es:</h4>
+</div>
+<div id="mediana-112" class="section level4">
+<h4><span class="math display">\[Mediana = 112\]</span></h4>
+</div>
+<div id="tenemos-que-para-ponce-la-media-es-mayor-que-la-mediana-barx-mediana-es-decir-122.2-112.-por-lo-tanto-la-distribucion-de-la-lluvia-en-ponce-es-sesgada-a-la-derecha." class="section level4">
+<h4>Tenemos que para Ponce la media es mayor que la mediana (<span class="math inline">\(\bar{X} &gt; Mediana\)</span>), es decir <span class="math inline">\(122.2 &gt; 112\)</span>. Por lo tanto la distribución de la lluvia en Ponce es sesgada a la derecha.</h4>
+<pre class="r"><code>Mayaguez &lt;- c(311, 293, 285, 306, 311, 309, 313, 309, 320, 311, 319, 307, 320, 273, 297)
+Ponce &lt;- c(126, 141, 96, 159, 171, 213, 73, 101, 112, 100, 151, 39, 140, 108, 103)
+par(mfrow = c(1,2))
+hist(Mayaguez,main = &quot;Histograma lluvia-Mayaguez - Didier Murillo&quot;)
+boxplot(Ponce, main = &quot;Boxplot lluvia-Ponce - Didier Murillo&quot;)</code></pre>
+<p><img src="st4_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="el-histograma-nos-indica-el-sesgo-a-izquierda-de-la-distribucion-de-la-lluvia-en-mayaguez-de-igual-manera-el-boxplot-nos-muestra-el-sesgo-a-la-derecha-de-la-distribucion-de-la-lluvia-en-ponce." class="section level4">
+<h4>El histograma nos indica el sesgo a izquierda de la distribución de la lluvia en Mayagüez, de igual manera el boxplot nos muestra el sesgo a la derecha de la distribución de la lluvia en Ponce.</h4>
+</div>
+<div id="c-use-la-idea-del-coeficiente-de-variacion-para-decidir-cual-de-las-dos-ciudades-presenta-mayor-variabilidad-en-la-lluvia.-deberia-usar-r-para-encontrar-la-desviacion-estandar-de-los-datos." class="section level4">
+<h4>c) Use la idea del coeficiente de variación para decidir cuál de las dos ciudades presenta mayor variabilidad en la lluvia. Debería usar R para encontrar la desviación estándar de los datos.</h4>
+</div>
+<div id="usamos-r-para-calcular-las-desviaciones-estandar" class="section level4">
+<h4>Usamos R para calcular las desviaciones estándar</h4>
+<pre class="r"><code>sd(Mayaguez)</code></pre>
+<pre><code>## [1] 13.3138</code></pre>
+</div>
+<div id="cv-para-mayaguez" class="section level4">
+<h4>CV para Mayaguez</h4>
+</div>
+<div id="cv-dfrac13.3138305.6100-0.04351004.35" class="section level4">
+<h4><span class="math display">\[CV = \dfrac{13.3138}{305.6}*100 = 0.0435*100=4.35 \%\]</span></h4>
+<pre class="r"><code>sd(Ponce)</code></pre>
+<pre><code>## [1] 42.37621</code></pre>
+</div>
+<div id="cv-para-ponce" class="section level4">
+<h4>CV para Ponce</h4>
+</div>
+<div id="cv-dfrac42.3762112.2100-0.377610037.76" class="section level4">
+<h4><span class="math display">\[CV = \dfrac{42.3762}{112.2}*100 = 0.3776*100=37.76 \%\]</span></h4>
+</div>
+<div id="la-ciudad-con-mayor-variabilidad-en-la-lluvia-es-ponce.-la-variabilidad-en-mayaguez-es-muy-poca." class="section level4">
+<h4>La ciudad con mayor variabilidad en la lluvia es Ponce. La variabilidad en Mayagüez es muy poca.</h4>
+</div>
+<div id="d-encontrar-manualmente-los-cuartiles-q_1-q_2-y-q_3-en-el-conjunto-de-datos-para-la-lluvia-de-ponce.-tambien-encuentre-e-interprete-el-percentil-64.-luego-use-r-para-verificar-sus-resultados." class="section level4">
+<h4>d) Encontrar manualmente los cuartiles <span class="math inline">\(Q_1, Q_2\)</span> y <span class="math inline">\(Q_3\)</span> en el conjunto de datos para la lluvia de Ponce. También encuentre e interprete el percentil 64. Luego use R para verificar sus resultados.</h4>
+</div>
+<div id="los-datos-ordenados-para-ponce-son" class="section level4">
+<h4>Los datos ordenados para Ponce son:</h4>
+</div>
+<div id="section-4" class="section level4">
+<h4>39 73 96 100 101 103 108 112 126 140 141 151 159 171 213</h4>
+</div>
+<div id="la-primera-mitad-es" class="section level4">
+<h4>La primera mitad es:</h4>
+</div>
+<div id="section-5" class="section level4">
+<h4>39 73 96 <span style="color:red"> 100 101 </span> 103 108 112.</h4>
+</div>
+<div id="por-lo-tanto" class="section level4">
+<h4>Por lo tanto</h4>
+</div>
+<div id="q_1-dfrac100-1012-100.5" class="section level4">
+<h4><span class="math display">\[Q_1 = \dfrac{100 + 101}{2} = 100.5 \]</span></h4>
+</div>
+<div id="el-segundo-cuartil-coincide-con-la-mediana" class="section level4">
+<h4>El segundo cuartil coincide con la mediana:</h4>
+</div>
+<div id="section-6" class="section level4">
+<h4>39 73 96 100 101 103 108 <span style="color:red"> 112 </span> 126 140 141 151 159 171 213</h4>
+</div>
+<div id="q_2-mediana-112" class="section level4">
+<h4><span class="math display">\[Q_2 = Mediana = 112 \]</span></h4>
+</div>
+<div id="la-segunda-mitad-es" class="section level4">
+<h4>La segunda mitad es:</h4>
+</div>
+<div id="section-7" class="section level4">
+<h4>112 126 140 <span style="color:red"> 141 151 </span> 159 171 213</h4>
+</div>
+<div id="q_3-dfrac141-1512-146" class="section level4">
+<h4><span class="math display">\[Q_3 = \dfrac{141 + 151}{2} = 146\]</span></h4>
+</div>
+<div id="e-puede-usar-la-funcion-summary-de-r-con-los-datos-de-la-lluvia-en-las-dos-ciudades.-luego-use-los-resultados-de-summary-para-calcular-el-rango-intercuartilico-en-los-datos-de-la-lluvia-para-cada-ciudad.-nuevamente-cual-es-la-ciudad-con-mayor-variabilidad-en-la-lluvia-segun-el-ric" class="section level4">
+<h4>e) Puede usar la función <code>summary</code> de R con los datos de la lluvia en las dos ciudades. Luego use los resultados de <code>summary</code> para calcular el rango intercuartílico en los datos de la lluvia para cada ciudad. Nuevamente, ¿cuál es la ciudad con mayor variabilidad en la lluvia, según el RIC?</h4>
+<pre class="r"><code>summary(Mayaguez)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   273.0   301.5   309.0   305.6   312.0   320.0</code></pre>
+</div>
+<div id="luego-el-ric-es" class="section level4">
+<h4>Luego el RIC es:</h4>
+</div>
+<div id="ric-q_3---q_1-312---301.5-11.5" class="section level4">
+<h4><span class="math display">\[RIC = Q_3 - Q_1 = 312 - 301.5 = 11.5\]</span></h4>
+<pre class="r"><code>summary(Ponce)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    39.0   100.5   112.0   122.2   146.0   213.0</code></pre>
+</div>
+<div id="luego-el-ric-es-1" class="section level4">
+<h4>Luego el RIC es:</h4>
+</div>
+<div id="ric-q_3---q_1-146.0---100.5-45.5" class="section level4">
+<h4><span class="math display">\[RIC = Q_3 - Q_1 = 146.0 - 100.5 = 45.5\]</span></h4>
+</div>
+<div id="por-lo-tanto-y-dejandonos-llevar-por-el-valor-del-ric-nuevamente-la-ciudad-con-mayor-variabilidad-en-la-lluvia-es-ponce." class="section level4">
+<h4>Por lo tanto y dejándonos llevar por el valor del RIC, nuevamente la ciudad con mayor variabilidad en la lluvia es Ponce.</h4>
+</div>
+<div id="f-use-r-yo-rstudio-para-hacer-una-grafica-de-caja-y-bigotes-boxplot-con-los-datos-de-la-lluvia-en-las-dos-ciudades.-interpretar-el-grafico." class="section level4">
+<h4>f) Use R y/o RStudio para hacer una gráfica de caja y bigotes (Boxplot) con los datos de la lluvia en las dos ciudades. Interpretar el gráfico.</h4>
+<pre class="r"><code>lluvia &lt;- c(Mayaguez,Ponce)
+pueblo &lt;- c(rep(&quot;Mayaguez&quot;,15),rep(&quot;Ponce&quot;,15))
+boxplot(lluvia ~ pueblo,col = c(&quot;green&quot;, &quot;grey&quot;), main = &quot;Boxplot de la lluvia por ciudad - Didier Murillo&quot;)</code></pre>
+<p><img src="st4_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="segun-el-grafico-se-observa-mayor-cantidad-de-dias-lluviosos-en-mayaguez-pero-mucha-variabilidad-en-ponce." class="section level4">
+<h4>Según el gráfico se observa mayor cantidad de días lluviosos en Mayagüez, pero mucha variabilidad en Ponce.</h4>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

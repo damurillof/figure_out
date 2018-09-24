@@ -228,11 +228,11 @@ $(document).ready(function () {
 </blockquote>
 <p><strong>Ejemplo 1</strong>. se lanza un par de dados legales y distinguibles. ¿Cuál es la probabilidad de que solamente uno de los dos dados sea par si se sabe que la suma de los dos es mayor que 8?</p>
 <p>Solucion:</p>
-<p>Sean los eventos <span class="math inline">\(A\)</span>: “Que solamente uno de los dos dados sea par”&quot; y el evento condicionante <span class="math inline">\(B\)</span>: “Que la suma sea mayor que 8”.</p>
+<p>Sean los eventos <span class="math inline">\(A\)</span>: “Solamente uno de los dos dados sea par”&quot; y el evento condicionante <span class="math inline">\(B\)</span>: “La suma sea mayor que 8”.</p>
 <p>Podemos notar que:</p>
 <p><span class="math display">\[\#(A\cap B)=6\]</span> y que, <span class="math display">\[\#(B)=10\]</span> Finalmente,</p>
 <p><span class="math display">\[P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{6}{10}\]</span></p>
-<p>Ejemplor 2: En una ciudad se hizo una encuesta acerca de la opinión de las personas adultas con respecto a una ley del gobierno. La siguiente tabla muestra los resultados de la encuesta clasificados según el sexo del entrevistado.</p>
+<p>Ejemplo 2: En una ciudad se hizo una encuesta acerca de la opinión de las personas adultas con respecto a una ley del gobierno. La siguiente tabla muestra los resultados de la encuesta clasificados según el sexo del entrevistado.</p>
 <p><img src="tabla.png" /> Se elige al azar una persona:</p>
 <ol style="list-style-type: lower-alpha">
 <li>¿Cuál es la probabilidad de que favorezca la ley si resulta ser mujer?</li>
@@ -307,7 +307,7 @@ $(document).ready(function () {
 <div id="regla-de-la-probabilidad-total" class="section level3">
 <h3>Regla de la Probabilidad Total</h3>
 <p>Sean <span class="math inline">\(B_1,...,B_n\)</span> una colección de eventos que forman una partición sobre el espacio muestral <span class="math inline">\(S\)</span>, es decir <span class="math inline">\(\bigcup_{i=1}^{n}B_i)\)</span> y <span class="math inline">\(B_i \cap B_j=\emptyset\)</span> para <span class="math inline">\(i\neq j\)</span>. Sea <span class="math inline">\(A\)</span> otro evento del espacio muestral <span class="math inline">\(S\)</span>, entonces:</p>
-<p><span class="math display">\[P(A)=\sum_{i=1}^{n}P(B_i)P(A | B_i)\]</span> es llamada la formula de la probabilidad total.</p>
+<p><span class="math display">\[P(A)=\sum_{i=1}^{n}P(B_i)P(A | B_i)\]</span> es llamada la fórmula de la probabilidad total.</p>
 <p>La siguiente imagen representa un espacio muestral <span class="math inline">\(S\)</span> particionado en 5 partes.</p>
 <div class="figure">
 <img src="total.png" />
@@ -358,7 +358,7 @@ $(document).ready(function () {
 <p>Analicemos el siguiente ejemplo:</p>
 <p>Cuando <strong>P(Fuego)</strong> significa con qué frecuencia hay fuego, y <strong>P(Humo)</strong> significa la frecuencia con que vemos humo, entonces:</p>
 <p><strong>P(Fuego | Humo)</strong> significa con qué frecuencia hay fuego cuando vemos humo. <strong>P(Humo | Fuego)</strong> significa la frecuencia con la que vemos humo cuando hay un incendio.</p>
-<p>Entonces, la fórmula nos dice “como ir haca adelante” cuando sabemos lo que ha ocurrido (o viceversa)</p>
+<p>Entonces, la fórmula nos dice “como ir hacia adelante” cuando sabemos lo que ha ocurrido (o viceversa)</p>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
@@ -368,18 +368,18 @@ $(document).ready(function () {
 <p>Ejemplos</p>
 </blockquote>
 <p><strong>Ejemplo 1</strong>: Suponga que los chips de un circuito integrado son probados con cierto instrumento y la probabilidad de que se detecten los defectuosos es .99. Por otro lado hay una probabilidad de .05 de que un chip sea declarado como defectuoso cuando en realidad es bueno. Si el 1 % de todos los chips son defectuosos. ¿Cuál es la probabilidad de que un chip que es declarado como defectuoso sea en realidad bueno?</p>
-<p>Resolver este tipo de problemas puede ser confuso, pero la estrategia para no moriri en el intento es declarar adecuadamente los eventos que intervienen en el problema, veamos:</p>
+<p>Resolver este tipo de problemas puede ser confuso, pero la estrategia debe ser declarar adecuadamente los eventos que intervienen en el problema, veamos:</p>
 <p><strong>D: “El chip es defectuoso”</strong>, con <strong>P(D)=0.01</strong> (un 1 %).</p>
 <p><strong>B: “El chip es bueno”</strong>, con <strong>P(B)=1-P(D)=1-0.01=0.99</strong> (El complemento de que sea defectuoso)</p>
 <p><strong>M: “El chip es declarado como defectuoso”</strong> (P(M), Esta probabilidad es desconocida)</p>
 <p>Del problema tenemos que <strong>P(M|D)=0.99</strong> y que <strong>P(M|B)=0.05</strong></p>
-<p>¿Que nos esta pidiendo el problema?, es simple, debemos calcular <strong>P(B|M)</strong>.</p>
+<p>¿Que nos está pidiendo el problema?, es simple, debemos calcular <strong>P(B|M)</strong>.</p>
 <p>Aplicando el Teorema de Bayes,</p>
 <p><span class="math display">\[P(B|M)=\dfrac{P(B)P(M|B)}{P(M)}\]</span> La probabilidad total para <strong>P(M)</strong> es</p>
 <p><span class="math display">\[P(M)=P(B)P(M|B) + P(D)P(M|D)=0.99*0.05 + 0.01*0.99=0.0495 + 0.0099 =  0.0594\]</span></p>
 <p>Finalmente,</p>
 <p><span class="math display">\[P(B|M)=\dfrac{P(B)P(M|B)}{P(M)}=\dfrac{0.99*0.05}{0.0594}=0.8333\]</span></p>
-<p>Es decir, la probabilidad de encontrar un chip que en realidad es bueno y declararlo como defectuos es de 0.8333. (MUY ALTA!)</p>
+<p>Es decir, la probabilidad de encontrar un chip que en realidad es bueno y declararlo como defectuoso es de 0.8333. (MUY ALTA!)</p>
 </div>
 </div>
 <div id="eventos-independientes" class="section level2">
@@ -399,7 +399,7 @@ $(document).ready(function () {
 <p>¿Son los eventos A y B independientes?</p>
 <p>Tenemos que,</p>
 <p><span class="math display">\[P(A)=18/36 \quad P(B)=12/36\]</span> también tenemos que <span class="math display">\[P(A \cap B)=6/36\]</span></p>
-<p>¿Cómo vefificamos que A y B son independientes?, solo debemos el producto de sus probabilidades es igual a la probabilidad de la intersección. Veamos</p>
+<p>¿Cómo verificamos que A y B son independientes?, solo debemos el producto de sus probabilidades es igual a la probabilidad de la intersección. Veamos</p>
 <p><span class="math display">\[P(A)P(B)=18/36*12/36=6/36\]</span> Finalmente podemos decir que A y B son eventos independientes!</p>
 <p><strong>Nota</strong>: Un error muy común es considerar que los eventos son independientes si son mutuamente excluyentes: observe que esto no es cierto. Por ejemplo, si se lanza una moneda legal una vez y se consideran los eventos</p>
 <p><strong>A: “El resultado obtenido es cara”</strong>.</p>
@@ -418,7 +418,7 @@ $(document).ready(function () {
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Acierte sólo uno de los dos disparos?</li>
 </ol>
-<p>Debemos tener encuenta los complementos,</p>
+<p>Debemos tener en cuenta los complementos,</p>
 <p><span class="math display">\[P(A \cap B^c) + P(A^c \cap B)=P(A)P(B^c) + P(A^c)P(B)=0.8*0.2 + 0.2*0.8=0.16 + 0.16 = 0.32\]</span></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>Acierte por lo menos un disparo?</li>
@@ -430,20 +430,10 @@ $(document).ready(function () {
 <p>Como <span class="math inline">\(A^c\)</span> y <span class="math inline">\(B^c\)</span> son independientes, tenemos que,</p>
 <p><span class="math display">\[P(A^c \cap B^c)=P(A^c)P(B^c)=0.2*0.2=0.04\]</span></p>
 <p>La probabilidad de que no de en el blanco en ningún disparo es bien baja, 0.04.</p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 
 
