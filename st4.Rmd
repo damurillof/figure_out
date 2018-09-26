@@ -56,11 +56,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Promedio de lluvia en Mayagüez:
 
-#### $$\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{12}=305.6$$
+#### $$\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{15}=305.6$$
 
 #### Promedio de lluvia en Ponce:
 
-#### $$\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{12}=122.2$$
+#### $$\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{15}=122.2$$
 
 #### Según la media, la ciudad más lluviosa es Mayaguez.
 
@@ -142,6 +142,12 @@ sd(Ponce)
 
 
 #### $$Q_3 = \dfrac{141 + 151}{2} = 146$$
+
+#### El percentil 64 es 
+
+#### $$\dfrac{15*64}{100}=9.6 \simeq 10$$
+
+#### Así, tenemos que el valor que ocupa la posición número 10 es 140. Por lo tanto, el 64% de los datos se encuentra en la observación 140.
 
 #### e) Puede usar la función `summary` de R con los datos de la lluvia en las dos ciudades. Luego use los resultados de `summary` para calcular el rango intercuartílico en los datos de la lluvia para cada ciudad. Nuevamente, ¿cuál es la ciudad con mayor variabilidad en la lluvia, según el RIC?
 
