@@ -6,30 +6,31 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 #### **Fecha de entrega:** Viernes 05 de octubre de 2018. Al iniciar la clase. 
 
-#### **Puntaje:** 20 puntos 
+#### **Puntaje: 25 puntos** 
 
-#### **1.** Sean $A_1$ y $A_2$ eventos del mismo espacio muestral $S$. Digamos que $P(A_1 \cup A_2)= 0.5$ y $P(A_1 \cup A^c_{2})= 0.8$
+#### **1. (5 pts)** Sean $A_1$ y $A_2$ eventos del mismo espacio muestral $S$. Digamos que $P(A_1 \cup A_2)= 0.5$ y $P(A_1 \cup A^c_{2})= 0.8$
 
 - #### Encuentre $P(A_1)$
 
-#### **2.** Sean $A$ y $B$ eventos de un espacio muestral $S$. Tenemos que $P(A^c) = \dfrac{1}{2}$ y $P(B) = \dfrac{3}{4}$. Explicar si $A$ y $B$ pueden ser o no eventos mutuamente excluyentes. 
+#### **2. (5 pts)** Sean $A$ y $B$ eventos de un espacio muestral $S$. Tenemos que $P(A^c) = \dfrac{1}{2}$ y $P(B) = \dfrac{3}{4}$. ¿Pueden ser $A$ y $B$ eventos mutuamente excluyentes?. Justifique su respuesta matemáticamente. 
 
-#### **3.** En una clase de estadística hay 10 estudiantes, de los cuales  4 son hombres  y 6 son mujeres. En otra clase, esta vez de matemáticas, hay 16 estudiantes hombres y una cantidad desconocida de estudiantes de género femenino. Si se elige al azar un estudiante de cada sección (dos en total) y sabemos que 0.44 es la probabilidad de que ambos estudiantes sean del mismo género. 
+#### **3. (10 pts)** En una clase de estadística hay 10 estudiantes, de los cuales  4 son hombres  y 6 son mujeres. En otra clase, esta vez de matemáticas, hay 16 estudiantes hombres y una cantidad desconocida de estudiantes de género femenino. Si se elige al azar un estudiante de cada sección (dos en total) y sabemos que 0.44 es la probabilidad de que ambos estudiantes sean del mismo género. 
 
 - #### Calcule el número de estudiantes de género femenino en la clase de matemáticas.
 
+#### <span style="color:red">Ayuda: </span> En algún momento del ejercicio debe asumir independencia de eventos. Definición: Si $A$ y $B$  son eventos independientes, entonces $P(A \cap B) = P(A)\cdot P(B)$.
 
-#### **4.** En cierta universidad,
+#### **4. (5 pts)** En cierta universidad,
 
 - #### Todos los estudiantes tienen al menos un auto.
 - #### El 70% de los estudiantes tienen más de un automóvil.
 - #### El 20% de los estudiantes tienen un automóvil deportivo.
 - #### De esos estudiantes que tienen más de un automóvil, el 15% tiene un automóvil deportivo.
 
-#### Con la información anterior, calcule la probabilidad de que un estudiante seleccionado al azar tenga exactamente un carro y que NO sea deportivo.
+#### Con la información anterior, calcule la probabilidad de que un estudiante seleccionado al azar tenga exactamente un automóvil y que NO sea deportivo.
+
 
 ![](blanco.png)
 
