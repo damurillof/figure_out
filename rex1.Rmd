@@ -1,0 +1,104 @@
+---
+title: "Resultados Examen 1 -Sección 070"
+author: "Prof. Didier Murillo"
+date: "September 26, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,eval=TRUE,echo=FALSE}
+library(readxl)
+exam1_070 <- read_excel("~/Desktop/exam1_070.xlsx")
+exam1_070$grade <- NA
+  A <- which(exam1_070$Exam1 >= 90)
+  exam1_070[A,2] <- "A"
+  B <- which(exam1_070$Exam1 >= 80 & exam1_070$Exam1 < 90 )
+  exam1_070[B,2] <- "B"
+  C <- which(exam1_070$Exam1 >= 65 & exam1_070$Exam1 < 80 )
+  exam1_070[C,2] <- "C"
+  D <- which(exam1_070$Exam1 >= 60 & exam1_070$Exam1 < 65 )
+  exam1_070[D,2] <- "D"
+  f <- which(exam1_070$Exam1 < 60)
+  exam1_070[f,2] <- "F"
+View(exam1_070)
+```
+
+### Algunas estadísticas descriptivas.
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+summary(exam1_070$Exam1)
+```
+
+### Histograma y boxplot de las notas
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+par(mfrow = c(1,2))
+hist(exam1_070$Exam1,ylim = c(0,15),main = "Histograma para puntajes examen 1",
+     col = "cornflowerblue",xlab = "Puntaje")
+boxplot(exam1_070$Exam1,main = "Boxplot para puntajes examen 1",col = "cornflowerblue")
+```
+
+### Frecuencia de las notas
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+table(exam1_070$grade)
+```
+
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+barplot(table(exam1_070$grade),ylim = c(0,15),main = "Barplot para notas examen 1", 
+        xlab = "Notas",ylab = "frecuencia",col = "cornflowerblue")
+```
+
+
+# Resultados Examen 1 -Sección 060
+
+```{r,eval=TRUE,echo=FALSE}
+library(readxl)
+exam1_060 <- read_excel("~/Desktop/exam1_060.xlsx")
+exam1_060$grade <- NA
+  A <- which(exam1_060$Exam1 >= 90)
+  exam1_060[A,2] <- "A"
+  B <- which(exam1_060$Exam1 >= 80 & exam1_060$Exam1 < 90 )
+  exam1_060[B,2] <- "B"
+  C <- which(exam1_060$Exam1 >= 65 & exam1_060$Exam1 < 80 )
+  exam1_060[C,2] <- "C"
+  D <- which(exam1_060$Exam1 >= 60 & exam1_060$Exam1 < 65 )
+  exam1_060[D,2] <- "D"
+  f <- which(exam1_060$Exam1 < 60)
+  exam1_060[f,2] <- "F"
+View(exam1_060)
+```
+
+### Algunas estadísticas descriptivas.
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+summary(exam1_060$Exam1)
+```
+
+### Histograma y boxplot de las notas
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+par(mfrow = c(1,2))
+hist(exam1_060$Exam1,ylim = c(0,15),main = "Histograma para puntajes examen 1",
+     col = "springgreen3",xlab = "Puntaje")
+boxplot(exam1_060$Exam1,main = "Boxplot para puntajes examen 1",col = "springgreen3")
+```
+
+### Frecuencia de las notas
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+table(exam1_060$grade)
+```
+
+
+```{r,comment=NA,eval=TRUE,echo=FALSE}
+barplot(table(exam1_060$grade),ylim = c(0,15),main = "Barplot para notas examen 1", 
+        xlab = "Notas",ylab = "frecuencia",col = "springgreen3")
+```
+
+
+![](blanco.png)

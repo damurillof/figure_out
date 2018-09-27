@@ -112,7 +112,7 @@ sd(Ponce)
 
 #### CV para Ponce
 
-#### $$CV = \dfrac{42.3762}{112.2}*100 = 0.3776*100=37.76 \%$$
+#### $$CV = \dfrac{42.3762}{122.2}*100 = 0.3776*100=34.67\%$$
 
 #### La ciudad con mayor variabilidad en la lluvia es Ponce. La variabilidad en Mayagüez es muy poca. 
 
