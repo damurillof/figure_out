@@ -16,11 +16,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **2. (5 pts)** Sean $A$ y $B$ eventos de un espacio muestral $S$. Tenemos que $P(A^c) = \dfrac{1}{2}$ y $P(B) = \dfrac{3}{4}$. ¿Pueden ser $A$ y $B$ eventos mutuamente excluyentes?. Justifique su respuesta matemáticamente. 
 
-#### **3. (10 pts)** En una clase de estadística hay 10 estudiantes, de los cuales  4 son hombres  y 6 son mujeres. En otra clase, esta vez de matemáticas, hay 16 estudiantes hombres y una cantidad desconocida de estudiantes de género femenino. Si se elige al azar un estudiante de cada sección (dos en total) y sabemos que 0.44 es la probabilidad de que ambos estudiantes sean del mismo género. 
+#### **3. (10 pts)** En una clase de estadística hay 10 estudiantes, de los cuales  4 son hombres  y 6 son mujeres. En otra clase, esta vez de matemáticas, hay 16 estudiantes hombres y una cantidad desconocida de estudiantes de género femenino. Si se elige al azar un estudiante de cada clase (dos en total) y si sabemos que 0.44 es la probabilidad de que ambos estudiantes sean del mismo género. 
 
 - #### Calcule el número de estudiantes de género femenino en la clase de matemáticas.
 
-#### <span style="color:red">Ayuda: </span> En algún momento del ejercicio debe asumir independencia de eventos. Definición: Si $A$ y $B$  son eventos independientes, entonces $P(A \cap B) = P(A)\cdot P(B)$.
+#### <span style="color:red">Ayuda: </span> En algún momento del ejercicio debe asumir independencia de eventos y usar la siguiente definición. 
+
+#### Definición: Si $A$ y $B$  son eventos independientes, entonces $P(A \cap B) = P(A)\cdot P(B)$.
 
 #### **4. (5 pts)** En cierta universidad,
 
