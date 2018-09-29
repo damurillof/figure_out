@@ -629,8 +629,8 @@ $(document).ready(function () {
 <div id="para-responder-esta-pregunta-debemos-fijarnos-solo-en-las-probabilidades-que-les-corresponden-a-cada-evento-sin-la-probabilidad-que-tienen-en-comun-esto-es" class="section level4">
 <h4>Para responder esta pregunta debemos fijarnos solo en las probabilidades que les corresponden a cada evento sin la probabilidad que tienen en común, esto es:</h4>
 </div>
-<div id="pa-cap-bc-pac-cap-b-0.25-0.15-0.40" class="section level4">
-<h4><span class="math display">\[P(A \cap B^c) + P(A^c \cap B)= 0.25 + 0.15 = 0.40\]</span></h4>
+<div id="pj-cap-lc-pjc-cap-l-0.25-0.15-0.40" class="section level4">
+<h4><span class="math display">\[P(J \cap L^c) + P(J^c \cap L)= 0.25 + 0.15 = 0.40\]</span></h4>
 </div>
 <div id="por-lo-tanto-la-probabilidad-de-que-solo-uno-de-los-dos-sea-admitido-es-0.40" class="section level4">
 <h4>Por lo tanto, la probabilidad de que solo uno de los dos sea admitido es <strong><span class="math inline">\(0.40\)</span></strong></h4>
@@ -815,9 +815,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0274 0.0608 0.0864 0.1078 0.1375 0.1665 0.1397 0.1083 0.0817 0.0577 
+0.0300 0.0534 0.0796 0.1096 0.1352 0.1721 0.1395 0.1141 0.0824 0.0564 
     12 
-0.0262 </code></pre>
+0.0277 </code></pre>
 </div>
 <div id="como-resultado-encontramos-una-tabla-con-las-probabilidades-para-todos-los-posibles-resultados-en-el-experimento." class="section level4">
 <h4>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</h4>
@@ -849,7 +849,7 @@ graph &lt;- ggplot(data.frame(x,p.run),aes(x = x, y = p.run)) +
 <div id="ahora-ejecutemos-la-funcion-sum_dados_mayorq7-10-mil-veces." class="section level4">
 <h4>Ahora ejecutemos la función <code>sum_dados_mayorq7</code> 10 mil veces.</h4>
 <pre class="r"><code>sum_dados_mayorq7(1000)</code></pre>
-<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.439&quot;</code></pre>
+<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.419&quot;</code></pre>
 <p><img src="Intro_p_files/figure-html/unnamed-chunk-4-1.png" width="672" /> <img src="blanco.png" /></p>
 </div>
 </div>

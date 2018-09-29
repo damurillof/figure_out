@@ -318,7 +318,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Para responder esta pregunta debemos fijarnos solo en las probabilidades que les corresponden a cada evento sin la probabilidad que tienen en común, esto es:
 
-#### $$P(A \cap B^c) + P(A^c \cap B)= 0.25 + 0.15 = 0.40$$
+#### $$P(J \cap L^c) + P(J^c \cap L)= 0.25 + 0.15 = 0.40$$
 
 #### Por lo tanto, la probabilidad de que solo uno de los dos sea admitido es **$0.40$**
 
