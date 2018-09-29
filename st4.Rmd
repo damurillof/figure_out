@@ -62,7 +62,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### $$\displaystyle \bar{X}= \dfrac{\sum_{i=1}^{15}x_i}{15}=122.2$$
 
-#### Según la media, la ciudad más lluviosa es Mayaguez.
+#### Según la media, la ciudad más lluviosa es Mayagüez.
 
 #### b) Use los valores de la media, la mediana y un gráfico adecuado para decir si las distribuciones de la lluvia son simétricas o sesgadas a derecha o izquierda.
 
@@ -102,7 +102,7 @@ boxplot(Ponce, main = "Boxplot lluvia-Ponce - Didier Murillo")
 sd(Mayaguez)
 ```
 
-#### CV para Mayaguez 
+#### CV para Mayagüez 
 
 #### $$CV = \dfrac{13.3138}{305.6}*100 = 0.0435*100=4.35 \%$$
 
@@ -112,7 +112,7 @@ sd(Ponce)
 
 #### CV para Ponce
 
-#### $$CV = \dfrac{42.3762}{122.2}*100 = 0.3776*100=34.67\%$$
+#### $$CV = \dfrac{42.3762}{122.2}*100 = 0.3467*100=34.67\%$$
 
 #### La ciudad con mayor variabilidad en la lluvia es Ponce. La variabilidad en Mayagüez es muy poca. 
 

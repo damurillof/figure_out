@@ -100,7 +100,7 @@ b) Interprete un valor de cada columna en la tabla de frecuencias.
 
 * Solo nueve estudiantes tienen puntajes de SATM mayores a 744
 
-* 3/ % de los estudiantes tiene puntajes de SATM superiores a 633
+* 37 % de los estudiantes tiene puntajes de SATM superiores a 633
 
 d) Use `R` y/o `RStudio` y la función `hist()` o el paquete `ggplot2` para crear el histograma de la variable que fue seleccionada. La gráfica debe tener título y nombre en los ejes x-y.
 
