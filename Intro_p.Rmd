@@ -279,7 +279,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #### **AX3.**  $\quad P\big(\bigcup_{i=1}^{n}A_i\big)=\sum_{i=1}^{n}\big(P(A_i)\big)$ si $A_1, A_2, ..., A_n$ son mutuamente excluyentes.
 
 
- <center>**Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir $A \cap B = \emptyset$**</center>
+#### **Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir $A \cap B = \emptyset$, entonces $P(A \cap B) = 0$**
 
 
 > ####  Propiedades de la probabilidad.

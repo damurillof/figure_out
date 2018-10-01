@@ -573,9 +573,9 @@ $(document).ready(function () {
 </div>
 <div id="ax3.-quad-pbigbigcup_i1na_ibigsum_i1nbigpa_ibig-si-a_1-a_2-...-a_n-son-mutuamente-excluyentes." class="section level4">
 <h4><strong>AX3.</strong> <span class="math inline">\(\quad P\big(\bigcup_{i=1}^{n}A_i\big)=\sum_{i=1}^{n}\big(P(A_i)\big)\)</span> si <span class="math inline">\(A_1, A_2, ..., A_n\)</span> son mutuamente excluyentes.</h4>
-<center>
-<strong>Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir <span class="math inline">\(A \cap B = \emptyset\)</span></strong>
-</center>
+</div>
+<div id="tenga-presente-dos-eventos-son-mutuamente-excluyentes-si-su-interseccion-es-vacia-es-decir-a-cap-b-emptyset-entonces-pa-cap-b-0" class="section level4">
+<h4><strong>Tenga presente: Dos eventos son mutuamente excluyentes si su intersección es vacía, es decir <span class="math inline">\(A \cap B = \emptyset\)</span>, entonces <span class="math inline">\(P(A \cap B) = 0\)</span></strong></h4>
 <blockquote>
 <h4 id="propiedades-de-la-probabilidad.">Propiedades de la probabilidad.</h4>
 </blockquote>
@@ -815,9 +815,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0300 0.0534 0.0796 0.1096 0.1352 0.1721 0.1395 0.1141 0.0824 0.0564 
+0.0274 0.0583 0.0837 0.1088 0.1384 0.1684 0.1380 0.1128 0.0822 0.0556 
     12 
-0.0277 </code></pre>
+0.0264 </code></pre>
 </div>
 <div id="como-resultado-encontramos-una-tabla-con-las-probabilidades-para-todos-los-posibles-resultados-en-el-experimento." class="section level4">
 <h4>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</h4>
@@ -849,7 +849,7 @@ graph &lt;- ggplot(data.frame(x,p.run),aes(x = x, y = p.run)) +
 <div id="ahora-ejecutemos-la-funcion-sum_dados_mayorq7-10-mil-veces." class="section level4">
 <h4>Ahora ejecutemos la función <code>sum_dados_mayorq7</code> 10 mil veces.</h4>
 <pre class="r"><code>sum_dados_mayorq7(1000)</code></pre>
-<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.419&quot;</code></pre>
+<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.413&quot;</code></pre>
 <p><img src="Intro_p_files/figure-html/unnamed-chunk-4-1.png" width="672" /> <img src="blanco.png" /></p>
 </div>
 </div>
