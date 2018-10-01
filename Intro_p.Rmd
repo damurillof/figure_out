@@ -291,7 +291,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### 3.  $P(A \cup B)= P(A) + P(B) - P(A \cap B)$
 
-#### En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.
+#### En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero. 
+
+#### Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. 
+
+#### Por último tenemos la probabilidad de la unión de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.
 
 #### Una forma de mostrar las relaciones entre eventos es  mediante los famosos diagramas de Venn. Por ejemplo, sean los eventos $A$ y $B$ del mismo espacio muestral, con probabilidades $P(A)$ y $P(B)$ respectivamente. Para este caso con dos eventos, el diagra de Venn es el siguiente:
 

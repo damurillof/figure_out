@@ -589,8 +589,14 @@ $(document).ready(function () {
 <div id="pa-cup-b-pa-pb---pa-cap-b" class="section level4">
 <h4>3. <span class="math inline">\(P(A \cup B)= P(A) + P(B) - P(A \cap B)\)</span></h4>
 </div>
-<div id="en-la-propiedad-numero-uno-tenemos-que-la-probabilidad-de-un-evento-sin-elementos-es-decir-vacio-es-igual-a-cero.-respecto-a-la-probabilidad-del-complemento-es-en-realidad-la-probabilidad-de-que-no-ocurra-el-evento.-por-ultimo-tenemos-la-probabilidad-de-la-suma-de-dos-eventos-que-se-define-como-la-suma-de-las-probabilidades-menos-el-valor-de-la-probabilidad-de-la-interseccion." class="section level4">
-<h4>En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero. Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento. Por último tenemos la probabilidad de la suma de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.</h4>
+<div id="en-la-propiedad-numero-uno-tenemos-que-la-probabilidad-de-un-evento-sin-elementos-es-decir-vacio-es-igual-a-cero." class="section level4">
+<h4>En la propiedad número uno tenemos que la probabilidad de un evento sin elementos, es decir vacío es igual a cero.</h4>
+</div>
+<div id="respecto-a-la-probabilidad-del-complemento-es-en-realidad-la-probabilidad-de-que-no-ocurra-el-evento." class="section level4">
+<h4>Respecto a la probabilidad del complemento es en realidad la probabilidad de que no ocurra el evento.</h4>
+</div>
+<div id="por-ultimo-tenemos-la-probabilidad-de-la-union-de-dos-eventos-que-se-define-como-la-suma-de-las-probabilidades-menos-el-valor-de-la-probabilidad-de-la-interseccion." class="section level4">
+<h4>Por último tenemos la probabilidad de la unión de dos eventos, que se define como la suma de las probabilidades menos el valor de la probabilidad de la intersección.</h4>
 </div>
 <div id="una-forma-de-mostrar-las-relaciones-entre-eventos-es-mediante-los-famosos-diagramas-de-venn.-por-ejemplo-sean-los-eventos-a-y-b-del-mismo-espacio-muestral-con-probabilidades-pa-y-pb-respectivamente.-para-este-caso-con-dos-eventos-el-diagra-de-venn-es-el-siguiente" class="section level4">
 <h4>Una forma de mostrar las relaciones entre eventos es mediante los famosos diagramas de Venn. Por ejemplo, sean los eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> del mismo espacio muestral, con probabilidades <span class="math inline">\(P(A)\)</span> y <span class="math inline">\(P(B)\)</span> respectivamente. Para este caso con dos eventos, el diagra de Venn es el siguiente:</h4>
@@ -815,9 +821,9 @@ table(sum_d)/n
 <pre class="r"><code>sum_dados(10000)</code></pre>
 <pre><code>sum_d
      2      3      4      5      6      7      8      9     10     11 
-0.0274 0.0583 0.0837 0.1088 0.1384 0.1684 0.1380 0.1128 0.0822 0.0556 
+0.0277 0.0571 0.0804 0.1136 0.1345 0.1767 0.1344 0.1068 0.0829 0.0549 
     12 
-0.0264 </code></pre>
+0.0310 </code></pre>
 </div>
 <div id="como-resultado-encontramos-una-tabla-con-las-probabilidades-para-todos-los-posibles-resultados-en-el-experimento." class="section level4">
 <h4>Como resultado encontramos una tabla con las probabilidades para todos los posibles resultados en el experimento.</h4>
@@ -849,7 +855,7 @@ graph &lt;- ggplot(data.frame(x,p.run),aes(x = x, y = p.run)) +
 <div id="ahora-ejecutemos-la-funcion-sum_dados_mayorq7-10-mil-veces." class="section level4">
 <h4>Ahora ejecutemos la función <code>sum_dados_mayorq7</code> 10 mil veces.</h4>
 <pre class="r"><code>sum_dados_mayorq7(1000)</code></pre>
-<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.413&quot;</code></pre>
+<pre><code>[1] &quot;La probabilidad de obtener una suma mayor a 7 es 0.421&quot;</code></pre>
 <p><img src="Intro_p_files/figure-html/unnamed-chunk-4-1.png" width="672" /> <img src="blanco.png" /></p>
 </div>
 </div>
