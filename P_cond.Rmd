@@ -88,7 +88,7 @@ b) la segunda bola sea roja?
 $$P(R_2)=P(R_1\cap R_2) + P(B_1\cap R_2)=3/7*2/6 + 4/7*3/6=18/42=3/7$$
 c) sólo una de las dos bolas sea roja?
 
-$$P(R_1\cap R_2) + P(B_1\cap R_2)=P(R_1)P(B_2|R1)+P(B_1)P(R_2|B_1)=$$
+$$P(R_1\cap B_2) + P(B_1\cap R_2)=P(R_1)P(B_2|R1)+P(B_1)P(R_2|B_1)=$$
 $$3/7*4/6+4/7*3/6=24/42=4/7$$
 Ejemplo 2. Según la Comisión Electoral de un país, el 90 por ciento de las esposas votan si sus esposos lo hacen, y el 20 por ciento vota si su esposo no lo hace. Además el 70 por ciento de los hombres casados votan. Se elige al azar un matrimonio. ¿Cuál es la probabilidad de que:
 
