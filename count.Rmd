@@ -15,112 +15,136 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Teorema fundamental de conteo 
 
-Si una tarea consiste de $k$ tareas separadas y cada una de ellas se puede hacer de $n_k$ maneras entonces la tarea total se puede hacer de $n_1.n_2...n_k$ maneras.
+#### Si una tarea consiste de $k$ tareas separadas y cada una de ellas se puede hacer de $n_k$ maneras entonces la tarea total se puede hacer de $n_1.n_2...n_k$ maneras.
 
 > Ejemplo
 
-¿Cuántas tablillas de vehículos se pueden formar si cada tablilla contiene tres letras y tres dígitos?  Asumiendo que se pueden repetir. 
+#### ¿Cuántas tablillas de vehículos se pueden formar si cada placa o  tablilla contiene tres letras y tres dígitos?  Asumiendo que se pueden repetir. 
 
-Con repetición de letras o números:
+#### **Con repetición de letras o números:**
 
-En total hay 26 × 26 × 26 × 10 × 10 × 10 = 17,576,000 tablillas 
+#### En total hay 26 × 26 × 26 × 10 × 10 × 10 = 17,576,000 tablillas 
 
-Sin repetición de letras o números:
+#### Sin repetición de letras o números:
 
-En total hay 26 × 25 × 24 × 10 × 9 × 8 = 11,232,000 tablillas 
+#### En total hay 26 × 25 × 24 × 10 × 9 × 8 = 11,232,000 tablillas 
 
 > Definición
 
 
-Para un número entero positivo $n$, $n!$ (se lee n factorial) es el producto de todos los enteros positivos menores o iguales a n. 
+#### Para un número entero positivo $n$, $n!$ (se lee n factorial) es el producto de todos los enteros positivos menores o iguales a n. 
 
-Por ejemplo, $5! = 5.4.3.2.1 = 120$. Por definición, $0! = 1$.
+#### Por ejemplo, $5! = 5.4.3.2.1 = 120$. Por definición, $0! = 1$.
 
-**Ejemplo 2**: Supongamos que un juego de lotería consiste en boletos de seis números seleccionados de los números del 1 al 44. ¿Cuántas posibilidades hay de que una persona se gane la lotería? Para contestar esta pregunta debemos considerar si la selección de los números se hace con o sin reemplazo y si el orden de los números seleccionados importa.
+#### **Ejemplo 2**: Supongamos que un juego de lotería consiste en boletos de seis números seleccionados de los números del 1 al 44. ¿Cuántas posibilidades hay de que una persona se gane la lotería? Para contestar esta pregunta debemos considerar si la selección de los números se hace con o sin reemplazo y si el orden de los números seleccionados importa.
 
-**Orden importa, Sin reemplazo**: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Esto es,
+#### **Caso 1: Orden importa, Sin reemplazo**
 
-$$44.43.42.41.40.39=5,082,517,440$$
-En general, este tipo de problemas cuando consideramos que el orden es importante y sin repetición o reemplazo, se resuelven mediante permutaciones. Veamos, $P_r^n$ significa tomar r objetos de uno en uno de un total de n y se lee "n permutado r". Se define de la siguiente manera:
+#### En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Esto es,
 
+#### $$44.43.42.41.40.39=5,082,517,440$$
 
-$$P_r^n=\dfrac{n!}{(n-r)!} \quad n > 0 \quad y \quad r\leq n$$
-Recordar que $0!=1$.
-
-**Orden importa, Con reemplazo**: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 44, y así sucesivamente. Esto es,
-
-$$44.44.44.44.44.44=44^6=7,256,313,856$$
-Es decir $n^r$. 
+#### En general, este tipo de problemas cuando consideramos que el orden es importante y sin repetición o reemplazo, se resuelven mediante permutaciones. Veamos, $P_r^n$ significa tomar $r$ objetos de uno en uno de un total de $n$ y se lee "$n$ permutado $r$". Se define de la siguiente manera:
 
 
-**Orden no importa, Sin reemplazo**: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Sin embargo, como el número (12, 15, 23, 24, 25, 43) es igual a (43, 25, 12, 15, 23, 24) (orden no importa), entonces tenemos que eliminar las redundancias que ocurren al reordenar los seis números seleccionados (esto se puede hacer de 6! formas). Para resolver este problema se usa la definición de "Combinatoria". 
+#### $$P_r^n=\dfrac{n!}{(n-r)!} \quad n > 0 \quad y \quad r\leq n$$
 
-Si de un total de $n$ elementos  se desea seleccionar $r$ de ellos sin importar el orden y sin reeplazo, se tiene:
+#### Recordar que $0!=1$.
 
-$${n \choose r}=\dfrac{n!}{(n-r)!r!} \quad r\leq n$$
+#### **Caso 2: Orden importa, Con reemplazo**
 
-Entonces en nuestro problema tenemos $n=44$ y $r=6$, por tanto 
+#### En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 44, y así sucesivamente. Esto es,
 
-$${44 \choose 6}=\dfrac{44!}{(44-6)!6!}=\dfrac{44!}{38!6!}= 7,059,052$$
+#### $$44.44.44.44.44.44=44^6=7,256,313,856$$
 
-Es decir que $${44 \choose 6}=7,059,052$$
-
-**Orden no importa, Con reemplazo**  En general, las posibles formas de seleccionar $r$ objetos con repetición de $n$ objetos
-cuando el orden no importa esta dado por:
-
-$${n+r-1 \choose r}$$
-Aplicado a nuestro problema tenemos que $n=44$ y $r=6$
-
-$${49 \choose 6} = \dfrac{49!}{(49-6)!6!}=\dfrac{49!}{43!6!}=13,983,816$$
-En todos los casos anteriores, la probabilidad de ganar la lotería es $1/N$, donde $N$ es el número de posibilidades en cada escenario discutido anteriormente.
-
-Ejercicios:
-
-1. Si 3 bolas son "extraídas al azar" de un recipiente que contiene 6 bolas blancas y 5 negras, ¿Cuál es la probabilidad de que una de las bolas sea blanca y las otras dos negras?
-
-2. Un comité de 5 personas debe ser seleccionado de un grupo de 6 hombres y 9 mujeres. Si la selección se realiza al azar, ¿cuál es la probabilidad de que el comité esté formado por 3 hombres y 2 mujeres?
-
-3. Se dice que una mano de póquer de 5 cartas es un "Full House" si consta de 3 cartas de la misma denominación y otras 2 cartas de la misma denominación (por supuesto, diferente de la primera denominación). ¿Cuál es la probabilidad de obtener una mano de póquer con un "Full House"?
+#### Es decir $n^r$. 
 
 
----------------------------------------------------------------------------------------------------------
+#### **Caso 3: Orden no importa, Sin reemplazo**
+
+#### En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Sin embargo, como el número (12, 15, 23, 24, 25, 43) es igual a (43, 25, 12, 15, 23, 24) (orden no importa), entonces tenemos que eliminar las redundancias que ocurren al reordenar los seis números seleccionados (esto se puede hacer de 6! formas). Para resolver este problema se usa la definición de "Combinatoria". 
+
+#### Si de un total de $n$ elementos  se desea seleccionar $r$ de ellos sin importar el orden y sin reemplazo, se tiene:
+
+#### $${n \choose r}=\dfrac{n!}{(n-r)!r!} \quad r\leq n$$
+
+#### Entonces en nuestro problema tenemos $n=44$ y $r=6$, por tanto 
+
+#### $${44 \choose 6}=\dfrac{44!}{(44-6)!6!}=\dfrac{44!}{38!6!}= 7,059,052$$
+
+#### Es decir que 
+
+#### $${44 \choose 6}=7,059,052$$
+
+#### **Caso 4: Orden no importa, Con reemplazo**
+
+#### En general, las posibles formas de seleccionar $r$ objetos con repetición de $n$ objetos
+cuando el orden no importa está dado por:
+
+#### $${n+r-1 \choose r}$$
+
+#### Aplicado a nuestro problema tenemos que $n=44$ y $r=6$
+
+#### $${49 \choose 6} = \dfrac{49!}{(49-6)!6!}=\dfrac{49!}{43!6!}=13,983,816$$
+
+## Probabilidad y técnicas de conteo.
+
+#### En todos los casos anteriores, la probabilidad de ganar la lotería es $1/N$, donde $N$ es el número de posibilidades en cada escenario discutido anteriormente. Es decir, el número de elementos del espacio muestral. 
+
+> Ejemplos:
+
+#### 1. Se seleccionará un comité de 5 miembros de un grupo de 6 hombres y 9 mujeres. Si la selección se realiza al azar, ¿cuál es la probabilidad de que el comité sea conformado de 3 hombres y 2 mujeres?
+
+#### Lo primero que debemos hacer en estos tipos de problemas, es identificar si el orden importa o no, y si se hace con reemplazamiento. 
+
+#### En este caso tenemos un problema en donde el orden NO es importante, y NO tenemos reemplazamiento. Por lo tanto, el ejercicio se reduce a un problema de combinatorias. 
+
+#### Definamos el evento 
+
+#### A = "El comité se compone de 3 hombres y 2 mujeres"
+
+#### Entonces 
+
+#### $$P(A) = \dfrac{\#(A)}{N}$$
+
+#### Donde $N$ es el número total de posibilidades que tiene el experimento. ¿Cómo calculamos N?
+
+#### En total tenemos 15 personas (6 hombres y 9 mujeres), de las cuales vamos a seleccionar 5 personas esto se traduce en:
+
+#### $${15 \choose 5} = \dfrac{15!}{(15-5)!5!}=3003 \quad \text{posibilidades}$$
+
+#### Ahora, cuántas posibilidades tiene el evento $A$, necesitamos 3 hombres de un total de 6 y 2 mujeres de un total de 9, por lo tanto. 
+
+#### $$\#(A) = {6 \choose 3}{9 \choose 2} = 720 $$
+
+#### Finalmente, 
+
+#### $$\displaystyle P(A) = \dfrac{\#(A)}{N}=\displaystyle \dfrac{{6 \choose 3}{9 \choose 2}}{{15 \choose 5}} = \dfrac{720}{3003}=\dfrac{240}{1001}$$
+
+####  2. El “Power Ball” es el juego de lotería más famoso de los Estados Unidos, el juego consiste en seleccionar 5 bolas con números que van desde el 1 hasta el 69 y una super bola “Powerball” de un conjunto de números del 1 al 26. ¿Cuál es la probabilidad de ganar el “Power Ball” si compras un solo boleto de la lotería?
+
+#### Sea 
+
+#### A = “Ganar el Power Ball comprando solo un boleto”, 
+
+#### Nuevamente,
+
+#### $$P(A) = \dfrac{1}{{69 \choose 5}{26 \choose 1}}=\dfrac{1}{292201338}=0.000000003422$$
+
+#### Ahora que sabes probabilidades, ¿Jugarías el Power Ball?
+
+#### Ejercicios:
+
+#### 1. Si 3 bolas son "extraídas al azar" de un recipiente que contiene 6 bolas blancas y 5 negras, ¿Cuál es la probabilidad de que una de las bolas sea blanca y las otras dos negras?
 
 
----------------------------------------------------------------------------------------------------------
+#### 2. Se dice que una mano de póquer de 5 cartas es un "Full House" si consta de 3 cartas de la misma denominación y otras 2 cartas de la misma denominación (por supuesto, diferente de la primera denominación). ¿Cuál es la probabilidad de obtener una mano de póquer con un "Full House"?
 
 
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
+![](blanco.png)
+ 
 
 
 
----------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
 

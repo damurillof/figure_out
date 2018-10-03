@@ -211,6 +211,7 @@ $(document).ready(function () {
 <li><a href="#tecnicas-de-conteo">Técnicas de conteo</a><ul>
 <li><a href="#teorema-fundamental-de-conteo">Teorema fundamental de conteo</a></li>
 </ul></li>
+<li><a href="#probabilidad-y-tecnicas-de-conteo.">Probabilidad y técnicas de conteo.</a></li>
 </ul>
 </div>
 
@@ -218,55 +219,191 @@ $(document).ready(function () {
 <h2>Técnicas de conteo</h2>
 <div id="teorema-fundamental-de-conteo" class="section level3">
 <h3>Teorema fundamental de conteo</h3>
-<p>Si una tarea consiste de <span class="math inline">\(k\)</span> tareas separadas y cada una de ellas se puede hacer de <span class="math inline">\(n_k\)</span> maneras entonces la tarea total se puede hacer de <span class="math inline">\(n_1.n_2...n_k\)</span> maneras.</p>
+<div id="si-una-tarea-consiste-de-k-tareas-separadas-y-cada-una-de-ellas-se-puede-hacer-de-n_k-maneras-entonces-la-tarea-total-se-puede-hacer-de-n_1.n_2...n_k-maneras." class="section level4">
+<h4>Si una tarea consiste de <span class="math inline">\(k\)</span> tareas separadas y cada una de ellas se puede hacer de <span class="math inline">\(n_k\)</span> maneras entonces la tarea total se puede hacer de <span class="math inline">\(n_1.n_2...n_k\)</span> maneras.</h4>
 <blockquote>
 <p>Ejemplo</p>
 </blockquote>
-<p>¿Cuántas tablillas de vehículos se pueden formar si cada tablilla contiene tres letras y tres dígitos? Asumiendo que se pueden repetir.</p>
-<p>Con repetición de letras o números:</p>
-<p>En total hay 26 × 26 × 26 × 10 × 10 × 10 = 17,576,000 tablillas</p>
-<p>Sin repetición de letras o números:</p>
-<p>En total hay 26 × 25 × 24 × 10 × 9 × 8 = 11,232,000 tablillas</p>
+</div>
+<div id="cuantas-tablillas-de-vehiculos-se-pueden-formar-si-cada-placa-o-tablilla-contiene-tres-letras-y-tres-digitos-asumiendo-que-se-pueden-repetir." class="section level4">
+<h4>¿Cuántas tablillas de vehículos se pueden formar si cada placa o tablilla contiene tres letras y tres dígitos? Asumiendo que se pueden repetir.</h4>
+</div>
+<div id="con-repeticion-de-letras-o-numeros" class="section level4">
+<h4><strong>Con repetición de letras o números:</strong></h4>
+</div>
+<div id="en-total-hay-26-26-26-10-10-10-17576000-tablillas" class="section level4">
+<h4>En total hay 26 × 26 × 26 × 10 × 10 × 10 = 17,576,000 tablillas</h4>
+</div>
+<div id="sin-repeticion-de-letras-o-numeros" class="section level4">
+<h4>Sin repetición de letras o números:</h4>
+</div>
+<div id="en-total-hay-26-25-24-10-9-8-11232000-tablillas" class="section level4">
+<h4>En total hay 26 × 25 × 24 × 10 × 9 × 8 = 11,232,000 tablillas</h4>
 <blockquote>
 <p>Definición</p>
 </blockquote>
-<p>Para un número entero positivo <span class="math inline">\(n\)</span>, <span class="math inline">\(n!\)</span> (se lee n factorial) es el producto de todos los enteros positivos menores o iguales a n.</p>
-<p>Por ejemplo, <span class="math inline">\(5! = 5.4.3.2.1 = 120\)</span>. Por definición, <span class="math inline">\(0! = 1\)</span>.</p>
-<p><strong>Ejemplo 2</strong>: Supongamos que un juego de lotería consiste en boletos de seis números seleccionados de los números del 1 al 44. ¿Cuántas posibilidades hay de que una persona se gane la lotería? Para contestar esta pregunta debemos considerar si la selección de los números se hace con o sin reemplazo y si el orden de los números seleccionados importa.</p>
-<p><strong>Orden importa, Sin reemplazo</strong>: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Esto es,</p>
-<p><span class="math display">\[44.43.42.41.40.39=5,082,517,440\]</span> En general, este tipo de problemas cuando consideramos que el orden es importante y sin repetición o reemplazo, se resuelven mediante permutaciones. Veamos, <span class="math inline">\(P_r^n\)</span> significa tomar r objetos de uno en uno de un total de n y se lee “n permutado r”. Se define de la siguiente manera:</p>
-<p><span class="math display">\[P_r^n=\dfrac{n!}{(n-r)!} \quad n &gt; 0 \quad y \quad r\leq n\]</span> Recordar que <span class="math inline">\(0!=1\)</span>.</p>
-<p><strong>Orden importa, Con reemplazo</strong>: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 44, y así sucesivamente. Esto es,</p>
-<p><span class="math display">\[44.44.44.44.44.44=44^6=7,256,313,856\]</span> Es decir <span class="math inline">\(n^r\)</span>.</p>
-<p><strong>Orden no importa, Sin reemplazo</strong>: En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Sin embargo, como el número (12, 15, 23, 24, 25, 43) es igual a (43, 25, 12, 15, 23, 24) (orden no importa), entonces tenemos que eliminar las redundancias que ocurren al reordenar los seis números seleccionados (esto se puede hacer de 6! formas). Para resolver este problema se usa la definición de “Combinatoria”.</p>
-<p>Si de un total de <span class="math inline">\(n\)</span> elementos se desea seleccionar <span class="math inline">\(r\)</span> de ellos sin importar el orden y sin reeplazo, se tiene:</p>
-<p><span class="math display">\[{n \choose r}=\dfrac{n!}{(n-r)!r!} \quad r\leq n\]</span></p>
-<p>Entonces en nuestro problema tenemos <span class="math inline">\(n=44\)</span> y <span class="math inline">\(r=6\)</span>, por tanto</p>
-<p><span class="math display">\[{44 \choose 6}=\dfrac{44!}{(44-6)!6!}=\dfrac{44!}{38!6!}= 7,059,052\]</span></p>
-<p>Es decir que <span class="math display">\[{44 \choose 6}=7,059,052\]</span></p>
-<p><strong>Orden no importa, Con reemplazo</strong> En general, las posibles formas de seleccionar <span class="math inline">\(r\)</span> objetos con repetición de <span class="math inline">\(n\)</span> objetos cuando el orden no importa esta dado por:</p>
-<p><span class="math display">\[{n+r-1 \choose r}\]</span> Aplicado a nuestro problema tenemos que <span class="math inline">\(n=44\)</span> y <span class="math inline">\(r=6\)</span></p>
-<p><span class="math display">\[{49 \choose 6} = \dfrac{49!}{(49-6)!6!}=\dfrac{49!}{43!6!}=13,983,816\]</span> En todos los casos anteriores, la probabilidad de ganar la lotería es <span class="math inline">\(1/N\)</span>, donde <span class="math inline">\(N\)</span> es el número de posibilidades en cada escenario discutido anteriormente.</p>
-<p>Ejercicios:</p>
-<ol style="list-style-type: decimal">
-<li><p>Si 3 bolas son “extraídas al azar” de un recipiente que contiene 6 bolas blancas y 5 negras, ¿Cuál es la probabilidad de que una de las bolas sea blanca y las otras dos negras?</p></li>
-<li><p>Un comité de 5 personas debe ser seleccionado de un grupo de 6 hombres y 9 mujeres. Si la selección se realiza al azar, ¿cuál es la probabilidad de que el comité esté formado por 3 hombres y 2 mujeres?</p></li>
-<li><p>Se dice que una mano de póquer de 5 cartas es un “Full House” si consta de 3 cartas de la misma denominación y otras 2 cartas de la misma denominación (por supuesto, diferente de la primera denominación). ¿Cuál es la probabilidad de obtener una mano de póquer con un “Full House”?</p></li>
-</ol>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+</div>
+<div id="para-un-numero-entero-positivo-n-n-se-lee-n-factorial-es-el-producto-de-todos-los-enteros-positivos-menores-o-iguales-a-n." class="section level4">
+<h4>Para un número entero positivo <span class="math inline">\(n\)</span>, <span class="math inline">\(n!\)</span> (se lee n factorial) es el producto de todos los enteros positivos menores o iguales a n.</h4>
+</div>
+<div id="por-ejemplo-5-5.4.3.2.1-120.-por-definicion-0-1." class="section level4">
+<h4>Por ejemplo, <span class="math inline">\(5! = 5.4.3.2.1 = 120\)</span>. Por definición, <span class="math inline">\(0! = 1\)</span>.</h4>
+</div>
+<div id="ejemplo-2-supongamos-que-un-juego-de-loteria-consiste-en-boletos-de-seis-numeros-seleccionados-de-los-numeros-del-1-al-44.-cuantas-posibilidades-hay-de-que-una-persona-se-gane-la-loteria-para-contestar-esta-pregunta-debemos-considerar-si-la-seleccion-de-los-numeros-se-hace-con-o-sin-reemplazo-y-si-el-orden-de-los-numeros-seleccionados-importa." class="section level4">
+<h4><strong>Ejemplo 2</strong>: Supongamos que un juego de lotería consiste en boletos de seis números seleccionados de los números del 1 al 44. ¿Cuántas posibilidades hay de que una persona se gane la lotería? Para contestar esta pregunta debemos considerar si la selección de los números se hace con o sin reemplazo y si el orden de los números seleccionados importa.</h4>
+</div>
+<div id="caso-1-orden-importa-sin-reemplazo" class="section level4">
+<h4><strong>Caso 1: Orden importa, Sin reemplazo</strong></h4>
+</div>
+<div id="en-este-caso-la-seleccion-del-primer-numero-se-puede-hacer-de-44-formas-el-segundo-de-43-y-asi-sucesivamente.-esto-es" class="section level4">
+<h4>En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Esto es,</h4>
+</div>
+<div id="section" class="section level4">
+<h4><span class="math display">\[44.43.42.41.40.39=5,082,517,440\]</span></h4>
+</div>
+<div id="en-general-este-tipo-de-problemas-cuando-consideramos-que-el-orden-es-importante-y-sin-repeticion-o-reemplazo-se-resuelven-mediante-permutaciones.-veamos-p_rn-significa-tomar-r-objetos-de-uno-en-uno-de-un-total-de-n-y-se-lee-n-permutado-r.-se-define-de-la-siguiente-manera" class="section level4">
+<h4>En general, este tipo de problemas cuando consideramos que el orden es importante y sin repetición o reemplazo, se resuelven mediante permutaciones. Veamos, <span class="math inline">\(P_r^n\)</span> significa tomar <span class="math inline">\(r\)</span> objetos de uno en uno de un total de <span class="math inline">\(n\)</span> y se lee “<span class="math inline">\(n\)</span> permutado <span class="math inline">\(r\)</span>”. Se define de la siguiente manera:</h4>
+</div>
+<div id="p_rndfracnn-r-quad-n-0-quad-y-quad-rleq-n" class="section level4">
+<h4><span class="math display">\[P_r^n=\dfrac{n!}{(n-r)!} \quad n &gt; 0 \quad y \quad r\leq n\]</span></h4>
+</div>
+<div id="recordar-que-01." class="section level4">
+<h4>Recordar que <span class="math inline">\(0!=1\)</span>.</h4>
+</div>
+<div id="caso-2-orden-importa-con-reemplazo" class="section level4">
+<h4><strong>Caso 2: Orden importa, Con reemplazo</strong></h4>
+</div>
+<div id="en-este-caso-la-seleccion-del-primer-numero-se-puede-hacer-de-44-formas-el-segundo-de-44-y-asi-sucesivamente.-esto-es" class="section level4">
+<h4>En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 44, y así sucesivamente. Esto es,</h4>
+</div>
+<div id="section-1" class="section level4">
+<h4><span class="math display">\[44.44.44.44.44.44=44^6=7,256,313,856\]</span></h4>
+</div>
+<div id="es-decir-nr." class="section level4">
+<h4>Es decir <span class="math inline">\(n^r\)</span>.</h4>
+</div>
+<div id="caso-3-orden-no-importa-sin-reemplazo" class="section level4">
+<h4><strong>Caso 3: Orden no importa, Sin reemplazo</strong></h4>
+</div>
+<div id="en-este-caso-la-seleccion-del-primer-numero-se-puede-hacer-de-44-formas-el-segundo-de-43-y-asi-sucesivamente.-sin-embargo-como-el-numero-12-15-23-24-25-43-es-igual-a-43-25-12-15-23-24-orden-no-importa-entonces-tenemos-que-eliminar-las-redundancias-que-ocurren-al-reordenar-los-seis-numeros-seleccionados-esto-se-puede-hacer-de-6-formas.-para-resolver-este-problema-se-usa-la-definicion-de-combinatoria." class="section level4">
+<h4>En este caso la selección del primer número se puede hacer de 44 formas, el segundo de 43, y así sucesivamente. Sin embargo, como el número (12, 15, 23, 24, 25, 43) es igual a (43, 25, 12, 15, 23, 24) (orden no importa), entonces tenemos que eliminar las redundancias que ocurren al reordenar los seis números seleccionados (esto se puede hacer de 6! formas). Para resolver este problema se usa la definición de “Combinatoria”.</h4>
+</div>
+<div id="si-de-un-total-de-n-elementos-se-desea-seleccionar-r-de-ellos-sin-importar-el-orden-y-sin-reemplazo-se-tiene" class="section level4">
+<h4>Si de un total de <span class="math inline">\(n\)</span> elementos se desea seleccionar <span class="math inline">\(r\)</span> de ellos sin importar el orden y sin reemplazo, se tiene:</h4>
+</div>
+<div id="n-choose-rdfracnn-rr-quad-rleq-n" class="section level4">
+<h4><span class="math display">\[{n \choose r}=\dfrac{n!}{(n-r)!r!} \quad r\leq n\]</span></h4>
+</div>
+<div id="entonces-en-nuestro-problema-tenemos-n44-y-r6-por-tanto" class="section level4">
+<h4>Entonces en nuestro problema tenemos <span class="math inline">\(n=44\)</span> y <span class="math inline">\(r=6\)</span>, por tanto</h4>
+</div>
+<div id="choose-6dfrac4444-66dfrac44386-7059052" class="section level4">
+<h4><span class="math display">\[{44 \choose 6}=\dfrac{44!}{(44-6)!6!}=\dfrac{44!}{38!6!}= 7,059,052\]</span></h4>
+</div>
+<div id="es-decir-que" class="section level4">
+<h4>Es decir que</h4>
+</div>
+<div id="choose-67059052" class="section level4">
+<h4><span class="math display">\[{44 \choose 6}=7,059,052\]</span></h4>
+</div>
+<div id="caso-4-orden-no-importa-con-reemplazo" class="section level4">
+<h4><strong>Caso 4: Orden no importa, Con reemplazo</strong></h4>
+</div>
+<div id="en-general-las-posibles-formas-de-seleccionar-r-objetos-con-repeticion-de-n-objetos" class="section level4">
+<h4>En general, las posibles formas de seleccionar <span class="math inline">\(r\)</span> objetos con repetición de <span class="math inline">\(n\)</span> objetos</h4>
+<p>cuando el orden no importa está dado por:</p>
+</div>
+<div id="nr-1-choose-r" class="section level4">
+<h4><span class="math display">\[{n+r-1 \choose r}\]</span></h4>
+</div>
+<div id="aplicado-a-nuestro-problema-tenemos-que-n44-y-r6" class="section level4">
+<h4>Aplicado a nuestro problema tenemos que <span class="math inline">\(n=44\)</span> y <span class="math inline">\(r=6\)</span></h4>
+</div>
+<div id="choose-6-dfrac4949-66dfrac4943613983816" class="section level4">
+<h4><span class="math display">\[{49 \choose 6} = \dfrac{49!}{(49-6)!6!}=\dfrac{49!}{43!6!}=13,983,816\]</span></h4>
+</div>
+</div>
+</div>
+<div id="probabilidad-y-tecnicas-de-conteo." class="section level2">
+<h2>Probabilidad y técnicas de conteo.</h2>
+<div id="en-todos-los-casos-anteriores-la-probabilidad-de-ganar-la-loteria-es-1n-donde-n-es-el-numero-de-posibilidades-en-cada-escenario-discutido-anteriormente.-es-decir-el-numero-de-elementos-del-espacio-muestral." class="section level4">
+<h4>En todos los casos anteriores, la probabilidad de ganar la lotería es <span class="math inline">\(1/N\)</span>, donde <span class="math inline">\(N\)</span> es el número de posibilidades en cada escenario discutido anteriormente. Es decir, el número de elementos del espacio muestral.</h4>
+<blockquote>
+<p>Ejemplos:</p>
+</blockquote>
+</div>
+<div id="se-seleccionara-un-comite-de-5-miembros-de-un-grupo-de-6-hombres-y-9-mujeres.-si-la-seleccion-se-realiza-al-azar-cual-es-la-probabilidad-de-que-el-comite-sea-conformado-de-3-hombres-y-2-mujeres" class="section level4">
+<h4>1. Se seleccionará un comité de 5 miembros de un grupo de 6 hombres y 9 mujeres. Si la selección se realiza al azar, ¿cuál es la probabilidad de que el comité sea conformado de 3 hombres y 2 mujeres?</h4>
+</div>
+<div id="lo-primero-que-debemos-hacer-en-estos-tipos-de-problemas-es-identificar-si-el-orden-importa-o-no-y-si-se-hace-con-reemplazamiento." class="section level4">
+<h4>Lo primero que debemos hacer en estos tipos de problemas, es identificar si el orden importa o no, y si se hace con reemplazamiento.</h4>
+</div>
+<div id="en-este-caso-tenemos-un-problema-en-donde-el-orden-no-es-importante-y-no-tenemos-reemplazamiento.-por-lo-tanto-el-ejercicio-se-reduce-a-un-problema-de-combinatorias." class="section level4">
+<h4>En este caso tenemos un problema en donde el orden NO es importante, y NO tenemos reemplazamiento. Por lo tanto, el ejercicio se reduce a un problema de combinatorias.</h4>
+</div>
+<div id="definamos-el-evento" class="section level4">
+<h4>Definamos el evento</h4>
+</div>
+<div id="a-el-comite-se-compone-de-3-hombres-y-2-mujeres" class="section level4">
+<h4>A = “El comité se compone de 3 hombres y 2 mujeres”</h4>
+</div>
+<div id="entonces" class="section level4">
+<h4>Entonces</h4>
+</div>
+<div id="pa-dfracan" class="section level4">
+<h4><span class="math display">\[P(A) = \dfrac{\#(A)}{N}\]</span></h4>
+</div>
+<div id="donde-n-es-el-numero-total-de-posibilidades-que-tiene-el-experimento.-como-calculamos-n" class="section level4">
+<h4>Donde <span class="math inline">\(N\)</span> es el número total de posibilidades que tiene el experimento. ¿Cómo calculamos N?</h4>
+</div>
+<div id="en-total-tenemos-15-personas-6-hombres-y-9-mujeres-de-las-cuales-vamos-a-seleccionar-5-personas-esto-se-traduce-en" class="section level4">
+<h4>En total tenemos 15 personas (6 hombres y 9 mujeres), de las cuales vamos a seleccionar 5 personas esto se traduce en:</h4>
+</div>
+<div id="choose-5-dfrac1515-553003-quad-textposibilidades" class="section level4">
+<h4><span class="math display">\[{15 \choose 5} = \dfrac{15!}{(15-5)!5!}=3003 \quad \text{posibilidades}\]</span></h4>
+</div>
+<div id="ahora-cuantas-posibilidades-tiene-el-evento-a-necesitamos-3-hombres-de-un-total-de-6-y-2-mujeres-de-un-total-de-9-por-lo-tanto." class="section level4">
+<h4>Ahora, cuántas posibilidades tiene el evento <span class="math inline">\(A\)</span>, necesitamos 3 hombres de un total de 6 y 2 mujeres de un total de 9, por lo tanto.</h4>
+</div>
+<div id="a-6-choose-39-choose-2-720" class="section level4">
+<h4><span class="math display">\[\#(A) = {6 \choose 3}{9 \choose 2} = 720 \]</span></h4>
+</div>
+<div id="finalmente" class="section level4">
+<h4>Finalmente,</h4>
+</div>
+<div id="displaystyle-pa-dfracandisplaystyle-dfrac6-choose-39-choose-215-choose-5-dfrac7203003dfrac2401001" class="section level4">
+<h4><span class="math display">\[\displaystyle P(A) = \dfrac{\#(A)}{N}=\displaystyle \dfrac{{6 \choose 3}{9 \choose 2}}{{15 \choose 5}} = \dfrac{720}{3003}=\dfrac{240}{1001}\]</span></h4>
+</div>
+<div id="el-power-ball-es-el-juego-de-loteria-mas-famoso-de-los-estados-unidos-el-juego-consiste-en-seleccionar-5-bolas-con-numeros-que-van-desde-el-1-hasta-el-69-y-una-super-bola-powerball-de-un-conjunto-de-numeros-del-1-al-26.-cual-es-la-probabilidad-de-ganar-el-power-ball-si-compras-un-solo-boleto-de-la-loteria" class="section level4">
+<h4>2. El “Power Ball” es el juego de lotería más famoso de los Estados Unidos, el juego consiste en seleccionar 5 bolas con números que van desde el 1 hasta el 69 y una super bola “Powerball” de un conjunto de números del 1 al 26. ¿Cuál es la probabilidad de ganar el “Power Ball” si compras un solo boleto de la lotería?</h4>
+</div>
+<div id="sea" class="section level4">
+<h4>Sea</h4>
+</div>
+<div id="a-ganar-el-power-ball-comprando-solo-un-boleto" class="section level4">
+<h4>A = “Ganar el Power Ball comprando solo un boleto”,</h4>
+</div>
+<div id="nuevamente" class="section level4">
+<h4>Nuevamente,</h4>
+</div>
+<div id="pa-dfrac169-choose-526-choose-1dfrac12922013380.000000003422" class="section level4">
+<h4><span class="math display">\[P(A) = \dfrac{1}{{69 \choose 5}{26 \choose 1}}=\dfrac{1}{292201338}=0.000000003422\]</span></h4>
+</div>
+<div id="ahora-que-sabes-probabilidades-jugarias-el-power-ball" class="section level4">
+<h4>Ahora que sabes probabilidades, ¿Jugarías el Power Ball?</h4>
+</div>
+<div id="ejercicios" class="section level4">
+<h4>Ejercicios:</h4>
+</div>
+<div id="si-3-bolas-son-extraidas-al-azar-de-un-recipiente-que-contiene-6-bolas-blancas-y-5-negras-cual-es-la-probabilidad-de-que-una-de-las-bolas-sea-blanca-y-las-otras-dos-negras" class="section level4">
+<h4>1. Si 3 bolas son “extraídas al azar” de un recipiente que contiene 6 bolas blancas y 5 negras, ¿Cuál es la probabilidad de que una de las bolas sea blanca y las otras dos negras?</h4>
+</div>
+<div id="se-dice-que-una-mano-de-poquer-de-5-cartas-es-un-full-house-si-consta-de-3-cartas-de-la-misma-denominacion-y-otras-2-cartas-de-la-misma-denominacion-por-supuesto-diferente-de-la-primera-denominacion.-cual-es-la-probabilidad-de-obtener-una-mano-de-poquer-con-un-full-house" class="section level4">
+<h4>2. Se dice que una mano de póquer de 5 cartas es un “Full House” si consta de 3 cartas de la misma denominación y otras 2 cartas de la misma denominación (por supuesto, diferente de la primera denominación). ¿Cuál es la probabilidad de obtener una mano de póquer con un “Full House”?</h4>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 </div>
 

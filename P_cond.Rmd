@@ -319,7 +319,8 @@ kable(problem) %>%
 #### A y B son independientes si:
 
 #### $$P(A|B)=P(A)$$
-o $$P(B|A)=P(B)$$
+
+#### o $$P(B|A)=P(B)$$
 
 #### Una definición equivalente para eventos independientes es:
 
@@ -327,7 +328,7 @@ o $$P(B|A)=P(B)$$
 
 #### $$P(A \cap B)= P(A)P(B)$$
 
-### Propiedades de eventos independientes. 
+### Propiedades de los eventos independientes. 
 
 ####  Si $A$ y $B$ son eventos independientes y estan en un mismo espacio muestral $S$, se cumple que:
 

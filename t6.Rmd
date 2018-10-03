@@ -1,0 +1,23 @@
+---
+title: 'Tarea # 6'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **Fecha de entrega:** Viernes 12 de octubre de 2018. Al iniciar la clase.
+
+#### **Puntaje:** 20 puntos 
+
+#### Resuelva los siguientes problemas mostrando claramente su procedimiento.
+
+#### **1.** Como parte del intento de evitar nuevos ataques terroristas en los Estados Unidos, algunas personas han propuesto técnicas de reconocimiento facial para los aeropuertos. Básicamente, cada persona que ingresa al punto de control de seguridad del aeropuerto es fotografiada y la imagen digital se compara con una lista de imágenes de sospechosos de terrorismo conocidos. Tales sistemas nunca son 100% correctos, cometen un error ocasional. Digamos que el sistema clasifica a un terrorista real como correcto el 50% del tiempo (muchos terroristas no estarán en la base de datos porque nunca han sido investigados). Esto se llama un falso negativo. También digamos que el sistema clasifica erróneamente a una persona aceptable como un terrorista el 0.1% del tiempo (falso positivo). Supongamos que en un gran aeropuerto hay 15 millones de pasajeros por año, 40 de los cuales son terroristas. ¿Cuál es la probabilidad de que una persona clasificada como terrorista por el sistema de reconocimiento facial en realidad no sea un terrorista?
+
+#### **2.**
+
+#### **3.**
+
+#### **4.**
+

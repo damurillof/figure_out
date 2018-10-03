@@ -1,0 +1,26 @@
+---
+title: 'Tarea # 7'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **Fecha de entrega:** Viernes 19 de octubre de 2018. Al iniciar la clase.
+
+#### **Puntaje:** 20 puntos 
+
+#### Resuelva los siguientes problemas mostrando claramente su procedimiento.
+
+**1. (9 pts)** Suponga que usted tiene una urna con dos bolas, una blanca y otra roja. Digamos que la probabilidad de extraer la bola blanca es $P(B)=p$, obviamente $p$ es una probabilidad y estará entre $0$ y $1$. Ahora suponga que repetimos  el experimento de extraer la bola, un número $k$ de veces, hasta obtener la bola blanca por primera vez. Sea $X$ el número total de intentos. 
+
+a)  Escriba el soporte de $X$.
+b)  Encuentre la función de probabilidad de $X$, es decir $P(X=k)$.
+c)  Si $p= \frac{3}{4}$, encuentre:
+
+  + $P(X=3)$ 
+  + $P(3\leq X<6)$.
+
+**Bono (3 pts):** Pruebe que $P(X=k)$ es en realidad una función de probabilidad.
+
