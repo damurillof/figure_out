@@ -6,18 +6,64 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+#### **Fecha de entrega:** Miércoles 17 de octubre de 2018. Al iniciar la clase.
 
-#### **Fecha de entrega:** Viernes 12 de octubre de 2018. Al iniciar la clase.
-
-#### **Puntaje:** 20 puntos 
+#### **Puntaje: 34 puntos** 
 
 #### Resuelva los siguientes problemas mostrando claramente su procedimiento.
 
-#### **1.** Como parte del intento de evitar nuevos ataques terroristas en los Estados Unidos, algunas personas han propuesto técnicas de reconocimiento facial para los aeropuertos. Básicamente, cada persona que ingresa al punto de control de seguridad del aeropuerto es fotografiada y la imagen digital se compara con una lista de imágenes de sospechosos de terrorismo conocidos. Tales sistemas nunca son 100% correctos, cometen un error ocasional. Digamos que el sistema clasifica a un terrorista real como correcto el 50% del tiempo (muchos terroristas no estarán en la base de datos porque nunca han sido investigados). Esto se llama un falso negativo. También digamos que el sistema clasifica erróneamente a una persona aceptable como un terrorista el 0.1% del tiempo (falso positivo). Supongamos que en un gran aeropuerto hay 15 millones de pasajeros por año, 40 de los cuales son terroristas. ¿Cuál es la probabilidad de que una persona clasificada como terrorista por el sistema de reconocimiento facial en realidad no sea un terrorista?
+#### **1. (5 pts)** Después de los atentados terroristas del 11 de septiembre  en los Estados Unidos, algunas personas han propuesto programas de reconocimiento facial para usarse en los aeropuertos. En otras palabras, cada persona que ingresa a un  punto de control de seguridad del aeropuerto es fotografiada y la imagen digital se compara con una lista de imágenes de sospechosos de terrorismo que son conocidos. El problema, es que estos sistemas nunca son 100 % exactos, y cometen un error ocasional. Digamos que el sistema clasifica a un terrorista real como correcto el 50% del tiempo. También digamos que el sistema clasifica erróneamente a una persona inocente como un terrorista el 1% de las veces. Supongamos que en un gran aeropuerto hay 5 millones de pasajeros por año, donde 30 de los pasajeros son terroristas. ¿Cuál es la probabilidad de que  el sistema de reconocimiento facial clasifique a una persona como terrorista, cuando en  realidad esa persona no es un terrorista?
 
-#### **2.**
+#### **2.(4 pts)** Suponga el experimento aleatorio de lanzar un par de monedas una vez.  Sean los eventos 
+#### A = “Obtener una Cara en la primera moneda”.
 
-#### **3.**
+#### B = “Obtener una Cruz en la segunda moneda”.
 
-#### **4.**
+* ####	  Probar que los eventos A y B son independientes.
+
+#### **3. (10 pts)** Sea X una variable aleatoria con soporte sobre {1,2,3,4,5}. Tenemos que P(X) está definida de la siguiente manera:
+
+```{r,eval=TRUE,echo=FALSE}
+X <- 1:5
+percent <- c("8%","16%","45%","31%")
+proba <- c(0.1,"",0.20,"",0.25)
+problem <- data.frame(X,proba)
+names(problem) <- c("X","P(X=x)")
+library(knitr)
+library(kableExtra)
+kable(problem) %>%
+  kable_styling(bootstrap_options = c("striped", "bordered","hover"), full_width = F, 
+                position = "left")
+```
+
+#### Donde se cumple que  $P(X = 2)= aP(X=1)$ y además $P(X = 5)= \dfrac{1}{2a}P(X=4)$. Donde $a$ es un número real positivo.
+
+a)  #### Complete las casillas vacías en tabla para que P(X) sea una función de probabilidad.
+
+b)  #### Encuentre $P(X > 3)$
+
+c)  #### Calcule el valor esperado X, E(X).
+
+d)  #### Calcule la varianza de X, Var(X)
+
+#### **4. (9 pts)** Suponga que usted tiene una urna con dos bolas, una blanca y otra roja. Digamos que la probabilidad de extraer la bola blanca es $P(B)=p$, obviamente $p$ es una probabilidad y estará entre $0$ y $1$. Ahora suponga que repetimos  el experimento de extraer la bola, un número $k$ de veces, hasta obtener la bola blanca por primera vez. Sea $X$ el número total de intentos. 
+
+a)  #### Escriba el soporte de $X$.
+b)  #### Encuentre la función de probabilidad de $X$, es decir $P(X=k)$.
+c)  #### Si $p= \frac{3}{4}$, encuentre:
+
+  + #### $P(X=3)$ 
+  + #### $P(3\leq X<6)$.
+
+#### **Bono (3 pts):** Pruebe que $P(X=k)$ es en realidad una función de probabilidad.
+
+#### **5. (6 pts)**  Según algunas estimaciones, el veinte por ciento (20 %) de los habitantes de una población no tienen seguro médico. Sea  X  el número personas sin seguro de salud en una muestra de 75 personas. 
+
+a)  ####  ¿Cuál es la probabilidad de que exactamente 3 de los 75 muestreados no tengan seguro médico?
+
+b)  ####   ¿Cuál es la probabilidad de que, a lo más, cuatro de los muestreados no tenga seguro médico?
+
+
+
+
 
