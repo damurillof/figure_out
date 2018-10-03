@@ -214,13 +214,16 @@ $(document).ready(function () {
 <li><a href="#funcion-de-distribucion-fx">Función de Distribución <span class="math inline">\(F(x)\)</span></a></li>
 </ul></li>
 <li><a href="#valor-esperado-de-una-variable-aleatoria-discreta">Valor esperado de una variable aleatoria discreta</a></li>
-<li><a href="#varianza-y-desviacion-estandar.">Varianza y desviación estandar.</a></li>
+<li><a href="#varianza-y-desviacion-estandar.">Varianza y desviación estándar.</a></li>
 </ul>
 </div>
 
 <div id="introduccion" class="section level2">
 <h2>Introducción</h2>
-<p>Una variable aleatoria es una función de los resultados de un procedimiento de recopilación de datos (Espacio muestral). Convierte los resultados del espacio muestral en un número. Si este número es representativo de la cuenta de algo, entonces es una variable aleatoria discreta. Si este número es representativo de la medida de algo (por ejemplo, la duración, el peso, la velocidad, etc.), entonces es una variable aleatoria continua. En estadística, las variables aleatorias son ligeramente diferentes a las variables utilizadas en álgebra. Dado que las variables aleatorias son una función del espacio muestral <span class="math inline">\(S\)</span>, que tiene resultados aleatorios, las variables aleatorias también implican incertidumbre, y por lo tanto debemos caracterizar esta incertidumbre. La nomenclatura utilizada normalmente (pueden ser más) para una variable aleatoria es <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> o <span class="math inline">\(Z\)</span> (en mayúscula), mientras que los valores específicos de la variable aleatoria se muestran en minúscula <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> o <span class="math inline">\(z\)</span> . La incertidumbre en el valor de una variable aleatoria se cuantifica a través de la probabilidad. En este capítulo, lo que haremos es trabajar con variables aleatorias discretas como una forma de encontrar en general las propiedades de un procedimiento de recopilación de datos como: probabilidades, valor esperado y varianza.</p>
+<p>Una variable aleatoria es una función de los resultados de un procedimiento de recopilación de datos (Espacio muestral). Convierte los resultados del espacio muestral en un número. Si este número es representativo de la cuenta de algo, entonces es una variable aleatoria discreta. Si este número es representativo de la medida de algo (por ejemplo, la duración, el peso, la velocidad, etc.), entonces es una variable aleatoria continua. En estadística, las variables aleatorias son ligeramente diferentes a las variables utilizadas en álgebra.</p>
+<p>Dado que las variables aleatorias son una función del espacio muestral <span class="math inline">\(S\)</span>, que tiene resultados aleatorios, las variables aleatorias también implican incertidumbre, y por lo tanto debemos caracterizar esta incertidumbre. La nomenclatura utilizada normalmente (pueden ser más) para una variable aleatoria es <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> o <span class="math inline">\(Z\)</span> (en mayúscula), mientras que los valores específicos de la variable aleatoria se muestran en minúscula <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> o <span class="math inline">\(z\)</span> .</p>
+<p>La incertidumbre en el valor de una variable aleatoria se cuantifica a través de la probabilidad. En esta parte del curso, lo que haremos es trabajar con variables aleatorias discretas como una forma de encontrar en general las propiedades de un procedimiento de recopilación de datos como: probabilidades, valor esperado y varianza.</p>
+<p>Veamos los siguientes ejemplos de variables aleatorias.</p>
 <ul>
 <li><span class="math inline">\(X:=\)</span> La suma que se obtiene al lanzar un par de dados.</li>
 <li><span class="math inline">\(Y:=\)</span> El número de caras que aparecen al lanzar una moneda tres veces.</li>
@@ -235,14 +238,22 @@ $(document).ready(function () {
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
-<p><strong>Ejemplo 1</strong>: Suponga el lanzamiento de tres monedas, sea la variable aleatoria <span class="math inline">\(X\)</span> :=“número de caras”. En este caso, el espacio muestral esta definido por <span class="math inline">\(S = \{CCC, CC+, C++, C+C, +C+, ++C, +CC, +++\}\)</span>. Por ejemplo, cuando evaluamos a <span class="math inline">\(X\)</span> en <span class="math inline">\(S\)</span> para el elemento <span class="math inline">\(\{CCC\}\)</span> encontramos que <span class="math inline">\(X({CCC}) = 3\)</span>, donde <span class="math inline">\(3\)</span> es un número real. Vemos que la variable aleatoria <span class="math inline">\(X\)</span> puede tomar los siguientes valores <span class="math inline">\(\{0, 1, 2, 3\}\)</span>. Estos valores corresponden al dominio de la variable aleatoria.</p>
-<p><strong>Ejemplo 2</strong>: Considere el experimento de lanzar dos dados, y sea la variable aleatoria <span class="math inline">\(Y:=\)</span> ”la suma de los resultados”, entonces encontramos que los valores que podria tomar la variable aleatoria <span class="math inline">\(Y\)</span> son: <span class="math inline">\(\{2,3,4,5,6,7,8,9,10,11,12\}\)</span>.</p>
+<p><strong>Ejemplo 1</strong>: Suponga el lanzamiento de tres monedas, sea la variable aleatoria <span class="math inline">\(X\)</span> :=“número de caras”. En este caso, el espacio muestral está definido por</p>
+<p><span class="math display">\[S = \{CCC, CC+, C++, C+C, +C+, ++C, +CC, +++\}\]</span></p>
+<p>Por ejemplo, cuando evaluamos a <span class="math inline">\(X\)</span> en <span class="math inline">\(S\)</span> para el elemento <span class="math inline">\(\{CCC\}\)</span> encontramos que <span class="math inline">\(X({CCC}) = 3\)</span>, donde <span class="math inline">\(3\)</span> es un número real.</p>
+<p>Vemos que la variable aleatoria <span class="math inline">\(X\)</span> puede tomar los siguientes valores <span class="math inline">\(\{0, 1, 2, 3\}\)</span>. Estos valores corresponden al soporte de la variable aleatoria.</p>
+<p><strong>Ejemplo 2</strong>: Considere el experimento de lanzar dos dados, y sea la variable aleatoria <span class="math inline">\(Y:=\)</span> ”la suma de los resultados”, entonces encontramos que los valores que podría tomar la variable aleatoria <span class="math inline">\(Y\)</span> son: <span class="math inline">\(\{2,3,4,5,6,7,8,9,10,11,12\}\)</span>.</p>
 <div id="funcion-de-probabilidad-pxx_i" class="section level3">
 <h3>Función de probabilidad <span class="math inline">\(P(X=x_i)\)</span></h3>
-<p>Suponga un espacio muestral <span class="math inline">\(S = \{s1, . . . , sn\}\)</span>, con una función de probabilidad P y un dominio <span class="math inline">\(\{x_1, . . . , x_m\}\)</span>. Entonces <span class="math inline">\(P(X = x_i)\)</span> se conoce como la función de probabilidad inducida sobre el dominio de la variable aleatoria.</p>
-<p><strong>Ejemplo 3</strong>: Retomemos el ejemplo del lanzamiento de tres monedas donde <span class="math inline">\(S =\{CCC, CC+, C + +, C + C, +C+, + + C, +CC, + + +\}\)</span> y <span class="math inline">\(\{0, 1, 2, 3\}\)</span> el dominio. Tenemos que, por ejemplo, si queremos saber cuál es la probabilidad de obtener dos caras, <span class="math inline">\(P(X = 2)\)</span>, es decir,</p>
+<p>Suponga un espacio muestral <span class="math inline">\(S = \{s1, . . . , s_n\}\)</span>, con una función de probabilidad P y un soporte <span class="math inline">\(\{x_1, . . . , x_m\}\)</span>. Entonces <span class="math inline">\(P(X = x_i)\)</span> se conoce como la función de probabilidad inducida sobre el soporte de la variable aleatoria.</p>
+<p><strong>Ejemplo 3</strong>: Retomemos el ejemplo del lanzamiento de tres monedas donde</p>
+<p><span class="math display">\[S =\{CCC, CC+, C + +, C + C, +C+, + + C, +CC, + + +\}\]</span></p>
+<p>y</p>
+<p><span class="math display">\[\{0, 1, 2, 3\}\]</span></p>
+<p>es el soporte de la variable aleatoria.</p>
+<p>Tenemos que, por ejemplo, si queremos saber cuál es la probabilidad de obtener dos caras, <span class="math inline">\(P(X = 2)\)</span>, es decir,</p>
 <p><span class="math display">\[P(X = 2) = P(\{CC+, C + C, +CC\}) = \dfrac{3}{8}\]</span>.</p>
-<p>Entonces podemos definir la función de probabilidad sobre el dominio de <span class="math inline">\(X\)</span>:</p>
+<p>Entonces podemos definir la función de probabilidad sobre el soporte de <span class="math inline">\(X\)</span>:</p>
 <span class="math display">\[\begin{equation}
 P(X=x) = \left\lbrace
 \begin{array}{ll}
@@ -253,11 +264,11 @@ P(X=x) = \left\lbrace
 \end{array}
 \right.
 \end{equation}\]</span>
-<p><strong>Ejemplo 4</strong>: Hallemos la función de probabilidad de la variable aleatoria <span class="math inline">\(X :=\)</span> “número de caras pares al arrojar dos veces un dado equilibrado”. Notamos que el dominio de la variable aleatoria <span class="math inline">\(X\)</span> es {0,1,2}.</p>
+<p><strong>Ejemplo 4</strong>: Hallemos la función de probabilidad de la variable aleatoria <span class="math inline">\(X :=\)</span> “número de caras pares al arrojar dos veces un dado equilibrado”. Notamos que el soporte de la variable aleatoria <span class="math inline">\(X\)</span> es {0,1,2}.</p>
 <p><span class="math inline">\(P(X=0)=\dfrac{9}{36}\)</span>, es decir la probabilidad de obtener ninguna cara par.</p>
 <p><span class="math inline">\(P(X=1)=\dfrac{18}{36}\)</span>, es decir la probabilidad de obtener una cara par.</p>
 <p><span class="math inline">\(P(X=2)=\dfrac{9}{36}\)</span>, es decir la probabilidad de obtener las dos caras pares.</p>
-<p>Finalmente la función de probabilidad esta dada por:</p>
+<p>Finalmente la función de probabilidad está dada por:</p>
 <span class="math display">\[\begin{equation}
 P(X=x) = \left\lbrace
 \begin{array}{ll}
@@ -301,39 +312,29 @@ P(X \leq x) = \left\lbrace
 <h2>Valor esperado de una variable aleatoria discreta</h2>
 <p>Cuando la variable aleatoria es discreta, el valor esperado es igual a la suma de la probabilidad de cada suceso aleatorio multiplicado por cada valor que toma la variable. Por lo tanto, el valor esperado representa la cantidad media o valor medio que se “esperaría” como resultado de un experimento aleatorio cuando la probabilidad de cada suceso se mantiene constante y el experimento se repite un número elevado de veces. Representamos el valor esperado de una variable aleatoria <span class="math inline">\(X\)</span> como <span class="math inline">\(E(X)\)</span>. Entonces,</p>
 <p><span class="math display">\[E(X)=\sum_{i=1}^{n}x_iP(X=x_i)\]</span></p>
-<p><strong>Ejemplo</strong>: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad <span class="math inline">\(P(X=x_i)\)</span> esta dada por:</p>
-<p><img src="proba.png" /> Si repetimos este experimento muchas veces, ¿cuál sera el valor de la suma que esperamos encontrar?, esta pregunta la podemos resolver usando la definición de valor esperado, es decir calcular E(X).</p>
-<p><span class="math inline">\(E(X)=\sum_{i=1}^{n}x_iP(X=x_i)\)</span>\</p>
-<p><span class="math inline">\(E(X)=2*(1/36)+3*(2/36)+4*(3/36)+5*(4/36)+6*(5/36)+7*(6/36)+8*(5/36)+9*(4/36)+10*(3/36)+11*(2/36)+12*(1/36)\)</span></p>
-<p><span class="math inline">\(E(X)=7\)</span></p>
+<p><strong>Ejemplo</strong>: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad <span class="math inline">\(P(X=x_i)\)</span> está dada por:</p>
+<p><img src="proba.png" /> Si repetimos este experimento muchas veces, ¿cuál será el valor de la suma que esperamos encontrar?, esta pregunta la podemos resolver usando la definición de valor esperado, es decir calcular E(X).</p>
+<p><span class="math display">\[E(X)=\sum_{i=1}^{n}x_iP(X=x_i)\]</span></p>
+<p><span class="math display">\[E(X)=2*(1/36)+3*(2/36)+4*(3/36)+5*(4/36)+6*(5/36)+7*(6/36)+8*(5/36) + \]</span> <span class="math display">\[9*(4/36)+10*(3/36)+11*(2/36)+12*(1/36)\]</span></p>
+<p><span class="math display">\[E(X)=7\]</span></p>
 <p>Por tanto, encontramos que el valor esperado E(X) es igual a 7.</p>
 </div>
 <div id="varianza-y-desviacion-estandar." class="section level2">
-<h2>Varianza y desviación estandar.</h2>
-<p>La Varianza, <span class="math inline">\(Var(X)\)</span>, indica la dispersión de la variable aleatoria, o que tan dispersos estan los valores que toma la variable aleatoria alrededor del valor esperado. Una forma de definir la varianza de una variable aleatoria es:</p>
-<p><span class="math display">\[Var(X)=E(X^2)-[E(X)]^2\]</span> ¿A qué es igual la varianza del ejemplo anterior?. Para responder esta pregunta necesitamos saber el valor de <span class="math inline">\(E(X^2)\)</span> dado que se encuentra en la formula de la varianza.</p>
-<p><span class="math inline">\(E(X^2)=2^2*(1/36)+3^2*(2/36)+4^2*(3/36)+5^2*(4/36)+6^2*(5/36)+7^2*(6/36)+8^2*(5/36)+9^2*(4/36)+10^2*(3/36)+11^2*(2/36)+12^2*(1/36)\)</span></p>
-<p><span class="math inline">\(E(X^2)=54.83\)</span></p>
+<h2>Varianza y desviación estándar.</h2>
+<p>La Varianza, <span class="math inline">\(Var(X)\)</span>, indica la dispersión de la variable aleatoria, o que tan dispersos están los valores que toma la variable aleatoria alrededor del valor esperado. Una forma de definir la varianza de una variable aleatoria es:</p>
+<p><span class="math display">\[Var(X)=E(X^2)-[E(X)]^2\]</span> ¿A qué es igual la varianza del ejemplo anterior?. Para responder esta pregunta necesitamos saber el valor de <span class="math inline">\(E(X^2)\)</span> dado que se encuentra en la fórmula de la varianza.</p>
+<p><span class="math display">\[E(X^2)=2^2*(1/36)+3^2*(2/36)+4^2*(3/36)+5^2*(4/36)+6^2*(5/36) +\]</span> <span class="math display">\[7^2*(6/36)+8^2*(5/36)+9^2*(4/36)+10^2*(3/36)+11^2*(2/36)+12^2*(1/36)\]</span></p>
+<p><span class="math display">\[E(X^2)=54.83\]</span></p>
 <p>Entonces, por definición de varianza tenemos:</p>
-<p><span class="math inline">\(Var(X)=E(X^2)-[E(X)]^2\)</span></p>
-<p><span class="math inline">\(Var(X)=54.83 - 7^2\)</span></p>
-<p><span class="math inline">\(Var(X)=5.83\)</span></p>
-<p>La desviación estandar se define como la raiz cuadrada de la varianza</p>
+<p><span class="math display">\[Var(X)=E(X^2)-[E(X)]^2\]</span></p>
+<p><span class="math display">\[Var(X)=54.83 - 7^2\]</span></p>
+<p><span class="math display">\[Var(X)=5.83\]</span></p>
+<p>La desviación estándar se define como la raíz cuadrada de la varianza</p>
 <p><span class="math display">\[SD=\sqrt{Var(X)}=\sqrt{5.83}=2.41\]</span></p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 
 
