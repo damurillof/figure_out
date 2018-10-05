@@ -9,6 +9,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 ## Introducción
 
 Una variable aleatoria es una función de los resultados de un procedimiento de recopilación de datos (Espacio muestral). Convierte los resultados del espacio muestral en un número. Si este número es representativo de la cuenta de algo, entonces es una variable aleatoria discreta. Si este número es representativo de la medida de algo (por ejemplo, la duración, el peso, la velocidad, etc.), entonces es una variable aleatoria continua. En estadística, las variables aleatorias son ligeramente diferentes a las variables utilizadas en álgebra. 
@@ -73,6 +74,21 @@ P(X=x) = \left\lbrace
 \right.
 \end{equation}
 
+Nota: Otra forma de escribir las funciones de probabilidad discretas es usando una tabla. Veamos la función de probabilidad P(X) anterior:
+
+```{r,eval=TRUE,echo=FALSE}
+X <- 0:3
+proba <- c("1/8","3/8","3/8","1/8")
+problem <- data.frame(X,proba)
+names(problem) <- c("X","P(X=x)")
+library(knitr)
+library(kableExtra)
+kable(problem) %>%
+  kable_styling(bootstrap_options = c("striped", "bordered","hover"), full_width = F, 
+                position = "center")
+```
+
+
 **Ejemplo 4**:  Hallemos la función de probabilidad  de la variable aleatoria $X :=$ “número de caras pares al arrojar dos veces un dado equilibrado”. Notamos que el soporte de la variable aleatoria $X$  es {0,1,2}. 
 
 $P(X=0)=\dfrac{9}{36}$, es decir la probabilidad de obtener ninguna cara par.
@@ -93,13 +109,41 @@ P(X=x) = \left\lbrace
 \right.
 \end{equation}
 
-La función de probabilidad tiene dos propiedades importantes,
+
+### Propiedades de toda función de probabilidad P(X)
+
+Toda función de probabilidad tiene dos propiedades importantes,
 
 1.  $P(X=x_i) \geq 0$
 
 2.  $\sum_{x}P(X=x)=1$  
 
+**Ejemplo 5**: Probar que la función de probabilidad $P(X)$ en el problema 3 es en realidad una función de probabilidad.
 
+Recordemos que $P(X)$ esta dada por:
+
+```{r,eval=TRUE,echo=FALSE}
+X <- 0:3
+proba <- c("1/8","3/8","3/8","1/8")
+problem <- data.frame(X,proba)
+names(problem) <- c("X","P(X=x)")
+library(knitr)
+library(kableExtra)
+kable(problem) %>%
+  kable_styling(bootstrap_options = c("striped", "bordered","hover"), full_width = F, 
+                position = "left")
+```
+
+La propiedad 1 de P(X) es indiscutible.
+
+Respecto a la propiedad número 2, debemos probar que la suma de P(X=x) es igual a 1. 
+
+Entonces,
+
+$$\sum_{x=0}^{3}P(X=x) = P(X=0) + P(X=1) + P(X=2) + P(X=3)=\\
+1/8 + 3/8 + 3/8 +1/8=1$$
+
+Notamos que la suma de la función de probabilidad es igual a 1, entonces $P(X=x)$ es una función de probabilidad. 
 
 ### Función de Distribución $F(x)$
 
@@ -109,7 +153,7 @@ La función de distribución acumulada (en inglés cdf) de una variable aleatori
 
 $$F(x) = P(X \leq x), \quad para \quad todo \quad x.$$
 
-**Ejemplo 5**: Retomemos la variable aleatoria del ejemplo uno $X:=$ “Número de caras en el lanzamiento de tres monedas”. En este ejemplo $F(x)$ es una función definida a trozos (escalonada) con los saltos iguales a $P(X = x_i)$. La función está definida en todos los números reales.
+**Ejemplo 6**: Retomemos la variable aleatoria del ejemplo uno $X:=$ “Número de caras en el lanzamiento de tres monedas”. En este ejemplo $F(x)$ es una función definida a trozos (escalonada) con los saltos iguales a $P(X = x_i)$. La función está definida en todos los números reales.
 
 
 \begin{equation}
@@ -142,7 +186,7 @@ Cuando la variable aleatoria es discreta, el valor esperado es igual a la suma d
 
 $$E(X)=\sum_{i=1}^{n}x_iP(X=x_i)$$
 
-**Ejemplo**: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad $P(X=x_i)$ está dada por:
+**Ejemplo 7**: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad $P(X=x_i)$ está dada por:
 
 ![](proba.png)
 Si repetimos este experimento muchas veces, ¿cuál será el valor de la suma que esperamos encontrar?, esta pregunta la podemos resolver usando la definición de valor esperado, es decir calcular E(X).
@@ -185,3 +229,5 @@ $$SD=\sqrt{Var(X)}=\sqrt{5.83}=2.41$$
 
 
 ![](blanco.png)
+
+

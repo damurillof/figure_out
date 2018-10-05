@@ -22,6 +22,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -211,6 +212,7 @@ $(document).ready(function () {
 <li><a href="#introduccion">Introducción</a></li>
 <li><a href="#variables-aleatorias-discretas">Variables aleatorias discretas</a><ul>
 <li><a href="#funcion-de-probabilidad-pxx_i">Función de probabilidad <span class="math inline">\(P(X=x_i)\)</span></a></li>
+<li><a href="#propiedades-de-toda-funcion-de-probabilidad-px">Propiedades de toda función de probabilidad P(X)</a></li>
 <li><a href="#funcion-de-distribucion-fx">Función de Distribución <span class="math inline">\(F(x)\)</span></a></li>
 </ul></li>
 <li><a href="#valor-esperado-de-una-variable-aleatoria-discreta">Valor esperado de una variable aleatoria discreta</a></li>
@@ -264,6 +266,53 @@ P(X=x) = \left\lbrace
 \end{array}
 \right.
 \end{equation}\]</span>
+<p>Nota: Otra forma de escribir las funciones de probabilidad discretas es usando una tabla. Veamos la función de probabilidad P(X) anterior:</p>
+<table class="table table-striped table-bordered table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+X
+</th>
+<th style="text-align:left;">
+P(X=x)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+1/8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+3/8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+3/8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1/8
+</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Ejemplo 4</strong>: Hallemos la función de probabilidad de la variable aleatoria <span class="math inline">\(X :=\)</span> “número de caras pares al arrojar dos veces un dado equilibrado”. Notamos que el soporte de la variable aleatoria <span class="math inline">\(X\)</span> es {0,1,2}.</p>
 <p><span class="math inline">\(P(X=0)=\dfrac{9}{36}\)</span>, es decir la probabilidad de obtener ninguna cara par.</p>
 <p><span class="math inline">\(P(X=1)=\dfrac{18}{36}\)</span>, es decir la probabilidad de obtener una cara par.</p>
@@ -278,18 +327,75 @@ P(X=x) = \left\lbrace
 \end{array}
 \right.
 \end{equation}\]</span>
-<p>La función de probabilidad tiene dos propiedades importantes,</p>
+</div>
+<div id="propiedades-de-toda-funcion-de-probabilidad-px" class="section level3">
+<h3>Propiedades de toda función de probabilidad P(X)</h3>
+<p>Toda función de probabilidad tiene dos propiedades importantes,</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(P(X=x_i) \geq 0\)</span></p></li>
 <li><p><span class="math inline">\(\sum_{x}P(X=x)=1\)</span></p></li>
 </ol>
+<p><strong>Ejemplo 5</strong>: Probar que la función de probabilidad <span class="math inline">\(P(X)\)</span> en el problema 3 es en realidad una función de probabilidad.</p>
+<p>Recordemos que <span class="math inline">\(P(X)\)</span> esta dada por:</p>
+<table class="table table-striped table-bordered table-hover" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:right;">
+X
+</th>
+<th style="text-align:left;">
+P(X=x)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+1/8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+3/8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+3/8
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+1/8
+</td>
+</tr>
+</tbody>
+</table>
+<p>La propiedad 1 de P(X) es indiscutible.</p>
+<p>Respecto a la propiedad número 2, debemos probar que la suma de P(X=x) es igual a 1.</p>
+<p>Entonces,</p>
+<p><span class="math display">\[\sum_{x=0}^{3}P(X=x) = P(X=0) + P(X=1) + P(X=2) + P(X=3)=\\
+1/8 + 3/8 + 3/8 +1/8=1\]</span></p>
+<p>Notamos que la suma de la función de probabilidad es igual a 1, entonces <span class="math inline">\(P(X=x)\)</span> es una función de probabilidad.</p>
 </div>
 <div id="funcion-de-distribucion-fx" class="section level3">
 <h3>Función de Distribución <span class="math inline">\(F(x)\)</span></h3>
 <p>A cada variable aleatoria se le asocia una función llamada función de distribución acumulada de <span class="math inline">\(X\)</span>.</p>
 <p>La función de distribución acumulada (en inglés cdf) de una variable aleatoria <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(F(x)\)</span>, se define como:</p>
 <p><span class="math display">\[F(x) = P(X \leq x), \quad para \quad todo \quad x.\]</span></p>
-<p><strong>Ejemplo 5</strong>: Retomemos la variable aleatoria del ejemplo uno <span class="math inline">\(X:=\)</span> “Número de caras en el lanzamiento de tres monedas”. En este ejemplo <span class="math inline">\(F(x)\)</span> es una función definida a trozos (escalonada) con los saltos iguales a <span class="math inline">\(P(X = x_i)\)</span>. La función está definida en todos los números reales.</p>
+<p><strong>Ejemplo 6</strong>: Retomemos la variable aleatoria del ejemplo uno <span class="math inline">\(X:=\)</span> “Número de caras en el lanzamiento de tres monedas”. En este ejemplo <span class="math inline">\(F(x)\)</span> es una función definida a trozos (escalonada) con los saltos iguales a <span class="math inline">\(P(X = x_i)\)</span>. La función está definida en todos los números reales.</p>
 <span class="math display">\[\begin{equation}
 P(X \leq x) = \left\lbrace
 \begin{array}{ll}
@@ -312,7 +418,7 @@ P(X \leq x) = \left\lbrace
 <h2>Valor esperado de una variable aleatoria discreta</h2>
 <p>Cuando la variable aleatoria es discreta, el valor esperado es igual a la suma de la probabilidad de cada suceso aleatorio multiplicado por cada valor que toma la variable. Por lo tanto, el valor esperado representa la cantidad media o valor medio que se “esperaría” como resultado de un experimento aleatorio cuando la probabilidad de cada suceso se mantiene constante y el experimento se repite un número elevado de veces. Representamos el valor esperado de una variable aleatoria <span class="math inline">\(X\)</span> como <span class="math inline">\(E(X)\)</span>. Entonces,</p>
 <p><span class="math display">\[E(X)=\sum_{i=1}^{n}x_iP(X=x_i)\]</span></p>
-<p><strong>Ejemplo</strong>: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad <span class="math inline">\(P(X=x_i)\)</span> está dada por:</p>
+<p><strong>Ejemplo 7</strong>: Consideremos el experimento de lanzar un par de dados y anotar el valor de la suma en los resultados. Para este experimento la función de probabilidad <span class="math inline">\(P(X=x_i)\)</span> está dada por:</p>
 <p><img src="proba.png" /> Si repetimos este experimento muchas veces, ¿cuál será el valor de la suma que esperamos encontrar?, esta pregunta la podemos resolver usando la definición de valor esperado, es decir calcular E(X).</p>
 <p><span class="math display">\[E(X)=\sum_{i=1}^{n}x_iP(X=x_i)\]</span></p>
 <p><span class="math display">\[E(X)=2*(1/36)+3*(2/36)+4*(3/36)+5*(4/36)+6*(5/36)+7*(6/36)+8*(5/36) + \]</span> <span class="math display">\[9*(4/36)+10*(3/36)+11*(2/36)+12*(1/36)\]</span></p>
