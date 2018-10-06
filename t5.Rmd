@@ -6,6 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 #### **Fecha de entrega:** Viernes 05 de octubre de 2018. Al iniciar la clase. 
 
 #### **Puntaje: 25 puntos** 

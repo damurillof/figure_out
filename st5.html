@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Solución Tarea # 5</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Solución Tarea # 5</h1>
+
+</div>
+
+
+<div id="pts-sean-a_1-y-a_2-eventos-del-mismo-espacio-muestral-s.-digamos-que-pa_1-cup-a_2-0.5-y-pa_1-cup-ac_2-0.8" class="section level4">
+<h4><strong>1. (5 pts)</strong> Sean <span class="math inline">\(A_1\)</span> y <span class="math inline">\(A_2\)</span> eventos del mismo espacio muestral <span class="math inline">\(S\)</span>. Digamos que <span class="math inline">\(P(A_1 \cup A_2)= 0.5\)</span> y <span class="math inline">\(P(A_1 \cup A^c_{2})= 0.8\)</span></h4>
+<ul>
+<li><h4 id="encuentre-pa_1">Encuentre <span class="math inline">\(P(A_1)\)</span></h4></li>
+</ul>
+</div>
+<div id="solucion" class="section level4">
+<h4>—–Solución—–</h4>
+</div>
+<div id="sabemos-que-pa_1-cup-a_2-0.5-y-pa_1-cup-ac_2-0.8-entonces" class="section level4">
+<h4>Sabemos que <span class="math inline">\(P(A_1 \cup A_2)= 0.5\)</span> y <span class="math inline">\(P(A_1 \cup A^c_{2})= 0.8\)</span>, entonces</h4>
+</div>
+<div id="pa_1-pa_2---pa_1-cap-a_2-quad-1" class="section level4">
+<h4><span class="math display">\[0.5 = P(A_1) + P(A_2) - P(A_1 \cap A_2) \quad (1)\]</span></h4>
+</div>
+<div id="pa_1-pac_2---pa_1-cap-ac_2-quad-2" class="section level4">
+<h4><span class="math display">\[0.8 = P(A_1) + P(A^c_2) - P(A_1 \cap A^c_2) \quad (2)\]</span></h4>
+</div>
+<div id="sumando-las-ecuaciones-1-y-2-obtenemos" class="section level4">
+<h4>Sumando las ecuaciones <span class="math inline">\((1)\)</span> y <span class="math inline">\((2)\)</span> obtenemos:</h4>
+</div>
+<div id="pa_1-pa_2-pac_2---bigpa_1-cap-a_2-pa_1-cap-ac_2-big" class="section level4">
+<h4><span class="math display">\[1.3 = 2P(A_1) + P(A_2) + P(A^c_2) - \big[P(A_1 \cap A_2) + P(A_1 \cap A^c_2) \big]\]</span></h4>
+</div>
+<div id="por-propiedades-de-probabilidad-sabemos-que-pa_2-pac_2-1." class="section level4">
+<h4>Por propiedades de probabilidad sabemos que <span class="math inline">\(P(A_2) + P(A^c_2) = 1\)</span>.</h4>
+</div>
+<div id="ahora-mediante-un-diagram-de-venn-podemos-darnos-cuenta-que-pa_1-cap-a_2-pa_1-cap-ac_2-pa_1." class="section level4">
+<h4>Ahora, mediante un diagram de Venn podemos darnos cuenta que <span class="math inline">\(P(A_1 \cap A_2) + P(A_1 \cap A^c_2) = P(A_1)\)</span>.</h4>
+<div class="figure">
+<img src="VenDidier.png" />
+
+</div>
+</div>
+<div id="entonces" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="pa_1-1---pa_1" class="section level4">
+<h4><span class="math display">\[1.3 = 2P(A_1) + 1 - P(A_1)\]</span></h4>
+</div>
+<div id="pa_1-0.3" class="section level4">
+<h4><span class="math display">\[P(A_1) = 0.3\]</span></h4>
+</div>
+<div id="pts-sean-a-y-b-eventos-de-un-espacio-muestral-s.-tenemos-que-pac-dfrac12-y-pb-dfrac34.-pueden-ser-a-y-b-eventos-mutuamente-excluyentes.-justifique-su-respuesta-matematicamente." class="section level4">
+<h4><strong>2. (5 pts)</strong> Sean <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> eventos de un espacio muestral <span class="math inline">\(S\)</span>. Tenemos que <span class="math inline">\(P(A^c) = \dfrac{1}{2}\)</span> y <span class="math inline">\(P(B) = \dfrac{3}{4}\)</span>. ¿Pueden ser <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> eventos mutuamente excluyentes?. Justifique su respuesta matemáticamente.</h4>
+</div>
+<div id="solucion-1" class="section level4">
+<h4>—–Solución—–</h4>
+</div>
+<div id="supongamos-que-a-y-b-son-eventos-mutuamente-excluyentes-entonces-se-cumple-que" class="section level4">
+<h4>Supongamos que <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son eventos mutuamente excluyentes, entonces se cumple que:</h4>
+</div>
+<div id="pa-cap-b-0" class="section level4">
+<h4><span class="math display">\[P(A \cap B) = 0,\]</span></h4>
+</div>
+<div id="por-lo-tanto" class="section level4">
+<h4>por lo tanto,</h4>
+</div>
+<div id="pa-cup-b-pa-pb---0" class="section level4">
+<h4><span class="math display">\[P(A \cup B) = P(A) + P(B) - 0\]</span></h4>
+</div>
+<div id="pa-cup-b-frac12-frac34-frac54-1-quad-textcontradiccion" class="section level4">
+<h4><span class="math display">\[P(A \cup B) = \frac{1}{2} + \frac{3}{4} = \frac{5}{4} &gt; 1 \quad \text{(Contradicción!)}\]</span></h4>
+</div>
+<div id="llegamos-a-una-contradiccion-dado-que-una-probabilidad-no-puede-ser-mayor-que-1.-por-lo-tanto-a-y-b-no-pueden-ser-eventos-mutuamente-excluyentes." class="section level4">
+<h4>Llegamos a una contradicción, dado que una probabilidad no puede ser mayor que 1. Por lo tanto, <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no pueden ser eventos mutuamente excluyentes.</h4>
+</div>
+<div id="pts-en-una-clase-de-estadistica-hay-10-estudiantes-de-los-cuales-4-son-hombres-y-6-son-mujeres.-en-otra-clase-esta-vez-de-matematicas-hay-16-estudiantes-hombres-y-una-cantidad-desconocida-de-estudiantes-de-genero-femenino.-si-se-elige-al-azar-un-estudiante-de-cada-clase-dos-en-total-y-si-sabemos-que-0.44-es-la-probabilidad-de-que-ambos-estudiantes-sean-del-mismo-genero." class="section level4">
+<h4><strong>3. (10 pts)</strong> En una clase de estadística hay 10 estudiantes, de los cuales 4 son hombres y 6 son mujeres. En otra clase, esta vez de matemáticas, hay 16 estudiantes hombres y una cantidad desconocida de estudiantes de género femenino. Si se elige al azar un estudiante de cada clase (dos en total) y si sabemos que 0.44 es la probabilidad de que ambos estudiantes sean del mismo género.</h4>
+<ul>
+<li><h4 id="calcule-el-numero-de-estudiantes-de-genero-femenino-en-la-clase-de-matematicas.">Calcule el número de estudiantes de género femenino en la clase de matemáticas.</h4></li>
+</ul>
+</div>
+<div id="solucion-2" class="section level4">
+<h4>—–Solución—–</h4>
+</div>
+<div id="definamos-los-siguientes-eventos" class="section level4">
+<h4>Definamos los siguientes eventos:</h4>
+<ul>
+<li><h4 id="f_e-estudiantes-mujeres-en-la-clase-de-estadistica."><span class="math inline">\(F_e\)</span> = “Estudiantes mujeres en la clase de estadística”.</h4></li>
+<li><h4 id="m_e-estudiantes-hombres-en-la-clase-de-estadistica."><span class="math inline">\(M_e\)</span> = “Estudiantes hombres en la clase de estadística”.</h4></li>
+<li><h4 id="f_m-estudiantes-mujeres-en-la-clase-de-matematicas."><span class="math inline">\(F_m\)</span> = “Estudiantes mujeres en la clase de matemáticas”.</h4></li>
+<li><h4 id="m_m-estudiantes-hombres-en-la-clase-de-matematicas."><span class="math inline">\(M_m\)</span> = “Estudiantes hombres en la clase de matemáticas”.</h4></li>
+</ul>
+</div>
+<div id="sabemos-que-0.44-es-la-probabilidad-de-seleccionar-los-dos-estudiantes-del-mismo-genero-independientemente-de-la-clase.-esto-se-traduce-en" class="section level4">
+<h4>Sabemos que <span class="math inline">\(0.44\)</span> es la probabilidad de seleccionar los dos estudiantes del mismo género independientemente de la clase. Esto se traduce en:</h4>
+</div>
+<div id="pbigf_e-cap-f_m-cup-m_e-cap-m_mbig" class="section level4">
+<h4><span class="math display">\[0.44 = P\big[(F_e \cap F_m) \cup (M_e \cap M_m)\big]=\]</span></h4>
+</div>
+<div id="pf_e-cap-f_m-pm_e-cap-m_m" class="section level4">
+<h4><span class="math display">\[P(F_e \cap F_m) + P(M_e \cap M_m)=\]</span></h4>
+</div>
+<div id="pf_epf_m-pm_epm_m" class="section level4">
+<h4><span class="math display">\[P(F_e)*P(F_m) + P(M_e)*P(M_m),\]</span></h4>
+</div>
+<div id="luego" class="section level4">
+<h4>luego,</h4>
+</div>
+<div id="frac610fracx16-x-frac410frac1616-x" class="section level4">
+<h4><span class="math display">\[0.44 =\frac{6}{10}*\frac{x}{16 + x} + \frac{4}{10}*\frac{16}{16 + x}\]</span></h4>
+</div>
+<div id="frac6x1016-x-frac641016-x" class="section level4">
+<h4><span class="math display">\[0.44 =\frac{6x}{10(16 + x)} + \frac{64}{10(16 + x)}\]</span></h4>
+</div>
+<div id="frac6x-641016-x" class="section level4">
+<h4><span class="math display">\[0.44 =\frac{6x + 64}{10(16 + x)}\]</span></h4>
+</div>
+<div id="x-6x-64" class="section level4">
+<h4><span class="math display">\[0.44*10(16 + x) = 6x + 64\]</span></h4>
+</div>
+<div id="x-6x-64-1" class="section level4">
+<h4><span class="math display">\[70.4 + 4.4x = 6x + 64\]</span></h4>
+</div>
+<div id="x-6.4" class="section level4">
+<h4><span class="math display">\[1.6x = 6.4\]</span></h4>
+</div>
+<div id="x-4" class="section level4">
+<h4><span class="math display">\[x = 4\]</span></h4>
+</div>
+<div id="entonces-en-la-clase-de-matematicas-hay-4-mujeres." class="section level4">
+<h4>Entonces, en la clase de matemáticas hay <strong>4</strong> mujeres.</h4>
+</div>
+<div id="pts-en-cierta-universidad" class="section level4">
+<h4><strong>4. (5 pts)</strong> En cierta universidad,</h4>
+<ul>
+<li><h4 id="todos-los-estudiantes-tienen-al-menos-un-auto.">Todos los estudiantes tienen al menos un auto.</h4></li>
+<li><h4 id="el-70-de-los-estudiantes-tienen-mas-de-un-automovil.">El 70% de los estudiantes tienen más de un automóvil.</h4></li>
+<li><h4 id="el-20-de-los-estudiantes-tienen-un-automovil-deportivo.">El 20% de los estudiantes tienen un automóvil deportivo.</h4></li>
+<li><h4 id="de-esos-estudiantes-que-tienen-mas-de-un-automovil-el-15-tiene-un-automovil-deportivo.">De esos estudiantes que tienen más de un automóvil, el 15% tiene un automóvil deportivo.</h4></li>
+</ul>
+</div>
+<div id="con-la-informacion-anterior-calcule-la-probabilidad-de-que-un-estudiante-seleccionado-al-azar-tenga-exactamente-un-automovil-y-que-no-sea-deportivo." class="section level4">
+<h4>Con la información anterior, calcule la probabilidad de que un estudiante seleccionado al azar tenga exactamente un automóvil y que NO sea deportivo.</h4>
+</div>
+<div id="solucion-3" class="section level4">
+<h4>—–Solución—–</h4>
+</div>
+<div id="definamos-los-siguientes-eventos-1" class="section level4">
+<h4>Definamos los siguientes eventos:</h4>
+</div>
+<div id="m-estudiantes-que-tienen-mas-de-un-automovil." class="section level4">
+<h4>M = “Estudiantes que tienen más de un automóvil”.</h4>
+</div>
+<div id="d-estudiantes-que-tienen-un-automovil-deportivo." class="section level4">
+<h4>D = “Estudiantes que tienen un automóvil deportivo”.</h4>
+</div>
+<div id="queremos-encontrar-pmc-cap-dc." class="section level4">
+<h4>Queremos encontrar <span class="math inline">\(P(M^c \cap D^c)\)</span>.</h4>
+</div>
+<div id="entonces-segun-informacion-del-problema-tenemos" class="section level4">
+<h4>Entonces, según información del problema, tenemos:</h4>
+</div>
+<div id="pm-0.70" class="section level4">
+<h4><span class="math inline">\(P(M) = 0.70\)</span></h4>
+</div>
+<div id="pd-0.20" class="section level4">
+<h4><span class="math inline">\(P(D) = 0.20\)</span></h4>
+</div>
+<div id="tambien-tenemos-la-probabilidad-condicional-pd-m0.15-por-lo-tanto-podemos-usar-la-regla-del-producto" class="section level4">
+<h4>También tenemos la probabilidad condicional <span class="math inline">\(P(D | M)=0.15\)</span>, por lo tanto, podemos usar la regla del producto:</h4>
+</div>
+<div id="pd-m-fracpd-cap-mpm" class="section level4">
+<h4><span class="math display">\[P(D | M)= \frac{P(D \cap M)}{P(M)}\]</span></h4>
+</div>
+<div id="pd-cap-m-pd-mpm" class="section level4">
+<h4><span class="math display">\[P(D \cap M)= P(D | M)P(M)\]</span></h4>
+</div>
+<div id="pd-cap-m-0.150.70" class="section level4">
+<h4><span class="math display">\[P(D \cap M)= 0.15*0.70\]</span></h4>
+</div>
+<div id="pd-cap-m-0.105." class="section level4">
+<h4><span class="math display">\[P(D \cap M)= 0.105.\]</span></h4>
+</div>
+<div id="ahora-podemos-usar-una-tabla-como-ayuda-para-resolver-el-problema." class="section level4">
+<h4>Ahora podemos usar una tabla como ayuda para resolver el problema.</h4>
+<div class="figure">
+<img src="tabla4st5.png" />
+
+</div>
+</div>
+<div id="entonces-pmc-cap-dc-0.205" class="section level4">
+<h4>Entonces, <span class="math inline">\(P(M^c \cap D^c) = 0.205\)</span></h4>
+</div>
+<div id="asi-la-probabilidad-de-seleccionar-un-estudiante-al-azar-que-tenga-solo-un-carro-y-que-no-sea-deportivo-es-0.205." class="section level4">
+<h4>Así, la probabilidad de seleccionar un estudiante al azar que tenga solo un carro y que no sea deportivo es <span class="math inline">\(0.205\)</span>.</h4>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
