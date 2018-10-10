@@ -210,6 +210,7 @@ $(document).ready(function () {
 <ul>
 <li><a href="#distribucion-de-probabilidad">Distribución de probabilidad</a></li>
 <li><a href="#distribucion-binomial">Distribución Binomial</a><ul>
+<li><a href="#propiedades-de-la-distribucion-binomial">Propiedades de la distribución Binomial</a></li>
 <li><a href="#media-y-varianza">Media y varianza</a></li>
 </ul></li>
 <li><a href="#distribucion-poisson">Distribución Poisson</a><ul>
@@ -225,17 +226,25 @@ $(document).ready(function () {
 <div id="distribucion-binomial" class="section level2">
 <h2>Distribución Binomial</h2>
 <p>La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener x resultados exitosos en un experimento de n ensayos independientes es la siguiente.</p>
-<p><span class="math display">\[P(X=x)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n\]</span> ### Propiedades de la distribución Binomial</p>
+<p><span class="math display">\[P(X=x)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n\]</span></p>
+<div id="propiedades-de-la-distribucion-binomial" class="section level3">
+<h3>Propiedades de la distribución Binomial</h3>
 <ol style="list-style-type: decimal">
 <li><p>Es una distribución de probabilidad discreta con dominio en <span class="math inline">\(\{0,1,2,3,...,n\}\)</span></p></li>
 <li><p>La probabilidad <span class="math inline">\(p\)</span> es constante para todas las repeticiones</p></li>
 <li><p>Los ensayos o intentos son independientes.</p></li>
 <li><p>Hay solo dos posibilidades: Éxito o Fracaso.</p></li>
 </ol>
+<p>Algunos casos binomiales o ejemplos de experimentos binomiales:</p>
+<ol style="list-style-type: decimal">
+<li><p>Plantar 50 semillas de una determinada planta en las mismas condiciones de suelo y humedad, luego anotar el número de semillas que germinaron.</p></li>
+<li><p>Lanzar una moneda 20 veces, anotar el número de ocasiones en que el resultado fue cruz.</p></li>
+<li><p>Lanzar un par de dados, anotar el número de veces que aparece una suma mayor que 5.</p></li>
+</ol>
 <blockquote>
-<p>Ejemplos</p>
+<p>Ejercicios</p>
 </blockquote>
-<p><strong>Ejemplo 1</strong>: Una empresa quiere contratar 5 nuevos empleados. De la experiencia previa en anteriores contrataciones saben que aproximadamente 1 de cada 10 solicitantes cumplen todos los requisitos para ser contratados. ¿Cuál es la probabilidad de que si se entrevistan a 20 solicitantes, puedan contratar exactamente las 5 personas?</p>
+<p><strong>Ejercicio 1</strong>: Una empresa quiere contratar 5 nuevos empleados. De la experiencia previa en anteriores contrataciones saben que aproximadamente 1 de cada 10 solicitantes cumplen todos los requisitos para ser contratados. ¿Cuál es la probabilidad de que si se entrevistan a 20 solicitantes, puedan contratar exactamente las 5 personas?</p>
 <p>Considere cada entrevista como una “prueba” con los únicos dos resultados posibles: “éxito” (puede ser contratado) o “fracaso” (no es adecuado). Suposiciones</p>
 <ol style="list-style-type: decimal">
 <li><p>“Probabilidad de éxito” es la misma para todos los solicitantes (siempre que no sepamos nada más acerca de ellos, esto está bien).</p></li>
@@ -250,8 +259,8 @@ $(document).ready(function () {
 <p><span class="math display">\[P(X \leq 3)=P(X=0)+P(X=1)+P(X=2)+ P(X=3)\]</span> <span class="math display">\[P(X \leq 3)={20 \choose 0}*(0.1)^0*(0.9)^{20-0}+{20 \choose 1}*(0.1)^1*(0.9)^{20-1}+{20 \choose 2}*(0.1)^2*(0.9)^{20-2}+ {20 \choose 3}*(0.1)^3*(0.9)^{20-3}\]</span> <span class="math display">\[P(X \leq 3)=0.8670\]</span> Podemos usar <code>RStudio</code> para encontrar este resultado</p>
 <pre class="r"><code>dbinom(0,20,0.1) + dbinom(1,20,0.1) + dbinom(2,20,0.1) + dbinom(3,20,0.1)</code></pre>
 <pre><code>## [1] 0.8670467</code></pre>
-<p><strong>Ejemplo 2</strong>: Supongamos que en un examen de estadística hay doce preguntas de opción múltiple . Cada pregunta tiene cuatro respuestas posibles, y solo una de ellas es correcta. Un estudiante que no estudio para el examen, intenta responder todas las preguntas al azar. Encuentre la probabilidad de que el estudiante tenga cuatro o menos respuestas correctas.</p>
-<p>Como solo una de cada cuantro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta por azar es de p= 1/4 = 0.25.</p>
+<p><strong>Ejercicio 2</strong>: Supongamos que en un examen de estadística hay doce preguntas de opción múltiple . Cada pregunta tiene cuatro respuestas posibles, y solo una de ellas es correcta. Un estudiante que no estudio para el examen, intenta responder todas las preguntas al azar. Encuentre la probabilidad de que el estudiante tenga cuatro o menos respuestas correctas.</p>
+<p>Como solo una de cada cuatro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta al azar es de p= 1/4 = 0.25.</p>
 <p>La probabilidad de que obtenga cuatro o menos respuestas correctas <span class="math inline">\(P(X \leq x)\)</span> es:</p>
 <p><span class="math display">\[P(X \leq 4)=P(X=0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4)\]</span> Tenemos que,</p>
 <p><span class="math inline">\(P(X = 0)={12 \choose 0}(0.25)^0(0.75)^{12}=0.0316\)</span></p>
@@ -272,9 +281,10 @@ pbinom(4,12,0.25)</code></pre>
 <pre class="r"><code>#Función de probabilidad acumulada
 1-pbinom(4,12,0.25)</code></pre>
 <pre><code>## [1] 0.1576437</code></pre>
+</div>
 <div id="media-y-varianza" class="section level3">
 <h3>Media y varianza</h3>
-<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria con distribución binomial, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, su media <span class="math inline">\(E(X)\)</span> y vaianza <span class="math inline">\(Var(X)\)</span> estan definidas como:</p>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria con distribución binomial, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, su media <span class="math inline">\(E(X)\)</span> y varianza <span class="math inline">\(Var(X)\)</span> están definidas como:</p>
 <p><span class="math display">\[E(X)=np\]</span> <span class="math display">\[Var(X)=np(1-p)\]</span></p>
 </div>
 </div>
@@ -283,9 +293,9 @@ pbinom(4,12,0.25)</code></pre>
 <p>La distribución de Poisson es la distribución de probabilidad que modela el número de ocurrencias de eventos independientes en un intervalo. Si <span class="math inline">\(\lambda\)</span> es la ocurrencia promedio por intervalo, entonces la probabilidad de tener x ocurrencias <span class="math inline">\(P(X=x)\)</span> dentro de un intervalo dado es:</p>
 <p><span class="math display">\[P(X=x)=\dfrac{\lambda^xe^{-\lambda}}{x!}\]</span></p>
 <blockquote>
-<p>Ejemplos</p>
+<p>Ejercicios</p>
 </blockquote>
-<p><strong>Ejemplo 1</strong>: El número de llamadas que llegan por minuto al centro de reservas de un hotel es una variable aleatoria de Poisson con una media de 3.</p>
+<p><strong>Ejercicio 1</strong>: El número de llamadas que llegan por minuto al centro de reservas de un hotel es una variable aleatoria de Poisson con una media de 3.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Encuentre la probabilidad de que no ocurran llamadas en un período de 1 minuto.</li>
 </ol>
@@ -300,31 +310,23 @@ pbinom(4,12,0.25)</code></pre>
 <p>Debemos encontrar <span class="math inline">\(P(X \le 3)\)</span></p>
 <p><span class="math display">\[P(X \le 3)= P(X=0)+P(X=1)+P(X=2)+P(X=3)\]</span></p>
 <p><span class="math display">\[P(X \le 3)= \dfrac{(3)^0e^{-3}}{0!}+\dfrac{(3)^1e^{-3}}{1!}+\dfrac{(3)^2e^{-3}}{2!}+\dfrac{(3)^3e^{-3}}{3!}=0.6472\]</span></p>
-<p>En <code>Rstudio</code> lo podemos calcular de dos maneras:</p>
+<p>En <code>RStudio</code> lo podemos calcular de dos maneras:</p>
 <pre class="r"><code>#Ensayos independientes
 dpois(0,3)+dpois(1,3)+dpois(2,3)+dpois(3,3)</code></pre>
 <pre><code>## [1] 0.6472319</code></pre>
 <pre class="r"><code>#Probabilidad acumulada
 ppois(3,3)</code></pre>
 <pre><code>## [1] 0.6472319</code></pre>
+<p>Ejercicio 2: Suponga que <span class="math inline">\(X\)</span> es el número de tickets diario que imparte la guardia universitaria por violar las reglas de parking dentro de la universidad. Donde <span class="math inline">\(X\)</span> se puede modelar mediante una distribución Poisson con media <span class="math inline">\(\lambda = 10\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es la probabilidad que haya más de tres tickets en un día?</p></li>
+<li><p>Si usted deja su carro mal parqueado. ¿Cuál es la probabilidad de que solo usted reciba un ticket?</p></li>
+<li><p>¿Cuál es la probabilidad de que hayan tickets en un día?, ¿De que No hayan tickets?</p></li>
+</ol>
 <div id="media-y-varianza-1" class="section level3">
 <h3>Media y Varianza</h3>
 <p>Si <span class="math inline">\(X \sim poiss(\lambda)\)</span> entonces,</p>
 <p><span class="math display">\[E(X)=\lambda\]</span> <span class="math display">\[Var(X)=\lambda\]</span></p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
 </div>
 </div>
 
