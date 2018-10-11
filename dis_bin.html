@@ -214,7 +214,7 @@ $(document).ready(function () {
 <li><a href="#media-y-varianza">Media y varianza</a></li>
 </ul></li>
 <li><a href="#distribucion-poisson">Distribución Poisson</a><ul>
-<li><a href="#media-y-varianza-1">Media y Varianza</a></li>
+<li><a href="#media-y-varianza-de-la-distribucion-poisson">Media y Varianza de la distribución Poisson</a></li>
 </ul></li>
 </ul>
 </div>
@@ -225,22 +225,26 @@ $(document).ready(function () {
 </div>
 <div id="distribucion-binomial" class="section level2">
 <h2>Distribución Binomial</h2>
-<p>La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener x resultados exitosos en un experimento de n ensayos independientes es la siguiente.</p>
+<p>La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener <span class="math inline">\(x\)</span> resultados exitosos en un experimento de n ensayos independientes es la siguiente.</p>
 <p><span class="math display">\[P(X=x)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n\]</span></p>
+<p>Recuerde que el coeficiente binomial se calcula de la siguiente manera:</p>
+<p><span class="math display">\[{n \choose x}=\dfrac{n!}{(n-x)!x!}\]</span></p>
 <div id="propiedades-de-la-distribucion-binomial" class="section level3">
 <h3>Propiedades de la distribución Binomial</h3>
 <ol style="list-style-type: decimal">
 <li><p>Es una distribución de probabilidad discreta con dominio en <span class="math inline">\(\{0,1,2,3,...,n\}\)</span></p></li>
-<li><p>La probabilidad <span class="math inline">\(p\)</span> es constante para todas las repeticiones</p></li>
+<li><p>La probabilidad <span class="math inline">\(p\)</span> de éxito es constante para todas las repeticiones o ensayos</p></li>
 <li><p>Los ensayos o intentos son independientes.</p></li>
 <li><p>Hay solo dos posibilidades: Éxito o Fracaso.</p></li>
 </ol>
+<p>Si dejamos claro que <span class="math inline">\(p\)</span> es la probabilidad de éxito, entonces <span class="math inline">\(1-p\)</span> es la probabilidad de fracaso. Por lo tanto se tiene que <span class="math inline">\(p + (1 - p) = 1\)</span>.</p>
 <p>Algunos casos binomiales o ejemplos de experimentos binomiales:</p>
 <ol style="list-style-type: decimal">
 <li><p>Plantar 50 semillas de una determinada planta en las mismas condiciones de suelo y humedad, luego anotar el número de semillas que germinaron.</p></li>
 <li><p>Lanzar una moneda 20 veces, anotar el número de ocasiones en que el resultado fue cruz.</p></li>
 <li><p>Lanzar un par de dados, anotar el número de veces que aparece una suma mayor que 5.</p></li>
 </ol>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria binomial, entonces se escribe <span class="math inline">\(X \sim Binomial(n,p)\)</span>.</p>
 <blockquote>
 <p>Ejercicios</p>
 </blockquote>
@@ -260,9 +264,10 @@ $(document).ready(function () {
 <pre class="r"><code>dbinom(0,20,0.1) + dbinom(1,20,0.1) + dbinom(2,20,0.1) + dbinom(3,20,0.1)</code></pre>
 <pre><code>## [1] 0.8670467</code></pre>
 <p><strong>Ejercicio 2</strong>: Supongamos que en un examen de estadística hay doce preguntas de opción múltiple . Cada pregunta tiene cuatro respuestas posibles, y solo una de ellas es correcta. Un estudiante que no estudio para el examen, intenta responder todas las preguntas al azar. Encuentre la probabilidad de que el estudiante tenga cuatro o menos respuestas correctas.</p>
-<p>Como solo una de cada cuatro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta al azar es de p= 1/4 = 0.25.</p>
+<p>Como solo una de cada cuatro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta al azar es de <span class="math inline">\(p= 1/4 = 0.25\)</span>.</p>
 <p>La probabilidad de que obtenga cuatro o menos respuestas correctas <span class="math inline">\(P(X \leq x)\)</span> es:</p>
-<p><span class="math display">\[P(X \leq 4)=P(X=0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4)\]</span> Tenemos que,</p>
+<p><span class="math display">\[P(X \leq 4)=P(X=0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4)\]</span></p>
+<p>Tenemos que,</p>
 <p><span class="math inline">\(P(X = 0)={12 \choose 0}(0.25)^0(0.75)^{12}=0.0316\)</span></p>
 <p><span class="math inline">\(P(X = 1)={12 \choose 1}(0.25)^1(0.75)^{11}=0.1267\)</span></p>
 <p><span class="math inline">\(P(X = 2)={12 \choose 2}(0.25)^2(0.75)^{10}=0.2322\)</span></p>
@@ -276,7 +281,8 @@ dbinom(0,12,0.25) + dbinom(1,12,0.25) + dbinom(2,12,0.25) +dbinom(3,12,0.25) + d
 <pre class="r"><code>#Función de probabilidad acumulada
 pbinom(4,12,0.25)</code></pre>
 <pre><code>## [1] 0.8423563</code></pre>
-<p><strong>¿Cuál es la probabilidad de que el estudiante responda 5 o más preguntas correctamente?</strong>.En esencia tenemos <span class="math inline">\(P(X \geq 5)\)</span>, y pues esto es lo mismo que <span class="math inline">\(1-P(X &lt; 5)\)</span>, por complemento, es decir</p>
+<p><strong>¿Cuál es la probabilidad de que el estudiante responda 5 o más preguntas correctamente?</strong>.</p>
+<p>En esencia tenemos <span class="math inline">\(P(X \geq 5)\)</span>, y pues esto es lo mismo que si usamos el complemento, es decir, <span class="math inline">\(1-P(X &lt; 5)\)</span>, entonces,</p>
 <p><span class="math display">\[P(X \geq 5)= 1-P(X &lt; 5)=1-0.8421=0.1579\]</span> En <code>RStudio</code> sería</p>
 <pre class="r"><code>#Función de probabilidad acumulada
 1-pbinom(4,12,0.25)</code></pre>
@@ -286,6 +292,14 @@ pbinom(4,12,0.25)</code></pre>
 <h3>Media y varianza</h3>
 <p>Si <span class="math inline">\(X\)</span> es una variable aleatoria con distribución binomial, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, su media <span class="math inline">\(E(X)\)</span> y varianza <span class="math inline">\(Var(X)\)</span> están definidas como:</p>
 <p><span class="math display">\[E(X)=np\]</span> <span class="math display">\[Var(X)=np(1-p)\]</span></p>
+<p><strong>Ejercicio 5</strong> Si continuamos con el problema anterior. ¿Cual es el valor esperado para el número de respuestas correctas?</p>
+<p>Pues tenemos que <span class="math inline">\(n = 12\)</span> y <span class="math inline">\(p=1/4\)</span>, entonces,</p>
+<p><span class="math display">\[E(X)=np=12\cdot\frac{1}{4}=3\]</span></p>
+<p>Esto quiere decir, que el valor que esperaríamos encontrar o el valor que esperamos más se observa para el número de respuestas correctas es 3.</p>
+<p>La varianza y desviación estándar para el número de respuestas correctas es:</p>
+<p><span class="math display">\[Var(X)=np(1-p)=12\cdot\frac{1}{4}\cdot(1-\frac{1}{4})=2.25\]</span></p>
+<p>La desviación estándar es</p>
+<p><span class="math display">\[SD=\sqrt{2.25}=1.5\]</span></p>
 </div>
 </div>
 <div id="distribucion-poisson" class="section level2">
@@ -301,7 +315,8 @@ pbinom(4,12,0.25)</code></pre>
 </ol>
 <p>Definamos <span class="math inline">\(X:=\)</span> # de llamadas recibidas por minuto en un hotel.</p>
 <p>Tenemos que <span class="math inline">\(\lambda=3\)</span>, sea <span class="math inline">\(X \sim poiss(3)\)</span>, entonces debemos encontrar <span class="math inline">\(P(X=0)\)</span></p>
-<p><span class="math display">\[P(X=0)=\dfrac{(3)^0e^{-3}}{0!}=0.0497\]</span> En <code>RStudio</code> podemos usar la función <code>dpoiss()</code></p>
+<p><span class="math display">\[P(X=0)=\dfrac{(3)^0e^{-3}}{0!}=0.0497\]</span></p>
+<p>En <code>RStudio</code> podemos usar la función <code>dpoiss()</code></p>
 <pre class="r"><code>dpois(0,3)</code></pre>
 <pre><code>## [1] 0.04978707</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
@@ -317,16 +332,62 @@ dpois(0,3)+dpois(1,3)+dpois(2,3)+dpois(3,3)</code></pre>
 <pre class="r"><code>#Probabilidad acumulada
 ppois(3,3)</code></pre>
 <pre><code>## [1] 0.6472319</code></pre>
-<p>Ejercicio 2: Suponga que <span class="math inline">\(X\)</span> es el número de tickets diario que imparte la guardia universitaria por violar las reglas de parking dentro de la universidad. Donde <span class="math inline">\(X\)</span> se puede modelar mediante una distribución Poisson con media <span class="math inline">\(\lambda = 10\)</span>.</p>
+<p>Ejercicio 2: Suponga que <span class="math inline">\(X\)</span> es el número de tickets por hora que imparte la guardia universitaria a los estudiantes por violar las reglas de parking dentro del campus. Donde <span class="math inline">\(X\)</span> se puede modelar mediante una distribución Poisson con media <span class="math inline">\(\lambda = 10\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>¿Cuál es la probabilidad que haya más de tres tickets en un día?</p></li>
-<li><p>Si usted deja su carro mal parqueado. ¿Cuál es la probabilidad de que solo usted reciba un ticket?</p></li>
-<li><p>¿Cuál es la probabilidad de que hayan tickets en un día?, ¿De que No hayan tickets?</p></li>
+<li>¿Cuál es la probabilidad que haya más de tres tickets en una hora?</li>
 </ol>
-<div id="media-y-varianza-1" class="section level3">
-<h3>Media y Varianza</h3>
-<p>Si <span class="math inline">\(X \sim poiss(\lambda)\)</span> entonces,</p>
+<p>En lenguaje de probabilidades tenemos <span class="math inline">\(P(X &gt; 3)\)</span>, pero como el soporte de la variable aleatoria Poisson es infinito, entonces obligatoriamente debemos usar el complemento:</p>
+<span class="math display">\[\begin{eqnarray*}
+P(X &gt; 3) &amp; = &amp; 1-P(X \leq 3) \nonumber \\
+&amp;=&amp; 1-\big[P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) \big] \\
+&amp;=&amp; 1-\big[\dfrac{(10)^0e^{-10}}{0!}+\dfrac{(10)^1e^{-10}}{1!}+\dfrac{(10)^2e^{-10}}{2!}+\dfrac{(10)^3e^{-10}}{3!} \big]\\
+&amp;=&amp; 1-\big[0.000045 + 0.000454 + 0.00227 + 0.007567 \big] \\
+&amp;=&amp; 1 - 0.010336 \\
+&amp;=&amp; 0.989664
+\end{eqnarray*}\]</span>
+<p>En <code>RStudio</code> lo podemos calcular en un solo paso</p>
+<pre class="r"><code>#P(X &gt; 3)
+1 - ppois(3,10)</code></pre>
+<pre><code>## [1] 0.9896639</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que se coloquen exactamente 8 tickets?</li>
+</ol>
+<p>Tenemos,</p>
+<p><span class="math display">\[P(X = 8) = \dfrac{(10)^8e^{-10}}{8!}=0.112599\]</span> En <code>RStudio</code> lo podemos calcular de la siguiente manera con <code>dpois()</code></p>
+<pre class="r"><code>#P(X = 8)
+dpois(8,10)</code></pre>
+<pre><code>## [1] 0.112599</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que No hayan tickets de 11:00 am a 12:30 pm?</li>
+</ol>
+<p>Ahora la media se ve modificada por el número de horas, pues <span class="math inline">\(\lambda= 10\)</span> solo es valido para una hora. Es decir que para una hora y media (11:00 am a 12:30 pm) <span class="math inline">\(\lambda=1.5(10)=15\)</span>. Entonces,</p>
+<p><span class="math display">\[P(X = 0) = \dfrac{(15)^0e^{-15}}{0!}=0.00000031\]</span> En <code>RStudio</code> lo podemos calcular de la siguiente manera con <code>dpois()</code></p>
+<pre class="r"><code>#P(X = 0)
+dpois(0,15)</code></pre>
+<pre><code>## [1] 3.059023e-07</code></pre>
+<p><strong>Ejercicio</strong> El número de clientes que llegan a una gasolinera es una variable aleatoria de Poisson. En promedio llegan 12 clientes por hora. Digamos que X es el número de clientes que llegan de 10 a 11:30 am. ¿Cuanto es <span class="math inline">\(P(9 &lt; X ≤14)\)</span>?</p>
+<p>Sabemos que para una hora en particular el número de clientes que llegan a la gasolinera es <span class="math inline">\(X \sim Poisson(8)\)</span>, pero para el intervalo de 10:00 am a 12:30 am (2.5 horas) el promedio es <span class="math inline">\(\lambda=2.5*8=20\)</span>, entonces, la probabilidad de que lleguen más de 9 pero maximo 14 clientes es:</p>
+<span class="math display">\[\begin{eqnarray*}
+P(9 &lt; X ≤ 14) &amp; = &amp; \sum_{x=10}^{14}\dfrac{\lambda^xe^{-\lambda}}{x!} \\
+&amp;=&amp; P(X = 10) + P(X = 11) + P(X = 12) + P(X = 13) + P(X = 14) \\
+&amp;=&amp; \bigg[\dfrac{(20)^{10}e^{-20}}{10!}+\dfrac{(20)^{11}e^{-20}}{11!}+\dfrac{(20)^{12}e^{-20}}{12!}+\dfrac{(20)^{13}e^{-20}}{13!}
++ \dfrac{(20)^{14}e^{-20}}{14!} \big]\\
+&amp;=&amp; e^{-20}\bigg[\dfrac{(20)^{10}}{10!} + \dfrac{(20)^{11}}{11!}+\dfrac{(20)^{12}}{12!}+\dfrac{(20)^{13}}{13!}+\dfrac{(20)^{14}}{14!} \big]\\
+&amp;=&amp; 0.09986887
+\end{eqnarray*}\]</span>
+<p>Podemos usar R para comprobar el resultado</p>
+<pre class="r"><code>#P(9 &lt; X ≤14)
+dpois(10,20) + dpois(11,20) + dpois(12,20) + dpois(13,20) + dpois(14,20)</code></pre>
+<pre><code>## [1] 0.09986887</code></pre>
+<div id="media-y-varianza-de-la-distribucion-poisson" class="section level3">
+<h3>Media y Varianza de la distribución Poisson</h3>
+<p>Si <span class="math inline">\(X \sim Poiss(\lambda)\)</span> entonces, la media y la varianza se definenen de la siguiente manera,</p>
 <p><span class="math display">\[E(X)=\lambda\]</span> <span class="math display">\[Var(X)=\lambda\]</span></p>
+<p>La distribución Poisson tiene la particularidad de que su media y su varianza son IGUALES.</p>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 </div>
 

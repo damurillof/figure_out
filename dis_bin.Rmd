@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-
 ##  Distribución de probabilidad
 
 En teoría de la probabilidad y estadística, la distribución de probabilidad de una variable aleatoria es una función que asigna a cada suceso la probabilidad de que dicho suceso ocurra. 
@@ -19,21 +18,26 @@ En teoría de la probabilidad y estadística, la distribución de probabilidad d
 ## Distribución Binomial
 
 
-La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener x resultados exitosos en un experimento de n ensayos independientes es la siguiente.
+La distribución binomial es una distribución de probabilidad discreta. Describe el resultado de n ensayos independientes en un experimento. Se supone que cada prueba tiene solo dos resultados, ya sea éxito o fracaso. Si la probabilidad de una prueba exitosa es p, entonces la probabilidad de tener $x$ resultados exitosos en un experimento de n ensayos independientes es la siguiente.
 
 
 $$P(X=x)={n \choose x}p^x(1-p)^{n-x} \quad con \quad x=0,1,2,3,...,n$$
 
+Recuerde que el coeficiente binomial se calcula de la siguiente manera:
+
+$${n \choose x}=\dfrac{n!}{(n-x)!x!}$$
 
 ### Propiedades de la distribución Binomial
 
 1.  Es una distribución de probabilidad discreta con dominio en $\{0,1,2,3,...,n\}$
 
-2.  La probabilidad $p$ es constante para todas las repeticiones
+2.  La probabilidad $p$ de éxito es constante para todas las repeticiones o ensayos
 
 3.  Los ensayos o intentos son independientes.
 
 4.  Hay solo dos posibilidades: Éxito o Fracaso.
+
+Si dejamos claro que $p$ es la probabilidad de éxito, entonces $1-p$ es la probabilidad de fracaso. Por lo tanto se tiene que $p + (1 - p) = 1$.
 
 Algunos casos binomiales o ejemplos de experimentos binomiales:
 
@@ -42,6 +46,9 @@ Algunos casos binomiales o ejemplos de experimentos binomiales:
 2. Lanzar una moneda 20 veces, anotar el número de ocasiones en que el resultado fue cruz. 
 
 3. Lanzar un par de dados, anotar el número de veces que aparece una suma mayor que 5.
+
+
+Si $X$ es una variable aleatoria binomial, entonces se escribe $X \sim Binomial(n,p)$.
 
 > Ejercicios
 
@@ -82,12 +89,13 @@ dbinom(0,20,0.1) + dbinom(1,20,0.1) + dbinom(2,20,0.1) + dbinom(3,20,0.1)
 
 **Ejercicio 2**: Supongamos que en un examen de estadística hay doce preguntas de opción múltiple . Cada pregunta tiene cuatro respuestas posibles, y solo una de ellas es correcta. Un estudiante que no estudio para el examen, intenta responder todas las preguntas al azar. Encuentre la probabilidad de que el estudiante tenga cuatro o menos respuestas correctas.
 
-
-Como solo una de cada cuatro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta al azar es de p= 1/4 = 0.25. 
+Como solo una de cada cuatro respuestas posibles es correcta, la probabilidad de responder correctamente una pregunta al azar es de $p= 1/4 = 0.25$. 
 
 La probabilidad de que obtenga cuatro o menos respuestas correctas $P(X \leq x)$ es:
 
 $$P(X \leq 4)=P(X=0) + P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4)$$
+
+
 Tenemos que,
 
 $P(X = 0)={12 \choose 0}(0.25)^0(0.75)^{12}=0.0316$
@@ -114,7 +122,9 @@ dbinom(0,12,0.25) + dbinom(1,12,0.25) + dbinom(2,12,0.25) +dbinom(3,12,0.25) + d
 pbinom(4,12,0.25)
 ```
 
-**¿Cuál es la probabilidad de que el estudiante responda 5 o más preguntas correctamente?**.En esencia tenemos $P(X \geq 5)$, y pues esto es lo mismo que $1-P(X < 5)$, por complemento, es decir
+**¿Cuál es la probabilidad de que el estudiante responda 5 o más preguntas correctamente?**.
+
+En esencia tenemos $P(X \geq 5)$, y pues esto es lo mismo que si usamos el complemento, es decir, $1-P(X < 5)$, entonces,
 
 $$P(X \geq 5)= 1-P(X < 5)=1-0.8421=0.1579$$
 En `RStudio` sería 
@@ -131,6 +141,23 @@ Si $X$ es una variable aleatoria con distribución binomial, es decir $X \sim Bi
 
 $$E(X)=np$$
 $$Var(X)=np(1-p)$$
+
+**Ejercicio 5** Si continuamos con el problema anterior. ¿Cual es el valor esperado para el número de respuestas correctas?
+
+Pues tenemos que $n = 12$ y $p=1/4$, entonces,
+
+$$E(X)=np=12\cdot\frac{1}{4}=3$$
+
+Esto quiere decir, que el valor que esperaríamos encontrar o el valor que esperamos más se observa para el número de respuestas correctas es 3.
+
+La varianza y desviación estándar para el número de respuestas correctas es:
+
+$$Var(X)=np(1-p)=12\cdot\frac{1}{4}\cdot(1-\frac{1}{4})=2.25$$
+
+
+La desviación estándar es 
+
+$$SD=\sqrt{2.25}=1.5$$
 
 ## Distribución Poisson
 
@@ -152,6 +179,7 @@ Definamos $X:=$ # de llamadas recibidas por minuto en un hotel.
 Tenemos que $\lambda=3$, sea $X \sim poiss(3)$, entonces debemos encontrar $P(X=0)$
 
 $$P(X=0)=\dfrac{(3)^0e^{-3}}{0!}=0.0497$$
+
 En `RStudio` podemos usar la función `dpoiss()`
 
 ```{r}
@@ -175,18 +203,93 @@ dpois(0,3)+dpois(1,3)+dpois(2,3)+dpois(3,3)
 ppois(3,3)
 ```
 
-Ejercicio 2: Suponga que $X$ es el número de tickets diario que imparte la guardia universitaria por violar las reglas de parking dentro de la universidad. Donde $X$ se puede modelar mediante una distribución Poisson con media $\lambda = 10$.
+Ejercicio 2: Suponga que $X$ es el número de tickets por hora que imparte la guardia universitaria a los estudiantes por violar las reglas de parking dentro del campus. Donde $X$ se puede modelar mediante una distribución Poisson con media $\lambda = 10$.
 
-a)  ¿Cuál es la probabilidad que haya más de tres tickets en un día?
+a)  ¿Cuál es la probabilidad que haya más de tres tickets en una hora?
 
-b)  Si usted deja su carro mal parqueado. ¿Cuál es la probabilidad de que solo usted reciba un ticket?
+En lenguaje de probabilidades tenemos $P(X > 3)$, pero como el soporte de la variable aleatoria Poisson es infinito, entonces obligatoriamente debemos usar el complemento:
 
-c) ¿Cuál es la probabilidad de que hayan tickets en un día?, ¿De que No hayan tickets?
+\begin{eqnarray*}
+P(X > 3) & = & 1-P(X \leq 3) \nonumber \\
+&=& 1-\big[P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3) \big] \\
+&=& 1-\big[\dfrac{(10)^0e^{-10}}{0!}+\dfrac{(10)^1e^{-10}}{1!}+\dfrac{(10)^2e^{-10}}{2!}+\dfrac{(10)^3e^{-10}}{3!} \big]\\
+&=& 1-\big[0.000045 + 0.000454 + 0.00227 + 0.007567 \big] \\
+&=& 1 - 0.010336 \\
+&=& 0.989664
+\end{eqnarray*}
+
+En `RStudio` lo podemos calcular en un solo paso
+
+```{r}
+#P(X > 3)
+1 - ppois(3,10)
+```
 
 
-### Media y Varianza
+b)  ¿Cuál es la probabilidad de que se coloquen exactamente 8 tickets?
 
-Si $X \sim poiss(\lambda)$ entonces,
+Tenemos,
+
+$$P(X = 8) = \dfrac{(10)^8e^{-10}}{8!}=0.112599$$
+En `RStudio` lo podemos calcular de la siguiente manera con `dpois()`
+
+```{r}
+#P(X = 8)
+dpois(8,10)
+```
+
+c)  ¿Cuál es la probabilidad de que No hayan tickets de 11:00 am a 12:30 pm?
+
+Ahora la media se ve modificada por el número de horas, pues $\lambda= 10$ solo es valido para una hora. Es decir que para una hora y media (11:00 am a 12:30 pm) $\lambda=1.5(10)=15$. Entonces,
+
+$$P(X = 0) = \dfrac{(15)^0e^{-15}}{0!}=0.00000031$$
+En `RStudio` lo podemos calcular de la siguiente manera con `dpois()`
+
+```{r}
+#P(X = 0)
+dpois(0,15)
+```
+
+
+**Ejercicio** El número de clientes que llegan a una gasolinera es una variable aleatoria de Poisson. En promedio llegan 12 clientes por hora. Digamos que X es el número de clientes que llegan de 10 a 11:30 am. ¿Cuanto es $P(9 < X ≤14)$?
+
+Sabemos que para una hora en particular el número de clientes que llegan a la gasolinera es $X \sim Poisson(8)$, pero para el intervalo de 10:00 am a 12:30 am (2.5 horas) el promedio es $\lambda=2.5*8=20$, entonces, la probabilidad de que lleguen más de 9 pero maximo 14 clientes es:
+
+
+\begin{eqnarray*}
+P(9 < X ≤ 14) & = & \sum_{x=10}^{14}\dfrac{\lambda^xe^{-\lambda}}{x!} \\
+&=& P(X = 10) + P(X = 11) + P(X = 12) + P(X = 13) + P(X = 14) \\
+&=& \bigg[\dfrac{(20)^{10}e^{-20}}{10!}+\dfrac{(20)^{11}e^{-20}}{11!}+\dfrac{(20)^{12}e^{-20}}{12!}+\dfrac{(20)^{13}e^{-20}}{13!}
++ \dfrac{(20)^{14}e^{-20}}{14!} \big]\\
+&=& e^{-20}\bigg[\dfrac{(20)^{10}}{10!} + \dfrac{(20)^{11}}{11!}+\dfrac{(20)^{12}}{12!}+\dfrac{(20)^{13}}{13!}+\dfrac{(20)^{14}}{14!} \big]\\
+&=& 0.09986887
+\end{eqnarray*}
+
+Podemos usar R para comprobar el resultado
+
+```{r}
+#P(9 < X ≤14)
+dpois(10,20) + dpois(11,20) + dpois(12,20) + dpois(13,20) + dpois(14,20)
+```
+
+### Media y Varianza de la distribución Poisson
+
+Si $X \sim Poiss(\lambda)$ entonces, la media y la varianza se definenen de la siguiente manera,
 
 $$E(X)=\lambda$$
 $$Var(X)=\lambda$$
+
+
+La distribución Poisson tiene la particularidad de que su media y su varianza son IGUALES.
+
+
+![](blanco.png)
+
+
+
+
+
+
+
+
+
