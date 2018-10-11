@@ -44,7 +44,7 @@ b)  #### Encuentre $P(X > 3)$
 
 c)  #### Calcule el valor esperado X, E(X).
 
-d)  #### Calcule la varianza de X, Var(X)
+d)  #### Calcule la varianza de X, Var(X).
 
 #### **4. (9 pts)** Suponga que usted tiene una urna con dos bolas, una blanca y otra roja. Digamos que la probabilidad de extraer la bola blanca es $P(B)=p$, obviamente $p$ es una probabilidad y estará entre $0$ y $1$. Ahora suponga que repetimos  el experimento de extraer la bola, un número $k$ de veces, hasta obtener la bola blanca por primera vez. Sea $X$ el número total de intentos. 
 
