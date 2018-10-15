@@ -376,7 +376,7 @@ dpois(8,10)</code></pre>
 <pre class="r"><code>#P(X = 0)
 dpois(0,15)</code></pre>
 <pre><code>## [1] 3.059023e-07</code></pre>
-<p><strong>Ejercicio 3</strong> El número de clientes que llegan a una gasolinera es una variable aleatoria de Poisson. En promedio llegan 12 clientes por hora. Digamos que X es el número de clientes que llegan de 10 a 11:30 am. ¿Cuanto es <span class="math inline">\(P(9 &lt; X ≤14)\)</span>?</p>
+<p><strong>Ejercicio 3</strong> El número de clientes que llegan a una gasolinera es una variable aleatoria de Poisson. En promedio llegan 8 clientes por hora. Digamos que X es el número de clientes que llegan de 10 a 12:30 am. ¿Cuanto es <span class="math inline">\(P(9 &lt; X ≤14)\)</span>?</p>
 <p>Sabemos que para una hora en particular el número de clientes que llegan a la gasolinera es <span class="math inline">\(X \sim Poisson(8)\)</span>, pero para el intervalo de 10:00 am a 12:30 am (2.5 horas) el promedio es <span class="math inline">\(\lambda=2.5*8=20\)</span>, entonces, la probabilidad de que lleguen más de 9 pero máximo 14 clientes es:</p>
 <span class="math display">\[\begin{eqnarray*}
 P(9 &lt; X ≤ 14) &amp; = &amp; \sum_{x=10}^{14}\dfrac{\lambda^xe^{-\lambda}}{x!} \\
