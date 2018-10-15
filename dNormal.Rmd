@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Distribución Normal o Gaussiana.
 
-En probabilidad y estadística la distribución normal es una de las más importantes.  Es llamada también distribución Gaussiana en honor a el  matemático, físico y astrónomo alemán K. Gauss, es una distribución continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa  la gráfica de la siguiente ecuación.
+En probabilidad y estadística la distribución normal es una de las más importantes.  Es llamada también distribución Gaussiana en honor al  matemático, físico y astrónomo Alemán K. Gauss. La distribución normal es de variable aleatoria continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa  la gráfica de la siguiente ecuación.
 
 \begin{equation*}
 f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty <x< +\infty
@@ -119,13 +119,18 @@ a) P (X < 60)
 
 Primero debemos estandarizar 
 
-$$P(X <60)=P(Z<\dfrac{60-70}{10})=P(Z< -1)$$
-Entonces nos resta el trabajo de encontrar en `RStudio` $P(Z<-1)$, veamos:
 
+\begin{eqnarray*}
+P(X < 60) & = & P(Z<\dfrac{60-70}{10}) \nonumber \\
+&=& P(Z< -1)\\
+&=& 0.1586553
+\end{eqnarray*}
+
+El resultado anterior resulta de encontrar  $P(Z<-1)$  usando `RStudio` , veamos:
 
 
 ```{r}
-pnorm(-1,mean = 0,sd=1)
+pnorm(-1,0,1)
 plot_area(-3,-1)
 ```
 
@@ -133,10 +138,18 @@ plot_area(-3,-1)
 
 b) P(X > 95)
 
-Estandarizando tenemos 
+Estandarizado tenemos 
 
-$$P(X > 95)= 1 - P(X \leq 95)= 1 - P(Z<\dfrac{95-70}{10})= 1 - P(Z< 2.5)$$
- Usando `RStudio`
+
+\begin{eqnarray*}
+P(X > 95) & = & 1 - P(X \leq 95) \nonumber \\
+&=& 1 - P(Z<\dfrac{95-70}{10})\\
+&=& 1 - P(Z< 2.5)\\
+&=& 1 - 0.9937903\\
+&=& 0.0062097
+\end{eqnarray*}
+
+Usando `RStudio`
  
 ```{r}
 1 - pnorm(2.5,mean = 0,sd=1)
@@ -148,23 +161,21 @@ c) P (50 < X < 80)
 
 Aplicando la fórmula para el caso en que $F(a < X < b)= F(b) - F(a)$
 
-$$P(50 < X < 80)=P(X <80) - P(X < 50)=P(Z < \dfrac{80-70}{10}) - P(Z < \dfrac{50-70}{10})=$$
-$$P(Z < 1) - P(Z < -2)$$
+
+\begin{eqnarray*}
+P(50 < X < 80) & = & P(X <80) - P(X < 50) \nonumber \\
+&=& P\big(Z < \dfrac{80-70}{10}\big) - P\big(Z < \dfrac{50-70}{10}\big)\\
+&=& P(Z < 1) - P(Z < -2)\\
+&=& 0.841344 - 0.0227501 \\
+&=& 0.8185939
+\end{eqnarray*}
+
 
  Usando `RStudio`
  
 ```{r}
 pnorm(1,0,1) - pnorm(-2,0,1)
 ```
-
-
-
-
-### Percentiles de una distribución Normal
-
-Si $X \sim Normal(\mu,\sigma)$ y  si $X_p$ y $Z_p$ representen sus respectivos percentiles entonces:
-$$X_p=\mu+\sigma Z_p$$
-es el percentil $p$.
 
 
 ###  Simulando datos de una distribución Normal
@@ -185,41 +196,6 @@ print(Notas)
 
 **¿Cuál es la probabilidad que un estudiante  tenga más 73 en la nota?**
 
----------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------
+![](blanco.png)
 
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------

@@ -213,7 +213,6 @@ $(document).ready(function () {
 <li><a href="#calculo-de-probabilidades-de-la-distribucion-normal-estandar">Cálculo de probabilidades de la distribución Normal estándar</a></li>
 <li><a href="#estandarizacion-de-una-normal">Estandarización de una Normal</a></li>
 <li><a href="#formulas-para-calcular-area-debajo-de-la-curva-normal-estandar">Fórmulas para calcular área debajo de la curva normal estándar</a></li>
-<li><a href="#percentiles-de-una-distribucion-normal">Percentiles de una distribución Normal</a></li>
 <li><a href="#simulando-datos-de-una-distribucion-normal">Simulando datos de una distribución Normal</a></li>
 </ul></li>
 </ul>
@@ -221,7 +220,7 @@ $(document).ready(function () {
 
 <div id="distribucion-normal-o-gaussiana." class="section level2">
 <h2>Distribución Normal o Gaussiana.</h2>
-<p>En probabilidad y estadística la distribución normal es una de las más importantes. Es llamada también distribución Gaussiana en honor a el matemático, físico y astrónomo alemán K. Gauss, es una distribución continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa la gráfica de la siguiente ecuación.</p>
+<p>En probabilidad y estadística la distribución normal es una de las más importantes. Es llamada también distribución Gaussiana en honor al matemático, físico y astrónomo Alemán K. Gauss. La distribución normal es de variable aleatoria continua. Su comportamiento es reflejado por la Curva Normal o campana de Gauss que representa la gráfica de la siguiente ecuación.</p>
 <span class="math display">\[\begin{equation*}
 f(x)=\dfrac{1}{\sqrt{2 \pi}\sigma}e^{-\dfrac{1}{2}\dfrac{(x-\mu)^2}{\sigma^2}} \quad -\infty &lt;x&lt; +\infty
 \end{equation*}\]</span>
@@ -307,30 +306,44 @@ axis(side = 1, at=-3:3)
 <li>P (X &lt; 60)</li>
 </ol>
 <p>Primero debemos estandarizar</p>
-<p><span class="math display">\[P(X &lt;60)=P(Z&lt;\dfrac{60-70}{10})=P(Z&lt; -1)\]</span> Entonces nos resta el trabajo de encontrar en <code>RStudio</code> <span class="math inline">\(P(Z&lt;-1)\)</span>, veamos:</p>
-<pre class="r"><code>pnorm(-1,mean = 0,sd=1)</code></pre>
+<span class="math display">\[\begin{eqnarray*}
+P(X &lt; 60) &amp; = &amp; P(Z&lt;\dfrac{60-70}{10}) \nonumber \\
+&amp;=&amp; P(Z&lt; -1)\\
+&amp;=&amp; 0.1586553
+\end{eqnarray*}\]</span>
+<p>El resultado anterior resulta de encontrar <span class="math inline">\(P(Z&lt;-1)\)</span> usando <code>RStudio</code> , veamos:</p>
+<pre class="r"><code>pnorm(-1,0,1)</code></pre>
 <pre><code>## [1] 0.1586553</code></pre>
 <pre class="r"><code>plot_area(-3,-1)</code></pre>
 <p><img src="dNormal_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>P(X &gt; 95)</li>
 </ol>
-<p>Estandarizando tenemos</p>
-<p><span class="math display">\[P(X &gt; 95)= 1 - P(X \leq 95)= 1 - P(Z&lt;\dfrac{95-70}{10})= 1 - P(Z&lt; 2.5)\]</span> Usando <code>RStudio</code></p>
+<p>Estandarizado tenemos</p>
+<span class="math display">\[\begin{eqnarray*}
+P(X &gt; 95) &amp; = &amp; 1 - P(X \leq 95) \nonumber \\
+&amp;=&amp; 1 - P(Z&lt;\dfrac{95-70}{10})\\
+&amp;=&amp; 1 - P(Z&lt; 2.5)\\
+&amp;=&amp; 1 - 0.9937903\\
+&amp;=&amp; 0.0062097
+\end{eqnarray*}\]</span>
+<p>Usando <code>RStudio</code></p>
 <pre class="r"><code>1 - pnorm(2.5,mean = 0,sd=1)</code></pre>
 <pre><code>## [1] 0.006209665</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>P (50 &lt; X &lt; 80)</li>
 </ol>
 <p>Aplicando la fórmula para el caso en que <span class="math inline">\(F(a &lt; X &lt; b)= F(b) - F(a)\)</span></p>
-<p><span class="math display">\[P(50 &lt; X &lt; 80)=P(X &lt;80) - P(X &lt; 50)=P(Z &lt; \dfrac{80-70}{10}) - P(Z &lt; \dfrac{50-70}{10})=\]</span> <span class="math display">\[P(Z &lt; 1) - P(Z &lt; -2)\]</span></p>
+<span class="math display">\[\begin{eqnarray*}
+P(50 &lt; X &lt; 80) &amp; = &amp; P(X &lt;80) - P(X &lt; 50) \nonumber \\
+&amp;=&amp; P\big(Z &lt; \dfrac{80-70}{10}\big) - P\big(Z &lt; \dfrac{50-70}{10}\big)\\
+&amp;=&amp; P(Z &lt; 1) - P(Z &lt; -2)\\
+&amp;=&amp; 0.841344 - 0.0227501 \\
+&amp;=&amp; 0.8185939
+\end{eqnarray*}\]</span>
 <p>Usando <code>RStudio</code></p>
 <pre class="r"><code>pnorm(1,0,1) - pnorm(-2,0,1)</code></pre>
 <pre><code>## [1] 0.8185946</code></pre>
-</div>
-<div id="percentiles-de-una-distribucion-normal" class="section level3">
-<h3>Percentiles de una distribución Normal</h3>
-<p>Si <span class="math inline">\(X \sim Normal(\mu,\sigma)\)</span> y si <span class="math inline">\(X_p\)</span> y <span class="math inline">\(Z_p\)</span> representen sus respectivos percentiles entonces: <span class="math display">\[X_p=\mu+\sigma Z_p\]</span> es el percentil <span class="math inline">\(p\)</span>.</p>
 </div>
 <div id="simulando-datos-de-una-distribucion-normal" class="section level3">
 <h3>Simulando datos de una distribución Normal</h3>
@@ -343,23 +356,13 @@ Notas &lt;- rnorm(30,75,10)
 # Redondeando los resultados
 Notas &lt;- round(Notas,digits = 0)
 print(Notas)</code></pre>
-<pre><code>##  [1] 89 66 78 65 73 79 65 81 77 72 77 76 67 61 76 65 75 59 66 78 85 77 65
-## [24] 71 86 80 83 85 79 86</code></pre>
+<pre><code>##  [1] 90 63 82 73 82 82 76 53 73 81 82 83 80 74 93 67 93 85 81 91 64 75 74
+## [24] 77 55 77 84 76 84 72</code></pre>
 <p><strong>¿Cuál es la probabilidad que un estudiante tenga más 73 en la nota?</strong></p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 </div>
 
