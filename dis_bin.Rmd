@@ -266,7 +266,7 @@ dpois(0,15)
 ```
 
 
-**Ejercicio 3** El número de clientes que llegan a una gasolinera es una variable aleatoria de Poisson. En promedio llegan 12 clientes por hora. Digamos que X es el número de clientes que llegan de 10 a 11:30 am. ¿Cuanto es $P(9 < X ≤14)$?
+**Ejercicio 3** El número de clientes que llegan a una gasolinera es una variable aleatoria de Poisson. En promedio llegan 8 clientes por hora. Digamos que X es el número de clientes que llegan de 10 a 12:30 am. ¿Cuanto es $P(9 < X ≤14)$?
 
 Sabemos que para una hora en particular el número de clientes que llegan a la gasolinera es $X \sim Poisson(8)$, pero para el intervalo de 10:00 am a 12:30 am (2.5 horas) el promedio es $\lambda=2.5*8=20$, entonces, la probabilidad de que lleguen más de 9 pero máximo 14 clientes es:
 
