@@ -207,7 +207,7 @@ P(X > 73) & = & 1 - P(X < 73)  \nonumber \\
 
 ### Percentiles de la distribución Normal  y Normal estándar
 
-Dada una variable aleatoria X distribuida Normalmente con media $\mu$ y desviación estándar $\sigma$  entonces puede ser convertida a una normal estándar mediante el proceso de estandarización como vimo anteriormente, mediante 
+Dada una variable aleatoria X distribuida Normalmente con media $\mu$ y desviación estándar $\sigma$  entonces puede ser convertida a una normal estándar mediante el proceso de estandarización como vimos anteriormente, mediante 
 
 $$Z = \dfrac{X-\mu}{\sigma}$$
 
@@ -219,7 +219,7 @@ $$X_p = \mu + Z_p\sigma$$
 
 **Ejercicio 1:** Calcular el percentil 55 de $Z \sim Normal(0,1)$
 
-En otras palabras, necesitamos calcular $P_{55}$ tal que la probabilidad acumulada hasta $p_{55}$ es 0.55, es decir,
+En otras palabras, necesitamos calcular $z_{55}$ tal que la probabilidad acumulada hasta $z_{55}$ es 0.55, es decir,
 
 $$P(Z < z_{55})=0.55$$
 
@@ -229,9 +229,9 @@ Esto se puede hacer usando una tabla de probabilidades $Z$, o usando la función
 qnorm(0.55,0,1)
 ```
 
-**Ejercicio 2:** Calcular el percentil 62 dde una distribución normal de media 34 y desviación estándar 5, es decir  $X \sim Normal(34,5)$
+**Ejercicio 2:** Calcular el percentil 62 de una distribución normal de media 34 y desviación estándar 5, es decir  $X \sim Normal(34,5)$
 
-Debemos encontrar un $x_{62}$ tal que 
+Debemos encontrar un $X_{62}$ tal que 
 
 $$P(X < X_{62})= 0.62$$
 Para esto debemos estandarizar,

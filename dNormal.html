@@ -357,8 +357,8 @@ Notas &lt;- rnorm(30,75,10)
 # Redondeando los resultados
 Notas &lt;- round(Notas,digits = 0)
 print(Notas)</code></pre>
-<pre><code>##  [1] 82 73 69 75 73 71 74 64 80 86 73 92 71 77 86 68 89 75 73 60 85 68 70
-## [24] 83 75 77 76 73 68 77</code></pre>
+<pre><code>##  [1] 89 71 90 72 76 68 57 93 87 83 70 73 91 66 59 77 54 72 74 79 79 62 68
+## [24] 78 68 70 93 80 53 67</code></pre>
 <p><strong>¿Cuál es la probabilidad que un estudiante tenga más 73 en la nota?</strong></p>
 <span class="math display">\[\begin{eqnarray*}
 P(X &gt; 73) &amp; = &amp; 1 - P(X &lt; 73)  \nonumber \\
@@ -370,7 +370,7 @@ P(X &gt; 73) &amp; = &amp; 1 - P(X &lt; 73)  \nonumber \\
 </div>
 <div id="percentiles-de-la-distribucion-normal-y-normal-estandar" class="section level3">
 <h3>Percentiles de la distribución Normal y Normal estándar</h3>
-<p>Dada una variable aleatoria X distribuida Normalmente con media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span> entonces puede ser convertida a una normal estándar mediante el proceso de estandarización como vimo anteriormente, mediante</p>
+<p>Dada una variable aleatoria X distribuida Normalmente con media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span> entonces puede ser convertida a una normal estándar mediante el proceso de estandarización como vimos anteriormente, mediante</p>
 <p><span class="math display">\[Z = \dfrac{X-\mu}{\sigma}\]</span></p>
 <p>También podemos denotar a <span class="math inline">\(X_p\)</span> y <span class="math inline">\(Z_p\)</span> como los p-ésimos percentiles de <span class="math inline">\(X\)</span> y <span class="math inline">\(Z\)</span> respectivamente. Entonces,</p>
 <p><span class="math display">\[X_p = \mu + Z_p\sigma\]</span></p>
@@ -378,13 +378,13 @@ P(X &gt; 73) &amp; = &amp; 1 - P(X &lt; 73)  \nonumber \\
 <p>Ejercicios</p>
 </blockquote>
 <p><strong>Ejercicio 1:</strong> Calcular el percentil 55 de <span class="math inline">\(Z \sim Normal(0,1)\)</span></p>
-<p>En otras palabras, necesitamos calcular <span class="math inline">\(P_{55}\)</span> tal que la probabilidad acumulada hasta <span class="math inline">\(p_{55}\)</span> es 0.55, es decir,</p>
+<p>En otras palabras, necesitamos calcular <span class="math inline">\(z_{55}\)</span> tal que la probabilidad acumulada hasta <span class="math inline">\(z_{55}\)</span> es 0.55, es decir,</p>
 <p><span class="math display">\[P(Z &lt; z_{55})=0.55\]</span></p>
 <p>Esto se puede hacer usando una tabla de probabilidades <span class="math inline">\(Z\)</span>, o usando la función <code>qnorm()</code> de RStudio.</p>
 <pre class="r"><code>qnorm(0.55,0,1)</code></pre>
 <pre><code>## [1] 0.1256613</code></pre>
-<p><strong>Ejercicio 2:</strong> Calcular el percentil 62 dde una distribución normal de media 34 y desviación estándar 5, es decir <span class="math inline">\(X \sim Normal(34,5)\)</span></p>
-<p>Debemos encontrar un <span class="math inline">\(x_{62}\)</span> tal que</p>
+<p><strong>Ejercicio 2:</strong> Calcular el percentil 62 de una distribución normal de media 34 y desviación estándar 5, es decir <span class="math inline">\(X \sim Normal(34,5)\)</span></p>
+<p>Debemos encontrar un <span class="math inline">\(X_{62}\)</span> tal que</p>
 <p><span class="math display">\[P(X &lt; X_{62})= 0.62\]</span> Para esto debemos estandarizar,</p>
 <p><span class="math display">\[Z_{62}=\dfrac{X_{62}-\mu}{\sigma}\]</span></p>
 <p>de donde,</p>
