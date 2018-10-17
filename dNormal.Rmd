@@ -254,13 +254,13 @@ $$X_{62} = 34 + 0.3054808*5= 35.5274$$
 
 **Ejercicios adicionales:**
 
-1. Supongamos que $Z$ tiene una distribución normal estándar, es decir $Z \sim Normal(0,1)$. (Haga una gráfica para explicar sus resultados). Encuentre las siguientes  probabilidades: 
+1. Supongamos que $Z$ tiene una distribución normal estándar, es decir $Z \sim Normal(0,1)$. Encuentre las siguientes  probabilidades (Haga una gráfica para explicar sus resultados): 
 (a) $P(Z < -0.5)$;
 (b) $P(Z > 1.5)$;
 (c) $P(0 <Z <2.5)$;
 (d) $P(-1.5 <Z <1.5)$.
 
-2. Supongamos que X sigue la distribución normal con media 85 y desviación estándar 5; es decir, $X \sim N (85, 5)$. (Haga una gráfica para explicar sus resultados) Encuentre:
+2. Supongamos que X sigue la distribución normal con media 85 y desviación estándar 5; es decir, $X \sim N (85, 5)$. Encuentre (Haga una gráfica para explicar sus resultados):
 (a) $P(X <78)$;
 (b) $P(X> 88)$; 
 (c) $P(78 <X <88)$;
