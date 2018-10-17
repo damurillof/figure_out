@@ -196,6 +196,85 @@ print(Notas)
 
 **¿Cuál es la probabilidad que un estudiante  tenga más 73 en la nota?**
 
+\begin{eqnarray*}
+P(X > 73) & = & 1 - P(X < 73)  \nonumber \\
+&=& 1 - P\big(Z < \dfrac{73-75}{10}\big) \\
+&=& 1 - P\big(Z < -0.2 \big) \\
+&=& 1 - 0.4207403 \\
+&=& 0.5792597
+\end{eqnarray*}
+
+
+### Percentiles de la distribución Normal  y Normal estándar
+
+Dada una variable aleatoria X distribuida Normalmente con media $\mu$ y desviación estándar $\sigma$  entonces puede ser convertida a una normal estándar mediante el proceso de estandarización como vimo anteriormente, mediante 
+
+$$Z = \dfrac{X-\mu}{\sigma}$$
+
+También podemos denotar a $X_p$ y $Z_p$ como los p-ésimos  percentiles de $X$ y $Z$ respectivamente. Entonces,
+
+$$X_p = \mu + Z_p\sigma$$
+
+> Ejercicios
+
+**Ejercicio 1:** Calcular el percentil 55 de $Z \sim Normal(0,1)$
+
+En otras palabras, necesitamos calcular $P_{55}$ tal que la probabilidad acumulada hasta $p_{55}$ es 0.55, es decir,
+
+$$P(Z < z_{55})=0.55$$
+
+Esto se puede hacer usando una tabla de probabilidades $Z$, o usando la función `qnorm()` de RStudio.
+
+```{r}
+qnorm(0.55,0,1)
+```
+
+**Ejercicio 2:** Calcular el percentil 62 dde una distribución normal de media 34 y desviación estándar 5, es decir  $X \sim Normal(34,5)$
+
+Debemos encontrar un $x_{62}$ tal que 
+
+$$P(X < X_{62})= 0.62$$
+Para esto debemos estandarizar,
+
+$$Z_{62}=\dfrac{X_{62}-\mu}{\sigma}$$
+
+de donde,
+
+$$X_{62}= \mu + Z_{62}\sigma$$
+Para encontrar $X_{62}$ necesitamos $Z_{62}$, usando RStudio lo encontramos 
+
+```{r}
+qnorm(0.62,0,1)
+```
+
+entonces,
+
+$$X_{62} = 34 + 0.3054808*5= 35.5274$$
+
+
+**Ejercicios adicionales:**
+
+1. Supongamos que $Z$ tiene una distribución normal estándar, es decir $Z \sim Normal(0,1)$. (Haga una gráfica para explicar sus resultados). Encuentre las siguientes  probabilidades: 
+(a) $P(Z < -0.5)$;
+(b) $P(Z > 1.5)$;
+(c) $P(0 <Z <2.5)$;
+(d) $P(-1.5 <Z <1.5)$.
+
+2. Supongamos que X sigue la distribución normal con media 85 y desviación estándar 5; es decir, $X \sim N (85, 5)$. (Haga una gráfica para explicar sus resultados) Encuentre:
+(a) $P(X <78)$;
+(b) $P(X> 88)$; 
+(c) $P(78 <X <88)$;
+(d) El percentil 80 de X, es decir el valor $X_{80}$ tal que $P(X  < X_{80}) = 0.8$;
+(e) El percentil 5 de X, es decir el valor $X_{5}$  tal que $P(X < X_{5}) = 0.05$.
+
+
+3. Supongamos que el tiempo que tarda una computadora en una red de área local para establecer una conexión a un sitio remoto sigue una distribución normal con un media de 15 segundos y una desviación estándar de 3 segundos.
+(a) ¿Qué proporción de las conexiones ocurrirá en menos de 12.2 segundos?
+(b) ¿Qué proporción de las conexiones ocurrirá entre 12.2 y 16.5 segundos?
+(c) ¿Qué proporción de las conexiones durará más de 10 segundos?
+(d) ¿El 90% de las conexiones ocurrirá en menos de cuántos segundos?
+
+
 
 ![](blanco.png)
 

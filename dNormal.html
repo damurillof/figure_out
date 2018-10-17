@@ -214,6 +214,7 @@ $(document).ready(function () {
 <li><a href="#estandarizacion-de-una-normal">Estandarización de una Normal</a></li>
 <li><a href="#formulas-para-calcular-area-debajo-de-la-curva-normal-estandar">Fórmulas para calcular área debajo de la curva normal estándar</a></li>
 <li><a href="#simulando-datos-de-una-distribucion-normal">Simulando datos de una distribución Normal</a></li>
+<li><a href="#percentiles-de-la-distribucion-normal-y-normal-estandar">Percentiles de la distribución Normal y Normal estándar</a></li>
 </ul></li>
 </ul>
 </div>
@@ -356,9 +357,71 @@ Notas &lt;- rnorm(30,75,10)
 # Redondeando los resultados
 Notas &lt;- round(Notas,digits = 0)
 print(Notas)</code></pre>
-<pre><code>##  [1] 90 63 82 73 82 82 76 53 73 81 82 83 80 74 93 67 93 85 81 91 64 75 74
-## [24] 77 55 77 84 76 84 72</code></pre>
+<pre><code>##  [1] 76 76 81 70 80 85 87 49 62 74 72 68 87 64 81 80 71 80 80 73 78 81 52
+## [24] 82 85 73 84 61 77 66</code></pre>
 <p><strong>¿Cuál es la probabilidad que un estudiante tenga más 73 en la nota?</strong></p>
+<span class="math display">\[\begin{eqnarray*}
+P(X &gt; 73) &amp; = &amp; 1 - P(X &lt; 73)  \nonumber \\
+&amp;=&amp; 1 - P\big(Z &lt; \dfrac{73-75}{10}\big) \\
+&amp;=&amp; 1 - P\big(Z &lt; -0.2 \big) \\
+&amp;=&amp; 1 - 0.4207403 \\
+&amp;=&amp; 0.5792597
+\end{eqnarray*}\]</span>
+</div>
+<div id="percentiles-de-la-distribucion-normal-y-normal-estandar" class="section level3">
+<h3>Percentiles de la distribución Normal y Normal estándar</h3>
+<p>Dada una variable aleatoria X distribuida Normalmente con media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span> entonces puede ser convertida a una normal estándar mediante el proceso de estandarización como vimo anteriormente, mediante</p>
+<p><span class="math display">\[Z = \dfrac{X-\mu}{\sigma}\]</span></p>
+<p>También podemos denotar a <span class="math inline">\(X_p\)</span> y <span class="math inline">\(Z_p\)</span> como los p-ésimos percentiles de <span class="math inline">\(X\)</span> y <span class="math inline">\(Z\)</span> respectivamente. Entonces,</p>
+<p><span class="math display">\[X_p = \mu + Z_p\sigma\]</span></p>
+<blockquote>
+<p>Ejercicios</p>
+</blockquote>
+<p><strong>Ejercicio 1:</strong> Calcular el percentil 55 de <span class="math inline">\(Z \sim Normal(0,1)\)</span></p>
+<p>En otras palabras, necesitamos calcular <span class="math inline">\(P_{55}\)</span> tal que la probabilidad acumulada hasta <span class="math inline">\(p_{55}\)</span> es 0.55, es decir,</p>
+<p><span class="math display">\[P(Z &lt; z_{55})=0.55\]</span></p>
+<p>Esto se puede hacer usando una tabla de probabilidades <span class="math inline">\(Z\)</span>, o usando la función <code>qnorm()</code> de RStudio.</p>
+<pre class="r"><code>qnorm(0.55,0,1)</code></pre>
+<pre><code>## [1] 0.1256613</code></pre>
+<p><strong>Ejercicio 2:</strong> Calcular el percentil 62 dde una distribución normal de media 34 y desviación estándar 5, es decir <span class="math inline">\(X \sim Normal(34,5)\)</span></p>
+<p>Debemos encontrar un <span class="math inline">\(x_{62}\)</span> tal que</p>
+<p><span class="math display">\[P(X &lt; X_{62})= 0.62\]</span> Para esto debemos estandarizar,</p>
+<p><span class="math display">\[Z_{62}=\dfrac{X_{62}-\mu}{\sigma}\]</span></p>
+<p>de donde,</p>
+<p><span class="math display">\[X_{62}= \mu + Z_{62}\sigma\]</span> Para encontrar <span class="math inline">\(X_{62}\)</span> necesitamos <span class="math inline">\(Z_{62}\)</span>, usando RStudio lo encontramos</p>
+<pre class="r"><code>qnorm(0.62,0,1)</code></pre>
+<pre><code>## [1] 0.3054808</code></pre>
+<p>entonces,</p>
+<p><span class="math display">\[X_{62} = 34 + 0.3054808*5= 35.5274\]</span></p>
+<p><strong>Ejercicios adicionales:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Supongamos que <span class="math inline">\(Z\)</span> tiene una distribución normal estándar, es decir <span class="math inline">\(Z \sim Normal(0,1)\)</span>. (Haga una gráfica para explicar sus resultados). Encuentre las siguientes probabilidades:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(Z &lt; -0.5)\)</span>;</li>
+<li><span class="math inline">\(P(Z &gt; 1.5)\)</span>;</li>
+<li><span class="math inline">\(P(0 &lt;Z &lt;2.5)\)</span>;</li>
+<li><span class="math inline">\(P(-1.5 &lt;Z &lt;1.5)\)</span>.</li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Supongamos que X sigue la distribución normal con media 85 y desviación estándar 5; es decir, <span class="math inline">\(X \sim N (85, 5)\)</span>. (Haga una gráfica para explicar sus resultados) Encuentre:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X &lt;78)\)</span>;</li>
+<li><span class="math inline">\(P(X&gt; 88)\)</span>;</li>
+<li><span class="math inline">\(P(78 &lt;X &lt;88)\)</span>;</li>
+<li>El percentil 80 de X, es decir el valor <span class="math inline">\(X_{80}\)</span> tal que <span class="math inline">\(P(X &lt; X_{80}) = 0.8\)</span>;</li>
+<li>El percentil 5 de X, es decir el valor <span class="math inline">\(X_{5}\)</span> tal que <span class="math inline">\(P(X &lt; X_{5}) = 0.05\)</span>.</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>Supongamos que el tiempo que tarda una computadora en una red de área local para establecer una conexión a un sitio remoto sigue una distribución normal con un media de 15 segundos y una desviación estándar de 3 segundos.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>¿Qué proporción de las conexiones ocurrirá en menos de 12.2 segundos?</li>
+<li>¿Qué proporción de las conexiones ocurrirá entre 12.2 y 16.5 segundos?</li>
+<li>¿Qué proporción de las conexiones durará más de 10 segundos?</li>
+<li>¿El 90% de las conexiones ocurrirá en menos de cuántos segundos?</li>
+</ol>
 <div class="figure">
 <img src="blanco.png" />
 
