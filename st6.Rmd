@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * ####	  Probar que los eventos A y B son independientes.
 
-#### ---- Solución ----
+####  <span style="color:red">---- Solución ----</span>
 
 #### El espacio muestral del experimento de lanzar dos monedas una vez es 
 
@@ -176,11 +176,11 @@ d)  #### Calcule la varianza de X, Var(X).
 
 a)  #### Escriba el soporte de $X$.
 
-La variable aleatoria $X$ toma valores en 
+#### La variable aleatoria $X$ toma valores en 
 
-$$\big\{1,2,3,...\big\}$$
+#### $$\big\{1,2,3,...\big\}$$
 
-Es decir, el número de intentos puede ser infinito. 
+#### Es decir, el número de intentos puede ser infinito. 
 
 b)  #### Encuentre la función de probabilidad de $X$, es decir $P(X=k)$.
 
@@ -239,7 +239,7 @@ c)  #### Si $p= \frac{3}{4}$, encuentre:
 
 #### $$\sum_{k=1}^{\infty}(1-p)^{k-1}p =p\sum_{k=1}^{\infty}(1-p)^{k-1}$$
 
-#### En necesario un cambio de variable:  sea $j = k-1$, entonces 
+#### Es necesario un cambio de variable:  sea $j = k-1$, entonces 
 
 #### $$p\sum_{j=0}^{\infty}(1-p)^{j}=$$
 
