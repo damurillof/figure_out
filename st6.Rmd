@@ -1,0 +1,304 @@
+---
+title: 'Solución Tarea # 6'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### **1. (5 pts)** Después de los atentados terroristas del 11 de septiembre  en los Estados Unidos, algunas personas han propuesto programas de reconocimiento facial para usarse en los aeropuertos. En otras palabras, cada persona que ingresa a un  punto de control de seguridad del aeropuerto es fotografiada y la imagen digital se compara con una lista de imágenes de sospechosos de terrorismo que son conocidos. El problema, es que estos sistemas nunca son 100 % exactos, y cometen un error ocasional. Digamos que el sistema clasifica a un terrorista real como correcto el 50% del tiempo. También digamos que el sistema clasifica erróneamente a una persona inocente como un terrorista el 1% de las veces. Supongamos que en un gran aeropuerto hay 5 millones de pasajeros por año, donde 30 de los pasajeros son terroristas. ¿Cuál es la probabilidad de que  el sistema de reconocimiento facial clasifique a una persona como terrorista, cuando en  realidad esa persona no es un terrorista?
+
+####  <span style="color:red">---- Solución ----</span>
+
+#### Definamos los siguientes eventos:
+
+#### $I=$ "La persona no es terrorista"
+
+#### $T=$ "La persona es un terrorista"
+
+#### $B=$ "La persona es clasificada como un terrorista"
+
+#### El problema nos provee la siguiente información:
+
+#### $P(T)=\dfrac{30}{5000000}=0.000006$
+
+#### $P(I)=1 - 0.000006=0.999994$
+
+#### $P(B|T)=0.5$
+
+#### $P(B|I)=0.01$
+
+#### Entonces, ¿Cuál es la probabilidad de que  el sistema de reconocimiento facial clasifique a una persona como terrorista, cuando en  realidad esa persona no es un terrorista?
+
+#### $$P(I|B)=\dfrac{P(B|I)P(I)}{P(B)}=\dfrac{P(B|I)P(I)}{P(B|T)P(T) + P(B|I)P(I)}=$$
+
+#### $$\dfrac{0.01*0.999994}{0.5*0.000006 + 0.01*0.999994}=0.999$$
+
+
+#### En conclusión, solo una persona de cada 1000 acusadas como terroristas es en realidad un terrorista. :( 
+
+#### **2.(4 pts)** Suponga el experimento aleatorio de lanzar un par de monedas una vez.  Sean los eventos 
+
+#### A = “Obtener una Cara en la primera moneda”.
+
+#### B = “Obtener una Cruz en la segunda moneda”.
+
+* ####	  Probar que los eventos A y B son independientes.
+
+#### ---- Solución ----
+
+#### El espacio muestral del experimento de lanzar dos monedas una vez es 
+
+#### $$S = \big\{(CARA,CARA),(CARA,CRUZ),(CRUZ,CARA),(CRUZ,CRUZ)\big\}$$
+
+#### Sabemos que 
+
+#### A = “Obtener una Cara en la primera moneda”.
+
+#### $P(A)=\dfrac{2}{4}=\dfrac{1}{2}$
+
+#### B = “Obtener una Cruz en la segunda moneda”.
+
+#### $P(B)=\dfrac{2}{4}=\dfrac{1}{2}$
+
+#### También tenemos que $P(A \cap B) = \dfrac{1}{4}$.
+
+#### Ahora si $A$ y $B$ son independientes se debe cumplir que:
+
+#### $$P(A|B)=P(A)$$
+
+#### $$P(B|A)=P(B)$$,
+
+#### Vamanos,
+
+#### $$P(A|B)=\dfrac{P(A \cap B)}{P(B)}=\frac{\dfrac{1}{4}}{\dfrac{1}{2}}=\dfrac{1}{2}=P(A)$$,
+
+#### $$P(B|A)=\dfrac{P(B \cap A)}{P(A)}=\frac{\dfrac{1}{4}}{\dfrac{1}{2}}=\dfrac{1}{2}=P(B)$$,
+
+#### Entonces $A$ y $B$ son independientes.
+
+#### Otra forma de probar que $A$ y $B$ son independientes es comprobar que $P(A \cap  B)=P(A)*P(B)$, entonces,
+
+\begin{eqnarray*}
+P(A \cap  B) &= & P(A)*P(B)  \nonumber \\
+\dfrac{1}{4}&=& \dfrac{1}{2}*\dfrac{1}{2}\\
+\dfrac{1}{4}&=& \dfrac{1}{4} 
+\end{eqnarray*}
+
+
+#### **3. (10 pts)** Sea X una variable aleatoria con soporte sobre {1,2,3,4,5}. Tenemos que P(X) está definida de la siguiente manera:
+
+```{r,eval=TRUE,echo=FALSE}
+X <- 1:5
+percent <- c("8%","16%","45%","31%")
+proba <- c(0.1,"",0.20,"",0.25)
+problem <- data.frame(X,proba)
+names(problem) <- c("X","P(X=x)")
+library(knitr)
+library(kableExtra)
+kable(problem) %>%
+  kable_styling(bootstrap_options = c("striped", "bordered","hover"), full_width = F, 
+                position = "left")
+```
+
+#### Donde se cumple que  $P(X = 2)= aP(X=1)$ y además $P(X = 5)= \dfrac{1}{2a}P(X=4)$. Donde $a$ es un número real positivo.
+
+####  <span style="color:red">---- Solución ----</span>
+
+a)  #### Complete las casillas vacías en la tabla para que P(X) sea una función de probabilidad.
+
+#### Sabemos que $P(X = 2)= aP(X=1)$ y además $P(X = 5)= \dfrac{1}{2a}P(X=4)$, entonces
+
+####  $$P(X = 2) + P(X = 4)=0.45$$
+
+####  $$aP(X=1) + 2aP(X = 5)=0.45$$
+
+####  $$a(0.1) + 2a(0.25)=0.45$$
+
+
+####  $$0.6a=0.45$$
+
+####  $$a=0.75$$
+
+#### Así tenemos que,
+
+#### $$P(X = 2)=0.75*0.1=0.075$$
+
+#### $$P(X = 4)=2*0.75*0.25=0.375$$
+
+#### La tabla completa tal que 
+
+#### $$P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5)= 1$$ 
+
+#### es:
+
+```{r,eval=TRUE,echo=FALSE}
+X <- 1:5
+percent <- c("8%","16%","45%","31%")
+proba <- c("0.10","0.075","0.20","0.375","0.25")
+problem <- data.frame(X,proba)
+names(problem) <- c("X","P(X=x)")
+library(knitr)
+library(kableExtra)
+kable(problem) %>%
+  kable_styling(bootstrap_options = c("striped", "bordered","hover"), full_width = F, 
+                position = "center")
+```
+
+b)  #### Encuentre $P(X > 3)$
+
+#### $$P(X > 3)= P(X = 4) + P(X = 5)= 0.375 + 0.25 = 0.625$$
+
+c)  #### Calcule el valor esperado X, E(X).
+
+#### $$E(X)= \sum_{x=1}^{5}xP(X=x)= 1*0.10 + 2*0.075 + 3*0.20 + 4*0.375 + 5*0.25$$
+
+#### $$E(X)= 3.6$$
+
+d)  #### Calcule la varianza de X, Var(X).
+
+#### Para calcular la varianza necesitamos $E(X^2)$
+
+#### $$E(X^2)= \sum_{x=1}^{5}x^2P(X=x)= 1^2*0.10 + 2^2*0.075 + 3^2*0.20 + 4^2*0.375 + 5^2*0.25$$
+
+#### $$E(X^2)= 14.45$$
+
+#### Entonces,
+
+#### $$Var(X)=E(X^2)-\big[E(X)\big]^2=14.45-3.6^2=1.49$$
+
+
+
+#### **4. (9 pts)** Suponga que usted tiene una urna con dos bolas, una blanca y otra roja. Digamos que la probabilidad de extraer la bola blanca es $P(B)=p$, obviamente $p$ es una probabilidad y estará entre $0$ y $1$. Ahora suponga que repetimos  el experimento de extraer la bola, un número $k$ de veces, hasta obtener la bola blanca por primera vez. Sea $X$ el número total de intentos. 
+
+####  <span style="color:red">---- Solución ----</span>
+
+a)  #### Escriba el soporte de $X$.
+
+La variable aleatoria $X$ toma valores en 
+
+$$\big\{1,2,3,...\big\}$$
+
+Es decir, el número de intentos puede ser infinito. 
+
+b)  #### Encuentre la función de probabilidad de $X$, es decir $P(X=k)$.
+
+#### El enunciado del problema aclara que la probabilidad de extraer la bola blanca es $p$, es decir $P(B)=p$, por lo tanto la probabilidad de extraer la bola roja es $P(R)=1-p$. Entonces tenemos que $k$ es el número de intentos.
+
+\begin{align*}
+   \text{Primer intento} \quad \text{entonces} \quad P(X=1) &= P(B)=p \\
+    \text{Segundo intento} \quad \text{entonces} \quad P(X=2) &= P(RB)=(1-p)p \\
+     \text{Tercer intento} \quad \text{entonces} \quad P(X=3) &= P(RRB)=(1-p)^2p \\
+      \text{Cuarto intento} \quad \text{entonces} \quad P(X=4) &= P(RRRB)=(1-p)^3p \\
+   &\vdots\\
+   \text{k-ésimo intento} \quad \text{entonces} \quad P(X=k) &= P(RRR...RB)=(1-p)^{k-1}p
+\end{align*}
+
+#### Finalmente tenemos la función de probabilidad de $X$ definida de la siguiente manera:
+
+#### $$P(X=k)=(1-p)^{k-1}p \quad \quad con \quad k =  1,2,3,4,...$$
+
+c)  #### Si $p= \frac{3}{4}$, encuentre:
+
+  + #### $P(X=3)$ 
+  
+  
+   $$P(X=3)=\Big(1-\dfrac{3}{4}\Big)^{3-1}\dfrac{3}{4}=\Big(\dfrac{1}{4}\Big)^{2}\dfrac{3}{4}=\dfrac{3}{64}$$ 
+  
+
+#### Tenemos que la probabilidad de extraer la bola blanca en el tercer intento es $\dfrac{3}{64}$.
+  
+  
+  + #### $P(3\leq X<6)$.
+  
+  
+#### $$P(3\leq X < 6) = \sum_{k=3}^{5}(1-p)^{k-1}p=$$
+
+#### $$P(X=3) + P(X=4) + P(X=5)=$$
+
+#### $$\Big(1-\dfrac{3}{4}\Big)^{3-1}\dfrac{3}{4} + \Big(1-\dfrac{3}{4}\Big)^{4-1}\dfrac{3}{4} + \Big(1-\dfrac{3}{4}\Big)^{5-1}\dfrac{3}{4}$$
+
+#### $$\Big(\dfrac{1}{4}\Big)^{2}\dfrac{3}{4} + \Big(\dfrac{1}{4}\Big)^{3}\dfrac{3}{4} + \Big(\dfrac{1}{4}\Big)^{4}\dfrac{3}{4}$$
+
+#### $$\dfrac{3}{64} + \dfrac{3}{256} + \dfrac{3}{1024}=$$
+
+#### $$P(3\leq X < 6) = 0.0615$$
+
+
+#### **Bono (3 pts):** Pruebe que $P(X=k)$ es en realidad una función de probabilidad.
+
+####  <span style="color:red">---- Solución Bono ----</span>
+
+#### Tenemos que probar que $\sum_{k=1}^{\infty}P(X=k)=1$, es decir:
+
+
+#### $$\sum_{k=1}^{\infty}(1-p)^{k-1}p =1$$
+
+#### Como estamos seguros que $p$ es una probabilidad, entonces $1-p$ está siempre entre 0 y 1, es decir $0 \leq 1-p \leq 1$, entonces podemos usar la serie geométrica. 
+
+#### $$\sum_{k=1}^{\infty}(1-p)^{k-1}p =p\sum_{k=1}^{\infty}(1-p)^{k-1}$$
+
+#### En necesario un cambio de variable:  sea $j = k-1$, entonces 
+
+#### $$p\sum_{j=0}^{\infty}(1-p)^{j}=$$
+
+#### $$p\dfrac{1}{1-(1-p)}=$$
+
+#### $$\dfrac{p}{p}=1$$
+
+
+#### Así, hemos probado que $P(X=k)$ es una función de probabilidad. 
+
+#### **5. (6 pts)**  Según algunas estimaciones, el veinte por ciento (20 %) de los habitantes de una población no tienen seguro médico. Sea  X  el número personas sin seguro de salud en una muestra de 75 personas. 
+
+####  <span style="color:red">---- Solución ----</span>
+
+
+a)  ####  ¿Cuál es la probabilidad de que exactamente 3 de los 75 muestreados no tengan seguro médico?
+
+#### Tenemos un experimento binomial con $n=75$ y $p=0.20$. 
+
+#### Sea $X=$ # de personas sin seguro de salud.
+
+#### Entonces,
+
+#### $$P(X=3) = {75 \choose 3}*(0.20)^3*(0.80)^{72}=67525*0.008*0.000000105=0.000056789$$
+
+Usando `RStudio` tenemos
+
+```{r}
+dbinom(3,75,0.20)
+```
+
+
+b)  ####  ¿Cuál es la probabilidad de que, a lo más, cuatro de los muestreados no tenga seguro médico?
+
+#### $$P(X \leq 4) = P(X=0) + P(X=1) + P(X=2) + P(X=3) + P(X=4)$$
+
+#### $P(X = 0)={75 \choose 0}(0.20)^0(0.80)^{75}=0.0000000539$
+
+#### $P(X = 1)={75 \choose 1}(0.20)^1(0.80)^{74}=0.00000101$
+
+#### $P(X = 2)={75 \choose 2}(0.20)^2(0.80)^{73}=0.00000935$
+
+#### $P(X = 3)={75 \choose 3}(0.20)^3(0.80)^{72}=0.00005689$
+
+#### $P(X = 4)={75 \choose 4}(0.20)^4(0.80)^{71}=0.00025600$
+
+Entonces,
+
+#### $$P(X \leq 4) = 0.0000000539 + 0.00000101 + 0.00000935 + 0.00005689 + 0.00025600$$
+
+#### $$P(X \leq 4) = 0.0003233$$
+
+Podemos usar `RStudio` para verificar nuestro resultado
+
+```{r}
+pbinom(4,75,0.20)
+```
+
+
+
+
+![](blanco.png)
