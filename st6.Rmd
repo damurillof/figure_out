@@ -78,14 +78,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Entonces $A$ y $B$ son independientes.
 
-#### Otra forma de probar que $A$ y $B$ son independientes es comprobar que $P(A \cap  B)=P(A)*P(B)$, entonces,
-
-\begin{eqnarray*}
-P(A \cap  B) &= & P(A)*P(B)  \nonumber \\
-\dfrac{1}{4}&=& \dfrac{1}{2}*\dfrac{1}{2}\\
-\dfrac{1}{4}&=& \dfrac{1}{4} 
-\end{eqnarray*}
-
 
 #### **3. (10 pts)** Sea X una variable aleatoria con soporte sobre {1,2,3,4,5}. Tenemos que P(X) está definida de la siguiente manera:
 
@@ -263,7 +255,7 @@ a)  ####  ¿Cuál es la probabilidad de que exactamente 3 de los 75 muestreados 
 
 #### Entonces,
 
-#### $$P(X=3) = {75 \choose 3}*(0.20)^3*(0.80)^{72}=67525*0.008*0.000000105=0.000056789$$
+#### $$P(X=3) = {75 \choose 3}*(0.20)^3*(0.80)^{72}=67525*0.008*0.000000105=0.00005689$$
 
 Usando `RStudio` tenemos
 
