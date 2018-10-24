@@ -209,6 +209,7 @@ $(document).ready(function () {
 <div id="TOC">
 <ul>
 <li><a href="#distribuciones-muestrales">Distribuciones Muestrales</a><ul>
+<li><a href="#notacion">Notación</a></li>
 <li><a href="#distribucion-de-la-media-muestral-cuando-la-poblacion-es-normal">Distribución de la media muestral cuando la población es normal</a></li>
 <li><a href="#el-teorema-del-limite-central">El Teorema del Límite Central</a></li>
 <li><a href="#distribucion-de-la-proporcion-muestral">Distribución de la Proporción Muestral</a></li>
@@ -219,6 +220,18 @@ $(document).ready(function () {
 <div id="distribuciones-muestrales" class="section level2">
 <h2>Distribuciones Muestrales</h2>
 <p>Uno de los objetivos de la estadística es saber acerca del comportamiento de parámetros poblacionales tales como: la media <span class="math inline">\(\mu\)</span>, la varianza <span class="math inline">\(\sigma^2\)</span> o la proporción <span class="math inline">\(p\)</span>. Se extrae una muestra aleatoria de la población y se calcula el valor de un estadístico correspondiente, por ejemplo, la media muestral <span class="math inline">\(\bar{X}\)</span>, la varianza muestral <span class="math inline">\(S^2\)</span> o la proporción muestral <span class="math inline">\(\hat{p}\)</span>. El valor del estadístico es aleatorio porque depende de los elementos elegidos en la muestra seleccionada y, por lo tanto, el estadístico tiene una distribución de probabilidad la cual es llamada la <strong>Distribución Muestral del Estadístico</strong>.</p>
+<div id="notacion" class="section level3">
+<h3>Notación</h3>
+<p><strong>Parametros</strong>:</p>
+<p>Para la media poblacional se usa la letra <span class="math inline">\(\mu\)</span>.</p>
+<p>Para la varianza poblacional se usa la letra <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Para la varianza poblacional se usa la letra <span class="math inline">\(\sigma\)</span>.</p>
+<p><strong>Estadísticos</strong>:</p>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria, entonces:</p>
+<p>Para la media muestral se usa <span class="math inline">\(\bar{X}\)</span>.</p>
+<p>Para la varianza muestral se usa la letra <span class="math inline">\(S^2\)</span>.</p>
+<p>Para la varianza poblacional se usa la letra <span class="math inline">\(S\)</span>.</p>
+</div>
 <div id="distribucion-de-la-media-muestral-cuando-la-poblacion-es-normal" class="section level3">
 <h3>Distribución de la media muestral cuando la población es normal</h3>
 <p>Suponga que su objeto de estudio es una población normal y de donde se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de una población infinita con media poblacional <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span></p>
@@ -232,7 +245,8 @@ $(document).ready(function () {
 <h3>El Teorema del Límite Central</h3>
 <p>De una población infinita con media y varianza se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span>, entonces la media muestral <span class="math inline">\(\bar{X}\)</span> se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional <span class="math inline">\(\mu\)</span> y con desviación estándar <span class="math inline">\(\sigma\)</span> igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:</p>
 <p><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></p>
-<p>Estandarizando, donde <span class="math inline">\(Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}\)</span></p>
+<p>Estandarizando, donde</p>
+<p><span class="math display">\[Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}\]</span></p>
 <p>tenemos:</p>
 <p><span class="math display">\[Z \sim Normal(0,1)\]</span></p>
 <blockquote>
@@ -260,16 +274,16 @@ for (i in 1:30){
 }
 #d_mean
 mean(d_mean)</code></pre>
-<pre><code>## [1] 9.225</code></pre>
+<pre><code>## [1] 9.908333</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.084787</code></pre>
+<pre><code>## [1] 2.563406</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Tercero, calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</li>
 </ol>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 9.225</code></pre>
+<pre><code>## [1] 9.908333</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.084787</code></pre>
+<pre><code>## [1] 2.563406</code></pre>
 <p>Interpretación: Notar que la media de las medias muestrales es <span class="math inline">\(\mu_{\bar{X}}=10.075\)</span> que está bien cerca de la media poblacional . Además la desviación estándar de la media muestral es 2.806 mientras que <span class="math inline">\(\sigma/\sqrt{n}=5.418/2=2.709\)</span>. Ambos valores también están relativamente cerca. El histograma si está un poco alejado de la normalidad. Si se incrementa el tamaño de las muestras se puede notar una mejor aproximación a la Normal.</p>
 <pre class="r"><code>hist(d_mean,col = &quot;blue&quot;,freq = F)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>

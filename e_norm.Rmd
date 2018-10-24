@@ -81,6 +81,8 @@ qqline(x)
 
 En este caso la prueba gráfica nos indica que la normalidad no se sostiene. Aquí no es correcto asumir que los datos provienen de una población normal.
 
+Otro ejemplo de No Normalidad es el siguiente, tambien se gráfica un histograma de los datos.
+
 ```{r}
 y <- rbeta(50,3,6) +  rgamma(150,3,4)
 par(mfrow=c(1,2))
@@ -88,6 +90,8 @@ qqnorm(y)
 qqline(y)
 hist(y)
 ```
+
+
 
 Una prueba gráfica solo nos indica o nos da la idea de la normalidad de los datos, pero no es una prueba definitiva. Existen pruebas más rigurosas, que se discutirán más adelante. 
 

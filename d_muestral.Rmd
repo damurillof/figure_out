@@ -14,6 +14,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Uno de los objetivos de la estadística es saber acerca del comportamiento de parámetros poblacionales tales como: la media $\mu$, la varianza $\sigma^2$ o la proporción $p$. Se extrae una muestra aleatoria de la población y se calcula el valor de un estadístico correspondiente, por ejemplo, la media muestral $\bar{X}$, la varianza muestral $S^2$ o la proporción muestral $\hat{p}$. El valor del estadístico es aleatorio porque depende de los elementos elegidos en la muestra seleccionada y, por lo tanto, el estadístico tiene una distribución de probabilidad la cual es llamada la **Distribución Muestral del Estadístico**.
 
+### Notación 
+
+
+**Parametros**:
+
+Para la media poblacional se usa la letra $\mu$.
+
+Para la varianza poblacional se usa la letra $\sigma^2$.
+
+Para la varianza poblacional se usa la letra $\sigma$.
+
+**Estadísticos**:
+
+Si $X$ es una variable aleatoria, entonces:
+
+Para la media muestral se usa $\bar{X}$.
+
+Para la varianza muestral se usa la letra $S^2$.
+
+Para la varianza poblacional se usa la letra $S$.
 
 ### Distribución de la media muestral cuando la población es normal
 
@@ -31,7 +51,9 @@ De una población infinita con media y varianza se extraen muestras aleatorias d
 
 $$\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})$$
 
-Estandarizando, donde  $Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
+Estandarizando, donde  
+
+$$Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$$
 
 tenemos:
 
