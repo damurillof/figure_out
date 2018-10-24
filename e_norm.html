@@ -209,7 +209,7 @@ $(document).ready(function () {
 
 <div id="pruebas-graficas-para-evaluar-normalidad" class="section level2">
 <h2>Pruebas gráficas para evaluar Normalidad</h2>
-<p>Muchos procedimientos o métodos en estadística toman un supuesto de entrada, el supuesto de la Normalidad, es decir que los datos que se están utilizando si son continuos provengan de una población Normal. Es decir, aplicamos un método estadístico y obtenemos unos resultados, que solo son ciertos si se cumple el supuesto de Normalidad. No siempre los datos provienen de una población que se distribuye normal, por tanto es necesario realizar algunas pruebas para verificarlo.</p>
+<p>Muchos procedimientos o métodos en estadística toman un supuesto de entrada, el supuesto de la Normalidad, es decir que los datos que se están utilizando si son continuos provengan de una población que tiene una distribución Normal. Es decir, aplicamos un método estadístico y obtenemos unos resultados, que solo son ciertos si se cumple el supuesto de Normalidad. No siempre los datos provienen de una población que se distribuye normal, por lo tanto es necesario realizar algunas pruebas para verificarlo.</p>
 <div id="el-grafico-q-q" class="section level3">
 <h3>El gráfico Q-Q</h3>
 <p>En estadística, un gráfico Q-Q (“Q” viene de cuantil) es un método gráfico para el diagnóstico de diferencias entre la distribución de probabilidad de una población de la que se ha extraído una muestra aleatoria y una distribución usada para la comparación, para nuestro caso es la distribución normal.</p>
@@ -241,12 +241,12 @@ $(document).ready(function () {
 fdims &lt;- subset(bdims, sex == 0)</code></pre>
 <p>La primera idea de normalidad, se puede obtener realizando un histograma de los datos, de dicho gráfico podemos concluir respecto a la simetría y a la no presencia de outliers que los datos podrían ser normales.</p>
 <p>Usemos la variable de la altura en hombres y mujeres <code>hgt</code>.</p>
-<pre class="r"><code>hist(mdims$hgt, main = &quot;Histograma de frecuancias para la altura en hombres&quot;, xlab = &quot;Altura&quot;,col = &quot;black&quot;)</code></pre>
+<pre class="r"><code>hist(mdims$hgt, main = &quot;Histograma de frecuencias para la altura en hombres&quot;, xlab = &quot;Altura&quot;,col = &quot;black&quot;)</code></pre>
 <p><img src="e_norm_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Observamos que el histograma de frecuencias es aproximadamente simétrico para la altura de los hombres y que no hay presencia de outliers. Este gráfico nos da una buena idea que la posible normalidad de los datos.</p>
-<pre class="r"><code>hist(fdims$hgt,main = &quot;Histograma de frecuancias para la altura en mujeres&quot;, xlab = &quot;Altura&quot;,col = &quot;red&quot;)</code></pre>
+<pre class="r"><code>hist(fdims$hgt,main = &quot;Histograma de frecuencias para la altura en mujeres&quot;, xlab = &quot;Altura&quot;,col = &quot;red&quot;)</code></pre>
 <p><img src="e_norm_files/figure-html/unnamed-chunk-5-1.png" width="672" /> Es evidente que en este histograma no hay simetría, por tanto lo más posible es que los datos no sean normales.</p>
-<p>Un gráfico Q-Q nos da una idea más confiable de normalidad, para producir este grafico en <code>RStudio</code> se usa el siguiente código: Por ejmplo para la altura en hombres</p>
+<p>Un gráfico Q-Q nos da una idea más confiable de normalidad, para producir este gráfico en <code>RStudio</code> se usa el siguiente código: Por ejemplo para la altura en hombres</p>
 <pre class="r"><code>qqnorm(mdims$hgt)
 qqline(mdims$hgt)</code></pre>
 <p><img src="e_norm_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
@@ -255,12 +255,23 @@ qqline(mdims$hgt)</code></pre>
 <pre class="r"><code>qqnorm(fdims$hgt)
 qqline(fdims$hgt)</code></pre>
 <p><img src="e_norm_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p>En este caso no es tan evidente la normalidad, dado que como se observa en la gráfica hay varios puntos que se alejan de la línea.</p>
-<p>Existen pruebas más rigurosas, que se discutirán más adelante.</p>
-<div class="figure">
-<img src="blanco.png" />
-
+<p>En este caso se puede afirmar que el supuesto de normalidad también se sostiene, dado que como se observa en la gráfica, la mayoría de puntos están sobre la línea de la línea.</p>
 </div>
+<div id="casos-de-no-normalidad" class="section level3">
+<h3>Casos de No Normalidad</h3>
+<p>Podemos usar <code>RStudio</code> para simular datos y hacer pruebas gráficas de normalidad.</p>
+<pre class="r"><code>x &lt;- rgamma(100,4,6)
+qqnorm(x)
+qqline(x)</code></pre>
+<p><img src="e_norm_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>En este caso la prueba gráfica nos indica que la normalidad no se sostiene. Aquí no es correcto asumir que los datos provienen de una población normal.</p>
+<pre class="r"><code>y &lt;- rbeta(50,3,6) +  rgamma(150,3,4)
+par(mfrow=c(1,2))
+qqnorm(y)
+qqline(y)
+hist(y)</code></pre>
+<p><img src="e_norm_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Una prueba gráfica solo nos indica o nos da la idea de la normalidad de los datos, pero no es una prueba definitiva. Existen pruebas más rigurosas, que se discutirán más adelante.</p>
 </div>
 </div>
 
