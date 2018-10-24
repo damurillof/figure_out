@@ -67,7 +67,7 @@ qqnorm(fdims$hgt)
 qqline(fdims$hgt)
 ```
 
-En este caso no es tan evidente la normalidad, dado que como se observa en la gráfica hay varios puntos que se alejan de la línea. 
+En este caso se puede afirmar que el supuesto de normalidad también se sostiene, dado que como se observa en la gráfica, la mayoria de puntos están sobre la línea de la línea. 
 
 Existen pruebas más rigurosas, que se discutirán más adelante. 
 

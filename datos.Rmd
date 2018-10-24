@@ -11,3 +11,5 @@ knitr::opts_chunk$set(echo = TRUE)
 ### [1. Estudiantes](https://didier-murillo.netlify.com/estudiantes.csv)
 
 ### [2. class_survey](https://didier-murillo.netlify.com/class_survey.txt)
+
+### [3. bdims](https://didier-murillo.netlify.com/normality.RData)
