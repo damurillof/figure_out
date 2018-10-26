@@ -255,8 +255,8 @@ $(document).ready(function () {
 </div>
 <div id="distribucion-de-la-media-muestral-cuando-la-poblacion-es-normal" class="section level3">
 <h3>Distribución de la media muestral cuando la población es normal</h3>
-<div id="suponga-que-su-objeto-de-estudio-es-una-poblacion-normal-y-de-donde-se-extraen-muestras-aleatorias-de-tamano-n-de-una-poblacion-infinita-con-media-poblacional-mu-y-varianza-sigma2" class="section level4">
-<h4>Suponga que su objeto de estudio es una población normal y de donde se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de una población infinita con media poblacional <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span></h4>
+<div id="suponga-que-su-objeto-de-estudio-es-una-poblacion-normal-y-de-donde-se-extraen-muestras-aleatorias-de-tamano-n-de-una-poblacion-infinita-con-media-poblacional-mu-y-varianza-sigma2.-entonces" class="section level4">
+<h4>Suponga que su objeto de estudio es una población normal y de donde se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de una población infinita con media poblacional <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>. Entonces,</h4>
 <ul>
 <li><h4 id="la-media-de-las-medias-muestrales-es-igual-a-la-media-poblacional.-es-decir">La media de las medias muestrales es igual a la media poblacional. Es decir,</h4></li>
 </ul>
@@ -269,25 +269,33 @@ $(document).ready(function () {
 </div>
 <div id="sigma_barxdfracsigmasqrtn" class="section level4">
 <h4><span class="math display">\[\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}\]</span></h4>
+<p>Finalmente se cumple que</p>
+</div>
+<div id="barx-sim-normalmufracsigmasqrtn" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></h4>
 </div>
 </div>
 <div id="el-teorema-del-limite-central" class="section level3">
 <h3>El Teorema del Límite Central</h3>
-<div id="de-una-poblacion-infinita-con-media-y-varianza-se-extraen-muestras-aleatorias-de-tamano-n-entonces-la-media-muestral-barx-se-comporta-aproximadamente-como-una-variable-aleatoria-normal-con-media-igual-a-la-media-poblacional-mu-y-con-desviacion-estandar-sigma-igual-a-la-desviacion-poblacional-dividida-por-la-raiz-cuadrada-del-tamano-de-la-muestra-siempre-que-sea-grande.-esto-es" class="section level4">
-<h4>De una población infinita con media y varianza se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span>, entonces la media muestral <span class="math inline">\(\bar{X}\)</span> se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional <span class="math inline">\(\mu\)</span> y con desviación estándar <span class="math inline">\(\sigma\)</span> igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:</h4>
-<p><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></p>
+<div id="de-una-poblacion-con-media-y-varianza-se-extraen-muestras-aleatorias-de-tamano-n-entonces-la-media-muestral-barx-se-comporta-aproximadamente-como-una-variable-aleatoria-normal-con-media-igual-a-la-media-poblacional-mu-y-con-desviacion-estandar-sigma-igual-a-la-desviacion-poblacional-dividida-por-la-raiz-cuadrada-del-tamano-de-la-muestra-siempre-que-sea-grande.-esto-es" class="section level4">
+<h4>De una población con media y varianza se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span>, entonces la media muestral <span class="math inline">\(\bar{X}\)</span> se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional <span class="math inline">\(\mu\)</span> y con desviación estándar <span class="math inline">\(\sigma\)</span> igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:</h4>
 </div>
-<div id="estandarizando-obtenemos" class="section level4">
-<h4>Estandarizando, obtenemos:</h4>
-<p><span class="math display">\[Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}\]</span></p>
+<div id="barx-sim-normalmufracsigmasqrtn-1" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></h4>
 </div>
-<div id="tenemos" class="section level4">
-<h4>tenemos:</h4>
+<div id="estandarizado-obtenemos" class="section level4">
+<h4>Estandarizado, obtenemos:</h4>
+</div>
+<div id="z-dfracbarx-mudfracsigmasqrtn" class="section level4">
+<h4><span class="math display">\[Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}\]</span></h4>
+</div>
+<div id="entonces" class="section level4">
+<h4>entonces:</h4>
 </div>
 <div id="z-sim-normal01" class="section level4">
 <h4><span class="math display">\[Z \sim Normal(0,1)\]</span></h4>
 <blockquote>
-<p>Ilustración de como funciona el Teorema del límite central</p>
+<p>Ilustración de cómo funciona el Teorema del límite central</p>
 </blockquote>
 </div>
 <div id="considerar-una-poblacion-que-consiste-de-los-siguientes-datos-3-4-6-8-10-11-12-15-17.-es-decir-n9." class="section level4">
@@ -316,23 +324,23 @@ sd_N</code></pre>
 <h4><span class="math display">\[\sigma=4.77\]</span></h4>
 </div>
 <div id="extraemos-30-muestras-de-tamano-4-de-dicha-poblacion-esto-mediante-el-siguiente-codigo" class="section level4">
-<h4>2) Extraemos 30 muestras de tamaño 4 de dicha población, estó mediante el siguiente código</h4>
+<h4>2) Extraemos 30 muestras de tamaño 4 de dicha población, esto mediante el siguiente código</h4>
 <pre class="r"><code>N &lt;- c(3, 4, 6, 8, 10, 11, 12, 15, 17)
 d_mean &lt;- c()
 for (i in 1:30){
   d_mean[i] &lt;- mean(sample(N,size = 4,replace = TRUE))
 }
 print(d_mean)</code></pre>
-<pre><code>##  [1] 10.50 11.25 12.25  9.75  6.50 11.00 10.25  7.75  9.25  5.00  7.75
-## [12]  8.75 10.75 13.00 13.75  8.50 11.25  5.25 10.50  8.75  9.25  6.75
-## [23] 11.50  9.75  9.50  8.50  7.50  8.25  5.50 11.50</code></pre>
+<pre><code>##  [1]  8.75 10.00 10.75 11.00  9.00 10.75  9.00  9.50 11.50  6.25 12.25
+## [12] 10.00  6.50 10.75 11.00  9.50  7.75 10.25  9.75 12.50  6.25  9.75
+## [23] 10.50  9.00 12.25 10.00 11.25 11.75  9.50 11.25</code></pre>
 </div>
-<div id="tercero-calculamos-las-medias-de-todas-esas-muestras-y-tratamos-de-ver-graficamente-mediante-un-histograma-al-menos-si-hay-acercamiento-a-normalidad." class="section level4">
-<h4>3) Tercero, calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</h4>
+<div id="calculamos-las-medias-de-todas-esas-muestras-y-tratamos-de-ver-graficamente-mediante-un-histograma-al-menos-si-hay-acercamiento-a-normalidad." class="section level4">
+<h4>3) Calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</h4>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 9.325</code></pre>
+<pre><code>## [1] 9.941667</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.223648</code></pre>
+<pre><code>## [1] 1.6566</code></pre>
 <pre class="r"><code>hist(d_mean,col = &quot;cornflowerblue&quot;,freq = F,ylim = c(0,0.2))
 curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
@@ -343,20 +351,20 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <div id="notar-que-la-media-de-las-medias-muestrales-es" class="section level4">
 <h4>1. Notar que la media de las medias muestrales es</h4>
 </div>
-<div id="mu_barx-9.32." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.32.</h4>
+<div id="mu_barx-9.94." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.94.</h4>
 </div>
-<div id="este-resultado-que-esta-bien-cerca-de-la-media-poblacional." class="section level4">
-<h4>Este resultado que está bien cerca de la media poblacional.</h4>
+<div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55" class="section level4">
+<h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.806-mientras-que" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.806 mientras que</h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-1.66-mientras-que" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 1.66, mientras que</h4>
 </div>
-<div id="sigma_barxdfracsigmasqrtn-2.22." class="section level4">
-<h4><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\)</span> 2.22.</h4>
+<div id="sigma_barxdfracsigmasqrtndfrac4.77sqrt42.4-." class="section level4">
+<h4><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{4.77}{\sqrt{4}}=2.4\)</span> .</h4>
 </div>
-<div id="notamos-que-ambos-valores-tando-el-de-la-media-y-el-de-la-desviacion-estandar-estan-bien-proximos-a-los-valores-poblacionales." class="section level4">
-<h4>Notamos que ambos valores, tando el de la media y el de la desviación estandar están bien próximos a los valores poblacionales.</h4>
+<div id="notamos-que-ambos-valores-tambien-estan-relativamente-cerca." class="section level4">
+<h4>Notamos que ambos valores también están relativamente cerca.</h4>
 </div>
 <div id="el-histograma-esta-un-poco-alejado-de-la-idea-de-normalidad." class="section level4">
 <h4>El histograma está un poco alejado de la idea de Normalidad.</h4>
@@ -374,15 +382,53 @@ for (i in 1:10000){
 hist(d_mean,col = &quot;cornflowerblue&quot;,freq = F,ylim = c(0,0.2))
 curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Ahora, con un mayor número de muestras tenemos que:</p>
+</div>
+<div id="mu_barx-9.54." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.54.</h4>
+</div>
+<div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55-1" class="section level4">
+<h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
+</div>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.26-comparado-con-sigma_barx2.38" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.26, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
 </div>
 </div>
 <div id="aplicaciones" class="section level3">
 <h3>Aplicaciones:</h3>
+<ol style="list-style-type: decimal">
+<li><h4 id="estadisticas-de-gpa.-el-promedio-de-calificaciones-de-todos-los-estudiantes-que-toman-cursos-de-introduccion-a-la-estadistica-en-los-estados-unidos-varia-segun-una-distribucion-normal-normal3-0.2">Estadísticas de GPA. El promedio de calificaciones de todos los estudiantes que toman cursos de introducción a la estadística en los Estados Unidos varía según una distribución normal <span class="math inline">\(Normal(3, 0.2)\)</span></h4></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-distribucion-muestral-del-promedio-muestral-para-una-clase-de-5-estudiantes">¿Cuál es la distribución muestral del promedio muestral para una clase de 5 estudiantes?</h4></li>
+</ol>
+<div id="supongamos-que-x-es-la-variable-aleatoria-entonces" class="section level4">
+<h4>Supongamos que <span class="math inline">\(X\)</span> es la variable aleatoria, entonces</h4>
+</div>
+<div id="barx-sim-normalbig3frac0.2sqrt5big" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{5}}\Big)\]</span></h4>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-distribucion-muestral-del-promedio-muestral-para-una-clase-de-40-estudiantes">¿Cuál es la distribución muestral del promedio muestral para una clase de 40 estudiantes?</h4></li>
+</ol>
+</div>
+<div id="barx-sim-normalbig3frac0.2sqrt40big" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{40}}\Big)\]</span></h4>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-distribucion-muestral-del-promedio-muestral-para-una-clase-de-100-estudiantes">¿Cuál es la distribución muestral del promedio muestral para una clase de 100 estudiantes?</h4></li>
+</ol>
+</div>
+<div id="barx-sim-normalbig3frac0.2sqrt100big" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{100}}\Big)\]</span></h4>
+</div>
 </div>
 <div id="distribucion-de-la-proporcion-muestral" class="section level3">
 <h3>Distribución de la Proporción Muestral</h3>
-<p>Si de una población distribuida Binomialmente con probabilidad de éxito <span class="math inline">\(p\)</span>, se extrae una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es <span class="math inline">\(\mu=np\)</span> y que su varianza es <span class="math inline">\(\sigma^2=np(1-p)\)</span>. En consecuencia la proporción muestral <span class="math inline">\(\hat{p}=\dfrac{X}{n}\)</span> tiene media <span class="math inline">\(p\)</span> y varianza <span class="math inline">\(\dfrac{p(1-p)}{n}\)</span>. Entonces: por el Teorema del Límite Central, cuando <span class="math inline">\(n\)</span> es grande se tiene:</p>
-<p><span class="math display">\[Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}\]</span></p>
+<div id="si-de-una-poblacion-distribuida-binomialmente-con-probabilidad-de-exito-p-se-extrae-una-muestra-aleatoria-de-tamano-n-entonces-se-puede-mostrar-que-la-media-de-x-numero-de-exitos-en-la-muestra-es-munp-y-que-su-varianza-es-sigma2np1-p.-en-consecuencia-la-proporcion-muestral-hatpdfracxn-tiene-media-p-y-varianza-dfracp1-pn.-entonces-por-el-teorema-del-limite-central-cuando-n-es-grande-se-tiene" class="section level4">
+<h4>Si de una población distribuida Binomialmente con probabilidad de éxito <span class="math inline">\(p\)</span>, se extrae una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es <span class="math inline">\(\mu=np\)</span> y que su varianza es <span class="math inline">\(\sigma^2=np(1-p)\)</span>. En consecuencia la proporción muestral <span class="math inline">\(\hat{p}=\dfrac{X}{n}\)</span> tiene media <span class="math inline">\(p\)</span> y varianza <span class="math inline">\(\dfrac{p(1-p)}{n}\)</span>. Entonces: por el Teorema del Límite Central, cuando <span class="math inline">\(n\)</span> es grande se tiene:</h4>
+</div>
+<div id="zdfracx-npsqrtnp1-pdfrachatp-psqrtdfracp1-pn" class="section level4">
+<h4><span class="math display">\[Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}\]</span></h4>
+</div>
 </div>
 </div>
 

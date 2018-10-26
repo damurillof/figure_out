@@ -7,126 +7,138 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-En algunos casos una Distributión Binomial puede aproximarse por una distributión Normal (que tenga la misma media y varianza).
+#### En algunos casos una Distribución Binomial puede aproximarse por una distribución Normal (que tenga la misma media y varianza).
 
-Si X es una variable aleatoria Binomial de paramétros $n$ y $p$ podemos escribir:
+#### Si X es una variable aleatoria Binomial de parámetros $n$ y $p$ podemos escribir:
 
-$$X \sim Binom(n,p)$$
+#### $$X \sim Binom(n,p)$$
 
-Entonces, si Y es una variable aleatoria Normal con la misma media y varianza:
+#### entonces, si Y es una variable aleatoria Normal con la misma media y varianza:
 
-$\mu=np$
+#### $\mu=np$
 
-$\sigma=\sqrt{np(1-p)}$
+#### $\sigma=\sqrt{np(1-p)}$
 
-$$Y \sim Normal(\mu,\sigma)$$
+#### $$X \sim Normal(\mu,\sigma)$$
 
-Si $n$ es "bastante grande" y $p$ está "próximo a" $0.5$, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión). 
+#### Si $n$ es "bastante grande" y $p$ está "próximo a" $0.5$, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión). 
 
 ### Fórmulas de aproximación Normal a la Binomial.
 
-Si X es una variable aleatoria Binomial con parámetros n y p, es decir $X \sim Binom(n,p)$, entonces
+#### Si X es una variable aleatoria Binomial con parámetros n y p, es decir $X \sim Binom(n,p)$, entonces
 
-1.  $P(X=x)=P(x-0.5< X <x+0.5)=$
-
-
-2.  $P(a<X <b)=P(a+0.5< X < b-0.5)$
+1.  ####  $P(X=x)=P(x-0.5< X <x+0.5)$
 
 
-3.  $P(a\leq X \leq b)=P(a-0.5< X <b+0.5)$
+2.  ####  $P(a<X <b)=P(a+0.5< X < b-0.5)$
+
+
+3.  #### $P(a\leq X \leq b)=P(a-0.5< X <b+0.5)$
 
 
 > Ejemplos
 
 
-**Ejemplo 1** Considere el experimento de lanzar una moneda 100 veces.
+#### **Ejemplo 1** Considere el experimento de lanzar una moneda 100 veces.
 
-a) Encontrar la probabilidad de obtener 47 veces cruz usando directamente la Binomial.
+a)  #### Encontrar la probabilidad de obtener 47 veces cruz usando directamente la Binomial.
 
-Matemáticamente necesitamos encontrar $P(X=47)$
+####  Matemáticamente necesitamos encontrar $P(X=47)$
 
-Usando Distribución Binomial:
-
-
-$$P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066$$
-
-b) Calcular la probabilidad de observar 47 vecez cruz usando una aproximación Normal a la distribución Binomial:
+####  Usando Distribución Binomial:
 
 
-Tenemos que:
+#### $$P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066$$
+
+b)  #### Calcular la probabilidad de observar 47 veces cruz usando una aproximación Normal a la distribución Binomial:
 
 
-$\mu=np=100*0.5=50$
+#### Tenemos que:
 
 
-$\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5$
+#### $\mu=np=100*0.5=50$
 
-Entonces supongamos $Y$ una variable aleatoria normal 
 
-$$Y \sim Normal(50,5)$$
+#### $\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5$
+
+#### Entonces la aproximación normal de $X$ es:
+
+#### $$X \sim Normal(50,5)$$
+
 Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular 
 
 
-$P(Y=47)=P(46.5 < Y < 47.5)$
+#### $P(X=47)=P(46.5 < X < 47.5)$
 
-Entonces,
+#### Entonces,
 
-$$P(46.5 < Y < 47.5)=P(Y < 47.5) - P(Y < 46.5)$$
+#### $$P(46.5 < X < 47.5)=$$
 
-$$Z_1=\dfrac{46.5-50}{5}=-0.7$$
+#### $$P(X < 47.5) - P(X < 46.5)=$$
 
-$$Z_2=\dfrac{47.5-50}{5}=-0.5$$
-Usando R encontramos que 
+#### $$P(Z < \dfrac{47.5-50}{5}) - P(Z < \dfrac{46.5-50}{5})=$$
 
+#### $$P(Z < -0.5) - P(Z < -0.7)=$$
 
-Y a partir de una tabla de puntuación z, sabemos que:
-
-
-$z_1 = -0.7$ tiene una probabilidad de .2420
-
-
-$z_2 = -0.5$ tiene una probabilidad de .3085
-
-Restando los dos nos da una probabilidad de 0.0665 o 6.65 %.
-
-> Realizando todo el procedimiento en RStudio
-
-```{r}
-dbinom(x = 47, size = 100, prob = .5)
-dnorm(x = 47, mean = 50, sd = 5)
-pnorm(q = 47.5, mean = 50, sd = 5) - pnorm(q = 46.5, mean = 50, sd = 5)
-```
+#### $$0.30853 - 0.24196=0.06657$$
 
 
 > Ejemplo
 
 
-Según reportes del centro nacional para estadísticas de salud, alrededor del 20 % de la población masculina adulta de los Estados Unidos es obesa. Se elige al azar una muestra de 150 hombres adultos en los Estados Unidos. ¿Cuál es la probabilidad de que: 
+#### Según reportes del centro nacional para estadísticas de salud, alrededor del 20 % de la población masculina adulta de los Estados Unidos es obesa. Se elige al azar una muestra de 150 hombres adultos en los Estados Unidos. ¿Cuál es la probabilidad de que: 
 
-a) Se encuentren a lo más 25 personas obesas? 
+a)  #### Se encuentren a lo más 25 personas obesas? 
 
-$$P(X \leq 25)=P(X < 25.5)=P(Z < \dfrac{25.5-30}{\sqrt{24}})=P(Z < -0.91)=0.1814$$
+#### Tenemos que la distribución del número de hombres obesos en una muestra de 150, es Binomial, 
+
+#### Sea $X \sim Binomial(n=150,p=0.20)$, en teoría debemos calcular $P(X \leq 25)$.
+
+#### Pero podemos usar la distribución normal como una aproximación para este problema.
+
+#### Donde,
+
+#### $\mu=np=150*0.2=30$
+
+
+#### $\sigma=\sqrt{np(1-p)}=\sqrt{150*0.2(1-0.2)}=\sqrt{24}$
+
+#### Entonces,
+
+#### $X \sim Normal(30,\sqrt{24})$
+
+#### $$P(X \leq 25)=P(X < 25.5)=$$
+
+#### $$P\bigg(Z < \dfrac{25.5-30}{\sqrt{24}}\bigg)=$$
+
+#### $$P(Z < -0.91)=0.1814$$
 
 ```{r}
 pnorm(-0.91)
 ```
 
-o también,
-
-
 ```{r}
-pnorm(25.5,30,4.89)
+pbinom(25,150,0.2)
 ```
 
 
-b) Se encuentren más de 22 pero menos de 35 hombres obesos?
+b)  #### Se encuentren más de 22 pero menos de 35 hombres obesos?
 
-$$P(22<X <35)=P(22.5< X <34.5)=P(\dfrac{22.5-30}{\sqrt{24}}< Z < \dfrac{34.5-30}{\sqrt{24}})=$$
-$$P(-1.53< Z <0.91)=0.8186-0.063=0.7556$$
+#### $$P(22<X <35)=P(22.5< X <34.5)=$$
+
+#### $$P(X < 34.5) - P(X < 22.5)=$$
+
+#### $$P\bigg(Z < \dfrac{34.5-30}{\sqrt{24}}\bigg) - P\bigg(Z < \dfrac{22.5-30}{\sqrt{24}}\bigg)=$$
+
+
+#### $$P(Z < 0.91) - P(Z < -1.53)=$$
+
+#### $$0.8186-0.063=0.7556$$
 
 ```{r}
 pnorm(0.91) - pnorm(-1.53)
 ```
+
 
 
 

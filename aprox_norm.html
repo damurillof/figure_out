@@ -207,89 +207,168 @@ $(document).ready(function () {
 </div>
 
 
-<p>En algunos casos una Distributión Binomial puede aproximarse por una distributión Normal (que tenga la misma media y varianza).</p>
-<p>Si X es una variable aleatoria Binomial de paramétros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> podemos escribir:</p>
-<p><span class="math display">\[X \sim Binom(n,p)\]</span></p>
-<p>Entonces, si Y es una variable aleatoria Normal con la misma media y varianza:</p>
-<p><span class="math inline">\(\mu=np\)</span></p>
-<p><span class="math inline">\(\sigma=\sqrt{np(1-p)}\)</span></p>
-<p><span class="math display">\[Y \sim Normal(\mu,\sigma)\]</span></p>
-<p>Si <span class="math inline">\(n\)</span> es “bastante grande” y <span class="math inline">\(p\)</span> está “próximo a” <span class="math inline">\(0.5\)</span>, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión).</p>
+<div id="en-algunos-casos-una-distribucion-binomial-puede-aproximarse-por-una-distribucion-normal-que-tenga-la-misma-media-y-varianza." class="section level4">
+<h4>En algunos casos una Distribución Binomial puede aproximarse por una distribución Normal (que tenga la misma media y varianza).</h4>
+</div>
+<div id="si-x-es-una-variable-aleatoria-binomial-de-parametros-n-y-p-podemos-escribir" class="section level4">
+<h4>Si X es una variable aleatoria Binomial de parámetros <span class="math inline">\(n\)</span> y <span class="math inline">\(p\)</span> podemos escribir:</h4>
+</div>
+<div id="x-sim-binomnp" class="section level4">
+<h4><span class="math display">\[X \sim Binom(n,p)\]</span></h4>
+</div>
+<div id="entonces-si-y-es-una-variable-aleatoria-normal-con-la-misma-media-y-varianza" class="section level4">
+<h4>entonces, si Y es una variable aleatoria Normal con la misma media y varianza:</h4>
+</div>
+<div id="munp" class="section level4">
+<h4><span class="math inline">\(\mu=np\)</span></h4>
+</div>
+<div id="sigmasqrtnp1-p" class="section level4">
+<h4><span class="math inline">\(\sigma=\sqrt{np(1-p)}\)</span></h4>
+</div>
+<div id="x-sim-normalmusigma" class="section level4">
+<h4><span class="math display">\[X \sim Normal(\mu,\sigma)\]</span></h4>
+</div>
+<div id="si-n-es-bastante-grande-y-p-esta-proximo-a-0.5-la-distribucion-sera-bastante-simetrica-y-parecida-a-la-normal.-en-estos-casos-la-distribucion-normal-puede-darnos-excelentes-aproximaciones.-sin-embargo-la-aproximacion-no-sera-precisa-para-valores-pequenos-de-n.-hay-varias-reglas-o-criterios-que-intentan-precisar-cuando-es-adecuado-el-uso-de-la-aproximacion-normal-aunque-esto-depende-del-problema-estudiado-y-de-la-conveniencia-de-una-mayor-o-menor-precision." class="section level4">
+<h4>Si <span class="math inline">\(n\)</span> es “bastante grande” y <span class="math inline">\(p\)</span> está “próximo a” <span class="math inline">\(0.5\)</span>, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión).</h4>
+</div>
 <div id="formulas-de-aproximacion-normal-a-la-binomial." class="section level3">
 <h3>Fórmulas de aproximación Normal a la Binomial.</h3>
-<p>Si X es una variable aleatoria Binomial con parámetros n y p, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, entonces</p>
+<div id="si-x-es-una-variable-aleatoria-binomial-con-parametros-n-y-p-es-decir-x-sim-binomnp-entonces" class="section level4">
+<h4>Si X es una variable aleatoria Binomial con parámetros n y p, es decir <span class="math inline">\(X \sim Binom(n,p)\)</span>, entonces</h4>
 <ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(P(X=x)=P(x-0.5&lt; X &lt;x+0.5)=\)</span></p></li>
-<li><p><span class="math inline">\(P(a&lt;X &lt;b)=P(a+0.5&lt; X &lt; b-0.5)\)</span></p></li>
-<li><p><span class="math inline">\(P(a\leq X \leq b)=P(a-0.5&lt; X &lt;b+0.5)\)</span></p></li>
+<li><h4 id="pxxpx-0.5-x-x0.5"><span class="math inline">\(P(X=x)=P(x-0.5&lt; X &lt;x+0.5)\)</span></h4></li>
+<li><h4 id="pax-bpa0.5-x-b-0.5"><span class="math inline">\(P(a&lt;X &lt;b)=P(a+0.5&lt; X &lt; b-0.5)\)</span></h4></li>
+<li><h4 id="paleq-x-leq-bpa-0.5-x-b0.5"><span class="math inline">\(P(a\leq X \leq b)=P(a-0.5&lt; X &lt;b+0.5)\)</span></h4></li>
 </ol>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
-<p><strong>Ejemplo 1</strong> Considere el experimento de lanzar una moneda 100 veces.</p>
+</div>
+<div id="ejemplo-1-considere-el-experimento-de-lanzar-una-moneda-100-veces." class="section level4">
+<h4><strong>Ejemplo 1</strong> Considere el experimento de lanzar una moneda 100 veces.</h4>
 <ol style="list-style-type: lower-alpha">
-<li>Encontrar la probabilidad de obtener 47 veces cruz usando directamente la Binomial.</li>
+<li><h4 id="encontrar-la-probabilidad-de-obtener-47-veces-cruz-usando-directamente-la-binomial.">Encontrar la probabilidad de obtener 47 veces cruz usando directamente la Binomial.</h4></li>
 </ol>
-<p>Matemáticamente necesitamos encontrar <span class="math inline">\(P(X=47)\)</span></p>
-<p>Usando Distribución Binomial:</p>
-<p><span class="math display">\[P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066\]</span></p>
+</div>
+<div id="matematicamente-necesitamos-encontrar-px47" class="section level4">
+<h4>Matemáticamente necesitamos encontrar <span class="math inline">\(P(X=47)\)</span></h4>
+</div>
+<div id="usando-distribucion-binomial" class="section level4">
+<h4>Usando Distribución Binomial:</h4>
+</div>
+<div id="px47100-choose-470.5470.5100-470.066" class="section level4">
+<h4><span class="math display">\[P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066\]</span></h4>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Calcular la probabilidad de observar 47 vecez cruz usando una aproximación Normal a la distribución Binomial:</li>
+<li><h4 id="calcular-la-probabilidad-de-observar-47-veces-cruz-usando-una-aproximacion-normal-a-la-distribucion-binomial">Calcular la probabilidad de observar 47 veces cruz usando una aproximación Normal a la distribución Binomial:</h4></li>
 </ol>
-<p>Tenemos que:</p>
-<p><span class="math inline">\(\mu=np=100*0.5=50\)</span></p>
-<p><span class="math inline">\(\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5\)</span></p>
-<p>Entonces supongamos <span class="math inline">\(Y\)</span> una variable aleatoria normal</p>
-<p><span class="math display">\[Y \sim Normal(50,5)\]</span> Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular de 46.5 a 47.5 usando normalización.</p>
-<p><span class="math display">\[Z_1=\dfrac{46.5-50}{5}=-0.7\]</span></p>
-<p><span class="math display">\[Z_2=\dfrac{47.5-50}{5}=-0.5\]</span> Usando R encontramos que</p>
-<p>Y a partir de una tabla de puntuación z, sabemos que:</p>
-<p><span class="math inline">\(z_1 = -0.7\)</span> tiene una probabilidad de .2420</p>
-<p><span class="math inline">\(z_2 = -0.5\)</span> tiene una probabilidad de .3085</p>
-<p>Restando los dos nos da una probabilidad de 0.0665 o 6.65 %.</p>
-<blockquote>
-<p>Realizando todo el procedimiento en RStudio</p>
-</blockquote>
-<pre class="r"><code>dbinom(x = 47, size = 100, prob = .5)</code></pre>
-<pre><code>## [1] 0.0665905</code></pre>
-<pre class="r"><code>dnorm(x = 47, mean = 50, sd = 5)</code></pre>
-<pre><code>## [1] 0.06664492</code></pre>
-<pre class="r"><code>pnorm(q = 47.5, mean = 50, sd = 5) - pnorm(q = 46.5, mean = 50, sd = 5)</code></pre>
-<pre><code>## [1] 0.06657389</code></pre>
+</div>
+<div id="tenemos-que" class="section level4">
+<h4>Tenemos que:</h4>
+</div>
+<div id="munp1000.550" class="section level4">
+<h4><span class="math inline">\(\mu=np=100*0.5=50\)</span></h4>
+</div>
+<div id="sigmasqrtnp1-psqrt1000.50.55" class="section level4">
+<h4><span class="math inline">\(\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5\)</span></h4>
+</div>
+<div id="entonces-la-aproximacion-normal-de-x-es" class="section level4">
+<h4>Entonces la aproximación normal de <span class="math inline">\(X\)</span> es:</h4>
+</div>
+<div id="x-sim-normal505" class="section level4">
+<h4><span class="math display">\[X \sim Normal(50,5)\]</span></h4>
+<p>Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular</p>
+</div>
+<div id="px47p46.5-x-47.5" class="section level4">
+<h4><span class="math inline">\(P(X=47)=P(46.5 &lt; X &lt; 47.5)\)</span></h4>
+</div>
+<div id="entonces" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="p46.5-x-47.5" class="section level4">
+<h4><span class="math display">\[P(46.5 &lt; X &lt; 47.5)=\]</span></h4>
+</div>
+<div id="px-47.5---px-46.5" class="section level4">
+<h4><span class="math display">\[P(X &lt; 47.5) - P(X &lt; 46.5)=\]</span></h4>
+</div>
+<div id="pz-dfrac47.5-505---pz-dfrac46.5-505" class="section level4">
+<h4><span class="math display">\[P(Z &lt; \dfrac{47.5-50}{5}) - P(Z &lt; \dfrac{46.5-50}{5})=\]</span></h4>
+</div>
+<div id="pz--0.5---pz--0.7" class="section level4">
+<h4><span class="math display">\[P(Z &lt; -0.5) - P(Z &lt; -0.7)=\]</span></h4>
+</div>
+<div id="section" class="section level4">
+<h4><span class="math display">\[0.30853 - 0.24196=0.06657\]</span></h4>
 <blockquote>
 <p>Ejemplo</p>
 </blockquote>
-<p>Según reportes del centro nacional para estadísticas de salud, alrededor del 20 % de la población masculina adulta de los Estados Unidos es obesa. Se elige al azar una muestra de 150 hombres adultos en los Estados Unidos. ¿Cuál es la probabilidad de que:</p>
+</div>
+<div id="segun-reportes-del-centro-nacional-para-estadisticas-de-salud-alrededor-del-20-de-la-poblacion-masculina-adulta-de-los-estados-unidos-es-obesa.-se-elige-al-azar-una-muestra-de-150-hombres-adultos-en-los-estados-unidos.-cual-es-la-probabilidad-de-que" class="section level4">
+<h4>Según reportes del centro nacional para estadísticas de salud, alrededor del 20 % de la población masculina adulta de los Estados Unidos es obesa. Se elige al azar una muestra de 150 hombres adultos en los Estados Unidos. ¿Cuál es la probabilidad de que:</h4>
 <ol style="list-style-type: lower-alpha">
-<li>Se encuentren a lo más 25 personas obesas?</li>
+<li><h4 id="se-encuentren-a-lo-mas-25-personas-obesas">Se encuentren a lo más 25 personas obesas?</h4></li>
 </ol>
-<p><span class="math display">\[P(X \leq 25)=P(X &lt; 25.5)=P(Z &lt; \dfrac{25.5-30}{\sqrt{24}})=P(Z &lt; -0.91)=0.1814\]</span></p>
+</div>
+<div id="tenemos-que-la-distribucion-del-numero-de-hombres-obesos-en-una-muestra-de-150-es-binomial" class="section level4">
+<h4>Tenemos que la distribución del número de hombres obesos en una muestra de 150, es Binomial,</h4>
+</div>
+<div id="sea-x-sim-binomialn150p0.20-en-teoria-debemos-calcular-px-leq-25." class="section level4">
+<h4>Sea <span class="math inline">\(X \sim Binomial(n=150,p=0.20)\)</span>, en teoría debemos calcular <span class="math inline">\(P(X \leq 25)\)</span>.</h4>
+</div>
+<div id="pero-podemos-usar-la-distribucion-normal-como-una-aproximacion-para-este-problema." class="section level4">
+<h4>Pero podemos usar la distribución normal como una aproximación para este problema.</h4>
+</div>
+<div id="donde" class="section level4">
+<h4>Donde,</h4>
+</div>
+<div id="munp1500.230" class="section level4">
+<h4><span class="math inline">\(\mu=np=150*0.2=30\)</span></h4>
+</div>
+<div id="sigmasqrtnp1-psqrt1500.21-0.2sqrt24" class="section level4">
+<h4><span class="math inline">\(\sigma=\sqrt{np(1-p)}=\sqrt{150*0.2(1-0.2)}=\sqrt{24}\)</span></h4>
+</div>
+<div id="entonces-1" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="x-sim-normal30sqrt24" class="section level4">
+<h4><span class="math inline">\(X \sim Normal(30,\sqrt{24})\)</span></h4>
+</div>
+<div id="px-leq-25px-25.5" class="section level4">
+<h4><span class="math display">\[P(X \leq 25)=P(X &lt; 25.5)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac25.5-30sqrt24bigg" class="section level4">
+<h4><span class="math display">\[P\bigg(Z &lt; \dfrac{25.5-30}{\sqrt{24}}\bigg)=\]</span></h4>
+</div>
+<div id="pz--0.910.1814" class="section level4">
+<h4><span class="math display">\[P(Z &lt; -0.91)=0.1814\]</span></h4>
 <pre class="r"><code>pnorm(-0.91)</code></pre>
 <pre><code>## [1] 0.1814113</code></pre>
-<p>o también,</p>
-<pre class="r"><code>pnorm(25.5,30,4.89)</code></pre>
-<pre><code>## [1] 0.1787223</code></pre>
+<pre class="r"><code>pbinom(25,150,0.2)</code></pre>
+<pre><code>## [1] 0.1799257</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Se encuentren más de 22 pero menos de 35 hombres obesos?</li>
+<li><h4 id="se-encuentren-mas-de-22-pero-menos-de-35-hombres-obesos">Se encuentren más de 22 pero menos de 35 hombres obesos?</h4></li>
 </ol>
-<p><span class="math display">\[P(22&lt;X &lt;35)=P(22.5&lt; X &lt;34.5)=P(\dfrac{22.5-30}{\sqrt{24}}&lt; Z &lt; \dfrac{34.5-30}{\sqrt{24}})=\]</span> <span class="math display">\[P(-1.53&lt; Z &lt;0.91)=0.8186-0.063=0.7556\]</span></p>
+</div>
+<div id="p22x-35p22.5-x-34.5" class="section level4">
+<h4><span class="math display">\[P(22&lt;X &lt;35)=P(22.5&lt; X &lt;34.5)=\]</span></h4>
+</div>
+<div id="px-34.5---px-22.5" class="section level4">
+<h4><span class="math display">\[P(X &lt; 34.5) - P(X &lt; 22.5)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac34.5-30sqrt24bigg---pbiggz-dfrac22.5-30sqrt24bigg" class="section level4">
+<h4><span class="math display">\[P\bigg(Z &lt; \dfrac{34.5-30}{\sqrt{24}}\bigg) - P\bigg(Z &lt; \dfrac{22.5-30}{\sqrt{24}}\bigg)=\]</span></h4>
+</div>
+<div id="pz-0.91---pz--1.53" class="section level4">
+<h4><span class="math display">\[P(Z &lt; 0.91) - P(Z &lt; -1.53)=\]</span></h4>
+</div>
+<div id="section-1" class="section level4">
+<h4><span class="math display">\[0.8186-0.063=0.7556\]</span></h4>
 <pre class="r"><code>pnorm(0.91) - pnorm(-1.53)</code></pre>
 <pre><code>## [1] 0.7555804</code></pre>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
 </div>
 
 

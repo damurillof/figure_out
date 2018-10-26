@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Distribución de la media muestral cuando la población es normal
 
-#### Suponga que su objeto de estudio es una población normal y de donde  se extraen muestras aleatorias de tamaño $n$ de una población infinita con media poblacional $\mu$ y varianza $\sigma^2$
+#### Suponga que su objeto de estudio es una población normal y de donde  se extraen muestras aleatorias de tamaño $n$ de una población infinita con media poblacional $\mu$ y varianza $\sigma^2$. Entonces,
 
 * #### 	La media de las medias muestrales es igual a la media poblacional. Es decir,
 
@@ -47,21 +47,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### $$\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}$$
 
+Finalmente se cumple que 
+
+#### $$\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})$$
+
 ### El Teorema del Límite Central
 
-#### De una población infinita con media y varianza se extraen muestras aleatorias de tamaño $n$, entonces la media muestral $\bar{X}$ se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional $\mu$ y con desviación estándar  $\sigma$ igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:
+#### De una población con media y varianza se extraen muestras aleatorias de tamaño $n$, entonces la media muestral $\bar{X}$ se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional $\mu$ y con desviación estándar  $\sigma$ igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:
 
-$$\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})$$
+####$$\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})$$
 
-#### Estandarizando, obtenemos: 
+#### Estandarizado, obtenemos: 
 
-$$Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$$
+#### $$Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$$
 
-#### tenemos:
+#### entonces:
 
 #### $$Z \sim Normal(0,1)$$
 
-> Ilustración de como funciona el Teorema del límite central
+> Ilustración de cómo funciona el Teorema del límite central
 
 ####Considerar una población que consiste de los siguientes datos: 3, 4, 6, 8, 10, 11, 12, 15, 17. Es decir N=9.
 
@@ -83,7 +87,7 @@ sd_N
 
 #### $$\sigma=4.77$$
 
-####  2) Extraemos 30 muestras de tamaño 4 de dicha población, estó mediante el siguiente código
+####  2) Extraemos 30 muestras de tamaño 4 de dicha población, esto mediante el siguiente código
 
 ```{r }
 N <- c(3, 4, 6, 8, 10, 11, 12, 15, 17)
@@ -95,7 +99,7 @@ print(d_mean)
 ```
 
 
-####  3)   Tercero, calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.
+####  3)   Calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.
 
 ```{r }
 mean(d_mean)
@@ -108,15 +112,15 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)
 
 #### 1.  Notar que la media de las medias muestrales es 
 
-#### $\mu_{\bar{X}}=$ `r round(mean(d_mean),2)`. 
+#### $\mu_{\bar{X}}=$ `r round(mean(d_mean),2)`.  
 
-#### Este resultado que está bien cerca de la media poblacional. 
+#### Este resultado está bien cerca de la media poblacional, pues $\mu=9.55$
 
-#### 2. La desviación estándar de la media muestral es 2.806 mientras que 
+#### 2. La desviación estándar de la media muestral es `r round(sd(d_mean),2)`, mientras que 
 
-#### $\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=$ `r round(sd(d_mean),2)`. 
+#### $\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{4.77}{\sqrt{4}}=2.4$ . 
 
-#### Notamos que ambos valores, tando el de la media y el de la desviación estandar están bien próximos a los valores poblacionales. 
+#### Notamos que ambos valores también están relativamente cerca.
 
 #### El histograma está un poco alejado de la idea de Normalidad. 
 
@@ -136,14 +140,37 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)
 ```
 
 
+Ahora, con un mayor número de muestras tenemos que:
+
+#### $\mu_{\bar{X}}=$ `r round(mean(d_mean),2)`.  
+
+#### Este resultado está bien cerca de la media poblacional, pues $\mu=9.55$
+
+#### 2. La desviación estándar de la media muestral es `r round(sd(d_mean),2)`, comparado con $\sigma_{\bar{X}}=2.38$
+
+
 ### Aplicaciones:
 
+1.  #### Estadísticas de GPA. El promedio de calificaciones de todos los estudiantes que toman cursos de introducción a la estadística en los Estados Unidos varía según una distribución normal $Normal(3, 0.2)$
 
+
+(a) #### ¿Cuál es la distribución muestral del promedio muestral para una clase de 5 estudiantes?
+
+#### Supongamos que $X$ es la variable aleatoria, entonces
+
+#### $$\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{5}}\Big)$$
+
+(b) #### ¿Cuál es la distribución muestral del promedio muestral para una clase de 40 estudiantes?
+
+#### $$\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{40}}\Big)$$
+
+(c) #### ¿Cuál es la distribución muestral del promedio muestral para una clase de 100 estudiantes?
+
+#### $$\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{100}}\Big)$$
 
 ### Distribución de la Proporción Muestral
 
 
-Si de una población distribuida Binomialmente con probabilidad de éxito $p$, se extrae una muestra aleatoria de tamaño $n$, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es $\mu=np$ y que su varianza es $\sigma^2=np(1-p)$. En consecuencia la proporción muestral $\hat{p}=\dfrac{X}{n}$ tiene media $p$ y varianza $\dfrac{p(1-p)}{n}$. Entonces: por el Teorema del Límite Central, cuando $n$ es grande se tiene:
+#### Si de una población distribuida Binomialmente con probabilidad de éxito $p$, se extrae una muestra aleatoria de tamaño $n$, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es $\mu=np$ y que su varianza es $\sigma^2=np(1-p)$. En consecuencia la proporción muestral $\hat{p}=\dfrac{X}{n}$ tiene media $p$ y varianza $\dfrac{p(1-p)}{n}$. Entonces: por el Teorema del Límite Central, cuando $n$ es grande se tiene:
 
-$$Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}$$
-
+#### $$Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}$$
