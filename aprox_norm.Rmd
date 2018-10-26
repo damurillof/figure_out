@@ -7,10 +7,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-En algunos casos una Distributión Binomial puede aproximarse por una Distributión Normal (que tenga la misma media y varianza).
+En algunos casos una Distributión Binomial puede aproximarse por una distributión Normal (que tenga la misma media y varianza).
 
-Si X es una variable aleatoria con una Distribución Normal podemos escribir:
-
+Si X es una variable aleatoria Binomial de paramétros $n$ y $p$ podemos escribir:
 
 $$X \sim Binom(n,p)$$
 
@@ -20,24 +19,38 @@ $\mu=np$
 
 $\sigma=\sqrt{np(1-p)}$
 
-$$X \sim Normal(\mu,\sigma)$$
+$$Y \sim Normal(\mu,\sigma)$$
 
-Si n es "bastante grande" y p está "próximo a" 0.5, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la Distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión). 
+Si $n$ es "bastante grande" y $p$ está "próximo a" $0.5$, la distribución será bastante simétrica y parecida a la Normal. En estos casos, la distribución Normal puede darnos excelentes aproximaciones. Sin embargo, la aproximación no será precisa para valores pequeños de n. Hay varias reglas o criterios que intentan precisar cuando es adecuado el uso de la aproximación Normal (aunque esto depende del problema estudiado y de la conveniencia de una mayor o menor precisión). 
+
+### Fórmulas de aproximación Normal a la Binomial.
+
+Si X es una variable aleatoria Binomial con parámetros n y p, es decir $X \sim Binom(n,p)$, entonces
+
+1.  $P(X=x)=P(x-0.5< X <x+0.5)=$
+
+
+2.  $P(a<X <b)=P(a+0.5< X < b-0.5)$
+
+
+3.  $P(a\leq X \leq b)=P(a-0.5< X <b+0.5)$
 
 
 > Ejemplos
 
 
-Entonces, como ejemplo, considere lanzar una moneda 100 veces e intentar encontrar la probabilidad de obtener 47 veces cruz.
+**Ejemplo 1** Considere el experimento de lanzar una moneda 100 veces.
 
-Matematicamente tenemos 
+a) Encontrar la probabilidad de obtener 47 veces cruz usando directamente la Binomial.
+
+Matemáticamente necesitamos encontrar $P(X=47)$
 
 Usando Distribución Binomial:
 
 
 $$P(X=47)={100 \choose 47}*(0.5)^{47}*(0.5)^{100-47}=0.066$$
 
-Usando una aproximación a la  distribución Normal:
+b) Calcular la probabilidad de observar 47 vecez cruz usando una aproximación Normal a la distribución Binomial:
 
 
 Tenemos que:
@@ -51,7 +64,14 @@ $\sigma=\sqrt{np(1-p)}=\sqrt{100*0.5*0.5}=5$
 Entonces supongamos $Y$ una variable aleatoria normal 
 
 $$Y \sim Normal(50,5)$$
-Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular de 46.5 a 47.5 usando normalización.
+Y dado que estamos usando una aproximación normal de una distribución binomial, debemos calcular 
+
+
+$P(Y=47)=P(46.5 < Y < 47.5)$
+
+Entonces,
+
+$$P(46.5 < Y < 47.5)=P(Y < 47.5) - P(Y < 46.5)$$
 
 $$Z_1=\dfrac{46.5-50}{5}=-0.7$$
 
@@ -76,18 +96,6 @@ dbinom(x = 47, size = 100, prob = .5)
 dnorm(x = 47, mean = 50, sd = 5)
 pnorm(q = 47.5, mean = 50, sd = 5) - pnorm(q = 46.5, mean = 50, sd = 5)
 ```
-
-### Fórmulas de aproximación Normal a la Binomial.
-
-Si X es una variable aleatoria Binomial con parámetros n y p, es decir $X \sim Binom(n,p)$, entonces
-
-1.  $P(X=x)=P(x-0.5< X <x+0.5)=P(\dfrac{x-0.5-np}{\sqrt{np(1-p)}}< Z < \dfrac{x+0.5-np}{\sqrt{np(1-p)}})$
-
-
-2.  $P(a<X <b)=P(a+0.5< X <b-0.5)=P(\dfrac{a+0.5-np}{\sqrt{np(1-p)}}< Z < \dfrac{b-0.5-np}{\sqrt{np(1-p)}})$
-
-
-3.  $P(a\leq X \leq b)=P(a-0.5< X <b+0.5)=P(\dfrac{a-0.5-np}{\sqrt{np(1-p)}}< Z <\dfrac{b+0.5-np}{\sqrt{np(1-p)}})$
 
 
 > Ejemplo
@@ -122,35 +130,4 @@ pnorm(0.91) - pnorm(-1.53)
 
 
 
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
-
-
+![](blanco.png)
