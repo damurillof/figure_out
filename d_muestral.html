@@ -331,16 +331,16 @@ for (i in 1:30){
   d_mean[i] &lt;- mean(sample(N,size = 4,replace = TRUE))
 }
 print(d_mean)</code></pre>
-<pre><code>##  [1] 11.00 13.25  7.75 12.00  9.25 12.75  7.25  4.00  9.25  7.50  8.50
-## [12] 10.00  8.00  7.00  7.25  6.75  8.50 11.50 10.25  7.75  9.75 12.25
-## [23] 10.50 10.00  8.00 12.25  7.25  9.00 10.75  6.75</code></pre>
+<pre><code>##  [1]  7.50  8.75  6.75 13.50  8.00  9.00 11.50  9.75 11.50 10.75  6.25
+## [12] 11.25 10.75 10.25  8.75 10.25 12.50 10.75 11.50  8.00  8.75 11.75
+## [23] 12.25  8.75 10.25 12.25 10.00 14.75 11.75  5.75</code></pre>
 </div>
 <div id="calculamos-las-medias-de-todas-esas-muestras-y-tratamos-de-ver-graficamente-mediante-un-histograma-al-menos-si-hay-acercamiento-a-normalidad." class="section level4">
 <h4>3) Calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</h4>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 9.2</code></pre>
+<pre><code>## [1] 10.11667</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.173905</code></pre>
+<pre><code>## [1] 2.12815</code></pre>
 <pre class="r"><code>hist(d_mean,col = &quot;cornflowerblue&quot;,freq = F,ylim = c(0,0.2))
 curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
@@ -351,14 +351,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <div id="notar-que-la-media-de-las-medias-muestrales-es" class="section level4">
 <h4>1. Notar que la media de las medias muestrales es</h4>
 </div>
-<div id="mu_barx-9.2." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.2.</h4>
+<div id="mu_barx-10.12." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 10.12.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.17-mientras-que" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.17, mientras que</h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.13-mientras-que" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.13, mientras que</h4>
 </div>
 <div id="sigma_barxdfracsigmasqrtndfrac4.77sqrt42.4-." class="section level4">
 <h4><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{4.77}{\sqrt{4}}=2.4\)</span> .</h4>
@@ -384,14 +384,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Ahora, con un mayor número de muestras tenemos que:</p>
 </div>
-<div id="mu_barx-9.54." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.54.</h4>
+<div id="mu_barx-9.52." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.52.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55-1" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.26-comparado-con-sigma_barx2.38" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.26, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.22-comparado-con-sigma_barx2.38" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.22, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
 </div>
 </div>
 <div id="aplicaciones" class="section level3">
@@ -431,8 +431,8 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <li><h4 id="cual-es-la-probabilidad-de-encontrar-un-promedio-muestral-entre-8-y-15">¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?</h4></li>
 </ol>
 </div>
-<div id="caso-2-cuando-desconocemos-la-distribucion-de-la-poblacion-y-nreq-30" class="section level4">
-<h4>Caso 2: Cuando desconocemos la distribución de la población y <span class="math inline">\(n\req 30\)</span></h4>
+<div id="caso-2-cuando-desconocemos-la-distribucion-de-la-poblacion-y-n-geq-30" class="section level4">
+<h4>Caso 2: Cuando desconocemos la distribución de la población y <span class="math inline">\(n \geq 30\)</span></h4>
 <ol style="list-style-type: decimal">
 <li><h4 id="supongamos-que-el-ingreso-familiar-promedio-en-los-estados-unidos-es-de-51344-con-una-desviacion-estandar-de-15377.-cual-es-la-probabilidad-de-que-una-muestra-aleatoria-de-124-hogares-tenga-un-ingreso-familiar-promedio-de-mas-de-54000">Supongamos que el ingreso familiar promedio en los Estados Unidos es de <span class="math inline">\(\$51,344\)</span>, con una desviación estándar de <span class="math inline">\(\$15,377\)</span>. ¿Cuál es la probabilidad de que una muestra aleatoria de <span class="math inline">\(124\)</span> hogares tenga un ingreso familiar promedio de más de $ 54,000?</h4></li>
 </ol>

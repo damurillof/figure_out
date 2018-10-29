@@ -180,7 +180,7 @@ Ahora, con un mayor número de muestras tenemos que:
 (c) #### ¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?
 
 
-#### Caso 2: Cuando desconocemos la distribución de la población y $n\req 30$
+#### Caso 2: Cuando desconocemos la distribución de la población y $n \geq 30$
 
 1.  #### Supongamos que el ingreso familiar promedio en los Estados Unidos es de $\$51,344$, con una desviación estándar de $\$15,377$. ¿Cuál es la probabilidad de que una muestra aleatoria de $124$ hogares tenga un ingreso familiar promedio de más de $ 54,000?
 
