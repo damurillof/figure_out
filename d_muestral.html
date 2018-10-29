@@ -331,16 +331,16 @@ for (i in 1:30){
   d_mean[i] &lt;- mean(sample(N,size = 4,replace = TRUE))
 }
 print(d_mean)</code></pre>
-<pre><code>##  [1]  8.75 10.00 10.75 11.00  9.00 10.75  9.00  9.50 11.50  6.25 12.25
-## [12] 10.00  6.50 10.75 11.00  9.50  7.75 10.25  9.75 12.50  6.25  9.75
-## [23] 10.50  9.00 12.25 10.00 11.25 11.75  9.50 11.25</code></pre>
+<pre><code>##  [1] 11.00 13.25  7.75 12.00  9.25 12.75  7.25  4.00  9.25  7.50  8.50
+## [12] 10.00  8.00  7.00  7.25  6.75  8.50 11.50 10.25  7.75  9.75 12.25
+## [23] 10.50 10.00  8.00 12.25  7.25  9.00 10.75  6.75</code></pre>
 </div>
 <div id="calculamos-las-medias-de-todas-esas-muestras-y-tratamos-de-ver-graficamente-mediante-un-histograma-al-menos-si-hay-acercamiento-a-normalidad." class="section level4">
 <h4>3) Calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</h4>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 9.941667</code></pre>
+<pre><code>## [1] 9.2</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 1.6566</code></pre>
+<pre><code>## [1] 2.173905</code></pre>
 <pre class="r"><code>hist(d_mean,col = &quot;cornflowerblue&quot;,freq = F,ylim = c(0,0.2))
 curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
@@ -351,14 +351,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <div id="notar-que-la-media-de-las-medias-muestrales-es" class="section level4">
 <h4>1. Notar que la media de las medias muestrales es</h4>
 </div>
-<div id="mu_barx-9.94." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.94.</h4>
+<div id="mu_barx-9.2." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.2.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-1.66-mientras-que" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 1.66, mientras que</h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.17-mientras-que" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.17, mientras que</h4>
 </div>
 <div id="sigma_barxdfracsigmasqrtndfrac4.77sqrt42.4-." class="section level4">
 <h4><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{4.77}{\sqrt{4}}=2.4\)</span> .</h4>
@@ -396,12 +396,15 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 </div>
 <div id="aplicaciones" class="section level3">
 <h3>Aplicaciones:</h3>
+<div id="caso-1-cuando-la-poblacion-es-normal." class="section level4">
+<h4>Caso 1: Cuando la población es normal.</h4>
 <ol style="list-style-type: decimal">
 <li><h4 id="estadisticas-de-gpa.-el-promedio-de-calificaciones-de-todos-los-estudiantes-que-toman-cursos-de-introduccion-a-la-estadistica-en-los-estados-unidos-varia-segun-una-distribucion-normal-normal3-0.2">Estadísticas de GPA. El promedio de calificaciones de todos los estudiantes que toman cursos de introducción a la estadística en los Estados Unidos varía según una distribución normal <span class="math inline">\(Normal(3, 0.2)\)</span></h4></li>
 </ol>
 <ol style="list-style-type: lower-alpha">
 <li><h4 id="cual-es-la-distribucion-muestral-del-promedio-muestral-para-una-clase-de-5-estudiantes">¿Cuál es la distribución muestral del promedio muestral para una clase de 5 estudiantes?</h4></li>
 </ol>
+</div>
 <div id="supongamos-que-x-es-la-variable-aleatoria-entonces" class="section level4">
 <h4>Supongamos que <span class="math inline">\(X\)</span> es la variable aleatoria, entonces</h4>
 </div>
@@ -419,6 +422,20 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 </div>
 <div id="barx-sim-normalbig3frac0.2sqrt100big" class="section level4">
 <h4><span class="math display">\[\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{100}}\Big)\]</span></h4>
+<ol start="2" style="list-style-type: decimal">
+<li><h4 id="se-extrae-un-muestra-de-tamano-n30-de-una-poblacion-que-tiene-una-distribucion-desconocida-con-media-mu-y-varianza-sigma2-pero-que-por-alguna-razon-conocemos-que-mu10y-que-sigma233.34.-con-la-informacion-anterior-estamos-interesados-en-contestar-las-siguientes-preguntas">Se extrae un muestra de tamaño <span class="math inline">\(n=30\)</span> de una población que tiene una distribución desconocida con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>, pero que por alguna razón conocemos que <span class="math inline">\(\mu=10\)</span>y que <span class="math inline">\(\sigma^2=33.34\)</span>. Con la información anterior estamos interesados en contestar las siguientes preguntas:</h4></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-distribucion-muestral-del-promedio-muestral-es-decir-la-distribucion-de-barx">¿Cuál es la distribución muestral del promedio muestral?, es decir la distribución de <span class="math inline">\(\bar{X}\)</span></h4></li>
+<li><h4 id="cual-es-la-probabilidad-de-obtener-un-promedio-muestral-mayor-a-12.5">¿Cuál es la probabilidad de obtener un promedio muestral mayor a 12.5?</h4></li>
+<li><h4 id="cual-es-la-probabilidad-de-encontrar-un-promedio-muestral-entre-8-y-15">¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?</h4></li>
+</ol>
+</div>
+<div id="caso-2-cuando-desconocemos-la-distribucion-de-la-poblacion-y-nreq-30" class="section level4">
+<h4>Caso 2: Cuando desconocemos la distribución de la población y <span class="math inline">\(n\req 30\)</span></h4>
+<ol style="list-style-type: decimal">
+<li><h4 id="supongamos-que-el-ingreso-familiar-promedio-en-los-estados-unidos-es-de-51344-con-una-desviacion-estandar-de-15377.-cual-es-la-probabilidad-de-que-una-muestra-aleatoria-de-124-hogares-tenga-un-ingreso-familiar-promedio-de-mas-de-54000">Supongamos que el ingreso familiar promedio en los Estados Unidos es de <span class="math inline">\(\$51,344\)</span>, con una desviación estándar de <span class="math inline">\(\$15,377\)</span>. ¿Cuál es la probabilidad de que una muestra aleatoria de <span class="math inline">\(124\)</span> hogares tenga un ingreso familiar promedio de más de $ 54,000?</h4></li>
+</ol>
 </div>
 </div>
 <div id="distribucion-de-la-proporcion-muestral" class="section level3">

@@ -151,6 +151,8 @@ Ahora, con un mayor número de muestras tenemos que:
 
 ### Aplicaciones:
 
+#### Caso 1: Cuando la población es normal. 
+
 1.  #### Estadísticas de GPA. El promedio de calificaciones de todos los estudiantes que toman cursos de introducción a la estadística en los Estados Unidos varía según una distribución normal $Normal(3, 0.2)$
 
 
@@ -168,8 +170,23 @@ Ahora, con un mayor número de muestras tenemos que:
 
 #### $$\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{100}}\Big)$$
 
-### Distribución de la Proporción Muestral
+2.  #### Se extrae un muestra de tamaño $n=30$ de una población que tiene una distribución desconocida con media $\mu$ y varianza $\sigma^2$, pero que por alguna razón conocemos que $\mu=10$y que  $\sigma^2=33.34$. Con la información anterior estamos interesados en contestar las siguientes preguntas:
 
+
+(a) #### ¿Cuál es la distribución muestral del promedio muestral?, es decir la distribución de $\bar{X}$
+
+(b) #### ¿Cuál es la probabilidad de obtener un promedio muestral mayor a 12.5?
+
+(c) #### ¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?
+
+
+#### Caso 2: Cuando desconocemos la distribución de la población y $n\req 30$
+
+1.  #### Supongamos que el ingreso familiar promedio en los Estados Unidos es de $\$51,344$, con una desviación estándar de $\$15,377$. ¿Cuál es la probabilidad de que una muestra aleatoria de $124$ hogares tenga un ingreso familiar promedio de más de $ 54,000?
+
+
+
+### Distribución de la Proporción Muestral
 
 #### Si de una población distribuida Binomialmente con probabilidad de éxito $p$, se extrae una muestra aleatoria de tamaño $n$, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es $\mu=np$ y que su varianza es $\sigma^2=np(1-p)$. En consecuencia la proporción muestral $\hat{p}=\dfrac{X}{n}$ tiene media $p$ y varianza $\dfrac{p(1-p)}{n}$. Entonces: por el Teorema del Límite Central, cuando $n$ es grande se tiene:
 
