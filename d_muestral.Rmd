@@ -12,9 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Distribuciones Muestrales
 
-#### Uno de los objetivos de la estadística es saber acerca del comportamiento de parámetros poblacionales tales como: la media $\mu$, la varianza $\sigma^2$ o la proporción $p$. Se extrae una muestra aleatoria de la población y se calcula el valor de un estadístico correspondiente, por ejemplo, la media muestral $\bar{X}$, la varianza muestral $S^2$ o la proporción muestral $\hat{p}$. El valor del estadístico es aleatorio porque depende de los elementos elegidos en la muestra seleccionada y, por lo tanto, el estadístico tiene una distribución de probabilidad la cual es llamada la **Distribución Muestral del Estadístico**.
+#### Uno de los objetivos de la estadística es saber acerca del comportamiento de parámetros poblacionales tales como: la media $\mu$, la varianza $\sigma^2$ o la proporción $p$. Se extrae una muestra aleatoria de la población y se calcula el valor de un estadístico correspondiente, por ejemplo, la media muestral $\bar{X}$, la varianza muestral $S^2$ o la proporción muestral $\hat{p}$. El valor del estadístico es aleatorio porque depende de los elementos elegidos en la muestra seleccionada y, por lo tanto, el estadístico tiene una distribución de probabilidad la cual es llamada la distribución muestral del Estadístico.
 
-### Notación 
+### Distribución muestral del promedio $\bar{X}$
+
+#### Notación 
 
 
 #### **Parametros**:
@@ -124,8 +126,6 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)
 
 #### El histograma está un poco alejado de la idea de Normalidad. 
 
-#### Podemos incrementar el tamaño de las muestras se puede notar una mejor aproximación a la Normal.
-
 
 #### Si se incrementa la cantidad de muestras a diez mil, se puede notar gráficamente una mejor aproximación a la distribución Normal, mediante la idea del histograma.
 
@@ -170,7 +170,11 @@ Ahora, con un mayor número de muestras tenemos que:
 
 #### $$\bar{X} \sim Normal\Big(3,\frac{0.2}{\sqrt{100}}\Big)$$
 
-2.  #### Se extrae un muestra de tamaño $n=30$ de una población que tiene una distribución desconocida con media $\mu$ y varianza $\sigma^2$, pero que por alguna razón conocemos que $\mu=10$y que  $\sigma^2=33.34$. Con la información anterior estamos interesados en contestar las siguientes preguntas:
+
+
+#### Caso 2: Cuando desconocemos la distribución de la población y $n \geq 30$
+
+1.  #### Se extrae un muestra de tamaño $n=30$ de una población que tiene una distribución desconocida con media $\mu$ y varianza $\sigma^2$, pero que por alguna razón conocemos que $\mu=10$y que  $\sigma^2=33.34$. Con la información anterior estamos interesados en contestar las siguientes preguntas:
 
 
 (a) #### ¿Cuál es la distribución muestral del promedio muestral?, es decir la distribución de $\bar{X}$
@@ -179,15 +183,53 @@ Ahora, con un mayor número de muestras tenemos que:
 
 (c) #### ¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?
 
-
-#### Caso 2: Cuando desconocemos la distribución de la población y $n \geq 30$
-
-1.  #### Supongamos que el ingreso familiar promedio en los Estados Unidos es de $\$51,344$, con una desviación estándar de $\$15,377$. ¿Cuál es la probabilidad de que una muestra aleatoria de $124$ hogares tenga un ingreso familiar promedio de más de $ 54,000?
-
+2.  #### Supongamos que el ingreso familiar promedio en los Estados Unidos es de $\$51,344$, con una desviación estándar de $\$15,377$. ¿Cuál es la probabilidad de que una muestra aleatoria de $124$ hogares tenga un ingreso familiar promedio de más de $ 54,000?
 
 
 ### Distribución de la Proporción Muestral
 
-#### Si de una población distribuida Binomialmente con probabilidad de éxito $p$, se extrae una muestra aleatoria de tamaño $n$, entonces se puede mostrar que la media de X: “número de éxitos en la muestra”, es $\mu=np$ y que su varianza es $\sigma^2=np(1-p)$. En consecuencia la proporción muestral $\hat{p}=\dfrac{X}{n}$ tiene media $p$ y varianza $\dfrac{p(1-p)}{n}$. Entonces: por el Teorema del Límite Central, cuando $n$ es grande se tiene:
+#### Si se toman numerosas repeticiones de muestras, se dice que la distribución de la proporción muestral $\hat{p}$ se aproxima a una distribución normal. Alternativamente, esto puede suponerse si AMBOS $np$ y $n(1 - p)$ son mayores o iguales a 10, es decir  que $np \geq 10$ y $n(1 - p) \geq 10$. Usando este criterio, podemos estimar la proporción poblacional $p$ a través de $\hat{p}$ y la desviación estándar de $p$ por $\sqrt{\dfrac{p(1-p)}{n}}$, también conocido como error estándar.
 
-#### $$Z=\dfrac{X-np}{\sqrt{np(1-p)}}=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}$$
+#### Lo anterior funciona de forma similar si estamos hablando de las probabilidades sobre el número X de éxitos en una situación binomial, es decir que estas probabilidades son las mismas que las probabilidades sobre las proporciones correspondientes.
+
+#### En consecuencia, si  $X$: “número de éxitos en la muestra”, cuando se cumple que $np \geq 10$ y $n(1 - p) \geq 10$, entonces la proporción muestral $\hat{p}=\dfrac{X}{n}$ tiene media  $p$ y desviación estándar $\sqrt{\dfrac{p(1-p)}{n}}$. 
+
+#### Por lo tanto,
+
+#### $$Z=\dfrac{\hat{p}-p}{\sqrt{\dfrac{p(1-p)}{n}}}$$
+
+#### Ejemplo:Se supone que el 40 % de los estudiantes universitarios consumen algún tipo de droga ilegal. Interesados en conocer la proporción de estudiantes de cierta universidad que han usado drogas recreativas en los últimos 6 meses, se tomó una muestra de 200 estudiantes; de los cuales el 32 % dijo sí a haber consumidos algún tipo de droga.  ¿Cuál es la probabilidad de que la proporción de estudiantes que hayan usado drogas en los últimos 6 meses sea inferior a 0.32 (o 32%)?   
+
+#### El 32 % o $0.32$ significa que 64 estudiantes contestaron sí a la pregunta. Es decir que,
+
+#### $$\hat{p}=\dfrac{64}{200}=0.32$$.
+
+#### Verifiquemos si en realidad se cumplen las condiciones para calcular la probabilidad solicitada mediante la distribución normal estándar
+
+#### $np=200*0.40=80 \geq 10$, tambien 
+
+#### $n(1-p)=200*(1-0.40)=120 \geq 10$
+
+#### Entonces,
+
+#### $\sqrt{\dfrac{p(1-p)}{n}}=\sqrt{\dfrac{0.40(1-0.40)}{200}}=0.0346$,
+
+#### Así,
+
+
+#### $$P(Z < 0.32)=P\Big(Z < \dfrac{0.32 - 0.40}{0.0346}\Big)=$$
+
+#### $$P(Z < -2.31)= 0.0104.$$
+
+```{r}
+pnorm(-2.31)
+```
+
+
+
+
+
+![](blanco.png)
+
+
+
