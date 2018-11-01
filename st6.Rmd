@@ -70,7 +70,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### $$P(B|A)=P(B)$$,
 
-#### Vamanos,
+#### Veamos,
 
 #### $$P(A|B)=\dfrac{P(A \cap B)}{P(B)}=\frac{\dfrac{1}{4}}{\dfrac{1}{2}}=\dfrac{1}{2}=P(A)$$,
 
