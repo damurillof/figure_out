@@ -25,7 +25,7 @@ c)  #### $z_p$ tal que $P(Z < z_p)=0.3085$;
 
 #### **Regla 1:**  Si el resultado de la suma de los dos dados es {5, 7 o 11} el jugador gana y cobra su apuesta  :)
 
-#### **Regla 2:**  Si el resultado de la suma de los dos dados es {1, 2, 3, 4, 6, 8, 9, 10 o 12} el jugador pierde su dinero y se termina el juego  :(
+#### **Regla 2:**  Si el resultado de la suma de los dos dados es {2, 3, 4, 6, 8, 9, 10 o 12} el jugador pierde su dinero y se termina el juego  :(
 
 #### Suponga un jugador de Craps que juega 30 veces en una noche.
 
