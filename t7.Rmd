@@ -17,9 +17,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **1.** Supongamos que $Z$ tiene una distribución normal estándar, es decir $Z \sim Normal(0,1)$. Use RStudio o una tabla de probabilidades Z para encontrar (Haga una gráfica para explicar sus resultados): 
 
-a)  #### $P(Z < -1.8)$;
-b)  #### $P(Z > 0.7)$;
-c)  #### $z_p$ tal que $P(Z < z_p)=0.3085$;
+a)  #### $P(Z < -1.8)$
+b)  #### $P(Z > 0.7)$
+c)  #### El percentil $z_p$ tal que $P(Z < z_p)=0.3085$
 
 ####  **2.** El “Craps”, también conocido como  “Pase Inglés” es un famosos juego de azar que consiste en apostar al resultado de la suma que resulta al lanzar un par de dados legales. Esté juego tiene varias reglas, pero si las asumimos, el problema se hace muy complicado. Nosotros tan solo vamos a definir dos reglas para simplificar el problema:
 
