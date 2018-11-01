@@ -23,9 +23,9 @@ c)  #### $z_p$ tal que $P(Z < z_p)=0.3085$;
 
 ####  **2.** El “Craps”, también conocido como  “Pase Inglés” es un famosos juego de azar que consiste en apostar al resultado de la suma que resulta al lanzar un par de dados legales. Esté juego tiene varias reglas, pero si las asumimos, el problema se hace muy complicado. Nosotros tan solo vamos a definir dos reglas para simplificar el problema:
 
-#### Regla 1.  Si el resultado de la suma de los dos dados es {5, 7 o 11} el jugador gana y cobra su apuesta  :)
+#### **Regla 1:**  Si el resultado de la suma de los dos dados es {5, 7 o 11} el jugador gana y cobra su apuesta  :)
 
-#### Regla 2. Si el resultado de la suma de los dos dados es {1, 2, 3, 4, 6, 8, 9, 10 o 12} el jugador pierde su dinero y se termina el juego  :(
+#### **Regla 2:**  Si el resultado de la suma de los dos dados es {1, 2, 3, 4, 6, 8, 9, 10 o 12} el jugador pierde su dinero y se termina el juego  :(
 
 #### Suponga un jugador de Craps que juega 30 veces en una noche.
 
@@ -61,4 +61,6 @@ b)  #### ¿Cuál es la distribución del peso promedio muestral en recién nacid
 c)  #### ¿Cuál es la probabilidad de encontrar un peso promedio muestral entre 2500 y 3800 gramos?
 
 
+![](blanco.png)
 
+![](blanco.png)
