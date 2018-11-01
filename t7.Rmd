@@ -7,20 +7,58 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#### **Fecha de entrega:** Viernes 19 de octubre de 2018. Al iniciar la clase.
+#### **Fecha de entrega:** Miércoles 7 de Noviembre de 2018. Al iniciar la clase.
 
-#### **Puntaje:** 20 puntos 
+#### **Puntaje: 24 puntos** 
+
+####  <span style="color:red">**WARNING**:</span> **LAS COPIAS SERÁN PENALIZADAS CON CERO PUNTOS**
 
 #### Resuelva los siguientes problemas mostrando claramente su procedimiento.
 
-**1. (9 pts)** Suponga que usted tiene una urna con dos bolas, una blanca y otra roja. Digamos que la probabilidad de extraer la bola blanca es $P(B)=p$, obviamente $p$ es una probabilidad y estará entre $0$ y $1$. Ahora suponga que repetimos  el experimento de extraer la bola, un número $k$ de veces, hasta obtener la bola blanca por primera vez. Sea $X$ el número total de intentos. 
+#### **1.** Supongamos que $Z$ tiene una distribución normal estándar, es decir $Z \sim Normal(0,1)$. Use RStudio o una tabla de probabilidades Z para encontrar (Haga una gráfica para explicar sus resultados): 
 
-a)  Escriba el soporte de $X$.
-b)  Encuentre la función de probabilidad de $X$, es decir $P(X=k)$.
-c)  Si $p= \frac{3}{4}$, encuentre:
+a)  #### $P(Z < -1.8)$;
+b)  #### $P(Z > 0.7)$;
+c)  #### $z_p$ tal que $P(Z < z_p)=0.3085$;
 
-  + $P(X=3)$ 
-  + $P(3\leq X<6)$.
+####  **2.** El “Craps”, también conocido como  “Pase Inglés” es un famosos juego de azar que consiste en apostar al resultado de la suma que resulta al lanzar un par de dados legales. Esté juego tiene varias reglas, pero si las asumimos, el problema se hace muy complicado. Nosotros tan solo vamos a definir dos reglas para simplificar el problema:
 
-**Bono (3 pts):** Pruebe que $P(X=k)$ es en realidad una función de probabilidad.
+#### Regla 1.  Si el resultado de la suma de los dos dados es {5, 7 o 11} el jugador gana y cobra su apuesta  :)
+
+#### Regla 2. Si el resultado de la suma de los dos dados es {1, 2, 3, 4, 6, 8, 9, 10 o 12} el jugador pierde su dinero y se termina el juego  :(
+
+#### Suponga un jugador de Craps que juega 30 veces en una noche.
+
+a)  ####  Calcule directamente mediante la distribución Binomial la probabilidad de que el jugador gane en más de 5 ocasiones.
+
+b)  ####  Calcule directamente mediante la distribución Binomial la probabilidad de que el jugador gane exactamente 10 veces.
+
+c) ####  Use la distribución Normal para aproximar las probabilidades que encontró en a) y b). ¿La aproximación en este caso es buena o mala? ¿Por qué?
+
+
+#### **3.** El siguiente código genera 30 datos que simulan salarios anuales en Puerto Rico.
+
+```{r}
+salario <- sample(22000:85000,size = 30,replace = TRUE)
+```
+
+#### Queremos inferir algunas cosas sobre el salario promedio en Puerto Rico. Conteste las siguientes preguntas con base en los datos `salario`
+
+a) #### ¿Podemos usar el **TLC** para aproximar la distribución del salario promedio en Puerto Rico?, ¿Por qué?
+
+b) #### ¿Cuál es la distribución del salario promedio en Puerto Rico?
+
+c) #### ¿Cuál es la probabilidad de encontrar un salario promedio mayor a $\$ 80$ mil?
+
+
+#### **4.** Suponga que los pesos de recién nacidos se distribuyen normal con media 2900 gramos y desviación estándar 1200 gramos. Es decir $X \sim Normal(2900, 1200)$. Sí se tomó una muestra de 17 recién nacidos. Conteste:
+
+a)  #### ¿Es necesario usar el **TLC** para aproximar la distribución del peso promedio en recién nacidos? Explique!
+
+b)  #### ¿Cuál es la distribución del peso promedio muestral en recién nacidos?
+
+
+c)  #### ¿Cuál es la probabilidad de encontrar un peso promedio muestral entre 2500 y 3800 gramos?
+
+
 
