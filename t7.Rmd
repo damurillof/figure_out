@@ -11,9 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje: 24 puntos** 
 
-####  <span style="color:red">**WARNING**:</span> **LAS COPIAS SERÁN PENALIZADAS CON CERO PUNTOS**
+#### `r emo::ji("warning")` <span style="color:red">**WARNING**:</span> **LAS COPIAS SERÁN PENALIZADAS CON CERO PUNTOS**
 
 #### Resuelva los siguientes problemas mostrando claramente su procedimiento.
+
+
 
 #### **1.** Supongamos que $Z$ tiene una distribución normal estándar, es decir $Z \sim Normal(0,1)$. Use RStudio o una tabla de probabilidades Z para encontrar (Haga una gráfica para explicar sus resultados): 
 
