@@ -229,11 +229,11 @@ $(document).ready(function () {
 <blockquote>
 <p>¿Qué es un estimador?</p>
 </blockquote>
-<p>Cuando queremos realizar un estudio de una población cualquiera de la que desconocemos sus parámetros, debemos tomar una muestra aleatoria de dicha población a través de la cual se pueda calcular una aproximación a dichos parámetros que desconocemos y queremos estimar. Bien, pues esa aproximación se llama estimación. Además, junto a esa estimación, y dado que muy probablemente no coincida con el valor real del parámetro, acompañaremos el error aproximado que se comete al realizarla.</p>
+<p>Cuando queremos realizar un estudio de una población cualquiera de la que desconocemos sus parámetros, debemos tomar una muestra aleatoria de dicha población a través de la cual se pueda calcular una aproximación a dichos parámetros que desconocemos y queremos estimar. Bien, pues esa aproximación se llama estimación. Además, junto a esa estimación, y dado a que es muy probablemente que no coincida con el valor real del parámetro, discutiremos el error aproximado que se comete al realizarla.</p>
 <div id="estimacion-puntual" class="section level3">
 <h3>Estimación puntual</h3>
-<p>Una estimación puntual del valor de un parámetro poblacional desconocido (como puede ser la media <span class="math inline">\(\mu\)</span> , o la desviación estándar <span class="math inline">\(\sigma\)</span> ), es un número que se utiliza para aproximar el verdadero valor de dicho parámetro poblacional. A fin de realizar tal estimación, tomaremos una muestra aleatoria de la población y calcularemos el parámetro muestral asociado ( <span class="math inline">\(\bar{X}\)</span> para la media, <span class="math inline">\(s\)</span> para la desviación estándar, etc.). El valor de este parámetro muestral será la estimación puntual del parámetro poblacional.</p>
-<p>Por ejemplo, supongamos que estamos interesados en estimar la edad media de los estudiantes subgraduados en el Colegio. Seleccionan una muestra de 100 estudiantes y calcula la media de esta muestra, este valor será un estimador puntual de la media de la población.</p>
+<p>Una estimación puntual del valor de un parámetro poblacional desconocido (como puede ser la media <span class="math inline">\(\mu\)</span> , o la desviación estándar <span class="math inline">\(\sigma\)</span> ), es un número que se utiliza para aproximar el verdadero valor de dicho parámetro poblacional. A fin de realizar tal estimación, tomaremos una muestra aleatoria de la población y calcularemos el estadístico muestral asociado ( <span class="math inline">\(\bar{X}\)</span> para la media, <span class="math inline">\(S\)</span> para la desviación estándar, etc.). El valor de este parámetro muestral será la estimación puntual del parámetro poblacional.</p>
+<p>Por ejemplo, supongamos que estamos interesados en estimar la edad media de los estudiantes subgraduados en el Colegio. Seleccionan una muestra de la edad 100 estudiantes y calculamos la media de esta muestra, este valor será un estimador puntual de la media de la población.</p>
 <blockquote>
 <p>¿Qué propiedades debe cumplir todo buen estimador?</p>
 </blockquote>
@@ -242,23 +242,38 @@ $(document).ready(function () {
 <p>Ejemplos estimación puntual</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li>Queremos saber el porcentaje <span class="math inline">\(\pi\)</span> de los estudiantes en el Colegio a quienes les gusta la comida en la cafetería. Vamos a considerar a <span class="math inline">\(\pi\)</span> como el porcentaje para todos los estudiantes, es decir para toda la población, entonces <span class="math inline">\(\pi\)</span> es un parámetro desconocido.</li>
+<li>Queremos saber el porcentaje <span class="math inline">\(\pi\)</span> de los estudiantes en el Colegio a quienes les gusta la comida en la cafetería. Vamos a considerar a <span class="math inline">\(p\)</span> como el porcentaje para todos los estudiantes, es decir para toda la población, entonces <span class="math inline">\(p\)</span> es un parámetro desconocido.</li>
 </ol>
-<p>Para cada estudiante hay dos posibilidades: A él o ella le gusta la comida o no le gusta la comida. Entonces, si seleccionamos al azar a un estudiante, él / ella es un ensayo de Bernoulli. Si seleccionamos aleatoriamente n estudiantes, tenemos una muestra de n ensayos de Bernoulli. Sabemos que para un ensayo de Bernoulli con el parámetro <span class="math inline">\(\pi\)</span> la media poblacional <span class="math inline">\(\mu=\pi\)</span>.</p>
-<p>Si hicimos un buen trabajo al seleccionar a los estudiantes para la muestra, entonces esperamos que la muestra signifique que <span class="math inline">\(\bar{X}\)</span> está cerca de la media poblacional <span class="math inline">\(\mu\)</span>, que es</p>
-<p><span class="math display">\[\bar{X} \sim \mu = \pi  (aproximadamente)\]</span></p>
+<p>Para cada estudiante hay dos posibilidades: A él o ella le gusta la comida o no le gusta la comida, es decir {Sí o No}. Entonces, si seleccionamos al azar a un estudiante, él o ella es un ensayo de Bernoulli (Binomial con n=1). Si seleccionamos aleatoriamente n estudiantes, tenemos una muestra de n ensayos (Binomial(n,p)).</p>
+<p>Entonces la forma de estimar el parámetro <span class="math inline">\(p\)</span> es mediante <span class="math inline">\(\hat{p}\)</span>, donde</p>
+<p><span class="math display">\[\hat{p}=\dfrac{X}{n}\]</span></p>
+<p>Si hicimos un buen trabajo al seleccionar a los estudiantes para la muestra, entonces esperamos que la muestra signifique que <span class="math inline">\(\hat{p}\)</span> está muy cercano de la proporción poblacional.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Ejemplo</li>
 </ol>
-<p>Todo lo que acabo de decir en el ejemplo anterior es esto: si le pregunta a 500 personas si les gusta Coca-Cola y 300 dicen que sí, ¡su mejor estimación para la proporción de personas que les gusta Coca-Cola es 300/500! Aquí <span class="math inline">\(\bar{X}= 300/500\)</span>. El punto es que esta simple idea es útil en casos mucho más complicados.</p>
+<p>Todo lo que acabo de decir en el ejemplo anterior es esto: si le preguntamos a 500 personas si les gusta Coca-Cola y 300 dicen que sí, ¡su mejor estimación para la proporción de personas que les gusta Coca-Cola es 300/500. Entonces,</p>
+<p><span class="math display">\[\hat{p}= \dfrac{300}{500}=0.6\]</span>.</p>
 <p>Cada parámetro de la población tiene un estadístico correspondiente y viceversa. Veamos:</p>
-<p>Media de la muestra: media de la población</p>
-<p>Porcentaje de muestra - porcentaje de población</p>
-<p>Muestra mediana - mediana poblacional</p>
-<p>Desviación estándar muestral - desviación estándar de la población</p>
-<p>Muestra 1er cuartil - población 1er cuartil</p>
-<p>etc ….</p>
-<p>Cada uno de estos números de muestra se denomina estimación puntual.</p>
+<p>Media muestral (<span class="math inline">\(\bar{X}\)</span>) : media poblacional (<span class="math inline">\(\mu\)</span>)</p>
+<p>Proporción muestral (<span class="math inline">\(p\)</span>) : Proporción muestral (<span class="math inline">\(\hat{p}\)</span>)</p>
+<p>Mediana muestral - Mediana poblacional</p>
+<p>Desviación estándar muestral (<span class="math inline">\(S\)</span>) - Desviación estándar de la poblacional (<span class="math inline">\(\sigma\)</span>)</p>
+<p>1er cuartil (<span class="math inline">\(Q_1\)</span>) - 1er cuartil poblacional.</p>
+<p>etc …</p>
+<p>El trabajo de calcular alguno de estos valores muestrales se denomina estimación puntual.</p>
+<blockquote>
+<p>Ejercicios</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Los siguientes datos corresponden a los tiempos de 8 viajes entre Mayagüez y Ponce.</li>
+</ol>
+<pre><code>## [1] 39 51 35 72 53 36 55 59</code></pre>
+<p>Queremos estimar el tiempo promedio que tarda un viaje entre estas dos ciudades.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuál es el parámetro de interés en este caso?</p></li>
+<li><p>¿Cuál es la estimación puntual para el parámetro de interés?</p></li>
+<li><p>¿Estamos seguros que la estimación de <span class="math inline">\(\mu\)</span> coincide de manera exacta con el valor poblacional?</p></li>
+</ol>
 </div>
 </div>
 <div id="estimacion-por-intervalos" class="section level2">
@@ -278,8 +293,8 @@ $(document).ready(function () {
 <p>En este caso, la línea negra horizontal representa el valor fijo de la media desconocida de la población, µ. Los intervalos de confianza azules verticales que se sobreponen a la línea horizontal contienen el valor de la media de la población. El intervalo de confianza rojo que está completamente por debajo de la línea horizontal no lo contiene. Un intervalo de confianza de 95% indica que 19 de 20 muestras (95%) de la misma población producirán intervalos de confianza que contendrán el parámetro de población.</p>
 <p>Por ejemplo, un fabricante desea saber si la longitud media de los lápices que produce es diferente de la longitud objetivo. El fabricante toma una muestra aleatoria de lápices y determina que la longitud media de la muestra es 52 milímetros y el intervalo de confianza de 95% es (50,54). Por lo tanto, usted puede estar 95% seguro de que la longitud media de todos los lápices se encuentra entre 50 y 54 milímetros.</p>
 <p>El intervalo de confianza se determina calculando una estimación de punto y luego determinando su margen de error.</p>
-<p><strong>Estimación de punto</strong></p>
-<p>Este valor individual estima un parámetro de la población usando los datos de la muestra. Por ejemplo, la estimación puntual más usual es con base en la media muestral, es decir <span class="math inline">\(\bar{X}\)</span>.</p>
+<p><strong>Estimación puntual</strong></p>
+<p>Este valor individual estima un parámetro de la población usando los datos de la muestra. Por ejemplo, la estimación puntual más usual es con base en el estadístico de la media muestral, es decir <span class="math inline">\(\bar{X}\)</span>.</p>
 <p><strong>Margen de error</strong></p>
 <p>Cuando usted utiliza estadísticos para estimar un valor, es importante recordar que, sin importar lo bien que esté diseñado su estudio, su estimación está sujeta a error de muestreo aleatorio. El margen de error cuantificar este error e indica la precisión de la estimación.</p>
 <p>Usted probablemente ya entiende el margen de error, porque está relacionado con los resultados de las encuestas. Por ejemplo, una encuesta política podría indicar que el nivel de popularidad de un candidato es de 55% con un margen de error de 5%. Esto significa que el nivel de popularidad real es +/- 5% y, por lo tanto, se ubica entre 50% y 60%.</p>

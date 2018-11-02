@@ -10,59 +10,80 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ##  Estimación puntual y por intervalos
 
 >  ¿Qué es un estimador?
 
-
-Cuando queremos realizar un estudio de una población cualquiera de la que desconocemos sus parámetros, debemos tomar una muestra aleatoria de dicha población a través de la cual  se pueda calcular una aproximación a dichos parámetros que desconocemos y queremos estimar. Bien, pues esa aproximación se llama estimación. Además, junto a esa estimación, y dado que muy probablemente no coincida con el valor real del parámetro, acompañaremos el error aproximado que se comete al realizarla. 
+Cuando queremos realizar un estudio de una población cualquiera de la que desconocemos sus parámetros, debemos tomar una muestra aleatoria de dicha población a través de la cual  se pueda calcular una aproximación a dichos parámetros que desconocemos y queremos estimar. Bien, pues esa aproximación se llama estimación. Además, junto a esa estimación, y dado a que es muy probablemente que   no coincida con el valor real del parámetro, discutiremos el error aproximado que se comete al realizarla. 
 
 ### Estimación puntual
 
-Una estimación puntual del valor de un parámetro poblacional desconocido (como puede ser la media $\mu$ , o la desviación estándar $\sigma$ ), es un número que se utiliza para aproximar el verdadero valor de dicho parámetro poblacional. A fin de realizar tal estimación, tomaremos una muestra aleatoria de la población y calcularemos el parámetro muestral asociado ( $\bar{X}$ para la media, $s$ para la desviación estándar, etc.). El valor de este parámetro muestral será la estimación puntual del parámetro poblacional. 
+Una estimación puntual del valor de un parámetro poblacional desconocido (como puede ser la media $\mu$ , o la desviación estándar $\sigma$ ), es un número que se utiliza para aproximar el verdadero valor de dicho parámetro poblacional. A fin de realizar tal estimación, tomaremos una muestra aleatoria de la población y calcularemos el estadístico muestral asociado ( $\bar{X}$ para la media, $S$ para la desviación estándar, etc.). El valor de este parámetro muestral será la estimación puntual del parámetro poblacional. 
 
-Por ejemplo, supongamos que estamos interesados en estimar la edad media de los estudiantes subgraduados en el Colegio. Seleccionan una muestra de 100 estudiantes y calcula la media de esta muestra, este valor será un estimador puntual de la media de la población. 
+Por ejemplo, supongamos que estamos interesados en estimar la edad media de los estudiantes subgraduados en el Colegio. Seleccionan una muestra de la edad 100 estudiantes y calculamos la media de esta muestra, este valor será un estimador puntual de la media de la población. 
 
 >  ¿Qué propiedades debe cumplir todo buen estimador? 
-
 
 **Insesgado**: Un estimador es insesgado cuando la media de su distribución muestral asociada coincide con la media de la población. Esto ocurre, por ejemplo, tomando el estadístico $\bar{X}$ como el estimador , ya que $\mu_{\bar{x}}=\mu$.
 
 > Ejemplos estimación puntual
 
-1.  Queremos saber el porcentaje $\pi$ de los estudiantes en el Colegio a quienes les gusta la comida en la cafetería. Vamos a considerar a $\pi$ como  el porcentaje para todos los estudiantes, es decir para toda la población, entonces $\pi$ es un parámetro desconocido.
+1.  Queremos saber el porcentaje $\pi$ de los estudiantes en el Colegio a quienes les gusta la comida en la cafetería. Vamos a considerar a $p$ como  el porcentaje para todos los estudiantes, es decir para toda la población, entonces $p$ es un parámetro desconocido.
 
-Para cada estudiante hay dos posibilidades: A él o ella le gusta la comida o no le gusta la comida. Entonces, si seleccionamos al azar a un estudiante, él / ella es un ensayo de Bernoulli. Si seleccionamos aleatoriamente n estudiantes, tenemos una muestra de n ensayos de Bernoulli. Sabemos que para un ensayo de Bernoulli con el parámetro $\pi$ la media poblacional $\mu=\pi$.
+Para cada estudiante hay dos posibilidades: A él o ella le gusta la comida o no le gusta la comida, es decir {Sí o No}. Entonces, si seleccionamos al azar a un estudiante, él o ella es un ensayo de Bernoulli (Binomial con n=1). Si seleccionamos aleatoriamente n estudiantes, tenemos una muestra de n ensayos (Binomial(n,p)). 
 
-Si hicimos un buen trabajo al seleccionar a los estudiantes para la muestra, entonces esperamos que la muestra signifique que  $\bar{X}$ está cerca de la media poblacional $\mu$, que es
+Entonces la forma de estimar el parámetro $p$ es mediante $\hat{p}$, donde 
 
-$$\bar{X} \sim \mu = \pi  (aproximadamente)$$
+$$\hat{p}=\dfrac{X}{n}$$
 
+Si hicimos un buen trabajo al seleccionar a los estudiantes para la muestra, entonces esperamos que la muestra signifique que  $\hat{p}$ está muy cercano de la proporción poblacional.
 
 2.  Ejemplo 
 
-Todo lo que acabo de decir en el ejemplo anterior es esto: si le pregunta a 500 personas si les gusta Coca-Cola y 300 dicen que sí, ¡su mejor estimación para la proporción de personas que les gusta Coca-Cola es 300/500! Aquí $\bar{X}= 300/500$. El punto es que esta simple idea es útil en casos mucho más complicados.
+Todo lo que acabo de decir en el ejemplo anterior es esto: si le preguntamos a 500 personas si les gusta Coca-Cola y 300 dicen que sí, ¡su mejor estimación para la proporción de personas que les gusta Coca-Cola es 300/500. Entonces,
+
+$$\hat{p}= \dfrac{300}{500}=0.6$$. 
+
 
 Cada parámetro de la población tiene un estadístico correspondiente y viceversa. Veamos:
 
 
-Media de la muestra: media de la población
+Media muestral ($\bar{X}$) : media poblacional ($\mu$)
 
-Porcentaje de muestra - porcentaje de población
+Proporción muestral ($p$) : Proporción muestral ($\hat{p}$)
 
-Muestra mediana - mediana poblacional
+Mediana muestral - Mediana poblacional
 
-Desviación estándar muestral - desviación estándar de la población
+Desviación estándar muestral ($S$) - Desviación estándar de la poblacional ($\sigma$)
 
-Muestra 1er cuartil - población 1er cuartil
+1er cuartil ($Q_1$) - 1er cuartil poblacional.
 
-etc ....
+etc ...
 
-Cada uno de estos números de muestra se denomina estimación puntual.
+El trabajo de calcular alguno de estos valores muestrales se denomina estimación puntual.
+
+> Ejercicios
+
+1.  Los siguientes datos corresponden a los tiempos de 8 viajes entre Mayagüez y Ponce.
 
 
-##Estimación por intervalos
+```{r,eval=TRUE,echo=FALSE}
+set.seed(1)
+round(rnorm(8,48,15))
+```
+
+Queremos estimar el tiempo promedio que tarda un viaje entre estas dos ciudades.
+
+a)  ¿Cuál es el parámetro de interés en este caso?
+
+
+b) ¿Cuál es la estimación puntual para el parámetro de interés?
+
+
+c) ¿Estamos seguros que la estimación de $\mu$ coincide de manera exacta con el valor poblacional?
+
+
+## Estimación por intervalos
 
 En la vida real, una estimación puntual rara vez es suficiente, por lo general también necesitamos una estimación del error en nuestra estimación.
 
@@ -87,9 +108,9 @@ Por ejemplo, un fabricante desea saber si la longitud media de los lápices que 
 
 El intervalo de confianza se determina calculando una estimación de punto y luego determinando su margen de error.
 
-**Estimación de punto**
+**Estimación puntual**
 
-Este valor individual estima un parámetro de la población usando los datos de la muestra. Por ejemplo, la estimación puntual más usual es con base en la media muestral, es decir $\bar{X}$.
+Este valor individual estima un parámetro de la población usando los datos de la muestra. Por ejemplo, la estimación puntual más usual es con base en el estadístico de la media muestral, es decir $\bar{X}$.
 
 
 **Margen de error**
@@ -531,6 +552,7 @@ b)   $(0.0375,0.0556)$ at 80 %
 
 
 ![](blanco.png)
+
 
 
 
