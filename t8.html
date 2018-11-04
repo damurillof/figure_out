@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Tarea # 8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Tarea # 8</h1>
+
+</div>
+
+
+<div id="fecha-de-entrega-miercoles-14-de-noviembre-de-2018.-al-iniciar-la-clase." class="section level4">
+<h4><strong>Fecha de entrega:</strong> Miércoles 14 de Noviembre de 2018. Al iniciar la clase.</h4>
+</div>
+<div id="puntaje-20-puntos" class="section level4">
+<h4><strong>Puntaje: 20 puntos</strong></h4>
+</div>
+<div id="resuelva-los-siguientes-problemas-mostrando-claramente-su-procedimiento." class="section level4">
+<h4>Resuelva los siguientes problemas mostrando claramente su procedimiento.</h4>
+</div>
+<div id="suponga-que-t-es-una-distribucion-t-student.-es-decir-tv-donde-v-son-los-grados-de-libertad.-use-rstudio-o-una-tabla-de-probabilidades-t-student-para-calcularhaga-una-grafica-que-ilustre-la-informacion-solicitada-en-cada-caso" class="section level4">
+<h4><strong>1.</strong> Suponga que <span class="math inline">\(t\)</span> es una distribución <span class="math inline">\(t\)</span>-Student. Es decir <span class="math inline">\(t(v)\)</span>, donde <span class="math inline">\(v\)</span> son los grados de libertad. Use RStudio o una tabla de probabilidades <span class="math inline">\(t\)</span>-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso)</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="t_alphav-si-n7-y-alpha0.05"><span class="math inline">\(t_{(\alpha,v)}\)</span> si <span class="math inline">\(n=7\)</span> y <span class="math inline">\(\alpha=0.05\)</span></h4></li>
+<li><h4 id="t_fracalpha2v-si-n15-y-alpha0.01"><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span> si <span class="math inline">\(n=15\)</span> y <span class="math inline">\(\alpha=0.01\)</span></h4></li>
+<li><h4 id="t_fracalpha2v-si-n12-y-alpha0.03"><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span> si <span class="math inline">\(n=12\)</span> y <span class="math inline">\(\alpha=0.03\)</span></h4></li>
+</ol>
+</div>
+<div id="suponga-que-deseamos-estimar-el-tiempo-promedio-de-la-vida-util-en-un-tipo-de-bombilla.-para-tal-fin-se-tomo-una-muestra-aleatoria-de-tamano-n10-referente-al-tiempo-de-vida.-el-tiempo-se-mide-en-meses-y-los-datos-son-los-siguientes" class="section level4">
+<h4><strong>2.</strong> Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses, y los datos son los siguientes:</h4>
+<pre class="r"><code>round(rexp(10,0.09),1)</code></pre>
+</div>
+<div id="para-obtener-los-datos-copie-y-pegue-el-codigo-anterior-una-sola-vez-en-rstudio.-use-esos-datos-para-el-ejercicio." class="section level4">
+<h4>Para obtener los datos, copie y pegue el código anterior una sola vez en RStudio. Use esos datos para el ejercicio.</h4>
+</div>
+<div id="con-base-en-los-datos-y-la-informacion-anterior-conteste-las-siguientes-preguntas" class="section level4">
+<h4>Con base en los datos y la información anterior, conteste las siguientes preguntas:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-el-parametro-de-interes">¿Cuál es el parámetro de interés?</h4></li>
+<li><h4 id="calcule-una-estimacion-puntual-para-el-parametro-de-interes">Calcule una estimación puntual para el parámetro de interés</h4></li>
+<li><h4 id="encuentre-un-intervalo-de-confianza-para-el-parametro-de-interes-con-una-confiabilidad-del-95-.-asuma-que-los-datos-provienen-de-una-distribucion-normal.">Encuentre un intervalo de confianza para el parámetro de interés con una confiabilidad del 95 %. Asuma que los datos provienen de una distribución Normal.</h4></li>
+<li><h4 id="interprete-el-intervalo-que-encontro-en-la-parte-c.">Interprete el intervalo que encontró en la parte c).</h4></li>
+</ol>
+</div>
+<div id="se-ha-llegado-a-la-conclusion-que-el-tiempo-de-espera-en-todas-las-rutas-del-trolley-en-el-colegio-sigue-una-distribucion-normal-de-donde-se-sabe-que-sigma10-minutos.-estamos-interesados-en-estimar-el-tiempo-promedio-que-esperan-todos-los-usuarios-colegiales-para-tomar-el-servicio-de-trolley-para-este-proposito-se-recolectaron-12-datos-del-tiempo-de-espera-en-usuarios.-el-tiempo-esta-en-minutos" class="section level4">
+<h4><strong>3.</strong> Se ha llegado a la conclusión que el tiempo de espera en todas las rutas del TROLLEY en el colegio sigue una distribución Normal, de donde se sabe que <span class="math inline">\(\sigma=10\)</span> minutos. Estamos interesados en estimar el tiempo promedio que esperan todos los usuarios Colegiales para tomar el servicio de TROLLEY, para este propósito se recolectaron 12 datos del tiempo de espera en usuarios. El tiempo está en minutos:</h4>
+<pre><code>##  [1] 19 30 44 17 27 29 35 26 48 27 32 38</code></pre>
+</div>
+<div id="con-base-en-los-datos-conteste-las-siguientes-preguntas" class="section level4">
+<h4>Con base en los datos, conteste las siguientes preguntas:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="calcule-mediante-estimacion-puntual-el-tiempo-que-en-promedio-esperan-todos-los-usuarios-del-trolley-en-el-colegio.">Calcule mediante estimación puntual el tiempo que en promedio esperan todos los usuarios del TROLLEY en el Colegio.</h4></li>
+<li><h4 id="calcule-un-intervalo-de-confianza-con-una-confiabilidad-del-90-.">Calcule un intervalo de confianza con una confiabilidad del 90 %.</h4></li>
+<li><h4 id="interprete-el-intervalo-de-confianza.">Interprete el intervalo de confianza.</h4></li>
+<li><h4 id="vuelva-a-calcular-el-intervalo-en-la-parte-b-pero-ahora-con-una-confiabilidad-del-99-.-que-sucede-con-la-anchura-del-intervalo-explique">Vuelva a calcular el intervalo en la parte b), pero ahora con una confiabilidad del 99 %. ¿Qué sucede con la anchura del intervalo? Explique!</h4></li>
+</ol>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

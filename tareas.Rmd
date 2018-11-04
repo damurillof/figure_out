@@ -30,6 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### [Tarea 7. Fecha límite: Miercol-07-11](https://didier-murillo.netlify.com/t7) 
 
+### [Tarea 8. Fecha límite: Miercol-14-11](https://didier-murillo.netlify.com/t8) 
 
 ![](blanco.png)
 

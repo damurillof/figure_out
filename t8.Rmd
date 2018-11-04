@@ -1,0 +1,61 @@
+---
+title: "Tarea # 8"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#### **Fecha de entrega:** Miércoles 14 de Noviembre de 2018. Al iniciar la clase.
+
+#### **Puntaje: 20 puntos** 
+
+#### Resuelva los siguientes problemas mostrando claramente su procedimiento.
+
+#### **1.** Suponga que $t$ es una distribución $t$-Student. Es decir $t(v)$, donde $v$ son los grados de libertad. Use RStudio o una tabla de probabilidades $t$-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso)
+
+a)  ####  $t_{(\alpha,v)}$ si $n=7$ y $\alpha=0.05$
+
+b)  ####  $t_{(\frac{\alpha}{2},v)}$ si $n=15$ y $\alpha=0.01$
+
+b)  ####  $t_{(\frac{\alpha}{2},v)}$ si $n=12$ y $\alpha=0.03$
+
+#### **2.** Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses, y los datos son los siguientes:
+
+```{r,eval=FALSE,echo=TRUE}
+round(rexp(10,0.09),1)
+```
+
+#### Para obtener los datos, copie y pegue el código anterior una sola vez en RStudio. Use esos datos para el ejercicio.
+
+#### Con base en los datos y la información anterior, conteste las siguientes preguntas:
+
+a)  #### ¿Cuál es el parámetro de interés?  
+
+b)  #### Calcule una estimación puntual para el parámetro de interés
+
+c)  #### Encuentre un intervalo de confianza para el parámetro de interés con una confiabilidad del 95 %. Asuma que los datos provienen de una distribución Normal.
+
+d)  #### Interprete el intervalo que encontró en la parte c).
+
+
+#### **3.** Se ha llegado a la conclusión que el tiempo de espera en todas las rutas del TROLLEY en el colegio sigue una distribución Normal, de donde se sabe que $\sigma=10$ minutos. Estamos interesados en estimar el tiempo promedio que esperan todos los usuarios Colegiales para tomar el servicio de TROLLEY, para este propósito se recolectaron 12 datos del tiempo de espera en usuarios. El tiempo está en minutos:
+
+```{r,eval=TRUE,echo=FALSE}
+set.seed(2)
+round(rnorm(12,28,10),0)
+```
+
+#### Con base en los datos, conteste las siguientes preguntas:
+
+a)  #### Calcule mediante estimación puntual el tiempo que en promedio esperan todos los usuarios del TROLLEY en el Colegio. 
+
+b)  #### Calcule un intervalo de confianza con una confiabilidad del 90 %.
+
+c)  #### Interprete el intervalo de confianza.
+
+d)  #### Vuelva a calcular el intervalo en la parte b), pero ahora con una confiabilidad del 99 %. ¿Qué sucede con la anchura del intervalo? Explique!
+
+![](blanco.png)
