@@ -14,57 +14,57 @@ knitr::opts_chunk$set(echo = TRUE)
 
 >  ¿Qué es un estimador?
 
-Cuando queremos realizar un estudio de una población cualquiera de la que desconocemos sus parámetros, debemos tomar una muestra aleatoria de dicha población a través de la cual  se pueda calcular una aproximación a dichos parámetros que desconocemos y queremos estimar. Bien, pues esa aproximación se llama estimación. Además, junto a esa estimación, y dado a que es muy probablemente que   no coincida con el valor real del parámetro, discutiremos el error aproximado que se comete al realizarla. 
+#### Cuando queremos realizar un estudio de una población cualquiera de la que desconocemos sus parámetros, debemos tomar una muestra aleatoria de dicha población a través de la cual  se pueda calcular una aproximación a dichos parámetros que desconocemos y queremos estimar. Bien, pues esa aproximación se llama estimación. Además, junto a esa estimación, y dado a que es muy probablemente que   no coincida con el valor real del parámetro, discutiremos el error aproximado que se comete al realizarla. 
 
 ### Estimación puntual
 
-Una estimación puntual del valor de un parámetro poblacional desconocido (como puede ser la media $\mu$ , o la desviación estándar $\sigma$ ), es un número que se utiliza para aproximar el verdadero valor de dicho parámetro poblacional. A fin de realizar tal estimación, tomaremos una muestra aleatoria de la población y calcularemos el estadístico muestral asociado ( $\bar{X}$ para la media, $S$ para la desviación estándar, etc.). El valor de este parámetro muestral será la estimación puntual del parámetro poblacional. 
+#### Una estimación puntual del valor de un parámetro poblacional desconocido (como puede ser la media $\mu$ , o la desviación estándar $\sigma$ ), es un número que se utiliza para aproximar el verdadero valor de dicho parámetro poblacional. A fin de realizar tal estimación, tomaremos una muestra aleatoria de la población y calcularemos el estadístico muestral asociado ( $\bar{X}$ para la media, $S$ para la desviación estándar, etc.). El valor de este parámetro muestral será la estimación puntual del parámetro poblacional. 
 
-Por ejemplo, supongamos que estamos interesados en estimar la edad media de los estudiantes subgraduados en el Colegio. Seleccionan una muestra de la edad 100 estudiantes y calculamos la media de esta muestra, este valor será un estimador puntual de la media de la población. 
+#### Por ejemplo, supongamos que estamos interesados en estimar la edad media de los estudiantes subgraduados en el Colegio. Seleccionan una muestra de la edad 100 estudiantes y calculamos la media de esta muestra, este valor será un estimador puntual de la media de la población. 
 
 >  ¿Qué propiedades debe cumplir todo buen estimador? 
 
-**Insesgado**: Un estimador es insesgado cuando la media de su distribución muestral asociada coincide con la media de la población. Esto ocurre, por ejemplo, tomando el estadístico $\bar{X}$ como el estimador , ya que $\mu_{\bar{x}}=\mu$.
+#### **Insesgado**: Un estimador es insesgado cuando la media de su distribución muestral asociada coincide con la media de la población. Esto ocurre, por ejemplo, tomando el estadístico $\bar{X}$ como el estimador , ya que $\mu_{\bar{x}}=\mu$.
 
 > Ejemplos estimación puntual
 
-1.  Queremos saber el porcentaje $\pi$ de los estudiantes en el Colegio a quienes les gusta la comida en la cafetería. Vamos a considerar a $p$ como  el porcentaje para todos los estudiantes, es decir para toda la población, entonces $p$ es un parámetro desconocido.
+#### 1.  Queremos saber el porcentaje $\pi$ de los estudiantes en el Colegio a quienes les gusta la comida en la cafetería. Vamos a considerar a $p$ como  el porcentaje para todos los estudiantes, es decir para toda la población, entonces $p$ es un parámetro desconocido.
 
-Para cada estudiante hay dos posibilidades: A él o ella le gusta la comida o no le gusta la comida, es decir {Sí o No}. Entonces, si seleccionamos al azar a un estudiante, él o ella es un ensayo de Bernoulli (Binomial con n=1). Si seleccionamos aleatoriamente n estudiantes, tenemos una muestra de n ensayos (Binomial(n,p)). 
+####Para cada estudiante hay dos posibilidades: A él o ella le gusta la comida o no le gusta la comida, es decir {Sí o No}. Entonces, si seleccionamos al azar a un estudiante, él o ella es un ensayo de Bernoulli (Binomial con n=1). Si seleccionamos aleatoriamente n estudiantes, tenemos una muestra de n ensayos (Binomial(n,p)). 
 
-Entonces la forma de estimar el parámetro $p$ es mediante $\hat{p}$, donde 
+#### Entonces la forma de estimar el parámetro $p$ es mediante $\hat{p}$, donde 
 
-$$\hat{p}=\dfrac{X}{n}$$
+#### $$\hat{p}=\dfrac{X}{n}$$
 
-Si hicimos un buen trabajo al seleccionar a los estudiantes para la muestra, entonces esperamos que la muestra signifique que  $\hat{p}$ está muy cercano de la proporción poblacional.
+#### Si hicimos un buen trabajo al seleccionar a los estudiantes para la muestra, entonces esperamos que la muestra signifique que  $\hat{p}$ está muy cercano de la proporción poblacional.
 
-2.  Ejemplo 
+#### 2.  Ejemplo 
 
-Todo lo que acabo de decir en el ejemplo anterior es esto: si le preguntamos a 500 personas si les gusta Coca-Cola y 300 dicen que sí, ¡su mejor estimación para la proporción de personas que les gusta Coca-Cola es 300/500. Entonces,
+#### Todo lo que acabo de decir en el ejemplo anterior es esto: si le preguntamos a 500 personas si les gusta Coca-Cola y 300 dicen que sí, ¡su mejor estimación para la proporción de personas que les gusta Coca-Cola es 300/500. Entonces,
 
-$$\hat{p}= \dfrac{300}{500}=0.6$$. 
-
-
-Cada parámetro de la población tiene un estadístico correspondiente y viceversa. Veamos:
+#### $$\hat{p}= \dfrac{300}{500}=0.6$$. 
 
 
-Media muestral ($\bar{X}$) : media poblacional ($\mu$)
+#### Cada parámetro de la población tiene un estadístico correspondiente y viceversa. Veamos:
 
-Proporción muestral ($p$) : Proporción muestral ($\hat{p}$)
 
-Mediana muestral - Mediana poblacional
+#### Media muestral ($\bar{X}$) : media poblacional ($\mu$)
 
-Desviación estándar muestral ($S$) - Desviación estándar de la poblacional ($\sigma$)
+#### Proporción muestral ($\hat{p}$) : Proporción poblacional ($p$)
 
-1er cuartil ($Q_1$) - 1er cuartil poblacional.
+#### Mediana muestral - Mediana poblacional
 
-etc ...
+#### Desviación estándar muestral ($S$) - Desviación estándar poblacional ($\sigma$)
 
-El trabajo de calcular alguno de estos valores muestrales se denomina estimación puntual.
+#### 1er cuartil ($Q_1$) - 1er cuartil poblacional.
+
+#### etc ...
+
+#### El trabajo de calcular alguno de estos valores muestrales se denomina estimación puntual.
 
 > Ejercicios
 
-1.  Los siguientes datos corresponden a los tiempos de 8 viajes entre Mayagüez y Ponce.
+#### 1.  Los siguientes datos corresponden a los tiempos de 8 viajes entre Mayagüez y Ponce.
 
 
 ```{r,eval=TRUE,echo=FALSE}
@@ -72,20 +72,20 @@ set.seed(1)
 round(rnorm(8,48,15))
 ```
 
-Queremos estimar el tiempo promedio que tarda un viaje entre estas dos ciudades.
+#### Queremos estimar el tiempo promedio que tarda un viaje entre estas dos ciudades.
 
-a)  ¿Cuál es el parámetro de interés en este caso?
-
-
-b) ¿Cuál es la estimación puntual para el parámetro de interés?
+a)  ####   ¿Cuál es el parámetro de interés en este caso?
 
 
-c) ¿Estamos seguros que la estimación de $\mu$ coincide de manera exacta con el valor poblacional?
+b)  ####  ¿Cuál es la estimación puntual para el parámetro de interés?
+
+
+c)  ####  ¿Estamos seguros que la estimación de $\mu$ coincide de manera exacta con el valor poblacional?
 
 
 ## Estimación por intervalos
 
-En la vida real, una estimación puntual rara vez es suficiente, por lo general también necesitamos una estimación del error en nuestra estimación.
+#### En la vida real, una estimación puntual rara vez es suficiente, por lo general también necesitamos una estimación del error en nuestra estimación.
 
 Por ejemplo, suponga que  hicimos una encuesta a los estudiantes subgraduados en el Colegio. Para eso entrevistamos a 150 estudiantes seleccionados al azar, y encontramos un GPA promedio (muestra) de 2.85. Realmente queremos saber la (población) promedio de GPA de todos los estudiantes de pregrado en el Colegio.
 
@@ -101,220 +101,202 @@ Un intervalo de confianza es un rango de valores, derivado de los estadísticos 
 ![](interval.png)
 
 
-En este caso, la línea negra horizontal representa el valor fijo de la media desconocida de la población, µ. Los intervalos de confianza azules verticales que se sobreponen a la línea horizontal contienen el valor de la media de la población. El intervalo de confianza rojo que está completamente por debajo de la línea horizontal no lo contiene. Un intervalo de confianza de 95% indica que 19 de 20 muestras (95%) de la misma población producirán intervalos de confianza que contendrán el parámetro de población.
+#### En este caso, la línea negra horizontal representa el valor fijo de la media desconocida de la población, µ. Los intervalos de confianza azules verticales que se sobreponen a la línea horizontal contienen el valor de la media de la población. El intervalo de confianza rojo que está completamente por debajo de la línea horizontal no lo contiene. Un intervalo de confianza de 95% indica que 19 de 20 muestras (95%) de la misma población producirán intervalos de confianza que contendrán el parámetro de población.
 
 
-Por ejemplo, un fabricante desea saber si la longitud media de los lápices que produce es diferente de la longitud objetivo. El fabricante toma una muestra aleatoria de lápices y determina que la longitud media de la muestra es 52 milímetros y el intervalo de confianza de 95% es (50,54). Por lo tanto, usted puede estar 95% seguro de que la longitud media de todos los lápices se encuentra entre 50 y 54 milímetros.
+#### El intervalo de confianza se determina calculando una estimación de punto y luego determinando su margen de error.
 
-El intervalo de confianza se determina calculando una estimación de punto y luego determinando su margen de error.
-
-**Estimación puntual**
-
-Este valor individual estima un parámetro de la población usando los datos de la muestra. Por ejemplo, la estimación puntual más usual es con base en el estadístico de la media muestral, es decir $\bar{X}$.
+#### **Margen de error**
 
 
-**Margen de error**
+#### Cuando usted utiliza estadísticos para estimar un valor, es importante recordar que, sin importar lo bien que esté diseñado su estudio, su estimación está sujeta a error de muestreo aleatorio. El margen de error cuantificar este error e indica la precisión de la estimación.
+
+#### Para un intervalo de confianza bilateral, el margen de error es la distancia desde el estadístico estimado hasta cada el valor del intervalo de confianza. Cuando un intervalo de confianza es simétrico, el margen de error es la mitad del ancho del intervalo de confianza.
+
+#### Mientras mayor sea el margen de error, más ancho será el intervalo y menos seguro podrá estar usted del valor de la estimación de punto.
+
+#### Finalmente el intervalo de confianza tiene la siguiente estructura:
 
 
-Cuando usted utiliza estadísticos para estimar un valor, es importante recordar que, sin importar lo bien que esté diseñado su estudio, su estimación está sujeta a error de muestreo aleatorio. El margen de error cuantificar este error e indica la precisión de la estimación.
-
-Usted probablemente ya entiende el margen de error, porque está relacionado con los resultados de las encuestas. Por ejemplo, una encuesta política podría indicar que el nivel de popularidad de un candidato es de 55% con un margen de error de 5%. Esto significa que el nivel de popularidad real es +/- 5% y, por lo tanto, se ubica entre 50% y 60%.
-
-Para un intervalo de confianza bilateral, el margen de error es la distancia desde el estadístico estimado hasta cada el valor del intervalo de confianza. Cuando un intervalo de confianza es simétrico, el margen de error es la mitad del ancho del intervalo de confianza. Por ejemplo, la longitud media estimada de un árbol de levas es 600 mm y el intervalo de confianza oscila entre 599 y 601. El margen de error es 1.
-
-Mientras mayor sea el margen de error, más ancho será el intervalo y menos seguro podrá estar usted del valor de la estimación de punto.
-
-Finalmente el intervalo de confianza tiene la siguiente estructura:
-
-
-**Valor puntual $\pm$ Valor crítico x error estándar**
+#### **Valor puntual $\pm$ Valor crítico x error estándar**
 
 
 
-Si consideramos el intervalo para la media poblacional, entonces el intervalo construido tendrá una confianza específica de la estimación correcta del valor del parámetro poblacional $\mu$. En otras palabras, existe una confianza especificada de que $\mu$ se encuentre en algún lugar en el rango de números definidos dentro del intervalo.
+#### Si consideramos el intervalo para la media poblacional, entonces el intervalo construido tendrá una confianza específica de la estimación correcta del valor del parámetro poblacional $\mu$. En otras palabras, existe una confianza especificada de que $\mu$ se encuentre en algún lugar en el rango de números definidos dentro del intervalo.
 
-En general, el **nivel de confianza** se simboliza con $(1 - \alpha).100 \%$, donde $\alpha$ es la proporción de las colas de la distribución que están fuera del intervalo de confianza. La proporción de la cola superior e inferior de la distribución es $\alpha/2$
+#### En general, el **nivel de confianza** se simboliza con $(1 - \alpha).100 \%$, donde $\alpha$ es la proporción de las colas de la distribución que están fuera del intervalo de confianza. La proporción de la cola superior e inferior de la distribución es $\alpha/2$
 
 ### Intervalos de confianza más precisos
 
-Si el intervalo de confianza es demasiado ancho, usted no puede estar muy seguro del valor real de un parámetro, como por ejemplo la media. Sin embargo, puede utilizar varias estrategias para reducir el ancho de un intervalo de confianza y hacer que la estimación sea más precisa. Las siguientes características afectan el ancho del intervalo de confianza.
+#### Si el intervalo de confianza es demasiado ancho, usted no puede estar muy seguro del valor real de un parámetro, como por ejemplo la media. Sin embargo, puede utilizar varias estrategias para reducir el ancho de un intervalo de confianza y hacer que la estimación sea más precisa. Las siguientes características afectan el ancho del intervalo de confianza.
 
-* Tamaño de la muestra
-* Variación en los datos
-* Tipo de intervalo
-* Nivel de confianza
+#### * Tamaño de la muestra
+#### * Variación en los datos
+#### * Nivel de confianza
 
-**Aumentar el tamaño de la muestra**
+#### **Aumentar el tamaño de la muestra**
 
-Con frecuencia, la manera más práctica de reducir el margen de error es aumentar el tamaño de la muestra. Por lo general, mientras más observaciones haya, más estrecho será el intervalo alrededor del estadístico de la muestra. Por lo tanto, se recomienda recolectar más datos para obtener una estimación más precisa de un parámetro de población.
-
-Debe sopesar los beneficios de una mayor precisión con respecto al tiempo y los recursos adicionales necesarios para recopilar una muestra más grande. Por ejemplo, un intervalo de confianza que sea lo suficientemente estrecho como para contener solamente el parámetro de población requiere que se midan todos los sujetos de la población. Obviamente, esta estrategia por lo general resultaría muy poco práctica.
-
-**Reducir la variabilidad**
-
-Mientras menos varíen los datos, más precisa será la estimación de un parámetro de población. Eso se debe a que al reducirse la variabilidad de los datos, disminuye la desviación estándar y, por ende, el margen de error de la estimación. Aunque puede ser difícil reducir la variabilidad de los datos, a veces se puede lograr ajustando la forma en que se recolectan los datos. Por ejemplo, puede utilizar un diseño pareado para comparar dos grupos. También podría reducir la variabilidad mejorando el proceso, de manera que el proceso sea más consistente, o midiendo con mayor precisión.
-
-**Utilizar un intervalo de confianza unilateral**
-
-Un intervalo de confianza unilateral tiene un margen de error más pequeño que un intervalo de confianza bilateral. Sin embargo, un intervalo unilateral indica solo si un parámetro es menor que o mayor que un valor de corte. Un intervalo unilateral no proporciona información acerca del parámetro en la dirección opuesta. Por lo tanto, utilice un intervalo de confianza unilateral para aumentar la precisión de una estimación solo cuando le preocupe que la estimación sea mayor o menor que un valor de corte, pero no ambos.
-
-Por ejemplo, una empresa de bebidas desea determinar la cantidad de sólidos disueltos en su agua potable. Mientras menos sólidos disueltos tenga el agua, mejor será. Cuando calculan un intervalo de confianza bilateral, el lado superior del intervalo es 18.4. Sin embargo, puesto que a la empresa solo le preocupa el límite superior, pueden calcular más bien un intervalo de confianza unilateral. El intervalo de confianza unilateral muestra que el límite superior de la cantidad de sólidos disueltos es incluso menor, 17.8 mg/L.
-
-**Reducir el nivel de confianza**
+#### Por lo general, mientras más observaciones haya, más estrecho será el intervalo alrededor del estadístico de la muestra. Por lo tanto, se recomienda recolectar más datos para obtener una estimación más precisa de un parámetro de población.
 
 
-La ventaja de un nivel de confianza más bajo es que se obtiene un intervalo de confianza más estrecho y más preciso. La desventaja es que se está menos seguro de que el intervalo de confianza contiene el parámetro de población de interés.
+#### **Reducir la variabilidad**
 
-Entonces, reduzca el nivel de confianza solo si, en su situación, la ventaja de una mayor precisión supera a la desventaja de un menor grado de certeza. Por ejemplo, si es demasiado costoso aumentar el tamaño de la muestra en su estudio, disminuir el nivel de confianza reducirá la longitud del intervalo a expensas de perder algo de confianza.
+#### Mientras menos varíen los datos, más precisa será la estimación de un parámetro de población. Eso se debe a que al reducirse la variabilidad de los datos, disminuye la desviación estándar y, por ende, el margen de error de la estimación. 
 
 
+#### **Reducir el nivel de confianza**
+
+
+#### La ventaja de un nivel de confianza más bajo es que se obtiene un intervalo de confianza más estrecho y más preciso. La desventaja es que se está menos seguro de que el intervalo de confianza contiene el parámetro de población de interés.
 
 
 ### Intervalo de confianza para la media de una población
 
 
-De una población de media $\mu$ y desviación estándar $\sigma$ se pueden tomar muestras de tamaño $n$. Como vimos anteriormente cada una de estas muestras tiene a su vez una media y que la media de todas las medias muestrales coincide con la media poblacional: $\mu_{\bar{x}}=\mu$.
+#### De una población de media $\mu$ y desviación estándar $\sigma$ se pueden tomar muestras de tamaño $n$. Como vimos anteriormente cada una de estas muestras tiene a su vez una media y que la media de todas las medias muestrales coincide con la media poblacional: $\mu_{\bar{x}}=\mu$.
 
-Pero además, si el tamaño de las muestras es lo suficientemente grande, (n >30) o la distribución poblacional es normal, la distribución de medias muestrales es, prácticamente, una distribución normal (o gaussiana) con media $\mu$ y una desviación típica dada por la siguiente expresión:
+#### Pero además, si el tamaño de las muestras es lo suficientemente grande, ($n \geq 30$) o la distribución poblacional es normal, la distribución de medias muestrales es, prácticamente, una distribución normal  con media $\mu$ y una desviación estándar dada por la siguiente expresión:
 
-$$\sigma_{\bar{x}}=\dfrac{\sigma}{\sqrt{n}}$$
+#### $$\sigma_{\bar{x}}=\dfrac{\sigma}{\sqrt{n}}$$
 
-Entonces tenemos que la media muestral $\bar{X}$ se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional $\mu$ y con desviación estándar  $\sigma$ igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:
+#### Entonces tenemos que la media muestral $\bar{X}$ se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional $\mu$ y con desviación estándar  $\sigma$ igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:
 
-$$\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})$$
+#### $$\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})$$
 
-Estandarizando, donde  $$Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$$
+#### Estandarizando, donde  $$Z = \dfrac{\bar{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$$
 
-tenemos:
+#### tenemos:
 
-$$Z \sim Normal(0,1)$$
+#### $$Z \sim Normal(0,1)$$
 
-En esta distribución normal de medias se puede calcular el intervalo de confianza donde se encontrará la media poblacional si solo se conoce una media muestral $\bar{X}$, con un nivel de confianza determinado. Habitualmente se manejan valores de confianza del 95 % y del 99 %. A estos valores de confianza se les nota por  $1-\alpha$ (debido a que $\alpha$  es la probabilidad de que la media muestral no esté en el intervalo. Tener presente:
+#### En esta distribución normal de medias se puede calcular el intervalo de confianza donde se encontrará la media poblacional si solo se conoce una media muestral $\bar{X}$, con un nivel de confianza determinado. Habitualmente se manejan valores de confianza del 95 %, 90 % y del 99 %. A estos valores de confianza se les nota por  $1-\alpha$ (debido a que $\alpha$  es la probabilidad de que la media muestral no esté en el intervalo. Tener presente:
 
-1. *$(1-\alpha)*100 \%$* es el nivel de confianza o confiabilidad.
+#### 1. *$(1-\alpha)*100 \%$* es el nivel de confianza o confiabilidad.
 
-2. *$\alpha$* es el nivel de significancia. 
+#### 2. *$\alpha$* es el nivel de significancia. 
 
 
-Para construir el intervalo de confianza se necesita encontrar en valor crítico $Z_{\alpha/2}$ que equivale a un percentil de la distribución normal estándar.
+#### Para construir el intervalo de confianza se necesita encontrar en valor crítico $Z_{\alpha/2}$ que equivale a un percentil de la distribución normal estándar.
 
 ![](int.png)
 
 > ¿Cómo encontrar el valor crítico $Z_{\alpha/2}$?
 
-Supongamos un nivel de confianza del 95 %, por tanto $\alpha=0.5$, entonces ¿Cuanto es $Z_{\alpha/2}$?, para responder esto se pueden usar tablas estadísticas de la distribución normal estándar, pero esto no es muy atractivo  en esta época. Podemos usar `RStudio`, veamos 
+#### Supongamos un nivel de confianza del 95 %, por tanto $\alpha=0.5$, entonces ¿Cuanto es $Z_{\alpha/2}$?, para responder esto se pueden usar tablas estadísticas de la distribución normal estándar, pero esto no es muy atractivo  en esta época. Podemos usar `RStudio`, veamos 
 
-Si, $\alpha=0.5$, entonces $\alpha/2=0.025$, esto quiere decir que:
+#### Si, $\alpha=0.5$, entonces $\alpha/2=0.025$, esto quiere decir que:
 
-$$P(Z< z_{\alpha/2})=0.025$$
-Para saber el valor del percentil $z_{\alpha/2}$ usamos la función `qnorm()`, como sigue para un 95 % de confianza
+#### $$P(Z< z_{\alpha/2})=0.025$$
 
-```{r}
-qnorm(0.025,0,1)
-```
- 
-Y si $\alpha=0.1$, entonces $Z_{\alpha/2}$ es decir con un 90 % de confianza
- 
-```{r}
-qnorm(0.05,0,1)
-```
 
-También, si $\alpha=0.01$, entonces $Z_{\alpha/2}$ es decir con un 99 % de confianza
+#### Para saber el valor del percentil $z_{\alpha/2}$ usamos la función `qnorm()`, como sigue para un 95 % de confianza.
 
 ```{r}
-qnorm(0.005,0,1)
+qnorm(0.025,lower.tail = FALSE)
+```
+ 
+####Y si $\alpha=0.1$, entonces $Z_{\alpha/2}$ es decir con un 90 % de confianza
+ 
+```{r}
+qnorm(0.05,lower.tail = FALSE)
+```
+
+#### También, si $\alpha=0.01$, entonces $Z_{\alpha/2}$ es decir con un 99 % de confianza
+
+```{r}
+qnorm(0.005,lower.tail = FALSE)
 ```
  
 
-En resumen,
+#### En resumen,
 
 Nivel de confianza | Nivel de significancia $\alpha$ | Punto crítico $Z_{\alpha/2}$
 ------------- | --------| -------------
-99 %          | 0.01 | 2.575
-95 %          | 0.05 | 1.960
-90 %          | 0.1  | 1.645
+99 %          | 0.01    | 2.575
+95 %          | 0.05    | 1.960
+90 %          | 0.1     | 1.645
 
 ### Intervalo para $\mu$ con $\sigma^2$ conocida
 
-Si conocemos la desviación estándar poblacional el intervalo de confianza para $\mu$ está definido de la siguiente 
-manera:
+#### Si conocemos la desviación estándar poblacional el intervalo de confianza para $\mu$ está definido de la siguiente  manera:
 
 $$\bar{X} \pm Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$$
 
-Donde, 
+#### Donde, 
 
-**Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$
+#### **Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$
 
-**Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$
+#### **Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$
 
-Por tanto, el intervalo para la media $\mu$ es
+#### Por tanto, el intervalo para la media $\mu$ es
 
-$$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} , \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)$$
+#### $$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} , \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)$$
 
 > Ejemplos
 
-1.  Los siguientes datos corresponden a una muestra de la estatura de los estudiantes (en centímetros) en cierta universidad.  Se sabe que la población es  normal con varianza $\sigma^2=7$. 
+#### 1.  Los siguientes datos corresponden a una muestra de la estatura de los estudiantes (en centímetros) en cierta universidad.  Se sabe que la población es  normal con varianza $\sigma^2=7$. 
 
-159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172
+#### 159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172
 
 
-a)  Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual
+a)  ####   Estimar la media poblacional de la estatura en los estudiantes mediante estimación puntual
 
-La estimación puntual mediante la media es:
+#### La estimación puntual mediante la media es:
 
 ```{r}
 estatura <- c(159, 179, 164, 165, 165, 168, 171, 162, 169, 168, 179, 162, 174, 168, 168, 168, 167, 157, 171, 176, 179, 163, 170, 163, 171, 161, 177, 156, 158, 171, 162, 168, 170, 168, 172, 170, 171, 169, 165, 164, 156, 170, 163, 164, 179, 165, 149, 162, 167, 172)
+##Estimación puntual de la media
 mean(estatura)
 ```
 
-Es decir que $\bar{X}=167.1 cm$ es la estimación de la media poblacional.
+#### Es decir que $\bar{X}=167.1 cm$ es la estimación de la media poblacional.
 
 
-b)  Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.
+b)  ####   Construya un intervalo de confianza para estimar la media poblacional de la estatura de los estudiantes. Con un nivel de confianza del 95 %.
 
 
-Para este caso tenemos los siguientes datos:
+#### Para este caso tenemos los siguientes datos:
 
-$n=50$
+#### $n=50$
 
-$\bar{X}=167.1$
+#### $\bar{X}=167.1$
 
-$\sigma=\sqrt{7}=2.645$
+#### $\sigma=\sqrt{7}=2.645$
 
-Necesitamos el valor crítico de la distribución normal estándar en $Z_{\alpha/2}$
+#### Necesitamos el valor crítico de la distribución normal estándar en $Z_{\alpha/2}$
 
 
 ```{r}
-qnorm(0.025,0,1)
+qnorm(0.025,lower.tail = FALSE)
 ```
 
-Es decir $Z_{0.005}=1.960$, tomando el valor positivo. 
+#### Es decir $Z_{0.005}=1.960$, tomando el valor positivo. 
 
-Luego:
-
-
-**Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 - 1.960*\dfrac{2.645}{\sqrt{50}}=166.36$
-
-**Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 + 1.960*\dfrac{9000}{\sqrt{50}}=167.83$
-
-Por lo tanto el intervalo de confianza del 95 % esta dado por 
-
-$$\Big(166.36, 167.83 \Big)cm $$
-
-Conclusión: Podemos afirmar con una confiabilidad del 95 % que el promedio de la estatura en los estudiantes está dentro del intervalo de confianza. Es decir entre $166.36$  y $167.83$.
+#### Luego:
 
 
+#### **Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 - 1.960*\dfrac{2.645}{\sqrt{50}}=166.36$
+
+#### **Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 + 1.960*\dfrac{9000}{\sqrt{50}}=167.83$
+
+#### Por lo tanto el intervalo de confianza del 95 % esta dado por 
+
+#### $$\Big(166.36, 167.83 \Big)cm $$
+
+####Conclusión: Podemos afirmar con una confiabilidad del 95 % que el promedio de la estatura en los estudiantes esta entre $166.36$  y $167.83$.
 
 
 
 
 
-2.  Una prestigiosa cadena de restaurantes  está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos  piensan que si dichas ventas en promedio son mayores a $30,000$ al mes, entonces  la decisión será viable.  Se conoce que la desviación estándar poblacional es $\sigma=\$9000$. Los datos son los siguientes:
-
-28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284
 
 
-a)	Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?
+#### 2.  Una prestigiosa cadena de restaurantes  está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos  piensan que si dichas ventas en promedio son mayores a $30,000$ al mes, entonces  la decisión será viable.  Se conoce que la desviación estándar poblacional es $\sigma=\$9000$. Los datos son los siguientes:
+
+#### 28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284
+
+
+a)  #### 	Use estimación puntual para estimar la media poblacional de las ventas. ¿Que le recomienda al dueño del restaurante?
 
 
 ```{r}
@@ -322,69 +304,110 @@ ventas <- c(28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308
 mean(ventas)
 ```
 
-Tenemos que $\bar{X}=\$23126.67$ es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra uno nuevo. 
+#### Tenemos que $\bar{X}=\$23126.67$ es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra uno nuevo. 
 
 
 
-b)	Construya un intervalo de confianza para estimar el promedio de ventas mensuales.  ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.
+b)  #### 	Construya un intervalo de confianza para estimar el promedio de ventas mensuales.  ¿Es viable abrir un nuevo restaurante en la ciudad?. Use un nivel de confianza del 99 %.
 
-Para este caso tenemos los siguientes datos:
+#### Para este caso tenemos los siguientes datos:
 
-$n=12$
+#### $n=12$
 
-$\bar{X}=\$23126.67$
+#### $\bar{X}=\$23126.67$
 
-$\sigma=9000$
+#### $\sigma=9000$
 
-Necesitamos el valor crítico de la distribución normal estándar en $Z_{\alpha/2}$
+#### Necesitamos el valor crítico de la distribución normal estándar en $Z_{\alpha/2}$
 
 
 ```{r}
-qnorm(0.005,0,1)
+qnorm(0.005,lower.tail = FALSE)
 ```
 
-Es decir $Z_{0.005}=2.575$, tomando el valor positivo. 
+#### Es decir $Z_{0.005}=2.575$, tomando el valor positivo. 
 
-Luego:
+#### Luego:
 
 
-**Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 - 2.575*\dfrac{9000}{\sqrt{12}}=16436.62$
+#### **Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 - 2.575*\dfrac{9000}{\sqrt{12}}=16436.62$
 
-**Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 + 2.575*\dfrac{9000}{\sqrt{12}}=29816.71$
+#### **Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=23126.67 + 2.575*\dfrac{9000}{\sqrt{12}}=29816.71$
 
-Por lo tanto el intervalo de confianza del 99 % esta dado por 
+#### Por lo tanto el intervalo de confianza del 99 % esta dado por 
 
-$$\Big(16436.62, 29816.71 \Big)\$ $$
+#### $$\Big(16436.62, 29816.71 \Big)\$ $$
 
-Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales está dentro del intervalo de confianza. Es decir entre $\$16436.62$  y $\$29816.71$.
+#### Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales está entre $\$16436.62$  y $\$29816.71$.
 
-**También la apertura de un nuevo restaurante NO puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante NO está dentro del intervalo**. 
+#### **También la apertura de un nuevo restaurante NO puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante NO está dentro del intervalo**. 
 
 
 
 ### Intervalo para $\mu$ con $\sigma^2$ desconocida
 
-$$\bar{X} \pm t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}$$
+#### Supongamos que la población es normal con media y varianza desconocida y que se desea hacer inferencias acerca de la población, con base  en una muestra pequeña (n < 30) tomada de la población. En este caso la distribución de la media muestral ya no es normal, sino que sigue la distribución t de Student.
 
-Donde, 
+### Distribución t-Student
 
-**Límite Inferior**: $\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}$
+#### La distribución $t$ de Student es bastante similar a la Normal Estándar, con la diferencia que se aproxima más lentamente al eje horizontal. El parámetro de esta distribución es llamado grados de libertad, y se puede notar que a medida que los grados de libertad aumentan, la curva de la $t$ y la curva normal estándar se asemejan cada vez más. Por cada estimación de parámetro, calculada en forma independiente, que aparece en la fórmula del estadístico se pierde un grado de libertad con respecto al total de datos tomados. Los grados de libertad se denotan por  $v$.
 
-**Límite Superior**: $\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}$
+![](tstudent.png)
 
-Por tanto, el intervalo para la media $\mu$ es
+### Valores de la distribución t-Student
 
-$$\Big(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}} , \bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}\Big)$$
+#### Para calcular un valor específico de la distribución t-Student necesitamos el número de grados de libertad y el valor de la probabilidad correspondiente.
 
-Donde $n-1$son los grados de libertad para estimar $\mu$. También $t_{n-1,\alpha/2}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución.
+> Ejemplos:
+
+#### 1. Calcular $t_{(0.05,19)}$ 
+
+#### Podemos usar `RStudio` para calcular dicho valor de la distribución t a cola izquierda. La función es `qt()`.
+
+```{r}
+qt(0.05,19)
+```
+
+#### En la función `qt()` el primer argumento es la probabilidad acumulada a cola izquierda. Sí se requiere la probabilidad a cola derecha, entonces el código es el siguiente:
+
+```{r}
+qt(0.60,19,lower.tail = FALSE)
+```
+
+#### Note que es el mismo valor pero con el signo intercambiado. Esto se debe a que la distribución t-student también es simétrica.
+
+#### 1. Calcular $t_{(0.05,19)}$ 
+
+
+```{r}
+qt(0.60,19)
+```
+
+
+#### Entonces, si $\sigma$ es desconocida, el intervalo de confianza para $\mu$, usando la distribución t-Student es el siguiente:
+
+
+$$\bar{X} \pm t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$$
+
+#### Donde, 
+
+#### **Límite Inferior**: $\bar{X} - t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}}$
+
+#### **Límite Superior**: $\bar{X} + t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}}$
+
+#### Por tanto, el intervalo para la media $\mu$ es
+
+#### $$\Big(\bar{X} - t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}} , \bar{X} + t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}}\Big)$$
+
+#### Donde $n-1$ son los grados de libertad para estimar $\mu$. También $t_{(\frac{\alpha}{2},n-1)}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución tal como vimos anteriormente.
 
 
 > Ejemplos
 
-Supongamos que en el ejemplo de la cadena de restaurantes, desconocemos la desviación poblacional $\sigma$, por lo tanto tenemos que calcular la desviación muestral $S$. Responder las preguntas a) y b) en este nuevo escenario. 
+#### Supongamos que en el ejemplo de la cadena de restaurantes, desconocemos la desviación poblacional $\sigma$, por lo tanto tenemos que calcular la desviación muestral $S$. Responder las preguntas a) y b) en este nuevo escenario. 
 
 
-Tenemos que calcular la desviación estándar de los datos 
+#### Tenemos que calcular la desviación estándar de los datos 
 
 ```{r}
 ventas <- c(28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284)
@@ -392,52 +415,52 @@ mean(ventas)
 sd(ventas)
 ```
 
-a)  Tenemos que $\bar{X}=\$23126.67$, es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra un nuevo restaurante. 
+a)  ####   Tenemos que $\bar{X}=\$23126.67$, es la estimación puntual del promedio mensual de ventas. Por lo tanto según la meta del dueño del restaurante no es recomendable que abra un nuevo restaurante. 
 
-b)  Para este caso tenemos los siguientes datos:
+b)  ####   Para este caso tenemos los siguientes datos:
 
-$n=12$
+#### $n=12$
 
-$\bar{X}=\$23126.67$
+#### $\bar{X}=\$23126.67$
 
-$S=9157.75$
+#### $S=9157.75$
 
-Necesitamos el valor de la distribución t-student en $t_{n-1,\alpha/2}$
+#### Necesitamos el valor de la distribución t-student en $t_{n-1,\alpha/2}$
 
 
 ```{r}
-qt(0.005,11)
+qt(0.005,11,lower.tail = FALSE)
 ```
 
-Es decir $t_{11,0.005}=3.1058$, tomando el valor positivo. 
+#### Es decir $t_{11,0.005}=3.1058$, tomando el valor positivo. 
 
-Luego:
+#### Luego:
 
 
-**Límite Inferior**: $\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13$
+#### **Límite Inferior**: $\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13$
 
-**Límite Superior**: $\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20$
+#### **Límite Superior**: $\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20$
 
-Por lo tanto el intervalo de confianza está dado por 
+#### Por lo tanto el intervalo de confianza está dado por 
 
-$$\Big(14916.13,31337.20\Big)\$ $$
+#### $$\Big(14916.13,31337.20\Big)\$ $$
 
-Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales está dentro del intervalo de confianza. Es decir entre $\$14916.13$  y $\$31337.20$.
+#### Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales está entre $\$14916.13$  y $\$31337.20$.
 
-**También la apertura de un nuevo restaurante puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante está dentro del intervalo**. 
+#### **También la apertura de un nuevo restaurante puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante está dentro del intervalo**. 
 
 
 ## Intervalo de confianza para proporciones
 
-El intervalo de confianza para estimar una proporción $\pi$, conocida como una proporción muestral \hat{p} de una muestra de tamaño $n$, a un nivel de confianza del $(1-\alpha)100 \%$ es:
+#### El intervalo de confianza para estimar una proporción $\pi$, conocida como una proporción muestral \hat{p} de una muestra de tamaño $n$, a un nivel de confianza del $(1-\alpha)100 \%$ es:
 
 
-$$\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} $$
+#### $$\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} $$
 Donde,
 
-**Límite Inferior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+#### **Límite Inferior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
-**Límite Superior**: $\hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+#### **Límite Superior**: $\hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
 Es decir el intervalo es 
 
@@ -552,9 +575,6 @@ b)   $(0.0375,0.0556)$ at 80 %
 
 
 ![](blanco.png)
-
-
-
 
 
 

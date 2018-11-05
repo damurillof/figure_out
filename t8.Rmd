@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Resuelva los siguientes problemas mostrando claramente su procedimiento.
 
-#### **1.** Suponga que $t$ es una distribución $t$-Student. Es decir $t(v)$, donde $v$ son los grados de libertad. Use RStudio o una tabla de probabilidades $t$-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso)
+#### **1.** Suponga que $t$ es una distribución $t$-Student. Es decir $t(v)$, donde $v$ son los grados de libertad. Use `RStudio` o una tabla de probabilidades $t$-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso)
 
 a)  ####  $t_{(\alpha,v)}$ si $n=7$ y $\alpha=0.05$
 
