@@ -277,7 +277,7 @@ qnorm(0.025,lower.tail = FALSE)
 
 #### **Límite Inferior**: $\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 - 1.960*\dfrac{2.645}{\sqrt{50}}=166.36$
 
-#### **Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 + 1.960*\dfrac{9000}{\sqrt{50}}=167.83$
+#### **Límite Superior**: $\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=167.1 + 1.960*\dfrac{2.645}{\sqrt{50}}=167.83$
 
 #### Por lo tanto el intervalo de confianza del 95 % esta dado por 
 
@@ -462,17 +462,17 @@ Donde,
 
 #### **Límite Superior**: $\hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
-Es decir el intervalo es 
+#### Es decir el intervalo es 
 
-$$\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\Big)$$
+#### $$\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\Big)$$
 
 
 > Ejemplos
 
-1.  Volvamos al ejemplo de los estudiantes a los que les gusta la comida de la cafetería colegial, suponga que fueron preguntados 300 estudiantes del Colegio y de ellos 180 contestaron que si les gusta la comida. Construir intervalos de confianza del 99 %, 95 % y 90 % para estimar la proporción de estudiantes a los que les gusta la comida de la cafetería. 
+#### 1.  Volvamos al ejemplo de los estudiantes a los que les gusta la comida de la cafetería colegial, suponga que fueron preguntados 300 estudiantes del Colegio y de ellos 180 contestaron que si les gusta la comida. Construir intervalos de confianza del 99 %, 95 % y 90 % para estimar la proporción de estudiantes a los que les gusta la comida de la cafetería. 
 
 
-2.  De una muestra de 180 personas que son fumadores frecuentes se encontró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.
+#### 2.  De una muestra de 180 personas que son fumadores frecuentes se encontró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.
 
 
 
