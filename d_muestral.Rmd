@@ -185,6 +185,27 @@ Ahora, con un mayor número de muestras tenemos que:
 
 2.  #### Supongamos que el ingreso familiar promedio en los Estados Unidos es de $\$51,344$, con una desviación estándar de $\$15,377$. ¿Cuál es la probabilidad de que una muestra aleatoria de $124$ hogares tenga un ingreso familiar promedio de más de $ 54,000?
 
+#### Aquí podemos usar el TLC para aproximar la distribución del promedio de ingresos por familia en EEUU. Entonces como $n \geq 30$, se cumple que:
+
+#### $$\bar{X} \sim Normal\Big(51,344,\dfrac{15,377}{\sqrt{124}}\Big)$$
+
+####  Entonces, la probabilidad de encontrar un ingreso familiar promedio mayor a 54000 esta dada por:
+
+####  $$P(\bar{X} > 54000) = 1 - P(\bar{X} <54,000)=$$
+
+####  $$ 1 - P\Bigg(Z< \dfrac{54,000 - 51,344}{\frac{15,377}{\sqrt{124}}}\Bigg)=$$
+
+####  $$1 - P(Z< 1.9233)=$$
+
+#### Buscamos en `RStudio` la probabilidad $P(Z<1.9233)$
+
+```{r}
+pnorm(1.9233)
+```
+
+####  Así,
+
+#### $$P(\bar{X} > 54000)=1 - P(Z< 1.9233)=1 - 0.9727= 0.0273$$
 
 ### Distribución de la Proporción Muestral
 
