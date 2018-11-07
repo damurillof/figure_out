@@ -218,6 +218,8 @@ $(document).ready(function () {
 <li><a href="#intervalo-para-mu-con-sigma2-desconocida">Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma^2\)</span> desconocida</a></li>
 <li><a href="#distribucion-t-student">Distribución t-Student</a></li>
 <li><a href="#valores-de-la-distribucion-t-student">Valores de la distribución t-Student</a></li>
+<li><a href="#intervalo-t---student">Intervalo t - Student</a></li>
+<li><a href="#comentarios-finales-para-el-intervalo-de-mu-con-sigma-desconocida.">Comentarios finales para el intervalo de <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> desconocida.</a></li>
 </ul></li>
 <li><a href="#intervalo-de-confianza-para-proporciones">Intervalo de confianza para proporciones</a></li>
 <li><a href="#ejercicios-de-repaso">Ejercicios de repaso</a><ul>
@@ -519,6 +521,21 @@ $(document).ready(function () {
 </div>
 <div id="bigbarx---z_alpha2dfracsigmasqrtn-barx-z_alpha2dfracsigmasqrtnbig" class="section level4">
 <h4><span class="math display">\[\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} , \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)\]</span></h4>
+</div>
+<div id="supuestos" class="section level4">
+<h4>SUPUESTOS:</h4>
+</div>
+<div id="el-intervalo-de-confianza-para-mu-que-obtuvimos-anteriormente-funciona-bien-si-se-cumplen-los-siguientes-supuestos" class="section level4">
+<h4>El intervalo de confianza para <span class="math inline">\(\mu\)</span> que obtuvimos anteriormente funciona bien si se cumplen los siguientes supuestos:</h4>
+</div>
+<div id="la-varianza-sigma-es-conocida." class="section level4">
+<h4>1. La varianza <span class="math inline">\(\sigma\)</span> es conocida.</h4>
+</div>
+<div id="la-muestra-proviene-de-una-distribucion-normal-de-media-mu-con-desviacion-estandar-sigma-conocida." class="section level4">
+<h4>2. La muestra proviene de una distribución Normal de media <span class="math inline">\(\mu\)</span> con desviación estándar <span class="math inline">\(\sigma\)</span> conocida.</h4>
+</div>
+<div id="los-datos-de-la-muestra-x_1-x_2...x_n-son-independientes." class="section level4">
+<h4>3. Los datos de la muestra <span class="math inline">\(X_1, X_2,...,X_n\)</span> son independientes.</h4>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
@@ -666,28 +683,64 @@ mean(ventas)</code></pre>
 <blockquote>
 <p>Ejemplos:</p>
 </blockquote>
+<p>Podemos usar la siguiente función para gráficar la región.</p>
+<pre class="r"><code>t_area &lt;- function(p,v,low.T = TRUE){
+  if (low.T == TRUE) {
+    t &lt;- seq(-5,5,length=200)
+    q &lt;- qt(p,v)
+    tt &lt;- dt(t,v)
+    plot(t,tt,type=&quot;l&quot;, lwd=2, col=&quot;black&quot;)
+    t=seq(-5,q,length=200)
+    tt=dt(t,v)
+    polygon(c(-5,t,q),c(0,tt,0),col=&quot;blue&quot;)
+    axis(side = 1, at=-3:3)
+  } else {
+  t &lt;- seq(-5,5,length=200)
+  q &lt;- qt(p,v,lower.tail = FALSE)
+  tt &lt;- dt(t,v)
+  plot(t,tt,type=&quot;l&quot;, lwd=2, col=&quot;black&quot;)
+  t=seq(q,5,length=200)
+  tt=dt(t,v)
+  polygon(c(q,t,5),c(0,tt,0),col=&quot;red&quot;)
+  axis(side = 1, at=-3:3)
+  }
+}</code></pre>
 </div>
-<div id="calcular-t_0.0519" class="section level4">
-<h4>1. Calcular <span class="math inline">\(t_{(0.05,19)}\)</span></h4>
+<div id="calcular-t_0.0519-a-cola-izquierda." class="section level4">
+<h4>1. Calcular <span class="math inline">\(t_{(0.05,19)}\)</span> a cola izquierda.</h4>
 </div>
 <div id="podemos-usar-rstudio-para-calcular-dicho-valor-de-la-distribucion-t-a-cola-izquierda.-la-funcion-es-qt." class="section level4">
 <h4>Podemos usar <code>RStudio</code> para calcular dicho valor de la distribución t a cola izquierda. La función es <code>qt()</code>.</h4>
 <pre class="r"><code>qt(0.05,19)</code></pre>
 <pre><code>## [1] -1.729133</code></pre>
+<pre class="r"><code>t_area(0.05,19,low.T = TRUE)</code></pre>
+<p><img src="interval_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 <div id="en-la-funcion-qt-el-primer-argumento-es-la-probabilidad-acumulada-a-cola-izquierda.-si-se-requiere-la-probabilidad-a-cola-derecha-entonces-el-codigo-es-el-siguiente" class="section level4">
 <h4>En la función <code>qt()</code> el primer argumento es la probabilidad acumulada a cola izquierda. Sí se requiere la probabilidad a cola derecha, entonces el código es el siguiente:</h4>
-<pre class="r"><code>qt(0.60,19,lower.tail = FALSE)</code></pre>
-<pre><code>## [1] -0.2569228</code></pre>
+<pre class="r"><code>qt(0.05,19,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 1.729133</code></pre>
 </div>
 <div id="note-que-es-el-mismo-valor-pero-con-el-signo-intercambiado.-esto-se-debe-a-que-la-distribucion-t-student-tambien-es-simetrica." class="section level4">
 <h4>Note que es el mismo valor pero con el signo intercambiado. Esto se debe a que la distribución t-student también es simétrica.</h4>
 </div>
-<div id="calcular-t_0.0519-1" class="section level4">
-<h4>1. Calcular <span class="math inline">\(t_{(0.05,19)}\)</span></h4>
-<pre class="r"><code>qt(0.60,19)</code></pre>
-<pre><code>## [1] 0.2569228</code></pre>
+<div id="calcular-t_0.115-a-cola-derecha." class="section level4">
+<h4>2. Calcular <span class="math inline">\(t_{(0.1,15)}\)</span> a cola derecha.</h4>
+<pre class="r"><code>qt(0.1,15,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 1.340606</code></pre>
+<pre class="r"><code>t_area(0.1,15,low.T = FALSE)</code></pre>
+<p><img src="interval_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
+<div id="calcular-t_0.56-a-cola-derecha." class="section level4">
+<h4>3. Calcular <span class="math inline">\(t_{(0.5,6)}\)</span> a cola derecha.</h4>
+<pre class="r"><code>qt(0.5,6,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>t_area(0.5,6,low.T = FALSE)</code></pre>
+<p><img src="interval_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+</div>
+<div id="intervalo-t---student" class="section level3">
+<h3>Intervalo t - Student</h3>
 <div id="entonces-si-sigma-es-desconocida-el-intervalo-de-confianza-para-mu-usando-la-distribucion-t-student-es-el-siguiente" class="section level4">
 <h4>Entonces, si <span class="math inline">\(\sigma\)</span> es desconocida, el intervalo de confianza para <span class="math inline">\(\mu\)</span>, usando la distribución t-Student es el siguiente:</h4>
 <p><span class="math display">\[\bar{X} \pm t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}\]</span></p>
@@ -709,6 +762,21 @@ mean(ventas)</code></pre>
 </div>
 <div id="donde-n-1-son-los-grados-de-libertad-para-estimar-mu.-tambien-t_fracalpha2n-1-es-la-distribucion-t-student-con-n-1-grados-de-libertad.-en-rstudio-se-puede-usar-el-comando-qtpn-1-para-encontrar-el-valor-critico-de-la-distribucion-tal-como-vimos-anteriormente." class="section level4">
 <h4>Donde <span class="math inline">\(n-1\)</span> son los grados de libertad para estimar <span class="math inline">\(\mu\)</span>. También <span class="math inline">\(t_{(\frac{\alpha}{2},n-1)}\)</span> es la distribución t-student con <span class="math inline">\(n-1\)</span> grados de libertad. En <code>RStudio</code> se puede usar el comando <code>qt(p,n-1)</code> para encontrar el valor crítico de la distribución tal como vimos anteriormente.</h4>
+</div>
+<div id="supuestos-1" class="section level4">
+<h4>SUPUESTOS:</h4>
+</div>
+<div id="el-intervalo-de-confianza-para-mu-que-obtuvimos-anteriormente-funciona-bien-si-se-cumplen-los-siguientes-supuestos-1" class="section level4">
+<h4>El intervalo de confianza para <span class="math inline">\(\mu\)</span> que obtuvimos anteriormente funciona bien si se cumplen los siguientes supuestos:</h4>
+</div>
+<div id="la-varianza-sigma2-es-desconocida." class="section level4">
+<h4>1. La varianza <span class="math inline">\(\sigma^2\)</span> es desconocida.</h4>
+</div>
+<div id="la-muestra-proviene-de-una-distribucion-normal-de-media-mu-y-desviacion-estandar-sigma-desconocidas." class="section level4">
+<h4>2. La muestra proviene de una distribución Normal de media <span class="math inline">\(\mu\)</span> y desviación estándar <span class="math inline">\(\sigma\)</span> desconocidas.</h4>
+</div>
+<div id="los-datos-de-la-muestra-x_1-x_2...x_n-son-independientes.-1" class="section level4">
+<h4>3. Los datos de la muestra <span class="math inline">\(X_1, X_2,...,X_n\)</span> son independientes.</h4>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
@@ -742,17 +810,17 @@ mean(ventas)</code></pre>
 <pre class="r"><code>qt(0.005,11,lower.tail = FALSE)</code></pre>
 <pre><code>## [1] 3.105807</code></pre>
 </div>
-<div id="es-decir-t_110.0053.1058-tomando-el-valor-positivo." class="section level4">
-<h4>Es decir <span class="math inline">\(t_{11,0.005}=3.1058\)</span>, tomando el valor positivo.</h4>
+<div id="es-decir-t_0.005113.1058-tomando-el-valor-positivo." class="section level4">
+<h4>Es decir <span class="math inline">\(t_{(0.005,11)}=3.1058\)</span>, tomando el valor positivo.</h4>
 </div>
 <div id="luego-2" class="section level4">
 <h4>Luego:</h4>
 </div>
-<div id="limite-inferior-barx---t_n-1alpha2dfracssqrtn23126.67---3.1058dfrac9157.75sqrt1214916.13" class="section level4">
-<h4><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13\)</span></h4>
+<div id="limite-inferior-barx---t_alpha2n-1dfracssqrtn23126.67---3.1058dfrac9157.75sqrt1214916.13" class="section level4">
+<h4><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - t_{(\alpha/2,n-1)}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13\)</span></h4>
 </div>
-<div id="limite-superior-barx-t_n-1alpha2dfracssqrtn23126.67-3.1058dfrac9157.75sqrt1231337.20" class="section level4">
-<h4><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20\)</span></h4>
+<div id="limite-superior-barx-t_alpha2n-1dfracssqrtn23126.67-3.1058dfrac9157.75sqrt1231337.20" class="section level4">
+<h4><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + t_{(\alpha/2,n-1)}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20\)</span></h4>
 </div>
 <div id="por-lo-tanto-el-intervalo-de-confianza-esta-dado-por" class="section level4">
 <h4>Por lo tanto el intervalo de confianza está dado por</h4>
@@ -763,19 +831,45 @@ mean(ventas)</code></pre>
 <div id="conclusion-podemos-afirmar-con-una-confiabilidad-del-99-que-el-promedio-de-ventas-mensuales-esta-entre-14916.13-y-31337.20." class="section level4">
 <h4>Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales está entre <span class="math inline">\(\$14916.13\)</span> y <span class="math inline">\(\$31337.20\)</span>.</h4>
 </div>
+<div id="se-cumple-el-supuesto-de-normalidad" class="section level4">
+<h4>¿Se cumple el supuesto de Normalidad?</h4>
+</div>
+<div id="podemos-hacer-un-q-q-plot-para-tener-alguna-idea-de-esto" class="section level4">
+<h4>Podemos hacer un Q-Q plot para tener alguna idea de esto!</h4>
+<pre class="r"><code>qqnorm(ventas,pch=16)
+qqline(ventas)</code></pre>
+<p><img src="interval_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="con-respecto-a-la-grafica-de-normalidad-podemos-observar-que-los-puntos-nos-se-asemejan-mucho-a-la-linea-recta-ademas-hay-un-dato-atipico.-aqui-el-supuesto-de-normalidad-no-se-cumple-a-cabalidad." class="section level4">
+<h4>Con respecto a la gráfica de normalidad, podemos observar que los puntos nos se asemejan mucho a la linea recta, además hay un dato atípico. Aquí el supuesto de normalidad no se cumple a cabalidad.</h4>
+</div>
 <div id="tambien-la-apertura-de-un-nuevo-restaurante-puede-ser-viable-dado-a-que-la-meta-de-30000-mil-propuesta-por-el-dueno-del-restaurante-esta-dentro-del-intervalo." class="section level4">
 <h4><strong>También la apertura de un nuevo restaurante puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante está dentro del intervalo</strong>.</h4>
+</div>
+</div>
+<div id="comentarios-finales-para-el-intervalo-de-mu-con-sigma-desconocida." class="section level3">
+<h3>Comentarios finales para el intervalo de <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> desconocida.</h3>
+<div id="en-casi-todas-las-situaciones-practicas-al-construir-un-intervalo-de-confianza-para-mu-sigma-no-se-conoce." class="section level4">
+<h4>En casi todas las situaciones prácticas al construir un intervalo de confianza para <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma\)</span> no se conoce.</h4>
+</div>
+<div id="cuando-el-tamano-de-la-muestra-es-pequeno-el-uso-de-la-distribucion-t-dara-lugar-a-intervalos-de-confianza-mas-amplios-comparado-a-si-usaramos-un-intervalo-de-confianza-z-sigma-conocida." class="section level4">
+<h4>Cuando el tamaño de la muestra es pequeño, el uso de la distribución t dará lugar a intervalos de confianza más amplios, comparado a si usaramos un intervalo de confianza <span class="math inline">\(Z\)</span> (<span class="math inline">\(\sigma\)</span> conocida).</h4>
+</div>
+<div id="aunque-teoricamente-la-distribucion-t-student-se-aplica-a-muestras-de-una-poblacion-normal-en-la-practica-el-intervalo-de-confianza-es-bastante-solido-para-una-violacion-de-este-supuesto-siempre-que-la-muestra-no-provenga-de-una-poblacion-con-una-distribucion-muy-sesgada." class="section level4">
+<h4>Aunque teóricamente, la distribución t-Student se aplica a muestras de una población normal, en la práctica el intervalo de confianza es bastante sólido para una violación de este supuesto siempre que la muestra no provenga de una población con una distribución muy sesgada.</h4>
 </div>
 </div>
 </div>
 <div id="intervalo-de-confianza-para-proporciones" class="section level2">
 <h2>Intervalo de confianza para proporciones</h2>
-<div id="el-intervalo-de-confianza-para-estimar-una-proporcion-pi-conocida-como-una-proporcion-muestral-de-una-muestra-de-tamano-n-a-un-nivel-de-confianza-del-1-alpha100-es" class="section level4">
-<h4>El intervalo de confianza para estimar una proporción <span class="math inline">\(\pi\)</span>, conocida como una proporción muestral  de una muestra de tamaño <span class="math inline">\(n\)</span>, a un nivel de confianza del <span class="math inline">\((1-\alpha)100 \%\)</span> es:</h4>
+<div id="el-intervalo-de-confianza-para-estimar-una-proporcion-p-conocida-como-una-proporcion-muestral-de-una-muestra-de-tamano-n-a-un-nivel-de-confianza-del-1-alpha100-es" class="section level4">
+<h4>El intervalo de confianza para estimar una proporción <span class="math inline">\(p\)</span>, conocida como una proporción muestral  de una muestra de tamaño <span class="math inline">\(n\)</span>, a un nivel de confianza del <span class="math inline">\((1-\alpha)100 \%\)</span> es:</h4>
 </div>
 <div id="hatppm-z_alpha2sqrtdfrachatp1-hatpn" class="section level4">
-<h4><span class="math display">\[\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} \]</span></h4>
-<p>Donde,</p>
+<h4><span class="math display">\[\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\]</span></h4>
+</div>
+<div id="donde-2" class="section level4">
+<h4>Donde,</h4>
 </div>
 <div id="limite-inferior-hatp---z_alpha2sqrtdfrachatp1-hatpn" class="section level4">
 <h4><strong>Límite Inferior</strong>: <span class="math inline">\(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></h4>
@@ -788,6 +882,18 @@ mean(ventas)</code></pre>
 </div>
 <div id="bighatp---z_alpha2sqrtdfrachatp1-hatpn-hatp-z_alpha2sqrtdfrachatp1-hatpnbig" class="section level4">
 <h4><span class="math display">\[\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\Big)\]</span></h4>
+</div>
+<div id="supuestos-2" class="section level4">
+<h4>SUPUESTOS:</h4>
+</div>
+<div id="el-intervalo-de-confianza-aproximado-para-p-que-obtuvimos-anteriormente-funciona-bien-si-se-cumplen-simultaneamente-las-dos-condiciones-siguientes" class="section level4">
+<h4>El intervalo de confianza aproximado para <span class="math inline">\(p\)</span> que obtuvimos anteriormente funciona bien si se cumplen simultáneamente las dos condiciones siguientes:</h4>
+</div>
+<div id="np-geq-10-el-numero-de-exitos-esperados" class="section level4">
+<h4>1. <span class="math inline">\(np \geq 10\)</span> (El número de éxitos esperados)</h4>
+</div>
+<div id="n1-p-geq-10-el-numero-de-fallas-esperadas" class="section level4">
+<h4>2. <span class="math inline">\(n(1 − p) \geq 10\)</span> (El número de fallas esperadas)</h4>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>

@@ -14,13 +14,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Resuelva los siguientes problemas mostrando claramente su procedimiento.
 
-#### **1.** Suponga que $t$ es una distribución $t$-Student. Es decir $t(v)$, donde $v$ son los grados de libertad. Use `RStudio` o una tabla de probabilidades $t$-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso)
+#### **1.** Suponga que $t$ es una distribución $t$-Student. Es decir $t(v)$, donde $v$ son los grados de libertad. Use `RStudio` o una tabla de probabilidades $t$-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso). 
 
-a)  ####  $t_{(\alpha,v)}$ si $n=7$ y $\alpha=0.05$
+a)  ####  $t_{(\alpha,v)}$, si $v=7$ y $\alpha=0.05$ a cola izquierda.
 
-b)  ####  $t_{(\frac{\alpha}{2},v)}$ si $n=15$ y $\alpha=0.01$
+b)  ####  $t_{(\frac{\alpha}{2},v)}$, si $v=15$ y $\alpha=0.01$ a cola derecha.
 
-b)  ####  $t_{(\frac{\alpha}{2},v)}$ si $n=12$ y $\alpha=0.03$
+b)  ####  $t_{(\frac{\alpha}{2},v)}$, si $v=12$ y $\alpha=0.03$ a cola derecha. 
 
 #### **2.** Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses, y los datos son los siguientes:
 

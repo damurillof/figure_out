@@ -232,6 +232,15 @@ $$\bar{X} \pm Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$$
 
 #### $$\Big(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}} , \bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\Big)$$
 
+
+#### SUPUESTOS:
+
+#### El intervalo de confianza para $\mu$ que obtuvimos anteriormente funciona bien si se cumplen los siguientes supuestos:
+
+#### 1.  La varianza $\sigma$ es conocida.
+#### 2.  La muestra proviene de una distribución Normal de media $\mu$ con  desviación estándar $\sigma$ conocida.
+#### 3.  Los datos de la muestra $X_1, X_2,...,X_n$ son independientes.
+
 > Ejemplos
 
 #### 1.  Los siguientes datos corresponden a una muestra de la estatura de los estudiantes (en centímetros) en cierta universidad.  Se sabe que la población es  normal con varianza $\sigma^2=7$. 
@@ -360,29 +369,66 @@ qnorm(0.005,lower.tail = FALSE)
 
 > Ejemplos:
 
-#### 1. Calcular $t_{(0.05,19)}$ 
+Podemos usar la siguiente función para gráficar la región. 
+
+```{r}
+t_area <- function(p,v,low.T = TRUE){
+  if (low.T == TRUE) {
+    t <- seq(-5,5,length=200)
+    q <- qt(p,v)
+    tt <- dt(t,v)
+    plot(t,tt,type="l", lwd=2, col="black")
+    t=seq(-5,q,length=200)
+    tt=dt(t,v)
+    polygon(c(-5,t,q),c(0,tt,0),col="blue")
+    axis(side = 1, at=-3:3)
+  } else {
+  t <- seq(-5,5,length=200)
+  q <- qt(p,v,lower.tail = FALSE)
+  tt <- dt(t,v)
+  plot(t,tt,type="l", lwd=2, col="black")
+  t=seq(q,5,length=200)
+  tt=dt(t,v)
+  polygon(c(q,t,5),c(0,tt,0),col="red")
+  axis(side = 1, at=-3:3)
+  }
+}
+```
+
+
+#### 1. Calcular $t_{(0.05,19)}$  a cola izquierda.
 
 #### Podemos usar `RStudio` para calcular dicho valor de la distribución t a cola izquierda. La función es `qt()`.
 
 ```{r}
 qt(0.05,19)
+t_area(0.05,19,low.T = TRUE)
 ```
 
 #### En la función `qt()` el primer argumento es la probabilidad acumulada a cola izquierda. Sí se requiere la probabilidad a cola derecha, entonces el código es el siguiente:
 
 ```{r}
-qt(0.60,19,lower.tail = FALSE)
+qt(0.05,19,lower.tail = FALSE)
 ```
 
 #### Note que es el mismo valor pero con el signo intercambiado. Esto se debe a que la distribución t-student también es simétrica.
 
-#### 1. Calcular $t_{(0.05,19)}$ 
+#### 2. Calcular $t_{(0.1,15)}$ a cola derecha.
 
 
 ```{r}
-qt(0.60,19)
+qt(0.1,15,lower.tail = FALSE)
+t_area(0.1,15,low.T = FALSE)
 ```
 
+#### 3. Calcular $t_{(0.5,6)}$ a cola derecha.
+
+```{r}
+qt(0.5,6,lower.tail = FALSE)
+t_area(0.5,6,low.T = FALSE)
+```
+
+### Intervalo t - Student
 
 #### Entonces, si $\sigma$ es desconocida, el intervalo de confianza para $\mu$, usando la distribución t-Student es el siguiente:
 
@@ -400,6 +446,14 @@ $$\bar{X} \pm t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$$
 #### $$\Big(\bar{X} - t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}} , \bar{X} + t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}\Big)$$
 
 #### Donde $n-1$ son los grados de libertad para estimar $\mu$. También $t_{(\frac{\alpha}{2},n-1)}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución tal como vimos anteriormente.
+
+#### SUPUESTOS:
+
+#### El intervalo de confianza para $\mu$ que obtuvimos anteriormente funciona bien si se cumplen los siguientes supuestos:
+
+#### 1.  La varianza $\sigma^2$ es desconocida.
+#### 2.  La muestra proviene de una distribución Normal de media $\mu$ y desviación estándar $\sigma$ desconocidas.
+#### 3.  Los datos de la muestra $X_1, X_2,...,X_n$ son independientes.
 
 
 > Ejemplos
@@ -432,14 +486,14 @@ b)  ####   Para este caso tenemos los siguientes datos:
 qt(0.005,11,lower.tail = FALSE)
 ```
 
-#### Es decir $t_{11,0.005}=3.1058$, tomando el valor positivo. 
+#### Es decir $t_{(0.005,11)}=3.1058$, tomando el valor positivo. 
 
 #### Luego:
 
 
-#### **Límite Inferior**: $\bar{X} - t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13$
+#### **Límite Inferior**: $\bar{X} - t_{(\alpha/2,n-1)}\dfrac{S}{\sqrt{n}}=23126.67 - 3.1058*\dfrac{9157.75}{\sqrt{12}}=14916.13$
 
-#### **Límite Superior**: $\bar{X} + t_{n-1,\alpha/2}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20$
+#### **Límite Superior**: $\bar{X} + t_{(\alpha/2,n-1)}\dfrac{S}{\sqrt{n}}=23126.67 + 3.1058*\dfrac{9157.75}{\sqrt{12}}=31337.20$
 
 #### Por lo tanto el intervalo de confianza está dado por 
 
@@ -447,16 +501,36 @@ qt(0.005,11,lower.tail = FALSE)
 
 #### Conclusión: Podemos afirmar con una confiabilidad del 99 % que el promedio de ventas mensuales está entre $\$14916.13$  y $\$31337.20$.
 
+#### ¿Se cumple el supuesto de Normalidad?
+
+#### Podemos hacer un Q-Q plot para tener alguna idea de esto!
+
+```{r}
+qqnorm(ventas,pch=16)
+qqline(ventas)
+```
+
+#### Con respecto a la gráfica de normalidad, podemos observar que los puntos nos se asemejan mucho a la linea recta, además hay un dato atípico. Aquí el supuesto de normalidad no se cumple a cabalidad.
+
 #### **También la apertura de un nuevo restaurante puede ser viable, dado a que la meta de $ 30000 mil propuesta por el dueño del restaurante está dentro del intervalo**. 
 
 
+### Comentarios finales para el intervalo de $\mu$ con $\sigma$ desconocida.
+
+#### En casi todas las situaciones prácticas al construir un intervalo de confianza para $\mu$, $\sigma$ no se conoce.
+
+#### Cuando el tamaño de la muestra es pequeño, el uso de la distribución t dará lugar a intervalos de confianza más amplios, comparado a si usaramos un intervalo de confianza $Z$ ($\sigma$ conocida).
+
+#### Aunque teóricamente, la distribución t-Student se aplica a muestras de una población normal, en la práctica el intervalo de confianza es bastante sólido para una violación de este supuesto siempre que la muestra no provenga de una población con una distribución muy sesgada.
+
 ## Intervalo de confianza para proporciones
 
-#### El intervalo de confianza para estimar una proporción $\pi$, conocida como una proporción muestral \hat{p} de una muestra de tamaño $n$, a un nivel de confianza del $(1-\alpha)100 \%$ es:
+#### El intervalo de confianza para estimar una proporción $p$, conocida como una proporción muestral \hat{p} de una muestra de tamaño $n$, a un nivel de confianza del $(1-\alpha)100 \%$ es:
 
 
-#### $$\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} $$
-Donde,
+#### $$\hat{p}\pm Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$$
+
+#### Donde,
 
 #### **Límite Inferior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
@@ -466,6 +540,13 @@ Donde,
 
 #### $$\Big(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\Big)$$
 
+
+#### SUPUESTOS:
+
+#### El intervalo de confianza aproximado para $p$ que obtuvimos anteriormente funciona bien si se cumplen simultáneamente las dos condiciones siguientes:
+
+#### 1.  $np \geq 10$ (El número de éxitos esperados)
+#### 2.  $n(1 − p) \geq 10$ (El número de fallas esperadas) 
 
 > Ejemplos
 
