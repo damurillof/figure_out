@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Puntaje: 20 puntos** 
 
+### Recuerde adjuntar todos sus procedimientos de RStudio, incluido los códigos y los datos.
+
 #### Resuelva los siguientes problemas mostrando claramente su procedimiento.
 
 #### **1.** Suponga que $t$ es una distribución $t$-Student. Es decir $t(v)$, donde $v$ son los grados de libertad. Use `RStudio` o una tabla de probabilidades $t$-Student para calcular:(Haga una gráfica que ilustre la información solicitada en cada caso). 
@@ -57,5 +59,7 @@ b)  #### Calcule un intervalo de confianza con una confiabilidad del 90 %.
 c)  #### Interprete el intervalo de confianza.
 
 d)  #### Vuelva a calcular el intervalo en la parte b), pero ahora con una confiabilidad del 99 %. ¿Qué sucede con la anchura del intervalo? Explique!
+
+e)  #### Compruebe el supuesto de Normalidad en los datos.
 
 ![](blanco.png)
