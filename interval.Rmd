@@ -433,7 +433,7 @@ t_area(0.5,6,low.T = FALSE)
 #### Entonces, si $\sigma$ es desconocida, el intervalo de confianza para $\mu$, usando la distribución t-Student es el siguiente:
 
 
-$$\bar{X} \pm t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$$
+#### $$\bar{X} \pm t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$$
 
 #### Donde, 
 
