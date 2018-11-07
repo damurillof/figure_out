@@ -391,13 +391,13 @@ $$\bar{X} \pm t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$$
 
 #### Donde, 
 
-#### **Límite Inferior**: $\bar{X} - t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}}$
+#### **Límite Inferior**: $\bar{X} - t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$
 
-#### **Límite Superior**: $\bar{X} + t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}}$
+#### **Límite Superior**: $\bar{X} + t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}$
 
 #### Por tanto, el intervalo para la media $\mu$ es
 
-#### $$\Big(\bar{X} - t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}} , \bar{X} + t_{(\frac{\alpha}{2},n-1)}{\sqrt{n}}\Big)$$
+#### $$\Big(\bar{X} - t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}} , \bar{X} + t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}\Big)$$
 
 #### Donde $n-1$ son los grados de libertad para estimar $\mu$. También $t_{(\frac{\alpha}{2},n-1)}$ es la distribución t-student con $n-1$ grados de libertad. En `RStudio` se puede usar el comando `qt(p,n-1)` para encontrar el valor crítico de la distribución tal como vimos anteriormente.
 
