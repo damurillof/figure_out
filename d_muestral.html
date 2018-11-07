@@ -334,16 +334,16 @@ for (i in 1:30){
   d_mean[i] &lt;- mean(sample(N,size = 4,replace = TRUE))
 }
 print(d_mean)</code></pre>
-<pre><code>##  [1]  6.50  9.25  5.25  5.75  6.25  9.00  8.25 11.00  6.00 13.00 13.50
-## [12]  7.00 11.00  8.50  7.25  5.75 11.00  9.25  9.50  9.75 13.75  9.75
-## [23]  6.00  8.00  6.75  6.50  9.50  9.75 11.75 12.00</code></pre>
+<pre><code>##  [1] 12.00  3.50  5.25  7.00  8.75 11.75 14.00  9.75  9.75 10.00 10.25
+## [12]  6.25 13.25  8.25  5.25 12.00  9.25 14.75 12.25 11.75 13.75 10.00
+## [23]  9.75 11.00  9.75 11.25  6.00 11.00  7.25 10.00</code></pre>
 </div>
 <div id="calculamos-las-medias-de-todas-esas-muestras-y-tratamos-de-ver-graficamente-mediante-un-histograma-al-menos-si-hay-acercamiento-a-normalidad." class="section level4">
 <h4>3) Calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</h4>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 8.883333</code></pre>
+<pre><code>## [1] 9.825</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.466791</code></pre>
+<pre><code>## [1] 2.78245</code></pre>
 <pre class="r"><code>hist(d_mean,col = &quot;cornflowerblue&quot;,freq = F,ylim = c(0,0.2))
 curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
@@ -354,14 +354,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <div id="notar-que-la-media-de-las-medias-muestrales-es" class="section level4">
 <h4>1. Notar que la media de las medias muestrales es</h4>
 </div>
-<div id="mu_barx-8.88." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 8.88.</h4>
+<div id="mu_barx-9.82." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.82.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.47-mientras-que" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.47, mientras que</h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.78-mientras-que" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.78, mientras que</h4>
 </div>
 <div id="sigma_barxdfracsigmasqrtndfrac4.77sqrt42.4-." class="section level4">
 <h4><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{4.77}{\sqrt{4}}=2.4\)</span> .</h4>
@@ -384,14 +384,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Ahora, con un mayor número de muestras tenemos que:</p>
 </div>
-<div id="mu_barx-9.54." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.54.</h4>
+<div id="mu_barx-9.52." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.52.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55-1" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.26-comparado-con-sigma_barx2.38" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.26, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.24-comparado-con-sigma_barx2.38" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.24, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
 </div>
 </div>
 <div id="aplicaciones" class="section level3">
@@ -434,32 +434,62 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 </div>
 <div id="en-este-caso-como-n-geq-30-podemos-usar-el-tlc.-por-lo-tanto-la-distribucion-de-barx-es" class="section level4">
 <h4>En este caso como <span class="math inline">\(n \geq 30\)</span> podemos usar el TLC. Por lo tanto la distribución de <span class="math inline">\(\bar{X}\)</span> es</h4>
-<p><span class="math display">\[\bar{X} \sim Normal\bigg(10,\dfrac{5.7740}{\sqrt{30}}\bigg)\]</span></p>
+</div>
+<div id="barx-sim-normalbigg10dfrac5.7740sqrt30bigg" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal\bigg(10,\dfrac{5.7740}{\sqrt{30}}\bigg)\]</span></h4>
 <ol start="2" style="list-style-type: lower-alpha">
 <li><h4 id="cual-es-la-probabilidad-de-obtener-un-promedio-muestral-mayor-a-12.5">¿Cuál es la probabilidad de obtener un promedio muestral mayor a 12.5?</h4></li>
 </ol>
-<p><span class="math display">\[P(\bar{X} &gt; 12.5)= 1 - P(\bar{X} &lt; 12.5)=\]</span></p>
-<p><span class="math display">\[ 1 - P\Bigg(Z&lt; \dfrac{12.5-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=\]</span></p>
-<p><span class="math display">\[ 1 - P\bigg(Z &lt; \dfrac{2.5}{1.0541}\bigg)=\]</span></p>
-<p><span class="math display">\[ 1 - P(Z &lt; 2.3716)=\]</span></p>
-<p>Buscamos en <code>RStudio</code> la probabilidad <span class="math inline">\(P(Z &lt; 2.3716)\)</span></p>
-<pre class="r"><code>pnorm(2.3716)</code></pre>
-<pre><code>## [1] 0.9911444</code></pre>
-<p>Entonces,</p>
-<p><span class="math display">\[P(\bar{X} &gt; 12.5)= 1 - P(Z &lt; 2.3716)= 1 - 0.991144 = 0.008856\]</span></p>
+</div>
+<div id="pbarx-12.5-1---pbarx-12.5" class="section level4">
+<h4><span class="math display">\[P(\bar{X} &gt; 12.5)= 1 - P(\bar{X} &lt; 12.5)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac12.5-10frac5.7740sqrt30bigg" class="section level4">
+<h4><span class="math display">\[ 1 - P\Bigg(Z&lt; \dfrac{12.5-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac2.51.0541bigg" class="section level4">
+<h4><span class="math display">\[ 1 - P\bigg(Z &lt; \dfrac{2.5}{1.0541}\bigg)=\]</span></h4>
+</div>
+<div id="pz-2.37" class="section level4">
+<h4><span class="math display">\[ 1 - P(Z &lt; 2.37)=\]</span></h4>
+</div>
+<div id="buscamos-en-rstudio-la-probabilidad-pz-2.37" class="section level4">
+<h4>Buscamos en <code>RStudio</code> la probabilidad <span class="math inline">\(P(Z &lt; 2.37)\)</span></h4>
+<pre class="r"><code>pnorm(2.37)</code></pre>
+<pre><code>## [1] 0.991106</code></pre>
+</div>
+<div id="entonces-1" class="section level4">
+<h4>Entonces,</h4>
+<p><span class="math display">\[P(\bar{X} &gt; 12.5)= 1 - P(Z &lt; 2.37)= 1 - 0.9911 = 0.0088\]</span></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li><h4 id="cual-es-la-probabilidad-de-encontrar-un-promedio-muestral-entre-8-y-15">¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?</h4></li>
 </ol>
-<p>Solo basta encontrar</p>
-<p><span class="math display">\[P(8 &lt; \bar{X} &lt; 15)=P(\bar{X} &lt; 15) - P(\bar{X} &lt; 8)=\]</span></p>
-<p><span class="math display">\[P\Bigg(Z&lt; \dfrac{15-10}{\frac{5.7740}{\sqrt{30}}}\Bigg) - P\Bigg(Z&lt; \dfrac{8-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=\]</span></p>
-<p><span class="math display">\[P\bigg(Z&lt; \dfrac{5}{1.0541}\bigg) - P\bigg(Z&lt; \dfrac{-2}{1.0541}\bigg)=\]</span></p>
-<p><span class="math display">\[P\bigg(Z&lt; 4.74\bigg) - P\bigg(Z&lt; -1.89\bigg)=\]</span></p>
-<p>Ahora usamos <code>RStudio</code></p>
+</div>
+<div id="solo-es-encontrar" class="section level4">
+<h4>Solo es encontrar</h4>
+</div>
+<div id="p8-barx-15pbarx-15---pbarx-8" class="section level4">
+<h4><span class="math display">\[P(8 &lt; \bar{X} &lt; 15)=P(\bar{X} &lt; 15) - P(\bar{X} &lt; 8)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac15-10frac5.7740sqrt30bigg---pbiggz-dfrac8-10frac5.7740sqrt30bigg" class="section level4">
+<h4><span class="math display">\[P\Bigg(Z&lt; \dfrac{15-10}{\frac{5.7740}{\sqrt{30}}}\Bigg) - P\Bigg(Z&lt; \dfrac{8-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac51.0541bigg---pbiggz-dfrac-21.0541bigg" class="section level4">
+<h4><span class="math display">\[P\bigg(Z&lt; \dfrac{5}{1.0541}\bigg) - P\bigg(Z&lt; \dfrac{-2}{1.0541}\bigg)=\]</span></h4>
+</div>
+<div id="pbiggz-4.74bigg---pbiggz--1.89bigg" class="section level4">
+<h4><span class="math display">\[P\bigg(Z&lt; 4.74\bigg) - P\bigg(Z&lt; -1.89\bigg)=\]</span></h4>
+</div>
+<div id="ahora-usamos-rstudio" class="section level4">
+<h4>Ahora usamos <code>RStudio</code></h4>
 <pre class="r"><code>pnorm(4.74) - pnorm(-1.89)</code></pre>
 <pre><code>## [1] 0.97062</code></pre>
-<p>Entonces,</p>
-<p><span class="math display">\[P(8 &lt; \bar{X} &lt; 15=0.9706\]</span></p>
+</div>
+<div id="entonces-2" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="p8-barx-150.9706" class="section level4">
+<h4><span class="math display">\[P(8 &lt; \bar{X} &lt; 15=0.9706\]</span></h4>
 <ol start="2" style="list-style-type: decimal">
 <li><h4 id="supongamos-que-el-ingreso-familiar-promedio-en-los-estados-unidos-es-de-51344-con-una-desviacion-estandar-de-15377.-cual-es-la-probabilidad-de-que-una-muestra-aleatoria-de-124-hogares-tenga-un-ingreso-familiar-promedio-de-mas-de-54000">Supongamos que el ingreso familiar promedio en los Estados Unidos es de <span class="math inline">\(\$51,344\)</span>, con una desviación estándar de <span class="math inline">\(\$15,377\)</span>. ¿Cuál es la probabilidad de que una muestra aleatoria de <span class="math inline">\(124\)</span> hogares tenga un ingreso familiar promedio de más de $ 54,000?</h4></li>
 </ol>
@@ -529,7 +559,7 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <div id="n1-p2001-0.40120-geq-10" class="section level4">
 <h4><span class="math inline">\(n(1-p)=200*(1-0.40)=120 \geq 10\)</span></h4>
 </div>
-<div id="entonces-1" class="section level4">
+<div id="entonces-3" class="section level4">
 <h4>Entonces,</h4>
 </div>
 <div id="sqrtdfracp1-pnsqrtdfrac0.401-0.402000.0346" class="section level4">

@@ -172,6 +172,7 @@ Ahora, con un mayor número de muestras tenemos que:
 
 
 
+
 #### Caso 2: Cuando desconocemos la distribución de la población y $n \geq 30$
 
 1.  #### Se extrae un muestra de tamaño $n=30$ de una población que tiene una distribución desconocida con media $\mu$ y varianza $\sigma^2$, pero que por alguna razón conocemos que $\mu=10$ y que  $\sigma^2=33.34$. Con la información anterior estamos interesados en contestar las siguientes preguntas:
@@ -181,52 +182,52 @@ Ahora, con un mayor número de muestras tenemos que:
 
 #### En este caso como $n \geq 30$ podemos usar el TLC. Por lo tanto la distribución de $\bar{X}$ es 
 
-$$\bar{X} \sim Normal\bigg(10,\dfrac{5.7740}{\sqrt{30}}\bigg)$$
+#### $$\bar{X} \sim Normal\bigg(10,\dfrac{5.7740}{\sqrt{30}}\bigg)$$
 
 (b) #### ¿Cuál es la probabilidad de obtener un promedio muestral mayor a 12.5?
 
-$$P(\bar{X} > 12.5)= 1 - P(\bar{X} < 12.5)=$$
+#### $$P(\bar{X} > 12.5)= 1 - P(\bar{X} < 12.5)=$$
 
-$$ 1 - P\Bigg(Z< \dfrac{12.5-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=$$
+#### $$ 1 - P\Bigg(Z< \dfrac{12.5-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=$$
 
-$$ 1 - P\bigg(Z < \dfrac{2.5}{1.0541}\bigg)=$$
+#### $$ 1 - P\bigg(Z < \dfrac{2.5}{1.0541}\bigg)=$$
 
-$$ 1 - P(Z < 2.3716)=$$
+#### $$ 1 - P(Z < 2.37)=$$
 
-Buscamos en `RStudio` la probabilidad $P(Z < 2.3716)$
+#### Buscamos en `RStudio` la probabilidad $P(Z < 2.37)$
 
 ```{r}
-pnorm(2.3716)
+pnorm(2.37)
 ```
 
-Entonces,
+#### Entonces,
 
-$$P(\bar{X} > 12.5)= 1 - P(Z < 2.3716)= 1 - 0.991144 = 0.008856$$
+$$P(\bar{X} > 12.5)= 1 - P(Z < 2.37)= 1 - 0.9911 = 0.0088$$
 
 
 (c) #### ¿Cuál es la probabilidad de encontrar un promedio muestral entre 8 y 15?
 
-Solo basta encontrar 
+#### Solo es encontrar
 
-$$P(8 < \bar{X} < 15)=P(\bar{X} < 15) - P(\bar{X} < 8)=$$
+#### $$P(8 < \bar{X} < 15)=P(\bar{X} < 15) - P(\bar{X} < 8)=$$
 
-$$P\Bigg(Z< \dfrac{15-10}{\frac{5.7740}{\sqrt{30}}}\Bigg) - P\Bigg(Z< \dfrac{8-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=$$
+#### $$P\Bigg(Z< \dfrac{15-10}{\frac{5.7740}{\sqrt{30}}}\Bigg) - P\Bigg(Z< \dfrac{8-10}{\frac{5.7740}{\sqrt{30}}}\Bigg)=$$
 
 
-$$P\bigg(Z< \dfrac{5}{1.0541}\bigg) - P\bigg(Z< \dfrac{-2}{1.0541}\bigg)=$$
+#### $$P\bigg(Z< \dfrac{5}{1.0541}\bigg) - P\bigg(Z< \dfrac{-2}{1.0541}\bigg)=$$
 
-$$P\bigg(Z< 4.74\bigg) - P\bigg(Z< -1.89\bigg)=$$
+#### $$P\bigg(Z< 4.74\bigg) - P\bigg(Z< -1.89\bigg)=$$
 
-Ahora usamos `RStudio`
+#### Ahora usamos `RStudio`
 
 ```{r}
 pnorm(4.74) - pnorm(-1.89)
 ```
 
 
-Entonces,
+#### Entonces,
 
-$$P(8 < \bar{X} < 15=0.9706$$
+#### $$P(8 < \bar{X} < 15=0.9706$$
 
 2.  #### Supongamos que el ingreso familiar promedio en los Estados Unidos es de $\$51,344$, con una desviación estándar de $\$15,377$. ¿Cuál es la probabilidad de que una muestra aleatoria de $124$ hogares tenga un ingreso familiar promedio de más de $ 54,000?
 
@@ -296,6 +297,7 @@ pnorm(-2.31)
 
 
 ![](blanco.png)
+
 
 
 
