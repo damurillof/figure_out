@@ -8,6 +8,8 @@ Aquí esta el enlace para la página web del curso:
 
 ### [Datos](https://didier-murillo.netlify.com/datos)
 
+### [Tablas de probabilidad acumulada](https://didier-murillo.netlify.com/tables)
+
 Examen parcial \# 3: Miércoles 21 de Noviembre.
 -----------------
 

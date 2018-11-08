@@ -1,0 +1,15 @@
+---
+title: "Tablas de probabilidad acumulada"
+author: ""
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### [Tabla Z](https://didier-murillo.netlify.com/Z-table.pdf)
+
+### [Tabla t - Student](https://didier-murillo.netlify.com/Student-t-Table.pdf)
