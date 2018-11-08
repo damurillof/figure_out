@@ -211,7 +211,7 @@ $(document).ready(function () {
 <li><a href="#distribuciones-muestrales">Distribuciones Muestrales</a><ul>
 <li><a href="#distribucion-muestral-del-promedio-barx">Distribución muestral del promedio <span class="math inline">\(\bar{X}\)</span></a></li>
 <li><a href="#distribucion-de-la-media-muestral-cuando-la-poblacion-es-normal">Distribución de la media muestral cuando la población es normal</a></li>
-<li><a href="#el-teorema-del-limite-central">El Teorema del Límite Central</a></li>
+<li><a href="#el-teorema-del-limite-central-tlc">El Teorema del Límite Central (TLC)</a></li>
 <li><a href="#aplicaciones">Aplicaciones:</a></li>
 <li><a href="#distribucion-de-la-proporcion-muestral">Distribución de la Proporción Muestral</a></li>
 </ul></li>
@@ -278,10 +278,13 @@ $(document).ready(function () {
 <h4><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></h4>
 </div>
 </div>
-<div id="el-teorema-del-limite-central" class="section level3">
-<h3>El Teorema del Límite Central</h3>
-<div id="de-una-poblacion-con-media-y-varianza-se-extraen-muestras-aleatorias-de-tamano-n-entonces-la-media-muestral-barx-se-comporta-aproximadamente-como-una-variable-aleatoria-normal-con-media-igual-a-la-media-poblacional-mu-y-con-desviacion-estandar-sigma-igual-a-la-desviacion-poblacional-dividida-por-la-raiz-cuadrada-del-tamano-de-la-muestra-siempre-que-sea-grande.-esto-es" class="section level4">
-<h4>De una población con media y varianza se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span>, entonces la media muestral <span class="math inline">\(\bar{X}\)</span> se comporta aproximadamente como una variable aleatoria normal con media igual a la media poblacional <span class="math inline">\(\mu\)</span> y con desviación estándar <span class="math inline">\(\sigma\)</span> igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra, siempre que sea grande. Esto es:</h4>
+<div id="el-teorema-del-limite-central-tlc" class="section level3">
+<h3>El Teorema del Límite Central (TLC)</h3>
+<div id="dada-una-poblacion-con-media-muy-varianza-sigma-de-donde-se-extraen-muestras-aleatorias-de-tamano-n.-el-tlc-garantiza-que-la-media-muestral-barx-se-comporta-aproximadamente-como-una-variable-aleatoria-con-distribucion-normal-de-media-mu_barx-igual-a-la-media-poblacional-mu-y-con-desviacion-estandar-sigma-igual-a-la-desviacion-poblacional-dividida-por-la-raiz-cuadrada-del-tamano-de-la-muestra-biggdfracsigmasqrtnbigg.-esto-se-cumple-siempre-que-n-sea-grande-n-geq-30." class="section level4">
+<h4>Dada una población con media (<span class="math inline">\(\mu\)</span>)y varianza (<span class="math inline">\(\sigma\)</span>), de donde se extraen muestras aleatorias de tamaño <span class="math inline">\(n\)</span>. El TLC garantiza que la media muestral <span class="math inline">\(\bar{X}\)</span> se comporta aproximadamente como una variable aleatoria con distribución normal de media <span class="math inline">\(\mu_{\bar{X}}\)</span> igual a la media poblacional <span class="math inline">\(\mu\)</span> y con desviación estándar <span class="math inline">\(\sigma\)</span> igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra <span class="math inline">\(\bigg(\dfrac{\sigma}{\sqrt{n}}\bigg)\)</span>. Esto se cumple siempre que <span class="math inline">\(n\)</span> sea grande (<span class="math inline">\(n \geq 30\)</span>).</h4>
+</div>
+<div id="entonces-por-tlc-si-n-geq-30-se-cumple-que" class="section level4">
+<h4>Entonces, por TLC, si <span class="math inline">\(n \geq 30\)</span>, se cumple que:</h4>
 </div>
 <div id="barx-sim-normalmufracsigmasqrtn-1" class="section level4">
 <h4><span class="math display">\[\bar{X} \sim Normal(\mu,\frac{\sigma}{\sqrt{n}})\]</span></h4>
@@ -334,16 +337,16 @@ for (i in 1:30){
   d_mean[i] &lt;- mean(sample(N,size = 4,replace = TRUE))
 }
 print(d_mean)</code></pre>
-<pre><code>##  [1] 12.00  3.50  5.25  7.00  8.75 11.75 14.00  9.75  9.75 10.00 10.25
-## [12]  6.25 13.25  8.25  5.25 12.00  9.25 14.75 12.25 11.75 13.75 10.00
-## [23]  9.75 11.00  9.75 11.25  6.00 11.00  7.25 10.00</code></pre>
+<pre><code>##  [1] 10.00  6.25 10.50  7.75 10.25  8.00 10.25 14.00 12.00 10.50 12.50
+## [12]  8.25  8.50  9.50  7.25  8.25 11.25  7.75 10.25  8.75  8.00  4.75
+## [23] 10.25  9.00 10.25 10.00 12.00 13.50  8.50 10.75</code></pre>
 </div>
 <div id="calculamos-las-medias-de-todas-esas-muestras-y-tratamos-de-ver-graficamente-mediante-un-histograma-al-menos-si-hay-acercamiento-a-normalidad." class="section level4">
 <h4>3) Calculamos las medias de todas esas muestras y tratamos de ver gráficamente mediante un histograma al menos si hay acercamiento a Normalidad.</h4>
 <pre class="r"><code>mean(d_mean)</code></pre>
-<pre><code>## [1] 9.825</code></pre>
+<pre><code>## [1] 9.625</code></pre>
 <pre class="r"><code>sd(d_mean)</code></pre>
-<pre><code>## [1] 2.78245</code></pre>
+<pre><code>## [1] 2.050809</code></pre>
 <pre class="r"><code>hist(d_mean,col = &quot;cornflowerblue&quot;,freq = F,ylim = c(0,0.2))
 curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
@@ -354,14 +357,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <div id="notar-que-la-media-de-las-medias-muestrales-es" class="section level4">
 <h4>1. Notar que la media de las medias muestrales es</h4>
 </div>
-<div id="mu_barx-9.82." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.82.</h4>
+<div id="mu_barx-9.62." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.62.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.78-mientras-que" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.78, mientras que</h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.05-mientras-que" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.05, mientras que</h4>
 </div>
 <div id="sigma_barxdfracsigmasqrtndfrac4.77sqrt42.4-." class="section level4">
 <h4><span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{4.77}{\sqrt{4}}=2.4\)</span> .</h4>
@@ -384,14 +387,14 @@ curve(dnorm(x,mean(d_mean),sd(d_mean)),add=TRUE)</code></pre>
 <p><img src="d_muestral_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Ahora, con un mayor número de muestras tenemos que:</p>
 </div>
-<div id="mu_barx-9.52." class="section level4">
-<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.52.</h4>
+<div id="mu_barx-9.54." class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\)</span> 9.54.</h4>
 </div>
 <div id="este-resultado-esta-bien-cerca-de-la-media-poblacional-pues-mu9.55-1" class="section level4">
 <h4>Este resultado está bien cerca de la media poblacional, pues <span class="math inline">\(\mu=9.55\)</span></h4>
 </div>
-<div id="la-desviacion-estandar-de-la-media-muestral-es-2.24-comparado-con-sigma_barx2.38" class="section level4">
-<h4>2. La desviación estándar de la media muestral es 2.24, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
+<div id="la-desviacion-estandar-de-la-media-muestral-es-2.27-comparado-con-sigma_barx2.38" class="section level4">
+<h4>2. La desviación estándar de la media muestral es 2.27, comparado con <span class="math inline">\(\sigma_{\bar{X}}=2.38\)</span></h4>
 </div>
 </div>
 <div id="aplicaciones" class="section level3">
