@@ -55,7 +55,7 @@ Finalmente se cumple que
 
 ### El Teorema del Límite Central (TLC)
 
-#### Dada una población con media ($\mu$)y varianza ($\sigma$), de donde se extraen muestras aleatorias de tamaño $n$. El TLC garantiza que la media muestral $\bar{X}$ se comporta aproximadamente como una variable aleatoria con distribución normal de media  $\mu_{\bar{X}}$ igual a la media poblacional $\mu$ y con desviación estándar $\sigma$ igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra $\bigg(\dfrac{\sigma}{\sqrt{n}}\bigg)$. Esto se cumple siempre que $n$ sea grande ($n \geq 30$).
+#### Dada una población con media ($\mu$) y varianza ($\sigma$), de donde se extraen muestras aleatorias de tamaño $n$. El TLC garantiza que la media muestral $\bar{X}$ se comporta aproximadamente como una variable aleatoria con distribución normal de media  $\mu_{\bar{X}}$ igual a la media poblacional $\mu$ y con desviación estándar $\sigma$ igual a la desviación poblacional dividida por la raíz cuadrada del tamaño de la muestra $\bigg(\dfrac{\sigma}{\sqrt{n}}\bigg)$. Esto se cumple siempre que $n$ sea grande ($n \geq 30$).
 
 #### Entonces, por TLC, si $n \geq 30$, se cumple que:
 
