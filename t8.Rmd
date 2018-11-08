@@ -24,10 +24,11 @@ b)  ####  $t_{(\frac{\alpha}{2},v)}$, si $v=15$ y $\alpha=0.01$ a cola derecha.
 
 b)  ####  $t_{(\frac{\alpha}{2},v)}$, si $v=12$ y $\alpha=0.03$ a cola derecha. 
 
-#### **2.** Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses, y los datos son los siguientes:
+#### **2.** Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses. Los datos son los siguientes:
 
 ```{r,eval=FALSE,echo=TRUE}
-round(rexp(10,0.09),1)
+TiempoVida <- round(rexp(10,0.09),1)
+print(TiempoVida)
 ```
 
 #### Para obtener los datos, copie y pegue el código anterior una sola vez en RStudio. Use esos datos para el ejercicio.
@@ -41,6 +42,8 @@ b)  #### Calcule una estimación puntual para el parámetro de interés
 c)  #### Encuentre un intervalo de confianza para el parámetro de interés con una confiabilidad del 95 %. Asuma que los datos provienen de una distribución Normal.
 
 d)  #### Interprete el intervalo que encontró en la parte c).
+
+e)  #### Compruebe el supuesto de Normalidad en los datos.
 
 
 #### **3.** Se ha llegado a la conclusión que el tiempo de espera en todas las rutas del TROLLEY en el colegio sigue una distribución Normal, de donde se sabe que $\sigma=10$ minutos. Estamos interesados en estimar el tiempo promedio que esperan todos los usuarios Colegiales para tomar el servicio de TROLLEY, para este propósito se recolectaron 12 datos del tiempo de espera en usuarios. El tiempo está en minutos:
@@ -60,6 +63,6 @@ c)  #### Interprete el intervalo de confianza.
 
 d)  #### Vuelva a calcular el intervalo en la parte b), pero ahora con una confiabilidad del 99 %. ¿Qué sucede con la anchura del intervalo? Explique!
 
-e)  #### Compruebe el supuesto de Normalidad en los datos.
+
 
 ![](blanco.png)

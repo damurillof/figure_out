@@ -226,9 +226,10 @@ $(document).ready(function () {
 <li><h4 id="t_fracalpha2v-si-v12-y-alpha0.03-a-cola-derecha."><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span>, si <span class="math inline">\(v=12\)</span> y <span class="math inline">\(\alpha=0.03\)</span> a cola derecha.</h4></li>
 </ol>
 </div>
-<div id="suponga-que-deseamos-estimar-el-tiempo-promedio-de-la-vida-util-en-un-tipo-de-bombilla.-para-tal-fin-se-tomo-una-muestra-aleatoria-de-tamano-n10-referente-al-tiempo-de-vida.-el-tiempo-se-mide-en-meses-y-los-datos-son-los-siguientes" class="section level4">
-<h4><strong>2.</strong> Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses, y los datos son los siguientes:</h4>
-<pre class="r"><code>round(rexp(10,0.09),1)</code></pre>
+<div id="suponga-que-deseamos-estimar-el-tiempo-promedio-de-la-vida-util-en-un-tipo-de-bombilla.-para-tal-fin-se-tomo-una-muestra-aleatoria-de-tamano-n10-referente-al-tiempo-de-vida.-el-tiempo-se-mide-en-meses.-los-datos-son-los-siguientes" class="section level4">
+<h4><strong>2.</strong> Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses. Los datos son los siguientes:</h4>
+<pre class="r"><code>TiempoVida &lt;- round(rexp(10,0.09),1)
+print(TiempoVida)</code></pre>
 </div>
 <div id="para-obtener-los-datos-copie-y-pegue-el-codigo-anterior-una-sola-vez-en-rstudio.-use-esos-datos-para-el-ejercicio." class="section level4">
 <h4>Para obtener los datos, copie y pegue el código anterior una sola vez en RStudio. Use esos datos para el ejercicio.</h4>
@@ -240,6 +241,7 @@ $(document).ready(function () {
 <li><h4 id="calcule-una-estimacion-puntual-para-el-parametro-de-interes">Calcule una estimación puntual para el parámetro de interés</h4></li>
 <li><h4 id="encuentre-un-intervalo-de-confianza-para-el-parametro-de-interes-con-una-confiabilidad-del-95-.-asuma-que-los-datos-provienen-de-una-distribucion-normal.">Encuentre un intervalo de confianza para el parámetro de interés con una confiabilidad del 95 %. Asuma que los datos provienen de una distribución Normal.</h4></li>
 <li><h4 id="interprete-el-intervalo-que-encontro-en-la-parte-c.">Interprete el intervalo que encontró en la parte c).</h4></li>
+<li><h4 id="compruebe-el-supuesto-de-normalidad-en-los-datos.">Compruebe el supuesto de Normalidad en los datos.</h4></li>
 </ol>
 </div>
 <div id="se-ha-llegado-a-la-conclusion-que-el-tiempo-de-espera-en-todas-las-rutas-del-trolley-en-el-colegio-sigue-una-distribucion-normal-de-donde-se-sabe-que-sigma10-minutos.-estamos-interesados-en-estimar-el-tiempo-promedio-que-esperan-todos-los-usuarios-colegiales-para-tomar-el-servicio-de-trolley-para-este-proposito-se-recolectaron-12-datos-del-tiempo-de-espera-en-usuarios.-el-tiempo-esta-en-minutos" class="section level4">
@@ -253,7 +255,6 @@ $(document).ready(function () {
 <li><h4 id="calcule-un-intervalo-de-confianza-con-una-confiabilidad-del-90-.">Calcule un intervalo de confianza con una confiabilidad del 90 %.</h4></li>
 <li><h4 id="interprete-el-intervalo-de-confianza.">Interprete el intervalo de confianza.</h4></li>
 <li><h4 id="vuelva-a-calcular-el-intervalo-en-la-parte-b-pero-ahora-con-una-confiabilidad-del-99-.-que-sucede-con-la-anchura-del-intervalo-explique">Vuelva a calcular el intervalo en la parte b), pero ahora con una confiabilidad del 99 %. ¿Qué sucede con la anchura del intervalo? Explique!</h4></li>
-<li><h4 id="compruebe-el-supuesto-de-normalidad-en-los-datos.">Compruebe el supuesto de Normalidad en los datos.</h4></li>
 </ol>
 <div class="figure">
 <img src="blanco.png" />
