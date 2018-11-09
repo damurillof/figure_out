@@ -22,7 +22,7 @@ Ejemplo: ¿El GPA promedio de estudiantes universitarios es menor a 2.8?
 Ejemplo: ¿El ingreso promedio de los hombres en Puerto Rico es más alto que el ingreso promedio de las mujeres?
 
 
-Una prueba de hipótesis generalmente se expresa en forma de dos enunciados en lugar de una pregunta. Estas declaraciones se llaman la hipótesis nula ($H_0$) y la hipótesis alternativa o de investigación ($H_a$)
+Una prueba de hipótesis generalmente se expresa en forma de dos enunciados, en lugar de una pregunta. Estas declaraciones se llaman la hipótesis nula ($H_0$) y la hipótesis alterna. ($H_a$)
 
 $H_0$ y $H_a$ corresponden a dos enunciados en lugar de hacer una sola pregunta.
 
@@ -30,11 +30,13 @@ Ejemplos:
 
 1.  Podemos considerar el planteamiento de las siguientes hipótesis para el GPA de los estudiantes del colegio. 
 
-$H_0$: El GPA promedio de los estudiantes subgraduado del Colegio es igual a 2.8
+$H_0$: El GPA promedio de los estudiantes subgraduados en Puerto Rico es igual a 2.8
 
-$H_a$: El GPA  promedio de los estudiantes subgraduados del Colegio es mayor a 2.8
+$H_a$: El GPA promedio de los estudiantes subgraduados en Puerto Rico es mayor a 2.8
 
-Otra forma de escribir estas hipótesis es mediante un parámetro poblacional, que en este caso el promedio poblacional $\mu$.
+Otra forma de escribir estas hipótesis es mediante un parámetro poblacional, que en este caso, es el promedio poblacional $\mu$.
+
+Entonces, las correspondientes hipótesis para el ejemplo 1 son:
 
 $H_0$: $\mu = 2.8$ 
 
@@ -46,15 +48,14 @@ $H_0$: El ingreso mensual promedio es igual en hombres y en mujeres.
 
 $H_a$: El ingreso mensual promedio es mayor en hombres que en mujeres.
 
-Para este caso el parámetro es el ingreso promedio de hombres y mujeres, es decir, $\mu_M$ y $\mu_F$ respectivamente. entonces 
+Para este caso el parámetro es,  el ingreso promedio de hombres y mujeres, es decir, $\mu_M$ y $\mu_F$ respectivamente. entonces 
 
 
 $H_0$: $\mu_M = \mu_F$
 
 $H_a$: $\mu_M > \mu_F$
 
-
-Uno de los errores más comunes al plantear las hipótesis para la media poblacional $\mu$ es usar la media muestra $\bar{X}$.
+Uno de los errores más comunes al plantear las hipótesis para la media poblacional $\mu$, es usar la media muestra $\bar{X}$.
 
 ### Formalismo en pruebas de hipótesis 
 
@@ -66,23 +67,44 @@ Podemos organizar la metodología para realizar pruebas de hipótesis en unos si
 
 3.  Método de análisis y supuestos
 
-4.  Encontrar el valor crítico de la distribución y especificar la región de rechazo y no rechazo.
+4.  Encontrar el valor crítico de la distribución, luego especificar la región de rechazo y no rechazo.
 
 5.  Decisión y conclusión.
 
-
 ### Pruebas de hipótesis para la media poblacional
 
-> Caso 1: Varianza poblacional $\sigma^2$ es conocida 
+Para la media poblacional, donde $\mu_0$ es un número fijo definido por el investigador, las hipótesis se pueden definir de una de las tres formas siguientes:
 
-En algunos casos, por algún motivo se es conocida la varianza poblacional $\sigma^2$ y un valor específico de $\mu$ como  $\mu_0$. En este caso el método de análisis, suponiendo que los datos provienen de una distribución normal  y que la varianza es conocida es mediante la distribución normal estándar. 
+1.  Prueba a cola izquierda:
 
-El estadístico de prueba es
+$H_0$: $\mu = \mu_0$
+
+$H_a$: $\mu < \mu_0$
+
+2.  Prueba a cola derecha:
+
+$H_0$: $\mu = \mu_0$
+
+$H_a$: $\mu > \mu_0$
+
+
+3.  Prueba a dos colas:
+
+$H_0$: $\mu = \mu_0$
+
+$H_a$: $\mu \neq \mu_0$
+
+
+> Caso 1: La varianza poblacional $\sigma^2$ es conocida 
+
+En algunos casos, por algún motivo se es conocida la varianza poblacional $\sigma^2$ y un valor específico de $\mu$ como  $\mu_0$. En este caso el método de análisis, suponiendo que los datos provienen de una distribución normal  y que la varianza es conocida es mediante la distribución normal estándar $Z$. 
+
+El estadístico de prueba es,
 
 $$Z_0=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$$
 
 
-En general podemos plantear tres tipos de hipótesis para la media poblacional
+En general podemos plantear tres tipos de hipótesis para la media poblacional en este caso.
 
 
 1. Prueba a cola izquierda
@@ -91,9 +113,9 @@ $H_0$: $\mu = \mu_0$
 
 $H_a$: $\mu <  \mu_0$
 
-En este caso la región de rechazo esta dada por los valores de $Z$ menores que $-Z_{\alpha}$.
+En este caso la región de rechazo está dada por los valores de $Z$ menores que $-Z_{\alpha}$.
 
-El criterio de decisión, es decir,  se decide rechazar $H_0$ si,
+El criterio de decisión, es:  Se decide rechazar $H_0$ si,
 
 $$Z_0 < -Z_{\alpha}$$
 
@@ -101,16 +123,14 @@ $$Z_0 < -Z_{\alpha}$$
 
 $H_0$: $\mu = \mu_0$
 
-$H_a$: $\mu >  \mu_0$
+$H_a$: $\mu  >  \mu_0$
 
 
-En este caso la región de rechazo esta dada por los valores de $Z$ mayores que $-Z_{\alpha}$.
+En este caso la región de rechazo está dada por los valores de $Z$ mayores que $Z_{\alpha}$.
 
-El criterio de decisión, es decir,  se decide rechazar $H_0$ si,
+El criterio de decisión, es:  Se decide rechazar $H_0$ si,
 
 $$Z_0 > Z_{\alpha}$$
-
-
 
 3.  Prueba a dos colas 
 
@@ -118,10 +138,9 @@ $H_0$: $\mu = \mu_0$
 
 $H_a$: $\mu \neq  \mu_0$
 
+En este caso la región de rechazo está dada por los valores de $Z$ mayores que $Z_{\alpha/2}$ y menores que $-Z_{\alpha/2}$.
 
-En este caso la región de rechazo esta dada por los valores de $Z$ mayores que $Z_{\alpha/2}$ y menores que $-Z_{\alpha/2}$.
-
-El criterio de decisión, es decir, se decide rechazar $H_0$ si tenemos:
+El criterio de decisión, es: Se decide rechazar $H_0$ si tenemos:
 
 $$|Z_0| > Z_{\alpha/2}$$
 
@@ -130,19 +149,20 @@ $$|Z_0| > Z_{\alpha/2}$$
 
 
 ![](test-z.jpg)
+
 **¿Que es $\alpha$?**
 
 
-Es la significancia estadística, representa el valos de la probabilidad de rechazar la hipótesis nulla $H_0$, dado que $H_0$ es cierta y es conocido como el error tipo I. 
+Es la significancia estadística, representa el valores de la probabilidad de rechazar la hipótesis nula $H_0$, dado que $H_0$ es cierta y es conocido como el error tipo I. 
 
 
-**¿Cómo councluir?**
+**¿Cómo concluir?**
 
-Si la decisión es rechazar la hipótesis nula $H_0$, entonces se debe concluir con base en la hipótesis alterna $H_a$
+Si la decisión es rechazar la hipótesis nula $H_0$, entonces se debe concluir con base en la hipótesis alterna $H_a$.
 
 > Ejemplos
 
-1.  En los últimos cinco años el puntaje promedio en el examen final de un curso fue 73 puntos. Este semestre una clase con 27 estudiantes utilizando un nuevo libro de texto obtuvo en promedio 78.1. Se sabe que la varianza poblacional es $\sigma^2=49$. ¿Hay evidencia para afirmar que el nuevo libro de texto hizo que el resultado del examen final fuera más alto?. Use un nivel de significancia del 5 %
+1.  En los últimos cinco años el puntaje promedio en el examen final de un curso de estadística fue 73 puntos. Este semestre una clase con 27 estudiantes utilizando un nuevo libro de texto obtuvo en promedio 78.1. Se sabe que la varianza poblacional es $\sigma^2=49$. ¿Hay evidencia para afirmar que el nuevo libro de texto hizo que el resultado del examen final fuera más alto?. Use un nivel de significancia del 5 %
 
 **Paso 1: Los datos del problema y supuestos del problema son**
 
@@ -169,12 +189,10 @@ El estadístico de prueba bajo $H_0$ es
 
 $$Z_0=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}=\dfrac{78.1-73}{7/\sqrt{27}}=2.91$$
 
-Entonces la región de rechazo esta dada por todos los valores de $Z$ mayores que $2.91$
+Entonces la región de rechazo está dada por todos los valores de $Z$ mayores que $2.91$
 
-**Paso 4: Valor crítico**
-
-Para calcular el valor crítco de la distribución normal estándar se usa la siguiente función en `RStudio`
-
+**Paso 4: Valor crítico y región de rechazo**
+Para calcular el valor crítico de la distribución normal estándar se usa la siguiente función en `RStudio`
 
 ```{r}
 qnorm(0.05,0,1)
@@ -183,16 +201,131 @@ qnorm(0.05,0,1)
 Omitiendo el signo negativo dado que la prueba es a cola derecha. Entonces tenemos que 
 
 $$Z_0 > Z_{0.05}$$
+
 es decir,
 
 $$2.914 > 1.644$$
-**Paso 4: Decisión y conclusión**
 
-**Decisión**: Se decide rechazar la hipotesis nula $H_0$, dado a que $Z_0 > Z_{0.05}$.
+**Paso 5: Decisión y conclusión**
+
+**Decisión**: Se decide rechazar la hipótesis nula $H_0$, dado a que $Z_0 > Z_{0.05}$.
+
+**Conclusión**: Se encontró evidencia significativa de que la nota final aumentó con el uso del nuevo libro de texto en la clase. 
+
+### p - values
+
+Es frecuente que en artículos científicos lo que se reporte es el “p-value” de la prueba de hipótesis de manera que el lector pueda llegar a sus propias conclusiones. **El p-value es una probabilidad, y es la probabilidad de observar un valor igual o mayor al estadístico de prueba bajo el supuesto de que la hipótesis nula $H_0$ es cierta**. 
+
+Un p-value pequeño es evidencia en contra de la hipótesis nula y a favor de la hipótesis alterna. Cuando el nivel de significancia $\alpha$ ha sido seleccionado, la hipótesis nula se rechaza si el p-value es menor que $\alpha$.
+
+Fórmulas para calcular “p-value”: Pero depende de la forma de la hipótesis alterna
+
+Si $H_a: \mu < \mu_0$, entonces el p-value = $P(Z < Z_0)$.
+Si $H_a: \mu > \mu_0$, entonces el p-value = $P(Z > Z_0)$.
+Si $H_a: \mu \neq \mu_0$, entonces p-value = $2P(Z > |Z_0|)$.
+
+Ejemplo 2. En estudios previos se ha determinado que el nivel de colesterol promedio de pacientes con problemas cardíacos es 220. Un cardiólogo piensa que en realidad el nivel es más alto y para probar su afirmación usa una muestra del colesterol en 20 pacientes. ¿Habrá suficiente evidencia estadística para apoyar la afirmación del cardiólogo? Justificar su contestación basándose en el “p-value”.
+
+Los datos del problema son:
+
+217, 223, 225, 245, 238, 216, 217, 226, 202, 233, 235, 242, 219, 221, 234, 199, 236, 248, 218, 224
+
+Debemos ingresar los datos a RStudio.
+
+```{r,comment=NA}
+colesterol <- c(217, 223, 225, 245, 238, 216, 217, 226, 202, 233, 235, 242, 219, 221, 234, 199, 236, 248, 218, 224)
+mean(colesterol)
+```
+
+**Paso 1: Los datos del problema y supuestos del problema son**
+
+$\bar{X}=225.9$
+
+$\mu_0 = 220$
+
+$n = 20$
+
+$\sigma = 13$
+
+$\alpha = 0.05$
+
+**Paso 2: Plantear las hipótesis**
+
+$H_0$: $\mu = 220$
+
+$H_a$: $\mu > 220$
 
 
-**Conclusión**: Se encontró evidencia significativa de que la nota final aumento con el uso del nuevo libro de texto en la clase. 
+**Paso 3: Estadístico de prueba**
 
+El estadístico de prueba bajo $H_0$ es
+
+$$Z_0=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}=\dfrac{225.9 - 220}{13/\sqrt{22}}=\dfrac{5.9}{2.906888}=2.029$$
+
+Entonces la región de rechazo está dada por todos los valores de $Z$ mayores que $2.029$
+
+**Paso 4: Valor crítico y región de rechazo**
+
+Para calcular el valor crítico de la distribución normal estándar se usa la siguiente función en `RStudio`
+
+```{r}
+qnorm(0.05, lower.tail = FALSE)
+```
+
+Omitiendo el signo negativo dado que la prueba es a cola derecha. Entonces tenemos que 
+
+$$Z_0 > Z_{0.05}$$
+
+es decir,
+
+$$2.029 > 1.644$$
+
+**Paso 5: Decisión y conclusión**
+
+**Decisión**: Se decide rechazar la hipótesis nula $H_0$, dado a que $Z_0 > Z_{0.05}$, es decir $2.914 > 1.644$
+
+**Conclusión**: Se encontró evidencia significativa de que la nota final aumentó con el uso del nuevo libro de texto en la clase. 
+
+Todo el procedimiento anterior es correcto, pero la otra forma de tomar la decisión de rechazo o no rechazo, suele hacerse basándose en el "p-value". ¿Cómo calculamos el "p-value"?
+
+Para encontrar el "p-value", debemos calcular la siguiente probabilidad: $P(Z > Z_0)$, es decir $P(Z > 2.029)$. Para esto usamos RStudio.
+
+```{r}
+1 - pnorm(2.029)
+```
+
+**Decisión y conclusión usando el "p-value".**
+
+El valor del “p-value” es .021 menor que el nivel de significación $\alpha =.05$, por lo tanto; se rechaza la hipótesis nula y se concluye de que sí hay evidencia estadística de que el nivel de colesterol promedio de los pacientes con problemas cardíacos es mayor de 220. O sea los resultados apoyan lo que afirma el cardiólogo.
+
+
+¿Cómo hacer pruebas de hipótesis usando directamente RStudio?
+
+Si tenemos un conjunto de datos, y estamos en el caso en que $\sigma$ es conocida, podemos usar la función `z.test()`, pero se debe instalar antes el paquete `BSDA`.
+
+El siguiente código ilustra cómo hacer la prueba de hipótesis usando RStudio. Las posibilidades para la hipótesis alterna son: "greater", "less" or "two.sided".
+
+```{r,comment=NA,warning=FALSE,message=FALSE}
+library(BSDA)
+z.test(colesterol, alternative = "greater", mu = 220, sigma.x = 13, conf.level = 0.95)
+```
+
+
+De la anterior salida podemos identificar la siguiente información:
+
+$Z_0 = 2.0297$
+
+
+p-value $= 0.0212$
+
+
+$\alpha = 0.05$
+
+
+$\bar{X}=225.9$
+
+
+Es importante aprender a identificar la información anterior en la salida de la función  `z.test`
 
 
 > **Caso 2: Varianza poblacional $\sigma^2$ es desconocida**
@@ -252,11 +385,11 @@ El estadístico de prueba bajo $H_0$ es
 
 $$t_0=\dfrac{\bar{X}-\mu_0}{S/\sqrt{n}}=\dfrac{63-55}{18/\sqrt{43}}=2.914$$
 
-Entonces la región de rechazo esta dada por todos los valores de $t_{\alpha}$ mayores que $2.91$
+Entonces la región de rechazo está dada por todos los valores de $t_{\alpha}$ mayores que $2.91$
 
 **Paso 4: Valor crítico**
 
-Para calcular el valor crítco de la distribuciónt-student con $n-1$ grados de libertad, es decir con 43-1=42 se usa la siguiente función en `RStudio`
+Para calcular el valor crítico de la distribución t-student con $n-1$ grados de libertad, es decir con 43-1=42 se usa la siguiente función en `RStudio`
 
 
 ```{r}
@@ -275,24 +408,38 @@ $$2.914 > 1.302$$
 **Paso 4: Decisión y conclusión**
 
 
-**Decisión**: Se decide rechazar la hipotesis nula $H_0$, dado a que $t_0 > t_{0.1,42}$.
+**Decisión**: Se decide rechazar la hipótesis nula $H_0$, dado a que $t_0 > t_{0.1,42}$.
 
 
 **Conclusión**: Se encontró evidencia significativa de que las ventas aumentaron y que por tanto la promoción fue exitosa. 
 
 
-### Prueba de hipótes para una proporción
+### Prueba de hipótesis para una proporción
 
-La distribución del estadístico de prueba  bajo la hipótesis nula $H_0 : p= p_0$ y la región de rechazo correspondiente para cada forma de la hipótesis alternativa (cola izquierda, cola derecha o dos colas), se muestran a continuación:
+Para la proporción poblacional, donde $\p_0$ es un número fijo definido por el investigador, las hipótesis se pueden definir de una de las tres formas siguientes:
 
-a) $H_a : p < p_0$
+1.  Prueba a cola izquierda:
 
-b) $H_a : p > p_0$
+$H_0$: $p = p_0$
 
-c) $H_a : p \neq p_0$
+$H_a$: $p < p_0$
+
+2.  Prueba a cola derecha:
+
+$H_0$: $p = _0$
+
+$H_a$: $p > p_0$
 
 
-La distribución del estadístico de prueba  bajo la hipótesis nula $H_0 : p= p_0$
+3.  Prueba a dos colas:
+
+$H_0$: $p = p_0$
+
+$H_a$: $p \neq p_0$
+
+
+La distribución del estadístico de prueba  bajo la hipótesis nula $H_0 : p= p_0$ es:
+
 
 $$Z_0=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$$
 
@@ -331,11 +478,11 @@ El estadístico de prueba bajo $H_0$ es
 
 $$Z_0=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789$$
 
-Entonces la región de rechazo esta dada por todos los valores de $Z_{\alpha}$ mayores que $1.789$
+Entonces la región de rechazo está dada por todos los valores de $Z_{\alpha}$ mayores que $1.789$
 
 **Paso 4: Valor crítico**
 
-Para calcular el valor crítco de la distribución normal estándar usamos la siguiente función en `RStudio`
+Para calcular el valor crítico de la distribución normal estándar usamos la siguiente función en `RStudio`
 
 
 ```{r}
@@ -351,13 +498,13 @@ es decir,
 $$1.789 > 1.644$$
 
 
-**Paso 4: Decisión y conclusión**
+**Paso 5: Decisión y conclusión**
 
 
-**Decisión**: Se decide rechazar la hipotesis nula $H_0$, dado a que $Z_0 > {Z_0.05}$.
+**Decisión**: Se decide rechazar la hipótesis nula $H_0$, dado a que $Z_0 > {Z_0.05}$.
 
 
-**Conclusión**: Se encontró evidencia significativa de que llos adultos prefieren la el refresco del fabricante uno. 
+**Conclusión**: Se encontró evidencia significativa de que los adultos prefieren el refresco del fabricante uno. 
 
 
 2. Los bebés recién nacidos son más propensos a ser niños que niñas. Una muestra aleatoria encontró 13173 niños nacidos entre 25468  recién nacidos.  ¿Hay evidencia de que el nacimiento de niños es más común que el nacimiento de niñas en toda la población? Use $\alpha=0.1$.
@@ -385,49 +532,5 @@ Suponiendo que los precios de subasta de las raquetas se distribuyen normalmente
 6.  El gobierno de un país en particular informa que su tasa de alfabetización es del 52 %. Una organización no gubernamental cree que es menos. La organización toma una muestra aleatoria de 600 habitantes y obtiene una tasa de alfabetización del 42 %. Realice la prueba pertinente al 0.05 de significancia.  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
-
-
+![](blanco.png)
 
