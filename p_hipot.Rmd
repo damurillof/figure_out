@@ -28,7 +28,7 @@ $H_0$ y $H_a$ corresponden a dos enunciados en lugar de hacer una sola pregunta.
 
 Ejemplos:
 
-1.  Podemos considerar el planteamiento de las siguientes hipótesis para el GPA de los estudiantes del colegio. 
+1.  Podemos considerar el planteamiento de las siguientes hipótesis para el GPA de los estudiantes en Puerto Rico. 
 
 $H_0$: El GPA promedio de los estudiantes subgraduados en Puerto Rico es igual a 2.8
 
