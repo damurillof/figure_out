@@ -221,7 +221,11 @@ Un p-value pequeño es evidencia en contra de la hipótesis nula y a favor de la
 Fórmulas para calcular “p-value”: Pero depende de la forma de la hipótesis alterna
 
 Si $H_a: \mu < \mu_0$, entonces el p-value = $P(Z < Z_0)$.
+
+
 Si $H_a: \mu > \mu_0$, entonces el p-value = $P(Z > Z_0)$.
+
+
 Si $H_a: \mu \neq \mu_0$, entonces p-value = $2P(Z > |Z_0|)$.
 
 Ejemplo 2. En estudios previos se ha determinado que el nivel de colesterol promedio de pacientes con problemas cardíacos es 220. Un cardiólogo piensa que en realidad el nivel es más alto y para probar su afirmación usa una muestra del colesterol en 20 pacientes. ¿Habrá suficiente evidencia estadística para apoyar la afirmación del cardiólogo? Justificar su contestación basándose en el “p-value”.
