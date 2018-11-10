@@ -1,0 +1,54 @@
+---
+title: "Tarea # 9"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#### **Fecha de entrega:** Miércoles 21 de Noviembre de 2018. Al iniciar la clase.
+
+#### **Puntaje: 15 puntos** 
+
+### Recuerde adjuntar todos sus procedimientos de `RStudio`, incluido los códigos y los datos.
+
+#### Resuelva los siguientes problemas mostrando claramente su procedimiento.
+
+#### **1.** Parece ser que los estudiantes del Colegio se han interesado últimamente por el uso de la bicicleta. Esto se debe quizá a las dificultades para parquear el auto de forma segura dentro del campus. Una oportunidad de negocio, sería ofrecer a precios módicos servicio técnico a domicilio a biciusuarios que lo requieran. Para saber si el negocio puede funcionar, se lleva a cabo una encuesta a 350 biciusuarios seleccionados aleatoriamente. Los resultados de la encuesta son los siguientes ("SI" o "NO"):
+
+#### SI: Sí usaría el servicio.
+
+#### NO: No usaría el servicio.
+
+```{r,eval=F,echo=TRUE}
+a <- runif(1,0.2,0.5)
+encuesta <- sample(c("SI","NO"),size = 350,replace = TRUE, prob = c(a,1-a))
+print(encuesta)
+```
+
+#### Para obtener los datos, copie y pegue el código anterior una sola vez en RStudio. Use esos datos para el ejercicio.
+
+#### Con base en los datos y la información anterior, conteste las siguientes preguntas:
+
+a)  #### ¿Cuál es el parámetro de interés?  
+
+b)  #### Calcule una estimación puntual para el parámetro de interés.
+
+c)  #### Encuentre intervalos de confianza para el parámetro de interés con una confiabilidad del 90 %, 94 % y 99 %.
+
+d)  #### Interprete los intervalos que encontró en la parte c).
+
+e)  #### Compruebe los supuestos del intervalo de confianza.
+
+#### **BONO (6 Puntos)** Haga un breve resumen de una página sobre el siguiente artículo. Use Word-Arial 12.
+
+### [Statistics in the Courtroom: United States v. Kristen Gilbert ](https://didier-murillo.netlify.com/Statistics in the Courtroom.pdf)
+
+#### Incluya al final de su resumen, una conclusión de lo que entendió de este. 
+
+
+
+
+![](blanco.png)

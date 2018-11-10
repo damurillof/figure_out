@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Solución Tarea # 7</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Solución Tarea # 7</h1>
+
+</div>
+
+
+<div id="para-la-parte-1-usare-la-siguiente-funcion." class="section level4">
+<h4>Para la parte 1 usaré la siguiente función.</h4>
+<pre class="r"><code>plot_area &lt;- function(a,b){
+z=seq(-3,3,length=200)
+F_z=dnorm(z,mean = 0,sd=1)
+plot(z,F_z,type=&quot;l&quot;, lwd=2, col=&quot;black&quot;)
+z=seq(a,b,length=200)
+F_z=dnorm(z,mean = 0,sd=1)
+polygon(c(a,z,b),c(0,F_z,0),col=&quot;red&quot;)
+axis(side = 1, at=-3:3)
+}</code></pre>
+</div>
+<div id="supongamos-que-z-tiene-una-distribucion-normal-estandar-es-decir-z-sim-normal01.-use-rstudio-o-una-tabla-de-probabilidades-z-para-encontrar-haga-una-grafica-para-explicar-sus-resultados" class="section level4">
+<h4><strong>1.</strong> Supongamos que <span class="math inline">\(Z\)</span> tiene una distribución normal estándar, es decir <span class="math inline">\(Z \sim Normal(0,1)\)</span>. Use RStudio o una tabla de probabilidades <span class="math inline">\(Z\)</span> para encontrar (Haga una gráfica para explicar sus resultados);</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="pz--1.8"><span class="math inline">\(P(Z &lt; -1.8)\)</span></h4></li>
+</ol>
+<pre class="r"><code>pnorm(-1.8)</code></pre>
+<pre><code>## [1] 0.03593032</code></pre>
+<pre class="r"><code>plot_area(-3,-1.8)</code></pre>
+<p><img src="st7_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="pz-0.7"><span class="math inline">\(P(Z &gt; 0.7)\)</span></h4></li>
+</ol>
+<pre class="r"><code>1 - pnorm(0.7)</code></pre>
+<pre><code>## [1] 0.2419637</code></pre>
+<pre class="r"><code>plot_area(0.7,3)</code></pre>
+<p><img src="st7_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="el-percentil-z_p-tal-que-pz-z_p0.3085">El percentil <span class="math inline">\(z_p\)</span> tal que <span class="math inline">\(P(Z &lt; z_p)=0.3085\)</span></h4></li>
+</ol>
+<pre class="r"><code>Zp &lt;- qnorm(0.3085)
+Zp</code></pre>
+<pre><code>## [1] -0.5001066</code></pre>
+<pre class="r"><code>plot_area(-3,Zp)</code></pre>
+<p><img src="st7_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="el-craps-tambien-conocido-como-pase-ingles-es-un-famoso-juego-de-azar-que-consiste-en-apostar-al-resultado-de-la-suma-al-lanzar-un-par-de-dados-legales.-este-juego-tiene-varias-reglas-pero-si-las-asumimos-el-problema-se-hace-muy-complicado.-nosotros-solo-vamos-a-definir-dos-reglas-para-simplificar-el-problema" class="section level4">
+<h4><strong>2.</strong> El “Craps”, también conocido como “Pase Inglés” es un famoso juego de azar que consiste en apostar al resultado de la suma al lanzar un par de dados legales. Este juego tiene varias reglas, pero si las asumimos, el problema se hace muy complicado. Nosotros solo vamos a definir dos reglas para simplificar el problema:</h4>
+</div>
+<div id="regla-1-si-el-resultado-de-la-suma-de-los-dos-dados-es-5-7-o-11-el-jugador-gana-y-cobra-su-apuesta" class="section level4">
+<h4><strong>Regla 1:</strong> Si el resultado de la suma de los dos dados es {5, 7 o 11} el jugador gana y cobra su apuesta :)</h4>
+</div>
+<div id="regla-2-si-el-resultado-de-la-suma-de-los-dos-dados-es-2-3-4-6-8-9-10-o-12-el-jugador-pierde-su-dinero-y-se-termina-el-juego" class="section level4">
+<h4><strong>Regla 2:</strong> Si el resultado de la suma de los dos dados es {2, 3, 4, 6, 8, 9, 10 o 12} el jugador pierde su dinero y se termina el juego :(</h4>
+</div>
+<div id="suponga-un-jugador-de-craps-que-juega-30-veces-en-una-noche." class="section level4">
+<h4>Suponga un jugador de Craps que juega 30 veces en una noche.</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="calcule-directamente-mediante-la-distribucion-binomial-la-probabilidad-de-que-el-jugador-gane-en-mas-de-5-ocasiones.">Calcule directamente mediante la distribución Binomial la probabilidad de que el jugador gane en más de 5 ocasiones.</h4></li>
+</ol>
+</div>
+<div id="tenemos-que-calcular-la-probabilidad-de-exito.-todas-las-posibilidades-en-las-que-el-jugador-de-craps-puede-ganar-son" class="section level4">
+<h4>Tenemos que calcular la probabilidad de éxito. Todas las posibilidades en las que el jugador de Craps puede ganar, son:</h4>
+</div>
+<div id="e-233214413443255261166556" class="section level4">
+<h4><span class="math display">\[E = \{(2,3),(3,2),(1,4),(4,1),(3,4),(4,3),(2,5),(5,2),(6,1),(1,6),(6,5),(5,6)\}\]</span></h4>
+</div>
+<div id="en-total-hay-12-posibilidades-de-36.-por-lo-tanto-p1236." class="section level4">
+<h4>En total, hay 12 posibilidades de 36. Por lo tanto, <span class="math inline">\(p=12/36\)</span>.</h4>
+</div>
+<div id="entonces" class="section level4">
+<h4>Entonces:</h4>
+</div>
+<div id="px-5-1--pxleq-5" class="section level4">
+<h4><span class="math display">\[P(X &gt; 5)= 1- P(X\leq 5)\]</span></h4>
+</div>
+<div id="px-5-1--bigpx-0-px-1-px-2-px-3-px-4-px-5-big" class="section level4">
+<h4><span class="math display">\[P(X &gt; 5)= 1- \Big[P(X =0) + P(X =1) + P(X =2) + P(X =3) + P(X =4) + P(X =5) \Big]\]</span></h4>
+</div>
+<div id="tenemos-que" class="section level4">
+<h4>Tenemos que,</h4>
+</div>
+<div id="px-030-choose-0frac12360frac2436300.0000052151" class="section level4">
+<h4><span class="math inline">\(P(X = 0)={30 \choose 0}(\frac{12}{36})^0(\frac{24}{36})^{30}=0.0000052151\)</span></h4>
+</div>
+<div id="px-130-choose-1frac12361frac2436290.00007822" class="section level4">
+<h4><span class="math inline">\(P(X = 1)={30 \choose 1}(\frac{12}{36})^1(\frac{24}{36})^{29}=0.00007822\)</span></h4>
+</div>
+<div id="px-230-choose-2frac12362frac2436280.00056714" class="section level4">
+<h4><span class="math inline">\(P(X = 2)={30 \choose 2}(\frac{12}{36})^2(\frac{24}{36})^{28}=0.00056714\)</span></h4>
+</div>
+<div id="px-330-choose-3frac12363frac2436270.00264666" class="section level4">
+<h4><span class="math inline">\(P(X = 3)={30 \choose 3}(\frac{12}{36})^3(\frac{24}{36})^{27}=0.00264666\)</span></h4>
+</div>
+<div id="px-430-choose-4frac12364frac2436260.00893248" class="section level4">
+<h4><span class="math inline">\(P(X = 4)={30 \choose 4}(\frac{12}{36})^4(\frac{24}{36})^{26}=0.00893248\)</span></h4>
+</div>
+<div id="px-530-choose-5frac12365frac2436250.02322445" class="section level4">
+<h4><span class="math inline">\(P(X = 5)={30 \choose 5}(\frac{12}{36})^5(\frac{24}{36})^{25}=0.02322445\)</span></h4>
+</div>
+<div id="luego" class="section level4">
+<h4>Luego,</h4>
+</div>
+<div id="px-5-1--big0.0000052151-0.00007822-0.00056714-0.00264666-0.00893248-0.02322445-big" class="section level4">
+<h4><span class="math display">\[P(X &gt; 5)= 1- \Big[0.0000052151 + 0.00007822 + 0.00056714 + 0.00264666 + 0.00893248 + 0.02322445 \Big]\]</span></h4>
+</div>
+<div id="px-5-1--0.035454170.9645458" class="section level4">
+<h4><span class="math display">\[P(X &gt; 5)= 1 -0.03545417=0.9645458\]</span></h4>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="calcule-directamente-mediante-la-distribucion-binomial-la-probabilidad-de-que-el-jugador-gane-exactamente-10-veces.">Calcule directamente mediante la distribución Binomial la probabilidad de que el jugador gane exactamente 10 veces.</h4></li>
+</ol>
+</div>
+<div id="px-1030-choose-10biggfrac1236bigg10biggfrac2436bigg200.1530152" class="section level4">
+<h4><span class="math display">\[P(X = 10)={30 \choose 10}\bigg(\frac{12}{36}\bigg)^{10}\bigg(\frac{24}{36}\bigg)^{20}=0.1530152\]</span></h4>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="use-la-distribucion-normal-para-aproximar-las-probabilidades-que-encontro-en-a-y-b.-la-aproximacion-en-este-caso-es-buena-o-mala-por-que">Use la distribución Normal para aproximar las probabilidades que encontró en a) y b). ¿La aproximación en este caso es buena o mala? ¿Por qué?</h4></li>
+</ol>
+</div>
+<div id="para-la-parte-a" class="section level3">
+<h3>Para la parte a)</h3>
+<div id="mu-np30123610" class="section level4">
+<h4><span class="math inline">\(\mu = np=30*12/36=10\)</span></h4>
+</div>
+<div id="sigma-sqrtnp1-psqrt3012361-1236sqrt6.6666672.581989" class="section level4">
+<h4><span class="math inline">\(\sigma = \sqrt{np(1-p)}=\sqrt{30*(12/36)*(1-12/36)}=\sqrt{6.666667}=2.581989\)</span></h4>
+</div>
+<div id="entonces-1" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="x-sim-normal102.581989" class="section level4">
+<h4><span class="math display">\[X \sim Normal(10,2.581989)\]</span></h4>
+</div>
+<div id="px-5-1---px-leq-5" class="section level4">
+<h4><span class="math display">\[P(X &gt; 5) = 1 - P(X \leq 5) = \]</span></h4>
+</div>
+<div id="sumando-0.5-por-la-correccion-de-la-aproximacion-tenemos" class="section level4">
+<h4>sumando 0.5 por la corrección de la aproximación tenemos:</h4>
+</div>
+<div id="px-5.5" class="section level4">
+<h4><span class="math display">\[1 - P(X &lt; 5.5)=\]</span></h4>
+</div>
+<div id="pbigz-dfrac5.5---102.581989big" class="section level4">
+<h4><span class="math display">\[ 1 - P\Big(Z &lt; \dfrac{5.5 - 10}{2.581989}\Big)=\]</span></h4>
+</div>
+<div id="pbigz--1.742842big" class="section level4">
+<h4><span class="math display">\[ 1 - P\Big(Z &lt; -1.742842\Big)=\]</span></h4>
+<pre class="r"><code>1 - pnorm(-1.742842)</code></pre>
+<pre><code>## [1] 0.9593194</code></pre>
+</div>
+<div id="asi-usando-la-aproximacion-normal-obtenemos" class="section level4">
+<h4>Así, usando la aproximación normal obtenemos:</h4>
+</div>
+<div id="px-5-0.9593194" class="section level4">
+<h4><span class="math display">\[P(X &gt; 5)= 0.9593194\]</span></h4>
+</div>
+</div>
+<div id="para-la-parte-b" class="section level3">
+<h3>Para la parte b)</h3>
+<div id="px-10-p9.5-x-10.5" class="section level4">
+<h4><span class="math display">\[P(X = 10) = P(9.5 &lt; X &lt; 10.5)=\]</span></h4>
+</div>
+<div id="px-10.5---px-9.5" class="section level4">
+<h4><span class="math display">\[=P(X &lt; 10.5) - P(X &lt; 9.5)=\]</span></h4>
+</div>
+<div id="pbigz-dfrac10.5---102.581989big---pbigz-dfrac9.5---102.581989big" class="section level4">
+<h4><span class="math display">\[ P\Big(Z &lt; \dfrac{10.5 - 10}{2.581989}\Big) - P\Big(Z &lt; \dfrac{9.5 - 10}{2.581989}\Big) =\]</span></h4>
+</div>
+<div id="pz-0.193649---pz--0.1936492" class="section level4">
+<h4><span class="math display">\[=P(Z &lt; 0.193649) - P(Z &lt; -0.1936492)=\]</span></h4>
+<pre class="r"><code>pnorm(0.193649) - pnorm(-0.1936492)</code></pre>
+<pre><code>## [1] 0.1535494</code></pre>
+</div>
+<div id="en-ambos-casos-se-encontro-una-aproximacion-relativamente-cercana.-esto-se-da-ya-que-la-probabilidad-de-exito-no-esta-tan-lejos-0.5." class="section level4">
+<h4>En ambos casos se encontró una aproximación relativamente cercana. Esto se da ya que la probabilidad de éxito no está tan lejos 0.5.</h4>
+</div>
+<div id="el-siguiente-codigo-genera-30-datos-que-simulan-salarios-anuales-en-puerto-rico." class="section level4">
+<h4><strong>3.</strong> El siguiente código genera 30 datos que simulan salarios anuales en Puerto Rico.</h4>
+<pre class="r"><code>set.seed(123)
+salario &lt;- sample(22000:85000,size = 30,replace = TRUE)
+print(salario)</code></pre>
+<pre><code>##  [1] 40117 71664 47765 77630 81250 24870 55271 78223 56740 50767 82281
+## [12] 50560 64687 58076 28484 78689 37503 24649 42659 82134 78041 65647
+## [23] 62352 84639 63310 66638 56276 59431 40217 31268</code></pre>
+</div>
+<div id="queremos-inferir-algunas-cosas-sobre-el-salario-promedio-en-puerto-rico.-conteste-las-siguientes-preguntas-con-base-en-los-datos-salario" class="section level4">
+<h4>Queremos inferir algunas cosas sobre el salario promedio en Puerto Rico. Conteste las siguientes preguntas con base en los datos <code>salario</code></h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="podemos-usar-el-tlc-para-aproximar-la-distribucion-del-salario-promedio-en-puerto-rico-por-que">¿Podemos usar el <strong>TLC</strong> para aproximar la distribución del salario promedio en Puerto Rico?, ¿Por qué?</h4></li>
+</ol>
+</div>
+<div id="si-porque-n-es-igual-a-30-y-cumple-con-la-condicion-del-tlc." class="section level4">
+<h4>Sí, porque <span class="math inline">\(n\)</span> es igual a 30, y cumple con la condición del TLC.</h4>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-distribucion-del-salario-promedio-en-puerto-rico">¿Cuál es la distribución del salario promedio en Puerto Rico?</h4></li>
+</ol>
+</div>
+<div id="la-media-muestral-es" class="section level4">
+<h4>La media muestral es:</h4>
+<pre class="r"><code>mean(salario)</code></pre>
+<pre><code>## [1] 58061.27</code></pre>
+</div>
+<div id="como-n-es-igual-a-30-podemos-estimar-sigma-usando-la-muestra." class="section level4">
+<h4>Como n es igual a 30, podemos estimar <span class="math inline">\(\sigma\)</span> usando la muestra.</h4>
+<pre class="r"><code>sd(salario)</code></pre>
+<pre><code>## [1] 18356.07</code></pre>
+</div>
+<div id="por-el-tlc-tenemos-que-mu_barxmu58061.27-y-que-sigma_barxdfracssqrtndfrac18356.07sqrt303351.345" class="section level4">
+<h4>Por el TLC, tenemos que <span class="math inline">\(\mu_{\bar{X}}=\mu=58061.27\)</span> y que <span class="math inline">\(\sigma_{\bar{X}}=\dfrac{S}{\sqrt{n}}=\dfrac{18356.07}{\sqrt{30}}=3351.345\)</span></h4>
+</div>
+<div id="barx-sim-normalbigg58061.27dfrac18356.07sqrt30-bigg" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal\bigg(58061.27,\dfrac{18356.07}{\sqrt{30}} \bigg)\]</span></h4>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-probabilidad-de-encontrar-un-salario-promedio-mayor-a-80-mil">¿Cuál es la probabilidad de encontrar un salario promedio mayor a <span class="math inline">\(\$ 80\)</span> mil?</h4></li>
+</ol>
+</div>
+<div id="pbarx-80000-1---pbarx-80000" class="section level4">
+<h4><span class="math display">\[P(\bar{X} &gt; 80000) = 1 - P(\bar{X} &lt; 80000)\]</span></h4>
+</div>
+<div id="pbiggz-dfrac80000---58061.27-frac18356.07sqrt30bigg" class="section level4">
+<h4><span class="math display">\[ 1 - P\Bigg(Z &lt; \dfrac{80000 - 58061.27 }{\frac{18356.07}{\sqrt{30}}}\Bigg)\]</span></h4>
+</div>
+<div id="pbigz-dfrac21938.733351.345big" class="section level4">
+<h4><span class="math display">\[ 1 - P\Big(Z &lt; \dfrac{21938.73}{3351.345}\Big)\]</span></h4>
+</div>
+<div id="pbigz-6.546246big" class="section level4">
+<h4><span class="math display">\[ 1 - P\Big(Z &lt; 6.546246\Big)\]</span></h4>
+</div>
+<div id="section" class="section level4">
+<h4><span class="math display">\[ 1 - 1=0\]</span></h4>
+</div>
+<div id="entonces-2" class="section level4">
+<h4>Entonces,</h4>
+</div>
+<div id="pbarx-80000-0" class="section level4">
+<h4><span class="math display">\[P(\bar{X} &gt; 80000) = 0\]</span></h4>
+</div>
+<div id="suponga-que-los-pesos-de-recien-nacidos-se-distribuyen-normal-con-media-2900-gramos-y-desviacion-estandar-1200-gramos.-es-decir-x-sim-normal2900-1200.-si-se-tomo-una-muestra-de-17-recien-nacidos.-conteste" class="section level4">
+<h4><strong>4.</strong> Suponga que los pesos de recién nacidos se distribuyen normal con media 2900 gramos y desviación estándar 1200 gramos. Es decir <span class="math inline">\(X \sim Normal(2900, 1200)\)</span>. Sí se tomó una muestra de 17 recién nacidos. Conteste:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="es-necesario-usar-el-tlc-para-aproximar-la-distribucion-del-peso-promedio-en-recien-nacidos-explique">¿Es necesario usar el <strong>TLC</strong> para aproximar la distribución del peso promedio en recién nacidos? Explique!</h4></li>
+</ol>
+</div>
+<div id="no-es-necesario-usar-el-tlc-porque-ya-conocemos-que-la-poblacion-es-normal-con-media-y-varianza-conocidas." class="section level4">
+<h4>No es necesario usar el TLC, porque ya conocemos que la población es normal con media y varianza conocidas.</h4>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-distribucion-del-peso-promedio-muestral-en-recien-nacidos">¿Cuál es la distribución del peso promedio muestral en recién nacidos?</h4></li>
+</ol>
+</div>
+<div id="como-la-poblacion-es-normal-con-media-mu2900-y-desviacion-sigma1200-entonces" class="section level4">
+<h4>Como la población es Normal con media <span class="math inline">\(\mu=2900\)</span> y desviación <span class="math inline">\(\sigma=1200\)</span>, entonces,</h4>
+</div>
+<div id="mu_barxmu2900-y-sigma_barxdfracsigmasqrtndfrac1200sqrt17291.04" class="section level4">
+<h4><span class="math inline">\(\mu_{\bar{X}}=\mu=2900\)</span> y <span class="math inline">\(\sigma_{\bar{X}}=\dfrac{\sigma}{\sqrt{n}}=\dfrac{1200}{\sqrt{17}}=291.04\)</span></h4>
+</div>
+<div id="barx-sim-normalbigg2900dfrac1200sqrt17bigg" class="section level4">
+<h4><span class="math display">\[\bar{X} \sim Normal\bigg(2900,\dfrac{1200}{\sqrt{17}}\bigg)\]</span></h4>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-la-probabilidad-de-encontrar-un-peso-promedio-muestral-entre-2500-y-3800-gramos">¿Cuál es la probabilidad de encontrar un peso promedio muestral entre 2500 y 3800 gramos?</h4></li>
+</ol>
+</div>
+<div id="p2500-barx-3800" class="section level4">
+<h4><span class="math display">\[P(2500 &lt;\bar{X} &lt; 3800) =\]</span></h4>
+</div>
+<div id="pbarx-3800---pbarx-2500" class="section level4">
+<h4><span class="math display">\[P(\bar{X} &lt;3800) - P(\bar{X} &lt;2500)=\]</span></h4>
+</div>
+<div id="pbiggz-dfrac3800--2900frac1200sqrt17bigg---pbiggz-frac2500--2900frac1200sqrt17bigg" class="section level4">
+<h4><span class="math display">\[ P\Bigg(Z &lt; \dfrac{3800- 2900}{\frac{1200}{\sqrt{17}}}\Bigg) - P\Bigg(Z &lt; \frac{2500- 2900}{\frac{1200}{\sqrt{17}}}\Bigg) =\]</span></h4>
+</div>
+<div id="pbigz-dfrac900291.04big---pbigz-dfrac-400291.04big" class="section level4">
+<h4><span class="math display">\[ P\Big(Z &lt; \dfrac{900}{291.04}\Big) - P\Big(Z &lt; \dfrac{-400}{291.04}\Big) =\]</span></h4>
+</div>
+<div id="pbigz-3.0923big---pbigz--1.3743big" class="section level4">
+<h4><span class="math display">\[ P\Big(Z &lt; 3.0923\Big) - P\Big(Z &lt; -1.3743\Big) =\]</span></h4>
+<pre class="r"><code>pnorm(3.0923) - pnorm(-1.3743)</code></pre>
+<pre><code>## [1] 0.9143327</code></pre>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -11,7 +11,7 @@
 
 
 
-<title>Tareas</title>
+<title>Tarea # 9</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -202,49 +202,59 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tareas</h1>
+<h1 class="title toc-ignore">Tarea # 9</h1>
 
 </div>
 
 
-<div id="reglas-para-todas-las-tareas" class="section level3">
-<h3>Reglas para todas las tareas:</h3>
-<ol style="list-style-type: decimal">
-<li><h4 id="la-tarea-debe-ser-entregada-en-fisico-al-iniciar-la-clase-y-en-el-dia-estipulado.">La tarea debe ser entregada en físico al iniciar la clase y en el día estipulado.</h4></li>
-<li><h4 id="se-pueden-ayudar-mutuamente-en-el-uso-de-las-computadoras-pero-dos-trabajos-exactamente-iguales-recibiran-nota-cero.">Se pueden ayudar mutuamente en el uso de las computadoras, pero dos trabajos exactamente iguales recibirán nota CERO.</h4></li>
-<li><h4 id="en-su-reporte-final-debe-aparecer-todo-el-codigo-de-r-y-los-respectivos-resultados.-en-los-calculos-manuales-debe-mostrar-su-procedimiento-detalladamente.">En su reporte final debe aparecer todo el código de R y los respectivos resultados. En los cálculos manuales debe mostrar su procedimiento detalladamente.</h4></li>
-<li><h4 id="todas-las-graficas-deben-tener-titulos-que-incluyan-el-nombre-de-estudiante-de-lo-contrario-se-descontaran-puntos.">Todas las gráficas deben tener títulos que incluyan el nombre de estudiante, de lo contrario se descontarán puntos.</h4></li>
+<div id="fecha-de-entrega-miercoles-21-de-noviembre-de-2018.-al-iniciar-la-clase." class="section level4">
+<h4><strong>Fecha de entrega:</strong> Miércoles 21 de Noviembre de 2018. Al iniciar la clase.</h4>
+</div>
+<div id="puntaje-15-puntos" class="section level4">
+<h4><strong>Puntaje: 15 puntos</strong></h4>
+</div>
+<div id="recuerde-adjuntar-todos-sus-procedimientos-de-rstudio-incluido-los-codigos-y-los-datos." class="section level3">
+<h3>Recuerde adjuntar todos sus procedimientos de <code>RStudio</code>, incluido los códigos y los datos.</h3>
+<div id="resuelva-los-siguientes-problemas-mostrando-claramente-su-procedimiento." class="section level4">
+<h4>Resuelva los siguientes problemas mostrando claramente su procedimiento.</h4>
+</div>
+<div id="parece-ser-que-los-estudiantes-del-colegio-se-han-interesado-ultimamente-por-el-uso-de-la-bicicleta.-esto-se-debe-quiza-a-las-dificultades-para-parquear-el-auto-de-forma-segura-dentro-del-campus.-una-oportunidad-de-negocio-seria-ofrecer-a-precios-modicos-servicio-tecnico-a-domicilio-a-biciusuarios-que-lo-requieran.-para-saber-si-el-negocio-puede-funcionar-se-lleva-a-cabo-una-encuesta-a-350-biciusuarios-seleccionados-aleatoriamente.-los-resultados-de-la-encuesta-son-los-siguientes-si-o-no" class="section level4">
+<h4><strong>1.</strong> Parece ser que los estudiantes del Colegio se han interesado últimamente por el uso de la bicicleta. Esto se debe quizá a las dificultades para parquear el auto de forma segura dentro del campus. Una oportunidad de negocio, sería ofrecer a precios módicos servicio técnico a domicilio a biciusuarios que lo requieran. Para saber si el negocio puede funcionar, se lleva a cabo una encuesta a 350 biciusuarios seleccionados aleatoriamente. Los resultados de la encuesta son los siguientes (“SI” o “NO”):</h4>
+</div>
+<div id="si-si-usaria-el-servicio." class="section level4">
+<h4>SI: Sí usaría el servicio.</h4>
+</div>
+<div id="no-no-usaria-el-servicio." class="section level4">
+<h4>NO: No usaría el servicio.</h4>
+<pre class="r"><code>a &lt;- runif(1,0.2,0.5)
+encuesta &lt;- sample(c(&quot;SI&quot;,&quot;NO&quot;),size = 350,replace = TRUE, prob = c(a,1-a))
+print(encuesta)</code></pre>
+</div>
+<div id="para-obtener-los-datos-copie-y-pegue-el-codigo-anterior-una-sola-vez-en-rstudio.-use-esos-datos-para-el-ejercicio." class="section level4">
+<h4>Para obtener los datos, copie y pegue el código anterior una sola vez en RStudio. Use esos datos para el ejercicio.</h4>
+</div>
+<div id="con-base-en-los-datos-y-la-informacion-anterior-conteste-las-siguientes-preguntas" class="section level4">
+<h4>Con base en los datos y la información anterior, conteste las siguientes preguntas:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-el-parametro-de-interes">¿Cuál es el parámetro de interés?</h4></li>
+<li><h4 id="calcule-una-estimacion-puntual-para-el-parametro-de-interes.">Calcule una estimación puntual para el parámetro de interés.</h4></li>
+<li><h4 id="encuentre-intervalos-de-confianza-para-el-parametro-de-interes-con-una-confiabilidad-del-90-94-y-99-.">Encuentre intervalos de confianza para el parámetro de interés con una confiabilidad del 90 %, 94 % y 99 %.</h4></li>
+<li><h4 id="interprete-los-intervalos-que-encontro-en-la-parte-c.">Interprete los intervalos que encontró en la parte c).</h4></li>
+<li><h4 id="compruebe-los-supuestos-del-intervalo-de-confianza.">Compruebe los supuestos del intervalo de confianza.</h4></li>
 </ol>
 </div>
-<div id="tarea-1.-fecha-limite-viernes-24-08-solucion-tarea-1" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t1">Tarea 1. Fecha límite: Viernes-24-08</a> – <a href="https://didier-murillo.netlify.com/st1">Solución Tarea 1</a></h3>
+<div id="bono-6-puntos-haga-un-breve-resumen-de-una-pagina-sobre-el-siguiente-articulo.-use-word-arial-12." class="section level4">
+<h4><strong>BONO (6 Puntos)</strong> Haga un breve resumen de una página sobre el siguiente artículo. Use Word-Arial 12.</h4>
 </div>
-<div id="tarea-2.-fecha-limite-viernes-31-08-solucion-tarea-2" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t2">Tarea 2. Fecha límite: Viernes-31-08</a> – <a href="https://didier-murillo.netlify.com/st2">Solución Tarea 2</a></h3>
 </div>
-<div id="tarea-3.-fecha-limite-viernes-07-09-solucion-tarea-3" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t3">Tarea 3. Fecha límite: Viernes-07-09</a> – <a href="https://didier-murillo.netlify.com/st3">Solución Tarea 3</a></h3>
-</div>
-<div id="tarea-4.-fecha-limite-viernes-14-09-solucion-tarea-4" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t4">Tarea 4. Fecha límite: Viernes-14-09</a> – <a href="https://didier-murillo.netlify.com/st4">Solución Tarea 4</a></h3>
-</div>
-<div id="tarea-5.-fecha-limite-viernes-05-10-solucion-tarea-5" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t5">Tarea 5. Fecha límite: Viernes-05-10</a> – <a href="https://didier-murillo.netlify.com/st5">Solución Tarea 5</a></h3>
-</div>
-<div id="tarea-6.-fecha-limite-miercol-17-10-solucion-tarea-6" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t6">Tarea 6. Fecha límite: Miercol-17-10</a> – <a href="https://didier-murillo.netlify.com/st6">Solución Tarea 6</a></h3>
-</div>
-<div id="tarea-7.-fecha-limite-miercol-07-11-solucion-tarea-7" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t7">Tarea 7. Fecha límite: Miercol-07-11</a> – <a href="https://didier-murillo.netlify.com/st7">Solución Tarea 7</a></h3>
-</div>
-<div id="tarea-8.-fecha-limite-miercol-14-11" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t8">Tarea 8. Fecha límite: Miercol-14-11</a></h3>
-</div>
-<div id="tarea-9.-fecha-limite-miercol-21-11" class="section level3">
-<h3><a href="https://didier-murillo.netlify.com/t9">Tarea 9. Fecha límite: Miercol-21-11</a></h3>
+<div id="statistics-in-the-courtroom-united-states-v.-kristen-gilbert" class="section level3">
+<h3><a href="https://didier-murillo.netlify.com/Statistics%20in%20the%20Courtroom.pdf">Statistics in the Courtroom: United States v. Kristen Gilbert</a></h3>
+<div id="incluya-al-final-de-su-resumen-una-conclusion-de-lo-que-entendio-de-este." class="section level4">
+<h4>Incluya al final de su resumen, una conclusión de lo que entendió de este.</h4>
 <div class="figure">
 <img src="blanco.png" />
 
+</div>
 </div>
 </div>
 
