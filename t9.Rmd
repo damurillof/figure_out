@@ -42,6 +42,8 @@ d)  #### Interprete los intervalos que encontró en la parte c).
 
 e)  #### Compruebe los supuestos del intervalo de confianza.
 
+f)  #### El negocio sería factible si por lo menos el 60 % de los biciusuarios dice que sí usaría los servicios. Según sus estimaciones, ¿Es factible empezar el proyecto?
+
 #### **BONO (8 Puntos)** Haga un resumen de una página sobre el siguiente artículo. Use Word-Arial 12.
 
 ### [Statistics in the Courtroom: United States v. Kristen Gilbert ](https://didier-murillo.netlify.com/Statistics in the Courtroom.pdf)
