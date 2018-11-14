@@ -5,3 +5,5 @@ output: html_document
 
 
 ### [Laboratorio 1](https://didier-murillo.netlify.com/l1): Medidas de tendencia central, variabilidad y gráficas.
+
+### [Laboratorio 2](https://didier-murillo.netlify.com/l2): Distribución Z e Intervalos de confianza.

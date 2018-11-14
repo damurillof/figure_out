@@ -55,7 +55,7 @@ b) $P(X = 8)$ usando aproximación Normal. Luego verifique su resultado usando l
 
 La función `t.test(x,conf.level=.95)` entre otras cosas, encuentra un intervalo de confianza  para una muestra `x`, donde `x` es un vector y `conf.level=.95` es el nivel de confianza, por defecto del 95 %. Usted lo puede cambiar.
 
-a) En una ciudad están interesados en estimar el peso promedio de los varones adultos. Para eso se recolectó una muestra aleatoria $n$ del peso de varones adultos, los siguientes datos.
+a) En una ciudad están interesados en estimar el peso promedio de los varones adultos. Para eso se recolectó una muestra aleatoria $n$ del peso de varones adultos, los  datos son:
 
 ```{r,comment=NA}
 peso <- round(rnorm(15,180,10),0)
@@ -89,7 +89,7 @@ Use `prop.test(x, n, conf.level = 0.95, correct = TRUE)` para resolver el siguie
 
 ¿Guías bajo los efectos del alcohol? La administración de una ciudad estima que el 55 % de los jóvenes conducen bajo los efectos del alcohol. Para estar seguros de sus afirmaciones, recolectan la siguiente información mediante una muestra aleatoria entre jóvenes de 16 a 25 años.
 
-Los resultados son resumidos mediante la siguiente tabla:
+Los resultados fueron resumidos de la siguiente forma:
 
 ```{r,comment=NA,eval=T,echo=F}
 p <- runif(1,0.15,0.35)
