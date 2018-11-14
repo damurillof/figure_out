@@ -63,7 +63,7 @@ peso <- round(rnorm(15,180,10),0)
 
 Use el siguiente código para encontrar un intervalo de confianza del 95 % para el peso promedio de todos los adultos varones en esa ciudad.
 
-```{r,comment=NA}
+```{r,comment=NA,eval=F,echo=T}
 t.test(peso,conf.level = 0.95)
 ```
 

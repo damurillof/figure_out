@@ -262,17 +262,6 @@ $(document).ready(function () {
 <pre class="r"><code>peso &lt;- round(rnorm(15,180,10),0)</code></pre>
 <p>Use el siguiente código para encontrar un intervalo de confianza del 95 % para el peso promedio de todos los adultos varones en esa ciudad.</p>
 <pre class="r"><code>t.test(peso,conf.level = 0.95)</code></pre>
-<pre><code>
-    One Sample t-test
-
-data:  peso
-t = 60.365, df = 14, p-value &lt; 2.2e-16
-alternative hypothesis: true mean is not equal to 0
-95 percent confidence interval:
- 172.4472 185.1528
-sample estimates:
-mean of x 
-    178.8 </code></pre>
 <p>Responda según la salida anterior (NO es necesario hacer calculos):</p>
 <ol style="list-style-type: decimal">
 <li><p>¿Cuál es el intervalo de confianza? Interpretelo!</p></li>
@@ -291,7 +280,7 @@ mean of x
 <p>Los resultados fueron resumidos de la siguiente forma:</p>
 <pre><code>drunk_driving
 NOT YES 
- 99  21 </code></pre>
+ 89  31 </code></pre>
 <ol style="list-style-type: lower-alpha">
 <li><p>Use <code>prop.test()</code> para encontrar intervalos de confianza del 90 %, 95% y 99 % de confianza para la verdadera proporción de jóvenes que guían bajo los efectos del alcohol.</p></li>
 <li><p>Interprete el intervalo al 99 % de confianza.</p></li>
