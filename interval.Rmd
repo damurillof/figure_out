@@ -182,7 +182,7 @@ Un intervalo de confianza es un rango de valores, derivado de los estadísticos 
 
 > ¿Cómo encontrar el valor crítico $Z_{\alpha/2}$?
 
-#### Supongamos un nivel de confianza del 95 %, por tanto $\alpha=0.5$, entonces ¿Cuanto es $Z_{\alpha/2}$?, para responder esto se pueden usar tablas estadísticas de la distribución normal estándar, pero esto no es muy atractivo  en esta época. Podemos usar `RStudio`, veamos 
+#### Supongamos un nivel de confianza del 95 %, por tanto $\alpha=0.05$, entonces ¿Cuanto es $Z_{\alpha/2}$?, para responder esto se pueden usar tablas estadísticas de la distribución normal estándar, pero esto no es muy atractivo  en esta época. Podemos usar `RStudio`, veamos 
 
 #### Si, $\alpha=0.5$, entonces $\alpha/2=0.025$, esto quiere decir que:
 

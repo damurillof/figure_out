@@ -259,7 +259,8 @@ $(document).ready(function () {
 <ol style="list-style-type: lower-alpha">
 <li>En una ciudad están interesados en estimar el peso promedio de los varones adultos. Para eso se recolectó una muestra aleatoria <span class="math inline">\(n\)</span> del peso de varones adultos, los datos son:</li>
 </ol>
-<pre class="r"><code>peso &lt;- round(rnorm(15,180,10),0)</code></pre>
+<pre class="r"><code>set.seed(123)
+peso &lt;- round(rnorm(15,180,10),0)</code></pre>
 <p>Use el siguiente código para encontrar un intervalo de confianza del 95 % para el peso promedio de todos los adultos varones en esa ciudad.</p>
 <pre class="r"><code>t.test(peso,conf.level = 0.95)</code></pre>
 <p>Responda según la salida anterior (NO es necesario hacer calculos):</p>
@@ -280,7 +281,7 @@ $(document).ready(function () {
 <p>Los resultados fueron resumidos de la siguiente forma:</p>
 <pre><code>drunk_driving
 NOT YES 
- 88  32 </code></pre>
+ 80  40 </code></pre>
 <ol style="list-style-type: lower-alpha">
 <li><p>Use <code>prop.test()</code> para encontrar intervalos de confianza del 90 %, 95% y 99 % de confianza para la verdadera proporción de jóvenes que guían bajo los efectos del alcohol.</p></li>
 <li><p>Interprete el intervalo al 99 % de confianza.</p></li>

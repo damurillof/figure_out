@@ -58,6 +58,7 @@ La función `t.test(x,conf.level=.95)` entre otras cosas, encuentra un intervalo
 a) En una ciudad están interesados en estimar el peso promedio de los varones adultos. Para eso se recolectó una muestra aleatoria $n$ del peso de varones adultos, los  datos son:
 
 ```{r,comment=NA}
+set.seed(123)
 peso <- round(rnorm(15,180,10),0)
 ```
 
