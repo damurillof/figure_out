@@ -222,6 +222,12 @@ $(document).ready(function () {
 <li><a href="#comentarios-finales-para-el-intervalo-de-mu-con-sigma-desconocida.">Comentarios finales para el intervalo de <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> desconocida.</a></li>
 </ul></li>
 <li><a href="#intervalo-de-confianza-para-proporciones">Intervalo de confianza para proporciones</a></li>
+<li><a href="#intervalos-de-confianza-con-rstudio.">Intervalos de confianza con RStudio.</a><ul>
+<li><a href="#intervalos-para-la-media-poblacional-mu-usando-rstudio">Intervalos para la media poblacional <span class="math inline">\(\mu\)</span> usando <code>RStudio</code></a></li>
+<li><a href="#caso-1-intervalo-para-mu-con-sigma-conocida"><strong>Caso 1: Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> conocida</strong></a></li>
+<li><a href="#caso-2-intervalo-para-mu-con-sigma-desconocida"><strong>Caso 2: Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> desconocida</strong></a></li>
+<li><a href="#intervalos-para-la-proporcion-poblacional-p-usando-rstudio">Intervalos para la proporción poblacional <span class="math inline">\(p\)</span> usando <code>RStudio</code></a></li>
+</ul></li>
 <li><a href="#ejercicios-de-repaso">Ejercicios de repaso</a><ul>
 <li><a href="#respuestas">Respuestas</a></li>
 </ul></li>
@@ -838,7 +844,7 @@ mean(ventas)</code></pre>
 </div>
 <div id="podemos-hacer-un-q-q-plot-para-tener-alguna-idea-de-esto" class="section level4">
 <h4>Podemos hacer un Q-Q plot para tener alguna idea de esto!</h4>
-<pre class="r"><code>qqnorm(ventas,pch=16)
+<pre class="r"><code>qqnorm(ventas,pch=16,col = &quot;blue&quot;)
 qqline(ventas)</code></pre>
 <p><img src="interval_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
@@ -873,11 +879,11 @@ qqline(ventas)</code></pre>
 <div id="donde-2" class="section level4">
 <h4>Donde,</h4>
 </div>
-<div id="limite-inferior-hatp---z_alpha2sqrtdfrachatp1-hatpn" class="section level4">
-<h4><strong>Límite Inferior</strong>: <span class="math inline">\(\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></h4>
+<div id="limite-inferior-quad-hatp---z_alpha2sqrtdfrachatp1-hatpn" class="section level4">
+<h4><strong>Límite Inferior</strong>: <span class="math inline">\(\quad \hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></h4>
 </div>
-<div id="limite-superior-hatp-z_alpha2sqrtdfrachatp1-hatpn" class="section level4">
-<h4><strong>Límite Superior</strong>: <span class="math inline">\(\hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></h4>
+<div id="limite-superior-quad-hatp-z_alpha2sqrtdfrachatp1-hatpn" class="section level4">
+<h4><strong>Límite Superior</strong>: <span class="math inline">\(\quad \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\)</span></h4>
 </div>
 <div id="es-decir-el-intervalo-es" class="section level4">
 <h4>Es decir el intervalo es</h4>
@@ -891,11 +897,11 @@ qqline(ventas)</code></pre>
 <div id="el-intervalo-de-confianza-aproximado-para-p-que-obtuvimos-anteriormente-funciona-bien-si-se-cumplen-simultaneamente-las-dos-condiciones-siguientes" class="section level4">
 <h4>El intervalo de confianza aproximado para <span class="math inline">\(p\)</span> que obtuvimos anteriormente funciona bien si se cumplen simultáneamente las dos condiciones siguientes:</h4>
 </div>
-<div id="np-geq-10-el-numero-de-exitos-esperados" class="section level4">
-<h4>1. <span class="math inline">\(np \geq 10\)</span> (El número de éxitos esperados)</h4>
+<div id="nhatp-geq-10-el-numero-de-exitos-esperados" class="section level4">
+<h4>1. <span class="math inline">\(n\hat{p} \geq 10\)</span> (El número de éxitos esperados)</h4>
 </div>
-<div id="n1-p-geq-10-el-numero-de-fallas-esperadas" class="section level4">
-<h4>2. <span class="math inline">\(n(1 − p) \geq 10\)</span> (El número de fallas esperadas)</h4>
+<div id="n1-hatp-geq-10-el-numero-de-fallas-esperadas" class="section level4">
+<h4>2. <span class="math inline">\(n(1 − \hat{p}) \geq 10\)</span> (El número de fallas esperadas)</h4>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
@@ -905,6 +911,189 @@ qqline(ventas)</code></pre>
 </div>
 <div id="de-una-muestra-de-180-personas-que-son-fumadores-frecuentes-se-encontro-que-el-67-de-ellos-presentan-problemas-respiratorios.-estimar-la-proporcion-poblacional-mediante-intervalos-de-confianza-de-personas-que-son-fumadoras-y-no-presentan-dificultad-al-respirar.-use-una-confiabilidad-del-95-y-90-." class="section level4">
 <h4>2. De una muestra de 180 personas que son fumadores frecuentes se encontró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.</h4>
+</div>
+</div>
+<div id="intervalos-de-confianza-con-rstudio." class="section level2">
+<h2>Intervalos de confianza con RStudio.</h2>
+<p>Podemos usar <code>RStudio</code> para encontrar intervalos de confianza, tanto para la media con <span class="math inline">\(\sigma\)</span> conocida o <span class="math inline">\(\sigma\)</span> desconocida. Al igual que para proporciones poblacionales.</p>
+<div id="intervalos-para-la-media-poblacional-mu-usando-rstudio" class="section level3">
+<h3>Intervalos para la media poblacional <span class="math inline">\(\mu\)</span> usando <code>RStudio</code></h3>
+</div>
+<div id="caso-1-intervalo-para-mu-con-sigma-conocida" class="section level3">
+<h3><strong>Caso 1: Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> conocida</strong></h3>
+<div id="para-este-caso-podemos-usar-la-funcion-z.test-disponible-en-el-paquete-bsda.-la-funcion-z.test-tiene-los-siguientes-argumentos" class="section level4">
+<h4>Para este caso podemos usar la función <code>z.test()</code> disponible en el paquete <code>BSDA</code>. La función <code>z.test()</code> tiene los siguientes argumentos:</h4>
+</div>
+<div id="el-vector-de-datos-x." class="section level4">
+<h4>1. El vector de datos <code>x</code>.</h4>
+</div>
+<div id="el-valor-para-sigma-sigma.x" class="section level4">
+<h4>2. El valor para <span class="math inline">\(\sigma\)</span> <code>sigma.x</code></h4>
+</div>
+<div id="el-nivel-de-confianza-conf.level-viene-por-defecto-con-el-95-.-usted-lo-puede-cambiar." class="section level4">
+<h4>3. El nivel de confianza <code>conf.level</code>, viene por defecto con el 95 %. Usted lo puede cambiar.</h4>
+</div>
+<div id="la-funcion-tiene-este-aspecto-z.testxsigma.xconf.level-0.95" class="section level4">
+<h4>La función tiene este aspecto <code>z.test(x,sigma.x,conf.level = 0.95)</code></h4>
+<blockquote>
+<p>Ejemplo:</p>
+</blockquote>
+</div>
+<div id="queremos-encontrar-un-intervalo-de-confianza-para-el-puntaje-promedio-en-un-examen-de-probabilidad.-los-datos-son-los-siguientes" class="section level4">
+<h4>Queremos encontrar un intervalo de confianza para el puntaje promedio en un examen de probabilidad. Los datos son los siguientes:</h4>
+<pre class="r"><code>set.seed(123)
+score_examP &lt;- round(rnorm(18,52,10))
+score_examP</code></pre>
+<pre><code>##  [1] 46 50 68 53 53 69 57 39 45 48 64 56 56 53 46 70 57 32</code></pre>
+</div>
+<div id="vamos-a-asumir-que-conocemos-sigma-y-que-sigma10" class="section level4">
+<h4>Vamos a asumir, que conocemos <span class="math inline">\(\sigma\)</span>, y que <span class="math inline">\(\sigma=10\)</span></h4>
+</div>
+<div id="vamos-a-usar-rstudio-para-encontrar-un-intervalo-de-confianza-del-90-para-el-puntaje-promedio." class="section level4">
+<h4>Vamos a usar RStudio para encontrar un intervalo de confianza del 90 % para el puntaje promedio.</h4>
+<pre class="r"><code>library(BSDA)
+z.test(score_examP,sigma.x=10,conf.level = 0.90)</code></pre>
+<pre><code>
+    One-sample z-Test
+
+data:  score_examP
+z = 22.675, p-value &lt; 2.2e-16
+alternative hypothesis: true mean is not equal to 0
+90 percent confidence interval:
+ 49.56749 57.32140
+sample estimates:
+mean of x 
+ 53.44444 </code></pre>
+</div>
+<div id="comentarios-sobre-la-salida-de-r" class="section level4">
+<h4><strong>Comentarios sobre la salida de R</strong></h4>
+</div>
+<div id="el-intervalo-de-confianza-del-90-para-el-promedio-poblacional-mu-es" class="section level4">
+<h4>1. El intervalo de confianza del 90 % para el promedio poblacional <span class="math inline">\(\mu\)</span> es:</h4>
+</div>
+<div id="bigg49.56749-57.32140bigg" class="section level4">
+<h4><span class="math display">\[\bigg(49.56749 , 57.32140\bigg)\]</span></h4>
+</div>
+<div id="la-estimacion-puntual-de-mu-es-53.44444" class="section level4">
+<h4>2. La estimación puntual de <span class="math inline">\(\mu\)</span> es <span class="math inline">\(53.44444\)</span></h4>
+</div>
+</div>
+<div id="caso-2-intervalo-para-mu-con-sigma-desconocida" class="section level3">
+<h3><strong>Caso 2: Intervalo para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> desconocida</strong></h3>
+<div id="recuerde-que-en-este-caso-ya-no-es-posible-usar-la-distribucion-normal-estandar-z-y-es-necesario-usar-la-t---student." class="section level4">
+<h4>Recuerde que en este caso ya no es posible usar la distribución normal estándar <span class="math inline">\(Z\)</span>, y es necesario usar la t - Student.</h4>
+</div>
+<div id="para-este-caso-podemos-usar-la-funcion-t.test-disponible-en-la-base-de-r.-no-es-necesario-instalar-ningun-paquete.-la-funcion-t.test-tiene-los-siguientes-argumentos" class="section level4">
+<h4>Para este caso podemos usar la función <code>t.test()</code> disponible en la base de R. (No es necesario instalar ningún paquete). La función <code>t.test()</code> tiene los siguientes argumentos:</h4>
+</div>
+<div id="el-vector-de-datos-x.-1" class="section level4">
+<h4>1. El vector de datos <code>x</code>.</h4>
+</div>
+<div id="el-nivel-de-confianza-conf.level-viene-por-defecto-con-el-95-.-usted-lo-puede-cambiar.-1" class="section level4">
+<h4>2. El nivel de confianza <code>conf.level</code>, viene por defecto con el 95 %. Usted lo puede cambiar.</h4>
+</div>
+<div id="la-funcion-tiene-este-aspecto-t.testxconf.level.90" class="section level4">
+<h4>La función tiene este aspecto <code>t.test(x,conf.level=.90)</code></h4>
+<blockquote>
+<p>Ejemplo:</p>
+</blockquote>
+</div>
+<div id="resolvamos-el-siguiente-ejercicio" class="section level4">
+<h4>Resolvamos el siguiente ejercicio:</h4>
+</div>
+<div id="vamos-a-usar-nuevamente-los-datos-score_examp-pero-ahora-vamos-a-asumir-que-no-conocemos-sigma-por-tanto-usaremos-la-desviacion-estandar-muestral-s." class="section level4">
+<h4>Vamos a usar nuevamente los datos <code>score_examP</code> pero ahora vamos a asumir que no conocemos <span class="math inline">\(\sigma\)</span>, por tanto usaremos la desviación estándar muestral <span class="math inline">\(S\)</span>.</h4>
+<pre class="r"><code>t.test(score_examP,conf.level = 0.90)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  score_examP
+t = 22.219, df = 17, p-value = 5.327e-14
+alternative hypothesis: true mean is not equal to 0
+90 percent confidence interval:
+ 49.26006 57.62883
+sample estimates:
+mean of x 
+ 53.44444 </code></pre>
+</div>
+<div id="comentarios-sobre-la-salida-de-r-1" class="section level4">
+<h4><strong>Comentarios sobre la salida de R</strong></h4>
+</div>
+<div id="los-grados-de-libertad-df-de-la-distribucion-t-student-fueron-17.-esto-quiere-decir-que-se-uso-una-muestra-de-tamano-18." class="section level4">
+<h4>1. Los grados de libertad (df) de la distribución t-Student fueron 17. Esto quiere decir que se usó una muestra de tamaño 18.</h4>
+</div>
+<div id="el-intervalo-de-confianza-del-90-para-el-promedio-poblacional-mu-es-1" class="section level4">
+<h4>2. El intervalo de confianza del 90 % para el promedio poblacional <span class="math inline">\(\mu\)</span> es:</h4>
+</div>
+<div id="bigg49.26006-57.62883bigg" class="section level4">
+<h4><span class="math display">\[\bigg(49.26006 , 57.62883\bigg)\]</span></h4>
+</div>
+<div id="dese-cuanta-que-tan-solo-cambia-un-poco-comparado-con-el-encontrado-usando-el-intervalo-z." class="section level4">
+<h4>Dese cuanta que tan solo cambia un poco comparado con el encontrado usando el intervalo Z.</h4>
+</div>
+<div id="la-estimacion-puntual-de-mu-es-53.44444.-esta-no-cambia-pues-no-depende-del-error." class="section level4">
+<h4>3. La estimación puntual de <span class="math inline">\(\mu\)</span> es <span class="math inline">\(53.44444\)</span>. Está no cambia, pues no depende del error.</h4>
+</div>
+</div>
+<div id="intervalos-para-la-proporcion-poblacional-p-usando-rstudio" class="section level3">
+<h3>Intervalos para la proporción poblacional <span class="math inline">\(p\)</span> usando <code>RStudio</code></h3>
+<div id="tambien-podemos-estimar-p-mediante-intervalos-usando-r.-la-funcion-prop.test-entre-otras-cosas-encuentra-intervalos-de-confianza-para-la-proporcion-poblacional.-los-argumentos-de-prop.test-son-los-siguientes" class="section level4">
+<h4>También podemos estimar <span class="math inline">\(p\)</span> mediante intervalos usando R. La función <code>prop.test()</code> entre otras cosas, encuentra intervalos de confianza para la proporción poblacional. Los argumentos de <code>prop.test()</code> son los siguientes:</h4>
+</div>
+<div id="x-es-el-numero-de-exitos." class="section level4">
+<h4>1. <code>x</code> es el número de éxitos.</h4>
+</div>
+<div id="n-el-tamano-de-la-muestra-o-numero-de-ensayos-independientes." class="section level4">
+<h4>2. <code>n</code> el tamaño de la muestra o número de ensayos independientes.</h4>
+</div>
+<div id="conf.level-es-el-nivel-de-confianza-por-defecto-del-95-." class="section level4">
+<h4>3. <code>conf.level</code> es el nivel de confianza, por defecto del 95 %.</h4>
+</div>
+<div id="correct-es-el-factor-de-correccion-no-desactivar-si-n-es-pequeno." class="section level4">
+<h4>4. <code>correct</code> es el factor de corrección (No desactivar si n es pequeño.)</h4>
+</div>
+<div id="la-funcion-entonces-tiene-el-siguiente-aspecto-u-orden-prop.testx-n-conf.level-0.95-correct-true" class="section level4">
+<h4>La función entonces tiene el siguiente aspecto u orden <code>prop.test(x, n, conf.level = 0.95, correct = TRUE)</code></h4>
+</div>
+<div id="vamos-a-usar-prop.test-para-resolver-el-siguiente-problema" class="section level4">
+<h4>Vamos a usar <code>prop.test()</code> para resolver el siguiente problema:</h4>
+</div>
+<div id="de-una-muestra-de-180-personas-que-son-fumadores-frecuentes-se-encontro-que-el-58-de-ellos-presentan-problemas-respiratorios.-estimar-la-proporcion-poblacional-mediante-intervalos-de-confianza-de-personas-que-son-fumadoras-y-presentan-dificultad-al-respirar.-use-una-confiabilidad-del-99-." class="section level4">
+<h4>De una muestra de 180 personas que son fumadores frecuentes se encontró que el 58 de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y presentan dificultad al respirar. Use una confiabilidad del 99 %.</h4>
+</div>
+<div id="entonces-tenemos-que-n180-x58.-entonces-usando-prop.test-tenemos" class="section level4">
+<h4>Entonces tenemos que <span class="math inline">\(n=180\)</span>, <span class="math inline">\(X=58\)</span>. Entonces usando <code>prop.test()</code> tenemos:</h4>
+<pre class="r"><code>prop.test(x=58,n=180,conf.level = 0.99,correct = TRUE)</code></pre>
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  58 out of 180, null probability 0.5
+X-squared = 22.05, df = 1, p-value = 2.656e-06
+alternative hypothesis: true p is not equal to 0.5
+99 percent confidence interval:
+ 0.2377168 0.4197510
+sample estimates:
+        p 
+0.3222222 </code></pre>
+</div>
+<div id="comentarios-sobre-la-salida-de-r-2" class="section level4">
+<h4><strong>Comentarios sobre la salida de R</strong></h4>
+</div>
+<div id="si-no-conocieramos-los-datos-de-entrada-la-salida-los-provee-la-salida-nos-dice-que-data-58-out-of-180-es-decir-que-n180-y-que-x58" class="section level4">
+<h4>1. Si no conociéramos los datos de entrada, la salida los proveé, la salida nos dice que <code>data:  58 out of 180</code>, es decir que <span class="math inline">\(n=180\)</span> y que <span class="math inline">\(X=58\)</span></h4>
+</div>
+<div id="el-intervalo-de-confianza-del-99-para-la-proporcion-real-de-fumadores-con-problemas-respiratorios-p-es" class="section level4">
+<h4>2. El intervalo de confianza del 99 % para la proporción real de fumadores con problemas respiratorios <span class="math inline">\(p\)</span> es:</h4>
+</div>
+<div id="bigg0.2377168-0.4197510bigg" class="section level4">
+<h4><span class="math display">\[\bigg(0.2377168 , 0.4197510\bigg)\]</span></h4>
+</div>
+<div id="la-estimacion-puntual-de-p-usando-hatp-es-0.3222222.-esto-es-facil-de-verificar-pues" class="section level4">
+<h4>3. La estimación puntual de <span class="math inline">\(p\)</span> usando <span class="math inline">\(\hat{p}\)</span> es <span class="math inline">\(0.3222222\)</span>. Estó es fácil de verificar, pues:</h4>
+</div>
+<div id="hatpdfracxndfrac581800.3222" class="section level4">
+<h4><span class="math display">\[\hat{p}=\dfrac{X}{n}=\dfrac{58}{180}=0.3222\]</span></h4>
+</div>
 </div>
 </div>
 <div id="ejercicios-de-repaso" class="section level2">

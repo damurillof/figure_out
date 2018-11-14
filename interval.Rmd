@@ -506,7 +506,7 @@ qt(0.005,11,lower.tail = FALSE)
 #### Podemos hacer un Q-Q plot para tener alguna idea de esto!
 
 ```{r}
-qqnorm(ventas,pch=16)
+qqnorm(ventas,pch=16,col = "blue")
 qqline(ventas)
 ```
 
@@ -532,9 +532,9 @@ qqline(ventas)
 
 #### Donde,
 
-#### **Límite Inferior**: $\hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+#### **Límite Inferior**: $\quad \hat{p} - Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
-#### **Límite Superior**: $\hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
+#### **Límite Superior**: $\quad \hat{p} + Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$
 
 #### Es decir el intervalo es 
 
@@ -545,8 +545,8 @@ qqline(ventas)
 
 #### El intervalo de confianza aproximado para $p$ que obtuvimos anteriormente funciona bien si se cumplen simultáneamente las dos condiciones siguientes:
 
-#### 1.  $np \geq 10$ (El número de éxitos esperados)
-#### 2.  $n(1 − p) \geq 10$ (El número de fallas esperadas) 
+#### 1.  $n\hat{p} \geq 10$ (El número de éxitos esperados)
+#### 2.  $n(1 − \hat{p}) \geq 10$ (El número de fallas esperadas) 
 
 > Ejemplos
 
@@ -556,6 +556,122 @@ qqline(ventas)
 #### 2.  De una muestra de 180 personas que son fumadores frecuentes se encontró que el 67 % de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y NO presentan dificultad al respirar. Use una confiabilidad del 95 % y 90 %.
 
 
+## Intervalos de confianza con RStudio.
+
+Podemos usar `RStudio` para encontrar intervalos de confianza, tanto para la media con $\sigma$ conocida o $\sigma$ desconocida. Al igual que para proporciones poblacionales.
+
+### Intervalos para la media poblacional $\mu$ usando `RStudio`
+
+### **Caso 1: Intervalo para $\mu$ con $\sigma$ conocida**
+
+#### Para este caso podemos usar la función `z.test()` disponible en el paquete `BSDA`. La función `z.test()` tiene los siguientes argumentos:
+
+#### 1. El vector de datos `x`.
+
+#### 2. El valor para $\sigma$ `sigma.x`
+
+#### 3. El nivel de confianza `conf.level`, viene por defecto con el 95 %. Usted lo puede cambiar.
+
+#### La función tiene este aspecto `z.test(x,sigma.x,conf.level = 0.95)`
+
+> Ejemplo:
+
+#### Queremos encontrar un intervalo de confianza para el puntaje promedio en un examen de probabilidad. Los datos son los siguientes:
+
+```{r}
+set.seed(123)
+score_examP <- round(rnorm(18,52,10))
+score_examP
+```
+
+#### Vamos a asumir, que conocemos $\sigma$, y que $\sigma=10$
+
+#### Vamos a usar RStudio para encontrar un intervalo de confianza del 90 % para el puntaje promedio.
+
+```{r,comment=NA,warning=FALSE,message=FALSE}
+library(BSDA)
+z.test(score_examP,sigma.x=10,conf.level = 0.90)
+```
+
+#### **Comentarios sobre la salida de R**
+
+#### 1. El intervalo de confianza del 90 % para el promedio poblacional $\mu$ es:
+
+#### $$\bigg(49.56749 , 57.32140\bigg)$$
+
+#### 2. La estimación puntual de $\mu$ es $53.44444$
+
+### **Caso 2: Intervalo para $\mu$ con $\sigma$ desconocida**
+
+#### Recuerde que en este caso ya no es posible usar la distribución normal estándar $Z$, y es necesario usar la t - Student. 
+
+#### Para este caso podemos usar la función `t.test()` disponible en la base de R. (No es necesario instalar ningún paquete). La función `t.test()` tiene los siguientes argumentos:
+
+#### 1. El vector de datos `x`.
+
+#### 2. El nivel de confianza `conf.level`, viene por defecto con el 95 %. Usted lo puede cambiar.
+
+#### La función tiene este aspecto `t.test(x,conf.level=.90)`
+
+> Ejemplo:
+
+#### Resolvamos el siguiente ejercicio:
+
+#### Vamos a usar nuevamente los datos `score_examP` pero ahora vamos a asumir que no conocemos $\sigma$, por tanto usaremos la desviación estándar muestral $S$. 
+
+```{r,comment=NA}
+t.test(score_examP,conf.level = 0.90)
+```
+
+#### **Comentarios sobre la salida de R**
+
+#### 1. Los grados de libertad (df) de la distribución t-Student fueron 17. Esto quiere decir que se usó una muestra de tamaño 18.
+
+#### 2. El intervalo de confianza del 90 % para el promedio poblacional $\mu$ es:
+
+#### $$\bigg(49.26006 , 57.62883\bigg)$$
+
+#### Dese cuanta que tan solo cambia un poco comparado con el encontrado usando el intervalo Z.
+
+#### 3. La estimación puntual de $\mu$ es $53.44444$. Está no cambia, pues no depende del error.
+
+### Intervalos para la proporción poblacional $p$ usando `RStudio`
+
+#### También podemos estimar $p$ mediante intervalos usando R. La función `prop.test()` entre otras cosas, encuentra intervalos  de confianza para la proporción poblacional. Los argumentos de `prop.test()` son los siguientes:
+
+#### 1. `x` es el número de éxitos.
+
+#### 2. `n` el tamaño de la muestra o número de ensayos independientes.
+
+#### 3. `conf.level` es el nivel de confianza, por defecto del 95 %.
+
+#### 4. `correct` es el factor de corrección (No desactivar si n es pequeño.)
+
+#### La función entonces tiene el siguiente aspecto u orden `prop.test(x, n, conf.level = 0.95, correct = TRUE)` 
+
+#### Vamos a usar `prop.test()`  para resolver el siguiente problema:
+
+
+#### De una muestra de 180 personas que son fumadores frecuentes se encontró que el 58 de ellos presentan problemas respiratorios. Estimar la proporción poblacional mediante intervalos de confianza de personas que son fumadoras y presentan dificultad al respirar. Use una confiabilidad del 99 %.
+
+#### Entonces tenemos que $n=180$, $X=58$. Entonces usando `prop.test()` tenemos:
+
+```{r,comment=NA}
+prop.test(x=58,n=180,conf.level = 0.99,correct = TRUE)
+```
+
+#### **Comentarios sobre la salida de R**
+
+#### 1. Si no conociéramos los datos de entrada, la salida los proveé, la salida nos dice que `data:  58 out of 180`, es decir que $n=180$ y que $X=58$
+
+#### 2. El intervalo de confianza del 99 % para la proporción real de fumadores con problemas respiratorios $p$ es:
+
+#### $$\bigg(0.2377168 , 0.4197510\bigg)$$
+
+
+#### 3. La estimación puntual de $p$ usando $\hat{p}$ es $0.3222222$. Estó es fácil de verificar, pues:
+
+#### $$\hat{p}=\dfrac{X}{n}=\dfrac{58}{180}=0.3222$$
 
 ## Ejercicios de repaso
 
@@ -596,6 +712,9 @@ b)  Mediante estandarización encuentre $P(\bar{X} > 3)$, $P(\bar{Y} < 2)$ y $P(
 a)   Proporcione una estimación puntual de la proporción de adultos que se definirían como vegetarianos.
 
 b)   Construya un intervalo de confianza del 80 % de confianza  para la proporción de todos los adultos que se definirían a sí mismos como vegetarianos.
+
+
+
 
 
 ### Respuestas

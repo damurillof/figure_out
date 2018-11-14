@@ -1,0 +1,111 @@
+---
+title: 'Laboratoio # 2'
+author: ""
+date: "November 13, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Laboratorio # 2
+
+### **Puntaje: 7 puntos de bono para el examen # 3**.
+
+#### Lea las instrucciones detenidamente:
+
+#### 1. Su informe de laboratorio debe tener todos los códigos y resultados de R.
+
+#### 2. Debe enviar su informe final en formato PDF al correo del profesor. Asegúrese de usar su correo institucional.
+
+#### 3. No se aceptarán informes de laboratorio después de finalizada la clase.
+
+
+### Parte 1.
+
+$Z$ es una variable aleatoria Normal estándar, es decir $Z \sim Normal(0,1)$. User R y/o RStudio para calcular las siguientes probabilidades:
+
+a) $P(Z > 2.2245)$
+
+b) $P(-2.1536 < Z < 0.5574)$ 
+
+a) $P(Z < 1.1532)$
+
+
+### Parte 2.
+
+$Z$ es una variable aleatoria Normal estándar, es decir $Z \sim Normal(0,1)$. User R y/o RStudio para calcular las siguientes valores de $Z$:
+
+a) $Z_{\alpha/2}$ si $\alpha=0.10$
+
+b) $Z_{\alpha/2}$ si $\alpha=0.06$
+
+c)  $Z_{\alpha}$ si $\alpha=0.03$
+
+### Parte 3.
+
+$X$ es una variable aleatoria Binomial, con $X \sim Binomial(32,0.25)$. User R y/o RStudio para calcular las siguientes probabilidades:
+
+a) $P(X > 3)$
+
+b) $P(X = 8)$ usando aproximación Normal. Luego verifique su resultado usando la distribución Binomial.
+
+### Parte 4.
+
+La función `t.test(x,conf.level=.95)` entre otras cosas, encuentra un intervalo de confianza  para una muestra `x`, donde `x` es un vector y `conf.level=.95` es el nivel de confianza, por defecto del 95 %. Usted lo puede cambiar.
+
+a) En una ciudad están interesados en estimar el peso promedio de los varones adultos. Para eso se recolectó una muestra aleatoria $n$ del peso de varones adultos, los siguientes datos.
+
+```{r,comment=NA}
+peso <- round(rnorm(15,180,10),0)
+```
+
+Use el siguiente código para encontrar un intervalo de confianza del 95 % para el peso promedio de todos los adultos varones en esa ciudad.
+
+```{r,comment=NA}
+t.test(peso,conf.level = 0.95)
+```
+
+Responda según la salida anterior (NO es necesario hacer calculos):
+
+1. ¿Cuál es el intervalo de confianza? Interpretelo!
+
+2. ¿Por qué usamos el intervalo t-Student en vez del intervalo Z?
+
+3. ¿Cuántos grados de libertad uso la distribución t?
+
+4. ¿Cuántos datos se usaron en la muestra?
+
+5. ¿Cuál es la estimación puntual del peso promedio?
+
+6. Use nuevamente `t.test()` para encontrar intervalos del 90 % y 99 % de confianza para el peso promedio.
+
+### Parte 5
+
+La función `prop.test(x, n, conf.level = 0.95, correct = TRUE)` entre otras cosas, encuentra intervalos  de confianza para la proporción poblacional. Donde `x` es el número de éxitos, `n` el tamaño de la muestra o número de ensayos independientes, `conf.level` es el nivel de confianza, por defecto del 95 %, y  `correct` es el factor de corrección (No desactivar si n es pequeño.)
+
+Use `prop.test(x, n, conf.level = 0.95, correct = TRUE)` para resolver el siguiente problema.
+
+¿Guías bajo los efectos del alcohol? La administración de una ciudad estima que el 55 % de los jóvenes conducen bajo los efectos del alcohol. Para estar seguros de sus afirmaciones, recolectan la siguiente información mediante una muestra aleatoria entre jóvenes de 16 a 25 años.
+
+Los resultados son resumidos mediante la siguiente tabla:
+
+```{r,comment=NA,eval=T,echo=F}
+p <- runif(1,0.15,0.35)
+drunk_driving <- sample(c("YES","NOT"),size = 120,replace = TRUE,prob = c(p,1-p))
+table(drunk_driving)
+```
+
+
+a) Use `prop.test()` para encontrar intervalos de confianza del 90 %, 95% y 99 % de confianza para la verdadera proporción de jóvenes que guían bajo los efectos del alcohol.
+
+
+b) Interprete el intervalo al 99 % de confianza.
+
+
+c) ¿Cuál es el valor de $\hat{p}$ según la salida de R?
+
+
+d) ¿Tiene razón la administración municipal al afirmar que el 55 % de los jóvenes conducen bajo los efectos del alcohol? Justifique su respuesta.
+
