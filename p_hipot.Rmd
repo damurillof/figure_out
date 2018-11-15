@@ -571,9 +571,10 @@ library(BSDA)
 z.test(ventas, alternative = "greater", mu = 55, sigma.x = 15, conf.level = 0.90)
 ```
 
+#### **Comentarios sobre la salida de R**
 
 <div class="alert alert-info">
-  <strong>Importante!</strong> De la anterior salida podemos identificar la siguiente información:.
+  <strong>Importante!</strong> De la anterior salida podemos identificar la siguiente información:
 </div>
 
 
@@ -586,7 +587,8 @@ El p-value es $0.008425$
 </p>
 
 <p class="comment">
-La información de la salida  dice que `alternative hypothesis: true mean is greater than 55`. Entonces  $\mu_0$, es $55$. Por tanto las hipótesis respectivas fueron:
+La información de la salida  dice que:`true mean is greater than 55`. 
+Entonces  $\mu_0$, es $55$. Por tanto las hipótesis respectivas fueron:
 $$H_0:\mu=55$$
 $$H_a:\mu > 55$$
 </p>
@@ -650,25 +652,36 @@ t.test(x = azucar, alternative = "two.sided", mu = 28, conf.level = 0.95)
 
 #### **Comentarios sobre la salida de R**
 
-#### 1. Los grados de libertad **(df)** de la distribución t-Student fueron 14. Esto quiere decir que se usó una muestra de tamaño 15.
+<div class="alert alert-info">
+  <strong>Importante!</strong> De la anterior salida podemos identificar la siguiente información:
+</div>
 
+<p class="comment">
+Los grados de libertad **(df)** de la distribución t-Student fueron 14. Esto quiere decir que se usó una muestra de tamaño 15.
+</p>
 
-#### 2. El p-value es $0.5351$
+<p class="comment">
+El valor del estadístico de prueba es $t^* = 0.63587$
+</p>
 
+<p class="comment">
+El p-value es $0.5351$
+</p>
 
-#### 3. La información de la salida  dice que `alternative hypothesis: true mean is greater than 28`. Entonces  $\mu_0$, es $28$. Por tanto las hipótesis respectivas fueron:
-
+<p class="comment">
+La información de la salida  dice que `true mean is not equal to 28`. Entonces  $\mu_0$, es $28$. Por tanto las hipótesis respectivas fueron:
 $$H_0:\mu=28$$
-
 $$H_a:\mu \neq 28$$
-
-#### Aunque ya lo sabiamos!!
-
-
-#### 4. La significancia es del 5 %, es decir $\alpha = 0.05$
+</p>
 
 
-#### 5. La media estimada es $\bar{X}=28.2666$
+<p class="comment">
+La significancia es del 5 %, es decir $\alpha = 0.05$
+</p>
+
+<p class="comment">
+La media estimada es $\bar{X}=28.2666$
+</p>
 
 
 #### **Conclusión y decisión:** 
@@ -706,27 +719,40 @@ $$H_a:\mu \neq 28$$
 prop.test(x = 29, n=125, alternative = "less",p = 0.312, conf.level = 0.95, correct = TRUE)
 ```
 
+
 #### **Comentarios sobre la salida de R**
 
-#### 1. Si no conociéramos los datos de entrada, la salida los proveé, la salida nos dice que `data:  29 out of 125`, es decir que $n=125$ y que $X=29$
+<div class="alert alert-info">
+  <strong>Importante!</strong> De la anterior salida podemos identificar la siguiente información:
+</div>
 
-#### 2. El p-value es $0.03333$.
+<p class="comment">
+Si no conociéramos los datos de entrada, la salida los proveé, la salida nos dice que `data:  29 out of 125`, es decir que $n=125$ y que $X=29$
+</p>
 
-#### 3. La información de la salida  dice que `alternative hypothesis: true p is less than 0.312`. Entonces  $p_0$, es $0.312$. Por tanto las hipótesis respectivas fueron:
+<p class="comment">
+El p-value es $0.03333$.
+</p>
 
+<p class="comment">
+La información de la salida  dice que `true p is less than 0.312`. Entonces  $p_0$, es $0.312$. Por tanto las hipótesis respectivas fueron:
 $$H_0:p = 0.312$$
-
 $$H_a:p < 0.312$$
+</p>
 
-#### 4. La significancia es del 5 %, es decir $\alpha = 0.05$
+<p class="comment">
+La significancia es del 5 %, es decir $\alpha = 0.05$
+</p>
 
 
-#### 5. El valor de p, estimado a traves de  $\hat{p}$, es  $p = 0.208$
+<p class="comment">
+El valor de p, estimado a traves de  $\hat{p}$, es  $p = 0.208$
+</p>
 
 
-#### **Conclusión y decisión:** 
+#### **Decisión y Conclusión** 
 
-#### **Decisión:** Como el "p-value" es menor que $\alpha$, es decir 0.03333 < 0.05. La decisión es rechazar la hipotesis nula $H_0$.
+#### **Decisión:** Como el "p-value" es menor que $\alpha$, es decir $0.03333 < 0.05$. La decisión es rechazar la hipotesis nula $H_0$.
 
 
 #### **Conclusión:** En Santa Barbara, California la proporción de jovenes adultos que viven con sus padres es menor a la proporción a nivel nacional.
