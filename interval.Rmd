@@ -295,11 +295,6 @@ qnorm(0.025,lower.tail = FALSE)
 ####Conclusión: Podemos afirmar con una confiabilidad del 95 % que el promedio de la estatura en los estudiantes esta entre $166.36$  y $167.83$.
 
 
-
-
-
-
-
 #### 2.  Una prestigiosa cadena de restaurantes  está pensando en abrir una nueva franquicia. Para tomar la decisión se basan en las ventas promedio mensuales de 12 restaurantes activos en cierta ciudad que son de su propiedad. Ellos  piensan que si dichas ventas en promedio son mayores a $30,000$ al mes, entonces  la decisión será viable.  Se conoce que la desviación estándar poblacional es $\sigma=\$9000$. Los datos son los siguientes:
 
 #### 28959, 33000, 29383, 20203, 15145, 31767, 27342, 12476, 24720, 25308,  1933, 27284
