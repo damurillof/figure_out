@@ -286,7 +286,13 @@ mean(colesterol)
 
 #### El estadístico de prueba bajo $H_0$ es
 
-#### $$Z^*=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}=\dfrac{225.9 - 220}{13/\sqrt{22}}=\dfrac{5.9}{2.906888}=2.029$$
+#### $$Z^*=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$$
+
+#### $$Z^*=\dfrac{225.9 - 220}{13/\sqrt{22}}$$
+
+#### $$Z^*=\dfrac{5.9}{2.906888}$$
+
+#### $$Z^*=2.029$$
 
 #### Entonces la región de rechazo está dada por todos los valores de $Z$ mayores que $2.029$
 
@@ -380,7 +386,11 @@ b) #### La varianza $\sigma$ es desconocida.
 
 ####  El estadístico de prueba bajo $H_0$ es
 
-####  $$t^* =\dfrac{\bar{X}-\mu_0}{S/\sqrt{n}}=\dfrac{63-55}{18/\sqrt{43}}=2.914$$
+####  $$t^* =\dfrac{\bar{X}-\mu_0}{S/\sqrt{n}}$$
+
+####  $$t^*=\dfrac{63-55}{18/\sqrt{43}}$$
+
+####  $$t^*=2.914$$
 
 #### Entonces la región de rechazo está dada por todos los valores de $t_{\alpha}$ mayores que $2.91$
 
@@ -485,7 +495,9 @@ qt(0.1,42,lower.tail = FALSE)
 
 #### $$Z^*=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$$
 
-#### $$Z^*=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789$$
+#### $$Z^*=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}$$
+
+#### $$Z^*=1.789$$
 
 
 #### Entonces la región de rechazo está dada por todos los valores de $Z_{\alpha}$ mayores que $1.789$
@@ -617,7 +629,7 @@ La media estimada es $\bar{X}=61.059$
 
 #### Recuerde que en este caso ya no es posible usar la distribución normal estándar $Z$, y es necesario usar la t - Student. 
 
-#### Para este caso podemos usar la función `t.test()` disponible en la base de R. (No es necesario instalar ningún paquete). . La función `t.test()` tiene los siguientes argumentos:   `t.test(x, alternative = "two.sided", mu = 0, conf.level = 0.95)`
+#### Para este caso podemos usar la función `t.test()` disponible en la base de R. (No es necesario instalar ningún paquete). La función `t.test()` tiene los siguientes argumentos:  
 
 
 #### 1. El vector de datos `x`.
