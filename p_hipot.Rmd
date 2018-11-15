@@ -588,7 +588,7 @@ El p-value es $0.008425$
 </p>
 
 <p class="comment">
-La información de la salida  dice que:`true mean is greater than 55`. 
+La información de la salida  dice que  `true mean is greater than 55`. 
 Entonces  $\mu_0$, es $55$. Por tanto las hipótesis respectivas fueron:
 $$H_0:\mu=55$$
 $$H_a:\mu > 55$$
