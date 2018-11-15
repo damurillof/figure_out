@@ -820,12 +820,24 @@ mean(colesterol)</code></pre>
 </div>
 <div id="p_0-0.5" class="section level4">
 <h4><span class="math inline">\(p_0 = 0.5\)</span></h4>
-<p><span class="math inline">\(n = 500\)</span></p>
-<p><span class="math inline">\(\alpha = 0.05\)</span></p>
-<p><strong>Paso 2: Plantear las hipótesis</strong></p>
-<p><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = 0.5\)</span></p>
-<p><span class="math inline">\(H_a\)</span>: <span class="math inline">\(p &gt; 0.5\)</span></p>
-<p><strong>Paso 3: Estadístico de prueba y supuestos</strong></p>
+</div>
+<div id="n-500" class="section level4">
+<h4><span class="math inline">\(n = 500\)</span></h4>
+</div>
+<div id="alpha-0.05-2" class="section level4">
+<h4><span class="math inline">\(\alpha = 0.05\)</span></h4>
+</div>
+<div id="paso-2-plantear-las-hipotesis-3" class="section level4">
+<h4><strong>Paso 2: Plantear las hipótesis</strong></h4>
+</div>
+<div id="h_0-p-0.5" class="section level4">
+<h4><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = 0.5\)</span></h4>
+</div>
+<div id="h_a-p-0.5" class="section level4">
+<h4><span class="math inline">\(H_a\)</span>: <span class="math inline">\(p &gt; 0.5\)</span></h4>
+</div>
+<div id="paso-3-estadistico-de-prueba-y-supuestos-2" class="section level4">
+<h4><strong>Paso 3: Estadístico de prueba y supuestos</strong></h4>
 </div>
 <div id="este-metodo-tiene-los-siguientes-supuestos-1" class="section level4">
 <h4>Este método tiene los siguientes supuestos:</h4>
@@ -839,8 +851,11 @@ mean(colesterol)</code></pre>
 <div id="el-estadistico-de-prueba-bajo-h_0-es-4" class="section level4">
 <h4>El estadístico de prueba bajo <span class="math inline">\(H_0\)</span> es</h4>
 </div>
-<div id="zdfrachatp-p_0sqrtdfracp_01-p_0ndfrac0.54-0.5sqrtdfrac0.51-0.55001.789" class="section level4">
-<h4><span class="math display">\[Z^*=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789\]</span></h4>
+<div id="zdfrachatp-p_0sqrtdfracp_01-p_0n-1" class="section level4">
+<h4><span class="math display">\[Z^*=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}\]</span></h4>
+</div>
+<div id="zdfrac0.54-0.5sqrtdfrac0.51-0.55001.789" class="section level4">
+<h4><span class="math display">\[Z^*=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789\]</span></h4>
 </div>
 <div id="entonces-la-region-de-rechazo-esta-dada-por-todos-los-valores-de-z_alpha-mayores-que-1.789" class="section level4">
 <h4>Entonces la región de rechazo está dada por todos los valores de <span class="math inline">\(Z_{\alpha}\)</span> mayores que <span class="math inline">\(1.789\)</span></h4>
@@ -889,7 +904,6 @@ mean(colesterol)</code></pre>
 <h3><strong>Caso 1: Prueba de hipótesis para <span class="math inline">\(\mu\)</span> con <span class="math inline">\(\sigma\)</span> conocida</strong></h3>
 <div id="para-este-caso-podemos-usar-la-funcion-z.test-disponible-en-el-paquete-bsda.-la-funcion-z.test-tiene-los-siguientes-argumentos" class="section level4">
 <h4>Para este caso podemos usar la función <code>z.test()</code> disponible en el paquete <code>BSDA</code>. La función <code>z.test()</code> tiene los siguientes argumentos:</h4>
-<p><code>z.test(x, alternative = &quot;two.sided&quot;, mu = 0, sigma.x = NULL, conf.level = 0.95)</code></p>
 </div>
 <div id="el-vector-de-datos-x." class="section level4">
 <h4>1. El vector de datos <code>x</code>.</h4>

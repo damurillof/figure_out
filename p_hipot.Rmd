@@ -462,18 +462,18 @@ qt(0.1,42,lower.tail = FALSE)
 
 #### $p_0 = 0.5$
 
-$n = 500$
+#### $n = 500$
 
-$\alpha = 0.05$
+#### $\alpha = 0.05$
 
-**Paso 2: Plantear las hipótesis**
+#### **Paso 2: Plantear las hipótesis**
 
-$H_0$: $p = 0.5$
+#### $H_0$: $p = 0.5$
 
-$H_a$: $p > 0.5$
+#### $H_a$: $p > 0.5$
 
 
-**Paso 3: Estadístico de prueba y supuestos**
+#### **Paso 3: Estadístico de prueba y supuestos**
 
 #### Este método tiene los siguientes supuestos:
 
@@ -483,7 +483,10 @@ $H_a$: $p > 0.5$
 
 #### El estadístico de prueba bajo $H_0$ es
 
-#### $$Z^*=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789$$
+#### $$Z^*=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$$
+
+#### $$Z^*=\dfrac{0.54-0.5}{\sqrt{\dfrac{0.5(1-0.5)}{500}}}=1.789$$
+
 
 #### Entonces la región de rechazo está dada por todos los valores de $Z_{\alpha}$ mayores que $1.789$
 
@@ -526,8 +529,6 @@ Podemos usar `RStudio` para llevar a cabo pruebas de hipótesis, tanto para la m
 ### **Caso 1: Prueba de hipótesis para $\mu$ con $\sigma$ conocida**
 
 #### Para este caso podemos usar la función `z.test()` disponible en el paquete `BSDA`. La función `z.test()` tiene los siguientes argumentos:  
-
-`z.test(x, alternative = "two.sided", mu = 0, sigma.x = NULL, conf.level = 0.95)`
 
 #### 1. El vector de datos `x`.
 
