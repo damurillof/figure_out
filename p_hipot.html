@@ -213,6 +213,7 @@ $(document).ready(function () {
 <li><a href="#formalismo-en-pruebas-de-hipotesis">Formalismo en pruebas de hipótesis</a></li>
 <li><a href="#pruebas-de-hipotesis-para-la-media-poblacional">Pruebas de hipótesis para la media poblacional</a></li>
 <li><a href="#p---values">p - values</a></li>
+<li><a href="#definicion-de-p-value.">Definición de p-value.</a></li>
 <li><a href="#prueba-de-hipotesis-para-una-proporcion">Prueba de hipótesis para una proporción</a></li>
 </ul></li>
 <li><a href="#pruebas-de-hipotesis-con-rstudio.">Pruebas de hipótesis con RStudio.</a><ul>
@@ -309,11 +310,11 @@ font-style: italic;
 <div id="definir-el-parametro-de-interes-y-los-datos-del-problema." class="section level4">
 <h4>1. Definir el parámetro de interés y los datos del problema.</h4>
 </div>
-<div id="plantear-las-hipotesis" class="section level4">
-<h4>2. Plantear las hipótesis</h4>
+<div id="plantear-las-hipotesis-nula-h_0-y-la-hipotesis-alterna-h_a" class="section level4">
+<h4>2. Plantear las hipótesis nula (<span class="math inline">\(H_0\)</span>) y la hipótesis alterna (<span class="math inline">\(H_a\)</span>)</h4>
 </div>
-<div id="metodo-de-analisis-y-supuestos" class="section level4">
-<h4>3. Método de análisis y supuestos</h4>
+<div id="metodo-de-analisis-y-supuestos-calcular-el-estadistico-de-prueba." class="section level4">
+<h4>3. Método de análisis y supuestos: Calcular el estadístico de prueba.</h4>
 </div>
 <div id="encontrar-el-valor-critico-de-la-distribucion-luego-especificar-la-region-de-rechazo-y-no-rechazo." class="section level4">
 <h4>4. Encontrar el valor crítico de la distribución, luego especificar la región de rechazo y no rechazo.</h4>
@@ -365,6 +366,9 @@ font-style: italic;
 </div>
 <div id="zdfracbarx-mu_0sigmasqrtn" class="section level4">
 <h4><span class="math display">\[Z^*=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}\]</span></h4>
+</div>
+<div id="el-estadistico-es-un-valor-numerico-que-resume-el-conjunto-de-datos-y-que-se-usara-para-evaluar-la-evidencia-a-favor-o-en-contra-de-la-hipotesis-nulla.-esto-permitira-llegar-a-una-conclusion-hacer-una-inferencia.-la-decision-y-conclusion-depende-de-la-magnitud-de-este-estadistico." class="section level4">
+<h4>El estadístico es un valor numérico que resume el conjunto de datos y que se usará para evaluar la evidencia a favor o en contra de la hipótesis nulla. Estó permitirá llegar a una conclusión (hacer una inferencia). La decisión y conclusión depende de la magnitud de este estadístico.</h4>
 </div>
 <div id="en-general-podemos-plantear-tres-tipos-de-hipotesis-para-la-media-poblacional-en-este-caso." class="section level4">
 <h4>En general podemos plantear tres tipos de hipótesis para la media poblacional en este caso.</h4>
@@ -433,8 +437,14 @@ font-style: italic;
 <div id="que-es-alpha" class="section level4">
 <h4><strong>¿Que es <span class="math inline">\(\alpha\)</span>?</strong></h4>
 </div>
-<div id="es-la-significancia-estadistica-representa-el-valor-para-la-probabilidad-de-rechazar-la-hipotesis-nula-h_0-dado-que-h_0-es-cierta-y-es-conocido-como-el-error-tipo-i." class="section level4">
-<h4>Es la significancia estadística, representa el valor para la probabilidad de rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado que <span class="math inline">\(H_0\)</span> es cierta y es conocido como el error tipo I.</h4>
+<div id="es-la-significancia-estadistica-representa-el-valor-para-la-probabilidad-de-rechazar-la-hipotesis-nula-h_0-dado-que-h_0-es-cierta-y-es-conocido-como-el-error-tipo-i-pero-tambien-hay-un-error-tipo-ii." class="section level4">
+<h4>Es la significancia estadística, representa el valor para la probabilidad de rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado que <span class="math inline">\(H_0\)</span> es cierta y es conocido como el error tipo I, pero también hay un error tipo II.</h4>
+</div>
+<div id="el-error-tipo-i-alpha-se-comete-cuando-se-rechaza-una-hipotesis-nula-que-realmente-es-cierta.-similar-a-que-a-una-persona-que-se-somete-a-una-prueba-no-se-le-diagnostique-con-cancer-cuando-realmente-lo-tiene-falso-negativo." class="section level4">
+<h4>El error tipo I (<span class="math inline">\(\alpha\)</span>), se comete cuando se rechaza una hipótesis nula que realmente es cierta. Similar a que a una persona que se somete a una prueba no se le diagnostique con cáncer cuando realmente lo tiene (falso negativo).</h4>
+</div>
+<div id="el-error-tipo-ii-beta-que-se-comete-cuando-no-se-rechaza-una-hipotesis-nula-que-realmente-es-falsa.-similar-a-que-a-una-persona-se-le-diagnostique-con-cancer-cuando-realmente-no-lo-tiene-falso-positivo." class="section level4">
+<h4>El error tipo II (<span class="math inline">\(\beta\)</span>) que se comete cuando no se rechaza una hipótesis nula que realmente es falsa. Similar a que a una persona se le diagnostique con cáncer cuando realmente no lo tiene (falso positivo).</h4>
 </div>
 <div id="como-concluir" class="section level4">
 <h4><strong>¿Cómo concluir?</strong></h4>
@@ -445,8 +455,8 @@ font-style: italic;
 <p>Ejemplos</p>
 </blockquote>
 </div>
-<div id="en-los-ultimos-cinco-anos-el-puntaje-promedio-en-el-examen-final-de-un-curso-de-estadistica-fue-73-puntos.-este-semestre-una-clase-con-27-estudiantes-utilizando-un-nuevo-libro-de-texto-obtuvo-en-promedio-78.1.-se-sabe-que-la-varianza-poblacional-es-sigma249.-hay-evidencia-para-afirmar-que-el-nuevo-libro-de-texto-hizo-que-el-resultado-del-examen-final-fuera-mas-alto.-use-un-nivel-de-significancia-del-5" class="section level4">
-<h4>1. En los últimos cinco años el puntaje promedio en el examen final de un curso de estadística fue 73 puntos. Este semestre una clase con 27 estudiantes utilizando un nuevo libro de texto obtuvo en promedio 78.1. Se sabe que la varianza poblacional es <span class="math inline">\(\sigma^2=49\)</span>. ¿Hay evidencia para afirmar que el nuevo libro de texto hizo que el resultado del examen final fuera más alto?. Use un nivel de significancia del 5 %</h4>
+<div id="en-los-ultimos-cinco-anos-el-puntaje-promedio-en-el-examen-final-de-un-curso-de-estadistica-fue-73-puntos.-este-semestre-una-clase-con-27-estudiantes-utilizando-un-nuevo-metodo-de-ensenanza-qie-incluye-videos-interactivos-explicando-el-material-de-la-clase-obtuvo-en-promedio-78.1.-se-sabe-que-la-varianza-poblacional-es-sigma249.-hay-evidencia-para-afirmar-que-la-variacion-en-el-metodo-de-ensenanza-hizo-que-el-resultado-del-examen-final-fuera-mas-alto-use-un-nivel-de-significancia-del-5" class="section level4">
+<h4>1. En los últimos cinco años el puntaje promedio en el examen final de un curso de estadística fue 73 puntos. Este semestre una clase con 27 estudiantes utilizando un nuevo método de enseñanza qie incluye videos interactivos explicando el material de la clase obtuvo en promedio 78.1. Se sabe que la varianza poblacional es <span class="math inline">\(\sigma^2=49\)</span>. ¿Hay evidencia para afirmar que la variación en el método de enseñanza hizo que el resultado del examen final fuera más alto? Use un nivel de significancia del 5 %</h4>
 </div>
 <div id="paso-1-los-datos-del-problema." class="section level4">
 <h4><strong>Paso 1: Los datos del problema.</strong></h4>
@@ -482,7 +492,7 @@ font-style: italic;
 <h4>Los supuestos para este problema son:</h4>
 <ol style="list-style-type: lower-alpha">
 <li><h4 id="poblacion-normal">Población Normal</h4></li>
-<li><h4 id="varianza-conocida-sigma">Varianza conocida <span class="math inline">\(\sigma\)</span></h4></li>
+<li><h4 id="varianza-conocida-sigma2">Varianza conocida <span class="math inline">\(\sigma^2\)</span></h4></li>
 </ol>
 </div>
 <div id="el-estadistico-de-prueba-bajo-h_0-es" class="section level4">
@@ -491,16 +501,16 @@ font-style: italic;
 <div id="zdfracbarx-mu_0sigmasqrtndfrac78.1-737sqrt272.91" class="section level4">
 <h4><span class="math display">\[Z^*=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}=\dfrac{78.1-73}{7/\sqrt{27}}=2.91\]</span></h4>
 </div>
-<div id="entonces-la-region-de-rechazo-esta-dada-por-todos-los-valores-de-z-mayores-que-2.91" class="section level4">
-<h4>Entonces la región de rechazo está dada por todos los valores de <span class="math inline">\(Z\)</span> mayores que <span class="math inline">\(2.91\)</span></h4>
-</div>
 <div id="paso-4-valor-critico-y-region-de-rechazo" class="section level4">
 <h4><strong>Paso 4: Valor crítico y región de rechazo</strong></h4>
 </div>
-<div id="para-calcular-el-valor-critico-de-la-distribucion-normal-estandar-se-usa-la-siguiente-funcion-en-rstudio.-como-la-prueba-es-a-cola-deracha-debemos-declara-lower.tail-false" class="section level4">
-<h4>Para calcular el valor crítico de la distribución normal estándar se usa la siguiente función en <code>RStudio</code>. Como la prueba es a cola deracha debemos declara <code>lower.tail = FALSE</code></h4>
+<div id="para-calcular-el-valor-critico-de-la-distribucion-normal-estandar-se-usa-la-siguiente-funcion-en-rstudio.-como-la-prueba-es-a-cola-deracha-debemos-declara-lower.tail-false." class="section level4">
+<h4>Para calcular el valor crítico de la distribución normal estándar se usa la siguiente función en <code>RStudio</code>. Como la prueba es a cola deracha debemos declara <code>lower.tail = FALSE</code>.</h4>
 <pre class="r"><code>qnorm(0.05,lower.tail = FALSE)</code></pre>
 <pre><code>## [1] 1.644854</code></pre>
+</div>
+<div id="el-valor-critico-para-este-problema-es-z_0.05-1.644." class="section level4">
+<h4>El valor crítico para este problema es <span class="math inline">\(Z_{0.05} = 1.644\)</span>.</h4>
 </div>
 <div id="entonces-tenemos-que" class="section level4">
 <h4>Entonces tenemos que</h4>
@@ -508,8 +518,8 @@ font-style: italic;
 <div id="z-z_0.05" class="section level4">
 <h4><span class="math display">\[Z^* &gt; Z_{0.05}\]</span></h4>
 </div>
-<div id="es-decir" class="section level4">
-<h4>es decir,</h4>
+<div id="esto-quiere-decir-que-z-cae-dentro-de-laregion-de-rechazo." class="section level4">
+<h4>Estó quiere decir que <span class="math inline">\(Z^*\)</span> caé dentro de laregión de rechazo.</h4>
 </div>
 <div id="section" class="section level4">
 <h4><span class="math display">\[2.914 &gt; 1.644\]</span></h4>
@@ -517,19 +527,22 @@ font-style: italic;
 <div id="paso-5-decision-y-conclusion" class="section level4">
 <h4><strong>Paso 5: Decisión y conclusión</strong></h4>
 </div>
-<div id="decision-se-decide-rechazar-la-hipotesis-nula-h_0-dado-a-que-z-z_0.05." class="section level4">
-<h4><strong>Decisión</strong>: Se decide rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(Z^* &gt; Z_{0.05}\)</span>.</h4>
+<div id="decision-se-decide-rechazar-la-hipotesis-nula-h_0-dado-a-que-z-z_0.05.-es-decir-2.914-1.644." class="section level4">
+<h4><strong>Decisión</strong>: Se decide rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(Z^* &gt; Z_{0.05}\)</span>. Es decir <span class="math inline">\(2.914 &gt; 1.644\)</span>.</h4>
 </div>
-<div id="conclusion-se-encontro-evidencia-significativa-de-que-la-nota-final-aumento-con-el-uso-del-nuevo-libro-de-texto-en-la-clase." class="section level4">
-<h4><strong>Conclusión</strong>: Se encontró evidencia significativa de que la nota final aumentó con el uso del nuevo libro de texto en la clase.</h4>
+<div id="conclusion-se-encontro-evidencia-significativa-de-que-la-nota-final-aumento-con-la-variacion-en-el-metodo-de-ensenanza." class="section level4">
+<h4><strong>Conclusión</strong>: Se encontró evidencia significativa de que la nota final aumentó con la variación en el método de enseñanza.</h4>
 </div>
 </div>
 <div id="p---values" class="section level3">
 <h3>p - values</h3>
 <div id="es-frecuente-que-en-articulos-cientificos-lo-que-se-reporte-es-el-p-value-de-la-prueba-de-hipotesis-de-manera-que-el-lector-pueda-llegar-a-sus-propias-conclusiones." class="section level4">
 <h4>Es frecuente que en artículos científicos lo que se reporte es el “p-value” de la prueba de hipótesis de manera que el lector pueda llegar a sus propias conclusiones.</h4>
-<p><strong>El p-value es una probabilidad, y es la probabilidad de observar un valor igual o mayor al estadístico de prueba bajo el supuesto de que la hipótesis nula <span class="math inline">\(H_0\)</span> es cierta</strong>.</p>
 </div>
+</div>
+<div id="definicion-de-p-value." class="section level3">
+<h3>Definición de p-value.</h3>
+<p><strong>El p-value es la probabilidad de observar un valor igual o mayor al estadístico de prueba bajo el supuesto de que la hipótesis nula <span class="math inline">\(H_0\)</span> es cierta</strong>.</p>
 <div id="un-p-value-pequeno-es-evidencia-en-contra-de-la-hipotesis-nula-y-a-favor-de-la-hipotesis-alterna.-cuando-el-nivel-de-significancia-alpha-ha-sido-seleccionado-la-hipotesis-nula-se-rechaza-si-el-p-value-es-menor-que-alpha." class="section level4">
 <h4>Un p-value pequeño es evidencia en contra de la hipótesis nula y a favor de la hipótesis alterna. Cuando el nivel de significancia <span class="math inline">\(\alpha\)</span> ha sido seleccionado, la hipótesis nula se rechaza si el p-value es menor que <span class="math inline">\(\alpha\)</span>.</h4>
 </div>
@@ -605,8 +618,8 @@ mean(colesterol)</code></pre>
 <div id="z2.029" class="section level4">
 <h4><span class="math display">\[Z^*=2.029\]</span></h4>
 </div>
-<div id="entonces-la-region-de-rechazo-esta-dada-por-todos-los-valores-de-z-mayores-que-2.029" class="section level4">
-<h4>Entonces la región de rechazo está dada por todos los valores de <span class="math inline">\(Z\)</span> mayores que <span class="math inline">\(2.029\)</span></h4>
+<div id="entonces-podemos-rechazar-h_0-si-z2.029-cae-en-la-region-de-rechazo." class="section level4">
+<h4>Entonces, podemos rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(Z^*=2.029\)</span> caé en la región de rechazo.</h4>
 </div>
 <div id="paso-4-valor-critico-y-region-de-rechazo-1" class="section level4">
 <h4><strong>Paso 4: Valor crítico y región de rechazo</strong></h4>
@@ -616,13 +629,16 @@ mean(colesterol)</code></pre>
 <pre class="r"><code>qnorm(0.05, lower.tail = FALSE)</code></pre>
 <pre><code>## [1] 1.644854</code></pre>
 </div>
+<div id="asi-tenemos-que-z_0.051.644" class="section level4">
+<h4>Así, tenemos que <span class="math inline">\(Z_{0.05}=1.644\)</span></h4>
+</div>
 <div id="entonces-tenemos-que-1" class="section level4">
 <h4>Entonces tenemos que</h4>
 </div>
 <div id="z-z_0.05-1" class="section level4">
 <h4><span class="math display">\[Z^* &gt; Z_{0.05}\]</span></h4>
 </div>
-<div id="es-decir-1" class="section level4">
+<div id="es-decir" class="section level4">
 <h4>es decir,</h4>
 </div>
 <div id="section-2" class="section level4">
@@ -631,31 +647,35 @@ mean(colesterol)</code></pre>
 <div id="paso-5-decision-y-conclusion-1" class="section level4">
 <h4><strong>Paso 5: Decisión y conclusión</strong></h4>
 </div>
-<div id="decision-se-decide-rechazar-la-hipotesis-nula-h_0-dado-a-que-z-z_0.05-es-decir-2.914-1.644" class="section level4">
-<h4><strong>Decisión</strong>: Se decide rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(Z^* &gt; Z_{0.05}\)</span>, es decir <span class="math inline">\(2.914 &gt; 1.644\)</span></h4>
+<div id="decision-se-decide-rechazar-la-hipotesis-nula-h_0-dado-a-que-z-z_0.05-es-decir-2.029-1.644" class="section level4">
+<h4><strong>Decisión</strong>: Se decide rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(Z^* &gt; Z_{0.05}\)</span>, es decir <span class="math inline">\(2.029 &gt; 1.644\)</span></h4>
 </div>
-<div id="conclusion-se-encontro-evidencia-significativa-de-que-la-nota-final-aumento-con-el-uso-del-nuevo-libro-de-texto-en-la-clase.-1" class="section level4">
-<h4><strong>Conclusión</strong>: Se encontró evidencia significativa de que la nota final aumentó con el uso del nuevo libro de texto en la clase.</h4>
+<div id="conclusion-se-encontro-evidencia-estadistica-de-que-el-nivel-de-colesterol-promedio-de-los-pacientes-con-problemas-cardiacos-es-mayor-de-220.-por-lo-tanto-los-resultados-apoyan-lo-que-afirma-el-cardiologo." class="section level4">
+<h4><strong>Conclusión</strong>: Se encontró evidencia estadística de que el nivel de colesterol promedio de los pacientes con problemas cardíacos es mayor de 220. Por lo tanto, los resultados apoyan lo que afirma el cardiólogo.</h4>
 </div>
 <div id="todo-el-procedimiento-anterior-es-correcto-pero-la-otra-forma-de-tomar-la-decision-de-rechazo-o-no-rechazo-suele-hacerse-basandose-en-el-p-value.-como-calculamos-el-p-value" class="section level4">
 <h4>Todo el procedimiento anterior es correcto, pero la otra forma de tomar la decisión de rechazo o no rechazo, suele hacerse basándose en el “p-value”. ¿Cómo calculamos el “p-value”?</h4>
 </div>
-<div id="para-encontrar-el-p-value-debemos-calcular-la-siguiente-probabilidad-pz-z-es-decir-pz-2.029.-para-esto-usamos-rstudio." class="section level4">
-<h4>Para encontrar el “p-value”, debemos calcular la siguiente probabilidad: <span class="math inline">\(P(Z &gt; Z^*)\)</span>, es decir <span class="math inline">\(P(Z &gt; 2.029)\)</span>. Para esto usamos RStudio.</h4>
+<div id="para-encontrar-el-p-value-debemos-calcular-la-siguiente-probabilidad-pz-z-es-decir-pz-2.029.-para-esto-usamos-rstudio-o-una-tabla-de-probabilidad-acumulada.-rstudio-en-este-caso." class="section level4">
+<h4>Para encontrar el “p-value”, debemos calcular la siguiente probabilidad: <span class="math inline">\(P(Z &gt; Z^*)\)</span>, es decir <span class="math inline">\(P(Z &gt; 2.029)\)</span>. Para estó usamos RStudio o una tabla de probabilidad acumulada. RStudio en este caso.</h4>
 <pre class="r"><code>1 - pnorm(2.029)</code></pre>
 <pre><code>## [1] 0.02122915</code></pre>
+<p>Por lo tanto, el p-value = <span class="math inline">\(0.021\)</span>.</p>
 </div>
 <div id="decision-y-conclusion-usando-el-p-value" class="section level4">
 <h4><strong>Decisión y conclusión usando el “p-value”</strong></h4>
 </div>
-<div id="el-valor-del-p-value-es-0.021-menor-que-el-nivel-de-significacion-alpha-.05-por-lo-tanto-se-rechaza-la-hipotesis-nula-y-se-concluye-de-que-si-hay-evidencia-estadistica-de-que-el-nivel-de-colesterol-promedio-de-los-pacientes-con-problemas-cardiacos-es-mayor-de-220.-o-sea-los-resultados-apoyan-lo-que-afirma-el-cardiologo." class="section level4">
-<h4>El valor del “p-value” es <span class="math inline">\(0.021\)</span> menor que el nivel de significación <span class="math inline">\(\alpha =.05\)</span>, por lo tanto; se rechaza la hipótesis nula y se concluye de que sí hay evidencia estadística de que el nivel de colesterol promedio de los pacientes con problemas cardíacos es mayor de 220. O sea los resultados apoyan lo que afirma el cardiólogo.</h4>
+<div id="decision-el-valor-del-p-value-es-0.021-el-cual-es-menor-que-el-nivel-de-significacion-alpha-.05-0.021-0.05-por-lo-tanto-se-rechaza-la-hipotesis-nula-h_0." class="section level4">
+<h4>Decisión: El valor del “p-value” es <span class="math inline">\(0.021\)</span>, el cual es menor que el nivel de significación <span class="math inline">\(\alpha =.05\)</span> (0.021 &lt; 0.05), por lo tanto; se rechaza la hipótesis nula <span class="math inline">\(H_0\)</span>.</h4>
+</div>
+<div id="conclusion-se-encontro-evidencia-estadistica-de-que-el-nivel-de-colesterol-promedio-de-los-pacientes-con-problemas-cardiacos-es-mayor-de-220.-por-lo-tanto-los-resultados-apoyan-lo-que-afirma-el-cardiologo.-1" class="section level4">
+<h4>Conclusión: Se encontró evidencia estadística de que el nivel de colesterol promedio de los pacientes con problemas cardíacos es mayor de 220. Por lo tanto, los resultados apoyan lo que afirma el cardiólogo.</h4>
 <blockquote>
 <p><strong>Caso 2: Varianza poblacional <span class="math inline">\(\sigma^2\)</span> es desconocida</strong></p>
 </blockquote>
 </div>
 <div id="en-este-caso-no-es-posible-usar-la-distribucion-normal-estandar-por-tanto-se-usa-la-distribucion-t-student." class="section level4">
-<h4>En este caso no es posible usar la distribución normal estándar, por tanto se usa la distribución t-student.</h4>
+<h4>En este caso no es posible usar la distribución normal estándar, por tanto se usa la distribución t-Student.</h4>
 </div>
 <div id="el-estadistico-de-prueba-bajo-h_0-es-2" class="section level4">
 <h4>El estadístico de prueba bajo <span class="math inline">\(H_0\)</span> es</h4>
@@ -663,17 +683,26 @@ mean(colesterol)</code></pre>
 <div id="tdfracbarx-mu_0ssqrtn" class="section level4">
 <h4><span class="math display">\[t^*=\dfrac{\bar{X}-\mu_0}{s/\sqrt{n}}\]</span></h4>
 </div>
-<div id="y-el-valor-critico-de-la-distribucion-t-student-sera-t_alphan-1-donde-n-1-son-los-grados-de-libertad." class="section level4">
-<h4>y el valor crítico de la distribución t-student será <span class="math inline">\(t_{\alpha,n-1}\)</span>, donde <span class="math inline">\(n-1\)</span> son los grados de libertad.</h4>
+<div id="y-el-valor-critico-de-la-distribucion-t-student-sera-t_alphan-1-donde-n-1-son-los-grados-de-libertad.-recuerde-que-restamos-1-a-los-datos-porque-estamos-estimando-un-parametro-usando-la-muestra." class="section level4">
+<h4>y el valor crítico de la distribución t-student será <span class="math inline">\(t_{\alpha,n-1}\)</span>, donde <span class="math inline">\(n-1\)</span> son los grados de libertad. Recuerde que restamos 1 a los datos, porqué estamos estimando un parámetro usando la muestra.</h4>
 </div>
-<div id="si-la-prueba-es-a-cola-izquierda-la-region-de-rechazo-son-los-valores-de-t--t_alpha-y-se-decide-rechazar-h_0-si-t--t_alpha." class="section level4">
-<h4>Si la prueba es a cola izquierda la región de rechazo son los valores de <span class="math inline">\(t &lt; -t_{\alpha}\)</span>, y se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t^* &lt; -t_{\alpha}\)</span>.</h4>
+<div id="si-la-prueba-es-a-cola-izquierda-la-region-de-rechazo-son-los-valores-de-t--t_alphan-1." class="section level4">
+<h4>Si la prueba es a cola izquierda la región de rechazo son los valores de <span class="math inline">\(t &lt; -t_{\alpha,n-1}\)</span>.</h4>
 </div>
-<div id="si-la-prueba-es-a-cola-derecha-la-region-de-rechazo-son-los-valores-de-t-t_alpha-y-se-decide-rechazar-h_0-si-t-t_alpha." class="section level4">
-<h4>Si la prueba es a cola derecha la región de rechazo son los valores de <span class="math inline">\(t &gt; t_{\alpha}\)</span>, y se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t^* &gt; t_{\alpha}\)</span>.</h4>
+<div id="se-decide-rechazar-h_0-si-t--t_alpha." class="section level4">
+<h4>Se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t^* &lt; -t_{\alpha}\)</span>.</h4>
 </div>
-<div id="si-la-prueba-es-a-dos-colas-la-region-de-rechazo-son-los-valores-de-t--t_alpha-y-los-valores-de-t-t_alpha-y-se-decide-rechazar-h_0-si-t-t_alpha." class="section level4">
-<h4>Si la prueba es a dos colas la región de rechazo son los valores de <span class="math inline">\(t &lt; -t_{\alpha}\)</span> y los valores de <span class="math inline">\(t &gt; t_{\alpha}\)</span>, y se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(|t^*| &gt; t_{\alpha}\)</span>.</h4>
+<div id="si-la-prueba-es-a-cola-derecha-la-region-de-rechazo-son-los-valores-de-t-t_alphan-1." class="section level4">
+<h4>Si la prueba es a cola derecha la región de rechazo son los valores de <span class="math inline">\(t &gt; t_{\alpha,n-1}\)</span>.</h4>
+</div>
+<div id="se-decide-rechazar-h_0-si-t-t_alphan-1." class="section level4">
+<h4>Se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t^* &gt; t_{(\alpha,n-1)}\)</span>.</h4>
+</div>
+<div id="si-la-prueba-es-a-dos-colas-la-region-de-rechazo-son-los-valores-de-t--t_alpha-y-los-valores-de-t-t_alphan-1." class="section level4">
+<h4>Si la prueba es a dos colas la región de rechazo son los valores de <span class="math inline">\(t &lt; -t_{\alpha}\)</span> y los valores de <span class="math inline">\(t &gt; t_{\alpha,n-1}\)</span>.</h4>
+</div>
+<div id="se-decide-rechazar-h_0-si-t-t_alpha2n-1." class="section level4">
+<h4>Se decide rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(|t^*| &gt; t_{(\alpha/2,n-1)}\)</span>.</h4>
 <div class="figure">
 <img src="test-t.jpg" />
 
@@ -682,8 +711,8 @@ mean(colesterol)</code></pre>
 <p>Ejemplos</p>
 </blockquote>
 </div>
-<div id="las-ventas-diarias-actuales-de-cafe-molido-regular-en-un-supermercado-son-en-promedio-de-55-libras-y-varian-segun-una-distribucion-normal.-la-tienda-quiere-reducir-el-precio-para-vender-intentar-vender-mas-cafe-molido.-despues-de-la-reduccion-de-precios-las-ventas-en-las-proximas-tres-semanas-promediaron-63-libras-con-una-desviacion-estandar-de-15.-es-esto-una-buena-evidencia-de-que-las-ventas-promedio-son-ahora-de-360-libras-construya-un-intervalo-de-confianza-del-90-para-responder-a-la-pregunta." class="section level4">
-<h4>1. Las ventas diarias actuales de café molido regular en un supermercado son en promedio de 55 libras, y varían según una distribución normal. La tienda quiere reducir el precio para vender intentar vender más café molido. Después de la reducción de precios, las ventas en las próximas tres semanas promediaron 63 libras, con una desviación estándar de 15. ¿Es esto una buena evidencia de que las ventas promedio son ahora de 360 libras? Construya un intervalo de confianza del 90 % para responder a la pregunta.</h4>
+<div id="las-ventas-diarias-actuales-de-cafe-molido-regular-en-un-supermercado-son-en-promedio-de-55-libras-y-varian-segun-una-distribucion-normal.-la-tienda-quiere-reducir-el-precio-para-intentar-vender-mas-cafe-molido.-despues-de-la-reduccion-de-precios-las-ventas-en-las-proximas-tres-semanas-promediaron-63-libras-para-43-ventas-con-una-desviacion-estandar-de-15.-es-esto-una-buena-evidencia-de-que-las-ventas-promedio-son-ahora-mas-altas-haga-una-prueba-al-10-de-significancia." class="section level4">
+<h4>1. Las ventas diarias actuales de café molido regular en un supermercado son en promedio, de 55 libras, y varían según una distribución normal. La tienda quiere reducir el precio para intentar vender más café molido. Después de la reducción de precios, las ventas en las próximas tres semanas promediaron 63 libras para 43 ventas, con una desviación estándar de 15. ¿Es esto una buena evidencia de que las ventas promedio son ahora mas altas? Haga una prueba al 10 % de significancia.</h4>
 </div>
 <div id="paso-1-los-datos-del-problema" class="section level4">
 <h4><strong>Paso 1: Los datos del problema</strong></h4>
@@ -719,7 +748,7 @@ mean(colesterol)</code></pre>
 <h4>Se asume que:</h4>
 <ol style="list-style-type: lower-alpha">
 <li><h4 id="los-datos-provienen-de-una-distribucion-normal.">Los datos provienen de una distribución normal.</h4></li>
-<li><h4 id="la-varianza-sigma-es-desconocida.">La varianza <span class="math inline">\(\sigma\)</span> es desconocida.</h4></li>
+<li><h4 id="la-varianza-sigma2-es-desconocida.">La varianza <span class="math inline">\(\sigma^2\)</span> es desconocida.</h4></li>
 </ol>
 </div>
 <div id="el-estadistico-de-prueba-bajo-h_0-es-3" class="section level4">
@@ -734,8 +763,8 @@ mean(colesterol)</code></pre>
 <div id="t2.914" class="section level4">
 <h4><span class="math display">\[t^*=2.914\]</span></h4>
 </div>
-<div id="entonces-la-region-de-rechazo-esta-dada-por-todos-los-valores-de-t_alpha-mayores-que-2.91" class="section level4">
-<h4>Entonces la región de rechazo está dada por todos los valores de <span class="math inline">\(t_{\alpha}\)</span> mayores que <span class="math inline">\(2.91\)</span></h4>
+<div id="entonces-podemos-rechazar-h_0-si-t2.914-cae-en-la-region-de-rechazo." class="section level4">
+<h4>Entonces, podemos rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(t^*=2.914\)</span> caé en la región de rechazo.</h4>
 </div>
 <div id="paso-4-valor-critico" class="section level4">
 <h4><strong>Paso 4: Valor crítico</strong></h4>
@@ -745,13 +774,16 @@ mean(colesterol)</code></pre>
 <pre class="r"><code>qt(0.1,42,lower.tail = FALSE)</code></pre>
 <pre><code>## [1] 1.302035</code></pre>
 </div>
+<div id="por-lo-tanto-t_0.10421.302." class="section level4">
+<h4>Por lo tanto, <span class="math inline">\(t_{(0.10,42)}=1.302\)</span>.</h4>
+</div>
 <div id="entonces-tenemos-que-2" class="section level4">
 <h4>Entonces tenemos que</h4>
 </div>
-<div id="t-t_0.143" class="section level4">
-<h4><span class="math display">\[t^* &lt; t_{0.1,43}\]</span></h4>
+<div id="t-t_0.142" class="section level4">
+<h4><span class="math display">\[t^* &lt; t_{0.1,42}\]</span></h4>
 </div>
-<div id="es-decir-2" class="section level4">
+<div id="es-decir-1" class="section level4">
 <h4>es decir,</h4>
 </div>
 <div id="section-3" class="section level4">
@@ -760,11 +792,11 @@ mean(colesterol)</code></pre>
 <div id="paso-5-decision-y-conclusion-2" class="section level4">
 <h4><strong>Paso 5: Decisión y conclusión</strong></h4>
 </div>
-<div id="decision-se-decide-rechazar-la-hipotesis-nula-h_0-dado-a-que-t-t_0.142." class="section level4">
-<h4><strong>Decisión</strong>: Se decide rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(t^* &gt; t_{0.1,42}\)</span>.</h4>
+<div id="decision-se-decide-rechazar-la-hipotesis-nula-h_0-dado-a-que-t-t_0.142.-es-decir-2.914-1.302." class="section level4">
+<h4><strong>Decisión</strong>: Se decide rechazar la hipótesis nula <span class="math inline">\(H_0\)</span>, dado a que <span class="math inline">\(t^* &gt; t_{0.1,42}\)</span>. Es decir; <span class="math inline">\(2.914 &gt; 1.302\)</span>.</h4>
 </div>
-<div id="conclusion-se-encontro-evidencia-significativa-de-que-las-ventas-aumentaron-y-que-por-tanto-la-promocion-fue-exitosa." class="section level4">
-<h4><strong>Conclusión</strong>: Se encontró evidencia significativa de que las ventas aumentaron y que por tanto la promoción fue exitosa.</h4>
+<div id="conclusion-se-encontro-evidencia-significativa-de-que-las-ventas-de-cafe-aumentaron-con-la-reduccion-de-precios." class="section level4">
+<h4><strong>Conclusión</strong>: Se encontró evidencia significativa de que las ventas de café aumentaron con la reducción de precios.</h4>
 </div>
 </div>
 <div id="prueba-de-hipotesis-para-una-proporcion" class="section level3">
@@ -784,8 +816,8 @@ mean(colesterol)</code></pre>
 <div id="prueba-a-cola-derecha-2" class="section level4">
 <h4>2. Prueba a cola derecha:</h4>
 </div>
-<div id="h_0-p-_0" class="section level4">
-<h4><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = _0\)</span></h4>
+<div id="h_0-p-p-_0" class="section level4">
+<h4><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p =p _0\)</span></h4>
 </div>
 <div id="h_a-p-p_0-1" class="section level4">
 <h4><span class="math inline">\(H_a\)</span>: <span class="math inline">\(p &gt; p_0\)</span></h4>
@@ -799,8 +831,8 @@ mean(colesterol)</code></pre>
 <div id="h_a-p-neq-p_0" class="section level4">
 <h4><span class="math inline">\(H_a\)</span>: <span class="math inline">\(p \neq p_0\)</span></h4>
 </div>
-<div id="la-distribucion-del-estadistico-de-prueba-bajo-la-hipotesis-nula-h_0-p-p_0-es" class="section level4">
-<h4>La distribución del estadístico de prueba bajo la hipótesis nula <span class="math inline">\(H_0 : p= p_0\)</span> es:</h4>
+<div id="la-distribucion-del-estadistico-de-prueba-bajo-la-hipotesis-nula-h_0-es" class="section level4">
+<h4>La distribución del estadístico de prueba bajo la hipótesis nula <span class="math inline">\(H_0\)</span> es:</h4>
 </div>
 <div id="zdfrachatp-p_0sqrtdfracp_01-p_0n" class="section level4">
 <h4><span class="math display">\[Z^*=\dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}\]</span></h4>
@@ -815,17 +847,17 @@ mean(colesterol)</code></pre>
 <div id="este-metodo-tiene-los-siguientes-supuestos" class="section level4">
 <h4>Este método tiene los siguientes supuestos:</h4>
 </div>
-<div id="i-np-geq-10" class="section level4">
-<h4>i) <span class="math inline">\(np \geq 10\)</span></h4>
+<div id="i-np_0-geq-10" class="section level4">
+<h4>i) <span class="math inline">\(np_0 \geq 10\)</span></h4>
 </div>
-<div id="ii-n1-p-geq-10" class="section level4">
-<h4>ii) <span class="math inline">\(n(1-p) \geq 10\)</span></h4>
+<div id="ii-n1-p_0-geq-10" class="section level4">
+<h4>ii) <span class="math inline">\(n(1-p_0) \geq 10\)</span></h4>
 <blockquote>
 <p>Ejemplos</p>
 </blockquote>
 </div>
 <div id="un-fabricante-de-refrescos-afirma-que-la-mayoria-de-los-adultos-prefieren-su-bebida-lider-en-comparacion-con-la-de-su-principal-competidor.-para-probar-esta-afirmacion-500-personas-seleccionadas-aleatoriamente-recibieron-las-dos-bebidas-en-orden-aleatorio-para-degustar.-entre-ellos-270-preferian-la-marca-del-fabricante-de-refrescos-211-preferian-la-marca-del-competidor-y-19-no-podian-decidirse.-determine-si-hay-evidencia-suficiente-al-nivel-de-significancia-del-5-para-respaldar-el-reclamo-del-fabricante-de-refrescos-de-que-la-poblacion-esta-dividida-en-partes-iguales-en-su-preferencia." class="section level4">
-<h4>1. Un fabricante de refrescos afirma que la mayoría de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5%, para respaldar el reclamo del fabricante de refrescos de que la población está dividida en partes iguales en su preferencia.</h4>
+<h4>1. Un fabricante de refrescos afirma que la mayoría de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5 %, para respaldar el reclamo del fabricante de refrescos de que la población está dividida en partes iguales en su preferencia.</h4>
 </div>
 <div id="paso-1-los-datos-del-problema-y-supuestos-del-problema-son-1" class="section level4">
 <h4><strong>Paso 1: Los datos del problema y supuestos del problema son</strong></h4>
@@ -857,10 +889,10 @@ mean(colesterol)</code></pre>
 <div id="este-metodo-tiene-los-siguientes-supuestos-1" class="section level4">
 <h4>Este método tiene los siguientes supuestos:</h4>
 </div>
-<div id="i-np-geq-10-1" class="section level4">
+<div id="i-np-geq-10" class="section level4">
 <h4>i) <span class="math inline">\(np \geq 10\)</span></h4>
 </div>
-<div id="ii-n1-p-geq-10-1" class="section level4">
+<div id="ii-n1-p-geq-10" class="section level4">
 <h4>ii) <span class="math inline">\(n(1-p) \geq 10\)</span></h4>
 </div>
 <div id="el-estadistico-de-prueba-bajo-h_0-es-4" class="section level4">
@@ -892,7 +924,7 @@ mean(colesterol)</code></pre>
 <div id="z-z_0.05-2" class="section level4">
 <h4><span class="math display">\[Z^* &gt; Z_{0.05}\]</span></h4>
 </div>
-<div id="es-decir-3" class="section level4">
+<div id="es-decir-2" class="section level4">
 <h4>es decir,</h4>
 </div>
 <div id="section-4" class="section level4">
