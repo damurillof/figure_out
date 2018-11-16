@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### **Fecha de entrega:** Miércoles 21 de Noviembre de 2018. Al iniciar la clase.
 
-#### **Puntaje: 15 puntos** 
+#### **Puntaje: 18 puntos** 
 
 ### Recuerde adjuntar todos sus procedimientos de `RStudio`, incluido los códigos y los datos.
 
