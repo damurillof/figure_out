@@ -377,19 +377,19 @@ Por lo tanto, el p-value = $0.021$.
 
 > Ejemplos
 
-#### 1. Las ventas diarias actuales de café molido regular en un supermercado son en promedio,  de 55 libras, y varían según una distribución normal. La tienda quiere reducir el precio para intentar vender más café molido. Después de la reducción de precios, las ventas en las próximas tres semanas promediaron 63 libras para 43 ventas, con una desviación estándar de 15. ¿Es esto una buena evidencia de que las ventas promedio son ahora mas altas? Haga una prueba al 10 % de significancia.
+#### 1. Las ventas diarias actuales de café molido regular en un supermercado son en promedio,  de 55 libras, y varían según una distribución normal. La tienda quiere reducir el precio para intentar vender más café molido. Después de la reducción de precios, las ventas en las próximas tres semanas promediaron 63 libras para 43 ventas, con una desviación estándar de 18. ¿Es esto una buena evidencia de que las ventas promedio son ahora mas altas? Haga una prueba al 10 % de significancia.
 
 #### **Paso 1: Los datos del problema**
 
-####  $\bar{X}=55$
+####  $\bar{X}=63$
 
-####  $\mu = 63$
+####  $\mu = 55$
 
 ####  $n = 43$
 
 ####  $S = 18$
 
-####  $\alpha = 0.1$
+####  $\alpha = 0.10$
 
 ####  **Paso 2: Plantear las hipótesis**
 
@@ -456,7 +456,7 @@ qt(0.1,42,lower.tail = FALSE)
 
 #### 2.  Prueba a cola derecha:
 
-#### $H_0$: $p =p _0$
+#### $H_0$: $p = p _0$
 
 #### $H_a$: $p > p_0$
 
@@ -480,13 +480,13 @@ qt(0.1,42,lower.tail = FALSE)
 
 #### Este método tiene los siguientes supuestos:
 
-#### i) $np_0 \geq 10$
+#### 1) $np_0 \geq 10$
 
-#### ii) $n(1-p_0) \geq 10$
+#### 2) $n(1-p_0) \geq 10$
 
 > Ejemplos
 
-#### 1. Un fabricante de refrescos afirma que la mayoría de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5 %, para respaldar el reclamo del fabricante de refrescos de que la población está dividida en partes iguales en su preferencia.
+#### 1. Un fabricante de refrescos afirma que las de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5 %, para respaldar el reclamo del fabricante de refrescos de que la población está dividida en partes iguales en su preferencia.
 
 
 #### **Paso 1: Los datos del problema y supuestos del problema son**

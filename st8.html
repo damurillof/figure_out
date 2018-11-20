@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Solución Tarea # 8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Solución Tarea # 8</h1>
+
+</div>
+
+
+<div id="usare-la-siguiente-funcion-para-el-problema-1." class="section level4">
+<h4>Usaré la siguiente función para el problema 1.</h4>
+<pre class="r"><code>t_area &lt;- function(p,v,low.T = TRUE){
+  if (low.T == TRUE) {
+    t &lt;- seq(-5,5,length=200)
+    q &lt;- qt(p,v)
+    tt &lt;- dt(t,v)
+    plot(t,tt,type=&quot;l&quot;, lwd=2, col=&quot;black&quot;)
+    t=seq(-5,q,length=200)
+    tt=dt(t,v)
+    polygon(c(-5,t,q),c(0,tt,0),col=&quot;blue&quot;)
+    axis(side = 1, at=-3:3)
+  } else {
+  t &lt;- seq(-5,5,length=200)
+  q &lt;- qt(p,v,lower.tail = FALSE)
+  tt &lt;- dt(t,v)
+  plot(t,tt,type=&quot;l&quot;, lwd=2, col=&quot;black&quot;)
+  t=seq(q,5,length=200)
+  tt=dt(t,v)
+  polygon(c(q,t,5),c(0,tt,0),col=&quot;red&quot;)
+  axis(side = 1, at=-3:3)
+  }
+}</code></pre>
+</div>
+<div id="problema-1" class="section level3">
+<h3>Problema 1</h3>
+<div id="suponga-que-t-es-una-distribucion-t-student.-es-decir-tv-donde-v-son-los-grados-de-libertad.-use-rstudio-o-una-tabla-de-probabilidades-t-student-para-calcular-los-siguientes-valores-criticos-de-t-haga-una-grafica-que-ilustre-la-informacion-solicitada-en-cada-caso." class="section level4">
+<h4>Suponga que <span class="math inline">\(t\)</span> es una distribución <span class="math inline">\(t\)</span>-Student. Es decir <span class="math inline">\(t(v)\)</span>, donde <span class="math inline">\(v\)</span> son los grados de libertad. Use <code>RStudio</code> o una tabla de probabilidades <span class="math inline">\(t\)</span>-Student para calcular los siguientes valores críticos de <span class="math inline">\(t\)</span>: (Haga una gráfica que ilustre la información solicitada en cada caso).</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="t_alphav-si-v7-y-alpha0.05-a-cola-izquierda."><span class="math inline">\(t_{(\alpha,v)}\)</span>, si <span class="math inline">\(v=7\)</span> y <span class="math inline">\(\alpha=0.05\)</span> a cola izquierda.</h4></li>
+</ol>
+<pre class="r"><code>qt(0.05,7)</code></pre>
+<pre><code>## [1] -1.894579</code></pre>
+<pre class="r"><code>t_area(0.05,7,low.T = TRUE)</code></pre>
+<p><img src="st8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="t_fracalpha2v-si-v15-y-alpha0.01-a-cola-derecha."><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span>, si <span class="math inline">\(v=15\)</span> y <span class="math inline">\(\alpha=0.01\)</span> a cola derecha.</h4></li>
+</ol>
+<p><span class="math display">\[\dfrac{\alpha}{2}=\dfrac{0.01}{2}=0.005\]</span></p>
+<pre class="r"><code>qt(0.005,15)</code></pre>
+<pre><code>## [1] -2.946713</code></pre>
+<pre class="r"><code>t_area(0.005,15,low.T = FALSE)</code></pre>
+<p><img src="st8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="t_fracalpha2v-si-v12-y-alpha0.03-a-cola-derecha."><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span>, si <span class="math inline">\(v=12\)</span> y <span class="math inline">\(\alpha=0.03\)</span> a cola derecha.</h4></li>
+</ol>
+<pre class="r"><code>qt(0.015,12)</code></pre>
+<pre><code>## [1] -2.4607</code></pre>
+<pre class="r"><code>t_area(0.015,12,low.T = FALSE)</code></pre>
+<p><img src="st8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+</div>
+<div id="problema-2" class="section level3">
+<h3>Problema 2</h3>
+<div id="suponga-que-deseamos-estimar-el-tiempo-promedio-de-la-vida-util-en-un-tipo-de-bombilla.-para-tal-fin-se-tomo-una-muestra-aleatoria-de-tamano-n10-referente-al-tiempo-de-vida.-el-tiempo-se-mide-en-meses.-los-datos-son-los-siguientes" class="section level4">
+<h4>Suponga que deseamos estimar el tiempo promedio de la vida útil en un tipo de bombilla. Para tal fin se tomó una muestra aleatoria de tamaño n=10 referente al tiempo de vida. El tiempo se mide en meses. Los datos son los siguientes:</h4>
+<pre class="r"><code>set.seed(123456)
+TiempoVida &lt;- round(rexp(10,0.09),1)
+print(TiempoVida)</code></pre>
+<pre><code>##  [1]  6.6  5.6 14.0 11.8 12.6 21.9  0.8 29.2  1.3  6.8</code></pre>
+</div>
+<div id="con-base-en-los-datos-y-la-informacion-anterior-conteste-las-siguientes-preguntas" class="section level4">
+<h4>Con base en los datos y la información anterior, conteste las siguientes preguntas:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-el-parametro-de-interes">¿Cuál es el parámetro de interés?</h4></li>
+</ol>
+</div>
+<div id="el-tiempo-promedio-de-vida-en-un-tipo-de-bombilla." class="section level4">
+<h4>El tiempo promedio de vida en un tipo de bombilla.</h4>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="calcule-una-estimacion-puntual-para-el-parametro-de-interes">Calcule una estimación puntual para el parámetro de interés</h4></li>
+</ol>
+</div>
+<div id="una-estimacion-puntual-para-el-tiempo-de-vida-promedio-esta-dada-por-la-media-muestral-barx" class="section level4">
+<h4>Una estimación puntual para el tiempo de vida promedio está dada por la media muestral <span class="math inline">\(\bar{X}\)</span></h4>
+<pre class="r"><code>mean(TiempoVida)</code></pre>
+<pre><code>## [1] 11.06</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="encuentre-un-intervalo-de-confianza-para-el-parametro-de-interes-con-una-confiabilidad-del-95-.-asuma-que-los-datos-provienen-de-una-distribucion-normal.">Encuentre un intervalo de confianza para el parámetro de interés con una confiabilidad del 95 %. Asuma que los datos provienen de una distribución Normal.</h4></li>
+</ol>
+</div>
+<div id="como-la-varianza-poblacional-es-desconocida-debemos-usar-el-intervalo-t-student.-donde-la-desviacion-estandar-la-calculamos-usando-la-muestra." class="section level4">
+<h4>Como la varianza poblacional es desconocida, debemos usar el intervalo t-Student. Donde la desviación estándar la calculamos usando la muestra.</h4>
+<pre class="r"><code>sd(TiempoVida)</code></pre>
+<pre><code>## [1] 8.984579</code></pre>
+<p>Entonces tenemos que:</p>
+<p><span class="math inline">\(\bar{X}=11.06\)</span></p>
+<p><span class="math inline">\(S = 8.9845\)</span></p>
+<p><span class="math inline">\(n = 10\)</span></p>
+<p><span class="math inline">\(\alpha = 0.05\)</span></p>
+<p><span class="math inline">\(\dfrac{\alpha}{2}=0.025\)</span></p>
+</div>
+<div id="necesitamos-t_0.0259.-usamos-r" class="section level4">
+<h4>Necesitamos <span class="math inline">\(t_{(0.025,9)}\)</span>. Usamos R</h4>
+<pre class="r"><code>qt(0.025,9,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 2.262157</code></pre>
+</div>
+<div id="limite-inferior-barx---t_fracalpha2n-1dfracssqrtn-11.06---2.2621-dfrac8.9845sqrt104.6330" class="section level4">
+<h4><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}= 11.06 - 2.2621 * \dfrac{8.9845}{\sqrt{10}}=4.6330\)</span></h4>
+</div>
+<div id="limite-superior-barx-t_fracalpha2n-1dfracssqrtn11.06-2.2621-dfrac8.9845sqrt1017.4869" class="section level4">
+<h4><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + t_{(\frac{\alpha}{2},n-1)}\dfrac{S}{\sqrt{n}}=11.06 + 2.2621 * \dfrac{8.9845}{\sqrt{10}}=17.4869\)</span></h4>
+</div>
+<div id="entonces-el-intervalo-esta-dado-por" class="section level4">
+<h4>Entonces el intervalo esta dado por:</h4>
+</div>
+<div id="bigg4.6330-17.4869bigg-textmeses" class="section level4">
+<h4><span class="math display">\[\bigg(4.6330 , 17.4869\bigg) \; \text{meses}\]</span></h4>
+<p>También podemos usar RStudio para encontrar el intervalo de confianza:</p>
+<pre class="r"><code>t.test(x = TiempoVida, conf.level = 0.95)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  TiempoVida
+t = 3.8928, df = 9, p-value = 0.00366
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+  4.632819 17.487181
+sample estimates:
+mean of x 
+    11.06 </code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><h4 id="interprete-el-intervalo-que-encontro-en-la-parte-c.">Interprete el intervalo que encontró en la parte c).</h4></li>
+</ol>
+</div>
+<div id="estamos-seguros-con-una-confianza-del-95-en-que-el-tiempo-promedio-del-tipo-de-bombilla-esta-entre-4.63-y-17.48-meses." class="section level4">
+<h4>Estamos seguros con una confianza del 95 % en que el tiempo promedio del tipo de bombilla está entre <span class="math inline">\(4.63\)</span> y <span class="math inline">\(17.48\)</span> meses.</h4>
+<ol start="5" style="list-style-type: lower-alpha">
+<li><h4 id="compruebe-el-supuesto-de-normalidad-en-los-datos.">Compruebe el supuesto de Normalidad en los datos.</h4></li>
+</ol>
+</div>
+<div id="debemos-comprobar-el-supuesto-de-normalidad." class="section level4">
+<h4>Debemos comprobar el supuesto de normalidad.</h4>
+<pre class="r"><code>qqnorm(TiempoVida,pch=16,col = &quot;red&quot;)
+qqline(TiempoVida)</code></pre>
+<p><img src="st8_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="no-es-aceptable-suponer-que-estos-datos-provienen-de-una-poblacion-que-tiene-distribucion-normal.-dado-que-hay-presencia-de-outliers-que-pueden-indicar-que-la-distribucion-poblacional-es-sesgada." class="section level4">
+<h4>No es aceptable suponer que estos datos provienen de una población que tiene distribución Normal. Dado que hay presencia de outliers que pueden indicar que la distribución poblacional es sesgada.</h4>
+</div>
+</div>
+<div id="problema-3" class="section level3">
+<h3>Problema 3</h3>
+<div id="se-ha-llegado-a-la-conclusion-que-el-tiempo-de-espera-en-todas-las-rutas-del-trolley-en-el-colegio-sigue-una-distribucion-normal-de-donde-se-sabe-que-sigma10-minutos.-estamos-interesados-en-estimar-el-tiempo-promedio-que-esperan-todos-los-usuarios-colegiales-para-tomar-el-servicio-de-trolley-para-este-proposito-se-recolectaron-12-datos-del-tiempo-de-espera-en-usuarios.-el-tiempo-esta-en-minutos" class="section level4">
+<h4>Se ha llegado a la conclusión que el tiempo de espera en todas las rutas del TROLLEY en el colegio sigue una distribución Normal, de donde se sabe que <span class="math inline">\(\sigma=10\)</span> minutos. Estamos interesados en estimar el tiempo promedio que esperan todos los usuarios Colegiales para tomar el servicio de TROLLEY, para este propósito se recolectaron 12 datos del tiempo de espera en usuarios. El tiempo está en minutos:</h4>
+<pre><code>##  [1] 19 30 44 17 27 29 35 26 48 27 32 38</code></pre>
+</div>
+<div id="con-base-en-los-datos-conteste-las-siguientes-preguntas" class="section level4">
+<h4>Con base en los datos, conteste las siguientes preguntas:</h4>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="calcule-mediante-estimacion-puntual-el-tiempo-que-en-promedio-esperan-todos-los-usuarios-del-trolley-en-el-colegio.">Calcule mediante estimación puntual el tiempo que en promedio esperan todos los usuarios del TROLLEY en el Colegio.</h4></li>
+</ol>
+<pre class="r"><code>waitingTime_trolley &lt;- c(19, 30, 44, 17, 27, 29, 35, 26, 48, 27, 32, 38)</code></pre>
+<p>Una estimación puntual para el tiempo de espera promedio poblacional está dado por la media muestral:</p>
+<pre class="r"><code>mean(waitingTime_trolley)</code></pre>
+<pre><code>## [1] 31</code></pre>
+<p>Es decir, que en promedio, todos los usuarios del trolley esperan 31 minutos.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="calcule-un-intervalo-de-confianza-con-una-confiabilidad-del-90-.">Calcule un intervalo de confianza con una confiabilidad del 90 %.</h4></li>
+</ol>
+<p>Entonces tenemos que:</p>
+<p><span class="math inline">\(\bar{X}=31\)</span></p>
+<p><span class="math inline">\(\sigma = 10\)</span></p>
+<p><span class="math inline">\(n = 30\)</span></p>
+<p><span class="math inline">\(\alpha = 0.10\)</span></p>
+<p><span class="math inline">\(\dfrac{\alpha}{2}=0.05\)</span></p>
+</div>
+<div id="necesitamos-z_0.05.-usamos-r" class="section level4">
+<h4>Necesitamos <span class="math inline">\(Z_{0.05}\)</span>. Usamos R</h4>
+<pre class="r"><code>qnorm(0.05,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 1.644854</code></pre>
+</div>
+<div id="limite-inferior-barx---z_alpha2dfracsigmasqrtn31---1.644dfrac10sqrt3026.25" class="section level4">
+<h4><strong>Límite Inferior</strong>: <span class="math inline">\(\bar{X} - Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=31 - 1.644*\dfrac{10}{\sqrt{30}}=26.25\)</span></h4>
+</div>
+<div id="limite-superior-barx-z_alpha2dfracsigmasqrtn31-1.644dfrac10sqrt3035.74" class="section level4">
+<h4><strong>Límite Superior</strong>: <span class="math inline">\(\bar{X} + Z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}=31 + 1.644*\dfrac{10}{\sqrt{30}}=35.74\)</span></h4>
+</div>
+<div id="entonces-el-intervalo-esta-dado-por-1" class="section level4">
+<h4>Entonces el intervalo esta dado por:</h4>
+</div>
+<div id="bigg26.25-35.74bigg-textminutos" class="section level4">
+<h4><span class="math display">\[\bigg(26.25 , 35.74\bigg) \; \text{minutos}\]</span></h4>
+<p>También podemos usar RStudio para encontrar el intervalo de confianza con <span class="math inline">\(\sigma\)</span> conocida.</p>
+<pre class="r"><code>library(BSDA)
+z.test(x = waitingTime_trolley, sigma.x = 10, conf.level = 0.90)</code></pre>
+<pre><code>
+    One-sample z-Test
+
+data:  waitingTime_trolley
+z = 10.739, p-value &lt; 2.2e-16
+alternative hypothesis: true mean is not equal to 0
+90 percent confidence interval:
+ 26.25172 35.74828
+sample estimates:
+mean of x 
+       31 </code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="interprete-el-intervalo-de-confianza.">Interprete el intervalo de confianza.</h4></li>
+</ol>
+</div>
+<div id="estamos-seguros-con-una-confianza-del-90-en-que-el-tiempo-promedio-de-espera-para-tomar-el-trolley-esta-entre-26.25-y-35.74-meses." class="section level4">
+<h4>Estamos seguros con una confianza del 90 % en que el tiempo promedio de espera para tomar el trolley está entre <span class="math inline">\(26.25\)</span> y <span class="math inline">\(35.74\)</span> meses.</h4>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><h4 id="vuelva-a-calcular-el-intervalo-en-la-parte-b-pero-ahora-con-una-confiabilidad-del-99-.-que-sucede-con-la-anchura-del-intervalo-explique">Vuelva a calcular el intervalo en la parte b), pero ahora con una confiabilidad del 99 %. ¿Qué sucede con la anchura del intervalo? Explique!</h4></li>
+</ol>
+<pre class="r"><code>library(BSDA)
+z.test(x = waitingTime_trolley, sigma.x = 10, conf.level = 0.99)</code></pre>
+<pre><code>
+    One-sample z-Test
+
+data:  waitingTime_trolley
+z = 10.739, p-value &lt; 2.2e-16
+alternative hypothesis: true mean is not equal to 0
+99 percent confidence interval:
+ 23.56422 38.43578
+sample estimates:
+mean of x 
+       31 </code></pre>
+</div>
+<div id="ahora-el-intervalo-de-confianza-es" class="section level4">
+<h4>Ahora el intervalo de confianza es:</h4>
+</div>
+<div id="bigg23.56-38.43bigg-textminutos" class="section level4">
+<h4><span class="math display">\[\bigg(23.56 , 38.43\bigg) \; \text{minutos}\]</span></h4>
+</div>
+<div id="podemos-observar-que-al-aumentar-el-nivel-de-confianza-del-90-al-99-el-intervalo-se-hizo-mas-ancho." class="section level4">
+<h4>Podemos observar que al aumentar el nivel de confianza del 90 % al 99 % el intervalo se hizo más ancho.</h4>
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
