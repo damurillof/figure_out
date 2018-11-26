@@ -1,0 +1,124 @@
+---
+title: "Solución Tarea # 9"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Problema 1
+
+```{r}
+set.seed(1987)
+a <- runif(1,0.2,0.5)
+encuesta <- sample(c("SI","NO"),size = 350,replace = TRUE, prob = c(a,1-a))
+print(encuesta)
+```
+
+
+a)  #### ¿Cuál es el parámetro de interés?
+
+####  El parámetro de interes es la proporcion de estudiantes que usarian el servicio tecnico a domicilio.
+
+b)  #### Calcule una estimación puntual para el parámetro de interés.
+
+####  Para calcular $\hat{p}$ necesitamos contar el número de éxitos (Sí). La función `table()` puede hacer esto.
+
+```{r}
+table(encuesta)
+```
+
+####  Entonces tenemos que:
+
+####  $X=77$
+
+####  $n=350$
+
+#### Así, una estimación puntual para $p$ esta dada por:
+
+#### $$\hat{p}=\frac{X}{n}=\frac{77}{350}=0.22$$
+
+c)  #### Encuentre intervalos de confianza para el parámetro de interés con una confiabilidad del 90 %, 94 % y 99 %.
+
+### intervalo del 90 %
+
+```{r,comment=NA}
+qnorm(0.05,lower.tail = FALSE)
+```
+
+#### $Z_{\alpha/2}=1.644$
+
+#### Límite inferior: $\hat{p}-Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} = 0.22-1.644\sqrt{\dfrac{0.22(1-0.22)}{350}}=0.1858$
+
+
+#### Límite superior: $\hat{p}+Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} = 0.22+1.644\sqrt{\dfrac{0.22(1-0.22)}{350}}=0.2584$
+
+
+#### El intervalo con una confianza del 90 % esta dado por:
+
+#### $$(0.1858,0.2584)$$
+
+#### También podemos usar RStudio para encotrar el intervalo:
+
+```{r,comment=NA}
+prop.test(77,350,conf.level = .90, correct = T)
+```
+
+
+### Intervalo del 94 %
+
+```{r,comment=NA}
+prop.test(77,350,conf.level = .94,correct = TRUE)
+```
+
+#### El intervalo con una confianza del 94 % esta dado por:
+
+#### $$(0.1799,0.2658)$$
+
+###  intervalo 99% 
+
+```{r,comment=NA}
+prop.test(77,350,conf.level = .99,correct = TRUE)
+```
+
+#### El intervalo con una confianza del 99 % esta dado por:
+
+#### $$(0.1671,0.2834)$$
+
+d)  ####  Interprete los intervalos que encontró en la parte c).
+
+#### Estamos seguros con una confianza del 90 % de que la proporcion real de estudiantes que utilizarian el servicio se entre 0.1858 y 0.2584.
+
+
+#### Estamos seguros con una confianza del 94 % de que la proporcion real de estudiantes que utilizarian el servicio se entre 0.1799 y 0.2658.
+
+
+#### Estamos seguros con una confianza del 99 % de que la proporcion real de estudiantes que utilizarian el servicio se entre 0.1671 y 0.2834.
+
+e)  ####  Compruebe los supuestos del intervalo de confianza.
+
+#### Los supuestos para el intervalo de confianza para la proporción poblacional son:
+
+#### 1.  $n\hat{p}\geq 10 = 350*0.22 = 77 \geq 10$ `r emo::ji("ok")`
+
+#### 2.  $n(1-\hat{p})\geq 10 = 350*(1-0.22) = 273 \geq 10$ `r emo::ji("ok")`
+
+#### Se cumplen los supuestos porque ambos resultados, pues en ambos casos son mayores o iguales a 10 indicando que el intervalo es correcto..
+
+
+d)  ####  El negocio sería factible si por lo menos el 60 % de los biciusuarios dice que sí usaría los servicios. Según sus estimaciones, ¿Es factible empezar el proyecto? Justifique su respuesta!
+
+#### No, porque aúnque tomado el intervalo mas ancho no se logro llegar al 60 %.
+
+
+
+
+
+
+
+
+
+
+
+

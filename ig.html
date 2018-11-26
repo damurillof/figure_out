@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Solución Tarea # 9</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Didier Murillo</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="Teaching.html">Teaching</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Solución Tarea # 9</h1>
+
+</div>
+
+
+<div id="problema-1" class="section level3">
+<h3>Problema 1</h3>
+<pre class="r"><code>set.seed(1987)
+a &lt;- runif(1,0.2,0.5)
+encuesta &lt;- sample(c(&quot;SI&quot;,&quot;NO&quot;),size = 350,replace = TRUE, prob = c(a,1-a))
+print(encuesta)</code></pre>
+<pre><code>##   [1] &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+##  [15] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+##  [29] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+##  [43] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+##  [57] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot;
+##  [71] &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot;
+##  [85] &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot;
+##  [99] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [113] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [127] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [141] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [155] &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot;
+## [169] &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [183] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [197] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot;
+## [211] &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot;
+## [225] &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot;
+## [239] &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot;
+## [253] &quot;SI&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [267] &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot;
+## [281] &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot;
+## [295] &quot;NO&quot; &quot;SI&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot;
+## [309] &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot;
+## [323] &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;SI&quot;
+## [337] &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;NO&quot; &quot;SI&quot; &quot;NO&quot; &quot;SI&quot;</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><h4 id="cual-es-el-parametro-de-interes">¿Cuál es el parámetro de interés?</h4></li>
+</ol>
+<div id="el-parametro-de-interes-es-la-proporcion-de-estudiantes-que-usarian-el-servicio-tecnico-a-domicilio." class="section level4">
+<h4>El parámetro de interes es la proporcion de estudiantes que usarian el servicio tecnico a domicilio.</h4>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><h4 id="calcule-una-estimacion-puntual-para-el-parametro-de-interes.">Calcule una estimación puntual para el parámetro de interés.</h4></li>
+</ol>
+</div>
+<div id="para-calcular-hatp-necesitamos-contar-el-numero-de-exitos-si.-la-funcion-table-puede-hacer-esto." class="section level4">
+<h4>Para calcular <span class="math inline">\(\hat{p}\)</span> necesitamos contar el número de éxitos (Sí). La función <code>table()</code> puede hacer esto.</h4>
+<pre class="r"><code>table(encuesta)</code></pre>
+<pre><code>## encuesta
+##  NO  SI 
+## 273  77</code></pre>
+</div>
+<div id="entonces-tenemos-que" class="section level4">
+<h4>Entonces tenemos que:</h4>
+</div>
+<div id="x77" class="section level4">
+<h4><span class="math inline">\(X=77\)</span></h4>
+</div>
+<div id="n350" class="section level4">
+<h4><span class="math inline">\(n=350\)</span></h4>
+</div>
+<div id="asi-una-estimacion-puntual-para-p-esta-dada-por" class="section level4">
+<h4>Así, una estimación puntual para <span class="math inline">\(p\)</span> esta dada por:</h4>
+</div>
+<div id="hatpfracxnfrac773500.22" class="section level4">
+<h4><span class="math display">\[\hat{p}=\frac{X}{n}=\frac{77}{350}=0.22\]</span></h4>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><h4 id="encuentre-intervalos-de-confianza-para-el-parametro-de-interes-con-una-confiabilidad-del-90-94-y-99-.">Encuentre intervalos de confianza para el parámetro de interés con una confiabilidad del 90 %, 94 % y 99 %.</h4></li>
+</ol>
+</div>
+</div>
+<div id="intervalo-del-90" class="section level3">
+<h3>intervalo del 90 %</h3>
+<pre class="r"><code>qnorm(0.05,lower.tail = FALSE)</code></pre>
+<pre><code>[1] 1.644854</code></pre>
+<div id="z_alpha21.644" class="section level4">
+<h4><span class="math inline">\(Z_{\alpha/2}=1.644\)</span></h4>
+</div>
+<div id="limite-inferior-hatp-z_alpha2sqrtdfrachatp1-hatpn-0.22-1.644sqrtdfrac0.221-0.223500.1858" class="section level4">
+<h4>Límite inferior: <span class="math inline">\(\hat{p}-Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} = 0.22-1.644\sqrt{\dfrac{0.22(1-0.22)}{350}}=0.1858\)</span></h4>
+</div>
+<div id="limite-superior-hatpz_alpha2sqrtdfrachatp1-hatpn-0.221.644sqrtdfrac0.221-0.223500.2584" class="section level4">
+<h4>Límite superior: <span class="math inline">\(\hat{p}+Z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}} = 0.22+1.644\sqrt{\dfrac{0.22(1-0.22)}{350}}=0.2584\)</span></h4>
+</div>
+<div id="el-intervalo-con-una-confianza-del-90-esta-dado-por" class="section level4">
+<h4>El intervalo con una confianza del 90 % esta dado por:</h4>
+</div>
+<div id="section" class="section level4">
+<h4><span class="math display">\[(0.1858,0.2584)\]</span></h4>
+</div>
+<div id="tambien-podemos-usar-rstudio-para-encotrar-el-intervalo" class="section level4">
+<h4>También podemos usar RStudio para encotrar el intervalo:</h4>
+<pre class="r"><code>prop.test(77,350,conf.level = .90, correct = T)</code></pre>
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  77 out of 350, null probability 0.5
+X-squared = 108.64, df = 1, p-value &lt; 2.2e-16
+alternative hypothesis: true p is not equal to 0.5
+90 percent confidence interval:
+ 0.1844697 0.2599935
+sample estimates:
+   p 
+0.22 </code></pre>
+</div>
+</div>
+<div id="intervalo-del-94" class="section level3">
+<h3>Intervalo del 94 %</h3>
+<pre class="r"><code>prop.test(77,350,conf.level = .94,correct = TRUE)</code></pre>
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  77 out of 350, null probability 0.5
+X-squared = 108.64, df = 1, p-value &lt; 2.2e-16
+alternative hypothesis: true p is not equal to 0.5
+94 percent confidence interval:
+ 0.1799521 0.2658419
+sample estimates:
+   p 
+0.22 </code></pre>
+<div id="el-intervalo-con-una-confianza-del-94-esta-dado-por" class="section level4">
+<h4>El intervalo con una confianza del 94 % esta dado por:</h4>
+</div>
+<div id="section-1" class="section level4">
+<h4><span class="math display">\[(0.1799,0.2658)\]</span></h4>
+</div>
+</div>
+<div id="intervalo-99" class="section level3">
+<h3>intervalo 99%</h3>
+<pre class="r"><code>prop.test(77,350,conf.level = .99,correct = TRUE)</code></pre>
+<pre><code>
+    1-sample proportions test with continuity correction
+
+data:  77 out of 350, null probability 0.5
+X-squared = 108.64, df = 1, p-value &lt; 2.2e-16
+alternative hypothesis: true p is not equal to 0.5
+99 percent confidence interval:
+ 0.1671947 0.2834810
+sample estimates:
+   p 
+0.22 </code></pre>
+<div id="el-intervalo-con-una-confianza-del-99-esta-dado-por" class="section level4">
+<h4>El intervalo con una confianza del 99 % esta dado por:</h4>
+</div>
+<div id="section-2" class="section level4">
+<h4><span class="math display">\[(0.1671,0.2834)\]</span></h4>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><h4 id="interprete-los-intervalos-que-encontro-en-la-parte-c.">Interprete los intervalos que encontró en la parte c).</h4></li>
+</ol>
+</div>
+<div id="estamos-seguros-con-una-confianza-del-90-de-que-la-proporcion-real-de-estudiantes-que-utilizarian-el-servicio-se-entre-0.1858-y-0.2584." class="section level4">
+<h4>Estamos seguros con una confianza del 90 % de que la proporcion real de estudiantes que utilizarian el servicio se entre 0.1858 y 0.2584.</h4>
+</div>
+<div id="estamos-seguros-con-una-confianza-del-94-de-que-la-proporcion-real-de-estudiantes-que-utilizarian-el-servicio-se-entre-0.1799-y-0.2658." class="section level4">
+<h4>Estamos seguros con una confianza del 94 % de que la proporcion real de estudiantes que utilizarian el servicio se entre 0.1799 y 0.2658.</h4>
+</div>
+<div id="estamos-seguros-con-una-confianza-del-99-de-que-la-proporcion-real-de-estudiantes-que-utilizarian-el-servicio-se-entre-0.1671-y-0.2834." class="section level4">
+<h4>Estamos seguros con una confianza del 99 % de que la proporcion real de estudiantes que utilizarian el servicio se entre 0.1671 y 0.2834.</h4>
+<ol start="5" style="list-style-type: lower-alpha">
+<li><h4 id="compruebe-los-supuestos-del-intervalo-de-confianza.">Compruebe los supuestos del intervalo de confianza.</h4></li>
+</ol>
+</div>
+<div id="los-supuestos-para-el-intervalo-de-confianza-para-la-proporcion-poblacional-son" class="section level4">
+<h4>Los supuestos para el intervalo de confianza para la proporción poblacional son:</h4>
+</div>
+<div id="nhatpgeq-10-3500.22-77-geq-10" class="section level4">
+<h4>1. <span class="math inline">\(n\hat{p}\geq 10 = 350*0.22 = 77 \geq 10\)</span> 🆗</h4>
+</div>
+<div id="n1-hatpgeq-10-3501-0.22-273-geq-10" class="section level4">
+<h4>2. <span class="math inline">\(n(1-\hat{p})\geq 10 = 350*(1-0.22) = 273 \geq 10\)</span> 🆗</h4>
+</div>
+<div id="se-cumplen-los-supuestos-porque-ambos-resultados-pues-en-ambos-casos-son-mayores-o-iguales-a-10-indicando-que-el-intervalo-es-correcto.." class="section level4">
+<h4>Se cumplen los supuestos porque ambos resultados, pues en ambos casos son mayores o iguales a 10 indicando que el intervalo es correcto..</h4>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><h4 id="el-negocio-seria-factible-si-por-lo-menos-el-60-de-los-biciusuarios-dice-que-si-usaria-los-servicios.-segun-sus-estimaciones-es-factible-empezar-el-proyecto-justifique-su-respuesta">El negocio sería factible si por lo menos el 60 % de los biciusuarios dice que sí usaría los servicios. Según sus estimaciones, ¿Es factible empezar el proyecto? Justifique su respuesta!</h4></li>
+</ol>
+</div>
+<div id="no-porque-aunque-tomado-el-intervalo-mas-ancho-no-se-logro-llegar-al-60-." class="section level4">
+<h4>No, porque aúnque tomado el intervalo mas ancho no se logro llegar al 60 %.</h4>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
