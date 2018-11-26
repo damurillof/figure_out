@@ -34,6 +34,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### [Tarea 9. Fecha límite: Miercol-21-11](https://didier-murillo.netlify.com/t9) -- [Solución Tarea 9](https://didier-murillo.netlify.com/st9)
 
+
+
 ![](blanco.png)
 
 

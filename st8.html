@@ -246,15 +246,15 @@ $(document).ready(function () {
 <li><h4 id="t_fracalpha2v-si-v15-y-alpha0.01-a-cola-derecha."><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span>, si <span class="math inline">\(v=15\)</span> y <span class="math inline">\(\alpha=0.01\)</span> a cola derecha.</h4></li>
 </ol>
 <p><span class="math display">\[\dfrac{\alpha}{2}=\dfrac{0.01}{2}=0.005\]</span></p>
-<pre class="r"><code>qt(0.005,15)</code></pre>
-<pre><code>## [1] -2.946713</code></pre>
+<pre class="r"><code>qt(0.005,15,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 2.946713</code></pre>
 <pre class="r"><code>t_area(0.005,15,low.T = FALSE)</code></pre>
 <p><img src="st8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <ol start="3" style="list-style-type: lower-alpha">
 <li><h4 id="t_fracalpha2v-si-v12-y-alpha0.03-a-cola-derecha."><span class="math inline">\(t_{(\frac{\alpha}{2},v)}\)</span>, si <span class="math inline">\(v=12\)</span> y <span class="math inline">\(\alpha=0.03\)</span> a cola derecha.</h4></li>
 </ol>
-<pre class="r"><code>qt(0.015,12)</code></pre>
-<pre><code>## [1] -2.4607</code></pre>
+<pre class="r"><code>qt(0.015,12,lower.tail = FALSE)</code></pre>
+<pre><code>## [1] 2.4607</code></pre>
 <pre class="r"><code>t_area(0.015,12,low.T = FALSE)</code></pre>
 <p><img src="st8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>

@@ -49,7 +49,7 @@ b)  ####  $t_{(\frac{\alpha}{2},v)}$, si $v=15$ y $\alpha=0.01$ a cola derecha.
 $$\dfrac{\alpha}{2}=\dfrac{0.01}{2}=0.005$$
 
 ```{r}
-qt(0.005,15)
+qt(0.005,15,lower.tail = FALSE)
 t_area(0.005,15,low.T = FALSE)
 ```
 
@@ -57,7 +57,7 @@ c)  ####  $t_{(\frac{\alpha}{2},v)}$, si $v=12$ y $\alpha=0.03$ a cola derecha.
 
 
 ```{r}
-qt(0.015,12)
+qt(0.015,12,lower.tail = FALSE)
 t_area(0.015,12,low.T = FALSE)
 ```
 
