@@ -275,7 +275,7 @@ colesterol <- c(217, 223, 225, 245, 238, 216, 217, 226, 202, 233, 235, 242, 219,
 mean(colesterol)
 ```
 
-#### **Paso 1: Los datos del problema y supuestos del problema son**
+#### **Paso 1: Los datos del problema  son**
 
 #### $\bar{X}=225.9$
 
@@ -294,7 +294,11 @@ mean(colesterol)
 #### $H_a$: $\mu > 220$
 
 
-#### **Paso 3: Estadístico de prueba**
+#### **Paso 3: Estadístico de prueba y supuestos:**
+
+a) #### Los datos provienen de una distribución normal. 
+
+b) #### La varianza $\sigma^2$ es conocida.
 
 #### El estadístico de prueba bajo $H_0$ es
 
@@ -428,7 +432,7 @@ qt(0.1,42,lower.tail = FALSE)
 
 #### Entonces tenemos que 
 
-#### $$t^* < t_{0.1,42}$$
+#### $$t^* > t_{0.1,42}$$
 
 #### es decir,
 
@@ -486,10 +490,10 @@ qt(0.1,42,lower.tail = FALSE)
 
 > Ejemplos
 
-#### 1. Un fabricante de refrescos afirma que las de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5 %, para respaldar el reclamo del fabricante de refrescos de que la población está dividida en partes iguales en su preferencia.
+#### 1. Un fabricante de refrescos afirma que las de los adultos prefieren su bebida líder en comparación con la de su principal competidor. Para probar esta afirmación, 500 personas seleccionadas aleatoriamente recibieron las dos bebidas en orden aleatorio para degustar. Entre ellos, 270 preferían la marca del fabricante de refrescos, 211 preferían la marca del competidor y 19 no podían decidirse. Determine si hay evidencia suficiente, al nivel de significancia del 5 %, para respaldar el reclamo del fabricante de refrescos de que la población no está dividida en partes iguales en su preferencia.
 
 
-#### **Paso 1: Los datos del problema y supuestos del problema son**
+#### **Paso 1: Los datos del problema son:**
 
 #### $\hat{p}=270/500=0.54$
 
@@ -552,7 +556,7 @@ qnorm(0.05, lower.tail = FALSE)
 #### **Conclusión**: Se encontró evidencia significativa de que los adultos prefieren el refresco del fabricante uno. 
 
 
-#### 2. Los bebés recién nacidos son más propensos a ser niños que niñas. Una muestra aleatoria encontró 13173 niños nacidos entre 25468  recién nacidos.  ¿Hay evidencia de que el nacimiento de niños es más común que el nacimiento de niñas en toda la población? Use $\alpha=0.1$.
+#### 2. ¿Nacen mas niñas que niños?. Una muestra aleatoria encontró 13173 varones entre 25468  recién nacidos.  ¿Hay evidencia de que el nacimiento de niños es más común que el nacimiento de niñas en toda la población? Use $\alpha=0.1$.
 
 
 ## Pruebas de hipótesis con RStudio.
@@ -642,7 +646,7 @@ La media estimada es $\bar{X}=61.059$
 
 #### **Conclusión y decisión:** 
 
-#### **Decisión:** Como el "p-value" es menor que $\alpha$ (0.008425 < 0.10). La decisión es rechazar la hipotesis nula $H_0$.
+#### **Decisión:** Como el "p-value" es menor que $\alpha$ (0.008425 < 0.10). La decisión es rechazar la hipótesis nula $H_0$.
 
 
 #### **Conclusión:** La media de las ventas es más alta que antes, por lo tanto el anuncio publicitario funcionó.
@@ -667,7 +671,7 @@ La media estimada es $\bar{X}=61.059$
 
 #### Resolvamos el siguiente ejercicio:
 
-#### Una compañía afirma que sus bocadillos de comida contienen un promedio de 28 g de azúcar por porción. Un investigador cree que la empresa está mintiendo, y toma una muestra aleatoria de 15 porciones de bocadillos y encuentra los siguientes datos para la cantidad de azucar por porción:
+#### Una compañía afirma que sus bocadillos de comida contienen un promedio de 28 g de azúcar por porción. Un investigador cree que la empresa está mintiendo, y toma una muestra aleatoria de 15 porciones de bocadillos y encuentra los siguientes datos para la cantidad de azúcar por porción:
 
 ```{r,eval=TRUE,echo=FALSE,comment=NA}
 set.seed(123)
@@ -722,14 +726,14 @@ La media estimada es $\bar{X}=28.2666$
 
 #### **Conclusión y decisión:** 
 
-#### **Decisión:** Como el "p-value" no es menor que $\alpha$, es decir 0.5351 > 0.05. La decisión es NO rechazar la hipotesis nula $H_0$, dado que no se encontró suficiente evidencia estadística para hacerlo.
+#### **Decisión:** Como el "p-value" no es menor que $\alpha$, es decir 0.5351 > 0.05. La decisión es NO rechazar la hipótesis nula $H_0$, dado que no se encontró suficiente evidencia estadística para hacerlo.
 
-#### **Conclusión:** La empresa esta en lo correcto al afirmar que sus bocadillos tienen en promedio 28 g de azucar.
+#### **Conclusión:** La empresa está en lo correcto al afirmar que sus bocadillos tienen en promedio 28 g de azúcar.
 
 
-### Pruebas de hipotesis para la proporción poblacional $p$ usando `RStudio`
+### Pruebas de hipótesis para la proporción poblacional $p$ usando `RStudio`
 
-#### También podemos realizar pruebas de hipotesis para $p$. La función `prop.test()` nos puede ayudar en esta tarea.
+#### También podemos realizar pruebas de hipótesis para $p$. La función `prop.test()` nos puede ayudar en esta tarea.
 
 #### 1. `x` es el número de éxitos.
 
@@ -782,13 +786,13 @@ La significancia es del 5 %, es decir $\alpha = 0.05$
 
 
 <p class="comment">
-El valor de p, estimado a traves de  $\hat{p}$, es  $p = 0.208$
+El valor de p, estimado a través de  $\hat{p}$, es  $p = 0.208$
 </p>
 
 
 #### **Decisión y Conclusión** 
 
-#### **Decisión:** Como el "p-value" es menor que $\alpha$, es decir $0.03333 < 0.05$. La decisión es rechazar la hipotesis nula $H_0$.
+#### **Decisión:** Como el "p-value" es menor que $\alpha$, es decir $0.03333 < 0.05$. La decisión es rechazar la hipótesis nula $H_0$.
 
 
 #### **Conclusión:** En Santa Barbara, California la proporción de jovenes adultos que viven con sus padres es menor a la proporción a nivel nacional.
@@ -799,13 +803,13 @@ El valor de p, estimado a traves de  $\hat{p}$, es  $p = 0.208$
 ## Ejercicios de repaso
 
 
-#### 1.  Los investigadores desean probar la eficacia de un programa destinado a reducir la duración del parto en el parto. El tiempo de trabajo promedio aceptado en el nacimiento de un primer hijo es de 15.3 horas. La duración media de los trabajos de 13 madres primerizas en un programa piloto fue de 8,8 horas. Suponga que la desviación estándar poblacional es conocida e igual a 3.1 horas. Suponiendo una distribución normal de los tiempos de trabajo de parto, evalúe al nivel de 10 % de la prueba de significancia si el tiempo de parto promedio para todas las mujeres que siguen este programa es menos de 15.3 horas.
+#### 1.  Los investigadores desean probar la eficacia de un programa destinado a reducir la duración del parto. El tiempo de trabajo promedio aceptado en el nacimiento de un primer hijo es de 15.3 horas. La duración media de los trabajos de 13 madres primerizas en un programa piloto fue de 8.8 horas. Suponga que la desviación estándar poblacional es conocida e igual a 3.1 horas. Suponiendo una distribución normal de los tiempos de trabajo de parto, evalúe al nivel de 10 % de significancia si el tiempo de parto promedio para todas las mujeres que siguen este programa es menor.
 
-#### 2.  El precio de una raqueta de tenis popular en una cadena de tiendas nacional es de $ 179. Juan compró cinco de la misma raqueta en un sitio de subastas en línea por los siguientes precios:
+#### 2.  El precio de una raqueta de tenis popular en una cadena de tiendas nacional es de $ 179. Juan compró ocho de la misma raqueta en un sitio de subastas en línea por los siguientes precios:
 
-#### 155, 179, 175, 175, 161, 145, 151
+#### 155, 179, 175, 175, 161, 145, 151, 172.
 
-#### Suponiendo que los precios de subasta de las raquetas se distribuyen normalmente, determine si hay suficiente evidencia en la muestra, al nivel de significancia del 5%, para concluir que el precio promedio de la raqueta es menor a $ 179 si se compra en una subasta en línea.
+#### Suponiendo que los precios de subasta de las raquetas se distribuyen normalmente, determine si hay suficiente evidencia en la muestra, al nivel de significancia del 5%, para concluir que el precio promedio de la raqueta es menor si se compra en una subasta en línea.
 
 
 #### 3.  En el pasado, la duración promedio de una llamada telefónica saliente desde una oficina comercial ha sido de 143 segundos. Un gerente desea verificar si ese promedio ha disminuido después de la introducción de los cambios de política. Una muestra de 100 llamadas telefónicas produjo una media de 133 segundos, con una desviación estándar de 35 segundos. Realice la prueba pertinente al nivel de significancia del 1%.
@@ -818,4 +822,5 @@ El valor de p, estimado a traves de  $\hat{p}$, es  $p = 0.208$
 
 
 ![](blanco.png)
+
 
