@@ -40,7 +40,7 @@ plot(Orange$age, Orange$circumference , main="Scatterplot Orange tree",
   	xlab="Time in Days", ylab="Circumfence in mm",pch=19)
 ```
 
-La gráfica muestra la relación que existe entre la edad del árbol de china y la circunferencia del tronco. Si los puntos están totalmente dispersos se dice que no hay relación entre las variables, a diferencia de haya algún patrón como en el caso de el árbol de china. 
+La gráfica muestra la relación que existe entre la edad del árbol de china y la circunferencia del tronco. Si los puntos están totalmente dispersos se dice que no hay relación entre las variables, a diferencia, si hay algún patrón como en el caso de el árbol de china. 
 
 > **¿Cómo podemos  caracterizar numéricamente la relación entre las variables?**
 
@@ -64,7 +64,7 @@ plot(x,y,pch=18)
 cor(x,y)
 ```
 
-El coeficiente de correlación es similar a la media, mediana, desviación estándar, Q1, etc .: viene en dos versiones:
+El coeficiente de correlación es una medida estadística similar a la media, mediana, desviación estándar, Q1, etc .: viene en dos versiones:
 
 * Es una estadístico cuando se encuentra a partir de una muestra
 
@@ -74,7 +74,7 @@ En el primer caso usamos el símbolo $r$, en el segundo caso usamos $\rho$.
 
 ### Propiedades del coeficiente de correlación:
 
-1.	Siempre esta entre  -1 <r <1
+1.	Siempre esta entre  -1 < r <1
 2.	$r$ cercano a 0 significa muy poca o incluso ninguna correlación (relación)
 3.	$r$ cercano a ± 1 significa una correlación muy fuerte $r = -1$ o $r = 1$ significa una correlación lineal perfecta (es decir, en el diagrama de dispersión los puntos forman una línea recta)
 4.	$r < 0$ significa una relación negativa (a medida que x se hace más grande y se hace más pequeño)
@@ -83,7 +83,7 @@ En el primer caso usamos el símbolo $r$, en el segundo caso usamos $\rho$.
 6.	$r$ trata simétricamente x e y, es decir $cor(x, y) = cor(y, x)$
 
 
-El coeficiente de correlación de Peason solo mide las relaciones lineales, no funciona si una relación no es lineal.
+El coeficiente de correlación de Pearson solo mide las relaciones lineales, no funciona si una relación no es lineal.
 
 Aquí hay un ejemplo:
 
@@ -102,7 +102,7 @@ Todos para estos tienen aproximadamente la misma "fuerza" de una relación.
 
 PERO
 
-El coeficiente de correlación de Peason solo es útil para el primer caso.
+El coeficiente de correlación de Pearson solo es útil para el primer caso.
 
 Otra situación en la que el coeficiente de correlación de Pearson no funciona es si hay valores atípicos en el conjunto de datos. Incluso solo un valor atípico ("Outlier") puede determinar el coeficiente de correlación:
 
@@ -118,35 +118,7 @@ Es importante mantener dos cosas separadas: una situación con dos variables que
 En cualquier caso, encontraríamos una $r$ cercana a 0 (¡pero nunca = 0!).
 
 
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
+![](blanco.png)
 
 
 

@@ -248,7 +248,7 @@ head(Orange,15)</code></pre>
 <pre class="r"><code>plot(Orange$age, Orange$circumference , main=&quot;Scatterplot Orange tree&quot;, 
     xlab=&quot;Time in Days&quot;, ylab=&quot;Circumfence in mm&quot;,pch=19)</code></pre>
 <p><img src="correlacion_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>La gráfica muestra la relación que existe entre la edad del árbol de china y la circunferencia del tronco. Si los puntos están totalmente dispersos se dice que no hay relación entre las variables, a diferencia de haya algún patrón como en el caso de el árbol de china.</p>
+<p>La gráfica muestra la relación que existe entre la edad del árbol de china y la circunferencia del tronco. Si los puntos están totalmente dispersos se dice que no hay relación entre las variables, a diferencia, si hay algún patrón como en el caso de el árbol de china.</p>
 <blockquote>
 <p><strong>¿Cómo podemos caracterizar numéricamente la relación entre las variables?</strong></p>
 </blockquote>
@@ -262,8 +262,8 @@ plot(x,y,pch=18)</code></pre>
 <p><img src="correlacion_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>¿Cuánto es la correlación entre <code>x</code> e <code>y</code>?</p>
 <pre class="r"><code>cor(x,y)</code></pre>
-<pre><code>## [1] -0.1280867</code></pre>
-<p>El coeficiente de correlación es similar a la media, mediana, desviación estándar, Q1, etc .: viene en dos versiones:</p>
+<pre><code>## [1] 0.06101577</code></pre>
+<p>El coeficiente de correlación es una medida estadística similar a la media, mediana, desviación estándar, Q1, etc .: viene en dos versiones:</p>
 <ul>
 <li><p>Es una estadístico cuando se encuentra a partir de una muestra</p></li>
 <li><p>Es un parámetro cuando pertenece a una población.</p></li>
@@ -273,14 +273,14 @@ plot(x,y,pch=18)</code></pre>
 <div id="propiedades-del-coeficiente-de-correlacion" class="section level3">
 <h3>Propiedades del coeficiente de correlación:</h3>
 <ol style="list-style-type: decimal">
-<li>Siempre esta entre -1 &lt;r &lt;1</li>
+<li>Siempre esta entre -1 &lt; r &lt;1</li>
 <li><span class="math inline">\(r\)</span> cercano a 0 significa muy poca o incluso ninguna correlación (relación)</li>
 <li><span class="math inline">\(r\)</span> cercano a ± 1 significa una correlación muy fuerte <span class="math inline">\(r = -1\)</span> o <span class="math inline">\(r = 1\)</span> significa una correlación lineal perfecta (es decir, en el diagrama de dispersión los puntos forman una línea recta)</li>
 <li><span class="math inline">\(r &lt; 0\)</span> significa una relación negativa (a medida que x se hace más grande y se hace más pequeño)</li>
 <li><p><span class="math inline">\(r &gt; 0\)</span> significa una relación positiva (a medida que x aumenta, y aumenta)</p></li>
 <li><p><span class="math inline">\(r\)</span> trata simétricamente x e y, es decir <span class="math inline">\(cor(x, y) = cor(y, x)\)</span></p></li>
 </ol>
-<p>El coeficiente de correlación de Peason solo mide las relaciones lineales, no funciona si una relación no es lineal.</p>
+<p>El coeficiente de correlación de Pearson solo mide las relaciones lineales, no funciona si una relación no es lineal.</p>
 <p>Aquí hay un ejemplo:</p>
 <div class="figure">
 <img src="cor.png" />
@@ -292,7 +292,7 @@ plot(x,y,pch=18)</code></pre>
 <p><span class="math inline">\(cor(x, y4) = -0.111\)</span></p>
 <p>Todos para estos tienen aproximadamente la misma “fuerza” de una relación.</p>
 <p>PERO</p>
-<p>El coeficiente de correlación de Peason solo es útil para el primer caso.</p>
+<p>El coeficiente de correlación de Pearson solo es útil para el primer caso.</p>
 <p>Otra situación en la que el coeficiente de correlación de Pearson no funciona es si hay valores atípicos en el conjunto de datos. Incluso solo un valor atípico (“Outlier”) puede determinar el coeficiente de correlación:</p>
 <div class="figure">
 <img src="cor1.png" />
@@ -303,21 +303,10 @@ plot(x,y,pch=18)</code></pre>
 <h3>Correlación débil vs cero correlación</h3>
 <p>Es importante mantener dos cosas separadas: una situación con dos variables que no están correlacionadas <span class="math inline">\((\rho = 0)\)</span> y dos variables con una correlación débil ( <span class="math inline">\(\rho ≠ 0\)</span> pero pequeña).</p>
 <p>En cualquier caso, encontraríamos una <span class="math inline">\(r\)</span> cercana a 0 (¡pero nunca = 0!).</p>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
+<div class="figure">
+<img src="blanco.png" />
+
+</div>
 </div>
 </div>
 
