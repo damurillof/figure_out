@@ -10,74 +10,105 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Si existe una relación entre las variables "x" e "y", ¿podemos describirlo?
+```{r,eval=T,echo=F}
+load("/datos/DirectorioR/Resma3.RData")
+```
+
+
+Si existe una relación entre las variables "x" e "y", Entonces podemos describirlo mediante un modelo o una ecuación  $y = f (x)$.
  
-Hacemos eso al encontrar un modelo, que es una ecuación $y = f (x)$. Aquí lo mantenemos muy simple $y$ consideramos solo relaciones lineales, es decir, ecuaciones de la forma
+Aquí $y$ se considera solo para relaciones lineales, es decir, ecuaciones de la forma:
+
  
 $$y=mx+b$$
 En Estadística, aunque utilizamos una notación ligeramente diferente:
  
-$$y = \beta_0 + \beta_1x$$
+$$y = \alpha + \beta x$$
+Donde:
+
+1.  $y$ es la variable respuesta. (variable dependiente)
+
+2.  $x$ es la variable predictora. (variable independiente)
+
+3.  $\alpha$ es el $y-$ intercepto.
+
+4.  $\beta$ es la pendiente de la recta.
  
-La lógica aquí es esta: si sabemos el valor de $x$, podemos calcular el correspondiente valor de $y$. Lamentablemente, siempre hay "errores" en este cálculo, por lo que la respuesta $y$ varía incluso para la misma $x$.
+La lógica aquí es esta: si sabemos el valor de $x$, podemos calcular el correspondiente valor de $y$. Lamentablemente, siempre hay "errores" en este cálculo, por lo que la respuesta $y$ varía incluso para la misma $x$. Sí el error es considerado, entonces el modelo se escribe de la siguiente manera:
+
+$$y = \alpha + \beta x + \epsilon$$
  
-Por ejemplo, sea $x$ la cantidad de horas que un estudiante estudia para un examen y  $y$ la puntuación del examen. Digamos que sabemos por experiencia que $y = 50 + 5x$. Entonces, incluso si el estudiante no estudia  $(x = 0)$, él o ella obtendría alrededor de 50 puntos, y por cada hora estudiada, el puntaje aumenta alrededor de 5 puntos.
-Pero, por supuesto, hay muchos otros factores que influyen en el grado, como la capacidad general, la experiencia previa, estar saludable el día del examen, la ansiedad del examen, etc., por lo que para un alumno específico el puntaje no será exactamente lo que predice la ecuación. Entonces, si tres estudiantes estudian 6 horas, la ecuación predice un puntaje de $50 + 5 * 6 = 80$ para todos, pero uno podría obtener un 69, el siguiente un $78$ y el tercero un $99$. Lo que la ecuación predice es en realidad su puntuación media.
+
+Donde $\epsilon$ denota los errores. Para estos errores se supone son independientes idénticamente distribuidos Normal con media $0$ y varianza $\sigma^2$. Es decir 
+
+$$\epsilon_i \sim Normal(0,\sigma^2)$$
+ 
+ 
+Consideremos el siguiente ejemplo para poner en contexto la teoría:
+
+
+Sea $x$ la cantidad de horas que un estudiante estudia para un examen y  $y$ la puntuación del examen. Digamos que sabemos por experiencia que $y = 50 + 5x$. Entonces, incluso si el estudiante no estudia  $(x = 0)$, él o ella obtendría alrededor de $50$ ($y-$intercepto) puntos, y por cada hora estudiada, el puntaje aumenta alrededor de $5$  puntos (pendiente).
+Pero, por supuesto, hay muchos otros factores que influyen en el puntaje del examen, como la capacidad general, la experiencia previa, estar saludable el día del examen, la ansiedad del examen, etc., por lo que para un alumno específico el puntaje no será exactamente lo que predice la ecuación. Entonces, si tres estudiantes estudian 6 horas, la ecuación predice un puntaje  de $50 + 5 * 6 = 80$ para todos, pero uno podría obtener un $70$, el siguiente un $78$ y el tercero un $92$. Por lo tanto lo que la ecuación predice es en realidad su puntuación media (puntuación promedio).
  
 Esto se ilustra en el siguiente gráfico:
 
 ![](plots.png)
 
 
-Donde las puntuaciones de las personas que estudiaron 6 horas están en rojo, y su puntaje promedio está marcado por una $X$. El significado de la línea se explica como la respuesta media o promedio.
+Donde las puntuaciones de las personas que estudiaron $6$ horas están en rojo, y su puntaje promedio está marcado por una $X$ (dese cuenta que $\bar{X}$ es una coordenada de la recta). El significado de la línea se explica como la respuesta media o promedio.
  
-Por tanto $\beta_0$ y $\beta_1$ son números que dependen de la población de la cual se extraen los datos $(X,Y)$. Por lo tanto, son parámetros como la media o la mediana.
+Por tanto $\alpha$ y $\beta$ son números que dependen de la población de la cual se extraen los datos $(X,Y)$. Por lo tanto, son parámetros (Valores desconocidos) como la media o la mediana.
  
-**Un problema estándar es este**: Tenemos un conjunto de datos y creemos que hay una relación lineal entre $x$ e $y$. Nos gustaría saber la ecuación que describe el moelo matematicamente.
+**Un problema estándar es este**: Tenemos un conjunto de datos y creemos que hay una relación lineal entre $x$ e $y$. Nos gustaría saber la ecuación que describe el modelo matemáticamente.
  
- $$y = \beta_0 + \beta_1x$$
+ $$y = \alpha + \beta x$$
  
-Es decir, ¿tenemos que "adivinar" los valores de  $\beta_0$ y $\beta_1$?. La respuesta es No, Los estimaremos mediante un método llamado regresión por mínimos cuadrados. Esto se hace en RStudio con el comando `lm()`.
+Es decir, ¿tenemos que "adivinar" los valores de  $\alpha$ y $\beta$?. La respuesta es No, Los estimaremos mediante un método llamado regresión por mínimos cuadrados. Esto se hace en RStudio con el comando `lm()`.
  
-## Tiempo de espera para la erupción de un geyser. 
+## Ejemplo: Tiempo de espera para la erupción de un géiser. 
 
-Datos de 272 erupciones de un geyser, esta data tiene dos variables: Una es la duración de la erupción `eruptions` y la otra es el tiempo de espera hasta la próxima erupción `waiting`.
+El parque nacional de Yellowstone tiene muchas atracciones naturales, entre ellas el Old Faithful Geyser. 
+
+![](geyser.jpg)
+
+El Old Faithful es un famoso géiser en el Parque Nacional de Yellowstone en los Estados Unidos. Sus erupciones se caracterizan por tener una cierta regularidad; De acuerdo con los datos históricos, cada 43 a 96 minutos entra en erupción, con una duración de 1,5 a 5 minutos y puede erupcionar unas 20 veces en un día. En este fenómeno natural, existe una relación entre la duración y la duración de los tiempos de espera, en general, una gran erupción es seguida por un largo tiempo de espera y de manera similar, una erupción más corta es seguida por un largo tiempo de espera. Pero el Old Faithful no es tan fiel como el nombre sugiere, porque el tiempo entre las erupciones y la duración de cada erupción es bastante variable.
+
+Tenemos 272 datos de  erupciones de este géiser, esta data tiene dos variables: Una es la duración de la erupción `eruptions` y la otra es el tiempo de espera hasta la próxima erupción `waiting`.
 
 ```{r}
 head(faithful,20)
 ```
  
-Para revisar como se distribuyen los datos podemos dibujar un diagrama de dispersión 
+Para revisar la relación entre el tiempo de espera y el tiempo de la duración podemos dibujar un diagrama de dispersión (Scatterplot).
 
 ```{r}
 library(ggplot2)
 p <- ggplot(faithful) +
-       geom_point(aes(x=waiting, y=eruptions)) +
+       geom_point(aes(x=faithful$Eruptions, y=faithful$Waiting.Time)) +
        scale_x_continuous("Waiting time until next eruption (min)") +
        scale_y_continuous("Eruption duration (min)")
-print(p)
+p
 ```
 
-Por lo que vemos una clara correlación positiva, cuanto mayor es el tiempo de espera, menor es la tasa mayor es la duración de la erupción.
+Por lo que vemos, hay una clara correlación positiva, cuanto mayor es el tiempo de espera, mayor es la duración de la erupción.
 
 
-Entonces, ¿qué podemos decir sobre la relación real?
+Entonces, podemos escribir un modelo para modelar matemáticamente el tiempo de espera promedio para que haga erupción, mediante un modelo de regresión simple de la forma:
 
-Esta relación la podemos encontrar mediante un modelo de regresión simple de la forma:
-
-$$eruption = \beta_0 + \beta_1*waiting$$
+$$Waiting.Time = \alpha + \beta*Eruptions$$
 
 ```{r}
-lm(eruptions ~ waiting, data = faithful)
+lm(faithful$Waiting.Time ~ faithful$Eruptions , data = faithful)
 ``` 
  
-Entonces, según los resultados estimados para $\beta_0$ y $\beta_1$ el modelo es el siguiente:
+Entonces, según los resultados estimados para $\alpha$ y $\beta$ el modelo es el siguiente:
 
-$$ eruptions = -1.87402 + 0.07563*waiting$$
+$$\text{Waiting.Time} = 33.47 + 10.73 *\text{Eruptions}$$
 Hay un buen gráfico llamado diagrama de línea ajustado, que es el diagrama de dispersión con la línea de regresión de mínimos cuadrados añadida:
 
 ```{r}
-ggplot(faithful, aes(x=waiting, y=eruptions)) +    geom_point() +  geom_smooth(method=lm , color="red", se=FALSE)
+library(ggplot2)
+ggplot(faithful, aes(x=faithful$Waiting.Time, y=faithful$Eruptions)) +    geom_point() +  geom_smooth(method=lm , color="red", se=FALSE)
 ``` 
  
  
@@ -89,14 +120,14 @@ $$R^2=\dfrac{(\hat{y_i}-\bar{y})^2}{(y_i-\bar{y})^2}$$
 
 > Problema
  
-Encuentre el coeficiente de determinación para el modelo de regresión lineal simple del conjunto de datos `faitfiul`.
+Encuentre el coeficiente de determinación para el modelo de regresión lineal simple del conjunto de datos `faithfiul`.
  
 > Solución
  
 Aplicamos la función lm a una fórmula que describe las erupciones variables por la variable que espera, y guardamos el modelo de regresión lineal en una nueva variable `eruption.lm`.
 
 ```{r}
-eruption.lm <- lm(eruptions ~ waiting, data = faithful)
+eruption.lm <- lm(faithful$Waiting.Time ~ faithful$Eruptions, data = faithful)
 ``` 
  
 Luego extraemos el coeficiente de determinación del atributo r.squared de su resumen.
@@ -123,44 +154,14 @@ $$cor(x, y) = cor(y, x)$$
 Por ejemplo,la correlación entre las variables es
 
 ```{r}
-cor(faithful$waiting,faithful$eruptions)
+cor(faithful$Waiting.Time,faithful$Eruptions)
 ``` 
  
 
 
 
+![](blanco.png)
 
-
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------------------------------
 
 
 
