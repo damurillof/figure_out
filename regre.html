@@ -275,8 +275,8 @@ $(document).ready(function () {
 <pre class="r"><code>library(ggplot2)
 p &lt;- ggplot(faithful) +
        geom_point(aes(x=faithful$Eruptions, y=faithful$Waiting.Time)) +
-       scale_x_continuous(&quot;Waiting time until next eruption (min)&quot;) +
-       scale_y_continuous(&quot;Eruption duration (min)&quot;)
+       scale_x_continuous(&quot;Eruption duration (min)&quot;) +
+       scale_y_continuous(&quot;Waiting time until next eruption (min)&quot;)
 p</code></pre>
 <p><img src="regre_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Por lo que vemos, hay una clara correlación positiva, cuanto mayor es el tiempo de espera, mayor es la duración de la erupción.</p>
@@ -293,7 +293,7 @@ p</code></pre>
 <p>Entonces, según los resultados estimados para <span class="math inline">\(\alpha\)</span> y <span class="math inline">\(\beta\)</span> el modelo es el siguiente:</p>
 <p><span class="math display">\[\text{Waiting.Time} = 33.47 + 10.73 *\text{Eruptions}\]</span> Hay un buen gráfico llamado diagrama de línea ajustado, que es el diagrama de dispersión con la línea de regresión de mínimos cuadrados añadida:</p>
 <pre class="r"><code>library(ggplot2)
-ggplot(faithful, aes(x=faithful$Waiting.Time, y=faithful$Eruptions)) +    geom_point() +  geom_smooth(method=lm , color=&quot;red&quot;, se=FALSE)</code></pre>
+ggplot(faithful, aes(x=faithful$Eruptions, y=faithful$Waiting.Time)) +    geom_point() +  geom_smooth(method=lm , color=&quot;red&quot;, se=FALSE)</code></pre>
 <p><img src="regre_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <div id="coeficiente-de-determinacion" class="section level3">
 <h3>Coeficiente de determinación</h3>

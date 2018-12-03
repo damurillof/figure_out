@@ -85,8 +85,8 @@ Para revisar la relación entre el tiempo de espera y el tiempo de la duración 
 library(ggplot2)
 p <- ggplot(faithful) +
        geom_point(aes(x=faithful$Eruptions, y=faithful$Waiting.Time)) +
-       scale_x_continuous("Waiting time until next eruption (min)") +
-       scale_y_continuous("Eruption duration (min)")
+       scale_x_continuous("Eruption duration (min)") +
+       scale_y_continuous("Waiting time until next eruption (min)")
 p
 ```
 
@@ -108,7 +108,7 @@ Hay un buen gráfico llamado diagrama de línea ajustado, que es el diagrama de 
 
 ```{r}
 library(ggplot2)
-ggplot(faithful, aes(x=faithful$Waiting.Time, y=faithful$Eruptions)) +    geom_point() +  geom_smooth(method=lm , color="red", se=FALSE)
+ggplot(faithful, aes(x=faithful$Eruptions, y=faithful$Waiting.Time)) +    geom_point() +  geom_smooth(method=lm , color="red", se=FALSE)
 ``` 
  
  
