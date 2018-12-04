@@ -10,8 +10,11 @@ Aquí esta el enlace para la página web del curso:
 
 ### [Tablas de probabilidad acumulada](https://didier-murillo.netlify.com/tables)
 
-Examen parcial \# 3: Miércoles 21 de Noviembre.
------------------
+---------------------------------------------------------------------------------------
+
+### [Repaso](https://didier-murillo.netlify.com/RepasoESMA3101.pdf) : Este repaso no implica que el material que no se incluye no pueda salir en el examen.
+
+-------------------------------------------------------------------
 
 
 ### [Tareas](https://didier-murillo.netlify.com/tareas)

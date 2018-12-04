@@ -262,7 +262,7 @@ plot(x,y,pch=18)</code></pre>
 <p><img src="correlacion_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>¿Cuánto es la correlación entre <code>x</code> e <code>y</code>?</p>
 <pre class="r"><code>cor(x,y)</code></pre>
-<pre><code>## [1] 0.005746825</code></pre>
+<pre><code>## [1] 0.001410049</code></pre>
 <p>El coeficiente de correlación es una medida estadística similar a la media, mediana, desviación estándar, Q1, etc .: viene en dos versiones:</p>
 <ul>
 <li><p>Es una estadístico cuando se encuentra a partir de una muestra</p></li>
@@ -280,7 +280,7 @@ plot(x,y,pch=18)</code></pre>
 <li><p><span class="math inline">\(r &gt; 0\)</span> significa una relación positiva (a medida que x aumenta, y aumenta)</p></li>
 <li><p><span class="math inline">\(r\)</span> trata simétricamente x e y, es decir <span class="math inline">\(cor(x, y) = cor(y, x)\)</span></p></li>
 </ol>
-<p>El coeficiente de correlación de Pearson solo mide las relaciones lineales, no funciona si una relación no es lineal.</p>
+<p>El coeficiente de correlación de Pearson solo mide las relaciones lineales, no funciona si una relación no es lineal y si se lesuma la presencia de outliers.</p>
 <p>Aquí hay un ejemplo:</p>
 <div class="figure">
 <img src="cor.png" />

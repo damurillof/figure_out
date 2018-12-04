@@ -83,7 +83,7 @@ En el primer caso usamos el símbolo $r$, en el segundo caso usamos $\rho$.
 6.	$r$ trata simétricamente x e y, es decir $cor(x, y) = cor(y, x)$
 
 
-El coeficiente de correlación de Pearson solo mide las relaciones lineales, no funciona si una relación no es lineal.
+El coeficiente de correlación de Pearson solo mide las relaciones lineales, no funciona si una relación no es lineal y si se lesuma la presencia de outliers.
 
 Aquí hay un ejemplo:
 
