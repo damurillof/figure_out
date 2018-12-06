@@ -514,9 +514,9 @@ qt(0.1,42,lower.tail = FALSE)
 
 #### Este método tiene los siguientes supuestos:
 
-#### i) $np \geq 10$
+#### i) $np_0 \geq 10$
 
-#### ii) $n(1-p) \geq 10$
+#### ii) $n(1-p_0) \geq 10$
 
 #### El estadístico de prueba bajo $H_0$ es
 
