@@ -304,7 +304,7 @@ b) #### La varianza $\sigma^2$ es conocida.
 
 #### $$Z^*=\dfrac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$$
 
-#### $$Z^*=\dfrac{225.9 - 220}{13/\sqrt{22}}$$
+#### $$Z^*=\dfrac{225.9 - 220}{13/\sqrt{20}}$$
 
 #### $$Z^*=\dfrac{5.9}{2.906888}$$
 
